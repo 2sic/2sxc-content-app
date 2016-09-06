@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="@App.Path/DefaultTemplates/css/styles.css" data-enableoptimizations="true" />
+
+<div class="row co-navigation co-navigation-text">
+    @foreach (var e in List)
+    {
+        var Content = e.Content;
+        <div class="col col-xs-12 col-sm-6 col-md-4 co-syncheight sc-element">
+            @Content.Toolbar
+            <h3>@Content.Title</h3>
+            <p>@Html.Raw(HttpUtility.HtmlEncode(Content.Description).Replace("\n", "<br />"))</p>
+            @if(!String.IsNullOrEmpty(Content.Link))
+            {
+                <a title="@Content.Title" href="@Content.Link">&raquo; @Content.LinkText</a>
+            }
+        </div>
+    }
+</div>

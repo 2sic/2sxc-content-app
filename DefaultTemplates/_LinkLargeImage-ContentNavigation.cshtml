@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="@App.Path/DefaultTemplates/css/styles.css" data-enableoptimizations="true" />
+
+<div class="row co-navigation co-navigation-image">
+    @foreach (var e in List)
+    {
+        var Content = e.Content;
+        <div class="col col-xs-12 col-sm-6 col-md-4 co-syncheight sc-element">
+			@Content.Toolbar
+			@if(!String.IsNullOrEmpty(Content.Link))
+                {
+					@:<a class="co-link-box" title="@Content.Title" href="@Content.Link">
+				}
+				<div class="co-img-wrapper">
+					<img src="@Content.Image?w=690&amp;h=345&amp;quality=80&amp;mode=crop&amp;scale=both" alt="@Content.Title" />
+				</div>
+				<h3>@Content.Title</h3>
+				@if(!String.IsNullOrEmpty(Content.Description))
+				{
+					<p>@Html.Raw(HttpUtility.HtmlEncode(Content.Description).Replace("\n", "<br />"))</p>
+				}
+                @if(!String.IsNullOrEmpty(Content.Link))
+                {
+					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span><span class="co-link">@Content.LinkText</span>
+					@:</a>
+                }
+            
+        </div>
+    }
+</div>

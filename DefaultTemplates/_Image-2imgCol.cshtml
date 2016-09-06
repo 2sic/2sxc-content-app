@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="@App.Path/DefaultTemplates/css/styles.css" data-enableoptimizations="true" />
+<div class="co-img-wrapper co-2colimg row">
+    @foreach (var Element in List)
+    {	
+		var Content = Element.Content;
+		<div class="col col-sm-6 sc-element co-syncheight">
+			@Content.Toolbar
+			@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
+				@:<a title="@(Presentation.TitleLightbox ? Content.Title : "")" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
+			}
+			<img class="img-responsive" src="@Content.Image?w=720" alt="@Content.Title" />
+			@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
+				@:</a>
+			}
+			@if(Presentation.TitleLegend is bool && Presentation.TitleLegend ){
+				<div class="co-imgcaption">
+					@Content.Title
+				</div>
+			}
+		</div>
+	}
+</div>

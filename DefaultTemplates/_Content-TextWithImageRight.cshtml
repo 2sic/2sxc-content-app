@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="@App.Path/DefaultTemplates/css/styles.css" data-enableoptimizations="true" />
+
+<div class="clearfix sc-element co-content co-content-image-right ly-margin-bottom row">
+    @Content.Toolbar
+	<div class="col-sm-6">
+	<div class="co-content-heading">
+		@if(Presentation.HeadingType != "hide")
+		{
+			@Html.Raw("<" + Presentation.HeadingType + ">")
+				@Content.Title
+			@Html.Raw("</" + Presentation.HeadingType + ">")
+		}
+	</div>
+	<div class="co-text">
+		@Html.Raw(Content.Text)
+	</div>
+	</div>
+	<div class="col-sm-6">
+    @if(!String.IsNullOrEmpty(Content.Image)) {
+        if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
+			var titel="";
+			if(Presentation.TitleLightbox){
+				if(!String.IsNullOrEmpty(Content.ImageCaption)){
+					titel=Content.ImageCaption;
+				} else {
+					titel=Content.Title;
+				}
+			}
+            @:<a title="@titel" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
+        }
+        <img class="co-content-image" src="@Content.Image?w=555" alt="@Content.Title" />
+        if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
+            @:</a>
+        }
+    }
+	</div>
+</div>
