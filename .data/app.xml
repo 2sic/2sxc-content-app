@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.04.07" ExportDate="2016-09-06T15:45:04.1686727+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.04.07" ExportDate="2016-09-06T15:50:35.2176664+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -873,24 +873,53 @@
       <Value Key="VideoLink" Value="https://www.youtube.com/watch?v=dOB_hWteK_8" Type="Hyperlink" />
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="cf857bb5-f8b6-4ad9-8545-405d70101409">
-      <Value Key="Name" Value="Bild volle Breite" Type="String" />
-      <Value Key="Path" Value="DefaultTemplates/_Image-FullWidth.cshtml" Type="String" />
-      <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String" />
+      <Value Key="Name" Value="Image full width" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="Bild volle Breite" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Path" Value="DefaultTemplates/_Image-FullWidth.cshtml" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="ContentDemoEntity" Value="35a75d9b-6596-4621-939e-57c59744b307" Type="Entity" />
-      <Value Key="PresentationTypeStaticName" Value="77628453-e1b3-4df8-b44b-aa706e6e0a07" Type="String" />
+      <Value Key="PresentationTypeStaticName" Value="77628453-e1b3-4df8-b44b-aa706e6e0a07" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="PresentationDemoEntity" Value="c91faad2-fc7c-44d1-90f3-157bee4ac317" Type="Entity" />
-      <Value Key="ListContentTypeStaticName" Value="" Type="String" />
+      <Value Key="ListContentTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="ListContentDemoEntity" Value="" Type="Entity" />
-      <Value Key="ListPresentationTypeStaticName" Value="" Type="String" />
+      <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="ListPresentationDemoEntity" Value="" Type="Entity" />
-      <Value Key="Type" Value="C# Razor" Type="String" />
-      <Value Key="IsHidden" Value="False" Type="Boolean" />
-      <Value Key="Location" Value="Portal File System" Type="String" />
-      <Value Key="UseForList" Value="False" Type="Boolean" />
-      <Value Key="PublishData" Value="False" Type="Boolean" />
-      <Value Key="StreamsToPublish" Value="" Type="String" />
+      <Value Key="Type" Value="C# Razor" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="IsHidden" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Location" Value="Portal File System" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseForList" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsToPublish" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="Pipeline" Value="" Type="Entity" />
-      <Value Key="ViewNameInUrl" Value="" Type="String" />
+      <Value Key="ViewNameInUrl" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="15608b76-6767-4662-b8df-c10afb97ff36">
       <Value Key="Name" Value="Kopfbild" Type="String" />
@@ -1247,40 +1276,5 @@
   <PortalFolders>
     <Folder Id="283" RelativePath="Content/Demo/" />
     <Folder Id="285" RelativePath="adam/Content/" />
-    <Folder Id="306" RelativePath="adam/Content/3F8B_w9gZEqceCMj-CqJww/" />
-    <Folder Id="307" RelativePath="adam/Content/3F8B_w9gZEqceCMj-CqJww/Text/" />
-    <Folder Id="289" RelativePath="adam/Content/6FGce8Qp3EC_fGSeTr4N6w/" />
-    <Folder Id="290" RelativePath="adam/Content/6FGce8Qp3EC_fGSeTr4N6w/Image/" />
-    <Folder Id="308" RelativePath="adam/Content/DXs7cLg6fUKihcDGjkAuxA/" />
-    <Folder Id="309" RelativePath="adam/Content/DXs7cLg6fUKihcDGjkAuxA/Text/" />
-    <Folder Id="292" RelativePath="adam/Content/hQvqLf1oI02X3BAbe7N-OQ/" />
-    <Folder Id="293" RelativePath="adam/Content/hQvqLf1oI02X3BAbe7N-OQ/Image/" />
-    <Folder Id="296" RelativePath="adam/Content/j5LWZOZbjEuWx1DbXk_UBA/" />
-    <Folder Id="297" RelativePath="adam/Content/j5LWZOZbjEuWx1DbXk_UBA/Image/" />
-    <Folder Id="318" RelativePath="adam/Content/kLRXCz20Ek-WLTArBFYO3Q/" />
-    <Folder Id="319" RelativePath="adam/Content/kLRXCz20Ek-WLTArBFYO3Q/Text/" />
-    <Folder Id="298" RelativePath="adam/Content/mvXe72vdHk25RW2VN1AOjw/" />
-    <Folder Id="299" RelativePath="adam/Content/mvXe72vdHk25RW2VN1AOjw/Photo/" />
-    <Folder Id="304" RelativePath="adam/Content/P1ePhBNJS0af7zLz-7k6iw/" />
-    <Folder Id="305" RelativePath="adam/Content/P1ePhBNJS0af7zLz-7k6iw/Image/" />
-    <Folder Id="310" RelativePath="adam/Content/poS5okVaykW7L-e8Qfn9gg/" />
-    <Folder Id="311" RelativePath="adam/Content/poS5okVaykW7L-e8Qfn9gg/Text/" />
-    <Folder Id="312" RelativePath="adam/Content/QZfj3V1ETkGgrjCv06I4NA/" />
-    <Folder Id="313" RelativePath="adam/Content/QZfj3V1ETkGgrjCv06I4NA/Image/" />
-    <Folder Id="314" RelativePath="adam/Content/QZfj3V1ETkGgrjCv06I4NA/Text/" />
-    <Folder Id="302" RelativePath="adam/Content/RWB2xtry70uV2HCy95Bjlw/" />
-    <Folder Id="315" RelativePath="adam/Content/RWB2xtry70uV2HCy95Bjlw/Description/" />
-    <Folder Id="303" RelativePath="adam/Content/RWB2xtry70uV2HCy95Bjlw/Photo/" />
-    <Folder Id="316" RelativePath="adam/Content/sRB7bgYsmE2vzHNEj2INMQ/" />
-    <Folder Id="317" RelativePath="adam/Content/sRB7bgYsmE2vzHNEj2INMQ/Image/" />
-    <Folder Id="294" RelativePath="adam/Content/THh2S4lA_kuceBD3lXwXmw/" />
-    <Folder Id="295" RelativePath="adam/Content/THh2S4lA_kuceBD3lXwXmw/DocumentOrLink/" />
-    <Folder Id="300" RelativePath="adam/Content/UBA4cVa3aEumhkYTx4Bghw/" />
-    <Folder Id="301" RelativePath="adam/Content/UBA4cVa3aEumhkYTx4Bghw/Image/" />
-    <Folder Id="286" RelativePath="adam/Content/wnM9GCQY0U67zYRjyloY1Q/" />
-    <Folder Id="287" RelativePath="adam/Content/wnM9GCQY0U67zYRjyloY1Q/Image/" />
-    <Folder Id="320" RelativePath="adam/Content/wnM9GCQY0U67zYRjyloY1Q/Link/" />
-    <Folder Id="321" RelativePath="adam/Content/WtW2hUXCd0aXRbbkKNEd1w/" />
-    <Folder Id="322" RelativePath="adam/Content/WtW2hUXCd0aXRbbkKNEd1w/Photo/" />
   </PortalFolders>
 </SexyContent>
