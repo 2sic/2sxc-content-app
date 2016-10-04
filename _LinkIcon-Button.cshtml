@@ -1,0 +1,16 @@
+<div class="co-button-wrapper text-center sc-element">
+    @Content.Toolbar
+    <div class="co-title">
+        @if(Presentation.HeadingType != "hide")
+        {
+            @Html.Raw("<" + Presentation.HeadingType + ">")
+                @Content.Title
+                <br/>
+                <small>@Content.Description</small>
+            @Html.Raw("</" + Presentation.HeadingType + ">")
+        }
+    </div>
+    @if(!String.IsNullOrEmpty(@Content.Link)) {
+        <a class="btn btn-primary" href="@Content.Link"><i class="glyphicon glyphicon-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;@Content.LinkText</a>
+    }
+</div>

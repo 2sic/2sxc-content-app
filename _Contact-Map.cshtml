@@ -1,0 +1,174 @@
+<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+<script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
+
+<div class="sc-element co-contactmap ly-margin-bottom">
+	@Content.Toolbar
+	<div class="row">
+		<div class="col-sm-6">
+		<address itemscope itemtype="http://schema.org/LocalBusiness">
+			<div class="co-company" itemprop="name">
+				<strong>@Content.Company<br/>
+				@Content.CompanyAdd</strong>
+			</div>
+			<div class="co-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				@if (!String.IsNullOrEmpty(Content.Street) || !String.IsNullOrEmpty(Content.Street2)) {
+					<span itemprop="streetAddress">
+					@if (!String.IsNullOrEmpty(Content.Street)) {
+						<text>@Content.Street<br></text>
+					}
+					@if (!String.IsNullOrEmpty(Content.Street2)) {
+						<text>@Content.Street2<br/></text>
+					}
+					</span>
+				}
+				@if (!String.IsNullOrEmpty(Content.City)) {
+					if (!String.IsNullOrEmpty(Content.ZipCode)) {
+						<text><span itemprop="postalCode">@Content.ZipCode</span> </text>
+					}
+					<span itemprop="addressLocality">@Content.City</span><br>
+				}
+				@if (!String.IsNullOrEmpty(Content.Country)) {
+					<span itemprop="addressCountry">@Content.Country</span><br>
+				}
+				@{
+					var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=de&amp;ie=UTF8&amp;z=16";
+					if (Convert.ToInt32(Content.GPSLng) > 0){
+						directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
+					}
+				}
+				@if(!String.IsNullOrEmpty(Content.LabelDirections)){
+					<span class="glyphicon glyphicon-map-marker"></span> <a target="_blank" href="@directionurl">@Content.LabelDirections</a>
+				}
+			</div>
+			<div class="co-details">
+				@if (!String.IsNullOrEmpty(Content.Mail)) {
+					var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(Content.Mail);
+					if(isValid){
+						var madr = Content.Mail.Split('@');
+						var madrSuf = new System.Text.RegularExpressions.Regex("\\.([^\\.]+)$").Split(madr[1]);
+						<span itemprop="email">
+							<span class="glyphicon glyphicon-envelope"></span> <span data-madr1="@madr[0]" data-madr2="@madrSuf[0]" data-madr3="@madrSuf[1]"></span>
+						</span>
+					} else {
+						<span class="glyphicon glyphicon-envelope"></span> <span itemprop="email">@Content.Mail</span>
+					}
+					<br/>
+				}
+				@if (!String.IsNullOrEmpty(Content.Tel)) {
+					<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@Content.Tel.Replace(" ", "")" itemprop="telephone">@Content.Tel</a><br/>
+				}
+				@if (!String.IsNullOrEmpty(Content.Fax)) {
+					<span class="glyphicon glyphicon-print" aria-hidden="true"></span> <span itemprop="faxNumber">@Content.Fax</span><br/>
+				}
+			</div>
+			@if (!String.IsNullOrEmpty(Content.Description)) {
+				<div class="co-description" itemprop="description">@Html.Raw(Content.Description)</div>
+			}
+		</address>
+		</div>
+		<div class="col-sm-6">
+			<div class="embed-responsive embed-responsive-16by9 sc-element">
+				<div class="co-google-map embed-responsive-item" id="GoogleMap-@Dnn.Module.ModuleID">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@{
+	var googleMapName = @Html.Raw("googleMap" + Dnn.Module.ModuleID);
+}
+
+<script type="text/javascript">
+
+	(function ( $ ) {
+
+		var @(googleMapName) = {
+				getCoordinates: function(address, callback) {
+						var geocoder = new google.maps.Geocoder();
+
+						geocoder.geocode({ 'address': address }, function (results, status) {
+								var result;
+
+								if (status == google.maps.GeocoderStatus.OK)
+										result = results[0].geometry.location;
+								else if (window.console)
+										console.log("Geocode was not successful for the following reason: " + status);
+
+								callback(result);
+						});
+				}
+		};
+
+		$.fn.@(googleMapName) = function( options ) {
+
+				var mapElement = this.get(0);
+
+				var settings = $.extend({
+						address: "@Content.Country",
+						zoom: 8,
+						mapTypeId: "HYBRID",
+						showInfoWindow: false
+				}, options);
+					
+				// Load the map etc.
+				@(googleMapName).getCoordinates(settings.address, function(coordinates) {
+						@{
+						var coordinates = "coordinates";
+						if (Convert.ToInt32(Content.GPSLng) > 0){
+							coordinates = "{lat: "+@Content.GPSLat.ToString().Replace(',', '.')+", lng: "+@Content.GPSLng.ToString().Replace(',', '.')+"}";
+						}
+						
+						}
+						var MapOptions = {
+								zoom: settings.zoom,
+								mapTypeControl: true,
+								center: @coordinates,
+								zoomControl: true,
+								scaleControl: true,
+								scrollwheel: false,
+								draggable: false,
+								mapTypeId: google.maps.MapTypeId[settings.mapTypeId],
+								mapTypeControl: true,
+						};
+
+						var map = new google.maps.Map(mapElement, MapOptions);
+
+						// Create Marker
+						var marker = new google.maps.Marker({
+								position: @coordinates,
+								map: map
+						});
+				});
+
+				return this;
+		};
+	}(jQuery));
+
+
+    $(window).on("googleMapsLoaded", function() {
+        $("#GoogleMap-@(Dnn.Module.ModuleID)").@(googleMapName)({
+            address: "@Html.Raw(Content.Street), @Html.Raw(Content.ZipCity), @Html.Raw(Content.Country)",
+            zoom: @Presentation.Zoom,
+            mapTypeId: "ROADMAP",
+            showInfoWindow: false
+        });
+    });
+    
+		var googleMapLoadCallback = function() {
+			$(window).trigger("googleMapsLoaded");
+			window.googleMapReady = true;
+		};
+		
+		// Load the google maps api - only if it has not already been loaded
+		// Makes sure the map is displayed correctly with the AJAX template switch
+		if(!window.googleMapsLoaded)
+		{
+			window.googleMapsLoaded = true;
+			$.getScript("http://maps.google.com/maps/api/js?key=AIzaSyBpZ-EbQw7h16uEiEWQT4Kbm10q7uvPG00&sensor=true&callback=googleMapLoadCallback");
+		}
+		
+		if(window.googleMapReady)
+			googleMapLoadCallback();
+		
+</script>

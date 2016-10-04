@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" data-enableoptimizations="true" />
+<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
+<script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
+
+<div class="co-img-wrapper sc-element">
+    @Content.Toolbar
+	@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {		
+		@:<a title="@(Presentation.TitleLightbox ? Content.Title : "")" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
+	}
+    <img class="img-responsive" src="@Content.Image?w=1200" alt="@Content.Title" />
+	@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
+		@:</a>
+	}
+	@if(Presentation.TitleLegend is bool && Presentation.TitleLegend ){
+		<div class="co-imgcaption">
+			@Content.Title
+		</div>
+	}
+</div>

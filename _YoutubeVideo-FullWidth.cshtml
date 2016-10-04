@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+
+@{
+    var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
+}
+<div class="co-youtube-video-wrapper sc-element">
+	@Content.Toolbar
+	<div class="embed-responsive embed-responsive-16by9 sc-element">
+		@if (videoId.Groups.Count > 1)
+		{
+				<iframe class="co-ytplayer"
+						src="@("https://www.youtube.com/embed/" + @videoId.Groups[1] + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent")"
+						allowfullscreen></iframe>
+		}
+		else
+		{
+			<div class="dnnFormMessage dnnFormWarning">Das Video konnte nicht gefunden werden. Bitte überprüfen Sie den eingegebenen Video-Link.</div>
+		}
+	</div>
+</div>

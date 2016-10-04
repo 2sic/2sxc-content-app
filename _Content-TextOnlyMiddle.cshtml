@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="@App.Path/DefaultTemplates/css/styles.css" data-enableoptimizations="true" />
+<div class="row">
+    <div class="clearfix sc-element co-content co-content-text-only ly-margin-bottom col-md-8 col-md-push-2">
+        @Content.Toolbar
+        <div class="co-title">
+            @if(Presentation.HeadingType != "hide")
+            {
+                @Html.Raw("<" + Presentation.HeadingType + ">")
+                    @Content.Title
+                    if(!String.IsNullOrEmpty(Content.Subtitle)){
+                        <small>@Content.Subtitle</small>
+                    }
+                @Html.Raw("</" + Presentation.HeadingType + ">")
+            }
+        </div>
+        <div class="co-text">
+            @Html.Raw(Content.Text)
+        </div>
+    </div>
+</div>
