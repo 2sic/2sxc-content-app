@@ -68,7 +68,7 @@
     if(!window.googleMapsLoaded)
     {
         window.googleMapsLoaded = true;
-        $.getScript("http://maps.google.com/maps/api/js?key=AIzaSyBpZ-EbQw7h16uEiEWQT4Kbm10q7uvPG00&sensor=true&callback=googleMapLoadCallback");
+        $.getScript("http://maps.google.com/maps/api/js?key=AIzaSyAUbRHtu3k_fg3jDGk_qAatE5jA4bC_ndE&sensor=true&callback=googleMapLoadCallback");
     }
 
 } (jQuery));
