@@ -127,6 +127,13 @@ $screen-md-min: 992px;
 		}
 	}
 	.ly-header-pane .co-google-map-container { margin-top:0; margin-bottom:0; }
+	.googlemap-apiwarning {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 	
 	/* Kontakt Map */
 	.co-contactmap address { line-height: 1.2; padding: $grid-gutter-width/2 0; }

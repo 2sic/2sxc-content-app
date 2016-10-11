@@ -2,11 +2,11 @@
 <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
-<div class="row co-navigation co-navigation-icon co-navigation-text">
+<div class="row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-icon co-navigation-text">
     @foreach (var e in List)
     {
         var Content = e.Content;
-        <div class="col col-xs-12 col-sm-6 col-md-4 co-syncheight sc-element">
+        <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
             @Content.Toolbar
             @if(!String.IsNullOrEmpty(Content.Link))
             {
@@ -32,3 +32,8 @@
         </div>
     }
 </div>
+
+<script>
+    /* Call syncHeightResponsive here - makes sure that sync height also works after ajax reload */
+    $(".co-navigation-@(Dnn.Module.ModuleID) .col").syncHeightResponsive();
+</script>

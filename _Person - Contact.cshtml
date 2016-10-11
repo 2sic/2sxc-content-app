@@ -2,11 +2,11 @@
 <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
-<div class="co-person-wrapper row">
+<div class="co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID) row">
     @foreach (var Element in List)
     {
         var Content = Element.Content;
-        <div class="sc-element co-person co-person-2-@(List.IndexOf(Element) % 2) col-sm-6 co-syncheight">
+        <div class="sc-element co-person co-person-2-@(List.IndexOf(Element) % 2) col-sm-6">
             @Content.Toolbar
             
 			<div class="row">
@@ -60,3 +60,8 @@
         </div>
     }
 </div>
+
+<script>
+    /* Call syncHeightResponsive here - makes sure that sync height also works after ajax reload */
+    $(".co-person-wrapper-@(Dnn.Module.ModuleID) .co-person").syncHeightResponsive();
+</script>

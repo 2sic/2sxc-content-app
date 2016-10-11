@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-06T17:56:39.5387539+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-11T17:56:25.7847571+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -584,6 +584,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -619,6 +620,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-wysiwyg" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -663,6 +665,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -764,6 +767,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -799,6 +803,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -843,6 +848,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1011,6 +1017,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1046,6 +1053,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1275,6 +1283,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1310,6 +1319,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1370,6 +1380,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1411,6 +1422,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1468,6 +1480,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1879,6 +1892,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1914,6 +1928,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1949,6 +1964,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1981,6 +1997,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2013,6 +2030,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2048,6 +2066,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2108,6 +2127,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-wysiwyg" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2169,6 +2189,11 @@
             <Value Key="ValidationAutomatic" Value="" Type="String" />
             <Value Key="WysiwygHeight" Value="" Type="Number" />
             <Value Key="WysiwygWidth" Value="" Type="Number" />
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="86f17af2-a0da-4bf1-beaf-4d9114fc28b6" KeyNumber="527">
+            <Value Key="DropdownValues" Value="1:1&#xA;2:2&#xA;3:3&#xA;4:4&#xA;5:5&#xA;6:6&#xA;7:7&#xA;8:8&#xA;9:9&#xA;10:10&#xA;11:11&#xA;12:12&#xA;13:13&#xA;14:14&#xA;15:15&#xA;16:16&#xA;17:17&#xA;18:18" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
       </Attributes>
@@ -2304,6 +2329,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-dropdown" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2320,6 +2346,14 @@
             <Value Key="ValidationAutomatic" Value="" Type="String" />
             <Value Key="WysiwygHeight" Value="" Type="Number" />
             <Value Key="WysiwygWidth" Value="" Type="Number" />
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="c72a4e84-e2af-44e6-b8b1-cb41ad358ed1" KeyNumber="531">
+            <Value Key="DropdownValues" Value="Heading 1:h1&#xA;Heading 2:h2&#xA;Heading 3:h3&#xA;Hide:hide" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DropdownValues" Value="Überschrift Ebene 1:h1&#xA;Überschrift Ebene 2:h2&#xA;Überschrift Ebene 3:h3&#xA;Ausblenden:hide" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
         <Attribute StaticName="ImageLightbox" Type="Boolean" IsTitle="false">
@@ -2348,6 +2382,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="boolean-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2380,6 +2415,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="boolean-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2416,6 +2452,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2455,6 +2492,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2490,6 +2528,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2695,8 +2734,7 @@
       <Value Key="Name" Value="Bild volle Breite" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Image-FullWidth.cshtml" Type="String" />
-      <Value Key="Path" Value="DefaultTemplates/_Image-FullWidth.cshtml" Type="String">
+      <Value Key="Path" Value="_Image - Full Width.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
@@ -2745,7 +2783,7 @@
       <Value Key="Name" Value="Kopfbild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Header-Header.cshtml" Type="String">
+      <Value Key="Path" Value="_Header - Header.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="23d0ac6a-09f2-41bd-98a0-3ff63ef32eee" Type="String">
@@ -2794,7 +2832,7 @@
       <Value Key="Name" Value="Liste mit Dokumenten oder Links" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_DocumentsAndLinks-List.cshtml" Type="String">
+      <Value Key="Path" Value="_Documents And Links - List.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="8b924a0c-2c6e-4ae6-b920-8b44f2f0e103" Type="String">
@@ -2843,7 +2881,7 @@
       <Value Key="Name" Value="Nur Text" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content-TextOnly.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text Only.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -2892,7 +2930,7 @@
       <Value Key="Name" Value="Text mit Bild links" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content-TextWithImageLeft.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text With Image Left.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -2941,7 +2979,7 @@
       <Value Key="Name" Value="Text mit Bild rechts" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content-TextWithImageRight.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text With Image Right.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -2990,7 +3028,7 @@
       <Value Key="Name" Value="Kontaktperson" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Person-Contact.cshtml" Type="String">
+      <Value Key="Path" Value="_Person - Contact.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="09ad77bb-66e8-4a1c-92ac-27253afb251d" Type="String">
@@ -3039,7 +3077,7 @@
       <Value Key="Name" Value="Kontaktperson ohne Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Person-Contact-NoImage.cshtml" Type="String">
+      <Value Key="Path" Value="_Person - Contact No Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="09ad77bb-66e8-4a1c-92ac-27253afb251d" Type="String">
@@ -3088,7 +3126,7 @@
       <Value Key="Name" Value="Karte" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Location-Map.cshtml" Type="String">
+      <Value Key="Path" Value="_Location - Map.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9a190ef8-aef5-4695-b26e-d1147e4526cf" Type="String">
@@ -3137,7 +3175,7 @@
       <Value Key="Name" Value="Linkblock" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_LinkLarge-ContentNavigation.cshtml" Type="String">
+      <Value Key="Path" Value="_Link Large - Content Navigation.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
@@ -3186,7 +3224,7 @@
       <Value Key="Name" Value="Youtube Video volle Breite" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_YoutubeVideo-FullWidth.cshtml" Type="String">
+      <Value Key="Path" Value="_Youtube Video - Full Width.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="b3957ce5-847e-4191-b98a-550d1b9f838c" Type="String">
@@ -3243,7 +3281,7 @@
       <Value Key="Name" Value="Trennlinie" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_SeparatingLine-SeparatingLine.cshtml" Type="String">
+      <Value Key="Path" Value="_Separating Line - Separating Line.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="93714840-bb10-442d-b290-7d8a7b005dc0" Type="String">
@@ -3292,7 +3330,7 @@
       <Value Key="Name" Value="Linkblock mit Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_LinkLarge-ContentNavigationWithImage.cshtml" Type="String">
+      <Value Key="Path" Value="_Link Large - Content Navigation With Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
@@ -3397,7 +3435,7 @@
       <Value Key="Name" Value="Kontaktdaten mit Karte" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Contact-Map.cshtml" Type="String">
+      <Value Key="Path" Value="_Contact - Map.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="3168c0b7-c5b9-4aa8-9ada-773890339e58" Type="String">
@@ -3446,7 +3484,7 @@
       <Value Key="Name" Value="Kopfbild hoch" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Header-HeaderTall.cshtml" Type="String">
+      <Value Key="Path" Value="_Header - Header Tall.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="23d0ac6a-09f2-41bd-98a0-3ff63ef32eee" Type="String">
@@ -3506,7 +3544,7 @@
       <Value Key="Name" Value="2 Bilder nebeneinander" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Image-2imgCol.cshtml" Type="String">
+      <Value Key="Path" Value="_Image - 2 Img Col.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
@@ -3840,7 +3878,7 @@
       <Value Key="Name" Value="Text mit Bild links (25/75)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content-TextWithImageLeft2575.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text With Image Left 25-75.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -3889,7 +3927,7 @@
       <Value Key="Name" Value="Text mit Bild rechts (75/25)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content-TextWithImageRight7525.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text With Image Right 75-25.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -3938,7 +3976,7 @@
       <Value Key="Name" Value="Nur Text (Mitte)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content-TextOnlyMiddle.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text Only Middle.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -4036,7 +4074,7 @@
       <Value Key="Name" Value="Content navigation with icon" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_LinkIcon-ContentNavigation.cshtml" Type="String">
+      <Value Key="Path" Value="_Link Icon - Content Navigation.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="8325844b-129f-435d-a781-cb206f942778" Type="String">
@@ -4082,7 +4120,7 @@
       <Value Key="Name" Value="Button" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_LinkIcon-Button.cshtml" Type="String">
+      <Value Key="Path" Value="_Link Icon - Button.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="8325844b-129f-435d-a781-cb206f942778" Type="String">
@@ -4126,11 +4164,11 @@
     </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="420" RelativePath="2sxc/Content/demo-pics/Demo-2.jpg" />
-    <File Id="419" RelativePath="2sxc/Content/demo-pics/Demo-1.jpg" />
+    <File Id="420" RelativePath="demo-pics/Demo-2.jpg" />
+    <File Id="419" RelativePath="demo-pics/Demo-1.jpg" />
   </PortalFiles>
   <PortalFolders>
-    <Folder Id="352" RelativePath="2sxc/Content/demo-pics/" />
+    <Folder Id="352" RelativePath="demo-pics/" />
     <Folder Id="285" RelativePath="adam/Content/" />
   </PortalFolders>
 </SexyContent>
