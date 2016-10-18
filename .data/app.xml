@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-11T17:56:25.7847571+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-18T21:24:53.1241384+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -665,7 +665,6 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -683,7 +682,7 @@
             <Value Key="ShowFileManager" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Paths" Value="" Type="String">
+            <Value Key="Paths" Value="/" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="DefaultDialog" Value="ImageManager" Type="String">
@@ -970,7 +969,7 @@
             <Value Key="ShowFileManager" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Paths" Value="" Type="String">
+            <Value Key="Paths" Value="/" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="DefaultDialog" Value="" Type="String">
@@ -1053,7 +1052,6 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1071,13 +1069,13 @@
             <Value Key="ShowFileManager" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Paths" Value="" Type="String">
+            <Value Key="Paths" Value="/" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="DefaultDialog" Value="ImageManager" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="FileFilter" Value="*.jpg,*.jpeg" Type="String">
+            <Value Key="FileFilter" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="ShowAdam" Value="True" Type="Boolean">
@@ -1319,7 +1317,6 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1337,7 +1334,7 @@
             <Value Key="ShowFileManager" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Paths" Value="" Type="String">
+            <Value Key="Paths" Value="/" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="DefaultDialog" Value="ImageManager" Type="String">
@@ -2066,7 +2063,6 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2084,13 +2080,13 @@
             <Value Key="ShowFileManager" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Paths" Value="" Type="String">
+            <Value Key="Paths" Value="/" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="DefaultDialog" Value="ImageManager" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="FileFilter" Value="*.jpg,*.jpeg" Type="String">
+            <Value Key="FileFilter" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="ShowAdam" Value="True" Type="Boolean">
@@ -2574,7 +2570,7 @@
       <Value Key="Title" Value="Neues Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:420" Type="Hyperlink">
+      <Value Key="Image" Value="file:523" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -2602,13 +2598,13 @@
       <Value Key="Title" Value="Neuer Inhalt" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Edit the content&amp;nbsp;with the pencil icon.&lt;/p&gt;" Type="String">
+      <Value Key="Text" Value="&lt;p&gt;Click the pencil-icon to edit content. This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Ein neues Inhaltselement, das Sie bearbeiten k&amp;ouml;nnen.&lt;/p&gt;" Type="String">
+      <Value Key="Text" Value="&lt;p&gt;Dies ist nur Demo-Inhalt.&amp;nbsp;This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:419" Type="Hyperlink">
+      <Value Key="Image" Value="file:523" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ImageCaption" Value="" Type="String">
@@ -2637,7 +2633,7 @@
       <Value Key="Email" Value="max.muster@example.com" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Photo" Value="file:420" Type="Hyperlink">
+      <Value Key="Photo" Value="file:524" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="" Type="String">
@@ -2697,7 +2693,7 @@
       <Value Key="Title" Value="Neuer Text-Block" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:419" Type="Hyperlink">
+      <Value Key="Image" Value="file:524" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="Edit the content navigation with the pencil icon." Type="String">
@@ -2762,7 +2758,7 @@
       <Value Key="Location" Value="Portal File System" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="UseForList" Value="False" Type="Boolean">
+      <Value Key="UseForList" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
@@ -2832,7 +2828,7 @@
       <Value Key="Name" Value="Liste mit Dokumenten oder Links" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Documents And Links - List.cshtml" Type="String">
+      <Value Key="Path" Value="_Documents and Links - List.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="8b924a0c-2c6e-4ae6-b920-8b44f2f0e103" Type="String">
@@ -2881,7 +2877,7 @@
       <Value Key="Name" Value="Nur Text" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content - Text Only.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text only.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -2924,13 +2920,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="f7045144-1f69-4cad-bea1-a3fb5cb5a1e9">
-      <Value Key="Name" Value="Text with image left" Type="String">
+      <Value Key="Name" Value="Image / text" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild links" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content - Text With Image Left.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Image text.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -2973,13 +2969,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="e5373cba-a864-426b-9e30-51ddc4369983">
-      <Value Key="Name" Value="Text with image right" Type="String">
+      <Value Key="Name" Value="Text / image" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild rechts" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content - Text With Image Right.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -3077,7 +3073,7 @@
       <Value Key="Name" Value="Kontaktperson ohne Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Person - Contact No Image.cshtml" Type="String">
+      <Value Key="Path" Value="_Person - Contact no Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="09ad77bb-66e8-4a1c-92ac-27253afb251d" Type="String">
@@ -3284,10 +3280,10 @@
       <Value Key="Path" Value="_Separating Line - Separating Line.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ContentTypeStaticName" Value="93714840-bb10-442d-b290-7d8a7b005dc0" Type="String">
+      <Value Key="ContentTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ContentDemoEntity" Value="d9f6c2ac-267e-4ae7-a3ec-504b3a592394" Type="Entity" />
+      <Value Key="ContentDemoEntity" Value="" Type="Entity" />
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -3330,7 +3326,7 @@
       <Value Key="Name" Value="Linkblock mit Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Link Large - Content Navigation With Image.cshtml" Type="String">
+      <Value Key="Path" Value="_Link Large - Content Navigation with Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
@@ -3429,7 +3425,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="b03c6df0-e36c-4ba9-951a-dfd14e2eda5f">
-      <Value Key="Name" Value="Contact with map" Type="String">
+      <Value Key="Name" Value="Address with map" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Kontaktdaten mit Karte" Type="String">
@@ -3533,7 +3529,7 @@
       <Value Key="Title" Value="Neues Kopfbild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:420" Type="Hyperlink">
+      <Value Key="Image" Value="file:523" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -3690,7 +3686,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="cb492860-4f4b-4841-90bb-15107d97baf5" KeyString="3168c0b7-c5b9-4aa8-9ada-773890339e58">
-      <Value Key="Label" Value="Contact details" Type="String">
+      <Value Key="Label" Value="Address" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Kontaktdaten" Type="String">
@@ -3742,7 +3738,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="29600e3b-8a08-474e-8c5e-6f8c6a2b581d" KeyString="36ab91f9-8388-4728-9bee-62ac898300a3">
-      <Value Key="Label" Value="Content navigation" Type="String">
+      <Value Key="Label" Value="Link(s) with optional image" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Linkblock" Type="String">
@@ -3872,13 +3868,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="c7af4d82-6ec3-4507-95bd-c8c7962b7925">
-      <Value Key="Name" Value="Text with image left 25/75" Type="String">
+      <Value Key="Name" Value="Image / text 1:2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild links (25/75)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content - Text With Image Left 25-75.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Image text 1-2.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -3921,13 +3917,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="9ca85606-0730-4ca8-ba02-44ad5fb6992b">
-      <Value Key="Name" Value="Text with image right 75/25" Type="String">
+      <Value Key="Name" Value="Text / image 2:1" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild rechts (75/25)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content - Text With Image Right 75-25.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text image 2-1.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -3970,13 +3966,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="5eb3c3fb-c51d-45f3-b0d7-9e27eb5d1ccf">
-      <Value Key="Name" Value="Text only (middle)" Type="String">
+      <Value Key="Name" Value="Text only - emphasized" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Nur Text (Mitte)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Content - Text Only Middle.cshtml" Type="String">
+      <Value Key="Path" Value="_Content - Text only emphasized.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
@@ -4019,7 +4015,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="e0b3d3c6-7e55-4d1c-9f1a-7bd35d00493a" KeyString="8325844b-129f-435d-a781-cb206f942778">
-      <Value Key="Label" Value="Content navigation with icon" Type="String">
+      <Value Key="Label" Value="Link(s) with icon" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Linkblock mit Icon" Type="String">
@@ -4164,11 +4160,11 @@
     </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="420" RelativePath="demo-pics/Demo-2.jpg" />
-    <File Id="419" RelativePath="demo-pics/Demo-1.jpg" />
+    <File Id="523" RelativePath="2sxc/Content/demo-pics/image-1.jpg" />
+    <File Id="524" RelativePath="2sxc/Content/demo-pics/image-2.jpg" />
   </PortalFiles>
   <PortalFolders>
-    <Folder Id="352" RelativePath="demo-pics/" />
+    <Folder Id="352" RelativePath="2sxc/Content/demo-pics/" />
     <Folder Id="285" RelativePath="adam/Content/" />
   </PortalFolders>
 </SexyContent>
