@@ -1,9 +1,6 @@
-$grid-gutter-width: 30px;
-$brand-primary: #337ab7;
-$text-color: #333;
-$gray-light: #eee;
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
+
+@import "variables.scss";
+// @import "../../../_default/skins/2sxc-bootstrap-skin/src/variables.scss";
 
 @media all {
 	/* Header */
