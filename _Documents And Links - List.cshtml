@@ -5,14 +5,13 @@
 }
 
 <ul class="co-documents">
-    @foreach (var e in List)
+    @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var Content = e.Content;
         var linkType = fileExtensions.Contains(System.IO.Path.GetExtension(Content.DocumentOrLink.ToLower())) ? "file" : 
             Content.DocumentOrLink.Contains(Dnn.Portal.PortalAlias.HTTPAlias) ? "internal" : "external";
         
         <li class="sc-element co-document">
-            @Content.Toolbar
+            @Edit.Toolbar(Content)
             <a target="@(linkType == "internal" ? "_self" : "_blank")" href="@Content.DocumentOrLink" title="@Content.Title">
                 <span class="pull-left glyphicon glyphicon-@(linkType == "file" ? "file" : "new-window")"></span>
                 <div class="co-document-text">

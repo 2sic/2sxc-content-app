@@ -3,11 +3,10 @@
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
 <div class="row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-icon co-navigation-text">
-    @foreach (var e in List)
+    @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var Content = e.Content;
         <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
-            @Content.Toolbar
+            @Edit.Toolbar(Content)
             @if(!String.IsNullOrEmpty(Content.Link))
             {
                 @:<a class="co-link-box" title="@Content.Title" href="@Content.Link">

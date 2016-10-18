@@ -16,6 +16,9 @@
   .co-navigation.co-navigation-image a span.glyphicon {
     font-size: .6em;
     margin-right: .2em; }
+  .co-navigation.co-navigation-image .co-img-placeholder {
+    background: #337ab7;
+    padding-bottom: 50%; }
   .co-navigation img {
     width: 100%; }
   .co-navigation .col {

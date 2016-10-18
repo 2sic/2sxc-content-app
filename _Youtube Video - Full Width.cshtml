@@ -4,7 +4,7 @@
     var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
 }
 <div class="co-youtube-video-wrapper sc-element">
-	@Content.Toolbar
+	@Edit.Toolbar(Content)
 	<div class="embed-responsive embed-responsive-16by9 sc-element">
 		@if (videoId.Groups.Count > 1)
 		{

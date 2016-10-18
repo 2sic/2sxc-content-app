@@ -5,13 +5,12 @@
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
 <div class="co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg row">
-    @foreach (var Element in List)
-    {	
-		var Content = Element.Content;
+    @foreach (var Content in AsDynamic(Data["Default"]))
+    {
 		<div class="col col-sm-6 sc-element">
-			@Content.Toolbar
+			@Edit.Toolbar(Content)
 			@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
-				@:<a title="@(Presentation.TitleLightbox ? Content.Title : "")" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
+				@:<a title="@(Presentation.TitleLightbox ? Content.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
 			}
 			<img class="img-responsive" src="@Content.Image?w=720" alt="@Content.Title" />
 			@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {

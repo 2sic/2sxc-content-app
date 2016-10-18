@@ -3,11 +3,10 @@
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
 <div class="co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID) row">
-    @foreach (var Element in List)
+    @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var Content = Element.Content;
-        <div class="sc-element co-person co-person-2-@(List.IndexOf(Element) % 2) col-sm-6">
-            @Content.Toolbar
+        <div class="sc-element co-person col-sm-6">
+            @Edit.Toolbar(Content)
             
 			<div class="row">
 				<div class="co-person-image col-xs-4">

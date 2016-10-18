@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 
 <div class="clearfix sc-element co-content co-content-text-only ly-margin-bottom">
-    @Content.Toolbar
+    @Edit.Toolbar(Content)
     @if(Presentation.HeadingType != "hide")
     {
         @Html.Raw("<" + Presentation.HeadingType + ">")

@@ -1,5 +1,5 @@
 <div class="co-button-wrapper text-center sc-element">
-    @Content.Toolbar
+    @Edit.Toolbar(Content)
     <div class="co-title">
         @if(Presentation.HeadingType != "hide")
         {
@@ -11,6 +11,6 @@
         }
     </div>
     @if(!String.IsNullOrEmpty(@Content.Link)) {
-        <a class="btn btn-primary" href="@Content.Link"><i class="glyphicon glyphicon-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;@Content.LinkText</a>
+        <a class="btn btn-primary" href="@Content.Link"><i class="glyphicon @Content.Icon co-icon" aria-hidden="true"></i>&nbsp;&nbsp;@Content.LinkText</a>
     }
 </div>

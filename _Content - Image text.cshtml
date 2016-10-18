@@ -3,23 +3,24 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
-<div class="clearfix sc-element co-content co-content-image-right ly-margin-bottom row">
-    @Content.Toolbar
-	<div class="col-sm-6">
-	<div class="co-content-heading">
-		@if(Presentation.HeadingType != "hide")
-		{
+<div class="clearfix sc-element co-content co-content-image-left ly-margin-bottom row">
+    @Edit.Toolbar(Content)
+	<div class="col-sm-6 col-sm-push-6">
+	@if(Presentation.HeadingType != "hide")
+    {
+		<div class="co-content-heading">
 			@Html.Raw("<" + Presentation.HeadingType + ">")
 				@Content.Title
 			@Html.Raw("</" + Presentation.HeadingType + ">")
-		}
-	</div>
+		</div>
+    }
 	<div class="co-text">
 		@Html.Raw(Content.Text)
 	</div>
 	</div>
-	<div class="col-sm-6">
-    @if(!String.IsNullOrEmpty(Content.Image)) {
+	<div class="col-sm-6 col-sm-pull-6">
+    @if (!String.IsNullOrEmpty(Content.Image))
+    {
         if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
 			var titel="";
 			if(Presentation.TitleLightbox){

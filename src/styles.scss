@@ -37,6 +37,10 @@ $screen-md-min: 992px;
 				font-size: .6em;
 				margin-right: .2em
 			}
+			.co-img-placeholder {
+				background: $brand-primary;
+				padding-bottom: 50%;
+			}
 		}
 		img {
 			width: 100%;
