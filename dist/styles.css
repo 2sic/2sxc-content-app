@@ -112,7 +112,12 @@
     word-wrap: break-word; }
   .co-person-placeholder {
     background: #eee;
-    padding-bottom: 128%; } }
+    padding-bottom: 128%; }
+  .co-person-image-rounded img {
+    border-radius: 50%; }
+  .co-person-image-rounded .co-person-placeholder {
+    border-radius: 50%;
+    padding-bottom: 100%; } }
 
 @media all and (max-width: 430px) {
   .co-person-wrapper .co-person-image {

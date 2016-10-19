@@ -157,6 +157,15 @@
 		background: $gray-light;
 		padding-bottom: 128%;
 	}
+	.co-person-image-rounded {
+		img {
+			border-radius: 50%;
+		}
+		.co-person-placeholder {
+			border-radius: 50%;
+			padding-bottom: 100%;
+		}
+	}
 	@media all and (max-width:430px) { 
 		.co-person-wrapper .co-person-image { width: 50%; margin-bottom: 15px;  padding-right: 19px; }
 		.co-person-wrapper .co-person-text {width: 100%;}

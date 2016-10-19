@@ -1,0 +1,1 @@
+{"version":3,"file":"variables.css","sources":["variables.scss"],"sourcesContent":["$grid-gutter-width: 30px;\r\n$brand-primary: #337ab7;\r\n$text-color: #333;\r\n$gray-light: #eee;\r\n$screen-sm-min: 768px;\r\n$screen-md-min: 992px;"],"mappings":"","names":[],"sourceRoot":"../src/"}

@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+<script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>
+<script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
+
+<div class="co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID) row">
+    @foreach (var Content in AsDynamic(Data["Default"]))
+    {
+        <div class="sc-element co-person col-sm-6">
+            @Edit.Toolbar(Content)
+            
+			<div class="row">
+				<div class="co-person-image co-person-image-rounded col-xs-4">
+					@if (!String.IsNullOrEmpty(Content.Photo))
+					{
+						<img src="@Content.Photo?w=379&amp;h=379&amp;mode=crop" alt="@Content.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
+					}
+					else
+					{
+						<div class="co-person-placeholder"></div>
+					}
+				</div>
+
+				<div class="co-person-text col-xs-8" itemscope itemtype="http://schema.org/Person">
+					<div class="co-p">
+					<strong itemprop="name">@Content.FullName</strong><br />
+					@if (!String.IsNullOrEmpty(Content.Position))
+					{
+						<span itemprop="jobTitle">@Content.Position</span><br />
+					}
+					</div>
+					<div class="co-p">
+					@if (!String.IsNullOrEmpty(Content.Email))
+					{
+						var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(Content.Email);
+						<div itemprop="email">
+						@if(isValid){
+							var madr = Content.Email.Split('@');
+							var madrSuf = new System.Text.RegularExpressions.Regex("\\.([^\\.]+)$").Split(madr[1]);
+							<span class="glyphicon glyphicon-envelope"></span> <span data-madr1="@madr[0]" data-madr2="@madrSuf[0]" data-madr3="@madrSuf[1]"></span><br/>
+						} else {
+							<span class="glyphicon glyphicon-envelope"></span> <span>@Content.Email</span>
+						}
+						</div>
+					}
+					@if (!String.IsNullOrEmpty(Content.Mobile))
+					{
+						<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@Content.Mobile.Replace(" ", "")" itemprop="telephone">@Content.Mobile</a><br />
+					}
+					@if (!String.IsNullOrEmpty(Content.Phone))
+					{
+						<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@Content.Phone.Replace(" ", "")" itemprop="telephone">@Content.Phone</a><br />
+					}
+					</div>
+					<div itemprop="description">
+						@Html.Raw((string)Content.Description)
+					</div>
+				</div>
+			</div>
+        </div>
+    }
+</div>
+
+<script>
+    /* Call syncHeightResponsive here - makes sure that sync height also works after ajax reload */
+    $(".co-person-wrapper-@(Dnn.Module.ModuleID) .co-person").syncHeightResponsive();
+</script>
