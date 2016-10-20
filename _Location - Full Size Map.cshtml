@@ -8,7 +8,10 @@
 		</div>
 		<div class="co-google-map-content" id="GoogleMap-Content-@Dnn.Module.ModuleID" style="display:none;">
 			<div>
-				@Html.Raw(Content.Description)
+				<strong>@Content.Company</strong>
+				<div>
+					@Html.Raw(Content.Description)
+				</div>
 				@{
 					var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=de&amp;ie=UTF8&amp;z=16";
 					if (Convert.ToInt32(Content.GPSLng) > 0){
