@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+<script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
 <div class="sc-element">
 	@Edit.Toolbar(Content)
@@ -9,7 +10,7 @@
 			<div>
 				@Html.Raw(Content.Description)
 				@{
-					var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCity.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=de&amp;ie=UTF8&amp;z=16";
+					var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=de&amp;ie=UTF8&amp;z=16";
 					if (Convert.ToInt32(Content.GPSLng) > 0){
 						directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
 					}
