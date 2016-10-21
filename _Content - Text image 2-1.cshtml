@@ -15,22 +15,7 @@
 	</div>
 	</div>
 	<div class="col-sm-4">
-	@if(!String.IsNullOrEmpty(Content.Image)) {
-		if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
-			var titel="";
-			if(Presentation.TitleLightbox){
-				if(!String.IsNullOrEmpty(Content.ImageCaption)){
-					titel=Content.ImageCaption;
-				} else {
-					titel=Content.Title;
-				}
-			}
-			@:<a title="@titel" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
-		}
-		<img class="co-content-image" src="@Content.Image?w=555" alt="@Content.Title" />
-		if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
-			@:</a>
-		}
-	}
+		@* call sub-template to show the image with all possible options *@
+		@RenderPage("_Content - Shared part - image with Lightbox.cshtml", new { width = 555 })
 	</div>
 </div>
