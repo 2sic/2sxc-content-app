@@ -1,3 +1,6 @@
+@*
+	todo: review extract mail-link - why some with itemprop, others without?
+*@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
@@ -16,6 +19,11 @@
                 }
 				@if (!String.IsNullOrEmpty(Content.Email))
 				{
+                    <div itemprop="email">
+                        <span class="glyphicon glyphicon-envelope"></span> 
+                        @RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Email })
+                    </div>
+@*
 					var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(Content.Email);
 					if(isValid){
 						var madr = Content.Email.Split('@');
@@ -24,6 +32,7 @@
 					} else {
 						<span class="glyphicon glyphicon-envelope"></span> <span>@Content.Email</span>
 					}
+*@
 				}
 				@if (!String.IsNullOrEmpty(Content.Mobile))
                 {
