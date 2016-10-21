@@ -9,28 +9,28 @@
 <div class="row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-icon co-navigation-text">
     @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var LinkType = Helpers.LinkType(Content);
+        var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
 
         <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
             @Edit.Toolbar(Content)
-            @if(LinkType != "none")
+            @if(linkInfo.Found)
             {
-                @:<a class="co-link-box" title="@Content.Title" href="@Content.Link" target="@(Content.Window != "auto" ? Content.Window : (LinkType == "internal" ? "_self" : "_blank"))">
+                @:<a class="co-link-box" title="@Content.Title" href="@Content.Link" target="@linkInfo.Window">
             }
                 <div class="row">
                     <div class="col-xs-2 text-center">
-                        <i class="co-icon text-primary co-icon glyphicon @(!String.IsNullOrEmpty(Content.Icon) ? Content.Icon : (LinkType == "file" ? "glyphicon-file" : "glyphicon-new-window"))" aria-hidden="true"></i>
+                        <i class="co-icon text-primary co-icon glyphicon @linkInfo.Icon" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-10">
                         <h3>@Content.Title</h3>
-                        <p>@Html.Raw(HttpUtility.HtmlEncode(Content.Description).Replace("\n", "<br />"))</p>
+                        <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
                         @if(!String.IsNullOrEmpty(Content.Link))
                         {
                             <span class="text-primary"><i class="glyphicon glyphicon-chevron-right text-primary" aria-hidden="true"></i>&nbsp;@Content.LinkText</span>
                         }
                     </div>
                 </div>
-            @if(LinkType != "none")
+            @if(linkInfo.Found)
             {
                 @:</a>
             }

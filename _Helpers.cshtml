@@ -3,16 +3,52 @@
 
 @functions {
 
-    private dynamic Content;
-	
-	public string LinkType(dynamic c) {
-        Content = c;
-        if(!String.IsNullOrEmpty(Content.Link)){
-            var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
-            var ContentLinkType = fileExtensions.Contains(System.IO.Path.GetExtension(Content.Link.ToLower())) ? "file" : 
-                Content.Link.Contains(Dnn.Portal.PortalAlias.HTTPAlias) || Content.Link == "/" || Content.Link == "#" ? "internal" : "external";
-            return ContentLinkType;
+    // convert \n line breaks to <br>s
+    public System.Web.IHtmlString ConvertLineBreaks(string original) {
+        return Html.Raw(HttpUtility.HtmlEncode(original).Replace("\n", "<br />"));
+    }
+
+    // check a link, prepare target window, icon etc.
+	public dynamic LinkInfos(string link, string window, string icon) {
+        var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
+        
+        // this will contain the result
+        IDictionary<string, object> expando = new ExpandoObject();
+
+        // found something?
+        var found = !String.IsNullOrEmpty(link);
+        expando.Add("Found", found);
+
+        // setup remaining properties
+        if(found) {
+            expando.Add("Extension", System.IO.Path.GetExtension(link.ToLower()));
+            var isDoc = fileExtensions.Contains(expando["Extension"]);
+            
+            // try to find out if it's a local link
+            var isInternal = link.Contains(Dnn.Portal.PortalAlias.HTTPAlias) 
+                || link.StartsWith("/") 
+                || link.StartsWith("#")
+                || link.StartsWith(".");
+            
+            expando.Add("IsDoc", isDoc);
+
+            // optionally auto-detect icon
+            if(String.IsNullOrEmpty(icon))
+                icon = isDoc 
+                    ? "glyphicon-file" 
+                    : (isInternal 
+                        ? "glyphicon-triangle-right" 
+                        : "glyphicon-new-window");
+            expando.Add("Icon", icon);
+
+            // optionally auto-detect the window
+            if(String.IsNullOrEmpty(window) || window == "auto")
+                window = isInternal && !isDoc ? "_self" : "_blank";
+            expando.Add("Window", window);
         }
-        return "none";
+
+        return expando;
 	}
+
+
 }

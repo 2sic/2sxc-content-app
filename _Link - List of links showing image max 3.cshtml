@@ -1,3 +1,6 @@
+@*
+	todo: why do we use a triangle here, but not in the other template without pic?
+*@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
@@ -9,13 +12,13 @@
 <div class="row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-image">
     @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var LinkType = Helpers.LinkType(Content);
-		
+        var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+
 		<div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
 			@Edit.Toolbar(Content)
-			@if(LinkType != "none")
+			@if(linkInfo.Found)
                 {
-					@:<a target="@(Content.Window != "auto" ? Content.Window : (LinkType == "internal" ? "_self" : "_blank"))" class="co-link-box" title="@Content.Title" href="@Content.Link">
+					@:<a target="@linkInfo.Window" class="co-link-box" title="@Content.Title" href="@Content.Link">
 				}
 				<div class="co-img-wrapper">
 					@if(!String.IsNullOrEmpty(Content.Image))
@@ -28,9 +31,9 @@
 				<h3>@Content.Title</h3>
 				@if(!String.IsNullOrEmpty(Content.Description))
 				{
-					<p>@Html.Raw(HttpUtility.HtmlEncode(Content.Description).Replace("\n", "<br />"))</p>
+					<p>@Helpers.ConvertLineBreaks(Content.Description)</p>
 				}
-                @if(LinkType != "none")
+                @if(linkInfo.Found)
                 {
 					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span><span class="co-link">@Content.LinkText</span>
 					@:</a>

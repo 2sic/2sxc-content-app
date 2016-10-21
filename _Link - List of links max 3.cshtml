@@ -9,15 +9,15 @@
 <div class="row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
     @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var LinkType = Helpers.LinkType(Content);
-        
+        var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+
         <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
             @Edit.Toolbar(Content)
             <h3>@Content.Title</h3>
-            <p>@Html.Raw(HttpUtility.HtmlEncode(Content.Description).Replace("\n", "<br />"))</p>
-            @if(LinkType != "none")
+            <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
+            @if(linkInfo.Found)
             {
-                <a target="@(Content.Window != "auto" ? Content.Window : (LinkType == "internal" ? "_self" : "_blank"))" title="@Content.Title" href="@Content.Link">&raquo; @Content.LinkText</a>
+                <a target="@linkInfo.Window" title="@Content.Title" href="@Content.Link">&raquo; @Content.LinkText</a>
             }
         </div>
     }

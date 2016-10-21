@@ -1,8 +1,12 @@
+@*
+    todo: centralize title with heading-template to use content-template?
+
+*@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 
 @{
     var Helpers = CreateInstance("_Helpers.cshtml");
-    var LinkType = Helpers.LinkType(Content);
+    var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
 }
 
 <div class="co-button-wrapper text-center sc-element">
@@ -17,12 +21,12 @@
             @Html.Raw("</" + Presentation.HeadingType + ">")
         }
     </div>
-    @if(LinkType != "none") {
+    @if(linkInfo.Found) {
         <a 
-        target="@(Content.Window != "auto" ? Content.Window : (LinkType == "internal" ? "_self" : "_blank"))"
+        target="@linkInfo.Window"
         class="btn btn-primary"
         href="@Content.Link">
-            <i class="co-icon glyphicon @(!String.IsNullOrEmpty(Content.Icon) ? Content.Icon : (LinkType == "file" ? "glyphicon-file" : "glyphicon-new-window"))" aria-hidden="true"></i>
+            <i class="co-icon glyphicon @linkInfo.Icon" aria-hidden="true"></i>
             @Content.LinkText
         </a>
     }

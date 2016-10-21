@@ -1,3 +1,6 @@
+@*
+    todo: show risk 
+*@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 
 @{
@@ -8,18 +11,20 @@
 <ul class="co-documents row">
     @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var LinkType = Helpers.LinkType(Content);
+        var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+
         <li class="sc-element co-document col-md-12">
             @Edit.Toolbar(Content)
-            @if(LinkType != "none"){
-                @:<a target="@(Content.Window != "auto" ? Content.Window : (LinkType == "internal" ? "_self" : "_blank"))" href="@Content.Link" title="@Content.Title">
+            @if(linkInfo.Found){
+                @:<a target="@linkInfo.Window" href="@Content.Link" title="@Content.Title">
             }
-                <span class="pull-left glyphicon @(!String.IsNullOrEmpty(Content.Icon) ? Content.Icon : (LinkType == "file" ? "glyphicon-file" : "glyphicon-new-window"))"></span>
+                <span class="pull-left glyphicon @linkInfo.Icon"></span>
                 <div class="co-document-text">
-                    <span class="@(LinkType != "none" ? "co-link" : "")">@Content.Title</span>
-                    <p>@Html.Raw(Content.Description.Replace("\n","<br/>"))</p>
+                    <span class="@(linkInfo.Found ? "co-link" : "")">@Content.Title</span>
+                    <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
+@* demo of bug                    <p>@Html.Raw(Content.Description.Replace("\n","<br/>"))</p> *@
                 </div>
-            @if(LinkType != "none"){
+            @if(linkInfo.Found){
                 @:</a>
             }
         </li>
