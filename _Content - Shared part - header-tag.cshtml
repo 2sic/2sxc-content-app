@@ -1,0 +1,12 @@
+@* 
+    this is a partial template which is re-used in many other templates, 
+    so it's shared here  
+*@
+@if(Presentation.HeadingType != "hide")
+{
+    <div class="co-content-heading">
+        @Html.Raw("<" + Presentation.HeadingType + ">")
+            @Content.Title
+        @Html.Raw("</" + Presentation.HeadingType + ">")
+    </div>
+}

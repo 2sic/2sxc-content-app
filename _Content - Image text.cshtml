@@ -6,14 +6,8 @@
 <div class="clearfix sc-element co-content co-content-image-left ly-margin-bottom row">
     @Edit.Toolbar(Content)
 	<div class="col-sm-6 col-sm-push-6">
-	@if(Presentation.HeadingType != "hide")
-    {
-		<div class="co-content-heading">
-			@Html.Raw("<" + Presentation.HeadingType + ">")
-				@Content.Title
-			@Html.Raw("</" + Presentation.HeadingType + ">")
-		</div>
-    }
+		@* call sub-template to show the title with the correct H1-H6 tag *@
+		@RenderPage("_Content - Shared part - header-tag.cshtml")
 	<div class="co-text">
 		@Html.Raw(Content.Text)
 	</div>
