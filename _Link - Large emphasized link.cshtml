@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+
+@{
+    var Helpers = CreateInstance("_Helpers.cshtml");
+    var LinkType = Helpers.LinkType(Content);
+}
+
 <div class="co-button-wrapper text-center sc-element">
     @Edit.Toolbar(Content)
     <div class="co-title">
@@ -10,7 +17,13 @@
             @Html.Raw("</" + Presentation.HeadingType + ">")
         }
     </div>
-    @if(!String.IsNullOrEmpty(@Content.Link)) {
-        <a class="btn btn-primary" href="@Content.Link"><i class="glyphicon @Content.Icon co-icon" aria-hidden="true"></i>&nbsp;&nbsp;@Content.LinkText</a>
+    @if(LinkType != "none") {
+        <a 
+        target="@(Content.Window != "auto" ? Content.Window : (LinkType == "internal" ? "_self" : "_blank"))"
+        class="btn btn-primary"
+        href="@Content.Link">
+            <i class="co-icon glyphicon @(!String.IsNullOrEmpty(Content.Icon) ? Content.Icon : (LinkType == "file" ? "glyphicon-file" : "glyphicon-new-window"))" aria-hidden="true"></i>
+            @Content.LinkText
+        </a>
     }
 </div>

@@ -99,7 +99,9 @@
 	/* Documents and Links */
 	
 	.co-documents {
-		list-style-type:none; margin:0;
+		list-style-type:none;
+		padding: 0;
+		
 		.co-document { 
 			.glyphicon { 
 				font-size:17px;
@@ -110,7 +112,6 @@
 				&, p { color:$text-color; text-decoration: none; }
 			}
 		}
-		li { margin:0; }
 		.co-document-text { margin-left:$grid-gutter-width; }
 	}
 		

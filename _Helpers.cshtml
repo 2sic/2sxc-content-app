@@ -1,0 +1,19 @@
+@using System.Dynamic
+@using System.IO
+@using Microsoft.Practices.ObjectBuilder2
+
+@functions {
+
+    private dynamic Content;
+	
+	public string LinkType(dynamic c) {
+        Content = c;
+        if(!String.IsNullOrEmpty(Content.Link)){
+            var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
+            var ContentLinkType = fileExtensions.Contains(System.IO.Path.GetExtension(Content.Link.ToLower())) ? "file" : 
+                Content.Link.Contains(Dnn.Portal.PortalAlias.HTTPAlias) || Content.Link == "/" || Content.Link == "#" ? "internal" : "external";
+            return ContentLinkType;
+        }
+        return "none";
+	}
+}

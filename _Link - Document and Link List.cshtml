@@ -1,24 +1,26 @@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 
 @{
-    var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
+    var Helpers = CreateInstance("_Helpers.cshtml");
 }
 
-<ul class="co-documents">
+<ul class="co-documents row">
     @foreach (var Content in AsDynamic(Data["Default"]))
     {
-        var linkType = fileExtensions.Contains(System.IO.Path.GetExtension(Content.DocumentOrLink.ToLower())) ? "file" : 
-            Content.DocumentOrLink.Contains(Dnn.Portal.PortalAlias.HTTPAlias) ? "internal" : "external";
-        
-        <li class="sc-element co-document">
+        var LinkType = Helpers.LinkType(Content);
+        <li class="sc-element co-document col-md-12">
             @Edit.Toolbar(Content)
-            <a target="@(linkType == "internal" ? "_self" : "_blank")" href="@Content.DocumentOrLink" title="@Content.Title">
-                <span class="pull-left glyphicon glyphicon-@(linkType == "file" ? "file" : "new-window")"></span>
+            @if(LinkType != "none"){
+                @:<a target="@(Content.Window != "auto" ? Content.Window : (LinkType == "internal" ? "_self" : "_blank"))" href="@Content.Link" title="@Content.Title">
+            }
+                <span class="pull-left glyphicon @(!String.IsNullOrEmpty(Content.Icon) ? Content.Icon : (LinkType == "file" ? "glyphicon-file" : "glyphicon-new-window"))"></span>
                 <div class="co-document-text">
-                    <span class="co-link">@Content.Title</span>
+                    <span class="@(LinkType != "none" ? "co-link" : "")">@Content.Title</span>
                     <p>@Html.Raw(Content.Description.Replace("\n","<br/>"))</p>
                 </div>
-            </a>
+            @if(LinkType != "none"){
+                @:</a>
+            }
         </li>
     }
 </ul>

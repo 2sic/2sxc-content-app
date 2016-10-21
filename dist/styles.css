@@ -56,7 +56,7 @@
   /* Documents and Links */
   .co-documents {
     list-style-type: none;
-    margin: 0; }
+    padding: 0; }
     .co-documents .co-document .glyphicon {
       font-size: 17px;
       line-height: 1.2em;
@@ -64,8 +64,6 @@
     .co-documents .co-document a, .co-documents .co-document a p, .co-documents .co-document a:link, .co-documents .co-document a:link p, .co-documents .co-document a:visited, .co-documents .co-document a:visited p {
       color: #333;
       text-decoration: none; }
-    .co-documents li {
-      margin: 0; }
     .co-documents .co-document-text {
       margin-left: 30px; }
   /* Google Maps */ }
