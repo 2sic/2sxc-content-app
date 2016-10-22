@@ -1,5 +1,6 @@
 @*
 	todo: why a js added below? makes it hard to see dependencies
+	todo: shouldn't we move the itemprop-mail just to the mail, and into the shared?'
 *@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
@@ -45,6 +46,12 @@
 			</div>
 			<div class="co-details">
 				@if (!String.IsNullOrEmpty(Content.Mail)) {
+					<div itemprop="email">
+						<span class="glyphicon glyphicon-envelope"></span> 
+						@RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Mail })
+					</div>
+
+					@*
 					var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(Content.Mail);
 					if(isValid){
 						var madr = Content.Mail.Split('@');
@@ -55,6 +62,7 @@
 					} else {
 						<span class="glyphicon glyphicon-envelope"></span> <span itemprop="email">@Content.Mail</span>
 					}
+					*@
 					<br/>
 				}
 				@if (!String.IsNullOrEmpty(Content.Tel)) {

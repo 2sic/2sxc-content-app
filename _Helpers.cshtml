@@ -8,7 +8,7 @@
         return Html.Raw(HttpUtility.HtmlEncode(original).Replace("\n", "<br />"));
     }
 
-    // check a link, prepare target window, icon etc.
+    // check a link, prepare target window, icon etc. based on various settings
 	public dynamic LinkInfos(string link, string window, string icon) {
         var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
         
