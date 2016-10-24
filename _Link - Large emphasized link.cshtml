@@ -1,7 +1,8 @@
 @*
     todo: maybe enable looping so the user can still change between templates
 *@
-<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+@* put all necessary link/script tags here *@
+@RenderPage("_Shared - Assets.cshtml", new { parts = "styles"})
 
 @{
     // get helper commands

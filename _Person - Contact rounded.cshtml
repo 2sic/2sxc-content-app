@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
-<script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>
-<script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
+@* put all necessary link/script tags here *@
+@RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
 <div class="co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID) row">
     @foreach (var Content in AsDynamic(Data["Default"]))

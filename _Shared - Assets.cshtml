@@ -1,0 +1,22 @@
+@* 
+    This sub template just places all the very-often used
+    style and link tags into the code. 
+    We put this in a sub-template because we use it so often, and want to make sure 
+    nobody accidentally uses the wrong url or forgets data-enableoptimizations
+*@
+@{
+    string partList = PageData["parts"];
+    var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
+    var all = parts.Contains("all");
+    var fancybox = all || parts.Contains("fancybox");
+    var styles = all || parts.Contains("styles");
+    var scripts = all || parts.Contains("scripts");
+    var height = all || parts.Contains("height");
+}
+@if(fancybox){
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" data-enableoptimizations="true" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
+}
+@if(styles){<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />}
+@if(scripts){<script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>}
+@if(height){<script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>}

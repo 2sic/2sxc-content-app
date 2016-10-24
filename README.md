@@ -4,8 +4,9 @@ The default "Content" types and templates for bootstrap 3.x
 # Note: not officially published yet!
 
 ## Todo
-* add images showing download dialog
-* 
+* add images showing download dialog to docs
+* ensure syncHeightResponsive always works, the current implementation sometimes includes the script, but it's not called, or the  
+  anchor for it is a template specific wrapper - i think this should be simpler, like "co-sync-height-container" and "co-sync-height-element" 
 
 ## Purpose
 Each DNN portal using [2sxc][2sxc] has a section called "Content" which contains the main content-types and main templates. 
