@@ -1,0 +1,30 @@
+@*
+	This is a sub-template of the image templates
+
+*@
+@{
+	var width = PageData["width"];
+	var columns = PageData["gridColumns"];
+
+	var retina = false;
+	var zoomW = retina ? 3200 : 1600;
+	var zoomH = retina ? 1800 : 900;
+}
+@foreach (var Content in AsDynamic(Data["Default"]))
+{
+	<div class="col col-sm-@columns sc-element">
+		@Edit.Toolbar(Content)
+		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
+			@:<a title="@(Presentation.TitleLightbox ? Content.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@Content.Image?maxwidth=@zoomW&amp;maxheight=@zoomH">
+		}
+		<img class="img-responsive" src="@Content.Image?w=@width" alt="@Content.Title" />
+		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
+			@:</a>
+		}
+		@if(Presentation.TitleLegend is bool && Presentation.TitleLegend ){
+			<div class="co-imgcaption">
+				@Content.Title
+			</div>
+		}
+	</div>
+}

@@ -1,6 +1,2 @@
-<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
-
-<div class="co-header sc-element">
-    @Edit.Toolbar(Content)
-    <img class="co-header-image" alt="@Content.Title" src="@Content.Image?w=1600&amp;h=240&amp;scale=both&amp;mode=crop" />
-</div>
+@* call shared template which does everything *@
+@RenderPage("_Image - Shared Wide Banner.cshtml", new { width = 1600, height = 240})

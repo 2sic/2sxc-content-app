@@ -1,9 +1,6 @@
-@*
-	todo: why a js added below? makes it hard to see dependencies
-	todo: shouldn't we move the itemprop-mail just to the mail, and into the shared?'
-*@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
+<script type="text/javascript" src="@App.Path/dist/google-map.js" data-enableoptimizations="true"></script>
 
 <div class="sc-element co-contactmap ly-margin-bottom">
 	@Edit.Toolbar(Content)
@@ -50,19 +47,6 @@
 						<span class="glyphicon glyphicon-envelope"></span> 
 						@RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Mail })
 					</div>
-
-					@*
-					var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(Content.Mail);
-					if(isValid){
-						var madr = Content.Mail.Split('@');
-						var madrSuf = new System.Text.RegularExpressions.Regex("\\.([^\\.]+)$").Split(madr[1]);
-						<span itemprop="email">
-							<span class="glyphicon glyphicon-envelope"></span> <span data-madr1="@madr[0]" data-madr2="@madrSuf[0]" data-madr3="@madrSuf[1]"></span>
-						</span>
-					} else {
-						<span class="glyphicon glyphicon-envelope"></span> <span itemprop="email">@Content.Mail</span>
-					}
-					*@
 					<br/>
 				}
 				@if (!String.IsNullOrEmpty(Content.Tel)) {
@@ -87,7 +71,6 @@
 </div>
 
 
-<script type="text/javascript" src="@App.Path/dist/google-map.js"></script>
 <script type="text/javascript">
 	$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 		position: {

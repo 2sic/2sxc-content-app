@@ -22,7 +22,6 @@
                 <div class="co-document-text">
                     <span class="@(linkInfo.Found ? "co-link" : "")">@Content.Title</span>
                     <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
-@* demo of bug                    <p>@Html.Raw(Content.Description.Replace("\n","<br/>"))</p> *@
                 </div>
             @if(linkInfo.Found){
                 @:</a>

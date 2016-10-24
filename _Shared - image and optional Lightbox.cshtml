@@ -3,8 +3,16 @@
     so it's shared here  
 *@
 @{
+    // configuration
+    var retina = true;
+    var quality = 75;
+
     // this is the parameter passed in from the calling page
-    var width = PageData["width"];
+    int width = PageData["width"];
+    if(retina) {
+        width += width; // double if retina
+        quality = 50;
+    }
 
     // prepare the title, either the default or the additional image caption
     var title="";
@@ -25,7 +33,7 @@
     if (withLink) {
         @:<a title="@title" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
     }
-    <img class="co-content-image" src="@Content.Image?w=@width" alt="@title" />
+    <img class="co-content-image" src="@Content.Image?w=@width&amp;quality=@quality" alt="@title" />
     if (withLink) {
         @:</a>
     }

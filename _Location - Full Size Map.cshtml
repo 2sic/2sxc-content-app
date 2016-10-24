@@ -3,6 +3,7 @@
 *@
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
+<script type="text/javascript" src="@App.Path/dist/google-map.js" data-enableoptimizations="true"></script>
 
 <div class="sc-element">
 	@Edit.Toolbar(Content)
@@ -28,7 +29,6 @@
 </div>
 
 
-<script type="text/javascript" src="@App.Path/dist/google-map.js"></script>
 <script type="text/javascript">
 	$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 		position: {
