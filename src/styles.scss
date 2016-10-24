@@ -17,10 +17,11 @@
 	/* Default Content */
 	.co-content {
 		margin-bottom: $grid-gutter-width;
-		.co-content-heading {
-			h1, h2, h3, h4, h5, h6 {
-				margin-top: 0; 
-			}
+	}
+
+	.co-text-beside-image {
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 0; 
 		}
 	}
 	.co-content-image {

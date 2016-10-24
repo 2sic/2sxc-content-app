@@ -1,3 +1,4 @@
+/* note: this file name must start with an underscore "_" so it wont be generated in the output */
 @media all {
   /* Header */
   .co-header img {
@@ -5,8 +6,8 @@
   /* Default Content */
   .co-content {
     margin-bottom: 30px; }
-    .co-content .co-content-heading h1, .co-content .co-content-heading h2, .co-content .co-content-heading h3, .co-content .co-content-heading h4, .co-content .co-content-heading h5, .co-content .co-content-heading h6 {
-      margin-top: 0; }
+  .co-text-beside-image h1, .co-text-beside-image h2, .co-text-beside-image h3, .co-text-beside-image h4, .co-text-beside-image h5, .co-text-beside-image h6 {
+    margin-top: 0; }
   .co-content-image {
     margin-bottom: 30px;
     width: 100%; }

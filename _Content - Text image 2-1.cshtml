@@ -3,16 +3,12 @@
 	todo: why is the div.co-content-heading outside the if? 
 *@
 <link rel="stylesheet" href="@App.Path/DefaultTemplates/css/styles.css" data-enableoptimizations="true" />
-<div class="clearfix sc-element co-content co-content-image-right ly-margin-bottom row">
+<div class="clearfix sc-element co-content co-content-image-right co-text-beside-image ly-margin-bottom row">
 	@Edit.Toolbar(Content)
 	<div class="col-sm-8">
 	<div class="co-content-heading">
-		@if(Presentation.HeadingType != "hide")
-		{
-			@Html.Raw("<" + Presentation.HeadingType + ">")
-				@Content.Title
-			@Html.Raw("</" + Presentation.HeadingType + ">")
-		}
+		@* call sub-template to show the title with the correct H1-H6 tag *@
+		@RenderPage("_Shared - header tag.cshtml")
 	</div>
 	<div class="co-text">
 		@Html.Raw(Content.Text)

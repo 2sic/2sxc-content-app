@@ -1,7 +1,5 @@
 @*
 	todo: why does this have less includes?
-	todo: why does it have such a complex title, calling subtitles which don't exist? 
-        otherwise we could use the heading-type shared template
 *@
 
 <link rel="stylesheet" href="@App.Path/DefaultTemplates/css/styles.css" data-enableoptimizations="true" />
@@ -9,15 +7,8 @@
     <div class="clearfix sc-element co-content co-content-text-only ly-margin-bottom col-md-8 col-md-push-2">
         @Edit.Toolbar(Content)
         <div class="co-title">
-            @if(Presentation.HeadingType != "hide")
-            {
-                @Html.Raw("<" + Presentation.HeadingType + ">")
-                    @Content.Title
-                    if(!String.IsNullOrEmpty(Content.Subtitle)){
-                        <small>@Content.Subtitle</small>
-                    }
-                @Html.Raw("</" + Presentation.HeadingType + ">")
-            }
+            @* call sub-template to show the title with the correct H1-H6 tag *@
+            @RenderPage("_Shared - header tag.cshtml")
         </div>
         <div class="co-text">
             @Html.Raw(Content.Text)

@@ -3,17 +3,11 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
 <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>
 
-<div class="clearfix sc-element co-content co-content-image-right ly-margin-bottom row">
+<div class="clearfix sc-element co-content co-content-image-right co-text-beside-image ly-margin-bottom row">
     @Edit.Toolbar(Content)
 	<div class="col-sm-6">
-	<div class="co-content-heading">
-		@if(Presentation.HeadingType != "hide")
-		{
-			@Html.Raw("<" + Presentation.HeadingType + ">")
-				@Content.Title
-			@Html.Raw("</" + Presentation.HeadingType + ">")
-		}
-	</div>
+		@* call sub-template to show the title with the correct H1-H6 tag *@
+		@RenderPage("_Shared - header tag.cshtml")
 	<div class="co-text">
 		@Html.Raw(Content.Text)
 	</div>

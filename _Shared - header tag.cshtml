@@ -4,9 +4,7 @@
 *@
 @if(Presentation.HeadingType != "hide")
 {
-    <div class="co-content-heading">
-        @Html.Raw("<" + Presentation.HeadingType + ">")
-            @Content.Title
-        @Html.Raw("</" + Presentation.HeadingType + ">")
-    </div>
+    @Html.Raw("<" + Presentation.HeadingType + ">")
+        @Content.Title
+    @Html.Raw("</" + Presentation.HeadingType + ">")
 }
