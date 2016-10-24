@@ -6,6 +6,10 @@
     // the init-code
     function initGoogleMaps() {
 
+        // if this had already been run, stop here
+        if ($.fn.toGoogleMap)
+            return;
+
         var googleMapLoadDeferred = $.Deferred();
 
         $.fn.toGoogleMap = function (options) {
@@ -87,13 +91,8 @@
         }
     }
 
-    showWarningIfDemoKeyIsUsed();
+    $(showWarningIfDemoKeyIsUsed);
 
-    // The google-maps code - this usually shougoldn't need changing
-    if ($.fn.toGoogleMap)
-        return;
-    
     initGoogleMaps();
-
 
 } (jQuery));

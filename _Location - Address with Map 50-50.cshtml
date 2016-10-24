@@ -72,14 +72,16 @@
 
 
 <script type="text/javascript">
-	$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
-		position: {
-			lat: @Content.GPSLat.ToString().Replace(',', '.'),
-			lng: @Content.GPSLng.ToString().Replace(',', '.')
-		},
-		zoom: @Presentation.Zoom,
-		mapTypeId: "ROADMAP",
-		infoWindowHtml: "@Content.Company",
-		showInfoWindow: false
+	$(function(){
+		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
+			position: {
+				lat: @Content.GPSLat.ToString().Replace(',', '.'),
+				lng: @Content.GPSLng.ToString().Replace(',', '.')
+			},
+			zoom: @Presentation.Zoom,
+			mapTypeId: "ROADMAP",
+			infoWindowHtml: "@Content.Company",
+			showInfoWindow: false
+		});
 	});
 </script>
