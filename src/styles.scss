@@ -1,6 +1,10 @@
+// local variables file
+@import "_variables.scss";
 
-@import "variables.scss";
-// @import "../../../_default/skins/2sxc-bootstrap-skin/src/variables.scss";
+// later on it's usually better to use variables from the skins
+// so that you can re-build the css using the same values used in the skin
+// it would then look a bit like this:
+// @import "../../../_default/skins/2sxc-bootstrap-skin/src/_variables.scss";
 
 @media all {
 	/* Header */
