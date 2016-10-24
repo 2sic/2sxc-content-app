@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-24T10:33:53.2039808+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-24T22:05:55.8807508+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -1899,16 +1899,38 @@
             <Value Key="ValidationRegExJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="2551429a-a927-4c6c-90af-b004a1e95b25" KeyNumber="531">
-            <Value Key="DropdownValues" Value="Überschrift Ebene 1:h1&#xD;&#xA;Überschrift Ebene 2:h2&#xD;&#xA;Überschrift Ebene 3:h3&#xD;&#xA;Ausblenden:hide" Type="String" />
-            <Value Key="InputType" Value="dropdown" Type="String" />
-            <Value Key="ValidationRegEx" Value="" Type="String" />
-            <Value Key="RowCount" Value="1" Type="Number" />
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String" />
-            <Value Key="ValidationAutomatic" Value="" Type="String" />
-            <Value Key="WysiwygHeight" Value="" Type="Number" />
-            <Value Key="WysiwygWidth" Value="" Type="Number" />
+            <Value Key="DropdownValues" Value="Heading 1:h1&#xA;Heading 2:h2&#xA;Heading 3:h3&#xA;Hide title:hide" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DropdownValues" Value="Überschrift 1:h1&#xA;Überschrift 2:h2&#xA;Überschrift 3:h3&#xA;Ausblenden:hide" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="dropdown" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegEx" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="RowCount" Value="1" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationAutomatic" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="WysiwygHeight" Value="" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="WysiwygWidth" Value="" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="c72a4e84-e2af-44e6-b8b1-cb41ad358ed1" KeyNumber="531">
             <Value Key="DropdownValues" Value="Heading 1:h1&#xA;Heading 2:h2&#xA;Heading 3:h3&#xA;Hide:hide" Type="String">
@@ -1916,6 +1938,11 @@
             </Value>
             <Value Key="DropdownValues" Value="Überschrift Ebene 1:h1&#xA;Überschrift Ebene 2:h2&#xA;Überschrift Ebene 3:h3&#xA;Ausblenden:hide" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="54189f81-06ab-4593-accd-92aacb6e66c6" KeyNumber="531">
+            <Value Key="RowCount" Value="" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
         </Attribute>
@@ -2143,13 +2170,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="Content" EntityGUID="620aa5d9-e5c5-42b3-8279-51fe5e71e645">
-      <Value Key="Title" Value="New content" Type="String">
+      <Value Key="Title" Value="Demo content" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Neuer Inhalt" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Click the pencil-icon to edit content. This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
+      <Value Key="Text" Value="&lt;p&gt;Click the &lt;em&gt;pencil-icon&lt;/em&gt; to edit content. This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Text" Value="&lt;p&gt;Dies ist nur Demo-Inhalt.&amp;nbsp;This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
@@ -2195,9 +2222,15 @@
       <Value Key="Zoom" Value="14" Type="String" />
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" AttributeSetName="PresSetText" EntityGUID="986fa35a-7e15-4368-9822-e80dec230be9">
-      <Value Key="HeadingType" Value="h1" Type="String" />
-      <Value Key="ImageLightbox" Value="True" Type="Boolean" />
-      <Value Key="TitleLightbox" Value="True" Type="Boolean" />
+      <Value Key="HeadingType" Value="h2" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ImageLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="36ab91f9-8388-4728-9bee-62ac898300a3" AttributeSetName="Link" EntityGUID="efa687d8-3f0e-46d5-9570-744ec2985007">
       <Value Key="Title" Value="Demo link" Type="String">
@@ -2243,10 +2276,10 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="cf857bb5-f8b6-4ad9-8545-405d70101409">
-      <Value Key="Name" Value="Image(s) always 100% width" Type="String">
+      <Value Key="Name" Value="Image(s) always 1 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Bild(er) 100% breit" Type="String">
+      <Value Key="Name" Value="max. 1 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - 100 width.cshtml" Type="String">
@@ -2295,7 +2328,7 @@
       <Value Key="Name" Value="Wide banner (for headers)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Kopfbild (Banner)" Type="String">
+      <Value Key="Name" Value="Breiter Banner (für Kopfbereich)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - Wide Banner.cshtml" Type="String">
@@ -2344,7 +2377,7 @@
       <Value Key="Name" Value="List with icon on the side" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Liste" Type="String">
+      <Value Key="Name" Value="mit Symbol seitlich, Liste" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - Document and Link List.cshtml" Type="String">
@@ -2540,7 +2573,7 @@
       <Value Key="Name" Value="Rectangular photo" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Kontaktperson" Type="String">
+      <Value Key="Name" Value="mit rechteckigem Bild, max. 2 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Person - Contact.cshtml" Type="String">
@@ -2589,7 +2622,7 @@
       <Value Key="Name" Value="No photo" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Kontaktperson ohne Bild" Type="String">
+      <Value Key="Name" Value="ohne Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Person - Contact no Image.cshtml" Type="String">
@@ -2638,7 +2671,7 @@
       <Value Key="Name" Value="Full-Size Map" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Standort mit Karte 100% breit" Type="String">
+      <Value Key="Name" Value="mit Karte 100%" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Location - Full Size Map.cshtml" Type="String">
@@ -2687,7 +2720,7 @@
       <Value Key="Name" Value="Text only, max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Link(s) 1/3 breit" Type="String">
+      <Value Key="Name" Value="nur Text, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - List of links max 3.cshtml" Type="String">
@@ -2736,10 +2769,10 @@
       <Value Key="Name" Value="Full width (100%)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Video 100% breit" Type="String">
+      <Value Key="Name" Value="Volle Breite (100%)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Youtube Video - Full Width.cshtml" Type="String">
+      <Value Key="Path" Value="_Video - Full Width.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="b3957ce5-847e-4191-b98a-550d1b9f838c" Type="String">
@@ -2842,7 +2875,7 @@
       <Value Key="Name" Value="Image on top, max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Link(s) mit Bild 1/3 breit" Type="String">
+      <Value Key="Name" Value="mit Bild oben, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - List of links showing image max 3.cshtml" Type="String">
@@ -2938,7 +2971,7 @@
       <Value Key="Name" Value="Address with map 50/50" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Standort/Adresse mit Karte 50% breit" Type="String">
+      <Value Key="Name" Value="mit Text und Karte 50/50" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Location - Address with Map 50-50.cshtml" Type="String">
@@ -2987,7 +3020,7 @@
       <Value Key="Name" Value="Wide banner taller (larger headers)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Kopfbild hoch (Banner)" Type="String">
+      <Value Key="Name" Value="Breiter Banner, hoch (für Kopfbereich)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - Wide banner tall.cshtml" Type="String">
@@ -3036,7 +3069,7 @@
       <Value Key="Name" Value="Image(s) max. 2 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Bild(er) 50% breit" Type="String">
+      <Value Key="Name" Value="max. 2 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - 50 max width.cshtml" Type="String">
@@ -3468,7 +3501,7 @@
       <Value Key="Name" Value="Text only - emphasized" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Nur Text (Mitte)" Type="String">
+      <Value Key="Name" Value="Nur Text - hervorgehoben" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Content - Text only emphasized.cshtml" Type="String">
@@ -3543,7 +3576,7 @@
       <Value Key="Name" Value="Icon on the side, max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Link(s) mit Symbol" Type="String">
+      <Value Key="Name" Value="mit Symbol seitlich, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - List of icon-links.cshtml" Type="String">
@@ -3592,7 +3625,7 @@
       <Value Key="Name" Value="Large (full-width) with icon-button" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Button / Knopf" Type="String">
+      <Value Key="Name" Value="mit Symbol-Button, max. 1 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - Large emphasized link.cshtml" Type="String">
@@ -3701,7 +3734,7 @@
       <Value Key="Name" Value="Round photo" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Kontaktperson mit rundem Bild" Type="String">
+      <Value Key="Name" Value="mit rundem Bild, max. 2 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Person - Contact rounded.cshtml" Type="String">
@@ -3750,10 +3783,119 @@
       <Value Key="Name" Value="Image(s) max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Bild(er) max. 1/3 breit" Type="String">
+      <Value Key="Name" Value="max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - 33 max width.cshtml" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentDemoEntity" Value="35a75d9b-6596-4621-939e-57c59744b307" Type="Entity" />
+      <Value Key="PresentationTypeStaticName" Value="77628453-e1b3-4df8-b44b-aa706e6e0a07" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PresentationDemoEntity" Value="c91faad2-fc7c-44d1-90f3-157bee4ac317" Type="Entity" />
+      <Value Key="ListContentTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListContentDemoEntity" Value="" Type="Entity" />
+      <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListPresentationDemoEntity" Value="" Type="Entity" />
+      <Value Key="Type" Value="C# Razor" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="IsHidden" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Location" Value="Portal File System" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseForList" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsToPublish" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Pipeline" Value="" Type="Entity" />
+      <Value Key="ViewNameInUrl" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="ea681566-9724-4c8d-8025-3f53d03a0e98">
+      <Value Key="Name" Value="Title only" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="Nur Titel" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Path" Value="_Content - Title only.cshtml" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentDemoEntity" Value="620aa5d9-e5c5-42b3-8279-51fe5e71e645" Type="Entity" />
+      <Value Key="PresentationTypeStaticName" Value="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PresentationDemoEntity" Value="4eea6c54-1c0e-4f9f-927c-fcf146c37edf" Type="Entity" />
+      <Value Key="ListContentTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListContentDemoEntity" Value="" Type="Entity" />
+      <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListPresentationDemoEntity" Value="" Type="Entity" />
+      <Value Key="Type" Value="C# Razor" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="IsHidden" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Location" Value="Portal File System" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseForList" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsToPublish" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Pipeline" Value="" Type="Entity" />
+      <Value Key="ViewNameInUrl" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" AttributeSetName="PresSetText" EntityGUID="4eea6c54-1c0e-4f9f-927c-fcf146c37edf">
+      <Value Key="HeadingType" Value="h1" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ImageLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="64cc61e5-121f-4910-a61c-82717d61b6fd">
+      <Value Key="Name" Value="Image(s) max. 4 in a row" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="max. 4 pro Zeile" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Path" Value="_Image - 25 max width.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
