@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-27T13:14:46.3249108+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-27T14:50:09.0749108+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -302,7 +302,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="93714840-bb10-442d-b290-7d8a7b005dc0" Name="LayoutDesignElement" Description="Design Element" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="93714840-bb10-442d-b290-7d8a7b005dc0" Name="LayoutElement" Description="Design Element" Scope="2SexyContent" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Notes" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="80e2becc-7ad6-4c89-bd4f-7f326ea5182e" KeyNumber="542">
@@ -2146,10 +2146,10 @@
             <Value Key="FileFilter" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="ShowAdam" Value="True" Type="Boolean">
+            <Value Key="ShowAdam" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Buttons" Value="adam,more" Type="String">
+            <Value Key="Buttons" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2196,7 +2196,7 @@
       <Value Key="FullName" Value="Neue Person" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Position" Value="Function" Type="String">
+      <Value Key="Position" Value="Chief Demo Officer" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Position" Value="Funktion" Type="String">
@@ -2208,7 +2208,7 @@
       <Value Key="Mobile" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Email" Value="max.muster@example.com" Type="String">
+      <Value Key="Email" Value="ben.dover@example.com" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Photo" Value="file:524" Type="Hyperlink">
@@ -2472,7 +2472,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="f7045144-1f69-4cad-bea1-a3fb5cb5a1e9">
-      <Value Key="Name" Value="Image / text" Type="String">
+      <Value Key="Name" Value="Image | text" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild links" Type="String">
@@ -2521,7 +2521,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="e5373cba-a864-426b-9e30-51ddc4369983">
-      <Value Key="Name" Value="Text / image" Type="String">
+      <Value Key="Name" Value="Text | image" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild rechts" Type="String">
@@ -2814,7 +2814,7 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="93714840-bb10-442d-b290-7d8a7b005dc0" AttributeSetName="LayoutDesignElement" EntityGUID="d9f6c2ac-267e-4ae7-a3ec-504b3a592394">
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="93714840-bb10-442d-b290-7d8a7b005dc0" AttributeSetName="LayoutElement" EntityGUID="d9f6c2ac-267e-4ae7-a3ec-504b3a592394">
       <Value Key="Notes" Value="Separation line" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -2823,13 +2823,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="96abaa8e-1b9a-442d-b354-0830a9c66e17">
-      <Value Key="Name" Value="Separating line" Type="String">
+      <Value Key="Name" Value="Line to separate a section (wide)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Trennlinie" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Separating Line - Separating Line.cshtml" Type="String">
+      <Value Key="Path" Value="_Layout element - Line full.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="93714840-bb10-442d-b290-7d8a7b005dc0" Type="String">
@@ -3400,7 +3400,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="c7af4d82-6ec3-4507-95bd-c8c7962b7925">
-      <Value Key="Name" Value="Image / text 1:2" Type="String">
+      <Value Key="Name" Value="Image | text 1:2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild links (25/75)" Type="String">
@@ -3449,7 +3449,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="9ca85606-0730-4ca8-ba02-44ad5fb6992b">
-      <Value Key="Name" Value="Text / image 2:1" Type="String">
+      <Value Key="Name" Value="Text | image 2:1" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text mit Bild rechts (75/25)" Type="String">
@@ -3656,7 +3656,7 @@
       <Value Key="Location" Value="Portal File System" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="UseForList" Value="False" Type="Boolean">
+      <Value Key="UseForList" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
@@ -3973,7 +3973,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="008da760-8be3-4d51-9618-558a18985d25">
-      <Value Key="Name" Value="Image (full-width) / text" Type="String">
+      <Value Key="Name" Value="Title over image" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Content - Image full-width text.cshtml" Type="String">
@@ -3987,6 +3987,52 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="4eea6c54-1c0e-4f9f-927c-fcf146c37edf" Type="Entity" />
+      <Value Key="ListContentTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListContentDemoEntity" Value="" Type="Entity" />
+      <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListPresentationDemoEntity" Value="" Type="Entity" />
+      <Value Key="Type" Value="C# Razor" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="IsHidden" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Location" Value="Portal File System" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseForList" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsToPublish" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Pipeline" Value="" Type="Entity" />
+      <Value Key="ViewNameInUrl" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="9f6d0505-e999-4631-b215-0f3faa975d32">
+      <Value Key="Name" Value="Line to separate a section (half)" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Path" Value="_Layout element - Line half.cshtml" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentTypeStaticName" Value="93714840-bb10-442d-b290-7d8a7b005dc0" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentDemoEntity" Value="d9f6c2ac-267e-4ae7-a3ec-504b3a592394" Type="Entity" />
+      <Value Key="PresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PresentationDemoEntity" Value="" Type="Entity" />
       <Value Key="ListContentTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
