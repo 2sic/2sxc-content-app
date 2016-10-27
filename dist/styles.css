@@ -42,7 +42,7 @@
       .co-navigation a.co-link-box:hover img {
         opacity: .4; }
   .co-navigation-icon h3 {
-    margin-top: 10px; }
+    margin-top: 5px; }
   .co-navigation-icon .co-icon {
     font-size: 2.8em; }
   /* Images */
@@ -55,17 +55,18 @@
     .co-img-wrapper.co-2colimg img {
       width: 100%; }
   /* Documents and Links */
-  .co-documents {
-    list-style-type: none;
+  ul.co-documents {
     padding: 0; }
-    .co-documents .co-document .glyphicon {
+    ul.co-documents, ul.co-documents li {
+      list-style-type: none; }
+    ul.co-documents .co-document .glyphicon {
       font-size: 17px;
       line-height: 1.2em;
       color: #337ab7; }
-    .co-documents .co-document a, .co-documents .co-document a p, .co-documents .co-document a:link, .co-documents .co-document a:link p, .co-documents .co-document a:visited, .co-documents .co-document a:visited p {
+    ul.co-documents .co-document a, ul.co-documents .co-document a p, ul.co-documents .co-document a:link, ul.co-documents .co-document a:link p, ul.co-documents .co-document a:visited, ul.co-documents .co-document a:visited p {
       color: #333;
       text-decoration: none; }
-    .co-documents .co-document-text {
+    ul.co-documents .co-document-text {
       margin-left: 30px; }
   /* Google Maps */ }
 
