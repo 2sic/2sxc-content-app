@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-25T17:24:20.3436008+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-27T13:14:46.3249108+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -296,6 +296,47 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Buttons" Value="adam,more" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+        </Attribute>
+      </Attributes>
+    </AttributeSet>
+    <AttributeSet StaticName="93714840-bb10-442d-b290-7d8a7b005dc0" Name="LayoutDesignElement" Description="Design Element" Scope="2SexyContent" AlwaysShareConfiguration="false">
+      <Attributes>
+        <Attribute StaticName="Notes" Type="String" IsTitle="true">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="80e2becc-7ad6-4c89-bd4f-7f326ea5182e" KeyNumber="542">
+            <Value Key="Name" Value="Notes" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Notizen" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Required" Value="True" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="46cd236f-2159-410e-a600-735e4c2920aa" KeyNumber="542" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ef092ade-7829-445d-a4b1-2e44704a2895" KeyNumber="542">
+            <Value Key="RowCount" Value="" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2015,47 +2056,6 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="93714840-bb10-442d-b290-7d8a7b005dc0" Name="SeparatingLine" Description="SeparatingLine" Scope="2SexyContent" AlwaysShareConfiguration="false">
-      <Attributes>
-        <Attribute StaticName="Title" Type="String" IsTitle="true">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="80e2becc-7ad6-4c89-bd4f-7f326ea5182e" KeyNumber="542">
-            <Value Key="Name" Value="Title" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Titel" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="46cd236f-2159-410e-a600-735e4c2920aa" KeyNumber="542" />
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ef092ade-7829-445d-a4b1-2e44704a2895" KeyNumber="542">
-            <Value Key="RowCount" Value="" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-      </Attributes>
-    </AttributeSet>
     <AttributeSet StaticName="b3957ce5-847e-4191-b98a-550d1b9f838c" Name="Video" Description="Video from external source" Scope="2SexyContent" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
@@ -2814,11 +2814,11 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="93714840-bb10-442d-b290-7d8a7b005dc0" AttributeSetName="SeparatingLine" EntityGUID="d9f6c2ac-267e-4ae7-a3ec-504b3a592394">
-      <Value Key="Title" Value="Separation line" Type="String">
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="93714840-bb10-442d-b290-7d8a7b005dc0" AttributeSetName="LayoutDesignElement" EntityGUID="d9f6c2ac-267e-4ae7-a3ec-504b3a592394">
+      <Value Key="Notes" Value="Separation line" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Trennlinie" Type="String">
+      <Value Key="Notes" Value="Trennlinie" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
     </Entity>
@@ -2832,10 +2832,10 @@
       <Value Key="Path" Value="_Separating Line - Separating Line.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ContentTypeStaticName" Value="" Type="String">
+      <Value Key="ContentTypeStaticName" Value="93714840-bb10-442d-b290-7d8a7b005dc0" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ContentDemoEntity" Value="" Type="Entity" />
+      <Value Key="ContentDemoEntity" Value="d9f6c2ac-267e-4ae7-a3ec-504b3a592394" Type="Entity" />
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -3155,10 +3155,10 @@
       <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="file:540" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3207,10 +3207,10 @@
       <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="file:539" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3233,10 +3233,10 @@
       <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="file:543" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3285,10 +3285,10 @@
       <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="file:542" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3311,10 +3311,10 @@
       <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="file:544" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3348,13 +3348,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="83e065d1-fd01-4354-bef5-769d83580093" KeyString="93714840-bb10-442d-b290-7d8a7b005dc0">
-      <Value Key="Label" Value="Separation line" Type="String">
+      <Value Key="Label" Value="Layout element" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Trennlinie" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="Separation line" Type="String">
+      <Value Key="Description" Value="Layout element" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="Trennlinie" Type="String">
@@ -3363,10 +3363,10 @@
       <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="file:541" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3389,10 +3389,10 @@
       <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="" Type="Hyperlink">
+      <Value Key="Icon" Value="file:545" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3683,7 +3683,7 @@
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3703,7 +3703,7 @@
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3723,7 +3723,7 @@
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
+      <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="EditInstructions" Value="" Type="String">
@@ -3937,13 +3937,102 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-App" AttributeSetName="2SexyContent-App" EntityGUID="a180a35a-2492-464d-875d-e5901591a435">
+      <Value Key="DisplayName" Value="Basic Content Templates Bootstrap3" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Content templates for bootstrap3 - https://github.com/2sic/2sxc-content-bootstrap3/" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Version" Value="02.00.00" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Folder" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="AllowTokenTemplates" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="AllowRazorTemplates" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Hidden" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="OriginalId" Value="ffa1970a-2207-4fe7-b205-e83160400f77" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="RequiredVersion" Value="08.03.00" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="RequiredDnnVersion" Value="07.02.00" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="008da760-8be3-4d51-9618-558a18985d25">
+      <Value Key="Name" Value="Image (full-width) / text" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Path" Value="_Content - Image full-width text.cshtml" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ContentDemoEntity" Value="620aa5d9-e5c5-42b3-8279-51fe5e71e645" Type="Entity" />
+      <Value Key="PresentationTypeStaticName" Value="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PresentationDemoEntity" Value="4eea6c54-1c0e-4f9f-927c-fcf146c37edf" Type="Entity" />
+      <Value Key="ListContentTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListContentDemoEntity" Value="" Type="Entity" />
+      <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListPresentationDemoEntity" Value="" Type="Entity" />
+      <Value Key="Type" Value="C# Razor" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="IsHidden" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Location" Value="Portal File System" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseForList" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsToPublish" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Pipeline" Value="" Type="Entity" />
+      <Value Key="ViewNameInUrl" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="523" RelativePath="2sxc/Content/demo-pics/image-1.jpg" />
     <File Id="524" RelativePath="2sxc/Content/demo-pics/image-2.jpg" />
+    <File Id="540" RelativePath="2sxc/Content/thumbnails/ct image.png" />
+    <File Id="539" RelativePath="2sxc/Content/thumbnails/ct basic content.png" />
+    <File Id="543" RelativePath="2sxc/Content/thumbnails/ct location.png" />
+    <File Id="542" RelativePath="2sxc/Content/thumbnails/ct links.png" />
+    <File Id="544" RelativePath="2sxc/Content/thumbnails/ct person.png" />
+    <File Id="541" RelativePath="2sxc/Content/thumbnails/ct layout element.png" />
+    <File Id="545" RelativePath="2sxc/Content/thumbnails/ct video.png" />
   </PortalFiles>
   <PortalFolders>
     <Folder Id="352" RelativePath="2sxc/Content/demo-pics/" />
+    <Folder Id="581" RelativePath="2sxc/Content/thumbnails/" />
     <Folder Id="285" RelativePath="adam/Content/" />
     <Folder Id="575" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/" />
     <Folder Id="576" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/Image/" />
