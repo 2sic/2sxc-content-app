@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-27T14:50:09.0749108+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.05.06" ExportDate="2016-10-27T18:23:02.7949808+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -538,10 +538,13 @@
             <Value Key="Name" Value="Link label" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Link-Beschriftung" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;This will be shown on most templates on the&amp;nbsp;visible button or the highlighted&amp;nbsp;link.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Geben Sie den Link-Text ein.&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Dies wird bei den meisten Vorlagen beim sichtbaren Button oder beim hervorgehobenen Link angezeigt.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
@@ -552,6 +555,9 @@
             </Value>
             <Value Key="DefaultValue" Value="more" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="mehr" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1390,13 +1396,13 @@
             <Value Key="Name" Value="Link label" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Label für Routenplaner" Type="String">
+            <Value Key="Name" Value="Beschriftung für Routenplaner" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;This label is used for the link bringing the user to google maps in from-to mode.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Dieses Label wird f&amp;uuml;r den Routenplaner-Link ben&amp;ouml;tigt, welchen den Besucher direkt auf den Google &quot;Von / Nach&quot;-Modus f&amp;uuml;hrt.&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Diese Beschriftung wird f&amp;uuml;r den Routenplaner-Link ben&amp;ouml;tigt, welchen den Besucher direkt auf den Google &quot;Von / Nach&quot;-Modus f&amp;uuml;hrt.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
@@ -1611,6 +1617,9 @@
             <Value Key="Name" Value="Contact Information" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Kontakt-Informationen" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1680,10 +1689,13 @@
             <Value Key="Name" Value="Mobile" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Mobil" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Geben Sie eine Mobiltelefonnummer ein.&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Geben Sie optional eine Mobiltelefonnummer ein.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
@@ -1698,7 +1710,6 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1707,6 +1718,11 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="3fc82d79-12d5-4bfe-a275-d4f22e6911e5" KeyNumber="523" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="5cd3a8c3-69ae-470c-9a00-467f86cf33d8" KeyNumber="523">
+            <Value Key="RowCount" Value="" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
         <Attribute StaticName="Email" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="0273e548-75bd-48a6-b66e-192c6d77306d" KeyNumber="524">
@@ -2279,7 +2295,7 @@
       <Value Key="Name" Value="Image(s) always 1 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="max. 1 pro Zeile" Type="String">
+      <Value Key="Name" Value="Bild(er), immer 1 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - max 1.cshtml" Type="String">
@@ -2377,7 +2393,7 @@
       <Value Key="Name" Value="List with icon on the side" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit Symbol seitlich, Liste" Type="String">
+      <Value Key="Name" Value="Liste mit seitlichem Symbol" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - Document and Link List.cshtml" Type="String">
@@ -2475,7 +2491,7 @@
       <Value Key="Name" Value="Image | text" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Text mit Bild links" Type="String">
+      <Value Key="Name" Value="Bild | Text" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Content - Image text.cshtml" Type="String">
@@ -2524,7 +2540,7 @@
       <Value Key="Name" Value="Text | image" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Text mit Bild rechts" Type="String">
+      <Value Key="Name" Value="Text | Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Content - Text image.cshtml" Type="String">
@@ -2573,7 +2589,7 @@
       <Value Key="Name" Value="Rectangular photo" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit rechteckigem Bild, max. 2 pro Zeile" Type="String">
+      <Value Key="Name" Value="Rechteckiges Foto" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Person - Contact.cshtml" Type="String">
@@ -2671,7 +2687,7 @@
       <Value Key="Name" Value="Full-Size Map" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit Karte 100%" Type="String">
+      <Value Key="Name" Value="Grosse Karte" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Location - Full Size Map.cshtml" Type="String">
@@ -2720,7 +2736,7 @@
       <Value Key="Name" Value="Text only, max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="nur Text, max. 3 pro Zeile" Type="String">
+      <Value Key="Name" Value="Nur Text, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - List of links max 3.cshtml" Type="String">
@@ -2769,7 +2785,7 @@
       <Value Key="Name" Value="Full width (100%)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Volle Breite (100%)" Type="String">
+      <Value Key="Name" Value="Gesamte Breite (100%)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Video - Full Width.cshtml" Type="String">
@@ -2826,7 +2842,7 @@
       <Value Key="Name" Value="Line to separate a section (wide)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Trennlinie" Type="String">
+      <Value Key="Name" Value="Trennlinie, ganze Breite" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Layout element - Line full.cshtml" Type="String">
@@ -2875,7 +2891,7 @@
       <Value Key="Name" Value="Image on top, max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit Bild oben, max. 3 pro Zeile" Type="String">
+      <Value Key="Name" Value="Bild oben, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - List of links showing image max 3.cshtml" Type="String">
@@ -2971,7 +2987,7 @@
       <Value Key="Name" Value="Address with map 50/50" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit Text und Karte 50/50" Type="String">
+      <Value Key="Name" Value="Adresse mit Karte 50/50" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Location - Address with Map 50-50.cshtml" Type="String">
@@ -3069,7 +3085,7 @@
       <Value Key="Name" Value="Image(s) max. 2 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="max. 2 pro Zeile" Type="String">
+      <Value Key="Name" Value="Bild(er), max. 2 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - max 2.cshtml" Type="String">
@@ -3299,7 +3315,7 @@
       <Value Key="Label" Value="Person(s)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Person" Type="String">
+      <Value Key="Label" Value="Person(en)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="Information about a person (contact)" Type="String">
@@ -3351,13 +3367,13 @@
       <Value Key="Label" Value="Layout element" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Trennlinie" Type="String">
+      <Value Key="Label" Value="Layout-Element" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="Layout element" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="Trennlinie" Type="String">
+      <Value Key="Description" Value="" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Notes" Value="" Type="String">
@@ -3403,7 +3419,7 @@
       <Value Key="Name" Value="Image | text 1:2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Text mit Bild links (25/75)" Type="String">
+      <Value Key="Name" Value="Bild | Text 1:2" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Content - Image text 1-2.cshtml" Type="String">
@@ -3452,7 +3468,7 @@
       <Value Key="Name" Value="Text | image 2:1" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Text mit Bild rechts (75/25)" Type="String">
+      <Value Key="Name" Value="Text | Bild 2:1" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Content - Text image 2-1.cshtml" Type="String">
@@ -3576,7 +3592,7 @@
       <Value Key="Name" Value="Icon on the side, max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit Symbol seitlich, max. 3 pro Zeile" Type="String">
+      <Value Key="Name" Value="Symbol seitlich, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - List of icon-links.cshtml" Type="String">
@@ -3625,7 +3641,7 @@
       <Value Key="Name" Value="Large (full-width) with icon-button" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit Symbol-Button, max. 1 pro Zeile" Type="String">
+      <Value Key="Name" Value="Gross (gesamte Breite) Symbol-Button" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Link - Large emphasized link.cshtml" Type="String">
@@ -3734,7 +3750,7 @@
       <Value Key="Name" Value="Round photo" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="mit rundem Bild, max. 2 pro Zeile" Type="String">
+      <Value Key="Name" Value="Rundes Foto" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Person - Contact rounded.cshtml" Type="String">
@@ -3783,7 +3799,7 @@
       <Value Key="Name" Value="Image(s) max. 3 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="max. 3 pro Zeile" Type="String">
+      <Value Key="Name" Value="Bild(er), max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - max 3.cshtml" Type="String">
@@ -3892,7 +3908,7 @@
       <Value Key="Name" Value="Image(s) max. 4 in a row" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="max. 4 pro Zeile" Type="String">
+      <Value Key="Name" Value="Bild(er), max. 4 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Image - max 4.cshtml" Type="String">
@@ -3944,7 +3960,7 @@
       <Value Key="Description" Value="Content templates for bootstrap3 - https://github.com/2sic/2sxc-content-bootstrap3/" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="02.00.00" Type="String">
+      <Value Key="Version" Value="02.01.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Folder" Value="" Type="String">
@@ -3975,6 +3991,9 @@
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="008da760-8be3-4d51-9618-558a18985d25">
       <Value Key="Name" Value="Title over image" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="Titel oberhalb Bild" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Content - Image full-width text.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -4021,6 +4040,9 @@
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="9f6d0505-e999-4631-b215-0f3faa975d32">
       <Value Key="Name" Value="Line to separate a section (half)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="Trennlinie, halbe Breite" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Layout element - Line half.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
