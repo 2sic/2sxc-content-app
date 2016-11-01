@@ -1,5 +1,7 @@
 # 2sxc-content-bootstrap3
-The default "Content" types and templates for bootstrap 3.x
+The default "Content" types and templates for DNN (DotNetNuke) with bootstrap 3.x. Here some thumbnails:
+
+[<img src="https://github.com/2sic/2sxc-content-bootstrap3/wiki/assets/thumbnails.jpg">](http://2sxc.org/en/blog/post/27-responsive-bootstrap3-structured-content-design-templates-for-dnn-and-2sxc)
 
 ## Purpose
 Each DNN portal using [2sxc][2sxc] has a section called "Content" which contains the main content-types and main templates. 
