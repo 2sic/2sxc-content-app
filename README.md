@@ -1,17 +1,8 @@
 [<img src="https://github.com/2sic/2sxc-content-bootstrap3/wiki/assets/link-templates.jpg" width="50%" align="right"/>](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Content-Types%20and%20Templates)
 # 2sxc-content-bootstrap3
-The default **7 Content-Types** and **27 Templates** for DotNetNuke (DNN) with Bootstrap 3.x.
+The default "Content" types and templates for DNN (DotNetNuke) with bootstrap 3.x. Here some thumbnails:
 
-Install this in [DNN](github.com/dnnsoftware/Dnn.Platform/) with [2sxc](https://2sxc.org/) (git)(github.com/2sic/2sxc/) and users will be able to manage structured content using simple, guided content-entry, and the output will automatically be:
-
-1. great looking
-1. responsive
-1. retina-optimized
-1. unbelievably easy to edit
-1. unbreakable by the editor, because the content-layout is fully automated
-
-If you want to see some examples of input-dialogs and outputs you'll get, check out the [List of Content-Types and Templates](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Content-Types%20and%20Templates). 
-
+[<img src="https://github.com/2sic/2sxc-content-bootstrap3/wiki/assets/thumbnails.jpg">](http://2sxc.org/en/blog/post/27-responsive-bootstrap3-structured-content-design-templates-for-dnn-and-2sxc)
 
 ## Purpose
 Each DNN portal using [2sxc][2sxc] has a section called "Content" which contains the main content-types and main templates. 
