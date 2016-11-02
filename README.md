@@ -1,4 +1,3 @@
-[<img src="https://github.com/2sic/2sxc-content-bootstrap3/wiki/assets/link-templates.jpg" width="50%" align="right"/>](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Content-Types%20and%20Templates)
 # 2sxc-content-bootstrap3
 The default "Content" types and templates for DNN (DotNetNuke) with bootstrap 3.x. Here some thumbnails:
 
