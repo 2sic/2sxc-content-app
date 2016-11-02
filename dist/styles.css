@@ -61,8 +61,7 @@
       list-style-type: none; }
     ul.co-documents .co-document .glyphicon {
       font-size: 17px;
-      line-height: 1.2em;
-      color: #337ab7; }
+      line-height: 1.2em; }
     ul.co-documents .co-document a, ul.co-documents .co-document a p, ul.co-documents .co-document a:link, ul.co-documents .co-document a:link p, ul.co-documents .co-document a:visited, ul.co-documents .co-document a:visited p {
       color: #333;
       text-decoration: none; }
