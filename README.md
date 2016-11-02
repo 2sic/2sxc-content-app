@@ -1,5 +1,17 @@
+[<img src="https://github.com/2sic/2sxc-content-bootstrap3/wiki/assets/link-templates.jpg" width="50%" align="right"/>](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Content-Types%20and%20Templates)
 # 2sxc-content-bootstrap3
-The default "Content" types and templates for bootstrap 3.x
+The default **7 Content-Types** and **27 Templates** for DotNetNuke (DNN) with Bootstrap 3.x.
+
+Install this in [DNN](github.com/dnnsoftware/Dnn.Platform/) with [2sxc](https://2sxc.org/) (git)(github.com/2sic/2sxc/) and users will be able to manage structured content using simple, guided content-entry, and the output will automatically be:
+
+1. great looking
+1. responsive
+1. retina-optimized
+1. unbelievably easy to edit
+1. unbreakable by the editor, because the content-layout is fully automated
+
+If you want to see some examples of input-dialogs and outputs you'll get, check out the [List of Content-Types and Templates](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Content-Types%20and%20Templates). 
+
 
 ## Purpose
 Each DNN portal using [2sxc][2sxc] has a section called "Content" which contains the main content-types and main templates. 
@@ -10,7 +22,7 @@ This package **Content-Bootstrap3** is the default configuration package which 2
 ## Quick-Start
 
 1. Almost everything you want to know is in the [wiki](https://github.com/2sic/2sxc-content-bootstrap3/wiki)
-1. **Installation**: Whenever you install 2sxc on a DNN portal, or when you create a new portal on a DNN with 2sxc installed, 2sxc will automatitcally ask you if you want to install this. If you need to know more, read about [installations in the wiki](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Installation-Instructions).
+1. **Installation**: Whenever you install 2sxc on a DNN portal, or when you create a new portal on a [DNN with 2sxc installed](http://2sxc.org/en/Learn/Install-2sxc), 2sxc will automatitcally ask you if you want to install this. If you need to know more, read about [installations in the wiki](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Installation-Instructions).
 1. **Skin/Theme Optimizations**: We have some recommendations, if you care about this, read about the [optimizations in the wiki](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Theme-Optimizations)
 1. **Customize to your colors and CSS**: check out the [instructions in the wiki](https://github.com/2sic/2sxc-content-bootstrap3/wiki/Customizing%20CSS%20or%20SASS)
 
