@@ -1,37 +1,39 @@
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
-<div class="co-person-wrapper row">
-    @foreach (var Content in AsDynamic(Data["Default"]))
-    {
-        <div class="sc-element co-person co-person-noimage co-syncheight col-sm-6">
-            @Edit.Toolbar(Content)
+<div class="co-container-outer">
+	<div class="co-container-inner co-person-wrapper row">
+        @foreach (var Content in AsDynamic(Data["Default"]))
+        {
+            <div class="sc-element co-person co-person-noimage co-syncheight col-sm-6">
+                @Edit.Toolbar(Content)
 
-            <div class="co-person-text" itemscope itemtype="http://schema.org/Person">
-                <strong itemprop="name">@Content.FullName</strong><br />
-                @if (!String.IsNullOrEmpty(Content.Position))
-                {
-                    <span itemprop="jobTitle">@Content.Position</span><br />
-                }
-				@if (!String.IsNullOrEmpty(Content.Email))
-				{
-                    <div itemprop="email">
-                        <span class="glyphicon glyphicon-envelope"></span> 
-                        @RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Email })
+                <div class="co-person-text" itemscope itemtype="http://schema.org/Person">
+                    <strong itemprop="name">@Content.FullName</strong><br />
+                    @if (!String.IsNullOrEmpty(Content.Position))
+                    {
+                        <span itemprop="jobTitle">@Content.Position</span><br />
+                    }
+                    @if (!String.IsNullOrEmpty(Content.Email))
+                    {
+                        <div itemprop="email">
+                            <span class="glyphicon glyphicon-envelope"></span> 
+                            @RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Email })
+                        </div>
+                    }
+                    @if (!String.IsNullOrEmpty(Content.Mobile))
+                    {
+                        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@Content.Mobile.Replace(" ", "")" itemprop="telephone">@Content.Mobile</a><br />
+                    }
+                    @if (!String.IsNullOrEmpty(Content.Phone))
+                    {
+                        <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@Content.Phone.Replace(" ", "")" itemprop="telephone">@Content.Phone</a><br />
+                    }
+                    <div itemprop="description">
+                        @Html.Raw((string)Content.Description)
                     </div>
-				}
-				@if (!String.IsNullOrEmpty(Content.Mobile))
-                {
-					<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@Content.Mobile.Replace(" ", "")" itemprop="telephone">@Content.Mobile</a><br />
-                }
-                @if (!String.IsNullOrEmpty(Content.Phone))
-                {
-                    <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@Content.Phone.Replace(" ", "")" itemprop="telephone">@Content.Phone</a><br />
-                }
-				<div itemprop="description">
-					@Html.Raw((string)Content.Description)
-				</div>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

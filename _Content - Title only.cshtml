@@ -1,8 +1,10 @@
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts"})
 
-<div class="clearfix sc-element co-content co-content-text-only ly-margin-bottom">
-    @Edit.Toolbar(Content)
-    @* call sub-template to show the title with the correct H1-H6 tag *@
-    @RenderPage("_Shared - header tag.cshtml")
+<div class="co-container-outer">
+	<div class="co-container-inner clearfix sc-element co-content co-content-text-only ly-margin-bottom">
+        @Edit.Toolbar(Content)
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @RenderPage("_Shared - header tag.cshtml")
+    </div>
 </div>

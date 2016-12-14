@@ -9,24 +9,28 @@
     var Helpers = CreateInstance("_Helpers.cshtml");
 }
 
-<ul class="co-documents row">
-    @foreach (var Content in AsDynamic(Data["Default"]))
-    {
-        var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+<div class="co-container-outer">
+	<div class="co-container-inner">
+        <ul class="co-documents row">
+            @foreach (var Content in AsDynamic(Data["Default"]))
+            {
+                var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
 
-        <li class="sc-element co-document col-md-12">
-            @Edit.Toolbar(Content)
-            @if(linkInfo.Found){
-                @:<a target="@linkInfo.Window" href="@Content.Link" title="@Content.Title">
+                <li class="sc-element co-document col-md-12">
+                    @Edit.Toolbar(Content)
+                    @if(linkInfo.Found){
+                        @:<a target="@linkInfo.Window" href="@Content.Link" title="@Content.Title">
+                    }
+                        <span class="text-primary pull-left glyphicon @linkInfo.Icon"></span>
+                        <div class="co-document-text">
+                            <span class="@(linkInfo.Found ? "co-link" : "")">@Content.Title</span>
+                            <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
+                        </div>
+                    @if(linkInfo.Found){
+                        @:</a>
+                    }
+                </li>
             }
-                <span class="text-primary pull-left glyphicon @linkInfo.Icon"></span>
-                <div class="co-document-text">
-                    <span class="@(linkInfo.Found ? "co-link" : "")">@Content.Title</span>
-                    <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
-                </div>
-            @if(linkInfo.Found){
-                @:</a>
-            }
-        </li>
-    }
-</ul>
+        </ul>
+	</div>
+</div>

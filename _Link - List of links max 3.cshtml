@@ -6,21 +6,23 @@
     var Helpers = CreateInstance("_Helpers.cshtml");
 }
 
-<div class="row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
-    @foreach (var Content in AsDynamic(Data["Default"]))
-    {
-        var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+<div class="co-container-outer">
+	<div class="co-container-inner row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
+        @foreach (var Content in AsDynamic(Data["Default"]))
+        {
+            var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
 
-        <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
-            @Edit.Toolbar(Content)
-            <h3>@Content.Title</h3>
-            <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
-            @if(linkInfo.Found)
-            {
-                <a target="@linkInfo.Window" title="@Content.Title" href="@Content.Link">&raquo; @Content.LinkText</a>
-            }
-        </div>
-    }
+            <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
+                @Edit.Toolbar(Content)
+                <h3>@Content.Title</h3>
+                <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
+                @if(linkInfo.Found)
+                {
+                    <a target="@linkInfo.Window" title="@Content.Title" href="@Content.Link">&raquo; @Content.LinkText</a>
+                }
+            </div>
+        }
+    </div>
 </div>
 
 <script>

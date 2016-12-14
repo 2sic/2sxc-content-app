@@ -5,21 +5,9 @@
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "fancybox,styles,scripts"})
 
-@foreach (var Content in AsDynamic(Data["Default"]))
-    {
-	<div class="co-img-wrapper sc-element">
-		@Edit.Toolbar(Content)
-		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {		
-			@:<a title="@(Presentation.TitleLightbox ? Content.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
-		}
-		<img class="img-responsive" src="@Content.Image?w=1200" alt="@Content.Title" />
-		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
-			@:</a>
-		}
-		@if(Presentation.TitleLegend is bool && Presentation.TitleLegend ){
-			<div class="co-imgcaption">
-				@Content.Title
-			</div>
-		}
+<div class="co-container-outer">
+	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg row">
+		@* call sub-template to show all images in the right size *@
+		@RenderPage("_Image - Shared - loop images.cshtml", new { width = 1200, gridColumns = 12 })
 	</div>
-	}
+</div>

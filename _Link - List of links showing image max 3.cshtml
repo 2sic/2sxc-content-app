@@ -9,38 +9,41 @@
     var Helpers = CreateInstance("_Helpers.cshtml");
 }
 
-<div class="row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-image">
-    @foreach (var Content in AsDynamic(Data["Default"]))
-    {
-        var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
 
-		<div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
-			@Edit.Toolbar(Content)
-			@if(linkInfo.Found)
-                {
-					@:<a target="@linkInfo.Window" class="co-link-box" title="@Content.Title" href="@Content.Link">
-				}
-				<div class="co-img-wrapper">
-					@if(!String.IsNullOrEmpty(Content.Image))
-                	{
-						<img src="@Content.Image?w=690&amp;h=345&amp;quality=80&amp;mode=crop&amp;scale=both" alt="@Content.Title" />
-					} else {
-						<div class="co-img-placeholder"></div>
+<div class="co-container-outer">
+	<div class="co-container-inner row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-image">
+		@foreach (var Content in AsDynamic(Data["Default"]))
+		{
+			var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+
+			<div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
+				@Edit.Toolbar(Content)
+				@if(linkInfo.Found)
+					{
+						@:<a target="@linkInfo.Window" class="co-link-box" title="@Content.Title" href="@Content.Link">
 					}
-				</div>
-				<h3>@Content.Title</h3>
-				@if(!String.IsNullOrEmpty(Content.Description))
-				{
-					<p>@Helpers.ConvertLineBreaks(Content.Description)</p>
-				}
-                @if(linkInfo.Found)
-                {
-					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span><span class="co-link">@Content.LinkText</span>
-					@:</a>
-                }
-            
-        </div>
-    }
+					<div class="co-img-wrapper">
+						@if(!String.IsNullOrEmpty(Content.Image))
+						{
+							<img src="@Content.Image?w=690&amp;h=345&amp;quality=80&amp;mode=crop&amp;scale=both" alt="@Content.Title" />
+						} else {
+							<div class="co-img-placeholder"></div>
+						}
+					</div>
+					<h3>@Content.Title</h3>
+					@if(!String.IsNullOrEmpty(Content.Description))
+					{
+						<p>@Helpers.ConvertLineBreaks(Content.Description)</p>
+					}
+					@if(linkInfo.Found)
+					{
+						<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span><span class="co-link">@Content.LinkText</span>
+						@:</a>
+					}
+				
+			</div>
+		}
+	</div>
 </div>
 
 <script>
