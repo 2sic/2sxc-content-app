@@ -11,6 +11,7 @@
     var quality = 75;
 
     // this is the parameter passed in from the calling page
+    var imgItem = PageData["img"];
     int width = PageData["width"];
     if(retina) {
         width += width; // double if retina
@@ -20,23 +21,21 @@
     // prepare the title, either the default or the additional image caption
     var title="";
     if(Presentation.TitleLightbox){
-        if(!String.IsNullOrEmpty(Content.ImageCaption)){
-            title=Content.ImageCaption;
-        } else {
-            title=Content.Title;
-        }
+        title = !String.IsNullOrEmpty(imgItem.ImageCaption)
+            ? imgItem.ImageCaption
+            : imgItem.Title;
     }
 
     // has image? add lightbox link?
-    var hasImage = !String.IsNullOrEmpty(Content.Image);
+    var hasImage = !String.IsNullOrEmpty(imgItem.Image);
     var withLink = Presentation.ImageLightbox != null && Presentation.ImageLightbox;
 }
 
 @if(hasImage) {
     if (withLink) {
-        @:<a title="@title" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990">
+        @:<a title="@title" class="fancybox" href="@imgItem.Image?maxwidth=1400&amp;maxheight=990">
     }
-    <img class="co-content-image" src="@Content.Image?w=@width&amp;quality=@quality" alt="@title" />
+    <img class="co-content-image" src="@imgItem.Image?w=@width&amp;quality=@quality" alt="@title" />
     if (withLink) {
         @:</a>
     }
