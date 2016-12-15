@@ -9,20 +9,20 @@
 	var zoomW = retina ? 3200 : 1600;
 	var zoomH = retina ? 1800 : 900;
 }
-@foreach (var Content in AsDynamic(Data["Default"]))
+@foreach (var img in AsDynamic(Data["Default"]))
 {
 	<div class="col col-sm-@columns sc-element">
-		@Edit.Toolbar(Content)
+		@Edit.Toolbar(img)
 		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
-			@:<a title="@(Presentation.TitleLightbox ? Content.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@Content.Image?maxwidth=@zoomW&amp;maxheight=@zoomH">
+			@:<a title="@(Presentation.TitleLightbox ? img.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@img.Image?maxwidth=@zoomW&amp;maxheight=@zoomH">
 		}
-		<img class="img-responsive" src="@Content.Image?w=@width" alt="@Content.Title" />
+		<img class="img-responsive" src="@img.Image?w=@width" alt="@img.Title" />
 		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
 			@:</a>
 		}
 		@if(Presentation.TitleLegend is bool && Presentation.TitleLegend ){
 			<div class="co-imgcaption">
-				@Content.Title
+				@img.Title
 			</div>
 		}
 	</div>

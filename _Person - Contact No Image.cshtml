@@ -3,34 +3,34 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-person-wrapper row">
-        @foreach (var Content in AsDynamic(Data["Default"]))
+        @foreach (var person in AsDynamic(Data["Default"]))
         {
             <div class="sc-element co-person co-person-noimage co-syncheight col-sm-6">
-                @Edit.Toolbar(Content)
+                @Edit.Toolbar(person)
 
                 <div class="co-person-text" itemscope itemtype="http://schema.org/Person">
-                    <strong itemprop="name">@Content.FullName</strong><br />
-                    @if (!String.IsNullOrEmpty(Content.Position))
+                    <strong itemprop="name">@person.FullName</strong><br />
+                    @if (!String.IsNullOrEmpty(person.Position))
                     {
-                        <span itemprop="jobTitle">@Content.Position</span><br />
+                        <span itemprop="jobTitle">@person.Position</span><br />
                     }
-                    @if (!String.IsNullOrEmpty(Content.Email))
+                    @if (!String.IsNullOrEmpty(person.Email))
                     {
                         <div itemprop="email">
                             <span class="glyphicon glyphicon-envelope"></span> 
-                            @RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Email })
+                            @RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = person.Email })
                         </div>
                     }
-                    @if (!String.IsNullOrEmpty(Content.Mobile))
+                    @if (!String.IsNullOrEmpty(person.Mobile))
                     {
-                        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@Content.Mobile.Replace(" ", "")" itemprop="telephone">@Content.Mobile</a><br />
+                        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@person.Mobile.Replace(" ", "")" itemprop="telephone">@person.Mobile</a><br />
                     }
-                    @if (!String.IsNullOrEmpty(Content.Phone))
+                    @if (!String.IsNullOrEmpty(person.Phone))
                     {
-                        <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@Content.Phone.Replace(" ", "")" itemprop="telephone">@Content.Phone</a><br />
+                        <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@person.Phone.Replace(" ", "")" itemprop="telephone">@person.Phone</a><br />
                     }
                     <div itemprop="description">
-                        @Html.Raw((string)Content.Description)
+                        @Html.Raw((string)person.Description)
                     </div>
                 </div>
             </div>

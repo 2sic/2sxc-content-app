@@ -8,17 +8,17 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
-        @foreach (var Content in AsDynamic(Data["Default"]))
+        @foreach (var linkItem in AsDynamic(Data["Default"]))
         {
-            var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+            var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
             <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
-                @Edit.Toolbar(Content)
-                <h3>@Content.Title</h3>
-                <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
+                @Edit.Toolbar(linkItem)
+                <h3>@linkItem.Title</h3>
+                <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
                 @if(linkInfo.Found)
                 {
-                    <a target="@linkInfo.Window" title="@Content.Title" href="@Content.Link">&raquo; @Content.LinkText</a>
+                    <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">&raquo; @linkItem.LinkText</a>
                 }
             </div>
         }

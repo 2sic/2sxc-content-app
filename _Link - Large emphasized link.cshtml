@@ -6,20 +6,20 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-button-wrapper text-center sc-element">
-        @foreach (var Content in AsDynamic(Data["Default"]))
+        @foreach (var linkItem in AsDynamic(Data["Default"]))
         {
             // get helper commands
             var Helpers = CreateInstance("_Helpers.cshtml");
-            var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+            var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-            @Edit.Toolbar(Content)
+            @Edit.Toolbar(linkItem)
             <div class="co-title">
                 @if(Presentation.HeadingType != "hide")
                 {
                     @Html.Raw("<" + Presentation.HeadingType + ">")
-                        @Content.Title
+                        @linkItem.Title
                         <br/>
-                        <small>@Content.Description</small>
+                        <small>@linkItem.Description</small>
                     @Html.Raw("</" + Presentation.HeadingType + ">")
                 }
             </div>
@@ -27,9 +27,9 @@
                 <a 
                 target="@linkInfo.Window"
                 class="btn btn-primary"
-                href="@Content.Link">
+                href="@linkItem.Link">
                     <i class="co-icon glyphicon @linkInfo.Icon" aria-hidden="true"></i>
-                    @Content.LinkText
+                    @linkItem.LinkText
                 </a>
             }
         }
