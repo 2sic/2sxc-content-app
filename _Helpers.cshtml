@@ -21,7 +21,7 @@
         var found = !String.IsNullOrEmpty(link);
         linkInfo.Add("Found", found);
 
-        // setup remaining properties
+        // process remaining properties, in case we want to override them with automatic stuff
         if(found) {
             var linkExt = System.IO.Path.GetExtension(link.ToLower());
             var isDoc = fileExtensions.Contains(linkExt);
@@ -40,17 +40,19 @@
                     : (isInternal 
                         ? "glyphicon-triangle-right" // else if internal, use play-button
                         : "glyphicon-new-window");   // else if external, show "open new window"
-            linkInfo.Add("Icon", icon);
 
             // optionally auto-detect the window
             if(String.IsNullOrEmpty(window) || window == "auto")
                 window = isInternal && !isDoc ? "_self" : "_blank";
-            linkInfo.Add("Window", window);
 
-            // we could add these properties too, but at the moment they are not needed
-            // linkInfo.Add("Extension", linkExt);
-            // linkInfo.Add("IsDoc", isDoc);
         }
+
+        // add properties to ExpandoObject
+        linkInfo.Add("Icon", icon);
+        linkInfo.Add("Window", window);
+        // we could add these properties too, but at the moment they are not needed
+        // linkInfo.Add("Extension", linkExt);
+        // linkInfo.Add("IsDoc", isDoc);
 
         return linkInfo;
 	}
