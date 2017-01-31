@@ -11,7 +11,7 @@
 }
 @foreach (var img in AsDynamic(Data["Default"]))
 {
-	<div class="col col-sm-@columns sc-element">
+	<div class="col col-sm-@columns sc-element sync-height-with-neighbors">
 		@Edit.Toolbar(img)
 		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
 			@:<a title="@(Presentation.TitleLightbox ? img.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@img.Image?maxwidth=@zoomW&amp;maxheight=@zoomH">

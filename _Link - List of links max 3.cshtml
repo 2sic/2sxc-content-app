@@ -12,7 +12,7 @@
         {
             var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-            <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
+            <div class="col col-xs-12 col-sm-6 col-md-4 sc-element sync-height-with-neighbors">
                 @Edit.Toolbar(linkItem)
                 <h3>@linkItem.Title</h3>
                 <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
@@ -24,8 +24,3 @@
         }
     </div>
 </div>
-
-<script>
-    /* Call syncHeightResponsive here - makes sure that sync height also works after ajax reload */
-    $(".co-navigation-@(Dnn.Module.ModuleID) .col").syncHeightResponsive();
-</script>

@@ -5,7 +5,7 @@
 	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID) row">
 		@foreach (var person in AsDynamic(Data["Default"]))
 		{
-			<div class="sc-element co-person col-sm-6">
+			<div class="sc-element co-person col-sm-6 sync-height-with-neighbors">
 				@Edit.Toolbar(person)
 				
 				<div class="row">
@@ -54,8 +54,3 @@
 		}
 	</div>
 </div>
-
-<script>
-    /* Call syncHeightResponsive here - makes sure that sync height also works after ajax reload */
-    $(".co-person-wrapper-@(Dnn.Module.ModuleID) .co-person").syncHeightResponsive();
-</script>
