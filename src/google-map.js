@@ -76,14 +76,14 @@
         if(!window.googleMapsLoaded)
         {
             window.googleMapsLoaded = true;
-            $.getScript("http://maps.google.com/maps/api/js?key=" + googleApiKey + "&sensor=true&callback=googleMapLoadCallback");
+            $.getScript("//maps.google.com/maps/api/js?key=" + googleApiKey + "&sensor=true&callback=googleMapLoadCallback");
         }
     }
 
 
     // check if it's the original key, which shouldn't be used in live sites
     // do not turn this off, it's important!
-    // to disable the warning, replace the API key as explained on https://github.com/2sic/2sxc-content-bootstrap3/wiki/google-maps-api-key
+    // to disable the warning, replace the API key as explained on //github.com/2sic/2sxc-content-bootstrap3/wiki/google-maps-api-key
     function showWarningIfDemoKeyIsUsed() {
         var showApiKeyWarning = googleApiKey === "A-I-z-a-S-yAUbRHtu3k_fg3jDGk_qAatE5jA4bC_ndE".replace(/-/g, "");
         if(showApiKeyWarning){
