@@ -1,6 +1,6 @@
 {
   "name": "2sic-bootstrap-content-templates",
-  "version": "1.0.0",
+  "version": "02.03.00",
   "description": "(bootstrap-based) content templates for websites built with 2sxc and the 2sic bootstrap skin",
   "main": "(none)",
   "scripts": {
@@ -9,7 +9,9 @@
   "author": "2sic internet solutions",
   "license": "ISC",
   "devDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "jquery.syncHeightResponsive": "https://github.com/2sic/syncHeightResponsive.git"
+  },
   // The ToSIC-global-dependencies node specifies dependencies that are needed
   // to run the gulp tasks. They are not listed in the dependencies node itself
   // because we at 2sic do not install those dependencies locally but globally.
