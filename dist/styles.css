@@ -12,6 +12,9 @@
     margin-bottom: 30px;
     width: 100%; }
   /* Content Navigation */
+  .co-navigation .glyphicon.glyphicon-menu-right.glyphicon-right-custom {
+    font-size: 15px;
+    vertical-align: text-bottom; }
   .co-navigation.co-navigation-image h3 {
     margin-top: .3em; }
   .co-navigation.co-navigation-image a span.glyphicon {

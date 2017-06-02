@@ -28,7 +28,7 @@
                             <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
                             @if(!String.IsNullOrEmpty(Content.Link))
                             {
-                                <span class="text-primary"><i class="glyphicon glyphicon-chevron-right text-primary" aria-hidden="true"></i>&nbsp;@Content.LinkText</span>
+                                <span class="text-primary">@Content.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
                             }
                         </div>
                     </div>

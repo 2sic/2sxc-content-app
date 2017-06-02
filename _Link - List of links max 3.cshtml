@@ -19,7 +19,7 @@
                     <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
                     @if(linkInfo.Found)
                     {
-                        <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">&raquo; @linkItem.LinkText</a>
+                        <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">@linkItem.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></a>
                     }
                 </div>
             }
