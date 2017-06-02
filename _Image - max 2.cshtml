@@ -5,8 +5,10 @@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})
 
 <div class="co-container-outer">
-	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg row">
-		@* call sub-template to show all images in the right size *@
-		@RenderPage("_Image - Shared - loop images.cshtml", new { width = 540, gridColumns = 6 })
+	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg">
+		<div class="row">
+			@* call sub-template to show all images in the right size *@
+			@RenderPage("_Image - Shared - loop images.cshtml", new { width = 540, gridColumns = 6 })
+		</div>
 	</div>
 </div>

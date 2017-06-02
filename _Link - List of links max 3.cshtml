@@ -7,20 +7,22 @@
 }
 
 <div class="co-container-outer">
-	<div class="co-container-inner row co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
-        @foreach (var linkItem in AsDynamic(Data["Default"]))
-        {
-            var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
+	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
+        <div class="row">
+            @foreach (var linkItem in AsDynamic(Data["Default"]))
+            {
+                var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-            <div class="col col-xs-12 col-sm-6 col-md-4 sc-element sync-height-with-neighbors">
-                @Edit.Toolbar(linkItem)
-                <h3>@linkItem.Title</h3>
-                <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
-                @if(linkInfo.Found)
-                {
-                    <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">&raquo; @linkItem.LinkText</a>
-                }
-            </div>
-        }
+                <div class="col col-xs-12 col-sm-6 col-md-4 sc-element sync-height-with-neighbors">
+                    @Edit.Toolbar(linkItem)
+                    <h3>@linkItem.Title</h3>
+                    <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
+                    @if(linkInfo.Found)
+                    {
+                        <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">&raquo; @linkItem.LinkText</a>
+                    }
+                </div>
+            }
+        </div>
     </div>
 </div>

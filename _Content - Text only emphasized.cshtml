@@ -2,15 +2,17 @@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts"})
 
 <div class="co-container-outer">
-	<div class="co-container-inner row">
-        <div class="clearfix sc-element co-content co-content-text-only ly-margin-bottom col-md-8 col-md-push-2">
-            @Edit.Toolbar(Content)
-            <div class="co-title">
-                @* call sub-template to show the title with the correct H1-H6 tag *@
-                @RenderPage("_Shared - header tag.cshtml")
-            </div>
-            <div class="co-text">
-                @Html.Raw(Content.Text)
+	<div class="co-container-inner">
+        <div class="row">
+            <div class="clearfix sc-element co-content co-content-text-only ly-margin-bottom col-md-8 col-md-push-2">
+                @Edit.Toolbar(Content)
+                <div class="co-title">
+                    @* call sub-template to show the title with the correct H1-H6 tag *@
+                    @RenderPage("_Shared - header tag.cshtml")
+                </div>
+                <div class="co-text">
+                    @Html.Raw(Content.Text)
+                </div>
             </div>
         </div>
     </div>

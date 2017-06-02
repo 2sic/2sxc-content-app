@@ -2,15 +2,17 @@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "fancybox,styles,scripts"})
 
 <div class="co-container-outer">
-	<div class="co-container-inner clearfix sc-element co-content co-content-image-left co-text-beside-image ly-margin-bottom row">
-		@Edit.Toolbar(Content)
-		<div class="col-sm-12">
-			@RenderPage("_Shared - header tag.cshtml")
-			@* call sub-template to show the image with all possible options *@
-			@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 540 })
-			@* call sub-template to show the title with the correct H1-H6 tag *@
-			<div class="co-text">
-				@Html.Raw(Content.Text)
+	<div class="co-container-inner clearfix sc-element co-content co-content-image-left co-text-beside-image ly-margin-bottom">
+		<div class="row">
+			@Edit.Toolbar(Content)
+			<div class="col-sm-12">
+				@RenderPage("_Shared - header tag.cshtml")
+				@* call sub-template to show the image with all possible options *@
+				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 540 })
+				@* call sub-template to show the title with the correct H1-H6 tag *@
+				<div class="co-text">
+					@Html.Raw(Content.Text)
+				</div>
 			</div>
 		</div>
 	</div>

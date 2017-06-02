@@ -2,55 +2,57 @@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
 <div class="co-container-outer">
-	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID) row">
-		@foreach (var person in AsDynamic(Data["Default"]))
-		{
-			<div class="sc-element co-person col-sm-6 sync-height-with-neighbors">
-				@Edit.Toolbar(person)
-				
-				<div class="row">
-					<div class="co-person-image col-xs-4">
-						@if (!String.IsNullOrEmpty(person.Photo))
-						{
-							<img src="@person.Photo?w=379&amp;h=488&amp;mode=crop" alt="@person.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
-						}
-						else
-						{
-							<div class="co-person-placeholder"></div>
-						}
-					</div>
+	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
+		<div class="row">
+			@foreach (var person in AsDynamic(Data["Default"]))
+			{
+				<div class="sc-element co-person col-sm-6 sync-height-with-neighbors">
+					@Edit.Toolbar(person)
+					
+					<div class="row">
+						<div class="co-person-image col-xs-4">
+							@if (!String.IsNullOrEmpty(person.Photo))
+							{
+								<img src="@person.Photo?w=379&amp;h=488&amp;mode=crop" alt="@person.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
+							}
+							else
+							{
+								<div class="co-person-placeholder"></div>
+							}
+						</div>
 
-					<div class="co-person-text col-xs-8" itemscope itemtype="http://schema.org/Person">
-						<div class="co-p">
-						<strong itemprop="name">@person.FullName</strong><br />
-						@if (!String.IsNullOrEmpty(person.Position))
-						{
-							<span itemprop="jobTitle">@person.Position</span><br />
-						}
-						</div>
-						<div class="co-p">
-						@if (!String.IsNullOrEmpty(person.Email))
-						{
-							<div itemprop="email">
-								<span class="glyphicon glyphicon-envelope"></span> 
-								@RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = person.Email })
+						<div class="co-person-text col-xs-8" itemscope itemtype="http://schema.org/Person">
+							<div class="co-p">
+							<strong itemprop="name">@person.FullName</strong><br />
+							@if (!String.IsNullOrEmpty(person.Position))
+							{
+								<span itemprop="jobTitle">@person.Position</span><br />
+							}
 							</div>
-						}
-						@if (!String.IsNullOrEmpty(person.Mobile))
-						{
-							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@person.Mobile.Replace(" ", "")" itemprop="telephone">@person.Mobile</a><br />
-						}
-						@if (!String.IsNullOrEmpty(person.Phone))
-						{
-							<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@person.Phone.Replace(" ", "")" itemprop="telephone">@person.Phone</a><br />
-						}
-						</div>
-						<div itemprop="description">
-							@Html.Raw((string)person.Description)
+							<div class="co-p">
+							@if (!String.IsNullOrEmpty(person.Email))
+							{
+								<div itemprop="email">
+									<span class="glyphicon glyphicon-envelope"></span> 
+									@RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = person.Email })
+								</div>
+							}
+							@if (!String.IsNullOrEmpty(person.Mobile))
+							{
+								<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@person.Mobile.Replace(" ", "")" itemprop="telephone">@person.Mobile</a><br />
+							}
+							@if (!String.IsNullOrEmpty(person.Phone))
+							{
+								<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@person.Phone.Replace(" ", "")" itemprop="telephone">@person.Phone</a><br />
+							}
+							</div>
+							<div itemprop="description">
+								@Html.Raw((string)person.Description)
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		}
+			}
+		</div>
 	</div>
 </div>
