@@ -5,16 +5,16 @@
 	<div class="co-container-inner clearfix sc-element co-content co-content-image-right co-text-beside-image ly-margin-bottom">
 		<div class="row">
 			@Edit.Toolbar(Content)
-			<div class="col-sm-8">
-			<div class="co-content-heading">
-				@* call sub-template to show the title with the correct H1-H6 tag *@
-				@RenderPage("_Shared - header tag.cshtml")
+			<div class="col col-sm-8">
+				<div class="co-content-heading">
+					@* call sub-template to show the title with the correct H1-H6 tag *@
+					@RenderPage("_Shared - header tag.cshtml")
+				</div>
+				<div class="co-text">
+					@Html.Raw(Content.Text)
+				</div>
 			</div>
-			<div class="co-text">
-				@Html.Raw(Content.Text)
-			</div>
-			</div>
-			<div class="col-sm-4">
+			<div class="col col-sm-4">
 				@* call sub-template to show the image with all possible options *@
 				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 540 })
 			</div>

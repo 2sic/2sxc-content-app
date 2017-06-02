@@ -6,11 +6,11 @@
 		<div class="row">
 			@foreach (var person in AsDynamic(Data["Default"]))
 			{
-				<div class="sc-element co-person col-sm-6 sync-height-with-neighbors">
+				<div class="sc-element co-person col col-sm-6 sync-height-with-neighbors">
 					@Edit.Toolbar(person)
 					
 					<div class="row">
-						<div class="co-person-image col-xs-4">
+						<div class="co-person-image col col-xs-4">
 							@if (!String.IsNullOrEmpty(person.Photo))
 							{
 								<img src="@person.Photo?w=379&amp;h=488&amp;mode=crop" alt="@person.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
@@ -21,7 +21,7 @@
 							}
 						</div>
 
-						<div class="co-person-text col-xs-8" itemscope itemtype="http://schema.org/Person">
+						<div class="co-person-text col col-xs-8" itemscope itemtype="http://schema.org/Person">
 							<div class="co-p">
 							<strong itemprop="name">@person.FullName</strong><br />
 							@if (!String.IsNullOrEmpty(person.Position))

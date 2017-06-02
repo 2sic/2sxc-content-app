@@ -20,10 +20,10 @@
                         @:<a class="co-link-box" title="@Content.Title" href="@Content.Link" target="@linkInfo.Window">
                     }
                     <div class="row">
-                        <div class="col-xs-2 text-center">
+                        <div class="col col-xs-2 text-center">
                             <i class="co-icon text-primary co-icon glyphicon @linkInfo.Icon" aria-hidden="true"></i>
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col col-xs-10">
                             <h3>@Content.Title</h3>
                             <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
                             @if(!String.IsNullOrEmpty(Content.Link))

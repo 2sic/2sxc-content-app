@@ -5,7 +5,7 @@
 	<div class="co-container-inner clearfix sc-element co-content co-content-image-left co-text-beside-image ly-margin-bottom">
 		<div class="row">
 			@Edit.Toolbar(Content)
-			<div class="col-sm-12">
+			<div class="col col-sm-12">
 				@RenderPage("_Shared - header tag.cshtml")
 				@* call sub-template to show the image with all possible options *@
 				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 540 })
