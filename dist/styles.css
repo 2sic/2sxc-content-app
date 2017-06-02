@@ -101,6 +101,10 @@
     border-color: #eee; }
   hr.ly-primaryhr {
     border-color: #337ab7; }
+  hr.ly-primaryhr-half {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto; }
   /* Person */
   .co-person {
     overflow: hidden;

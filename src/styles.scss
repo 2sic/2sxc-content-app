@@ -155,6 +155,7 @@
 	}
 	hr.ly-darkhr { border-color: $gray-light; }
 	hr.ly-primaryhr { border-color: $brand-primary; }
+	hr.ly-primaryhr-half { width: 50%; margin-right: auto; margin-left: auto }
 	
 	/* Person */
 	.co-person { overflow:hidden; margin:$grid-gutter-width 0; }
