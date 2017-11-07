@@ -13,7 +13,9 @@
 						<div class="co-person-image co-person-image-rounded col-xs-4">
 							@if (!String.IsNullOrEmpty(Content.Photo))
 							{
-								<img src="@Content.Photo?w=379&amp;h=379&amp;mode=crop" alt="@Content.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
+								<div class="co-person-image-wrapper">
+									<img src="@Content.Photo?w=379&amp;h=379&amp;mode=crop" alt="@Content.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
+								</div>
 							}
 							else
 							{

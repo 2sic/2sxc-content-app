@@ -171,8 +171,13 @@
 		padding-bottom: 128%;
 	}
 	.co-person-image-rounded {
-		img {
+		.co-person-image-wrapper {
 			border-radius: 50%;
+			overflow: hidden;
+
+			img {
+				backface-visibility: hidden;
+			}
 		}
 		.co-person-placeholder {
 			border-radius: 50%;
