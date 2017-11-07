@@ -4,17 +4,17 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
 		<div class="row">
-			@foreach (var Content in AsDynamic(Data["Default"]))
+			@foreach (var person in AsDynamic(Data["Default"]))
 			{
 				<div class="sc-element co-person col col-sm-6 sync-height-with-neighbors">
-					@Edit.Toolbar(Content)
+					@Edit.Toolbar(person)
 					
 					<div class="row">
 						<div class="co-person-image co-person-image-rounded col-xs-4">
-							@if (!String.IsNullOrEmpty(Content.Photo))
+							@if (!String.IsNullOrEmpty(person.Photo))
 							{
 								<div class="co-person-image-wrapper">
-									<img src="@Content.Photo?w=379&amp;h=379&amp;mode=crop" alt="@Content.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
+									<img src="@person.Photo?w=379&amp;h=379&amp;mode=crop" alt="@person.FullName" class="img-responsive" /> @* Format: Passphoto 1.2857 *@
 								</div>
 							}
 							else
@@ -25,31 +25,31 @@
 
 						<div class="co-person-text col col-xs-8" itemscope itemtype="http://schema.org/Person">
 							<div class="co-p">
-							<strong itemprop="name">@Content.FullName</strong><br />
-							@if (!String.IsNullOrEmpty(Content.Position))
+							<strong itemprop="name">@person.FullName</strong><br />
+							@if (!String.IsNullOrEmpty(person.Position))
 							{
-								<span itemprop="jobTitle">@Content.Position</span><br />
+								<span itemprop="jobTitle">@person.Position</span><br />
 							}
 							</div>
 							<div class="co-p">
-							@if (!String.IsNullOrEmpty(Content.Email))
+							@if (!String.IsNullOrEmpty(person.Email))
 							{
 								<div itemprop="email">
 									<span class="glyphicon glyphicon-envelope"></span> 
-									@RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Email })
+									@RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = person.Email })
 								</div>
 							}
-							@if (!String.IsNullOrEmpty(Content.Mobile))
+							@if (!String.IsNullOrEmpty(person.Mobile))
 							{
-								<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@Content.Mobile.Replace(" ", "")" itemprop="telephone">@Content.Mobile</a><br />
+								<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <a href="tel:@person.Mobile.Replace(" ", "")" itemprop="telephone">@person.Mobile</a><br />
 							}
-							@if (!String.IsNullOrEmpty(Content.Phone))
+							@if (!String.IsNullOrEmpty(person.Phone))
 							{
-								<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@Content.Phone.Replace(" ", "")" itemprop="telephone">@Content.Phone</a><br />
+								<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <a href="tel:@person.Phone.Replace(" ", "")" itemprop="telephone">@person.Phone</a><br />
 							}
 							</div>
 							<div itemprop="description">
-								@Html.Raw((string)Content.Description)
+								@Html.Raw((string)person.Description)
 							</div>
 						</div>
 					</div>
