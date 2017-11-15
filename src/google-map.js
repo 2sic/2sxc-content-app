@@ -35,7 +35,6 @@
                     zoomControl: true,
                     scaleControl: true,
                     scrollwheel: false,
-                    draggable: false,
                     mapTypeId: google.maps.MapTypeId[settings.mapTypeId]
                 };
 
