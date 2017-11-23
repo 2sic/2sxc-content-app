@@ -13,32 +13,32 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-image">
 		<div class="row">
-			@foreach (var Content in AsDynamic(Data["Default"]))
+			@foreach (var linkItem in AsDynamic(Data["Default"]))
 			{
-				var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+				var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
 				<div class="col col-xs-12 col-sm-6 col-md-4 sc-element sync-height-with-neighbors">
-					@Edit.Toolbar(Content)
+					@Edit.Toolbar(linkItem)
 					@if(linkInfo.Found)
 						{
-							@:<a target="@linkInfo.Window" class="co-link-box" title="@Content.Title" href="@Content.Link">
+							@:<a target="@linkInfo.Window" class="co-link-box" title="@linkItem.Title" href="@linkItem.Link">
 						}
 						<div class="co-img-wrapper">
-							@if(!String.IsNullOrEmpty(Content.Image))
+							@if(!String.IsNullOrEmpty(linkItem.Image))
 							{
-								<img src="@Content.Image?w=690&amp;h=345&amp;quality=80&amp;mode=crop&amp;scale=both" alt="@Content.Title" />
+								<img src="@linkItem.Image?w=690&amp;h=345&amp;quality=80&amp;mode=crop&amp;scale=both" alt="@linkItem.Title" />
 							} else {
 								<div class="co-img-placeholder"></div>
 							}
 						</div>
-						<h3>@Content.Title</h3>
-						@if(!String.IsNullOrEmpty(Content.Description))
+						<h3>@linkItem.Title</h3>
+						@if(!String.IsNullOrEmpty(linkItem.Description))
 						{
-							<p>@Helpers.ConvertLineBreaks(Content.Description)</p>
+							<p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
 						}
 						@if(linkInfo.Found)
 						{
-							<span class="co-link">@Content.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
+							<span class="co-link">@linkItem.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
 							@:</a>
 						}
 					

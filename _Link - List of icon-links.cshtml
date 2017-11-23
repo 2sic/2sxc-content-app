@@ -1,4 +1,4 @@
-@* put all necessary link/script tags here *@
+te@* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
 @{
@@ -9,26 +9,26 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-icon co-navigation-text">
         <div class="row">
-            @foreach (var Content in AsDynamic(Data["Default"]))
+            @foreach (var linkItem in AsDynamic(Data["Default"]))
             {
-                var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+                var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
                 <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
-                    @Edit.Toolbar(Content)
+                    @Edit.Toolbar(linkItem)
                     @if(linkInfo.Found)
                     {
-                        @:<a class="co-link-box" title="@Content.Title" href="@Content.Link" target="@linkInfo.Window">
+                        @:<a class="co-link-box" title="@linkItem.Title" href="@linkItem.Link" target="@linkInfo.Window">
                     }
                     <div class="row">
                         <div class="col col-xs-2 text-center">
                             <i class="co-icon text-primary co-icon glyphicon @linkInfo.Icon" aria-hidden="true"></i>
                         </div>
                         <div class="col col-xs-10">
-                            <h3>@Content.Title</h3>
-                            <p>@Helpers.ConvertLineBreaks(Content.Description)</p>
-                            @if(!String.IsNullOrEmpty(Content.Link))
+                            <h3>@linkItem.Title</h3>
+                            <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
+                            @if(!String.IsNullOrEmpty(linkItem.Link))
                             {
-                                <span class="text-primary">@Content.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
+                                <span class="text-primary">@linkItem.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
                             }
                         </div>
                     </div>
