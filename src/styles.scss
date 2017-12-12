@@ -33,7 +33,7 @@
 	.co-navigation {
 		.glyphicon.glyphicon-menu-right.glyphicon-right-custom {
 			font-size: 15px;
-			vertical-align: text-bottom;
+			vertical-align: middle;
 		}
 
 		&.co-navigation-image {
@@ -63,6 +63,10 @@
 			text-decoration: none;
 			color: $text-color;
 			
+			.co-icon {
+				font-size: 2em;
+			}
+
 			.co-img-wrapper {
 				background: $brand-primary;
 				overflow: hidden;

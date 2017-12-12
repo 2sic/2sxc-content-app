@@ -14,7 +14,7 @@
   /* Content Navigation */
   .co-navigation .glyphicon.glyphicon-menu-right.glyphicon-right-custom {
     font-size: 15px;
-    vertical-align: text-bottom; }
+    vertical-align: middle; }
   .co-navigation.co-navigation-image h3 {
     margin-top: .3em; }
   .co-navigation.co-navigation-image a span.glyphicon {
@@ -33,6 +33,8 @@
     display: block;
     text-decoration: none;
     color: #333; }
+    .co-navigation a.co-link-box .co-icon {
+      font-size: 2em; }
     .co-navigation a.co-link-box .co-img-wrapper {
       background: #337ab7;
       overflow: hidden; }

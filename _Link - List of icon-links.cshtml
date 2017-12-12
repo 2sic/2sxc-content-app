@@ -1,4 +1,4 @@
-te@* put all necessary link/script tags here *@
+@* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
 @{
@@ -13,11 +13,11 @@ te@* put all necessary link/script tags here *@
             {
                 var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-                <div class="col col-xs-12 col-sm-6 col-md-4 sc-element">
+                <div class="col col-xs-12 col-sm-6 col-md-4 sc-element sync-height-with-neighbors">
                     @Edit.Toolbar(linkItem)
                     @if(linkInfo.Found)
                     {
-                        @:<a class="co-link-box" title="@linkItem.Title" href="@linkItem.Link" target="@linkInfo.Window">
+                        @:<a class="co-link-box" title="@linkItem.Title" href="@linkItem.Link" target="@linkInfo.Window" class="co-link">
                     }
                     <div class="row">
                         <div class="col col-xs-2 text-center">
@@ -28,7 +28,7 @@ te@* put all necessary link/script tags here *@
                             <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
                             @if(!String.IsNullOrEmpty(linkItem.Link))
                             {
-                                <span class="text-primary">@linkItem.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
+                                <span class="text-primary co-link">@linkItem.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
                             }
                         </div>
                     </div>
