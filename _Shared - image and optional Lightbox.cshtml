@@ -9,6 +9,7 @@
     // configuration
     var retina = true;
     var quality = 75;
+    var lightboxQuality = 90;
 
     // this is the parameter passed in from the calling page
     var imgItem = PageData["img"];
@@ -16,6 +17,7 @@
     if(retina) {
         width += width; // double if retina
         quality = 50;
+        lightboxQuality = 75;
     }
 
     // prepare the title, either the default or the additional image caption
@@ -33,7 +35,7 @@
 
 @if(hasImage) {
     if (withLink) {
-        @:<a title="@title" class="fancybox" href="@imgItem.Image?maxwidth=1400&amp;maxheight=990">
+        @:<a title="@title" class="fancybox" href="@imgItem.Image?maxwidth=1400&amp;maxheight=990&amp;quality=@lightboxQuality">
     }
     <img class="co-content-image" src="@imgItem.Image?w=@width&amp;quality=@quality" alt="@title" />
     if (withLink) {
