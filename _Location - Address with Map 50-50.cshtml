@@ -13,13 +13,10 @@
 					@Content.CompanyAdd</strong>
 				</div>
 				<div class="co-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					@if (!String.IsNullOrEmpty(Content.Street) || !String.IsNullOrEmpty(Content.Street2)) {
+					@if (!String.IsNullOrEmpty(Content.Street)) {
 						<span itemprop="streetAddress">
 						@if (!String.IsNullOrEmpty(Content.Street)) {
-							<text>@Content.Street<br></text>
-						}
-						@if (!String.IsNullOrEmpty(Content.Street2)) {
-							<text>@Content.Street2<br/></text>
+							<text>@Html.Raw(Content.Street.Replace("\n", "<br />"))<br></text>
 						}
 						</span>
 					}
