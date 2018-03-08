@@ -1,5 +1,6 @@
 (function ($) {
     // Change this GoogleApiKey. Get it on Google API Console (https://console.developers.google.com/apis/)
+    // read instructions here: https://github.com/2sic/2sxc-content-app/wiki/google-maps-api-key
     var googleApiKey = "AIzaSyAUbRHtu3k_fg3jDGk_qAatE5jA4bC_ndE";
 
 
