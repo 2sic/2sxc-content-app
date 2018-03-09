@@ -36,10 +36,10 @@
             // but only if no icon was specified already
             if(String.IsNullOrEmpty(icon))
                 icon = isDoc 
-                    ? "glyphicon-file" // if doc, then file-icon
+                    ? "fas fa-file" // if doc, then file-icon
                     : (isInternal 
-                        ? "glyphicon-triangle-right" // else if internal, use play-button
-                        : "glyphicon-new-window");   // else if external, show "open new window"
+                        ? "fas fa-caret-right" // else if internal, use play-button
+                        : "fas fa-external-link-alt");   // else if external, show "open new window"
 
             // optionally auto-detect the window
             if(String.IsNullOrEmpty(window) || window == "auto")

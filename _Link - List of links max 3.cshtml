@@ -1,3 +1,5 @@
+@using Connect.Koi
+
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
@@ -8,18 +10,18 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
-        <div class="row">
+        <div @Koi.Class("all='' bs3='row' bs4='row'")>
             @foreach (var linkItem in AsDynamic(Data["Default"]))
             {
                 var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-                <div class="col col-xs-12 col-sm-6 col-md-4 sc-element sync-height-with-neighbors">
+                <div @Koi.Class("all='sc-element' bs3='col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors' bs4='col col-12 col-md-6 col-lg-4'")>
                     @Edit.Toolbar(linkItem)
                     <h3>@linkItem.Title</h3>
                     <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
                     @if(linkInfo.Found)
                     {
-                        <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">@linkItem.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></a>
+                        <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">@linkItem.LinkText&nbsp;<span class="" aria-hidden="true">&rsaquo;</span></a>
                     }
                 </div>
             }

@@ -1,6 +1,9 @@
 @*
 	This is a sub-template of the image templates
 *@
+
+@using Connect.Koi
+
 @{
 	var width = PageData["width"];
 	var columns = PageData["gridColumns"];
@@ -13,7 +16,7 @@
 }
 @foreach (var img in AsDynamic(Data["Default"]))
 {
-	<div class="col col-sm-@columns sc-element sync-height-with-neighbors">
+	<div @Koi.Class("all='sc-element' bs3='col col-sm-" + @columns + " sync-height-with-neighbors' bs4='col col-md-" + @columns + "'")>
 		@Edit.Toolbar(img)
 		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
 			@:<a title="@(Presentation.TitleLightbox ? img.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@img.Image?quality=@lightboxQuality&amp;maxwidth=@zoomW&amp;maxheight=@zoomH">

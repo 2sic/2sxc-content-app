@@ -2,12 +2,15 @@
 	todo: why is this not in the same div.co-image-wrapper etc.?
 	todo: can we extract code, or even the entire file? 
 *@
+
+@using Connect.Koi
+
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "fancybox,styles,scripts"})
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg">
-		<div class="row">
+		<div @Koi.Class("bs3='row' bs4='row'")>
 			@* call sub-template to show all images in the right size *@
 			@RenderPage("_Image - Shared - loop images.cshtml", new { width = 1200, gridColumns = 12 })
 		</div>

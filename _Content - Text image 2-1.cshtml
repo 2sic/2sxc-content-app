@@ -1,11 +1,13 @@
+@using Connect.Koi
+
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "fancybox,styles,scripts"})
 
 <div class="co-container-outer">
 	<div class="co-container-inner clearfix sc-element co-content co-content-image-right co-text-beside-image ly-margin-bottom">
-		<div class="row">
+		<div @Koi.Class("bs3='row' bs4='row'")>
 			@Edit.Toolbar(Content)
-			<div class="col col-sm-8">
+			<div @Koi.Class("bs3='col col-sm-8' bs4='col col-md-8'")>
 				<div class="co-content-heading">
 					@* call sub-template to show the title with the correct H1-H6 tag *@
 					@RenderPage("_Shared - header tag.cshtml")
@@ -14,7 +16,7 @@
 					@Html.Raw(Content.Text)
 				</div>
 			</div>
-			<div class="col col-sm-4">
+			<div @Koi.Class("bs3='col col-sm-4' bs4='col col-md-4'")>
 				@* call sub-template to show the image with all possible options *@
 				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 540 })
 			</div>

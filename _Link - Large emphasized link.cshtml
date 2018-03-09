@@ -1,6 +1,5 @@
-@*
-    todo: maybe enable looping so the user can still change between templates
-*@
+@using Connect.Koi
+
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles"})
 
@@ -24,12 +23,9 @@
                 }
             </div>
             if(linkInfo.Found) {
-                <a 
-                target="@linkInfo.Window"
-                class="btn btn-primary"
-                href="@linkItem.Link">
-                    <i class="co-icon glyphicon @linkInfo.Icon" aria-hidden="true"></i>
-                    @linkItem.LinkText
+                <a target="@linkInfo.Window" @Koi.Class("bs3='btn btn-primary' bs4='btn btn-primary'") href="@linkItem.Link" style="display:inline;">
+                    <i class="co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
+                    <span>@linkItem.LinkText</span>
                 </a>
             }
         }

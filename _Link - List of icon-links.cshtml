@@ -1,3 +1,5 @@
+@using Connect.Koi
+
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
@@ -6,29 +8,33 @@
     var Helpers = CreateInstance("_Helpers.cshtml");
 }
 
+@Koi.If("bs4", "<link rel='stylesheet' type='text/css' href='/Portals/content-bootstrap/2sxc/Content/dist/_overwrites.css'>", "")
+
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-icon co-navigation-text">
-        <div class="row">
+        <div @Koi.Class("bs3='row' bs4='row'")>
             @foreach (var linkItem in AsDynamic(Data["Default"]))
             {
                 var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-                <div class="col col-xs-12 col-sm-6 col-md-4 sc-element sync-height-with-neighbors">
+                <div  @Koi.Class("all='sc-element' bs3='col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors' bs4='col col-12 col-md-6 col-lg-4'")>
                     @Edit.Toolbar(linkItem)
                     @if(linkInfo.Found)
                     {
                         @:<a class="co-link-box" title="@linkItem.Title" href="@linkItem.Link" target="@linkInfo.Window" class="co-link">
                     }
                     <div class="row">
-                        <div class="col col-xs-2 text-center">
-                            <i class="co-icon text-primary co-icon glyphicon @linkInfo.Icon" aria-hidden="true"></i>
+                        <div @Koi.Class("bs3='col col-xs-2' bs4='col col-2'")>
+                            <i class="co-icon text-primary co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
                         </div>
-                        <div class="col col-xs-10">
+                        <div @Koi.Class("bs3='col col-xs-10' bs4='col col-10'")>
                             <h3>@linkItem.Title</h3>
                             <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
                             @if(!String.IsNullOrEmpty(linkItem.Link))
                             {
-                                <span class="text-primary co-link">@linkItem.LinkText&nbsp;<span class="glyphicon glyphicon-menu-right glyphicon-right-custom" aria-hidden="true"></span></span>
+                                <span class="text-primary co-link">@linkItem.LinkText&nbsp;
+                                    <span>&rsaquo;</span>
+                                </span>
                             }
                         </div>
                     </div>

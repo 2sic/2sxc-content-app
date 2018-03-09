@@ -1,6 +1,5 @@
-@*
-    todo: demo risk of copied code 
-*@
+@using Connect.Koi
+
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles"})
 
@@ -16,12 +15,12 @@
             {
                 var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-                <li class="sc-element co-document col col-md-12">
+                <li @Koi.Class("all='sc-element co-document' bs3='col col-md-12' bs4='col col-lg-12'")>
                     @Edit.Toolbar(linkItem)
                     @if(linkInfo.Found){
                         @:<a target="@linkInfo.Window" href="@linkItem.Link" title="@linkItem.Title">
                     }
-                        <span class="text-primary pull-left glyphicon @linkInfo.Icon"></span>
+                        <span class="text-primary pull-left fas @linkInfo.Icon"></span>
                         <div class="co-document-text">
                             <span class="@(linkInfo.Found ? "co-link" : "")">@linkItem.Title</span>
                             <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
