@@ -21,7 +21,7 @@
     font-size: .6em;
     margin-right: .2em; }
   .co-navigation.co-navigation-image .co-img-placeholder {
-    background: #5C4483;
+    background: #4A148C;
     padding-bottom: 50%; }
   .co-navigation img {
     width: 100%; }
@@ -36,7 +36,7 @@
     .co-navigation a.co-link-box .co-icon {
       font-size: 2em; }
     .co-navigation a.co-link-box .co-img-wrapper {
-      background: #5C4483;
+      background: #4A148C;
       overflow: hidden; }
       .co-navigation a.co-link-box .co-img-wrapper img {
         position: relative;
@@ -105,7 +105,7 @@
   hr.ly-darkhr {
     border-color: #eee; }
   hr.ly-primaryhr {
-    border-color: #5C4483; }
+    border-color: #4A148C; }
   hr.ly-primaryhr-half {
     width: 50%;
     margin-right: auto;
@@ -141,13 +141,6 @@
 @media all {
   /* Youtube */
   .role-admin .co-youtube-video-wrapper {
-    padding-top: 40px; }
-  /* TEMPORARY */
-  #dnn_ctr1626_ModuleContent,
-  #dnn_ctr1615_ModuleContent,
-  #dnn_ctr1614_ModuleContent,
-  #dnn_ctr1613_ModuleContent,
-  #dnn_ctr1612_ModuleContent {
-    opacity: 0; } }
+    padding-top: 40px; } }
 
 /*# sourceMappingURL=styles.css.map */
