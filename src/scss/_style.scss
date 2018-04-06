@@ -45,7 +45,7 @@
 				margin-right: .2em;
 			}
 			.co-img-placeholder {
-				background: $brand-primary;
+				background: $primary;
 				padding-bottom: 50%;
 			}
 		}
@@ -68,7 +68,7 @@
 			}
 
 			.co-img-wrapper {
-				background: $brand-primary;
+				background: $primary;
 				overflow: hidden;
 				img {
 					position: relative;
@@ -163,7 +163,7 @@
 		padding: 15px 0;
 	}
 	hr.ly-darkhr { border-color: $gray-light; }
-	hr.ly-primaryhr { border-color: $brand-primary; }
+	hr.ly-primaryhr { border-color: $primary; }
 	hr.ly-primaryhr-half { width: 50%; margin-right: auto; margin-left: auto }
 	
 	/* Person */
