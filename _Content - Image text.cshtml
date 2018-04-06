@@ -5,16 +5,16 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner clearfix sc-element co-content co-content-image-left co-text-beside-image ly-margin-bottom">
-		<div @Koi.Class("bs3='row' bs4='row'")>
+		<div @Koi.Class("bs3='row' bs4,oth='row'")>
 			@Edit.Toolbar(Content)
-			<div @Koi.Class("bs3='col col-sm-6 col-sm-push-6' bs4='col col-md-6 order-sm-2'")>
+			<div @Koi.Class("bs3='col col-sm-6 col-sm-push-6' bs4,oth='col-md-6 order-sm-2'")>
 				@* call sub-template to show the title with the correct H1-H6 tag *@
 				@RenderPage("_Shared - header tag.cshtml")
 			<div class="co-text">
 				@Html.Raw(Content.Text)
 			</div>
 			</div>
-			<div @Koi.Class("bs3='col col-sm-6 col-sm-pull-6' bs4='col col-md-6 order-sm-1'")>
+			<div @Koi.Class("bs3='col col-sm-6 col-sm-pull-6' bs4,oth='col-md-6 order-sm-1'")>
 				@* call sub-template to show the image with all possible options *@
 				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 540 })
 			</div>

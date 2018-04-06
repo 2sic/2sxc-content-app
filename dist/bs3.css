@@ -3,7 +3,6 @@
  * You can manually modify it - but usually you will want to 
  * Re-generate it using the SASS variables of your theme
 */
-/* note: this file name must start with an underscore "_" so it wont be generated in the output */
 @media all {
   /* Header */
   .co-header img {
@@ -30,14 +29,13 @@
     padding-bottom: 50%; }
   .co-navigation img {
     width: 100%; }
-  .co-navigation .col {
-    margin-bottom: 30px; }
   .co-navigation .co-img-wrapper {
+    margin-bottom: 30px;
     margin-bottom: 20px; }
   .co-navigation a.co-link-box {
     display: block;
     text-decoration: none;
-    color: #333; }
+    color: #555555; }
     .co-navigation a.co-link-box .co-icon {
       font-size: 2em; }
     .co-navigation a.co-link-box .co-img-wrapper {
@@ -48,7 +46,7 @@
         transition: opacity .3s;
         backface-visibility: hidden; }
     .co-navigation a.co-link-box:hover {
-      color: #333; }
+      color: #555555; }
       .co-navigation a.co-link-box:hover img {
         opacity: .4; }
   .co-navigation-icon h3 {
@@ -60,9 +58,8 @@
     margin-bottom: 30px; }
   .co-img-wrapper.co-2colimg {
     margin-bottom: 0; }
-    .co-img-wrapper.co-2colimg .col {
-      margin-bottom: 30px; }
     .co-img-wrapper.co-2colimg img {
+      margin-bottom: 30px;
       width: 100%; }
   /* Documents and Links */
   ul.co-documents {
@@ -73,7 +70,7 @@
       font-size: 17px;
       line-height: 1.2em; }
     ul.co-documents .co-document a, ul.co-documents .co-document a p, ul.co-documents .co-document a:link, ul.co-documents .co-document a:link p, ul.co-documents .co-document a:visited, ul.co-documents .co-document a:visited p {
-      color: #333;
+      color: #555555;
       text-decoration: none; }
     ul.co-documents .co-document-text {
       margin-left: 30px; }
@@ -108,7 +105,7 @@
   .role-admin .co-separatingline {
     padding: 15px 0; }
   hr.ly-darkhr {
-    border-color: #eee; }
+    border-color: #777777; }
   hr.ly-primaryhr {
     border-color: #5C4483; }
   hr.ly-primaryhr-half {
@@ -124,7 +121,7 @@
   .co-person-text {
     word-wrap: break-word; }
   .co-person-placeholder {
-    background: #eee;
+    background: #777777;
     padding-bottom: 128%; }
   .co-person-image-rounded .co-person-image-wrapper {
     border-radius: 50%;
@@ -133,17 +130,13 @@
       backface-visibility: hidden; }
   .co-person-image-rounded .co-person-placeholder {
     border-radius: 50%;
-    padding-bottom: 100%; } }
-
-@media all and (max-width: 430px) {
+    padding-bottom: 100%; }
   .co-person-wrapper .co-person-image {
     width: 50%;
     margin-bottom: 15px;
     padding-right: 19px; }
   .co-person-wrapper .co-person-text {
-    width: 100%; } }
-
-@media all {
+    width: 100%; }
   /* Youtube */
   .role-admin .co-youtube-video-wrapper {
     padding-top: 40px; } }

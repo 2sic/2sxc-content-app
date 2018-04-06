@@ -16,12 +16,12 @@
 }
 @foreach (var img in AsDynamic(Data["Default"]))
 {
-	<div @Koi.Class("all='sc-element' bs3='col col-sm-" + @columns + " sync-height-with-neighbors' bs4='col col-md-" + @columns + "'")>
+	<div @Koi.Class("all='sc-element' bs3='col col-sm-" + @columns + " sync-height-with-neighbors' bs4,oth='col-md-" + @columns + "'")>
 		@Edit.Toolbar(img)
 		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
 			@:<a title="@(Presentation.TitleLightbox ? img.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@img.Image?quality=@lightboxQuality&amp;maxwidth=@zoomW&amp;maxheight=@zoomH">
 		}
-		<img class="img-responsive" src="@img.Image?quality=@quality&amp;w=@width" alt="@img.Title" />
+		<img @Koi.Class("bs3='img-responsive' bs4,oth='img-fluid'") src="@img.Image?quality=@quality&amp;w=@width" alt="@img.Title" />
 		@if (Presentation.ImageLightbox != null && Presentation.ImageLightbox) {
 			@:</a>
 		}

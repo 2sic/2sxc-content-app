@@ -10,7 +10,7 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg">
-		<div @Koi.Class("bs3='row' bs4='row'")>
+		<div @Koi.Class("bs3='row' bs4,oth='row'")>
 			@* call sub-template to show all images in the right size *@
 			@RenderPage("_Image - Shared - loop images.cshtml", new { width = 1200, gridColumns = 12 })
 		</div>

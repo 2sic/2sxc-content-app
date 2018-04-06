@@ -15,7 +15,7 @@
             {
                 var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-                <li @Koi.Class("all='sc-element co-document' bs3='col col-md-12' bs4='col col-lg-12'")>
+                <li @Koi.Class("all='sc-element co-document' bs3='col col-md-12' bs4,oth='col-lg-12'")>
                     @Edit.Toolbar(linkItem)
                     @if(linkInfo.Found){
                         @:<a target="@linkInfo.Window" href="@linkItem.Link" title="@linkItem.Title">

@@ -1,10 +1,10 @@
-// local variables file
-@import "_variables.scss";
-
-// later on it's usually better to use variables from the skins
-// so that you can re-build the css using the same values used in the skin
-// it would then look a bit like this:
-// @import "../../../_default/skins/2sxc-bootstrap-skin/src/_variables.scss";
+//
+// This SCSS generates the css for the general styles
+//
+// It is used by all CSS generators (Bootstrap3/4, etc.)
+// To keep things simple, it uses the standard variables of 
+// bootstrap 4 conventions. 
+//
 
 @media all {
 	/* Header */
@@ -52,16 +52,14 @@
 		img {
 			width: 100%;
 		}
-		.col {
-			margin-bottom: $grid-gutter-width;
-		}
 		.co-img-wrapper {
+			margin-bottom: $grid-gutter-width;
 			margin-bottom: 20px;
 		}
 		a.co-link-box {
 			display: block;
 			text-decoration: none;
-			color: $text-color;
+			color: $body-color;
 			
 			.co-icon {
 				font-size: 2em;
@@ -78,7 +76,7 @@
 			}
 			
 			&:hover {
-				color: $text-color;
+				color: $body-color;
 				
 				img {
 					opacity: .4;
@@ -102,10 +100,9 @@
 	}
 	.co-img-wrapper.co-2colimg {
 		margin-bottom: 0;
-		.col {
-			margin-bottom: $grid-gutter-width;
-		}
+
 		img {
+			margin-bottom: $grid-gutter-width;
 			width: 100%;
 		}
 	}	
@@ -124,7 +121,7 @@
 				line-height: 1.2em;
 			}
 			a, a:link, a:visited {
-				&, p { color:$text-color; text-decoration: none; }
+				&, p { color:$body-color; text-decoration: none; }
 			}
 		}
 		.co-document-text { margin-left:$grid-gutter-width; }
@@ -132,13 +129,14 @@
 		
 	/* Google Maps */
 	.co-google-map-container {
-		@media(min-width: $screen-md-min){
-			margin-top:25px; margin-bottom:25px;
+		@include media-breakpoint-up(lg) {
+			margin-top:25px;
+			margin-bottom:25px;
 		}
 	}
 	.ly-header-pane {
 		.co-google-map-container { 
-			@media(min-width: $screen-sm-min){
+			@include media-breakpoint-up(md) {
 				padding-bottom: 35%;
 			}
 		}
@@ -162,7 +160,7 @@
 	.role-admin .co-separatingline{
 		padding: 15px 0;
 	}
-	hr.ly-darkhr { border-color: $gray-light; }
+	hr.ly-darkhr { border-color: $gray-200; }
 	hr.ly-primaryhr { border-color: $primary; }
 	hr.ly-primaryhr-half { width: 50%; margin-right: auto; margin-left: auto }
 	
@@ -171,7 +169,7 @@
 	.co-person-wrapper img { width: 100%; }
 	.co-person-text { word-wrap: break-word; }
 	.co-person-placeholder { 
-		background: $gray-light;
+		background: $gray-200;
 		padding-bottom: 128%;
 	}
 	.co-person-image-rounded {
@@ -188,7 +186,7 @@
 			padding-bottom: 100%;
 		}
 	}
-	@media all and (max-width:430px) { 
+	@include media-breakpoint-up(xs) { 
 		.co-person-wrapper .co-person-image { width: 50%; margin-bottom: 15px;  padding-right: 19px; }
 		.co-person-wrapper .co-person-text {width: 100%;}
 	}

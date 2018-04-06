@@ -70,7 +70,7 @@ $grid-breakpoints: $dummy !default;	// try to use default, otherwise just use re
 
 @if variable-exists(screen-sm-min) {
 	$grid-breakpoints: (
-		xs: 0,
+		xs: 0px,
 		sm: 576px,
 		md: $screen-sm-min,
 		lg: $screen-md-min,

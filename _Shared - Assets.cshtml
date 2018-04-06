@@ -3,9 +3,12 @@
 
 @* include bootstrap 3 if the framework isn't known *@
 @using Connect.Koi
-@Koi.IfUnknown("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>")
-@Koi.IfUnknown("<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>")
 
+@if(!Koi.Is("bs3,bs4")) 
+{
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous' data-enableoptimizations="true" >
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous' data-enableoptimizations="true" ></script>
+}
 
 @* 
     This sub template just places all the very-often used
@@ -22,10 +25,12 @@
     var scripts = all || parts.Contains("scripts");
     var height = all || parts.Contains("height");
 }
-@if(fancybox){
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" data-enableoptimizations="true" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
+@if(fancybox)
+{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" data-enableoptimizations="true" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
 }
-@if(styles){<link rel="stylesheet" href="@App.Path/dist/@(Koi.PickCss("bs3,bs4", "bs4")).css" data-enableoptimizations="true" />}
-@if(scripts){<script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script>}
-@if(height){<script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script>}
+
+@if(styles) { <link rel="stylesheet" href="@App.Path/dist/@(Koi.PickCss("bs3,bs4", "bs4")).css" data-enableoptimizations="true" /> }
+@if(scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script> }
+@if(height) { <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script> }
