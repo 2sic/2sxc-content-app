@@ -1,15 +1,10 @@
-...Work-In-Progress, Todo
-
-* [ ] implement koi and add bootstrap 4
-* [ ] clone original wiki and update
-* [ ] update distribution system to also offer this for newer copies of 2sxc
-
 # 2sxc: Content-App for many CSS Frameworks
 
 The default **Content** types and templates for DNN (DotNetNuke) for the following CSS frameworks:
 
 1. bootstrap 3.3
-1. Bootstrap 4.0 (WIP)
+1. Bootstrap 4.0
+1. Other frameworks - please contribute
 
 The Multi-CSS-Framework implementation uses [Connect.Koi][koi] Here some thumbnails of the result:
 

@@ -12,11 +12,7 @@
   "dependencies": {
     "jquery.syncHeightResponsive": "https://github.com/2sic/syncHeightResponsive.git"
   },
-  // The ToSIC-global-dependencies node specifies dependencies that are needed
-  // to run the gulp tasks. They are not listed in the dependencies node itself
-  // because we at 2sic do not install those dependencies locally but globally.
-  // Move the dependencies to the "dependencies" node and run npm install to
-  // install gulp and the sass plugin.
+  "comment-about-dev-dependencies": "The ToSIC-global-dependencies node specifies dependencies that are needed to run the gulp tasks. They are not listed in the dependencies node itself because we at 2sic do not install those dependencies locally but globally. Move the dependencies to the 'dependencies' node and run npm install to install gulp and the sass plugin.",
   "ToSIC-global-dependencies": {
     "gulp": "",
     "gulp-sass": ""
