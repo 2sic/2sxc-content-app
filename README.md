@@ -21,7 +21,7 @@ This package **Content-Bootstrap3** is the default configuration package which 2
 ## Quick-Start
 
 1. Almost everything you want to know is in the [wiki](https://github.com/2sic/2sxc-content-app/wiki)
-1. **Installation**: Whenever you install 2sxc on a DNN portal, or when you create a new portal on a [DNN with 2sxc installed](http://2sxc.org/en/Learn/Install-2sxc), 2sxc will automatitcally ask you if you want to install this. If you need to know more, read about [installations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Installation-Instructions).
+1. **Installation**: Whenever you install 2sxc on a DNN portal, or when you create a new portal on a [DNN with 2sxc installed](http://2sxc.org/en/Learn/Install-2sxc), 2sxc will automatically ask you to install this. If you need to know more, read about [installations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Installation-Instructions).
 1. **Skin/Theme Optimizations**: We have some recommendations, if you care about this, read about the [optimizations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Theme-Optimizations)
 1. **Customize to your colors and CSS**: check out the [instructions in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Customizing%20CSS%20or%20SASS)
 
