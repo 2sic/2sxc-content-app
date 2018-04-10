@@ -33,4 +33,4 @@
 
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/@(Koi.PickCss("bs3,bs4", "bs4")).css" data-enableoptimizations="true" /> }
 @if(scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script> }
-@if(height) { <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script> }
+@if(height && Koi.Is("bs3")) { <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script> }

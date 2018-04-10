@@ -1,6 +1,6 @@
 @using Connect.Koi
 
-<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+@RenderPage("_Shared - Assets.cshtml", new { parts = "styles"})
 
 @{
     var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
