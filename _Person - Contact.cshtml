@@ -5,13 +5,13 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
-		<div @Koi.Class("bs3='row' bs4,oth='row'")>
+		<div class="row">
 			@foreach (var person in AsDynamic(Data["Default"]))
 			{
 				<div @Koi.Class("all='sc-element co-person' bs3='co-sync-height-with-neighbors col col-sm-6' bs4,oth='col-md-6'")>
 					@Edit.Toolbar(person)
 					
-					<div @Koi.Class("bs3='row' bs4,oth='row'")>
+					<div class="row">
 						<div @Koi.Class("all='co-person-image' bs3='col col-xs-4' bs4,oth='col-4'")>
 							@if (!String.IsNullOrEmpty(person.Photo))
 							{
