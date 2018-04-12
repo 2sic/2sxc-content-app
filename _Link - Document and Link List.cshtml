@@ -20,7 +20,7 @@
                     @if(linkInfo.Found){
                         @:<a target="@linkInfo.Window" href="@linkItem.Link" title="@linkItem.Title">
                     }
-                        <span class="text-primary pull-left fas @linkInfo.Icon"></span>
+                        <span @Koi.Class("all='text-primary fas " + @linkInfo.Icon + "' bs3='pull-left' bs4,oth='float-left'")></span>
                         <div class="co-document-text">
                             <span class="@(linkInfo.Found ? "co-link" : "")">@linkItem.Title</span>
                             <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
