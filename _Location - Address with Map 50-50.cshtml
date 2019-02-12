@@ -74,6 +74,7 @@
 
 <script type="text/javascript">
 	$(function(){
+		var image = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
 				lat: @Content.GPSLat.ToString().Replace(',', '.'),
@@ -82,7 +83,9 @@
 			zoom: @Presentation.Zoom,
 			mapTypeId: "ROADMAP",
 			infoWindowHtml: "@Content.Company",
-			showInfoWindow: false
+			showInfoWindow: false,
+			image: image
 		});
+		
 	});
 </script>
