@@ -16,7 +16,7 @@
 			{
 				var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-				<div @Koi.Class("all='sc-element' bs3='col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors' bs4,oth='col-12 col-md-6 col-lg-4'")>
+				<div @Koi.Class("all='sc-element mb-4' bs3='col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors' bs4,oth='col-12 col-md-6 col-lg-4'")>
 					@Edit.Toolbar(linkItem)
 					@if(linkInfo.Found)
 						{
@@ -25,7 +25,10 @@
 						<div class="co-img-wrapper">
 							@if(!String.IsNullOrEmpty(linkItem.Image))
 							{
-								<img src="@linkItem.Image?w=690&amp;h=345&amp;quality=80&amp;mode=crop&amp;scale=both" alt="@linkItem.Title" />
+								<figure>
+									<div class="co-overlay"></div>
+									<img src="@linkItem.Image?w=690&amp;h=345&amp;quality=80&amp;mode=crop&amp;scale=both" alt="@linkItem.Title" />
+								</figure>
 							} else {
 								<div class="co-img-placeholder"></div>
 							}

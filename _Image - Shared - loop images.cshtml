@@ -17,20 +17,25 @@
 }
 @foreach (var img in AsDynamic(Data["Default"]))
 {
-	<div @Koi.Class("all='sc-element' bs3='col col-sm-" + @columns + " sync-height-with-neighbors' bs4,oth='ly-margin-bottom col-md-" + @columns + "'")>
+	<div @Koi.Class("all='sc-element' bs3='col col-sm-" + @columns + " sync-height-with-neighbors' bs4,oth='mb-4 col-md-" + @columns + "'")>
 		@Edit.Toolbar(img)
 		@if (img.Presentation.ImageLightbox != null && img.Presentation.ImageLightbox) {
-			@:<a title="@(img.Presentation.TitleLightbox ? img.Title : "")" class="fancybox" rel="group-@Dnn.Module.ModuleID" href="@img.Image?quality=@lightboxQuality&amp;maxwidth=@zoomW&amp;maxheight=@zoomH">
+			@:<a class="fancybox" data-caption="@(img.Presentation.TitleLightbox ? img.Title : "")" data-fancybox="group-@Dnn.Module.ModuleID" href="@img.Image?quality=@lightboxQuality&amp;maxwidth=@zoomW&amp;maxheight=@zoomH">
 		}
+		<figure>
+		<div class="co-overlay">
+		@if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend)
+		{
+			<figcaption class="pt-1">
+				@img.Title
+			</figcaption>
+		}
+		</div>
 		<img @Koi.Class("bs3='img-responsive' bs4,oth='img-fluid'") src="@img.Image?quality=@quality&amp;w=@width&amp;h=@height&amp;mode=crop&amp;scale=both&amp;anchor=@img.CropAnchor" alt="@img.Title" />
+		</figure>
 		@if (img.Presentation.ImageLightbox != null && img.Presentation.ImageLightbox) {
 			@:</a>
 		}
-		@if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend)
-		{
-			<div class="co-imgcaption">
-				@img.Title
-			</div>
-		}
+		
 	</div>
 }

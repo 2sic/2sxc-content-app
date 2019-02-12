@@ -7,6 +7,8 @@
 //
 
 @media all {
+
+
 	/* Header */
 	.co-header {
 		img {
@@ -68,6 +70,7 @@
 			.co-img-wrapper {
 				background: $primary;
 				overflow: hidden;
+				
 				img {
 					position: relative;
 					transition: opacity .3s;
@@ -77,9 +80,13 @@
 			
 			&:hover {
 				color: $body-color;
-				
+					.co-overlay {
+						background-color: rgba($dark,0.4);
+						
+					}	
+					
 				img {
-					opacity: .4;
+					
 				}
 			}
 		}
@@ -90,21 +97,48 @@
 			margin-top: 5px; 
 		}
 		.co-icon {
-			font-size: 2.8em; 
+			font-size: 2em; 
 		}
 	}
 	
 	/* Images */
 	.co-img-wrapper {
 		margin-bottom: $grid-gutter-width;
+		a{
+			&:hover {
+				.co-overlay {
+					background-color: rgba($dark,0.4);
+				}	
+				
+			}
+		}
+		figure {
+			position: relative;
+			margin-bottom:0;	
+			.co-overlay {
+				position: absolute;
+				top:0;left:0;bottom:0;
+				z-index:10;
+				width:100%;
+				background-color: rgba(0,0,0,0.0);
+				transition: background-color 0.2s ease-in-out;
+				figcaption {
+					position: absolute;
+					left:0;
+					bottom:0;
+					width:100%;
+					padding:20px;
+					font-size:0.85em;
+					background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+					color:#FFF;
+				}
+			}
+		
+		}
+		
 	}
 	.co-img-wrapper.co-2colimg {
 		margin-bottom: 0;
-
-		img {
-			margin-bottom: $grid-gutter-width;
-			width: 100%;
-		}
 	}	
 	
 	/* Documents and Links */
@@ -151,7 +185,7 @@
 	}
 	
 	/* Kontakt Map */
-	.co-contactmap address { line-height: 1.2; padding: $grid-gutter-width/2 0; }
+	.co-contactmap address { padding: $grid-gutter-width/2 0; }
 	.co-contactmap .co-company, .co-contactmap .co-address, .co-contactmap .co-details {
 		margin-bottom: $grid-gutter-width/2;
 	}

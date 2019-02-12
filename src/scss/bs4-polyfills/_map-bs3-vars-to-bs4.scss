@@ -25,6 +25,22 @@ $primary: $dummy !default;	// try to use default, otherwise just use red
 	@error "trying to set primary based on colors, but something failed - your variables seem to be missing BOTH $primary and $brand-primary";
 }
 
+// Translate dark color
+@if variable-exists(dark) and variable-exists(gray-darker) {
+	@warn "both bs3 and bs4 variable exists - will use bs3" 
+}
+
+$dark: $dummy !default;	// try to use default, otherwise just use red
+
+@if variable-exists(gray-darker) {
+	$dark: $gray-darker;
+}
+
+// If the primary variable contains the dummy value, then both bs3 and bs4 variables were missing - not able to compile
+@if $dark == $dummy {
+	@error "trying to set primary based on colors, but something failed - your variables seem to be missing BOTH $primary and $brand-primary";
+}
+
 
 
 // Translate gray light

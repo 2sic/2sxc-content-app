@@ -5,6 +5,8 @@
     expects
     * "width" - an int
 *@
+
+@using Connect.Koi
 @{
     // configuration
     var retina = true;
@@ -34,11 +36,28 @@
 }
 
 @if(hasImage) {
-    if (withLink) {
-        @:<a title="@title" class="fancybox" href="@imgItem.Image?maxwidth=1400&amp;maxheight=990&amp;quality=@lightboxQuality">
+    <div class="co-img-wrapper">
+    @if (withLink) {
+        @:<a data-caption="@title" class="fancybox" href="@imgItem.Image?maxwidth=1400&amp;maxheight=990&amp;quality=@lightboxQuality">
     }
-    <img class="co-content-image" src="@imgItem.Image?w=@width&amp;quality=@quality" alt="@title" />
-    if (withLink) {
+
+        <figure>
+            
+            <div class="co-overlay">
+                @if(!String.IsNullOrEmpty(imgItem.ImageCaption)){
+                <figcaption class="pt-1">
+                        @imgItem.ImageCaption
+                </figcaption>
+                 }
+            </div>
+
+            <img @Koi.Class("bs3='img-responsive' bs4,oth='img-fluid'")  src="@imgItem.Image?w=@width&amp;scale=both&amp;quality=@quality" alt="@title" />
+        </figure>
+
+
+
+    @if (withLink) {
         @:</a>
     }
+    </div>
 }

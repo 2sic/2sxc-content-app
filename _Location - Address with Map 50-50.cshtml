@@ -5,7 +5,7 @@
 <script type="text/javascript" src="@App.Path/dist/google-map.js" data-enableoptimizations="true"></script>
 
 <div class="co-container-outer">
-	<div class="co-container-inner sc-element co-contactmap ly-margin-bottom">
+	<div class="co-container-inner sc-element co-contactmap mb-4">
 		@Edit.Toolbar(Content)
 		<div class="row">
 			<div @Koi.Class("bs3='col col-sm-6' bs4,oth='col-md-6'")>
@@ -38,7 +38,7 @@
 						}
 					}
 					@if(!String.IsNullOrEmpty(Content.LabelDirections)){
-						<span class="fas fa-map-marker"></span> <a target="_blank" href="@directionurl">@Content.LabelDirections</a>
+						<span class="fas fa-map-marker-alt"></span> <a target="_blank" href="@directionurl">@Content.LabelDirections</a>
 					}
 				</div>
 				<div class="co-details">

@@ -8,7 +8,6 @@
     var Helpers = CreateInstance("_Helpers.cshtml");
 }
 
-@Koi.If("bs4", "<link rel='stylesheet' type='text/css' href='/Portals/content-bootstrap/2sxc/Content/dist/_overwrites.css'>", "")
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-icon co-navigation-text">
@@ -17,7 +16,7 @@
             {
                 var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-                <div  @Koi.Class("all='sc-element' bs3='col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors' bs4,oth='col-12 col-md-6 col-lg-4'")>
+                <div  @Koi.Class("all='sc-element mb-4' bs3='col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors' bs4,oth='col-12 col-md-6 col-lg-4'")>
                     @Edit.Toolbar(linkItem)
                     @if(linkInfo.Found)
                     {
