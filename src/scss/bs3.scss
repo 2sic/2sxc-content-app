@@ -26,6 +26,6 @@
 
 @import "_style.scss";          // General CSS stuff for everything
 
-.mb-4 {
+.mb-4, .mb-5 {
     margin-bottom: $grid-gutter-width !important;
 }

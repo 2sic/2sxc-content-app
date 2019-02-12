@@ -8,33 +8,11 @@
         <div class="row">
             @foreach (var person in AsDynamic(Data["Default"]))
             {
-                <div @Koi.Class("all='sc-element co-person co-person-noimage' bs3='co-sync-height-with-neighbors col col-sm-6' bs4,oth='col-md-6'")>
+                <div @Koi.Class("all='sc-element co-person co-person-noimage mb-4' bs3='co-sync-height-with-neighbors col col-sm-6' bs4,oth='col-md-6'")>
                     @Edit.Toolbar(person)
 
                     <div class="co-person-text" itemscope itemtype="http://schema.org/Person">
-                        <strong itemprop="name">@person.FullName</strong><br />
-                        @if (!String.IsNullOrEmpty(person.Position))
-                        {
-                            <span itemprop="jobTitle">@person.Position</span><br />
-                        }
-                        @if (!String.IsNullOrEmpty(person.Email))
-                        {
-                            <div itemprop="email">
-                                <span class="fas fa-envelope"></span> 
-                                @RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = person.Email })
-                            </div>
-                        }
-                        @if (!String.IsNullOrEmpty(person.Mobile))
-                        {
-                            <span class="fas fa-mobile" aria-hidden="true"></span> <a href="tel:@person.Mobile.Replace(" ", "")" itemprop="telephone">@person.Mobile</a><br />
-                        }
-                        @if (!String.IsNullOrEmpty(person.Phone))
-                        {
-                            <span class="fas fa-phone" aria-hidden="true"></span> <a href="tel:@person.Phone.Replace(" ", "")" itemprop="telephone">@person.Phone</a><br />
-                        }
-                        <div itemprop="description">
-                            @Html.Raw((string)person.Description)
-                        </div>
+                        @RenderPage("_Shared - Person Data.cshtml", new { data = person})
                     </div>
                 </div>
             }
