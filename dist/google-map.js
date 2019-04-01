@@ -26,8 +26,7 @@
                     zoom: 8,
                     mapTypeId: "HYBRID",
                     infoWindowHtml: "",
-                    showInfoWindow: true,
-                    image: ""
+                    showInfoWindow: true
                 }, options);
 
                 var mapOptions = {
@@ -45,8 +44,7 @@
                 // Create Marker
                 var marker = new google.maps.Marker({
                     position: settings.position,
-                    map: map,
-                    icon: settings.image
+                    map: map
                 });
 
                 if(settings.infoWindowHtml && settings.infoWindowHtml !== '') {
