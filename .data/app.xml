@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="09.42.00" ExportDate="2019-03-25T16:04:06.816596+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="09.42.00" ExportDate="2019-04-01T14:16:26.7738154+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -334,8 +334,11 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="41db99b7-0579-478e-8a64-ec28be227df1" KeyNumber="2129">
-            <Value Key="DropdownValues" Value="Oben-Links:topleft&#xA;Oben-Mitte:topcenter&#xA;Oben-Rechts:topright&#xA;Mitte-Links:middleleft&#xA;Zentriert:middlecenter&#xA;Mitte-Rechts:middleright&#xA;Unten-Links:bottomleft&#xA;Unten-Mitte:bottomcenter&#xA;Unten-Rechts:bottomright" Type="String">
+            <Value Key="DropdownValues" Value="Top-Left:topleft&#xA;Top-Center:topcenter&#xA;Top-Right:topright&#xA;Middle-Left:middleleft&#xA;Center:middlecenter&#xA;Middle-Right:middleright&#xA;Bottom-Left:bottomleft&#xA;Bottom-Center:bottomcenter&#xA;Bottom-Right:bottomright" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DropdownValues" Value="Oben-Links:topleft&#xA;Oben-Mitte:topcenter&#xA;Oben-Rechts:topright&#xA;Mitte-Links:middleleft&#xA;Zentriert:middlecenter&#xA;Mitte-Rechts:middleright&#xA;Unten-Links:bottomleft&#xA;Unten-Mitte:bottomcenter&#xA;Unten-Rechts:bottomright" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="EnableTextEntry" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1491,9 +1494,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Full name" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1526,9 +1527,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Position" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1555,15 +1554,16 @@
         </Attribute>
         <Attribute StaticName="Description" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="e220e11e-77dc-40c0-8792-f44e2e1db8e1" KeyNumber="526">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-wysiwyg" Type="String" />
             <Value Key="Name" Value="Description" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1587,9 +1587,20 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="784060ed-85ff-4724-8a66-3dda9dc80655" KeyNumber="526">
-            <Value Key="DropdownValues" Value="" Type="String" />
-            <Value Key="InputType" Value="wysiwyg" Type="String" />
-            <Value Key="RowCount" Value="1" Type="Number" />
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="wysiwyg" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="RowCount" Value="1.0" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ccb6d94f-ad60-45f4-aa60-581105689227" KeyNumber="526">
+            <Value Key="RowCount" Value="2.0" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
         <Attribute StaticName="Photo" Type="Hyperlink" IsTitle="false">
@@ -1600,9 +1611,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="Name" Value="Photo" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1696,9 +1705,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Telephone" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1731,9 +1738,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Mobile" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1771,9 +1776,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Email" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1882,9 +1885,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="boolean-default" Type="String" />
             <Value Key="Name" Value="Use content title as lightbox title?" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1918,9 +1919,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Google Maps zoom level" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2035,9 +2034,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-dropdown" Type="String" />
             <Value Key="Name" Value="Heading type" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2096,9 +2093,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="boolean-default" Type="String" />
             <Value Key="Name" Value="Enable image zoom" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2131,9 +2126,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="boolean-default" Type="String" />
             <Value Key="Name" Value="Show title in lightbox" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2167,9 +2160,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Title" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2202,9 +2193,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="Name" Value="Video-URL" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2262,7 +2251,7 @@
       <Value Key="CropAnchor" Value="middlecenter" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:1463" Type="Hyperlink">
+      <Value Key="Image" Value="file:1555" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="New image" Type="String">
@@ -2273,7 +2262,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="Content" EntityGUID="620aa5d9-e5c5-42b3-8279-51fe5e71e645">
-      <Value Key="Image" Value="file:1460" Type="Hyperlink">
+      <Value Key="Image" Value="file:1555" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ImageCaption" Value="" Type="String">
@@ -2311,7 +2300,7 @@
       <Value Key="Phone" Value="+41 81 750 67 77" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Photo" Value="file:1461" Type="Hyperlink">
+      <Value Key="Photo" Value="file:1555" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Position" Value="Chief Demo Officer" Type="String">
@@ -2350,7 +2339,7 @@
       <Value Key="Icon" Value="fa-globe" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:1464" Type="Hyperlink">
+      <Value Key="Image" Value="file:1555" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Link" Value="/" Type="Hyperlink">
@@ -4002,7 +3991,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="03.01.00" Type="String">
+      <Value Key="Version" Value="03.01.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -4108,40 +4097,6 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="36ab91f9-8388-4728-9bee-62ac898300a3" AttributeSetName="Link" EntityGUID="6c7725cd-bd5f-4072-9796-78d77e72cea1">
-      <Value Key="Description" Value="This is some text" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Icon" Value="fa-globe" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="LinkText" Value="more" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Test" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Window" Value="auto" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="d20acb8e-e018-4938-8432-23c38e9b7254">
-      <Value Key="CropAnchor" Value="middlecenter" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="file:1265" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Demo Bildbeschreibung" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="eb62a7ef-0dea-4ff8-9814-f386f07fdeb2">
       <Value Key="ImageLightbox" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -4150,17 +4105,6 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="True" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="21184ac4-177d-4ca7-af97-06db8da544dc">
-      <Value Key="CropAnchor" Value="middlecenter" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="file:1266" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Demoeintrag 2sxc" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -4265,27 +4209,10 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="Content" EntityGUID="7f94522e-2fc4-4993-8cee-fc9fa157de48">
-      <Value Key="Image" Value="" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageCaption" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Text" Value="&lt;p&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hier steht ein Link&lt;/a&gt;&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Demo Linkcheck" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="1463" RelativePath="adam\Content\m12nNZZlIUaTnlfFl0SzBw\Image\Platzhalterbild_Inhalt-8.jpg" />
-    <File Id="1460" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Platzhalterbilder_Linkbox-15.jpg" />
-    <File Id="1461" RelativePath="adam\Content\Z02Nnt9oI0uWji44g8Ss6w\Photo\Platzhalterbilder_Linkbox-16.jpg" />
+    <File Id="1555" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\asdf.jpg" />
     <File Id="1465" RelativePath="adam\Content\_5PPc3V-X0iLEJfrZmBISQ\MarkerImage\2sic-Logo-magenta-white-line.png" />
-    <File Id="1464" RelativePath="adam\Content\2Iem7w4_1UaVcHROwphQBw\Image\Platzhalterbilder_Linkbox-15.jpg" />
     <File Id="540" RelativePath="2sxc\Content\thumbnails\ct image.png" />
     <File Id="539" RelativePath="2sxc\Content\thumbnails\ct basic content.png" />
     <File Id="543" RelativePath="2sxc\Content\thumbnails\ct location.png" />
@@ -4293,19 +4220,23 @@
     <File Id="544" RelativePath="2sxc\Content\thumbnails\ct person.png" />
     <File Id="541" RelativePath="2sxc\Content\thumbnails\ct layout element.png" />
     <File Id="545" RelativePath="2sxc\Content\thumbnails\ct video.png" />
+    <File Id="1460" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Platzhalterbilder_Linkbox-15.jpg" />
+    <File Id="1464" RelativePath="adam\Content\2Iem7w4_1UaVcHROwphQBw\Image\Platzhalterbilder_Linkbox-15.jpg" />
     <File Id="1265" RelativePath="adam\Content\jssK0hjgOEmEMiPDjptyVA\Image\pete-wright-105201-unsplash.jpg" />
-    <File Id="1266" RelativePath="adam\Content\xEoYIX0Xp0yvlwbbjaVE3A\Image\christopher-burns-378020-unsplash.jpg" />
+    <File Id="1463" RelativePath="adam\Content\m12nNZZlIUaTnlfFl0SzBw\Image\Platzhalterbild_Inhalt-8.jpg" />
     <File Id="1462" RelativePath="adam\Content\m12nNZZlIUaTnlfFl0SzBw\Image\Platzhalterbilder_Linkbox-3.jpg" />
+    <File Id="1266" RelativePath="adam\Content\xEoYIX0Xp0yvlwbbjaVE3A\Image\christopher-burns-378020-unsplash.jpg" />
+    <File Id="1461" RelativePath="adam\Content\Z02Nnt9oI0uWji44g8Ss6w\Photo\Platzhalterbilder_Linkbox-16.jpg" />
   </PortalFiles>
   <PortalFolders>
-    <Folder Id="2988" RelativePath="adam/Content/m12nNZZlIUaTnlfFl0SzBw/Image/" />
     <Folder Id="2984" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/Image/" />
-    <Folder Id="2986" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/" />
     <Folder Id="2991" RelativePath="adam/Content/_5PPc3V-X0iLEJfrZmBISQ/MarkerImage/" />
-    <Folder Id="576" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/Image/" />
     <Folder Id="581" RelativePath="2sxc/Content/thumbnails/" />
+    <Folder Id="576" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/Image/" />
     <Folder Id="2606" RelativePath="adam/Content/jssK0hjgOEmEMiPDjptyVA/Image/" />
+    <Folder Id="2988" RelativePath="adam/Content/m12nNZZlIUaTnlfFl0SzBw/Image/" />
     <Folder Id="2608" RelativePath="adam/Content/xEoYIX0Xp0yvlwbbjaVE3A/Image/" />
+    <Folder Id="2986" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/" />
     <Folder Id="285" RelativePath="adam/Content/" />
     <Folder Id="2989" RelativePath="adam/Content/_5PPc3V-X0iLEJfrZmBISQ/" />
     <Folder Id="2983" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/" />
