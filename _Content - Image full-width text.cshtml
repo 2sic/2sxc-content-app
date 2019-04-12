@@ -3,15 +3,25 @@
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "fancybox,styles,scripts"})
 
+@{
+	var pictureHelper = CreateInstance("_Helper-Picture.cshtml");
+}
+
 <div class="co-container-outer">
 	<div class="co-container-inner clearfix sc-element co-content co-content-image-left co-text-beside-image mb-4">
 		<div class="row">
 			@Edit.Toolbar(Content)
 			<div @Koi.Class("bs3='col col-sm-12' bs4,oth='col-md-12'")>
-				@RenderPage("_Shared - header tag.cshtml")
-				@* call sub-template to show the image with all possible options *@
-				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 600 })
 				@* call sub-template to show the title with the correct H1-H6 tag *@
+				@RenderPage("_Shared - header tag.cshtml")
+				
+				@* call sub-template to show the image with all possible options
+				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 600 })*@
+				
+				<a data-caption="@Content.Title" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990&amp;quality=75">
+					@(pictureHelper.Picture(Content.Image, 16.0/9.0, 80, 80,"mode=crop&scale=both", Content.Title, new[] { 528, 720, 884, 1092, 1110 }))
+				</a>
+				
 				<div class="co-text">
 					@Html.Raw(Content.Text)
 				</div>

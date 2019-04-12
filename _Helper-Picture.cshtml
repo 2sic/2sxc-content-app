@@ -45,6 +45,6 @@
                     srcset="@srcSet" />
         }
         @* Fallback image for browsers not supporting the picture element *@
-        <img src="@imageSrc?w=@(sizes[0])&h=@(Math.Round(sizes[0] / imageRatio))&quality=@qualityDefault&@defaultParameters" alt="@alternativeText" />
+        <img @Koi.Class("bs3='img-responsive' bs4,oth='img-fluid'") src="@imageSrc?w=@(sizes[0])&h=@(Math.Round(sizes[0] / imageRatio))&quality=@qualityDefault&@defaultParameters" alt="@alternativeText" />
     </picture>
 }
