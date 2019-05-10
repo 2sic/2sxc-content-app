@@ -3,6 +3,10 @@
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
 
+@{
+	var pictureHelper = CreateInstance("_Helper-Picture.cshtml");
+}
+
 <div class="co-container-outer">
 	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
 		<div class="row">
