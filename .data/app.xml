@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="09.42.00" ExportDate="2019-04-01T14:16:26.7738154+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="09.43.00" ExportDate="2019-05-10T13:19:07.3838208+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -20,9 +20,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Title" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -60,9 +58,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Text" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -99,9 +95,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="Name" Value="Image" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -203,9 +197,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Title / caption" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -237,22 +229,23 @@
         </Attribute>
         <Attribute StaticName="Image" Type="Hyperlink" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="10c0a03e-d8a0-4565-8fb8-e1bd425cedca" KeyNumber="491">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="Name" Value="Image" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Name" Value="Bild" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Choose an image or upload it.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;W&amp;auml;hlen Sie ein Bild aus oder laden Sie ein neues Bild hoch.&lt;/p&gt;" Type="String">
@@ -279,6 +272,9 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Paths" Value="/" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ServerResourceMapping" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="ShowAdam" Value="True" Type="Boolean">
@@ -309,11 +305,17 @@
             <Value Key="InputType" Value="string-dropdown" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Image Hotspot" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Name" Value="Bild Hotspot" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Define where the most important part of the image is located - which will affect how it's cropped.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="Hier kann festgelegt werden, wo sich der wichtigste Bereich des Bilds befindet. Wenn das Bild automatisiert beschnitten werden sollte, wird sichergestellt dass dieser Bereich im Zentrum und unbeschnitten bleibt." Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
+              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -351,19 +353,22 @@
       <Attributes>
         <Attribute StaticName="Notes" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="80e2becc-7ad6-4c89-bd4f-7f326ea5182e" KeyNumber="542">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
+            <Value Key="InputType" Value="string-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Notes" Type="String">
+            <Value Key="Name" Value="Notes (will never be shown)" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Notizen" Type="String">
+            <Value Key="Name" Value="Bemerkungen (werden nicht angezeigt)" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
@@ -379,9 +384,16 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="46cd236f-2159-410e-a600-735e4c2920aa" KeyNumber="542" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="46cd236f-2159-410e-a600-735e4c2920aa" KeyNumber="542">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ef092ade-7829-445d-a4b1-2e44704a2895" KeyNumber="542">
-            <Value Key="RowCount" Value="" Type="Number">
+            <Value Key="RowCount" Value="3.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -398,9 +410,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Title" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -438,9 +448,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Description" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -524,9 +532,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="Name" Value="Link" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -587,9 +593,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="string-default" Type="String" />
             <Value Key="Name" Value="Link label" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -768,9 +772,7 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="hyperlink-default" Type="String" />
             <Value Key="Name" Value="Image (optional)" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -866,6 +868,9 @@
         </Attribute>
         <Attribute StaticName="Description" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="0046030d-25d7-4584-aa43-bb08f0df7a84" KeyNumber="509">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -881,7 +886,7 @@
             <Value Key="Name" Value="Kurze Beschreibung" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Address Description - will be shown in some templates.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
@@ -895,9 +900,15 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="78d64ac4-6050-41ec-b98c-8a8f8249983d" KeyNumber="509">
-            <Value Key="DropdownValues" Value="" Type="String" />
-            <Value Key="InputType" Value="wysiwyg" Type="String" />
-            <Value Key="RowCount" Value="1" Type="Number" />
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="wysiwyg" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="RowCount" Value="1.0" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
         <Attribute StaticName="AddressGroup" Type="Empty" IsTitle="false">
@@ -1287,7 +1298,7 @@
             <Value Key="Name" Value="GPS" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="GPS" Type="String">
+            <Value Key="Name" Value="GPS Coordinates" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
@@ -1521,20 +1532,25 @@
         </Attribute>
         <Attribute StaticName="Position" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="5b0f93c8-df8e-4748-afb7-7fffe0939b44" KeyNumber="521">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="string-default" Type="String" />
-            <Value Key="Name" Value="Position" Type="String">
+            <Value Key="InputType" Value="string-default" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Position / Function" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Name" Value="Funktion" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;The role a person has in the organization.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Geben Sie die Funktion der Person ein.&lt;/p&gt;" Type="String">
@@ -1550,7 +1566,19 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="e506dbd9-2f14-45f0-a0b9-df510235323b" KeyNumber="521" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="e506dbd9-2f14-45f0-a0b9-df510235323b" KeyNumber="521">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="e7ff83fc-afb9-42a9-8431-b20ce5fff295" KeyNumber="521">
+            <Value Key="RowCount" Value="1.0" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
         <Attribute StaticName="Description" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="e220e11e-77dc-40c0-8792-f44e2e1db8e1" KeyNumber="526">
@@ -1812,6 +1840,9 @@
       <Attributes>
         <Attribute StaticName="ImageLightbox" Type="Boolean" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="f2a44d25-fac2-48cf-bd35-090e9c62539d" KeyNumber="528">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="True" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1821,13 +1852,13 @@
             <Value Key="InputType" Value="boolean-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Activate lightbox for the image?" Type="String">
+            <Value Key="Name" Value="Click to See Large" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Grossbild-Ansicht aktivieren?" Type="String">
+            <Value Key="Name" Value="Grossbild-Ansicht aktivieren" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Enable the user to click on the image and see a larger version as a lightbox.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Erm&amp;ouml;glicht eine Grossbild-Ansicht durch Anklicken des Bildes.&lt;/p&gt;" Type="String">
@@ -1847,7 +1878,10 @@
         </Attribute>
         <Attribute StaticName="TitleLightbox" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="bae75b8f-240e-4359-a6de-02f60c2261c1" KeyNumber="529">
-            <Value Key="DefaultValue" Value="True" Type="String">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="true" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
@@ -1856,14 +1890,17 @@
             <Value Key="InputType" Value="boolean-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Show a title in lightbox?" Type="String">
+            <Value Key="Name" Value="Show a title in lightbox" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Titel in Grossbild-Ansicht anzeigen?" Type="String">
+            <Value Key="Name" Value="Titel in Grossansicht anzeigen" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Show the title / name of the image in the large view.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Titel / Name in der Grossansicht auch anzeigen.&amp;nbsp;&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1879,20 +1916,25 @@
         </Attribute>
         <Attribute StaticName="TitleLegend" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="c05cd2c0-8967-4e81-9e2b-47c58ccdbb9c" KeyNumber="530">
-            <Value Key="DefaultValue" Value="False" Type="String">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="false" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String" />
-            <Value Key="Name" Value="Use content title as lightbox title?" Type="String">
+            <Value Key="InputType" Value="boolean-default" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Use content title in lightbox" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Name" Value="Titel als Bildlegende verwenden?" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;If activated, it will use the title of the content in the large view, instead of the image label. Usually not recommended.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
@@ -1913,23 +1955,28 @@
       <Attributes>
         <Attribute StaticName="Zoom" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="283803af-ca0f-40fb-a185-6af640d6f1b2" KeyNumber="527">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="14" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="string-default" Type="String" />
+            <Value Key="InputType" Value="string-dropdown" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Name" Value="Google Maps zoom level" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Name" Value="Google Maps Zoom-Stufe" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;How much the map will be zoomed. 1 is show as much as possible, 20 is zoom as close as possible. We recommand ca. 14 for common area maps.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;W&amp;auml;hlen Sie die Google-Maps-Zoom-Stufe aus (Vergr&amp;ouml;sserung der Karte).&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Wie stark der Zoom sein wird. 1 zeigt extrem viel, w&amp;auml;hrend 20 nur sehr wenig Umgebung zeigt. Wir empfehlen ca. 14 als Standardwert.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
@@ -1943,15 +1990,25 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="9fbccd10-77b1-4a38-bc82-78af006b6f1f" KeyNumber="527">
-            <Value Key="DropdownValues" Value="1&#xD;&#xA;2&#xD;&#xA;3&#xD;&#xA;4&#xD;&#xA;5&#xD;&#xA;6&#xD;&#xA;7&#xD;&#xA;8&#xD;&#xA;9&#xD;&#xA;10&#xD;&#xA;11&#xD;&#xA;12&#xD;&#xA;13&#xD;&#xA;14&#xD;&#xA;15&#xD;&#xA;16&#xD;&#xA;17&#xD;&#xA;18" Type="String" />
-            <Value Key="InputType" Value="dropdown" Type="String" />
-            <Value Key="RowCount" Value="1" Type="Number" />
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="86f17af2-a0da-4bf1-beaf-4d9114fc28b6" KeyNumber="527">
-            <Value Key="DropdownValues" Value="1:1&#xA;2:2&#xA;3:3&#xA;4:4&#xA;5:5&#xA;6:6&#xA;7:7&#xA;8:8&#xA;9:9&#xA;10:10&#xA;11:11&#xA;12:12&#xA;13:13&#xA;14:14&#xA;15:15&#xA;16:16&#xA;17:17&#xA;18:18" Type="String">
+            <Value Key="DropdownValues" Value="1&#xD;&#xA;2&#xD;&#xA;3&#xD;&#xA;4&#xD;&#xA;5&#xD;&#xA;6&#xD;&#xA;7&#xD;&#xA;8&#xD;&#xA;9&#xD;&#xA;10&#xD;&#xA;11&#xD;&#xA;12&#xD;&#xA;13&#xD;&#xA;14&#xD;&#xA;15&#xD;&#xA;16&#xD;&#xA;17&#xD;&#xA;18" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="dropdown" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="86f17af2-a0da-4bf1-beaf-4d9114fc28b6" KeyNumber="527">
+            <Value Key="DropdownValues" Value="1 (show as much as possible):1&#xA;2:2&#xA;3:3&#xA;4:4&#xA;5:5&#xA;6:6&#xA;7:7&#xA;8:8&#xA;9:9&#xA;10:10&#xA;11:11&#xA;12:12&#xA;13:13&#xA;14:14&#xA;15:15&#xA;16:16&#xA;17:17&#xA;18:18&#xA;19:19&#xA;20 (zoom as close as possible):20" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="EnableTextEntry" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="8f5648ce-af64-4bca-b1dd-af4af6cf887b" KeyNumber="527" />
         </Attribute>
         <Attribute StaticName="MarkerImage" Type="Hyperlink" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="83e1ff2f-dc93-4b8b-a662-180bdf408fce" KeyNumber="2819">
@@ -1967,16 +2024,16 @@
             <Value Key="InputType" Value="hyperlink-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Google Maps Maker Icon" Type="String">
+            <Value Key="Name" Value="Google Maps Marker Icon" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Name" Value="Google Maps Maker Icon" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Custom image to mark the position on the map.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;W&amp;auml;hlen Sie ein Google-Maps-Marker-Icon aus.&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Eigenes Bild um die Position auf der Landkarte zu kennzeichnen.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
@@ -2034,7 +2091,9 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="string-dropdown" Type="String" />
+            <Value Key="InputType" Value="string-dropdown" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Name" Value="Heading type" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2067,7 +2126,7 @@
             <Value Key="InputType" Value="dropdown" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2077,6 +2136,9 @@
             </Value>
             <Value Key="DropdownValues" Value="Überschrift Ebene 1:h1&#xA;Überschrift Ebene 2:h2&#xA;Überschrift Ebene 3:h3&#xA;Ausblenden:hide" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="EnableTextEntry" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="54189f81-06ab-4593-accd-92aacb6e66c6" KeyNumber="531">
@@ -2154,20 +2216,25 @@
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="6328572e-9afd-4b14-b2de-c7fee5ba93fc" KeyNumber="543">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="string-default" Type="String" />
+            <Value Key="InputType" Value="string-default" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Name" Value="Title" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Name" Value="Titel" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;This is shown in the preview for the video.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Geben Sie einen Titel f&amp;uuml;r das Video ein.&lt;/p&gt;" Type="String">
@@ -2183,7 +2250,19 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="7a847e06-3018-4678-98c1-0c1b9522692b" KeyNumber="543" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="7a847e06-3018-4678-98c1-0c1b9522692b" KeyNumber="543">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="3b0721ea-ca20-4d58-8869-74739d2fc4b0" KeyNumber="543">
+            <Value Key="RowCount" Value="1.0" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
         <Attribute StaticName="VideoLink" Type="Hyperlink" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="badb0bf9-c9f1-4be7-905d-9dccdfd16fff" KeyNumber="544">
@@ -2262,7 +2341,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="Content" EntityGUID="620aa5d9-e5c5-42b3-8279-51fe5e71e645">
-      <Value Key="Image" Value="file:1555" Type="Hyperlink">
+      <Value Key="Image" Value="file:1566" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ImageCaption" Value="" Type="String">
@@ -3354,8 +3433,11 @@
       <Value Key="Description" Value="Infos zu einer Person (Kontaktdaten)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="EditInstructions" Value="" Type="String">
+      <Value Key="EditInstructions" Value="&lt;p&gt;Please write everything you know about this person.&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="EditInstructions" Value="&lt;p&gt;Schreibe alles, was du zu dieser Person weisst.&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="file:544" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -4212,6 +4294,7 @@
   </Entities>
   <PortalFiles>
     <File Id="1555" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\asdf.jpg" />
+    <File Id="1566" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\lake.jpg" />
     <File Id="1465" RelativePath="adam\Content\_5PPc3V-X0iLEJfrZmBISQ\MarkerImage\2sic-Logo-magenta-white-line.png" />
     <File Id="540" RelativePath="2sxc\Content\thumbnails\ct image.png" />
     <File Id="539" RelativePath="2sxc\Content\thumbnails\ct basic content.png" />
@@ -4220,11 +4303,19 @@
     <File Id="544" RelativePath="2sxc\Content\thumbnails\ct person.png" />
     <File Id="541" RelativePath="2sxc\Content\thumbnails\ct layout element.png" />
     <File Id="545" RelativePath="2sxc\Content\thumbnails\ct video.png" />
+    <File Id="1565" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\BeispielbilderWide (12 of 23).jpg" />
+    <File Id="1556" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\BeispielbilderWide (16 of 23).jpg" />
+    <File Id="1558" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\gil-687594-unsplash.jpg" />
+    <File Id="1559" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\mohamed-arif-1105470-unsplash.jpg" />
+    <File Id="1557" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\photo-1527942364978-2b826fc00de6.jpg" />
     <File Id="1460" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Platzhalterbilder_Linkbox-15.jpg" />
     <File Id="1464" RelativePath="adam\Content\2Iem7w4_1UaVcHROwphQBw\Image\Platzhalterbilder_Linkbox-15.jpg" />
     <File Id="1265" RelativePath="adam\Content\jssK0hjgOEmEMiPDjptyVA\Image\pete-wright-105201-unsplash.jpg" />
     <File Id="1463" RelativePath="adam\Content\m12nNZZlIUaTnlfFl0SzBw\Image\Platzhalterbild_Inhalt-8.jpg" />
     <File Id="1462" RelativePath="adam\Content\m12nNZZlIUaTnlfFl0SzBw\Image\Platzhalterbilder_Linkbox-3.jpg" />
+    <File Id="1561" RelativePath="adam\Content\Oe9yibC9A0iypjzyD2EyFQ\Image\david-clode-1123653-unsplash.jpg" />
+    <File Id="1562" RelativePath="adam\Content\Omm7uyvAZ0uk368JIk7JGg\Image\photo-1527942364978-2b826fc00de6.jpg" />
+    <File Id="1560" RelativePath="adam\Content\t5WMXdUnJ020WJRoghKp0A\Image\david-clode-1098156-unsplash.jpg" />
     <File Id="1266" RelativePath="adam\Content\xEoYIX0Xp0yvlwbbjaVE3A\Image\christopher-burns-378020-unsplash.jpg" />
     <File Id="1461" RelativePath="adam\Content\Z02Nnt9oI0uWji44g8Ss6w\Photo\Platzhalterbilder_Linkbox-16.jpg" />
   </PortalFiles>
@@ -4235,6 +4326,9 @@
     <Folder Id="576" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/Image/" />
     <Folder Id="2606" RelativePath="adam/Content/jssK0hjgOEmEMiPDjptyVA/Image/" />
     <Folder Id="2988" RelativePath="adam/Content/m12nNZZlIUaTnlfFl0SzBw/Image/" />
+    <Folder Id="3157" RelativePath="adam/Content/Oe9yibC9A0iypjzyD2EyFQ/Image/" />
+    <Folder Id="3159" RelativePath="adam/Content/Omm7uyvAZ0uk368JIk7JGg/Image/" />
+    <Folder Id="3155" RelativePath="adam/Content/t5WMXdUnJ020WJRoghKp0A/Image/" />
     <Folder Id="2608" RelativePath="adam/Content/xEoYIX0Xp0yvlwbbjaVE3A/Image/" />
     <Folder Id="2986" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/" />
     <Folder Id="285" RelativePath="adam/Content/" />
@@ -4243,6 +4337,9 @@
     <Folder Id="575" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/" />
     <Folder Id="2605" RelativePath="adam/Content/jssK0hjgOEmEMiPDjptyVA/" />
     <Folder Id="2987" RelativePath="adam/Content/m12nNZZlIUaTnlfFl0SzBw/" />
+    <Folder Id="3156" RelativePath="adam/Content/Oe9yibC9A0iypjzyD2EyFQ/" />
+    <Folder Id="3158" RelativePath="adam/Content/Omm7uyvAZ0uk368JIk7JGg/" />
+    <Folder Id="3154" RelativePath="adam/Content/t5WMXdUnJ020WJRoghKp0A/" />
     <Folder Id="2607" RelativePath="adam/Content/xEoYIX0Xp0yvlwbbjaVE3A/" />
     <Folder Id="2985" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/" />
   </PortalFolders>
