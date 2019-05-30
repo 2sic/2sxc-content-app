@@ -23,7 +23,7 @@
 				@RenderPage("_Shared - image and optional Lightbox.cshtml", new { img = Content, width = 540 })*@
 				
 				<a data-caption="@Content.Title" class="fancybox" href="@Content.Image?maxwidth=1400&amp;maxheight=990&amp;quality=75">
-					@(pictureHelper.Picture(Content.Image, 16.0/9.0, 80, 80,"mode=crop&scale=both", Content.Title, new[] { 528, 720, 275, 531, 350 }))
+					@(pictureHelper.Picture(Content.Image, 16.0/9.0, 80, 80,"mode=crop&scale=both", Content.Title, new[] { 528, 720, 275, 531, 450 }))
 				</a>
 			</div>
 		</div>
