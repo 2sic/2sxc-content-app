@@ -7,7 +7,12 @@
     "start": "npm run start-all",
     "start-bs3": "gulp watch-sass-bs3",
     "start-bs4": "gulp watch-sass-bs4",
-    "start-all": "gulp"
+    "start-all": "gulp",
+    
+    "//": "This command should be called when you installed the theme from the package, and want to develop with gulp etc. installed in this folder",
+    "//": "Do not run this command if you already installed these tools globally on your workstation, as that would be faster when executing", 
+    "//": "see also https://azing.org/2sxc/r/4pMeZHZt for more details",
+    "install-tools-local": "npm install gulp-cli@2.0.1 gulp@3.9.1 gulp-sass@3.2.1 gulp-less gulp-sourcemaps@2.6.4"
   },
   "author": "2sic internet solutions",
   "license": "ISC",
@@ -16,7 +21,10 @@
   },
   "comment-about-dev-dependencies": "The ToSIC-global-dependencies node specifies dependencies that are needed to run the gulp tasks. They are not listed in the dependencies node itself because we at 2sic do not install those dependencies locally but globally. Move the dependencies to the 'dependencies' node and run npm install to install gulp and the sass plugin.",
   "ToSIC-global-dependencies": {
-    "gulp": "",
-    "gulp-sass": ""
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-less": "^4.0.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }
