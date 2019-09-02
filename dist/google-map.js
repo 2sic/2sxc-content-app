@@ -1,7 +1,7 @@
 (function ($) {
     // Change this GoogleApiKey. Get it on Google API Console (https://console.developers.google.com/apis/)
     // read instructions here: https://github.com/2sic/2sxc-content-app/wiki/google-maps-api-key
-    var googleApiKey = "AIzaSyAUbRHtu3k_fg3jDGk_qAatE5jA4bC_ndE";
+    var googleApiKey = "AIzaSyAKEFBVw7SddUQR0YnAuTam5wpXvDomzts";
 
 
     // the init-code
@@ -85,7 +85,7 @@
     // do not turn this off, it's important!
     // to disable the warning, replace the API key as explained on //github.com/2sic/2sxc-content-bootstrap3/wiki/google-maps-api-key
     function showWarningIfDemoKeyIsUsed() {
-        var showApiKeyWarning = googleApiKey === "A-I-z-a-S-yAUbRHtu3k_fg3jDGk_qAatE5jA4bC_ndE".replace(/-/g, "");
+        var showApiKeyWarning = googleApiKey === "A-I-z-a-S-yAKEFBVw7SddUQR0YnAuTam5wpXvDomzts".replace(/-/g, "");
         if(showApiKeyWarning){
             $('.co-google-map-container').append('<p class="alert alert-danger googlemap-apiwarning"><strong>Warning:</strong> This map uses a demo API-Key, which will cause problems on live web sites. Change the GoogleApiKey using <a class="alert-link target="_blank" href="https://github.com/2sic/2sxc-content-bootstrap3/wiki/google-maps-api-key" target="_blank">these instructions</a></p>');
         }
