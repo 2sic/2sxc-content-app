@@ -68,7 +68,7 @@
         bottom: 0;
         z-index: 10;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: transparent;
         transition: background-color 0.2s ease-in-out; }
         .co-img-wrapper figure .co-overlay figcaption {
           position: absolute;

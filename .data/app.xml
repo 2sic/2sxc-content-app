@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="10.01.00" ExportDate="2019-05-30T21:34:54.9114738+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="10.08.00" ExportDate="2019-10-15T14:37:55.9307549+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -19,6 +19,9 @@
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="d2a651fd-9dec-4785-a773-165ef46211b6" KeyNumber="495">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -40,6 +43,9 @@
             <Value Key="Name" Value="Título" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Título" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The main title of this content-item. Usually shown in larger font at the beginning of the content-block.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -52,6 +58,9 @@
             <Value Key="Notes" Value="&lt;p&gt;T&amp;iacute;tulo principal de este elemento de contenido. Habitualmente se muestra en tama&amp;ntilde;o m&amp;aacute;s grande al principio del bloque de contenido.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
             </Value>
+            <Value Key="Notes" Value="&lt;p&gt;O t&amp;iacute;tulo principal desde item do conte&amp;uacute;do. Habitualmente visualizado habitualmente com um tipo de letra maior no in&amp;iacute;cio do bloco de conte&amp;uacute;do.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Required" Value="True" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -62,8 +71,19 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="7889935b-8322-4274-922a-4867a110abce" KeyNumber="495" />
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="a94e8a90-4f7e-45e4-83a2-ebdc66fe8f6c" KeyNumber="495" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="7889935b-8322-4274-922a-4867a110abce" KeyNumber="495">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="a94e8a90-4f7e-45e4-83a2-ebdc66fe8f6c" KeyNumber="495">
+            <Value Key="RowCount" Value="1.0" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
         <Attribute StaticName="Text" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="6ab311ed-4fe2-4075-9eab-e9519218af28" KeyNumber="496">
@@ -88,6 +108,9 @@
             <Value Key="Name" Value="Texto" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Texto" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The main text/body of this content-block.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -99,6 +122,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Texto principal de este bloque de contenido.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;O texto/corpo desde bloco de conte&amp;uacute;do.&amp;nbsp;&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -147,6 +173,9 @@
             <Value Key="Name" Value="Imagen" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Imagem" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The image used. It will automatically be resized and cropped, so just upload a larger image than necessary.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -158,6 +187,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;La imagen utilizada. Se cambiar&amp;aacute; de tama&amp;ntilde;o y se recortar&amp;aacute; autom&amp;aacute;ticamente, as&amp;iacute; que solo debe cargar una imagen m&amp;aacute;s grande de lo necesario.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;A imagem utilizada. Ela vai ser automaticamente redimensionada e comprimida, por isso pode fazer upload de uma imagem maior que o necess&amp;aacute;rio.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -219,6 +251,9 @@
             <Value Key="Name" Value="Titular de imagen" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Legenda da imagem" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;If the image shows text, it will show this caption text. If this is empty, it will use the normal title.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -230,6 +265,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Si la imagen muestra texto, mostrar&amp;aacute; este titular. Si est&amp;aacute; vac&amp;iacute;o, usar&amp;aacute; el t&amp;iacute;tulo.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="140" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Se a imagem mostrar texto, vai mostrar esta legenda. Se este campo estiver vazio, mostrar&amp;aacute; o t&amp;iacute;tulo normal.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -250,6 +288,9 @@
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="04082586-693a-4fc3-bf85-546d155f6b49" KeyNumber="490">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="140" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -263,11 +304,17 @@
             <Value Key="Name" Value="Titel / Bildlegende" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Título" Type="String">
+              <Dimension DimensionID="140" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The image description. Typically used for mouse-over labels, screen-readers or to tell Google what it's about.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Geben Sie einen Titel f&amp;uuml;r das Bild an (wird prim&amp;auml;r f&amp;uuml;r den Alt-Text des Bildes verwendet)&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;The image description. Typically used for mouse-over labels, screen-readers or to tell Google what it's about.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="140" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="True" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -279,12 +326,15 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="03638a23-95e7-4f78-8aaf-3c132a132168" KeyNumber="490" />
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="303905a1-6ce9-4d16-a032-ce9ef6575fbc" KeyNumber="490">
-            <Value Key="RowCount" Value="" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="03638a23-95e7-4f78-8aaf-3c132a132168" KeyNumber="490">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="140" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="140" ReadOnly="false" />
             </Value>
           </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="303905a1-6ce9-4d16-a032-ce9ef6575fbc" KeyNumber="490" />
         </Attribute>
         <Attribute StaticName="Image" Type="Hyperlink" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="10c0a03e-d8a0-4565-8fb8-e1bd425cedca" KeyNumber="491">
@@ -433,6 +483,9 @@
             <Value Key="Name" Value="Notities (worden nooit getoond)" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Notas (nunca serão mostradas)" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -484,6 +537,9 @@
             <Value Key="Name" Value="Titel" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Título" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The main title, usually shown in larger font.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -492,6 +548,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;De titel, meestal getoond in groter lettertype.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;O t&amp;iacute;tulo principal, habitualmente mostrado com uma fonte grande.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="True" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -529,6 +588,9 @@
             <Value Key="Name" Value="Beschrijving" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Descrição" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;A short, simple description.&amp;nbsp;it can be longer text, but is not meant to contain formattings.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -537,6 +599,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Korte, simpele beschrijving. Het kan langere teksten bevatten maar is niet bedoeld om formatteringen te bevatten.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Uma descri&amp;ccedil;&amp;atilde;o curta e simples. Pode ser um texto maior, mas &amp;eacute; n&amp;atilde;o &amp;eacute; suposto conter formata&amp;ccedil;&amp;atilde;o.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -581,6 +646,9 @@
             <Value Key="Name" Value="Link doel" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Alvo da hiperligação" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Here you can&amp;nbsp;specify a link to a url,&amp;nbsp;page or to a file like a document. You can also just drag-drop a file from your computer to the link-field. Note that these templates&amp;nbsp;can automatically guess which window to open it in, and will open&amp;nbsp;local pages in the same window, but open documents or external links in a new window (if you choose &lt;em&gt;Automatic&lt;/em&gt;).&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -589,6 +657,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Hier kun je een link specificeren naar een url, pagina of een bestand zoals een document. Je kunt ook gewoon vanaf je computer een bestand slepen naar het link-veld. Externe links en links naar documenten worden automatisch in een nieuw scherm geopend, links binnen de website in hetzelfde scherm (Als je &lt;em&gt;Automatic&lt;/em&gt; hebt geselecteerd).&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Aqui pode especificar um endere&amp;ccedil;o para a hiperliga&amp;ccedil;&amp;atilde;o, p&amp;aacute;gina ou f&amp;laquo;um ficheiro como um documento. Tamb&amp;eacute;m pode arrastar e largar um ficheiro do seu computador para o campo de hiperliga&amp;ccedil;&amp;atilde;o. Ter em aten&amp;ccedil;&amp;atilde;o que estes templates conseguem prever automaticamente em que janela os abrir. Vai abrir p&amp;aacute;ginas locais na mesma janela e documentos ou hiperliga&amp;ccedil;&amp;otilde;es externas numa nova janela (se optar por &lt;em&gt;Autom&amp;aacute;tico&lt;/em&gt;).&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -626,6 +697,9 @@
             <Value Key="Name" Value="Link" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Hiperligação" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Where the user should go when clicking on the link. You can also just drag-drop&amp;nbsp;a file here and the link will then keep the file in &lt;a href=&quot;http://2sxc.org/help?tag=adam&quot; target=&quot;_blank&quot;&gt;ADAM.&lt;/a&gt;&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -634,6 +708,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Waar de gebruiker naar toe moet als deze op de link klikt. Je kunt hier ook bestand naar slepen waarna het bestand wordt gelinkt naar de juiste plek in&amp;nbsp;&lt;a href=&quot;http://2sxc.org/help?tag=adam&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ADAM.&lt;/a&gt;&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Para onde os utilizadores dever&amp;atilde;o ir quando carregarem na hiperliga&amp;ccedil;&amp;atilde;o. Tamb&amp;eacute;m podem arrastar e largar um ficheiro aqui e a hiperliga&amp;ccedil;&amp;atilde;o vai guardar o ficheiro no &lt;a href=&quot;http://2sxc.org/help?tag=adam&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ADAM.&lt;/a&gt;&amp;nbsp;&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -695,6 +772,9 @@
             <Value Key="Name" Value="Link-Beschriftung" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Legenda da hiperligação" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;This will be shown on most templates on the&amp;nbsp;visible button or the highlighted&amp;nbsp;link.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -703,6 +783,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Dit wordt meestal getoond op de zichtbare button of gehighlighte link.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Esta ser&amp;aacute; mostrada na maioria dos templates no bot&amp;atilde;o vis&amp;iacute;vel ou na hiperliga&amp;ccedil;&amp;atilde;o selecionada.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -737,6 +820,9 @@
             <Value Key="Name" Value="Scherm" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Janela" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Choose if the link should open in a new window or continue in the same window. Automatic will open&amp;nbsp;documents and external URLs in a new window.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -745,6 +831,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Kies of de link in een nieuw scherm pf hetzelfde scherm geopend moet worden. Automatisch worden documenten en externe urls in een nieuw scherm geopend.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Escolha se a hiperliga&amp;ccedil;&amp;atilde;o ser&amp;aacute; aberta numa nova janela ou na janela atual. Autom&amp;aacute;tico vai abrir os documentos e hiperliga&amp;ccedil;&amp;otilde;es externas numa nova janela.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -764,10 +853,16 @@
             <Value Key="DropdownValues" Value="Automatisch:auto&#xA;Neues Fenster:_blank&#xA;Gleiches Fenster:_self" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="DropdownValues" Value="Automático:auto&#xA;Nova janela:_blank&#xA;Janela atual:_self" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
         <Attribute StaticName="Visuals" Type="Empty" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="674c6eef-835b-495f-b3bb-797b9f8d0503" KeyNumber="861">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -783,6 +878,9 @@
             <Value Key="Name" Value="Visualisierung" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Visualização" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;You can use an image or icon to enhance the visualization. What is shown depends on the template chosen, and if you use an icon-template without specifying an icon, it will automatically pick an icon for you based on the thing you're linking (so that&amp;nbsp;documents get a document icon, etc.)&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -791,6 +889,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Je kunt een plaatje of icoon gebruiken om de presentatie te verbeteren. Wat wordt getoond, hangt af van de template die je kiest. Als je een template hebt gekozen met een icoon, maar geen icoon, zal er automatisch een icoon geselecteerd worden zoals een document-icoon voor een link naar een document.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Pode utilizar uma imagem ou um icon para melhorar a visualiza&amp;ccedil;&amp;atilde;o. O que &amp;eacute; mostrado depende to template escolhido, e se utilizar o template-&amp;iacute;con sem especificar um &amp;iacute;con, vai ser automaticamente escolhido um &amp;iacute;con baseado no tipo de ficheiro que est&amp;aacute; a ser aberto (desta forma um documento receber&amp;aacute; um &amp;iacute;con de um documento, etc.)&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -831,6 +932,9 @@
             <Value Key="Name" Value="Icoon (optioneel)" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Ícon (opcional)" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The icon is not required. Templates showing icons will&amp;nbsp;automatically pick another icon based on the link, if you don't specify an icon.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -839,6 +943,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Een icoon is niet verplicht. Templates die iconen tonen, selecteren automatisch een icoon gebaseerd op de link, als je zelf geen icoon hebt ingevuld.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;O &amp;iacute;con n&amp;atilde;o &amp;eacute; obrigat&amp;oacute;rio. Os templates que utilizam &amp;iacute;cons v&amp;atilde;o automaticamente escolher um &amp;iacute;con baseado na hiperliga&amp;ccedil;&amp;atilde;o, se n&amp;atilde;o especificar um.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -893,6 +1000,9 @@
             <Value Key="Name" Value="Plaatje (optioneel)" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Imagem (opcional)" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The image will only be shown in certain templates.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -901,6 +1011,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Het plaatje zal alleen getoond worden in bepaalde templates.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;A imagem s&amp;oacute; vai ser mostrada em alguns templates.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -948,6 +1061,9 @@
       <Attributes>
         <Attribute StaticName="Company" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="4e1dc733-fcd8-4c5b-b16a-a0f207437a24" KeyNumber="499">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -966,6 +1082,9 @@
             <Value Key="Name" Value="Titel / bedrijf" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Título / empresa" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Usually the company name, but it could also be&amp;nbsp;another title like &lt;em&gt;Construction Site&lt;/em&gt;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -974,6 +1093,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Meestal de besdrijfsnaam, maar het kan ook een andere titel zijn zoals &lt;em&gt;Werkplaats&lt;/em&gt;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Habitualmente o nome da empresa, mas tamb&amp;eacute;m pode ser um t&amp;iacute;tulo como &lt;em&gt;Local de constru&amp;ccedil;&amp;atilde;o&lt;/em&gt;&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="True" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -985,7 +1107,14 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="721b09a6-7814-49a4-b85f-2cea2ad11791" KeyNumber="499" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="721b09a6-7814-49a4-b85f-2cea2ad11791" KeyNumber="499">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="fbcccbe9-7af1-48b8-81ff-b8415c5e258c" KeyNumber="499" />
         </Attribute>
         <Attribute StaticName="Description" Type="String" IsTitle="false">
@@ -1011,11 +1140,17 @@
             <Value Key="Name" Value="Korte beschrijving" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Descrição curta" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Address Description - will be shown in some templates.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Adresbeschrijving - wordt in sommmige templates getoond.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Descri&amp;ccedil;&amp;atilde;o do endere&amp;ccedil;o - ser&amp;aacute; mostrado em alguns templates.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1060,6 +1195,9 @@
             <Value Key="Name" Value="Adres" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Endereço" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1098,6 +1236,9 @@
             </Value>
             <Value Key="Name" Value="Straatnaam" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Rua" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1139,6 +1280,9 @@
             <Value Key="Name" Value="Postcode" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Código Postal" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1174,6 +1318,9 @@
             </Value>
             <Value Key="Name" Value="Plaatsnaam" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Cidade" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1211,6 +1358,9 @@
             <Value Key="Name" Value="Land" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="País" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1247,6 +1397,9 @@
             <Value Key="Name" Value="Contactinformatie" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Informação de contacto" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Enter all the communication methods here. Note that you could add more&amp;nbsp;fields like twitter, facebook etc. but that would need the help of your web designer.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1255,6 +1408,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Geef hier alle contactinformatie op. Je kunt hier ook meer velden toevoegen zoals twitter, facebook etc. maar hiervoor heb je hulp nodig van je webbouwer.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Introduza todas as formas de comunica&amp;ccedil;&amp;atilde;o aqui. Ter em considera&amp;ccedil;&amp;atilde;o que pode adicionar mais campos como twitter, facebook etc. mas isso vai requerer ajuda do seu web designer.&amp;nbsp;&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1292,6 +1448,9 @@
             <Value Key="Name" Value="Telefoon" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Telefone" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1325,6 +1484,9 @@
             <Value Key="Name" Value="Fax" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Fax" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1339,11 +1501,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="3b9c3aca-b810-4af5-9f3e-2a4a184ba89c" KeyNumber="507" />
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="df98e398-b28b-4dbe-96c1-3d2da2b27fb2" KeyNumber="507">
-            <Value Key="RowCount" Value="" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="df98e398-b28b-4dbe-96c1-3d2da2b27fb2" KeyNumber="507" />
         </Attribute>
         <Attribute StaticName="Mail" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="a0128922-eb99-4d75-8f2c-ed675ea4bcf2" KeyNumber="508">
@@ -1364,6 +1522,9 @@
             </Value>
             <Value Key="Name" Value="E-mail" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Email" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1401,6 +1562,9 @@
             <Value Key="Name" Value="GPS Coördinaten" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Coordinadas GPS" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Choose the GPS coordinates below.&amp;nbsp;Note that it's much easier if you already entered an address above, as the pin will automatically jump to that location.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1409,6 +1573,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Kies de GPS co&amp;ouml;rdinaten hieronder.&amp;nbsp;Het is eenvoudiger als je een adres daarboven hebt ingevuld, er wordt dan automatisch een pin gezet op die locatie.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Escolha as coordenadas GPS abaixo. Ter em considera&amp;ccedil;&amp;atilde;o que &amp;eacute; muito mais simples se j&amp;aacute; tiver introduzido a morada acima, visto que o pin vai automaticamente centrar nessa localiza&amp;ccedil;&amp;atilde;o.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1442,6 +1609,9 @@
             </Value>
             <Value Key="Name" Value="GPS Coordinates" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="GPS" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1485,6 +1655,9 @@
             <Value Key="Name" Value="Breitengrad für GPS" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Latitude GPS" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1499,19 +1672,21 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="d8bd3b5d-58fd-4f71-b5e0-e28a6a87d0d3" KeyNumber="510">
-            <Value Key="AddressMask" Value="[Street] [ZipCode] [City]" Type="String" />
-            <Value Key="Decimals" Value="0" Type="Number">
+            <Value Key="AddressMask" Value="[Street] [ZipCode] [City]" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="gps" Type="String" />
-            <Value Key="Max" Value="" Type="Number">
+            <Value Key="Decimals" Value="0.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Min" Value="" Type="Number">
+            <Value Key="InputType" Value="gps" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="ValidationRegEx" Value="" Type="String" />
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String" />
+            <Value Key="ValidationRegEx" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
         <Attribute StaticName="GPSLng" Type="Number" IsTitle="false">
@@ -1531,6 +1706,9 @@
             <Value Key="Name" Value="Längengrad für GPS" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Longitude GPS" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1545,13 +1723,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="42129828-a704-43f0-a378-b5b8be88f229" KeyNumber="511">
-            <Value Key="Decimals" Value="0" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Max" Value="" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Min" Value="" Type="Number">
+            <Value Key="Decimals" Value="0.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1575,6 +1747,9 @@
             </Value>
             <Value Key="Name" Value="Routebeschrijving" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Direções para condução" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1618,6 +1793,9 @@
             <Value Key="Name" Value="Beschriftung für Routenplaner" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Legenda da hiperligação" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;This label is used for the link bringing the user to google maps in from-to mode.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1626,6 +1804,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Dit label is om de gebruiker naar Google Maps te krijgen in de 'Van-naar-modus'.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Esta legenda &amp;eacute; utilizada para o link que leva o utilizados para o google maps no modo from-to.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1663,6 +1844,9 @@
             </Value>
             <Value Key="Name" Value="Volledige naam" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Nome completo" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1706,6 +1890,9 @@
             <Value Key="Name" Value="Positie / Functie" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Posição / Função" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The role a person has in the organization.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1714,6 +1901,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;De rol / functie van de persoon in de organisatie&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;O papel que a pessoa tem na organiza&amp;ccedil;&amp;atilde;o.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1761,6 +1951,9 @@
             </Value>
             <Value Key="Name" Value="Beschrijving" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Descrição" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1815,6 +2008,9 @@
             </Value>
             <Value Key="Name" Value="Foto" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Fotografia" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1879,6 +2075,9 @@
             <Value Key="Name" Value="Contactinformatie" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Informação de contacto" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1917,6 +2116,9 @@
             </Value>
             <Value Key="Name" Value="Telefoon" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Telefone" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -1957,6 +2159,9 @@
             <Value Key="Name" Value="Mobiel" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Telemóvel" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1995,6 +2200,9 @@
             </Value>
             <Value Key="Name" Value="E-mail" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Email" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2042,6 +2250,9 @@
             <Value Key="Name" Value="Klik voor grotere afbeelding" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Carregar para ver maior" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Enable the user to click on the image and see a larger version as a lightbox.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2050,6 +2261,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Mogelijk maken voor de gebruiker om op het plaatje te klikken en een grotere versie te zien in een lightbox.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Permite ao utilizador carregar na imagem e ver uma vers&amp;atilde;o maior como uma lightbox.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2086,6 +2300,9 @@
             <Value Key="Name" Value="Toon titel in lightbox" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Mostrar um título em lightbox" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Show the title / name of the image in the large view.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2094,6 +2311,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Toon de titel / naam van het plaatje ini de grrotere weergave.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Mostrar o t&amp;iacute;tulo / nome da imagem em ponto maior.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2130,11 +2350,17 @@
             <Value Key="Name" Value="Gebruik contenttitel in lightbox" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Utilizar o título do conteúdo em lightbox" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;If activated, it will use the title of the content in the large view, instead of the image label. Usually not recommended.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Geactiveerd, wordt de titel van de content getoond in de grotere weergave in plaats van het image label. Wordt doorgaans niet geadviseerd.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Se activado, vai mostrar o t&amp;iacute;tulo do conte&amp;uacute;do em ponto grande, em vez da legenda da imagem. Normalmente n&amp;atilde;o recomendado.&amp;nbsp;&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2172,6 +2398,9 @@
             <Value Key="Name" Value="Google Maps Zoom-Stufe" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Nível de ampliação do Google Maps" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;How much the map will be zoomed. 1 is show as much as possible, 20 is zoom as close as possible. We recommand ca. 14 for common area maps.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2180,6 +2409,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Hoe ver de kaart is ingezoomed. 1 is toon zoveel mogelijk, 20 is zoom zo ver mogelijk. We adviseren ca. 14 voor de meeste kaarten.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Quanta amplia&amp;ccedil;&amp;atilde;o vai ter o mapa. 1 mostra o mais distante poss&amp;iacute;vel, 20 &amp;eacute; o mais pr&amp;oacute;ximo. Recomendamos aproximadamente 14 para os mapas mais comuns.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2238,6 +2470,9 @@
             <Value Key="Name" Value="Google Maps Marker Icoon" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Ícon de marcação do Google Maps" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;Custom image to mark the position on the map.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2246,6 +2481,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Eigen plaatje om de positie op de map te bepalen.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Imagem customizada para marcar a posi&amp;ccedil;&amp;atilde;o no mapa.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2314,6 +2552,9 @@
             <Value Key="Name" Value="Überschrift" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Tipo de cabeçalho" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2381,6 +2622,9 @@
             <Value Key="Name" Value="image zoom mogelijk maken" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Permitir ampliar a imagem" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2418,6 +2662,9 @@
             </Value>
             <Value Key="Name" Value="Toon titel in lightbox" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Mostrar o título em lightbox" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2461,6 +2708,9 @@
             <Value Key="Name" Value="Titel" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Título" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;This is shown in the preview for the video.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2469,6 +2719,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Dit wordt getoond in de preview van de video.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;O t&amp;iacute;tulo &amp;eacute; mostrado numa pr&amp;eacute;-visualiza&amp;ccedil;&amp;atilde;o do v&amp;iacute;deo.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="True" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2511,6 +2764,9 @@
             <Value Key="Name" Value="Video-Link" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Name" Value="Endereço do vídeo" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="&lt;p&gt;The short-link you use for embedding the video&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2519,6 +2775,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;De short-link om de video te kunnen insluiten&lt;/p&gt;" Type="String">
               <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;O link curto que utiliza para The short-link you use for incorporar o video&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2565,7 +2824,7 @@
       <Value Key="CropAnchor" Value="middlecenter" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:1555" Type="Hyperlink">
+      <Value Key="Image" Value="file:4205" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="New image" Type="String">
@@ -2579,7 +2838,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="Content" EntityGUID="620aa5d9-e5c5-42b3-8279-51fe5e71e645">
-      <Value Key="Image" Value="file:1566" Type="Hyperlink">
+      <Value Key="Image" Value="file:4205" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ImageCaption" Value="Some Demo Caption" Type="String">
@@ -2609,14 +2868,14 @@
       <Value Key="Title" Value="Demo content" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Neuer Inhalt" Type="String">
-        <Dimension DimensionID="20" ReadOnly="false" />
-      </Value>
       <Value Key="Title" Value="Conteúdo demonstrativo" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Contenido demo" Type="String">
         <Dimension DimensionID="140" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Neuer Inhalt" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="09ad77bb-66e8-4a1c-92ac-27253afb251d" AttributeSetName="Person" EntityGUID="9e8d4d67-68df-4b23-968e-2e3883c4aceb">
@@ -2644,7 +2903,7 @@
       <Value Key="Phone" Value="+41 81 750 67 77" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Photo" Value="file:1555" Type="Hyperlink">
+      <Value Key="Photo" Value="file:4205" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Position" Value="Chief Demo Officer" Type="String">
@@ -2689,7 +2948,7 @@
       <Value Key="Icon" Value="fa-globe" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Image" Value="file:1555" Type="Hyperlink">
+      <Value Key="Image" Value="file:4205" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Link" Value="/" Type="Hyperlink">
@@ -4738,8 +4997,7 @@
     </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="1555" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\asdf.jpg" />
-    <File Id="1566" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\lake.jpg" />
+    <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
     <File Id="1465" RelativePath="adam\Content\_5PPc3V-X0iLEJfrZmBISQ\MarkerImage\2sic-Logo-magenta-white-line.png" />
     <File Id="540" RelativePath="2sxc\Content\thumbnails\ct image.png" />
     <File Id="539" RelativePath="2sxc\Content\thumbnails\ct basic content.png" />
@@ -4748,44 +5006,12 @@
     <File Id="544" RelativePath="2sxc\Content\thumbnails\ct person.png" />
     <File Id="541" RelativePath="2sxc\Content\thumbnails\ct layout element.png" />
     <File Id="545" RelativePath="2sxc\Content\thumbnails\ct video.png" />
-    <File Id="1565" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\BeispielbilderWide (12 of 23).jpg" />
-    <File Id="1556" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\BeispielbilderWide (16 of 23).jpg" />
-    <File Id="1558" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\gil-687594-unsplash.jpg" />
-    <File Id="1559" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\mohamed-arif-1105470-unsplash.jpg" />
-    <File Id="1557" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\photo-1527942364978-2b826fc00de6.jpg" />
-    <File Id="1460" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Platzhalterbilder_Linkbox-15.jpg" />
-    <File Id="1464" RelativePath="adam\Content\2Iem7w4_1UaVcHROwphQBw\Image\Platzhalterbilder_Linkbox-15.jpg" />
-    <File Id="1265" RelativePath="adam\Content\jssK0hjgOEmEMiPDjptyVA\Image\pete-wright-105201-unsplash.jpg" />
-    <File Id="1463" RelativePath="adam\Content\m12nNZZlIUaTnlfFl0SzBw\Image\Platzhalterbild_Inhalt-8.jpg" />
-    <File Id="1462" RelativePath="adam\Content\m12nNZZlIUaTnlfFl0SzBw\Image\Platzhalterbilder_Linkbox-3.jpg" />
-    <File Id="1561" RelativePath="adam\Content\Oe9yibC9A0iypjzyD2EyFQ\Image\david-clode-1123653-unsplash.jpg" />
-    <File Id="1562" RelativePath="adam\Content\Omm7uyvAZ0uk368JIk7JGg\Image\photo-1527942364978-2b826fc00de6.jpg" />
-    <File Id="1560" RelativePath="adam\Content\t5WMXdUnJ020WJRoghKp0A\Image\david-clode-1098156-unsplash.jpg" />
-    <File Id="1266" RelativePath="adam\Content\xEoYIX0Xp0yvlwbbjaVE3A\Image\christopher-burns-378020-unsplash.jpg" />
-    <File Id="1461" RelativePath="adam\Content\Z02Nnt9oI0uWji44g8Ss6w\Photo\Platzhalterbilder_Linkbox-16.jpg" />
   </PortalFiles>
   <PortalFolders>
     <Folder Id="2984" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/Image/" />
-    <Folder Id="2991" RelativePath="adam/Content/_5PPc3V-X0iLEJfrZmBISQ/MarkerImage/" />
     <Folder Id="581" RelativePath="2sxc/Content/thumbnails/" />
-    <Folder Id="576" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/Image/" />
-    <Folder Id="2606" RelativePath="adam/Content/jssK0hjgOEmEMiPDjptyVA/Image/" />
-    <Folder Id="2988" RelativePath="adam/Content/m12nNZZlIUaTnlfFl0SzBw/Image/" />
-    <Folder Id="3157" RelativePath="adam/Content/Oe9yibC9A0iypjzyD2EyFQ/Image/" />
-    <Folder Id="3159" RelativePath="adam/Content/Omm7uyvAZ0uk368JIk7JGg/Image/" />
-    <Folder Id="3155" RelativePath="adam/Content/t5WMXdUnJ020WJRoghKp0A/Image/" />
-    <Folder Id="2608" RelativePath="adam/Content/xEoYIX0Xp0yvlwbbjaVE3A/Image/" />
-    <Folder Id="2986" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/" />
     <Folder Id="285" RelativePath="adam/Content/" />
-    <Folder Id="2989" RelativePath="adam/Content/_5PPc3V-X0iLEJfrZmBISQ/" />
     <Folder Id="2983" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/" />
-    <Folder Id="575" RelativePath="adam/Content/2Iem7w4_1UaVcHROwphQBw/" />
-    <Folder Id="2605" RelativePath="adam/Content/jssK0hjgOEmEMiPDjptyVA/" />
-    <Folder Id="2987" RelativePath="adam/Content/m12nNZZlIUaTnlfFl0SzBw/" />
-    <Folder Id="3156" RelativePath="adam/Content/Oe9yibC9A0iypjzyD2EyFQ/" />
-    <Folder Id="3158" RelativePath="adam/Content/Omm7uyvAZ0uk368JIk7JGg/" />
-    <Folder Id="3154" RelativePath="adam/Content/t5WMXdUnJ020WJRoghKp0A/" />
-    <Folder Id="2607" RelativePath="adam/Content/xEoYIX0Xp0yvlwbbjaVE3A/" />
-    <Folder Id="2985" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/" />
+    <Folder Id="3320" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/Text/" />
   </PortalFolders>
 </SexyContent>
