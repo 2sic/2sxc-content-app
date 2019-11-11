@@ -1,13 +1,11 @@
-@* put all necessary link/script tags here *@
-@RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts"})
+@* 
+    This page is just an entry point for your code. It will do the following:
+    1. Check if it can detect the CSS framework used by the theme 
+       - if yes, it will use that
+       - otherwise it will fallback to assume it's bootstrap 4 = "bs4"
+    2. Then it will load the real cshtml-template from the matching folder
+*@
 
-<div class="co-container-outer">
-	<div class="co-container-inner clearfix sc-element co-content co-content-text-only mb-4">
-        @Edit.Toolbar(Content)
-        @* call sub-template to show the title with the correct H1-H6 tag *@
-        @RenderPage("_Shared - header tag.cshtml")
-        <div class="co-text">
-            @Html.Raw(Content.Text)
-        </div>
-    </div>
-</div>
+@using Connect.Koi;
+@using ToSic.Razor.Blade;
+@RenderPage(Text.First(Koi.Is("bs3,bs4"), "bs4") + "/_Content - Text only.cshtml")
