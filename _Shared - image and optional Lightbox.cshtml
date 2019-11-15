@@ -7,6 +7,7 @@
 *@
 
 @using Connect.Koi
+@using ToSic.Razor.Blade;
 @{
     // configuration
     var retina = true;
@@ -51,7 +52,10 @@
                  }
             </div>
 
-            <img @Koi.Class("bs3='img-responsive' bs4,oth='img-fluid'")  src="@imgItem.Image?w=@width&amp;scale=both&amp;quality=@quality" alt="@title" />
+            @(Tag.Img()
+                .Class("img-fluid")
+                .Src(imgItem.Image + "?w=" + width + "&amp;scale=both&amp;quality=" + quality)
+                .Alt(title))
         </figure>
 
 
