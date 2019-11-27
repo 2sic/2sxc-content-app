@@ -1,6 +1,6 @@
-@* 
-    this is a partial template which is re-used in many other templates, so it's shared here 
-    its shows the person data like name, position, concact data and description 
+@*
+    this is a partial template which is re-used in many other templates, so it's shared here
+    its shows the person data like name, position, concact data and description
 *@
 @{
     var person = PageData["data"];
@@ -17,7 +17,7 @@
     {
     <div itemprop="email">
         <span class="fas fa-envelope"></span>
-        @RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = person.Email })
+        @RenderPage("_TryToEncryptMail.cshtml", new { email = person.Email })
     </div>
     }
     @if (!String.IsNullOrEmpty(person.Mobile))
