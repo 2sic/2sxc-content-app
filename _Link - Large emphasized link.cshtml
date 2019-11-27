@@ -8,7 +8,7 @@
         @foreach (var linkItem in AsDynamic(Data["Default"]))
         {
             // get helper commands
-            var Helpers = CreateInstance("_Helpers.cshtml");
+            var Helpers = CreateInstance("shared/_Helpers.cshtml");
             var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
             @Edit.Toolbar(linkItem)
