@@ -1,4 +1,5 @@
-@using Connect.Koi
+@using Connect.Koi;
+@using ToSic.Razor.Blade;
 
 @* put all necessary link/script tags here *@
 @RenderPage("shared/_Assets.cshtml", new { parts = "styles"})
@@ -23,7 +24,7 @@
                         <span @Koi.Class("all='text-primary fas " + @linkInfo.Icon + "' bs3='pull-left' bs4,oth='float-left'")></span>
                         <div class="co-document-text">
                             <span class="@(linkInfo.Found ? "co-link" : "")">@linkItem.Title</span>
-                            <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
+                            <p>@Tags.Nl2Br(linkItem.Description)</p>
                         </div>
                     @if(linkInfo.Found){
                         @:</a>

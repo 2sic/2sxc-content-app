@@ -1,4 +1,5 @@
-@using Connect.Koi
+@using Connect.Koi;
+@using ToSic.Razor.Blade;
 
 @* put all necessary link/script tags here *@
 @RenderPage("shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
@@ -28,7 +29,7 @@
                         </div>
                         <div @Koi.Class("bs3='col col-xs-10' bs4,oth='col-10'")>
                             <h3>@linkItem.Title</h3>
-                            <p>@Helpers.ConvertLineBreaks(linkItem.Description)</p>
+                            <p>@Tags.Nl2Br(linkItem.Description)</p>
                             @if(!String.IsNullOrEmpty(linkItem.Link))
                             {
                                 <span class="text-primary co-link">@linkItem.LinkText&nbsp;
