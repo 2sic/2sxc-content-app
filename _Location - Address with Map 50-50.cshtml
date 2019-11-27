@@ -74,7 +74,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		var image = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
+		var markerImage = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
 				lat: @Content.GPSLat.ToString().Replace(',', '.'),
@@ -84,7 +84,7 @@
 			mapTypeId: "ROADMAP",
 			infoWindowHtml: "@Content.Company",
 			showInfoWindow: false,
-			image: image
+			icon: markerImage
 		});
 
 	});

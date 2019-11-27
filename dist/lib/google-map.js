@@ -3,21 +3,21 @@
     // read instructions here: https://github.com/2sic/2sxc-content-app/wiki/google-maps-api-key
     var googleApiKey = "AIzaSyAKEFBVw7SddUQR0YnAuTam5wpXvDomzts";
 
-
     // the init-code
     function initGoogleMaps() {
 
         // if this had already been run, stop here
-        if ($.fn.toGoogleMap)
+        if ($.fn.toGoogleMap) {
             return;
+        }
 
         var googleMapLoadDeferred = $.Deferred();
 
         $.fn.toGoogleMap = function (options) {
             var mapElement = this.get(0);
 
-            googleMapLoadDeferred.promise().then(function() {
-                
+            googleMapLoadDeferred.promise().then(function () {
+
                 var settings = $.extend({
                     position: {
                         lat: 0,
@@ -44,10 +44,11 @@
                 // Create Marker
                 var marker = new google.maps.Marker({
                     position: settings.position,
-                    map: map
+                    map: map,
+                    icon: settings.icon
                 });
 
-                if(settings.infoWindowHtml && settings.infoWindowHtml !== '') {
+                if (settings.infoWindowHtml && settings.infoWindowHtml !== '') {
                     // Create InfoWindow
                     var infoWindow = new google.maps.InfoWindow({
                         content: settings.infoWindowHtml
@@ -69,12 +70,11 @@
         };
 
         // Register google map load callback
-        window.googleMapLoadCallback = function() {
+        window.googleMapLoadCallback = function () {
             googleMapLoadDeferred.resolve(true);
         };
-        
-        if(!window.googleMapsLoaded)
-        {
+
+        if (!window.googleMapsLoaded) {
             window.googleMapsLoaded = true;
             $.getScript("//maps.google.com/maps/api/js?key=" + googleApiKey + "&sensor=true&callback=googleMapLoadCallback");
         }
@@ -86,7 +86,7 @@
     // to disable the warning, replace the API key as explained on //github.com/2sic/2sxc-content-bootstrap3/wiki/google-maps-api-key
     function showWarningIfDemoKeyIsUsed() {
         var showApiKeyWarning = googleApiKey === "A-I-z-a-S-yAKEFBVw7SddUQR0YnAuTam5wpXvDomzts".replace(/-/g, "");
-        if(showApiKeyWarning){
+        if (showApiKeyWarning) {
             $('.co-google-map-container').append('<p class="alert alert-danger googlemap-apiwarning"><strong>Warning:</strong> This map uses a demo API-Key, which will cause problems on live web sites. Change the GoogleApiKey using <a class="alert-link target="_blank" href="https://github.com/2sic/2sxc-content-bootstrap3/wiki/google-maps-api-key" target="_blank">these instructions</a></p>');
         }
     }
@@ -95,4 +95,4 @@
 
     initGoogleMaps();
 
-} (jQuery));
+}(jQuery));
