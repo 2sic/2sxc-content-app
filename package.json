@@ -4,27 +4,30 @@
   "description": "(bootstrap-based) content templates for websites built with 2sxc and the 2sic bootstrap skin",
   "main": "(none)",
   "scripts": {
-    "start": "npm run start-all",
-    "start-bs3": "gulp watch-sass-bs3",
-    "start-bs4": "gulp watch-sass-bs4",
-    "start-all": "gulp",
-    
-    "//": "This command should be called when you installed the theme from the package, and want to develop with gulp etc. installed in this folder",
-    "//": "Do not run this command if you already installed these tools globally on your workstation, as that would be faster when executing", 
-    "//": "see also https://azing.org/2sxc/r/4pMeZHZt for more details",
-    "install-tools-local": "npm install gulp-cli@2.0.1 gulp@3.9.1 gulp-sass@3.2.1 gulp-less gulp-sourcemaps@2.6.4"
+    "develop": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "2sic internet solutions",
   "license": "ISC",
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
+    "@types/fancybox": "^3.5.2",
+    "@types/jquery": "^3.3.31",
+    "autoprefixer": "^9.6.4",
+    "cpx": "^1.5.0",
+    "css-loader": "^2.1.1",
+    "file-loader": "^4.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "remove-files-webpack-plugin": "^1.1.3",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "^5.4.4",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpackbar": "^3.2.0"
   },
-  "comment-about-dev-dependencies": "The ToSIC-global-dependencies node specifies dependencies that are needed to run the gulp tasks. They are not listed in the dependencies node itself because we at 2sic do not install those dependencies locally but globally. Move the dependencies to the 'dependencies' node and run npm install to install gulp and the sass plugin.",
-  "ToSIC-global-dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-cli": "^2.0.1",
-    "gulp-less": "^4.0.1",
-    "gulp-sass": "^3.2.1",
-    "gulp-sourcemaps": "^2.6.4"
-  }
+  "dependencies": {}
 }
