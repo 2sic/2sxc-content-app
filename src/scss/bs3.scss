@@ -4,7 +4,7 @@
 // update the reference to your _variables.scss of your skin
 // and re-run the following npm task:
 // npm run start-bs3
-// 
+//
 
 // Add header-comments to the final file
 @import "sass-comments.scss";
@@ -14,7 +14,7 @@
 // You must adapt the path to match your Bootstrap 3 skin
 @import "../../../_default/skins/2sxcBootstrap-B3/src/_variables.scss";
 
-// Map all relevant variables to bs4 convention 
+// Map all relevant variables to bs4 convention
 // so we can use bs4 standard variable names in the other SCSS files
 @import "bs4-polyfills/_map-bs3-vars-to-bs4.scss";
 
@@ -24,8 +24,9 @@
 @import "bs4-polyfills/_breakpoints.scss";
 
 
-@import "_style.scss";          // General CSS stuff for everything
+@import "_style.scss"; // General CSS stuff for everything
 
-.mb-4, .mb-5 {
+.mb-4,
+.mb-5 {
     margin-bottom: $grid-gutter-width !important;
 }
