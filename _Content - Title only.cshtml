@@ -1,10 +1,10 @@
 @* put all necessary link/script tags here *@
-@RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts"})
+@RenderPage("shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 <div class="co-container-outer">
 	<div class="co-container-inner clearfix sc-element co-content co-content-text-only mb-4">
         @Edit.Toolbar(Content)
         @* call sub-template to show the title with the correct H1-H6 tag *@
-        @RenderPage("_Shared - header tag.cshtml")
+        @RenderPage("shared/_Header tag.cshtml")
     </div>
 </div>

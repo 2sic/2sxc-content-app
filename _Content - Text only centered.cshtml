@@ -2,7 +2,7 @@
 @using Connect.Koi
 
 @* put all necessary link/script tags here *@
-@RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts"})
+@RenderPage("shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 <div class="co-container-outer">
 	<div class="co-container-inner">
@@ -11,7 +11,7 @@
                 @Edit.Toolbar(Content)
                 <div class="co-title">
                     @* call sub-template to show the title with the correct H1-H6 tag *@
-                    @RenderPage("_Shared - header tag.cshtml")
+                    @RenderPage("shared/_Header tag.cshtml")
                 </div>
                 <div class="co-text">
                     @Html.Raw(Content.Text)

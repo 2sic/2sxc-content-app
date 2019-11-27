@@ -1,7 +1,7 @@
 @using Connect.Koi
 
 @* put all necessary link/script tags here *@
-@RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts,height"})
+@RenderPage("shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
@@ -10,7 +10,7 @@
 			{
 				<div @Koi.Class("all='sc-element co-person mb-4' bs3='co-sync-height-with-neighbors col col-sm-6' bs4,oth='col-md-6'")>
 					@Edit.Toolbar(person)
-					
+
 					<div class="row">
 						<div @Koi.Class("all='co-person-image' bs3='col col-xs-4' bs4,oth='col-4'")>
 							@if (!String.IsNullOrEmpty(person.Photo))
@@ -24,7 +24,7 @@
 						</div>
 
 						<div @Koi.Class("all='co-person-text' bs3='col-xs-8' bs4,oth='col-8'") itemscope itemtype="http://schema.org/Person">
-							@RenderPage("_Shared - Person Data.cshtml", new { data = person})
+							@RenderPage("./shared/_Person Data.cshtml", new { data = person})
 						</div>
 					</div>
 				</div>
