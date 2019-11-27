@@ -5,7 +5,7 @@
 @using Connect.Koi
 
 @* include bootstrap 4 if the framework isn't known *@
-@if(!Koi.Is("bs3,bs4")) 
+@if(!Koi.Is("bs3,bs4"))
 {
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" data-enableoptimizations="true" />
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous" data-enableoptimizations="true" ></script>
@@ -13,10 +13,10 @@
 
 <script defer async src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
-@* 
+@*
     This sub template just places all the very-often used
-    style and link tags into the code. 
-    We put this in a sub-template because we use it so often, and want to make sure 
+    style and link tags into the code.
+    We put this in a sub-template because we use it so often, and want to make sure
     nobody accidentally uses the wrong url or forgets data-enableoptimizations
 *@
 @{
@@ -34,6 +34,6 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
 }
 
-@if(styles) { <link rel="stylesheet" href="@App.Path/dist/@(Koi.PickCss("bs3,bs4", "bs4")).css" data-enableoptimizations="true" /> }
-@if(scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.js" data-enableoptimizations="true"></script> }
-@if(height && Koi.Is("bs3")) { <script type="text/javascript" src="@App.Path/dist/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script> }
+@if(styles) { <link rel="stylesheet" href="@App.Path/dist/@(Koi.PickCss("bs3,bs4", "bs4")).min.css" data-enableoptimizations="true" /> }
+@if(scripts) { <script type="text/javascript" src="@App.Path/dist/main.min.js" data-enableoptimizations="true"></script> }
+@if(height && Koi.Is("bs3")) { <script type="text/javascript" src="@App.Path/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="true"></script> }

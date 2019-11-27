@@ -2,7 +2,7 @@
 
 @* put all necessary link/script tags here *@
 @RenderPage("_Shared - Assets.cshtml", new { parts = "styles,scripts"})
-<script type="text/javascript" src="@App.Path/dist/google-map.js" data-enableoptimizations="true"></script>
+<script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
 
 <div class="co-container-outer">
 	<div class="co-container-inner sc-element co-contactmap mb-4">
@@ -44,7 +44,7 @@
 				<div class="co-details">
 					@if (!String.IsNullOrEmpty(Content.Mail)) {
 						<div itemprop="email">
-							<span class="fas fa-envelope"></span> 
+							<span class="fas fa-envelope"></span>
 							@RenderPage("_Shared - TryToEncryptMail.cshtml", new { email = Content.Mail })
 						</div>
 						<br/>
@@ -86,6 +86,6 @@
 			showInfoWindow: false,
 			image: image
 		});
-		
+
 	});
 </script>
