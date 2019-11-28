@@ -18,13 +18,13 @@
 
                 <li @Koi.Class("all='sc-element co-document' bs3='col col-md-12' bs4,oth='col-lg-12'")>
                     @Edit.Toolbar(linkItem)
-                    @if(linkInfo.Found){
+                    @if(linkInfo.Found) {
                         @:<a target="@linkInfo.Window" href="@linkItem.Link" title="@linkItem.Title">
                     }
                         <span @Koi.Class("all='text-primary fas " + @linkInfo.Icon + "' bs3='pull-left' bs4,oth='float-left'")></span>
                         <div class="co-document-text">
                             <span class="@(linkInfo.Found ? "co-link" : "")">@linkItem.Title</span>
-                            <p>@Tags.Nl2Br(linkItem.Description)</p>
+                            <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
                         </div>
                     @if(linkInfo.Found){
                         @:</a>

@@ -1,5 +1,5 @@
 @using Connect.Koi;
-@using ToSic.Razor.Blade;
+@using ToSic.Razor.Blade;
 
 @* put all necessary link/script tags here *@
 @RenderPage("shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
@@ -37,7 +37,7 @@
 						<h3>@linkItem.Title</h3>
 						@if(!String.IsNullOrEmpty(linkItem.Description))
 						{
-							<p>@Tags.Nl2Br(linkItem.Description)</p>
+							<p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
 						}
 						@if(linkInfo.Found)
 						{

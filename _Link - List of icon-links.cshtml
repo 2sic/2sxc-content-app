@@ -29,7 +29,7 @@
                         </div>
                         <div @Koi.Class("bs3='col col-xs-10' bs4,oth='col-10'")>
                             <h3>@linkItem.Title</h3>
-                            <p>@Tags.Nl2Br(linkItem.Description)</p>
+                            <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
                             @if(!String.IsNullOrEmpty(linkItem.Link))
                             {
                                 <span class="text-primary co-link">@linkItem.LinkText&nbsp;
