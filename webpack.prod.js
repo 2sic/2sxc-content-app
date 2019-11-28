@@ -6,9 +6,9 @@ const WebpackBar = require('webpackbar');
 
 module.exports = {
   entry: {
-    bs3: './src/scss/bs3.scss',
-    bs4: './src/scss/bs4.scss',
-    main: './src/ts/main.ts',
+    bs3: './bs3/styles/bs3.scss',
+    bs4: './bs4/styles/bs4.scss',
+    scripts: './src/scripts.ts',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
