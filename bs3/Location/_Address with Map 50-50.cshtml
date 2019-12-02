@@ -10,8 +10,7 @@
 			<div class="col col-sm-6">
 			<address itemscope itemtype="http://schema.org/LocalBusiness">
 				<div class="co-company" itemprop="name">
-					<strong>@Content.Company<br/>
-					@Content.CompanyAdd</strong>
+					<strong>@Content.Company<br/>@Content.CompanyAdd</strong>
 				</div>
 				<div class="co-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					@if (!String.IsNullOrEmpty(Content.Street)) {
@@ -72,18 +71,17 @@
 
 <script type="text/javascript">
 	$(function(){
-		var markerImage = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
+		var markerImage = "@((!String.IsNullOrEmpty(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
 				lat: @Content.GPSLat.ToString().Replace(',', '.'),
 				lng: @Content.GPSLng.ToString().Replace(',', '.')
 			},
-			zoom: @Presentation.Zoom,
+			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",
 			infoWindowHtml: "@Content.Company",
 			showInfoWindow: false,
 			icon: markerImage
 		});
-
 	});
 </script>

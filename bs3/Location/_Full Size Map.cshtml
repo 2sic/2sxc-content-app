@@ -5,8 +5,7 @@
 <div class="co-container-outer">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
 		<div class="co-google-map-container embed-responsive embed-responsive-16by9">
-			<div class="co-google-map embed-responsive-item" id="GoogleMap-@Dnn.Module.ModuleID">
-			</div>
+			<div class="co-google-map embed-responsive-item" id="GoogleMap-@Dnn.Module.ModuleID"></div>
 			<div class="co-google-map-content" id="GoogleMap-Content-@Dnn.Module.ModuleID" style="display:none;">
 				<div>
 					<strong>@Content.Company</strong>
@@ -26,13 +25,13 @@
 
 <script type="text/javascript">
 	$(function(){
-		var markerImage = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
+		var markerImage = "@((!String.IsNullOrEmpty(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
 				lat: @Content.GPSLat.ToString().Replace(',', '.'),
 				lng: @Content.GPSLng.ToString().Replace(',', '.')
 			},
-			zoom: @Presentation.Zoom,
+			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",
 			infoWindowHtml: $("#GoogleMap-Content-@Dnn.Module.ModuleID").html(),
 			showInfoWindow: true,

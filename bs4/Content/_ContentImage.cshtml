@@ -1,3 +1,5 @@
+@using ToSic.Razor.Blade;
+
 @*
   this is a partial template which is re-used in many other templates,
   so it's shared here
@@ -5,7 +7,7 @@
   expects
   * "width" - an int
 *@
-@using ToSic.Razor.Blade;
+
 @{
   // configuration
   var retina = true;
@@ -23,13 +25,13 @@
 
   // prepare the title, either the default or the additional image caption
   var title="";
-  if(Presentation.TitleLightbox){
+  if(imgItem.Presentation.TitleLightbox){
     title = !String.IsNullOrEmpty(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
   }
 
   // has image? add lightbox link?
   var hasImage = !String.IsNullOrEmpty(imgItem.Image);
-  var withLink = Presentation.ImageLightbox != null && Presentation.ImageLightbox;
+  var withLink = imgItem.Presentation.ImageLightbox != null && imgItem.Presentation.ImageLightbox;
 }
 
 @if(hasImage) {

@@ -15,7 +15,7 @@
       {
         var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-        <div class="mb-4 col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors" @Edit.TagToolbar(linkItem)>
+        <div class="col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors mb-4" @Edit.TagToolbar(linkItem)>
           <h3>@linkItem.Title</h3>
           <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
           @if(linkInfo.Found)

@@ -11,9 +11,7 @@
 				@* call sub-template to show the image with all possible options *@
 				@RenderPage("_ContentImage.cshtml", new { img = Content, width = 700 })
 
-				<div class="co-text">
-					@Html.Raw(Content.Text)
-				</div>
+				<div class="co-text">@Html.Raw(Content.Text)/div>
 			</div>
 		</div>
 	</div>

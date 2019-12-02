@@ -3,7 +3,6 @@
 
 @{
   var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
-
 	var youtubeMatch = new System.Text.RegularExpressions.Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)").Match(Content.VideoLink);
 }
 <div class="co-container-outer">

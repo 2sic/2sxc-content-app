@@ -72,18 +72,17 @@
 
 <script type="text/javascript">
 	$(function(){
-		var markerImage = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
+		var markerImage = "@((!String.IsNullOrEmpty(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
 				lat: @Content.GPSLat.ToString().Replace(',', '.'),
 				lng: @Content.GPSLng.ToString().Replace(',', '.')
 			},
-			zoom: @Presentation.Zoom,
+			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",
 			infoWindowHtml: "@Content.Company",
 			showInfoWindow: false,
 			icon: markerImage
 		});
-
 	});
 </script>

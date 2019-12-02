@@ -4,8 +4,8 @@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
 
 @{
-    // get helper commands
-    var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
+  // get helper commands
+  var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
 }
 
 <div class="co-container-outer">
@@ -15,7 +15,7 @@
       {
         var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
-        <li class="sc-element co-document col-lg-12" @Edit.TagToolbar(linkItem)>
+        <li class="co-document col-lg-12" @Edit.TagToolbar(linkItem)>
           @if(linkInfo.Found) {
             @:<a target="@linkInfo.Window" href="@linkItem.Link" title="@linkItem.Title">
           }
