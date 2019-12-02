@@ -1,0 +1,34 @@
+@* put all necessary link/script tags here *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
+
+@{
+  // get helper commands
+  var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
+}
+
+<div class="co-container-outer">
+	<div class="co-container-inner co-button-wrapper text-center mb-4">
+    @foreach (var linkItem in AsDynamic(Data["Default"]))
+    {
+      // get helper commands
+      var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
+
+      <div class="co-title" @Edit.TagToolbar(linkItem)>
+        @if(Presentation.HeadingType != "hide")
+        {
+          @Html.Raw("<" + Presentation.HeadingType + ">")
+            @linkItem.Title
+            <br/>
+            <small>@linkItem.Description</small>
+          @Html.Raw("</" + Presentation.HeadingType + ">")
+        }
+      </div>
+      if(linkInfo.Found) {
+        <a target="@linkInfo.Window" class="btn btn-primary" href="@linkItem.Link">
+          <i class="co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
+          <span>@linkItem.LinkText</span>
+        </a>
+      }
+    }
+  </div>
+</div>

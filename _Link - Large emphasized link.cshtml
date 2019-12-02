@@ -1,33 +1,11 @@
-@using Connect.Koi
-
-@* put all necessary link/script tags here *@
-@RenderPage("shared/_Assets.cshtml", new { parts = "styles"})
-
-<div class="co-container-outer">
-	<div class="co-container-inner co-button-wrapper text-center mb-4 sc-element">
-        @foreach (var linkItem in AsDynamic(Data["Default"]))
-        {
-            // get helper commands
-            var Helpers = CreateInstance("shared/_Helpers.cshtml");
-            var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
-
-            @Edit.Toolbar(linkItem)
-            <div class="co-title">
-                @if(Presentation.HeadingType != "hide")
-                {
-                    @Html.Raw("<" + Presentation.HeadingType + ">")
-                        @linkItem.Title
-                        <br/>
-                        <small>@linkItem.Description</small>
-                    @Html.Raw("</" + Presentation.HeadingType + ">")
-                }
-            </div>
-            if(linkInfo.Found) {
-                <a target="@linkInfo.Window" @Koi.Class("bs3='btn btn-primary' bs4,oth='btn btn-primary'") href="@linkItem.Link">
-                    <i class="co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
-                    <span>@linkItem.LinkText</span>
-                </a>
-            }
-        }
-    </div>
-</div>
+@*
+  This page is just an entry point for your code. It will do the following:
+  1. Check if it can detect the CSS framework used by the theme
+    - if yes, it will use that
+    - otherwise it will fallback to assume it's bootstrap 4 = "bs4"
+    - note that the BS4 edition has an additional check for unknown frameworks
+  2. Then it will load the real cshtml-template from the matching edition-folder
+*@
+@using Connect.Koi;
+@using ToSic.Razor.Blade;
+@RenderPage((Koi.If("bs3", "bs3", "bs4")) + "/Link/_Large emphasized link.cshtml")

@@ -1,0 +1,34 @@
+@using ToSic.Razor.Blade;
+
+@* put all necessary link/script tags here *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
+
+@{
+    // get helper commands
+    var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
+}
+
+<div class="co-container-outer">
+	<div class="co-container-inner">
+    <ul class="co-documents row">
+      @foreach (var linkItem in AsDynamic(Data["Default"]))
+      {
+        var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
+
+        <li class="sc-element co-document col-lg-12" @Edit.TagToolbar(linkItem)>
+          @if(linkInfo.Found) {
+            @:<a target="@linkInfo.Window" href="@linkItem.Link" title="@linkItem.Title">
+          }
+            <span class="text-primary fas @linkInfo.Icon float-left"></span>
+            <div class="co-document-text">
+              <span class="@(linkInfo.Found ? "co-link" : "")">@linkItem.Title</span>
+              <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
+            </div>
+          @if(linkInfo.Found){
+            @:</a>
+          }
+        </li>
+      }
+    </ul>
+	</div>
+</div>

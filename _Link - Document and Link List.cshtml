@@ -1,36 +1,11 @@
+@*
+  This page is just an entry point for your code. It will do the following:
+  1. Check if it can detect the CSS framework used by the theme
+    - if yes, it will use that
+    - otherwise it will fallback to assume it's bootstrap 4 = "bs4"
+    - note that the BS4 edition has an additional check for unknown frameworks
+  2. Then it will load the real cshtml-template from the matching edition-folder
+*@
 @using Connect.Koi;
-@using ToSic.Razor.Blade;
-
-@* put all necessary link/script tags here *@
-@RenderPage("shared/_Assets.cshtml", new { parts = "styles"})
-
-@{
-    // get helper commands
-    var Helpers = CreateInstance("shared/_Helpers.cshtml");
-}
-
-<div class="co-container-outer">
-	<div class="co-container-inner">
-        <ul class="co-documents row">
-            @foreach (var linkItem in AsDynamic(Data["Default"]))
-            {
-                var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
-
-                <li @Koi.Class("all='sc-element co-document' bs3='col col-md-12' bs4,oth='col-lg-12'")>
-                    @Edit.Toolbar(linkItem)
-                    @if(linkInfo.Found) {
-                        @:<a target="@linkInfo.Window" href="@linkItem.Link" title="@linkItem.Title">
-                    }
-                        <span @Koi.Class("all='text-primary fas " + @linkInfo.Icon + "' bs3='pull-left' bs4,oth='float-left'")></span>
-                        <div class="co-document-text">
-                            <span class="@(linkInfo.Found ? "co-link" : "")">@linkItem.Title</span>
-                            <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
-                        </div>
-                    @if(linkInfo.Found){
-                        @:</a>
-                    }
-                </li>
-            }
-        </ul>
-	</div>
-</div>
+@using ToSic.Razor.Blade;
+@RenderPage((Koi.If("bs3", "bs3", "bs4")) + "/Link/_List of document-links.cshtml")

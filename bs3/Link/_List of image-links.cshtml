@@ -1,0 +1,50 @@
+@using ToSic.Razor.Blade;
+
+@* put all necessary link/script tags here *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
+
+@{
+  // get helper commands
+  var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
+}
+
+<div class="co-container-outer">
+	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-image">
+		<div class="row">
+			@foreach (var linkItem in AsDynamic(Data["Default"]))
+			{
+				var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
+
+				<div class="mb-4 col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors" @Edit.TagToolbar(linkItem)>
+					@if(linkInfo.Found)
+						{
+							@:<a target="@linkInfo.Window" class="co-link-box" title="@linkItem.Title" href="@linkItem.Link">
+						}
+						<div class="co-img-wrapper">
+							@if(!String.IsNullOrEmpty(linkItem.Image))
+							{
+								<figure>
+                  @(Tag.Img()
+                    .Src(linkItem.Image + "?w=690&h=345&quality=80&mode=crop&scale=both")
+                    .Alt(linkItem.Title))
+								</figure>
+							} else {
+								<div class="co-img-placeholder"></div>
+							}
+						</div>
+						<h3>@linkItem.Title</h3>
+						@if(!String.IsNullOrEmpty(linkItem.Description))
+						{
+							<p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
+						}
+						@if(linkInfo.Found)
+						{
+							<span class="co-link">@linkItem.LinkText&nbsp;<span class="" aria-hidden="true">&rsaquo;</span></span>
+							@:</a>
+						}
+
+				</div>
+			}
+		</div>
+	</div>
+</div>

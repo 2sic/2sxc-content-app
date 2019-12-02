@@ -1,49 +1,11 @@
+@*
+  This page is just an entry point for your code. It will do the following:
+  1. Check if it can detect the CSS framework used by the theme
+    - if yes, it will use that
+    - otherwise it will fallback to assume it's bootstrap 4 = "bs4"
+    - note that the BS4 edition has an additional check for unknown frameworks
+  2. Then it will load the real cshtml-template from the matching edition-folder
+*@
 @using Connect.Koi;
-@using ToSic.Razor.Blade;
-
-@* put all necessary link/script tags here *@
-@RenderPage("shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
-
-@{
-    // get helper commands
-    var Helpers = CreateInstance("shared/_Helpers.cshtml");
-}
-
-
-<div class="co-container-outer">
-	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-icon co-navigation-text">
-        <div class="row">
-            @foreach (var linkItem in AsDynamic(Data["Default"]))
-            {
-                var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
-
-                <div  @Koi.Class("all='sc-element mb-4' bs3='col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors' bs4,oth='col-12 col-md-6 col-lg-4'")>
-                    @Edit.Toolbar(linkItem)
-                    @if(linkInfo.Found)
-                    {
-                        @:<a class="co-link-box" title="@linkItem.Title" href="@linkItem.Link" target="@linkInfo.Window" class="co-link">
-                    }
-                    <div class="row">
-                        <div @Koi.Class("bs3='col col-xs-2' bs4,oth='col-2'")>
-                            <i class="co-icon text-primary fas @linkInfo.Icon" aria-hidden="true"></i>
-                        </div>
-                        <div @Koi.Class("bs3='col col-xs-10' bs4,oth='col-10'")>
-                            <h3>@linkItem.Title</h3>
-                            <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
-                            @if(!String.IsNullOrEmpty(linkItem.Link))
-                            {
-                                <span class="text-primary co-link">@linkItem.LinkText&nbsp;
-                                    <span>&rsaquo;</span>
-                                </span>
-                            }
-                        </div>
-                    </div>
-                    @if(linkInfo.Found)
-                    {
-                        @:</a>
-                    }
-                </div>
-            }
-        </div>
-    </div>
-</div>
+@using ToSic.Razor.Blade;
+@RenderPage((Koi.If("bs3", "bs3", "bs4")) + "/Link/_List of icon-links.cshtml")
