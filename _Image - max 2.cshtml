@@ -1,17 +1,11 @@
 @*
-	todo: can we extract code, or even the entire file?
+  This page is just an entry point for your code. It will do the following:
+  1. Check if it can detect the CSS framework used by the theme
+    - if yes, it will use that
+    - otherwise it will fallback to assume it's bootstrap 4 = "bs4"
+    - note that the BS4 edition has an additional check for unknown frameworks
+  2. Then it will load the real cshtml-template from the matching edition-folder
 *@
-
-@using Connect.Koi
-
-@* put all necessary link/script tags here *@
-@RenderPage("shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})
-
-<div class="co-container-outer">
-	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg">
-		<div class="row">
-			@* call sub-template to show all images in the right size *@
-			@RenderPage("_Image - Shared - loop images.cshtml", new { width = 640, height = 400, gridColumns = 6 })
-		</div>
-	</div>
-</div>
+@using Connect.Koi;
+@using ToSic.Razor.Blade;
+@RenderPage((Koi.If("bs3", "bs3", "bs4")) + "/Image/_ImageImagelist.cshtml", new { width = 640, height = 400, gridColumns = 6 })

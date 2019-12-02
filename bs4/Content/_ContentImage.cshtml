@@ -24,9 +24,7 @@
   // prepare the title, either the default or the additional image caption
   var title="";
   if(Presentation.TitleLightbox){
-    title = !String.IsNullOrEmpty(imgItem.ImageCaption)
-      ? imgItem.ImageCaption
-      : imgItem.Title;
+    title = !String.IsNullOrEmpty(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
   }
 
   // has image? add lightbox link?
@@ -42,14 +40,12 @@
 
     <figure>
       @if(!String.IsNullOrEmpty(imgItem.ImageCaption)){
-        <div class="co-overlay">
-          <figcaption class="pt-1">@imgItem.ImageCaption</figcaption>
-        </div>
+        <div class="co-overlay"><figcaption class="pt-1">@imgItem.ImageCaption</figcaption></div>
       }
 
       @(Tag.Img()
         .Class("img-fluid")
-        .Src(imgItem.Image + "?w=" + width + "&amp;scale=both&amp;quality=" + quality)
+        .Src(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)
         .Alt(title))
     </figure>
 
