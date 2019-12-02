@@ -1,0 +1,37 @@
+@using ToSic.Razor.Blade;
+
+@* put all necessary link/script tags here *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
+
+<div class="co-container-outer">
+	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
+		<div class="row">
+			@foreach (var person in AsDynamic(Data["Default"]))
+			{
+				<div class="co-person co-sync-height-with-neighbors col col-sm-6 mb-5" @Edit.TagToolbar(person)>
+					<div class="row">
+						<div class="co-person-image co-person-image-rounded col col-xs-4">
+							@if (!String.IsNullOrEmpty(person.Photo))
+							{
+								<div class="co-person-image-wrapper">
+                  @(Tag.Img()
+                    .Class("img-responsive")
+                    .Src(person.Photo + "?w=379&h=379&mode=crop&quality=90")@* Format: Passphoto 1.2857 *@
+                    .Alt(person.FullName))
+								</div>
+							}
+							else
+							{
+								<div class="co-person-placeholder"></div>
+							}
+						</div>
+
+						<div class="co-person-text col-xs-8" itemscope itemtype="http://schema.org/Person">
+							@RenderPage("_PersonData.cshtml", new { data = person})
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>

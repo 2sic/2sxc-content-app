@@ -1,0 +1,17 @@
+@* put all necessary link/script tags here *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
+
+<div class="co-container-outer">
+	<div class="co-container-inner co-person-wrapper">
+    <div class="row">
+      @foreach (var person in AsDynamic(Data["Default"]))
+      {
+        <div class="co-person co-person-noimage col-md-6 mb-4" @Edit.TagToolbar(person)>
+          <div class="co-person-text" itemscope itemtype="http://schema.org/Person">
+            @RenderPage("_PersonData.cshtml", new { data = person})
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
