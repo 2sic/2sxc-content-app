@@ -1,0 +1,42 @@
+@* put all necessary link/script tags here *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
+<script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
+
+<div class="co-container-outer">
+	<div class="co-container-inner" @Edit.TagToolbar(Content)>
+		<div class="co-google-map-container embed-responsive embed-responsive-16by9">
+			<div class="co-google-map embed-responsive-item" id="GoogleMap-@Dnn.Module.ModuleID">
+			</div>
+			<div class="co-google-map-content" id="GoogleMap-Content-@Dnn.Module.ModuleID" style="display:none;">
+				<div>
+					<strong>@Content.Company</strong>
+					<div>@Html.Raw(Content.Description)</div>
+					@{
+						var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=de&amp;ie=UTF8&amp;z=16";
+						if (Convert.ToInt32(Content.GPSLng) > 0){
+							directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
+						}
+					}
+					<a target="_blank" href="@directionurl">@Content.LabelDirections</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		var markerImage = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
+		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
+			position: {
+				lat: @Content.GPSLat.ToString().Replace(',', '.'),
+				lng: @Content.GPSLng.ToString().Replace(',', '.')
+			},
+			zoom: @Presentation.Zoom,
+			mapTypeId: "ROADMAP",
+			infoWindowHtml: $("#GoogleMap-Content-@Dnn.Module.ModuleID").html(),
+			showInfoWindow: true,
+			icon: markerImage
+		});
+	});
+</script>

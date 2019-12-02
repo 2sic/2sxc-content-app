@@ -1,91 +1,11 @@
-@using Connect.Koi
-
-@* put all necessary link/script tags here *@
-@RenderPage("shared/_Assets.cshtml", new { parts = "styles,scripts"})
-<script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
-
-<div class="co-container-outer">
-	<div class="co-container-inner sc-element co-contactmap mb-4">
-		@Edit.Toolbar(Content)
-		<div class="row">
-			<div @Koi.Class("bs3='col col-sm-6' bs4,oth='col-md-6'")>
-			<address itemscope itemtype="http://schema.org/LocalBusiness">
-				<div class="co-company" itemprop="name">
-					<strong>@Content.Company<br/>
-					@Content.CompanyAdd</strong>
-				</div>
-				<div class="co-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					@if (!String.IsNullOrEmpty(Content.Street)) {
-						<span itemprop="streetAddress">
-						@if (!String.IsNullOrEmpty(Content.Street)) {
-							<text>@Html.Raw(Content.Street.Replace("\n", "<br />"))<br></text>
-						}
-						</span>
-					}
-					@if (!String.IsNullOrEmpty(Content.City)) {
-						if (!String.IsNullOrEmpty(Content.ZipCode)) {
-							<text><span itemprop="postalCode">@Content.ZipCode</span> </text>
-						}
-						<span itemprop="addressLocality">@Content.City</span><br>
-					}
-					@if (!String.IsNullOrEmpty(Content.Country)) {
-						<span itemprop="addressCountry">@Content.Country</span><br>
-					}
-					@{
-						var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=de&amp;ie=UTF8&amp;z=16";
-						if (Convert.ToInt32(Content.GPSLng) > 0){
-							directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
-						}
-					}
-					@if(!String.IsNullOrEmpty(Content.LabelDirections)){
-						<span class="fas fa-map-marker-alt"></span> <a target="_blank" href="@directionurl">@Content.LabelDirections</a>
-					}
-				</div>
-				<div class="co-details">
-					@if (!String.IsNullOrEmpty(Content.Mail)) {
-						<div itemprop="email">
-							<span class="fas fa-envelope"></span>
-							@RenderPage("shared/_TryToEncryptMail.cshtml", new { email = Content.Mail })
-						</div>
-						<br/>
-					}
-					@if (!String.IsNullOrEmpty(Content.Tel)) {
-						<span class="fas fa-phone" aria-hidden="true"></span> <a href="tel:@Content.Tel.Replace(" ", "")" itemprop="telephone">@Content.Tel</a><br/>
-					}
-					@if (!String.IsNullOrEmpty(Content.Fax)) {
-						<span class="fas fa-fax" aria-hidden="true"></span> <span itemprop="faxNumber">@Content.Fax</span><br/>
-					}
-				</div>
-				@if (!String.IsNullOrEmpty(Content.Description)) {
-					<div class="co-description" itemprop="description">@Html.Raw(Content.Description)</div>
-				}
-			</address>
-			</div>
-			<div class="col col-sm-6">
-				<div @Koi.Class("all='sc-element co-google-map-container' bs3='embed-responsive embed-responsive-16by9' bs4,oth='embed-responsive embed-responsive-16by9'")>
-					<div @Koi.Class("all='co-google-map' bs3='embed-responsive-item' bs4,oth='embed-responsive-item'") id="GoogleMap-@Dnn.Module.ModuleID">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<script type="text/javascript">
-	$(function(){
-		var markerImage = "@((!String.IsNullOrEmpty(Presentation.MarkerImage)) ? Presentation.MarkerImage : "")";
-		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
-			position: {
-				lat: @Content.GPSLat.ToString().Replace(',', '.'),
-				lng: @Content.GPSLng.ToString().Replace(',', '.')
-			},
-			zoom: @Presentation.Zoom,
-			mapTypeId: "ROADMAP",
-			infoWindowHtml: "@Content.Company",
-			showInfoWindow: false,
-			icon: markerImage
-		});
-
-	});
-</script>
+@*
+  This page is just an entry point for your code. It will do the following:
+  1. Check if it can detect the CSS framework used by the theme
+    - if yes, it will use that
+    - otherwise it will fallback to assume it's bootstrap 4 = "bs4"
+    - note that the BS4 edition has an additional check for unknown frameworks
+  2. Then it will load the real cshtml-template from the matching edition-folder
+*@
+@using Connect.Koi;
+@using ToSic.Razor.Blade;
+@RenderPage((Koi.If("bs3", "bs3", "bs4")) + "/Location/_Address with Map 50-50.cshtml")
