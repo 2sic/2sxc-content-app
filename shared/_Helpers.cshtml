@@ -3,15 +3,15 @@
 
 @functions {
     // check a link, prepare target window, icon etc. based on various settings
-	public dynamic LinkInfos(string link, string window, string icon) {
+	public LinkInfo LinkInfos(string link, string window, string icon) {
     var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
 
     // this will contain the result
-    IDictionary<string, object> linkInfo = new ExpandoObject();
+    var lInfo = new LinkInfo();
 
     // found something?
     var found = !String.IsNullOrEmpty(link);
-    linkInfo.Add("Found", found);
+    lInfo.Found = found;
 
     // process remaining properties, in case we want to override them with automatic stuff
     if(found) {
@@ -38,15 +38,21 @@
         window = isInternal && !isDoc ? "_self" : "_blank";
     }
 
-    // add properties to ExpandoObject
-    linkInfo.Add("Icon", icon);
-    linkInfo.Add("Window", window);
+    // add properties
+    lInfo.Icon = icon;
+    lInfo.Window = window;
+
+    return lInfo;
     // we could add these properties too, but at the moment they are not needed
     // linkInfo.Add("Extension", linkExt);
     // linkInfo.Add("IsDoc", isDoc);
-
-    return linkInfo;
 	}
 
+  public class LinkInfo
+  {
+    public string Window;
+    public string Icon;
+    public bool Found;
+  }
 
 }

@@ -17,13 +17,13 @@
 					@if (!String.IsNullOrEmpty(Content.Street)) {
 						<span itemprop="streetAddress">
 						@if (!String.IsNullOrEmpty(Content.Street)) {
-							<text>@Html.Raw(Tags.Nl2Br(Content.Street))<br></text>
+							@Html.Raw(Tags.Nl2Br(Content.Street))<br>
 						}
 						</span>
 					}
 					@if (!String.IsNullOrEmpty(Content.City)) {
 						if (!String.IsNullOrEmpty(Content.ZipCode)) {
-							<text><span itemprop="postalCode">@Content.ZipCode</span> </text>
+							<span itemprop="postalCode">@Content.ZipCode</span>
 						}
 						<span itemprop="addressLocality">@Content.City</span><br>
 					}

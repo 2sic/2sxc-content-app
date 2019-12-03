@@ -16,8 +16,7 @@
         var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
         <div class="mb-4 col-12 col-md-6 col-lg-4" @Edit.TagToolbar(linkItem)>
-          @if(linkInfo.Found)
-          {
+          @if(linkInfo.Found) {
             @:<a class="co-link-box" title="@linkItem.Title" href="@linkItem.Link" target="@linkInfo.Window" class="co-link">
           }
           <div class="row">
@@ -25,14 +24,12 @@
             <div class="col-10">
               <h3>@linkItem.Title</h3>
               <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
-              @if(!String.IsNullOrEmpty(linkItem.Link))
-              {
+              @if(Text.Has(linkItem.Link)) {
                 <span class="text-primary co-link">@linkItem.LinkText&nbsp;<span>&rsaquo;</span></span>
               }
             </div>
           </div>
-          @if(linkInfo.Found)
-          {
+          @if(linkInfo.Found) {
             @:</a>
           }
         </div>

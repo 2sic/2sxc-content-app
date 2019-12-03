@@ -11,15 +11,13 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
     <div class="row">
-      @foreach (var linkItem in AsDynamic(Data["Default"]))
-      {
+      @foreach (var linkItem in AsDynamic(Data["Default"])) {
         var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
 
         <div class="mb-4 col-12 col-md-6 col-lg-4" @Edit.TagToolbar(linkItem)>
           <h3>@linkItem.Title</h3>
           <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
-          @if(linkInfo.Found)
-          {
+          @if(linkInfo.Found) {
             <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">@linkItem.LinkText&nbsp;<span class="" aria-hidden="true">&rsaquo;</span></a>
           }
         </div>
