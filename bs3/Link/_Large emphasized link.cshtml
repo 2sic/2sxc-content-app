@@ -1,4 +1,5 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
 @* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
 
@@ -18,11 +19,11 @@
         <div class="co-title">
           @if(link.Presentation.HeadingType != "hide")
           {
-            @Html.Raw("<" + link.Presentation.HeadingType + ">")
-              @link.Title
-              <br/>
-              <small>@link.Description</small>
-            @Html.Raw("</" + link.Presentation.HeadingType + ">")
+            @((Tag.Custom(link.Presentation.HeadingType)).Wrap(
+              link.Title,
+              Tag.Br(),
+              Tag.Small(link.Description)
+            ))
           }
         </div>
         @if(linkInfo.Found) {

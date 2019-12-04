@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent;
+@inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @*
   this is a partial template which is re-used in many other templates,
@@ -37,7 +37,7 @@
 @if(hasImage) {
   <div class="co-img-wrapper">
     @if (withLink) {
-      @:<a data-caption="@title" class="fancybox" href="@imgItem.Image?maxwidth=1400&amp;maxheight=990&amp;quality=@lightboxQuality">
+      @Tag.A().Class("fancybox").Href(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality).Attr("data-caption", title).TagStart
     }
 
     <figure>
@@ -52,7 +52,7 @@
     </figure>
 
     @if (withLink) {
-      @:</a>
+      @Tag.A().TagEnd
     }
   </div>
 }

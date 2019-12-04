@@ -9,8 +9,8 @@
   if(isValid) {
     var madr = eMail.Split('@');
     var madrSuf = new System.Text.RegularExpressions.Regex("\\.([^\\.]+)$").Split(madr[1]);
-    @:<span data-madr1="@madr[0]" data-madr2="@madrSuf[0]" data-madr3="@madrSuf[1]" data-linktext="@eMail"></span>
+    <span data-madr1="@madr[0]" data-madr2="@madrSuf[0]" data-madr3="@madrSuf[1]" data-linktext="@eMail"></span>
   } else {
-    @:<span>@eMail</span>
+    <span>@eMail</span>
   }
 }

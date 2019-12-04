@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent;
+@inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @*
 	This is a sub-template of the image templates
@@ -25,7 +25,12 @@
 			{
 				<div class="col col-sm-@columns mb-4" @Edit.TagToolbar(img)>
 					@if (img.Presentation.ImageLightbox != null && img.Presentation.ImageLightbox) {
-						@:<a class="fancybox" data-caption="@(img.Presentation.TitleLightbox ? img.Title : "")" data-fancybox="group-@Dnn.Module.ModuleID" href="@img.Image?quality=@lightboxQuality&amp;maxwidth=@zoomW&amp;maxheight=@zoomH">
+            @(Tag.A()
+              .Class("fancybox")
+              .Href(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)
+              .Attr("data-caption", img.Presentation.TitleLightbox ? img.Title : "")
+              .Attr("data-fancybox", "group-" + Dnn.Module.ModuleID)
+              .TagStart)
 					}
 					<figure>
             @if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend){
@@ -38,7 +43,7 @@
               .Alt(img.title))
 					</figure>
 					@if (img.Presentation.ImageLightbox != null && img.Presentation.ImageLightbox) {
-						@:</a>
+						@Tag.A().TagEnd
 					}
 
 				</div>

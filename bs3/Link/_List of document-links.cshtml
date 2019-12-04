@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent;
+@inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
@@ -17,7 +17,7 @@
 
         <li class="co-document col col-md-12" @Edit.TagToolbar(link)>
           @if(linkInfo.Found) {
-            @:<a target="@linkInfo.Window" href="@link.Link" title="@link.Title">
+            @Tag.A().Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
           }
             <span class="text-primary fas @linkInfo.Icon pull-left"></span>
             <div class="co-document-text">
@@ -25,7 +25,7 @@
               <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
             </div>
           @if(linkInfo.Found){
-            @:</a>
+            @Tag.A().TagEnd
           }
         </li>
       }
