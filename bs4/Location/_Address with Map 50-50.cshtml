@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent;
+@inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
@@ -31,7 +31,8 @@
 						<span itemprop="addressCountry">@Content.Country</span><br>
 					}
 					@{
-						var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=de&amp;ie=UTF8&amp;z=16";
+            var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
+						var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=" + language + "&amp;ie=UTF8&amp;z=16";
 						if (Convert.ToInt32(Content.GPSLng) > 0){
 							directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
 						}
