@@ -1,5 +1,5 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
 @using ToSic.Razor.Blade;
-
 @*
   this is a partial template which is re-used in many other templates,
   so it's shared here
@@ -26,11 +26,11 @@
   // prepare the title, either the default or the additional image caption
   var title="";
   if(imgItem.Presentation.TitleLightbox){
-    title = !String.IsNullOrEmpty(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
+    title = Text.Has(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
   }
 
   // has image? add lightbox link?
-  var hasImage = !String.IsNullOrEmpty(imgItem.Image);
+  var hasImage = Text.Has(imgItem.Image);
   var withLink = imgItem.Presentation.ImageLightbox != null && imgItem.Presentation.ImageLightbox;
 }
 
@@ -41,7 +41,7 @@
     }
 
     <figure>
-      @if(!String.IsNullOrEmpty(imgItem.ImageCaption)){
+      @if(Text.Has(imgItem.ImageCaption)){
         <div class="co-overlay"><figcaption class="pt-1">@imgItem.ImageCaption</figcaption></div>
       }
 

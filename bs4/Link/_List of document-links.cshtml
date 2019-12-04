@@ -1,6 +1,6 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
 @using ToSic.Razor.Blade;
-
-@* put all necessary link/script tags here *@
+@* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
 
 @{
@@ -11,8 +11,7 @@
 <div class="co-container-outer">
 	<div class="co-container-inner">
     <ul class="co-documents row">
-      @foreach (var link in AsDynamic(Data["Default"]))
-      {
+      @foreach (var link in AsDynamic(Data["Default"])) {
         var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);
 
         <li class="co-document col-lg-12" @Edit.TagToolbar(link)>

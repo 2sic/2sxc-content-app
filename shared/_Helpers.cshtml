@@ -1,5 +1,6 @@
 @using System.Dynamic;
 @using System.IO;
+@using ToSic.Razor.Blade;
 
 @functions {
     // check a link, prepare target window, icon etc. based on various settings
@@ -10,7 +11,7 @@
     var lInfo = new LinkInfo();
 
     // found something?
-    var found = !String.IsNullOrEmpty(link);
+    var found = Text.Has(link);
     lInfo.Found = found;
 
     // process remaining properties, in case we want to override them with automatic stuff

@@ -1,5 +1,5 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
 @using ToSic.Razor.Blade;
-
 @*
 	This is a sub-template of the image templates
 	Put all necessary link/script tags here
@@ -21,14 +21,13 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg">
 		<div class="row">
-			@foreach (var img in AsDynamic(Data["Default"]))
-			{
+			@foreach (var img in AsDynamic(Data["Default"])) {
 				<div class="col-md-@columns mb-4" @Edit.TagToolbar(img)>
 					@if (img.Presentation.ImageLightbox != null && img.Presentation.ImageLightbox) {
 						@:<a class="fancybox" data-caption="@(img.Presentation.TitleLightbox ? img.Title : "")" data-fancybox="group-@Dnn.Module.ModuleID" href="@img.Image?quality=@lightboxQuality&amp;maxwidth=@zoomW&amp;maxheight=@zoomH">
 					}
 					<figure>
-            @if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend){
+            @if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend) {
               <div class="co-overlay"><figcaption class="pt-1">@img.Title</figcaption></div>
             }
 

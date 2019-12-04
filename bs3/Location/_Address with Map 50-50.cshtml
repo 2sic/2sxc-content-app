@@ -1,6 +1,6 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
 @using ToSic.Razor.Blade;
-
-@* put all necessary link/script tags here *@
+@* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
 <script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
 
@@ -13,20 +13,20 @@
 					<strong>@Content.Company<br/>@Content.CompanyAdd</strong>
 				</div>
 				<div class="co-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					@if (!String.IsNullOrEmpty(Content.Street)) {
+					@if (Text.Has(Content.Street)) {
 						<span itemprop="streetAddress">
-						@if (!String.IsNullOrEmpty(Content.Street)) {
-							<text>@Html.Raw(Tags.Nl2Br(Content.Street))<br></text>
+						@if (Text.Has(Content.Street)) {
+							@Html.Raw(Tags.Nl2Br(Content.Street))<br>
 						}
 						</span>
 					}
-					@if (!String.IsNullOrEmpty(Content.City)) {
-						if (!String.IsNullOrEmpty(Content.ZipCode)) {
-							<text><span itemprop="postalCode">@Content.ZipCode</span> </text>
+					@if (Text.Has(Content.City)) {
+						if (Text.Has(Content.ZipCode)) {
+							<span itemprop="postalCode">@Content.ZipCode</span>
 						}
 						<span itemprop="addressLocality">@Content.City</span><br>
 					}
-					@if (!String.IsNullOrEmpty(Content.Country)) {
+					@if (Text.Has(Content.Country)) {
 						<span itemprop="addressCountry">@Content.Country</span><br>
 					}
 					@{
@@ -35,26 +35,26 @@
 							directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
 						}
 					}
-					@if(!String.IsNullOrEmpty(Content.LabelDirections)){
+					@if(Text.Has(Content.LabelDirections)){
 						<span class="fas fa-map-marker-alt"></span> <a target="_blank" href="@directionurl">@Content.LabelDirections</a>
 					}
 				</div>
 				<div class="co-details">
-					@if (!String.IsNullOrEmpty(Content.Mail)) {
+					@if (Text.Has(Content.Mail)) {
 						<div itemprop="email">
 							<span class="fas fa-envelope"></span>
 							@RenderPage("../../shared/_TryToEncryptMail.cshtml", new { email = Content.Mail })
 						</div>
 						<br/>
 					}
-					@if (!String.IsNullOrEmpty(Content.Tel)) {
+					@if (Text.Has(Content.Tel)) {
 						<span class="fas fa-phone" aria-hidden="true"></span> <a href="tel:@Content.Tel.Replace(" ", "")" itemprop="telephone">@Content.Tel</a><br/>
 					}
-					@if (!String.IsNullOrEmpty(Content.Fax)) {
+					@if (Text.Has(Content.Fax)) {
 						<span class="fas fa-fax" aria-hidden="true"></span> <span itemprop="faxNumber">@Content.Fax</span><br/>
 					}
 				</div>
-				@if (!String.IsNullOrEmpty(Content.Description)) {
+				@if (Text.Has(Content.Description)) {
 					<div class="co-description" itemprop="description">@Html.Raw(Content.Description)</div>
 				}
 			</address>
@@ -71,7 +71,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		var markerImage = "@((!String.IsNullOrEmpty(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
+		var markerImage = "@((Text.Has(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
 				lat: @Content.GPSLat.ToString().Replace(',', '.'),

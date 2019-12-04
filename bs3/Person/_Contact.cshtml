@@ -1,6 +1,6 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
 @using ToSic.Razor.Blade;
-
-@* put all necessary link/script tags here *@
+@* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
 <div class="co-container-outer">
@@ -11,7 +11,7 @@
 				<div class="co-person co-sync-height-with-neighbors col col-sm-6 mb-4" @Edit.TagToolbar(person)>
 					<div class="row">
 						<div class="co-person-image col col-xs-4">
-							@if (!String.IsNullOrEmpty(person.Photo))
+							@if (Text.Has(person.Photo))
 							{
                 @(Tag.Img()
                   .Class("img-fluid")

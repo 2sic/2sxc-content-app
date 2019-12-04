@@ -1,6 +1,6 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
 @using ToSic.Razor.Blade;
-
-@* put all necessary link/script tags here *@
+@* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
 @{
@@ -11,16 +11,16 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
     <div class="row">
-      @foreach (var linkItem in AsDynamic(Data["Default"]))
+      @foreach (var link in AsDynamic(Data["Default"]))
       {
-        var linkInfo = Helpers.LinkInfos(linkItem.Link, linkItem.Window, linkItem.Icon);
+        var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);
 
-        <div class="col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors mb-4" @Edit.TagToolbar(linkItem)>
-          <h3>@linkItem.Title</h3>
-          <p>@Html.Raw(Tags.Nl2Br(linkItem.Description))</p>
+        <div class="col col-xs-12 col-sm-6 col-md-4 sync-height-with-neighbors mb-4" @Edit.TagToolbar(link)>
+          <h3>@link.Title</h3>
+          <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
           @if(linkInfo.Found)
           {
-            <a target="@linkInfo.Window" title="@linkItem.Title" href="@linkItem.Link">@linkItem.LinkText&nbsp;<span class="" aria-hidden="true">&rsaquo;</span></a>
+            <a target="@linkInfo.Window" title="@link.Title" href="@link.Link">@link.LinkText&nbsp;<span class="" aria-hidden="true">&rsaquo;</span></a>
           }
         </div>
       }

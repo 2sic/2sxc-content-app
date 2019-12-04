@@ -1,25 +1,22 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
 @using ToSic.Razor.Blade;
-
-@* put all necessary link/script tags here *@
+@* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
 		<div class="row">
-			@foreach (var person in AsDynamic(Data["Default"]))
-			{
+			@foreach (var person in AsDynamic(Data["Default"]))	{
 				<div class="co-person col-md-6 mb-4" @Edit.TagToolbar(person)>
 					<div class="row">
 						<div class="co-person-image col-4">
-							@if (!String.IsNullOrEmpty(person.Photo))
-							{
+							@if (Text.Has(person.Photo)) {
                 @(Tag.Img()
                   .Class("img-fluid")
                   .Src(person.Photo + "?w=379&h=488&mode=crop&quality=90")@* Format: Passphoto 1.2857 *@
                   .Alt(person.FullName))
 							}
-							else
-							{
+							else {
 								<div class="co-person-placeholder"></div>
 							}
 						</div>

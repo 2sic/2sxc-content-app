@@ -1,4 +1,6 @@
-@* put all necessary link/script tags here *@
+@inherits ToSic.Sxc.Dnn.RazorComponent;
+@using ToSic.Razor.Blade;
+@* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
 <script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
 
@@ -25,7 +27,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		var markerImage = "@((!String.IsNullOrEmpty(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
+		var markerImage = "@((Text.Has(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
 				lat: @Content.GPSLat.ToString().Replace(',', '.'),
