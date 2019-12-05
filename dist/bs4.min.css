@@ -18,45 +18,6 @@
       transition: background-color 0.3s ease-in-out; }
     figure a:hover:after, figure a:focus:after {
       background-color: rgba(52, 58, 64, 0.4); }
-  /* Content Navigation */
-  .co-navigation .glyphicon.glyphicon-menu-right.glyphicon-right-custom {
-    font-size: 15px;
-    vertical-align: middle; }
-  .co-navigation.co-navigation-image h3 {
-    margin-top: 0.3em; }
-  .co-navigation.co-navigation-image a span.glyphicon {
-    font-size: 0.6em;
-    margin-right: 0.2em; }
-  .co-navigation.co-navigation-image .co-img-placeholder {
-    background: #5c4384;
-    padding-bottom: 50%; }
-  .co-navigation img {
-    width: 100%; }
-  .co-navigation .co-img-wrapper {
-    margin-bottom: 30px;
-    margin-bottom: 20px; }
-  .co-navigation a.co-link-box {
-    display: block;
-    text-decoration: none;
-    color: #555555; }
-    .co-navigation a.co-link-box .co-icon {
-      font-size: 2em; }
-    .co-navigation a.co-link-box .co-img-wrapper {
-      background: #5c4384;
-      overflow: hidden; }
-      .co-navigation a.co-link-box .co-img-wrapper img {
-        position: relative;
-        transition: opacity 0.3s;
-        -webkit-backface-visibility: hidden;
-                backface-visibility: hidden; }
-    .co-navigation a.co-link-box:hover {
-      color: #555555; }
-      .co-navigation a.co-link-box:hover .co-overlay {
-        background-color: rgba(52, 58, 64, 0.4); }
-  .co-navigation-icon h3 {
-    margin-top: 5px; }
-  .co-navigation-icon .co-icon {
-    font-size: 2em; }
   /* Documents and Links */
   ul.co-documents {
     padding: 0; }

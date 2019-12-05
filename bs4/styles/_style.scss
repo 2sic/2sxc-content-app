@@ -9,6 +9,7 @@
   // Header
 
 	// Simple Content Templates
+	// You can add your own styles
 	
 	/* Images with Caption */
   figure {
@@ -31,75 +32,80 @@
         }
       }
     }
-  }
+	}
+	.co-linkblock {
+		&:hover::after {
 
-  /* Content Navigation */
-  .co-navigation {
-    .glyphicon.glyphicon-menu-right.glyphicon-right-custom {
-      font-size: 15px;
-      vertical-align: middle;
-    }
+		}
+	}
 
-    &.co-navigation-image {
-      h3 {
-        margin-top: 0.3em;
-      }
-      a span.glyphicon {
-        font-size: 0.6em;
-        margin-right: 0.2em;
-      }
-      .co-img-placeholder {
-        background: $primary;
-        padding-bottom: 50%;
-      }
-    }
-    img {
-      width: 100%;
-    }
-    .co-img-wrapper {
-      margin-bottom: $grid-gutter-width;
-      margin-bottom: 20px;
-    }
-    a.co-link-box {
-      display: block;
-      text-decoration: none;
-      color: $body-color;
+  // /* Content Navigation */
+  // .co-navigation {
+  //   .glyphicon.glyphicon-menu-right.glyphicon-right-custom {
+  //     font-size: 15px;
+  //     vertical-align: middle;
+  //   }
 
-      .co-icon {
-        font-size: 2em;
-      }
+  //   &.co-navigation-image {
+  //     h3 {
+  //       margin-top: 0.3em;
+  //     }
+  //     a span.glyphicon {
+  //       font-size: 0.6em;
+  //       margin-right: 0.2em;
+  //     }
+  //     .co-img-placeholder {
+  //       background: $primary;
+  //       padding-bottom: 50%;
+  //     }
+  //   }
+  //   img {
+  //     width: 100%;
+  //   }
+  //   .co-img-wrapper {
+  //     margin-bottom: $grid-gutter-width;
+  //     margin-bottom: 20px;
+  //   }
+  //   a.co-link-box {
+  //     display: block;
+  //     text-decoration: none;
+  //     color: $body-color;
 
-      .co-img-wrapper {
-        background: $primary;
-        overflow: hidden;
+  //     .co-icon {
+  //       font-size: 2em;
+  //     }
 
-        img {
-          position: relative;
-          transition: opacity 0.3s;
-          backface-visibility: hidden;
-        }
-      }
+  //     .co-img-wrapper {
+  //       background: $primary;
+  //       overflow: hidden;
 
-      &:hover {
-        color: $body-color;
-        .co-overlay {
-          background-color: rgba($dark, 0.4);
-        }
+  //       img {
+  //         position: relative;
+  //         transition: opacity 0.3s;
+  //         backface-visibility: hidden;
+  //       }
+  //     }
 
-        img {
-        }
-      }
-    }
-  }
+  //     &:hover {
+  //       color: $body-color;
+  //       .co-overlay {
+  //         background-color: rgba($dark, 0.4);
+  //       }
 
-  .co-navigation-icon {
-    h3 {
-      margin-top: 5px;
-    }
-    .co-icon {
-      font-size: 2em;
-    }
-  }
+  //       img {
+  //       }
+  //     }
+  //   }
+  // }
+
+  // .co-navigation-icon {
+  //   h3 {
+  //     margin-top: 5px;
+  //   }
+  //   .co-icon {
+  //     font-size: 2em;
+  //   }
+  // }
 
   
 
