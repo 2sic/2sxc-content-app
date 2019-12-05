@@ -29,14 +29,13 @@
     title = Text.Has(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
   }
 
-  // has image? add lightbox link?
+  // has image?
   var hasImage = Text.Has(imgItem.Image);
-  var withLink = imgItem.Presentation.ImageLightbox != null && imgItem.Presentation.ImageLightbox;
 }
 
 @if(hasImage) {
   <div class="co-img-wrapper">
-    @if (withLink) {
+    @if (imgItem.Presentation.ImageLightbox) {
       @Tag.A().Class("fancybox").Href(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality).Attr("data-caption", title).TagStart
     }
 
@@ -53,7 +52,7 @@
         .Alt(title))
     </figure>
 
-    @if (withLink) {
+    @if (imgItem.Presentation.ImageLightbox) {
       @Tag.A().TagEnd
     }
   </div>

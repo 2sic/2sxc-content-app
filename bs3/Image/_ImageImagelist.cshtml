@@ -24,7 +24,7 @@
 			@foreach (var img in AsDynamic(Data["Default"]))
 			{
 				<div class="col col-sm-@columns mb-4" @Edit.TagToolbar(img)>
-					@if (img.Presentation.ImageLightbox != null && img.Presentation.ImageLightbox) {
+					@if (img.Presentation.ImageLightbox) {
             @(Tag.A()
               .Class("fancybox")
               .Href(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)
@@ -44,7 +44,7 @@
               .Src(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)
               .Alt(img.title))
 					</figure>
-					@if (img.Presentation.ImageLightbox != null && img.Presentation.ImageLightbox) {
+					@if (img.Presentation.ImageLightbox) {
 						@Tag.A().TagEnd
 					}
 
