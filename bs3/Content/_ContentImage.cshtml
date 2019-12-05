@@ -41,9 +41,11 @@
     }
 
     <figure>
-      @if(Text.Has(imgItem.ImageCaption)){
-        <div class="co-overlay"><figcaption class="pt-1">@imgItem.ImageCaption</figcaption></div>
-      }
+      <div class="co-overlay">
+        @if(Text.Has(imgItem.ImageCaption)){
+          <figcaption class="pt-1">@imgItem.ImageCaption</figcaption>
+        }
+      </div>
 
       @(Tag.Img()
         .Class("img-responsive")

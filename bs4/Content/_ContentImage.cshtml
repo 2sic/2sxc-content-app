@@ -29,21 +29,22 @@
     title = Text.Has(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
   }
 
-  // has image? add lightbox link?
+  // has image?
   var hasImage = Text.Has(imgItem.Image);
-  var withLink = imgItem.Presentation.ImageLightbox != null && imgItem.Presentation.ImageLightbox;
 }
 
 @if(hasImage) {
   <div class="co-img-wrapper">
-    @if (withLink) {
+    @if (imgItem.Presentation.ImageLightbox) {
       @Tag.A().Class("fancybox").Href(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality).Attr("data-caption", title).TagStart
     }
 
     <figure>
-      @if(Text.Has(imgItem.ImageCaption)){
-        <div class="co-overlay"><figcaption class="pt-1">@imgItem.ImageCaption</figcaption></div>
-      }
+      <div class="co-overlay">
+        @if(Text.Has(imgItem.ImageCaption)){
+          <figcaption class="pt-1">@imgItem.ImageCaption</figcaption>
+        }
+      </div>
 
       @(Tag.Img()
         .Class("img-fluid")
@@ -51,7 +52,7 @@
         .Alt(title))
     </figure>
 
-    @if (withLink) {
+    @if (imgItem.Presentation.ImageLightbox) {
       @Tag.A().TagEnd
     }
   </div>

@@ -33,9 +33,11 @@
               .TagStart)
 					}
 					<figure>
-            @if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend){
-              <div class="co-overlay"><figcaption class="pt-1">@img.Title</figcaption></div>
-            }
+            <div class="co-overlay">
+              @if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend){
+                <figcaption class="pt-1">@img.Title</figcaption>
+              }
+            </div>
 
             @(Tag.Img()
               .Class("img-responsive")
