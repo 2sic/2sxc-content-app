@@ -9,27 +9,10 @@
 @media all {
 
 
-	/* Header */
-	.co-header {
-		img {
-			width: 100%;
-		}	
-	}
+	// Header 
 
-	/* Default Content */
-	.co-content {
-		margin-bottom: $grid-gutter-width;
-	}
 
-	.co-text-beside-image {
-		h1, h2, h3, h4, h5, h6 {
-			margin-top: 0; 
-		}
-	}
-	.co-content-image {
-		margin-bottom: $grid-gutter-width;
-		width: 100%;
-	}
+	// Simple Content Templates
 	
 	/* Content Navigation */
 	.co-navigation {

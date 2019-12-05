@@ -4,17 +4,6 @@
  * Re-generate it using the SASS variables of your theme
 */
 @media all {
-  /* Header */
-  .co-header img {
-    width: 100%; }
-  /* Default Content */
-  .co-content {
-    margin-bottom: 30px; }
-  .co-text-beside-image h1, .co-text-beside-image h2, .co-text-beside-image h3, .co-text-beside-image h4, .co-text-beside-image h5, .co-text-beside-image h6 {
-    margin-top: 0; }
-  .co-content-image {
-    margin-bottom: 30px;
-    width: 100%; }
   /* Content Navigation */
   .co-navigation .glyphicon.glyphicon-menu-right.glyphicon-right-custom {
     font-size: 15px;

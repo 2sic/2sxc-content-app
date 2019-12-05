@@ -8,7 +8,7 @@
 		<div class="row">
 			@foreach (var person in AsDynamic(Data["Default"]))
 			{
-				<div class="co-person co-sync-height-with-neighbors col col-sm-6 mb-5" @Edit.TagToolbar(person)>
+				<div class="co-person co-sync-height-with-neighbors col col-sm-6 mb-4 mb-md-5" @Edit.TagToolbar(person)>
 					<div class="row">
 						<div class="co-person-image co-person-image-rounded col col-xs-4">
 							@if (Text.Has(person.Photo))

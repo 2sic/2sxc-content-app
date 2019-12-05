@@ -14,7 +14,7 @@
 	<div class="co-container-inner">
     <div class="co-header" @Edit.TagToolbar(Content)>
       @(Tag.Img()
-        .Class("co-header-image")
+        .Class("w-100")
         .Src(Content.Image + "?w=" + width + "&h=" + height + "&anchor=" + Content.CropAnchor + "&mode=crop&scale=both&quality=" + quality)
         .Alt(Content.Title))
     </div>
