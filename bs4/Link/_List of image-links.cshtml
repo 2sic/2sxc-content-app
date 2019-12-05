@@ -21,6 +21,7 @@
           <div class="co-img-wrapper">
             @if(Text.Has(link.Image)) {
               <figure>
+                <div class="co-overlay"></div>
                 @(Tag.Img()
                   .Src(link.Image + "?w=690&h=345&quality=80&mode=crop&scale=both")
                   .Alt(link.Title))
