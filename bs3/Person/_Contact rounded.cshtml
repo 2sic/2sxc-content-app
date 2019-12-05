@@ -6,7 +6,7 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
 		<div class="row">
-			@foreach (var person in AsDynamic(Data["Default"]))
+			@foreach (var person in AsDynamic(Data))
 			{
 				<div class="co-person co-sync-height-with-neighbors col col-sm-6 mb-4 mb-md-5" @Edit.TagToolbar(person)>
 					<div class="row">

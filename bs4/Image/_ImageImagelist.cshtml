@@ -21,7 +21,7 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg">
 		<div class="row">
-			@foreach (var img in AsDynamic(Data["Default"])) {
+			@foreach (var img in AsDynamic(Data)) {
 				<div class="col-md-@columns mb-4" @Edit.TagToolbar(img)>
 					@if (img.Presentation.ImageLightbox) {
             @(Tag.A()
