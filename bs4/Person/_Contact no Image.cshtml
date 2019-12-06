@@ -2,14 +2,12 @@
 @* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
-<div class="co-container-outer">
-	<div class="co-container-inner co-person-wrapper">
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner">
     <div class="row">
       @foreach (var person in AsDynamic(Data)) {
-        <div class="co-person co-person-noimage col-md-6 mb-4" @Edit.TagToolbar(person)>
-          <div class="co-person-text" itemscope itemtype="http://schema.org/Person">
+        <div class="col-md-4 mb-4" itemscope itemtype="http://schema.org/Person" @Edit.TagToolbar(person) >
             @RenderPage("_PersonData.cshtml", new { data = person})
-          </div>
         </div>
       }
     </div>
