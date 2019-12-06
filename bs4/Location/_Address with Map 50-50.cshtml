@@ -12,7 +12,7 @@
 					<div class="mb-2 pr-md-5" itemprop="name">
 						<h4>@Content.Company</h4>
 						@if (Text.Has(Content.Description)) {
-							<div class="co-description" itemprop="description">@Html.Raw(Content.Description)</div>
+							<div itemprop="description">@Html.Raw(Content.Description)</div>
 						}
 					</div>
 					<div class="mb-2" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
