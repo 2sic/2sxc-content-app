@@ -8,19 +8,21 @@
   var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
 }
 
-<div class="co-container-outer mb-4 mb-md-5 co-linkblock">
+<div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner">
 		<div class="row">
 			@foreach (var link in AsDynamic(Data)) {
 				var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);
 
-				<div class="mb-4 col-12 col-md-6 col-lg-4" @Edit.TagToolbar(link)>
-				
+				<div class="col-md-6 col-lg-4 mb-4 mb-md-5" @Edit.TagToolbar(link)>
+					@if(linkInfo.Found) {
+            @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
+          }
             @if(Text.Has(link.Image)) {
               <figure>
-                <div class="overlay"></div>
+                <div class="overlay w-100 h-100"></div>
                 @(Tag.Img()
-                  .Class("img-fluid mb-2")
+                  .Class("img-fluid")
                   .Src(link.Image + "?w=690&h=345&quality=80&mode=crop&scale=both")
                   .Alt(link.Title))
               </figure>
@@ -31,13 +33,11 @@
           @if(Text.Has(link.Description)) {
             <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
           }
-          @* @if(linkInfo.Found) {
-            <span class="co-link">@link.LinkText&nbsp;<span class="" aria-hidden="true">&rsaquo;</span></span>
+          @if(linkInfo.Found) {
+            <span>@link.LinkText&nbsp;<span aria-hidden="true">&rsaquo;</span></span>
             @Tag.A().TagEnd
-          } *@
-          	@if(linkInfo.Found) {
-            @Tag.A().Class("stretched-link").Wrap(link.LinkText,Tag.Span("&nbsp;&rsaquo;")).Title(link.Title).Href(link.Link).Target(linkInfo.Window)
-          }
+          } 
+        
 				</div>
 			}
 		</div>

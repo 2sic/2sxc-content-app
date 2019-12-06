@@ -35,21 +35,25 @@
 
 @if(hasImage) {
    
+    if (imgItem.Presentation.ImageLightbox) {
+        @Tag.A().Class("fancybox").Href(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality).Attr("data-caption", title).TagStart
+    }
+      <figure>
+          <div class="overlay w-100 h-100"></div>
+          @if(Text.Has(imgItem.ImageCaption)){
+            <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
+          }
 
-    <figure>
-        @if(Text.Has(imgItem.ImageCaption)){
-          <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
-        }
+        @(Tag.Img()
+          .Class("img-fluid")
+          .Src(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)
+          .Alt(title))
 
-      @(Tag.Img()
-        .Class("img-fluid")
-        .Src(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)
-        .Alt(title))
-
-      @if (imgItem.Presentation.ImageLightbox) {
-        @Tag.A().Class("fancybox stretched-link").Href(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality).Attr("data-caption", title)
-      }
-    </figure>
+      
+      </figure>
+    if (imgItem.Presentation.ImageLightbox) {
+        @Tag.A().TagEnd
+    }
 
    
 }
