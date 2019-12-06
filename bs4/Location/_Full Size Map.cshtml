@@ -5,18 +5,38 @@
 <script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
 
 @{
+  // we need a unique ID for the map, in case there are many on the same page
+  var mapId = Dnn.Module.ModuleID;
+
+  // Language is used for the map-link
   var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
-  var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=" + language + "&amp;ie=UTF8&amp;z=16";
-  if (Convert.ToInt32(Content.GPSLng) > 0) {
-    directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
-  }
+
+  @* todo: show 2az & 2tl *@
+  // GPS is a JSON field, so we must use AsDynamic to access the properties
+	var gps = AsDynamic(Content.GPS);
+	var gpsLong = gps.Longitude ?? 0; // use 0 if not defined
+	var gpsLat = gps.Latitude ?? 0;	  // use 0 if not defined
+
+  // this link will be used to open the Google-Directions in a new window
+  var directionurl = gpsLong > 0
+		// if we have coordinates, use them
+		? "https://www.google.com/maps/dir/" + gpsLat + "," + gpsLong
+		// otherwise use the address
+		: "https://maps.google.com/maps?daddr="
+      + (Content.Street + " " + Content.ZipCode + " " + Content.City + " " + Content.Country)
+        .Replace(" ", "+")
+      // + "+" + Content.ZipCode.Replace(" ", "+")
+      // + "+" + Content.City.Replace(" ", "+")
+      // + "+" + Content.Country.Replace(" ", "+") 
+      + "&amp;saddr=&amp;f=d&amp;hl=" + language + "&amp;ie=UTF8&amp;z=16";
+
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
 		<div class="co-google-map-container embed-responsive embed-responsive-21by9">
-			<div class="embed-responsive-item" id="GoogleMap-@Dnn.Module.ModuleID"></div>
-			<div id="GoogleMap-Content-@Dnn.Module.ModuleID" style="display:none;">
+			<div class="embed-responsive-item" id="GoogleMap-@mapId"></div>
+			<div id="GoogleMap-Content-@mapId" style="display:none;">
 				<div class="p-2 text-center">
 					<h4>@Content.Company</h4>
 					<div>@Html.Raw(Content.Description)</div>
@@ -28,16 +48,17 @@
 </div>
 
 <script type="text/javascript">
-	$(function(){
-		var markerImage = "@((Text.Has(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
-		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
+	$(function() {
+    @* todo: show 2az & 2tl *@
+		var markerImage = "@Text.First(Content.Presentation.MarkerImage, "")";
+		$("#GoogleMap-@(mapId)").toGoogleMap({
 			position: {
-				lat: @Content.GPSLat.ToString().Replace(',', '.'),
-				lng: @Content.GPSLng.ToString().Replace(',', '.')
+				lat: @gpsLat,
+				lng: @gpsLong
 			},
 			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",
-			infoWindowHtml: $("#GoogleMap-Content-@Dnn.Module.ModuleID").html(),
+			infoWindowHtml: $("#GoogleMap-Content-@mapId").html(),
 			showInfoWindow: true,
 			icon: markerImage
 		});
