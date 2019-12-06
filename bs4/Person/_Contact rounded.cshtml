@@ -17,11 +17,11 @@
                     .Alt(person.FullName))
 							}
 							else {
-								<div class="co-person-placeholder"></div>
+								<div class="bg-primary placeholder rounded-circle" style="padding-bottom:100%;"></div>
 							}
 						</div>
 
-						<div class="co-person-text col-8" itemscope itemtype="http://schema.org/Person">
+						<div class="col-8" itemscope itemtype="http://schema.org/Person">
 							@RenderPage("_PersonData.cshtml", new { data = person})
 						</div>
 					</div>

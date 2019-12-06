@@ -9,7 +9,7 @@
 			@foreach (var person in AsDynamic(Data))	{
 				<div class="col-md-6 mb-4 mb-md-5" @Edit.TagToolbar(person)>
 					<div class="row">
-						<div class="co-person-image col-4">
+						<div class="col-4">
 							@if (Text.Has(person.Photo)) {
                 @(Tag.Img()
                   .Class("img-fluid")
@@ -17,7 +17,7 @@
                   .Alt(person.FullName))
 							}
 							else {
-								<div class="placeholder"></div>
+								<div class="bg-primary placeholder" style="padding-bottom: 128.57%"></div>
 							}
 						</div>
 						<div class="col-8" itemscope itemtype="http://schema.org/Person">
