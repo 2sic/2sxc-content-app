@@ -8,20 +8,23 @@
   var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
 }
 
-<div class="co-container-outer">
+<div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner">
-    <ul class="co-documents row">
+    <ul class="list-unstyled">
       @foreach (var link in AsDynamic(Data)) {
         var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);
-
-        <li class="co-document col-lg-12" @Edit.TagToolbar(link)>
+        <li @Edit.TagToolbar(link)>
           @if(linkInfo.Found) {
-            @Tag.A().Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
+            @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
           }
-            <span class="text-primary fas @linkInfo.Icon float-left"></span>
-            <div class="co-document-text">
-              <span class="@(linkInfo.Found ? "co-link" : "")">@link.Title</span>
-              <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+            <div class="d-flex flex-row">
+              <div class="pr-2 pl-0 pt-1 pb-0">
+                <i class="text-primary fas @linkInfo.Icon" style="font-size: 24px;"></i>
+              </div>
+              <div class="px-2 py-0">
+                <span class="lead font-weight-normal">@link.Title</span>
+                <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+                </div>
             </div>
           @if(linkInfo.Found) {
             @Tag.A().TagEnd

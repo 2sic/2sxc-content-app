@@ -5,19 +5,25 @@
 */
 @media all {
   /* Linkblock with Image and Images with Caption */
-  .co-container-outer .row > figure > .overlay:hover::after {
-    background: red;
-    padding: 40px; }
   a.co-linkblock {
     color: #555555; }
     a.co-linkblock span {
-      color: #5c4384; }
+      color: #5c4384;
+      vertical-align: middle;
+      display: inline-block;
+      padding: 3px 0; }
+      a.co-linkblock span svg {
+        transition: margin-left .3s ease-in-out;
+        margin-left: 0; }
     a.co-linkblock:hover {
       text-decoration: none;
       color: #555555; }
       a.co-linkblock:hover span {
         color: #392951;
         text-decoration: underline; }
+        a.co-linkblock:hover span svg {
+          transition: margin-left .3s ease-in-out;
+          margin-left: 8px; }
   a figure {
     position: relative; }
     a figure .overlay {

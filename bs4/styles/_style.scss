@@ -12,26 +12,30 @@
   // You can add your own styles
 
   /* Linkblock with Image and Images with Caption */
-.co-container-outer .row > figure > .overlay:hover::after {
-  background:red;
-  padding:40px;
-  
-}
-
   a {
     &.co-linkblock {
       color: $body-color;
       span {
         color: $link-color;
+        vertical-align: middle;
+        display:inline-block;
+        padding: 3px 0;
+        svg {
+          transition: margin-left .3s ease-in-out;
+          margin-left:0;
+        }
       }
       &:hover {
         text-decoration: none;
         color: $body-color;
         span { 
           color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
+          text-decoration: $link-hover-decoration;
+          svg {
+            transition: margin-left .3s ease-in-out;
+            margin-left:8px;
+          }
       }
-       
       }
     }
     figure {

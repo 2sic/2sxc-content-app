@@ -7,11 +7,11 @@
 @if(!Koi.Is("bs4"))
 {
   <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" data-enableoptimizations="true" />
-  <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous" data-enableoptimizations="true" ></script>
+  <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous" data-enableoptimizations="true" ></script>
 }
 
 @* include icon font *@
-<script defer async src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script async src="https://kit.fontawesome.com/113c4cdde2.js" crossorigin="anonymous"></script>
 
 @*
     This sub template just places all the very-often used
@@ -30,8 +30,8 @@
 }
 @if(fancybox)
 {
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" data-enableoptimizations="true" />
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js" data-enableoptimizations="true"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" data-enableoptimizations="bottom" />
+  <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js" data-enableoptimizations="bottom"></script>
 }
 
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }

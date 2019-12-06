@@ -18,19 +18,13 @@
           @if(linkInfo.Found) {
             @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
           }
-          <div class="row">
-            <div class="col-2"><i class="co-icon text-primary fas @linkInfo.Icon" aria-hidden="true"></i></div>
-            <div class="col-10">
-              <h3>@link.Title</h3>
-              <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
-              @if(Text.Has(link.Link)) {
-                <span>@link.LinkText&nbsp;<span>&rsaquo;</span></span>
-              }
-            </div>
-          </div>
-          @if(linkInfo.Found) {
+            <i class="mb-3 text-primary fas @linkInfo.Icon" aria-hidden="true" style="font-size: 40px;"></i>
+            <h3>@link.Title</h3>
+            <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+            @if(linkInfo.Found) {
+            <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             @Tag.A().TagEnd
-          }
+          } 
         </div>
       }
     </div>
