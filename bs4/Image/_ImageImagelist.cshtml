@@ -18,11 +18,11 @@
 	var lightboxQuality = 90;
 }
 
-<div class="co-container-outer">
-	<div class="co-container-inner co-img-wrapper co-img-wrapper-@(Dnn.Module.ModuleID) co-2colimg">
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner">
 		<div class="row">
 			@foreach (var img in AsDynamic(Data)) {
-				<div class="col-md-@columns mb-4" @Edit.TagToolbar(img)>
+				<div class="col-6 col-md-@columns mb-3" @Edit.TagToolbar(img)>
 					@if (img.Presentation.ImageLightbox) {
             @(Tag.A()
               .Class("fancybox")
@@ -32,17 +32,18 @@
               .TagStart)
 					}
 					<figure>
-            <div class="co-overlay">
+							<div class="overlay w-100 h-100"></div>
               @if(img.Presentation.TitleLegend) {
-                <figcaption class="pt-1">@img.Title</figcaption>
-              }
-            </div>
+								<figcaption class="pt-1 px-4 pb-4 text-white">@img.Title</figcaption>
+							}
 
-            @(Tag.Img()
-              .Class("img-fluid")
-              .Src(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)
+						@(Tag.Img()
+							.Class("w-100")
+							.Src(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)
               .Alt(img.title))
+
 					</figure>
+
 					@if (img.Presentation.ImageLightbox) {
 						@Tag.A().TagEnd
 					}
