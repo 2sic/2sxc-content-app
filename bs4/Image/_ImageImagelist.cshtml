@@ -21,7 +21,7 @@
 <div class="co-container-outer">
 	<div class="co-container-inner">
 		<div class="row">
-			@foreach (var img in AsDynamic(Data)) {
+			@foreach (var img in AsList(Data)) {
 			
 				<div class="@((columns) > 10 ? "col-12" : "col-6") col-md-@columns mb-3" @Edit.TagToolbar(img)>
 				

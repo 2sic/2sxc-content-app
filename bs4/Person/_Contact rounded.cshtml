@@ -6,7 +6,7 @@
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner">
 		<div class="row">
-			@foreach (var person in AsDynamic(Data))	{
+			@foreach (var person in AsList(Data))	{
 				<div class="col-md-6 mb-4 mb-md-5" @Edit.TagToolbar(person)>
 					<div class="row">
 						<div class="col-4 mb-2">

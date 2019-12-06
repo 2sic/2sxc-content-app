@@ -10,7 +10,7 @@
 
 <div class="co-container-outer">
 	<div class="co-container-inner co-button-wrapper text-center mb-4">
-    @foreach (var link in AsDynamic(Data))
+    @foreach (var link in AsList(Data))
     {
       // get helper commands
       var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);

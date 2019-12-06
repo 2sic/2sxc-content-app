@@ -11,7 +11,7 @@
 <div class="co-container-outer">
 	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
     <div class="row">
-      @foreach (var link in AsDynamic(Data)) {
+      @foreach (var link in AsList(Data)) {
         var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);
 
         <div class="mb-4 col-12 col-md-6 col-lg-4" @Edit.TagToolbar(link)>
