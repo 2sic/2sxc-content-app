@@ -3,20 +3,18 @@
 @* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
-<div class="co-container-outer">
-	<div class="co-container-inner co-person-wrapper co-person-wrapper-@(Dnn.Module.ModuleID)">
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner">
 		<div class="row">
 			@foreach (var person in AsDynamic(Data))	{
-				<div class="co-person col-md-6 mb-4 mb-md-5" @Edit.TagToolbar(person)>
+				<div class="col-md-6 mb-4 mb-md-5" @Edit.TagToolbar(person)>
 					<div class="row">
-						<div class="co-person-image co-person-image-rounded col-4">
+						<div class="col-4 mb-2">
 							@if (Text.Has(person.Photo)) {
-								<div class="co-person-image-wrapper">
                   @(Tag.Img()
-                    .Class("img-fluid")
+                    .Class("img-fluid rounded-circle")
                     .Src(person.Photo + "?w=379&h=379&mode=crop&quality=90")@* Format: Passphoto 1.2857 *@
                     .Alt(person.FullName))
-								</div>
 							}
 							else {
 								<div class="co-person-placeholder"></div>
