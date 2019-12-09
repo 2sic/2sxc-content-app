@@ -1,0 +1,45 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Link/_List of document-links.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("../bs4/shared/_Assets.cshtml", new { parts = "styles"})
+
+@{
+  // get helper commands
+  var Helpers = CreateInstance("../shared/_Helpers.cshtml");
+}
+
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner">
+    <ul class="list-unstyled">
+      @foreach (var link in AsList(Data)) {
+        var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);
+        <li @Edit.TagToolbar(link)>
+          @if(linkInfo.Found) {
+            @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
+          }
+            <div class="d-flex flex-row">
+              <div class="pr-2 pl-0 pt-1 pb-0">
+                <i class="text-primary fas @linkInfo.Icon" style="font-size: 24px;"></i>
+              </div>
+              <div class="px-2 py-0">
+                <span class="lead font-weight-normal">@link.Title</span>
+                <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+                </div>
+            </div>
+          @if(linkInfo.Found) {
+            @Tag.A().TagEnd
+          }
+        </li>
+      }
+    </ul>
+	</div>
+</div>

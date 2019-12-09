@@ -1,0 +1,40 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Link/_Large emphasized link.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("../bs4/shared/_Assets.cshtml", new { parts = "styles"})
+
+@{
+  // get helper commands
+  var Helpers = CreateInstance("../shared/_Helpers.cshtml");
+  // get helper commands
+  var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+}
+
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner text-center py-5" @Edit.TagToolbar(Content)>
+    @if(Content.Presentation.HeadingType != "hide") {
+      @((Tag.Custom(Content.Presentation.HeadingType)).Wrap(
+        Content.Title,
+        Tag.Br(),
+        Tag.Small(Content.Description)
+      )
+      .Class("mb-4")
+      )
+    }
+    @if(linkInfo.Found) {
+      <a target="@linkInfo.Window" class="btn btn-lg btn-outline-primary" href="@Content.Link">
+        <i class="co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
+        <span>@Content.LinkText</span>
+      </a>
+    }
+  </div>
+</div>

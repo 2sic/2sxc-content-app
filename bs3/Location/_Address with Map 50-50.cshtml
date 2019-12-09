@@ -4,6 +4,30 @@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
 <script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
 
+@{
+  // we need a unique ID for the map, in case there are many on the same page
+  var mapId = Dnn.Module.ModuleID;
+
+  // Language is used for the map-link
+  var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
+
+  // GPS is a JSON field, so we must use AsDynamic to access the properties
+	var gps = AsDynamic(Content.GPS);
+	var gpsLong = gps.Longitude ?? 0; // use 0 if not defined
+	var gpsLat = gps.Latitude ?? 0;	  // use 0 if not defined
+
+  // this link will be used to open the Google-Directions in a new window
+  var directionurl = gpsLong > 0
+		// if we have coordinates, use them
+		? "https://www.google.com/maps/dir/" + gpsLat + "," + gpsLong
+		// otherwise use the address
+		: "https://maps.google.com/maps?daddr="
+      + (Content.Street + " " + Content.ZipCode + " " + Content.City + " " + Content.Country)
+        .Replace(" ", "+")
+      + "&amp;saddr=&amp;f=d&amp;hl=" + language + "&amp;ie=UTF8&amp;z=16";
+
+}
+
 <div class="co-container-outer">
 	<div class="co-container-inner co-contactmap mb-4" @Edit.TagToolbar(Content)>
 		<div class="row">
@@ -28,13 +52,6 @@
 					}
 					@if (Text.Has(Content.Country)) {
 						<span itemprop="addressCountry">@Content.Country</span><br>
-					}
-					@{
-            var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
-						var directionurl = "https://maps.google.com/maps?daddr="+Content.Street.Replace(" ", "+")+"+"+Content.ZipCode.Replace(" ", "+")+"+"+Content.City.Replace(" ", "+")+"+"+Content.Country.Replace(" ", "+")+"&amp;saddr=&amp;f=d&amp;hl=" + language + "&amp;ie=UTF8&amp;z=16";
-						if (Convert.ToInt32(Content.GPSLng) > 0){
-							directionurl = "https://www.google.com/maps/dir//"+Content.GPSLat.ToString().Replace(',', '.')+","+Content.GPSLng.ToString().Replace(',', '.');
-						}
 					}
 					@if(Text.Has(Content.LabelDirections)){
 						<span class="fas fa-map-marker-alt"></span> <a target="_blank" href="@directionurl">@Content.LabelDirections</a>
@@ -72,11 +89,11 @@
 
 <script type="text/javascript">
 	$(function(){
-		var markerImage = "@((Text.Has(Content.Presentation.MarkerImage)) ? Content.Presentation.MarkerImage : "")";
+		var markerImage = "@Text.First(Content.Presentation.MarkerImage, "")";
 		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
 			position: {
-				lat: @Content.GPSLat.ToString().Replace(',', '.'),
-				lng: @Content.GPSLng.ToString().Replace(',', '.')
+				lat: @gpsLat,
+				lng: @gpsLong
 			},
 			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",

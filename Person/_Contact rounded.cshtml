@@ -1,7 +1,16 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@* This adds all link/script tags *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Person/_Contact rounded.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("../bs4/shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner">
@@ -11,10 +20,10 @@
 					<div class="row">
 						<div class="col-4 mb-2">
 							@if (Text.Has(person.Photo)) {
-                  @(Tag.Img()
-                    .Class("img-fluid rounded-circle")
-                    .Src(person.Photo + "?w=379&h=379&mode=crop&quality=90")@* Format: Passphoto 1.2857 *@
-                    .Alt(person.FullName))
+                @(Tag.Img()
+                  .Class("img-fluid rounded-circle")
+                  .Src(person.Photo + "?w=379&h=379&mode=crop&quality=90")@* Format: Passphoto 1.2857 *@
+                  .Alt(person.FullName))
 							}
 							else {
 								<div class="bg-primary placeholder rounded-circle" style="padding-bottom:100%;"></div>

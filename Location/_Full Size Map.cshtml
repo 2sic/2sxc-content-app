@@ -1,7 +1,16 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@* This adds all link/script tags *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Location/_Full Size Map.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("../bs4/shared/_Assets.cshtml", new { parts = "scripts"})
 <script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
 
 @{
@@ -28,15 +37,15 @@
 
 }
 
-<div class="co-container-outer">
+<div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
-		<div class="co-google-map-container embed-responsive embed-responsive-16by9">
-			<div class="co-google-map embed-responsive-item" id="GoogleMap-@Dnn.Module.ModuleID"></div>
-			<div class="co-google-map-content" id="GoogleMap-Content-@Dnn.Module.ModuleID" style="display:none;">
-				<div>
-					<strong>@Content.Company</strong>
+		<div class="co-google-map-container embed-responsive embed-responsive-21by9">
+			<div class="embed-responsive-item" id="GoogleMap-@mapId"></div>
+			<div id="GoogleMap-Content-@mapId" style="display:none;">
+				<div class="p-2 text-center">
+					<h4>@Content.Company</h4>
 					<div>@Html.Raw(Content.Description)</div>
-					<a target="_blank" href="@directionurl">@Content.LabelDirections</a>
+					<a class="btn btn-outline-primary" target="_blank" href="@directionurl">@Content.LabelDirections</a>
 				</div>
 			</div>
 		</div>
@@ -44,16 +53,17 @@
 </div>
 
 <script type="text/javascript">
-	$(function(){
+	$(function() {
+	@* todo: 2az probably extract into own file *@
 		var markerImage = "@Text.First(Content.Presentation.MarkerImage, "")";
-		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
+		$("#GoogleMap-@(mapId)").toGoogleMap({
 			position: {
 				lat: @gpsLat,
 				lng: @gpsLong
 			},
 			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",
-			infoWindowHtml: $("#GoogleMap-Content-@Dnn.Module.ModuleID").html(),
+			infoWindowHtml: $("#GoogleMap-Content-@mapId").html(),
 			showInfoWindow: true,
 			icon: markerImage
 		});

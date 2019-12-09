@@ -1,0 +1,52 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Link/_List of image-links.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("../bs4/shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
+
+@{
+  // get helper commands
+  var Helpers = CreateInstance("../shared/_Helpers.cshtml");
+}
+
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner">
+		<div class="row">
+			@foreach (var link in AsList(Data)) {
+				var linkInfo = Helpers.LinkInfos(link.Link, link.Window, link.Icon);
+				<div class="col-md-6 col-lg-4 mb-4 mb-md-5" @Edit.TagToolbar(link)>
+					@if(linkInfo.Found) {
+            @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
+          }
+            @if(Text.Has(link.Image)) {
+              <figure>
+                <div class="overlay w-100 h-100"></div>
+                @(Tag.Img()
+                  .Class("img-fluid")
+                  .Src(link.Image + "?w=690&h=400&quality=70&mode=crop&scale=both")
+                  .Alt(link.Title))
+              </figure>
+            } else {
+              <div class="bg-primary placeholder" style="padding-bottom: 58%; margin-bottom:1rem;"></div>
+            }
+          <h3>@link.Title</h3>
+          @if(Text.Has(link.Description)) {
+            <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+          }
+          @if(linkInfo.Found) {
+            <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            @Tag.A().TagEnd
+          }
+				</div>
+			}
+		</div>
+	</div>
+</div>

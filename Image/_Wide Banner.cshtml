@@ -1,0 +1,12 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Image/_ImageWideBanner.cshtml", new { width = 1600, height = 300})
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("_ImageWideBanner.cshtml", new { width = 1600, height = 300})

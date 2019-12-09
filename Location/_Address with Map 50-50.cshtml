@@ -1,0 +1,112 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Location/_Address with Map 50-50.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("../bs4/shared/_Assets.cshtml", new { parts = "styles,scripts"})
+<script type="text/javascript" src="@App.Path/dist/lib/google-map.js" data-enableoptimizations="true"></script>
+
+@{
+  // we need a unique ID for the map, in case there are many on the same page
+  var mapId = Dnn.Module.ModuleID;
+
+  // Language is used for the map-link
+  var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
+
+  // GPS is a JSON field, so we must use AsDynamic to access the properties
+	var gps = AsDynamic(Content.GPS);
+	var gpsLong = gps.Longitude ?? 0; // use 0 if not defined
+	var gpsLat = gps.Latitude ?? 0;	  // use 0 if not defined
+
+  // this link will be used to open the Google-Directions in a new window
+  var directionurl = gpsLong > 0
+		// if we have coordinates, use them
+		? "https://www.google.com/maps/dir/" + gpsLat + "," + gpsLong
+		// otherwise use the address
+		: "https://maps.google.com/maps?daddr="
+      + (Content.Street + " " + Content.ZipCode + " " + Content.City + " " + Content.Country)
+        .Replace(" ", "+")
+      + "&amp;saddr=&amp;f=d&amp;hl=" + language + "&amp;ie=UTF8&amp;z=16";
+
+}
+
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner" @Edit.TagToolbar(Content)>
+		<div class="row">
+			<div class="col-md-6 order-md-6 d-flex align-items-center">
+				<address itemscope itemtype="http://schema.org/LocalBusiness">
+					<div class="mb-2 pr-md-5" itemprop="name">
+						<h4>@Content.Company</h4>
+						@if (Text.Has(Content.Description)) {
+							<div itemprop="description">@Html.Raw(Content.Description)</div>
+						}
+					</div>
+					<div class="mb-2" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						@if (Text.Has(Content.Street)) {
+							<span itemprop="streetAddress">
+							@if (Text.Has(Content.Street)) {
+								@Html.Raw(Tags.Nl2Br(Content.Street))<br>
+							}
+							</span>
+						}
+						@if (Text.Has(Content.City)) {
+							if (Text.Has(Content.ZipCode)) {
+								<span itemprop="postalCode">@Content.ZipCode</span>
+							}
+							<span itemprop="addressLocality">@Content.City</span><br>
+						}
+						@if (Text.Has(Content.Country)) {
+							<span itemprop="addressCountry">@Content.Country</span><br>
+						}
+					</div>
+					<div class="mb-2">
+						@if (Text.Has(Content.Mail)) {
+							<div itemprop="email">
+								<span class="fas fa-envelope"></span>
+								@RenderPage("../shared/_TryToEncryptMail.cshtml", new { email = Content.Mail })
+							</div>
+						}
+						@if (Text.Has(Content.Tel)) {
+							<span class="fas fa-phone" aria-hidden="true"></span> <a href="tel:@Content.Tel.Replace(" ", "")" itemprop="telephone">@Content.Tel</a><br/>
+						}
+						@if (Text.Has(Content.Fax)) {
+							<span class="fas fa-fax" aria-hidden="true"></span> <span itemprop="faxNumber">@Content.Fax</span><br/>
+						}
+							@if(Text.Has(Content.LabelDirections)){
+							<span class="fas fa-map-marker-alt"></span> <a target="_blank" href="@directionurl">@Content.LabelDirections</a>
+						}
+					</div>
+				</address>
+			</div>
+			<div class="col-md-6 order-md-1">
+				<div class="co-google-map-container embed-responsive embed-responsive-16by9">
+					<div class="embed-responsive-item" id="GoogleMap-@Dnn.Module.ModuleID"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		var markerImage = "@Text.First(Content.Presentation.MarkerImage, "")";
+		$("#GoogleMap-@(Dnn.Module.ModuleID)").toGoogleMap({
+			position: {
+				lat: @gpsLat,
+				lng: @gpsLong
+			},
+			zoom: @Content.Presentation.Zoom,
+			mapTypeId: "ROADMAP",
+			infoWindowHtml: "@Content.Company",
+			showInfoWindow: false,
+			icon: markerImage
+		});
+	});
+</script>
