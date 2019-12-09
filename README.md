@@ -25,6 +25,29 @@ This package **Content-Bootstrap3** is the default configuration package which 2
 1. **Skin/Theme Optimizations**: We have some recommendations, if you care about this, read about the [optimizations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Theme-Optimizations)
 1. **Customize to your colors and CSS**: check out the [instructions in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Customizing%20CSS%20or%20SASS)
 
+## CSS Framework Detection
+
+_Here you'll see how the content-templates switch between Bootstrap3 and Bootstrap4 templates_
+
+Almost every view is implemented as Bootstrap4, but as one of the first lines you'll see:
+
+```
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("../bs3/Person/_some-file.cshtml")
+  return;
+}
+```
+
+This does the following
+
+1. Ask Koi if it's using Bootstrap 3 (code 'bs3') using [Koi.Is(...)](https://connect-koi.net/components)
+1. If it's a match, it will render the BS3 file and then return
+
+So if it is Boostrap3, then the rest of the view will not be rendered at all. 
+
+> If you start making changes and you're not using Bootstrap3 at all, you can also delete these lines!
+
+
 ## Questions and Support
 
 1. We from 2sxc use [StackOverflow with the tag 2sxc][StackOverflow] for support. Post your questions there.

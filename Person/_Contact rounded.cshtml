@@ -1,0 +1,32 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@* This adds all link/script tags *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
+
+<div class="co-container-outer mb-4 mb-md-5">
+	<div class="co-container-inner">
+		<div class="row">
+			@foreach (var person in AsList(Data))	{
+				<div class="col-md-6 mb-4 mb-md-5" @Edit.TagToolbar(person)>
+					<div class="row">
+						<div class="col-4 mb-2">
+							@if (Text.Has(person.Photo)) {
+                  @(Tag.Img()
+                    .Class("img-fluid rounded-circle")
+                    .Src(person.Photo + "?w=379&h=379&mode=crop&quality=90")@* Format: Passphoto 1.2857 *@
+                    .Alt(person.FullName))
+							}
+							else {
+								<div class="bg-primary placeholder rounded-circle" style="padding-bottom:100%;"></div>
+							}
+						</div>
+
+						<div class="col-8" itemscope itemtype="http://schema.org/Person">
+							@RenderPage("_PersonData.cshtml", new { data = person})
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>
