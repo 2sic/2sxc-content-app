@@ -10,13 +10,13 @@
 @*
   Bootstrap 4 or Unknown CSS Framework
 *@
-@RenderPage("../bs4/shared/_Assets.cshtml", new { parts = "styles"})
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
 
 @{
   // get helper commands
-  var Helpers = CreateInstance("../shared/_Helpers.cshtml");
-  // get helper commands
-  var linkInfo = Helpers.LinkInfos(Content.Link, Content.Window, Content.Icon);
+  var linkHelper = CreateInstance("_LinkHelper.cshtml");
+  // run helper command
+  var linkInfo = linkHelper.LinkInfos(Content.Link, Content.Window, Content.Icon);
 }
 
 <div class="co-container-outer mb-4 mb-md-5">

@@ -6,9 +6,9 @@
 
 @{
   // get helper commands
-  var Helpers = CreateInstance("../../shared/_Helpers.cshtml");
+  var locationHelper = CreateInstance("_LocationHelper.cshtml");
   // run helper command
-  var mapInfo = Helpers.MapInfos(Content);
+  var mapInfo = locationHelper.MapInfos(Content);
   // we need a unique ID for the map, in case there are many on the same page
   var mapId = Dnn.Module.ModuleID;
 }
@@ -46,7 +46,7 @@
 					@if (Text.Has(Content.Mail)) {
 						<div itemprop="email">
 							<span class="fas fa-envelope"></span>
-							@RenderPage("../../shared/_TryToEncryptMail.cshtml", new { email = Content.Mail })
+							@RenderPage("../shared/_TryToEncryptMail.cshtml", new { email = Content.Mail })
 						</div>
 						<br/>
 					}
@@ -72,19 +72,4 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$(function(){
-		var markerImage = "@Text.First(Content.Presentation.MarkerImage, "")";
-		$("#GoogleMap-@(mapId)").toGoogleMap({
-			position: {
-				lat: @mapInfo.GpsLat,
-				lng: @mapInfo.GpsLong
-			},
-			zoom: @Content.Presentation.Zoom,
-			mapTypeId: "ROADMAP",
-			infoWindowHtml: "@Content.Company",
-			showInfoWindow: false,
-			icon: markerImage
-		});
-	});
-</script>
+@RenderPage("_LocationScript.cshtml", new { markerImage = Content.Presentation.MarkerImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })

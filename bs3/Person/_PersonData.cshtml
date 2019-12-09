@@ -19,7 +19,7 @@
   {
     <div itemprop="email">
       <span class="fas fa-envelope"></span>
-      @RenderPage("../../shared/_TryToEncryptMail.cshtml", new { email = person.Email })
+      @RenderPage("../shared/_TryToEncryptMail.cshtml", new { email = person.Email })
     </div>
   }
   @if (Text.Has(person.Mobile))
