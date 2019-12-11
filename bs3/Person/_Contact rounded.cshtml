@@ -16,7 +16,7 @@
 								<div class="co-person-image-wrapper">
                   @(Tag.Img()
                     .Class("img-responsive")
-                    .Src(person.Photo + "?w=379&h=379&mode=crop&quality=90")@* Format: Passphoto 1.2857 *@
+                    .Src(person.Photo + "?w=379&h=379&scale=both&mode=crop&quality=90")
                     .Alt(person.FullName))
 								</div>
 							}
