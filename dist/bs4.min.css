@@ -12,6 +12,7 @@
       z-index: 1;
       left: 0;
       top: 0;
+      background-color: rgba(52, 58, 64, 0);
       transition: background-color 0.3s ease-in-out; }
     figure figcaption {
       position: absolute;
