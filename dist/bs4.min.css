@@ -45,7 +45,7 @@
           a.co-linkblock:hover span svg {
             transition: margin-left 0.3s ease-in-out;
             margin-left: 8px; }
-    a:hover figure .overlay, a:focus figure .overlay {
+    a:hover figure .overlay {
       background-color: rgba(52, 58, 64, 0.4); } }
 
 

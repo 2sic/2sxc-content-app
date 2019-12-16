@@ -54,8 +54,7 @@
         }
       }
     }
-    &:hover,
-    &:focus {
+    &:hover {
       figure {
         .overlay {
           background-color: rgba($dark, 0.4);
