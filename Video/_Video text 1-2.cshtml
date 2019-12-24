@@ -1,4 +1,6 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+
 @*
   Bootstrap 3 - read the readme.md section "CSS Framework Detection"
 *@
@@ -11,19 +13,23 @@
 *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles, fancybox"})
 
+@{
+  var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
+	var youtubeMatch = new System.Text.RegularExpressions.Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)").Match(Content.VideoLink);
+}
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
 		<div class="row">
-			<div class="col-12">
+			<div class="col-md-8 order-sm-4">
 				@* call sub-template to show the title with the correct H1-H6 tag *@
 				@RenderPage("../shared/_Header tag.cshtml")
-			</div>
-			<div class="col-12 mb-2">
-					@RenderPage("_ContentVideo.cshtml", new { img = Content, width = 1280, height = 640 })
-			</div>
-				<div class="col-12">
 				@Html.Raw(Content.Text)
 			</div>
+			<div class="col-md-4 order-sm-1">
+				@RenderPage("_ContentVideo.cshtml", new { img = Content, width = 420, height = 236 })
+			</div>
 		</div>
+
+		
 	</div>
 </div>

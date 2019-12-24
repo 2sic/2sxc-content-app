@@ -22,7 +22,7 @@
 							@if (Text.Has(person.Photo)) {
                 @(Tag.Img()
                   .Class("img-fluid rounded-circle")
-                  .Src(person.Photo + "?w=379&h=379&mode=cro&scale=both&quality=90")
+                  .Src(person.Photo + "?w=379&h=379&mode=crop&scale=both&quality=90")
                   .Alt(person.FullName))
 							}
 							else {
