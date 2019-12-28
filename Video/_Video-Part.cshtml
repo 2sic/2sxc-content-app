@@ -1,5 +1,6 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
+@using System.Text.RegularExpressions;
 @*
   this is a partial template which is re-used in many other templates,
   so it's shared here. Expects:
@@ -8,8 +9,12 @@
 *@
 
 @{
-  var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
-	var youtubeMatch = new System.Text.RegularExpressions.Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)").Match(Content.VideoLink);
+	var youTube = Regex.Match(Content.VideoLink, 
+    @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+  var isYouTube = youTube.Success;
+  var youTubeUrl = isYouTube
+    ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent"
+    : "";
 
   // configuration
   var retina = true;
@@ -25,9 +30,9 @@
     quality = 50;
   }
 }
-
-@if (Content.Presentation.VideoLightbox) {
-  <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@("https://www.youtube.com/embed/" + @youtubeMatch.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent")">
+@if(Content.Presentation.VideoLightbox) {
+  // open in lightbox
+  <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
       @if(Text.Has(Content.Image)) { 
       <figure>
         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
@@ -43,11 +48,10 @@
       }
   </a>
 } else {
+  // no lightbox, show directly
   <div class="embed-responsive embed-responsive-16by9">
-    @if(youtubeMatch.Success) {
-      <iframe class="embed-responsive-item"
-        src="@("https://www.youtube.com/embed/" + @youtubeMatch.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent")"
-        allowfullscreen></iframe>
+    @if(isYouTube) {
+      <iframe class="embed-responsive-item" src="@youTubeUrl" allowfullscreen></iframe>
     } else {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
