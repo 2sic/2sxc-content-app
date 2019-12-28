@@ -2,16 +2,14 @@
 @using ToSic.Razor.Blade;
 @*
   this is a partial template which is re-used in many other templates,
-  so it's shared here
-
-  expects
-  * "width" - an int
+  so it's shared here. Expects:
+  * width - an int
+  * height - an int
 *@
 
 @{
   var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
 	var youtubeMatch = new System.Text.RegularExpressions.Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)").Match(Content.VideoLink);
-
 
   // configuration
   var retina = true;
@@ -30,30 +28,28 @@
 
 @if (Content.Presentation.VideoLightbox) {
   <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@("https://www.youtube.com/embed/" + @youtubeMatch.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent")">
-      @if(Text.Has(Content.Image)){ 
+      @if(Text.Has(Content.Image)) { 
       <figure>
-          <div class="overlay d-flex justify-content-center align-items-center w-100 h-100"><i class="fab fa-youtube"></i></div>
+        <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
+          <i class="fab fa-youtube"></i>
+        </div>
         @(Tag.Img()
-        .Class("img-fluid")
-        .Src(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)
-        .Alt(Content.Title))
+          .Class("img-fluid")
+          .Src(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)
+          .Alt(Content.Title))
       </figure>
-      }
-      else {
+      } else {
         <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
       }
   </a>
-}
-else {
+} else {
   <div class="embed-responsive embed-responsive-16by9">
-    @if (youtubeMatch.Success) {
+    @if(youtubeMatch.Success) {
       <iframe class="embed-responsive-item"
         src="@("https://www.youtube.com/embed/" + @youtubeMatch.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent")"
         allowfullscreen></iframe>
-    }
-    else {
+    } else {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
   </div>
-}	
-      
+}
