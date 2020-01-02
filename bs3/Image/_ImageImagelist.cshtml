@@ -23,7 +23,7 @@
 		<div class="row">
 			@foreach (var img in AsList(Data))
 			{
-				<div class="col col-sm-@columns mb-4" @Edit.TagToolbar(img)>
+				<div class="@((columns) > 10 ? "col-xs-12" : "col-xs-6") col-sm-@columns mb-4" @Edit.TagToolbar(img)>
 					@if (img.Presentation.ImageLightbox) {
             @(Tag.A()
               .Class("fancybox")
