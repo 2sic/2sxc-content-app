@@ -5,8 +5,8 @@
 		var markerImage = "@Text.First(PageData["markerImage"], "")";
 		$("#GoogleMap-@(PageData["mapId"])").toGoogleMap({
 			position: {
-        lat: @PageData["mapInfo"].GpsLat,
-				lng: @PageData["mapInfo"].GpsLong
+        lat: @PageData["mapInfo"].GpsLat.ToString().Replace(",","."),
+				lng: @PageData["mapInfo"].GpsLong.ToString().Replace(",",".")
 			},
 			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",
