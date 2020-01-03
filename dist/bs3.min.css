@@ -57,6 +57,13 @@
   /* Images */
   .co-img-wrapper {
     margin-bottom: 30px; }
+    .co-img-wrapper .co-img-imagelist {
+      margin-bottom: 30px; } }
+    @media all and (max-width: 576px) {
+      .co-img-wrapper .co-img-imagelist {
+        width: 100%; } }
+
+@media all {
     .co-img-wrapper a:hover .co-overlay {
       background-color: rgba(34, 34, 34, 0.4); }
     .co-img-wrapper figure {
@@ -163,7 +170,28 @@
     width: 100%; }
   /* Youtube */
   .role-admin .co-youtube-video-wrapper {
-    padding-top: 40px; } }
+    padding-top: 40px; }
+  a.co-video figure {
+    position: relative; }
+    a.co-video figure .overlay {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      transition: background-color 0.3s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%; }
+    a.co-video figure svg {
+      font-size: 72px;
+      color: white;
+      transition: color 0.3s ease-in-out; }
+  a.co-video:hover svg {
+    color: red; }
+  a.co-video:hover .overlay {
+    background-color: rgba(34, 34, 34, 0.4); } }
 
 .mb-4,
 .mb-4 mb-md-5 {

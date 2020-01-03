@@ -34,19 +34,22 @@
       a.co-linkblock p {
         color: #555555; }
       a.co-linkblock span {
-        color: #5c4384;
+        color: #563d7c;
         vertical-align: middle;
         display: inline-block;
         padding: 3px 0;
         transition: color 0.3s ease-in-out; }
         a.co-linkblock span svg {
           transition: margin-left 0.3s ease-in-out;
-          margin-left: 0; }
+          margin-left: 0;
+          vertical-align: text-bottom;
+          margin-bottom: 3px;
+          height: 12px; }
       a.co-linkblock:hover {
         text-decoration: none;
         color: #555555; }
         a.co-linkblock:hover span {
-          color: #392951;
+          color: #322449;
           text-decoration: underline; }
           a.co-linkblock:hover span svg {
             transition: margin-left 0.3s ease-in-out;

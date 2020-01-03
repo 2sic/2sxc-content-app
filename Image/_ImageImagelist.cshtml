@@ -23,7 +23,7 @@
 		<div class="row">
 			@foreach (var img in AsList(Data)) {
 
-				<div class="@((columns) > 10 ? "col-12" : "col-6") col-md-@columns mb-3" @Edit.TagToolbar(img)>
+				<div class="@((columns) > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3" @Edit.TagToolbar(img)>
 
 					@if (img.Presentation.ImageLightbox) {
             @(Tag.A()
@@ -36,7 +36,7 @@
 					<figure>
 							<div class="overlay w-100 h-100"></div>
               @if(img.Presentation.TitleLegend) {
-								<figcaption class="pt-1 px-4 pb-4 text-white">@img.Title</figcaption>
+								<figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
 							}
 
 						@(Tag.Img()

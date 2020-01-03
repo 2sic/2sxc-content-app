@@ -52,6 +52,9 @@
         svg {
           transition: margin-left 0.3s ease-in-out;
           margin-left: 0;
+          vertical-align: text-bottom;
+          margin-bottom:3px;
+          height: 12px;
         }
       }
       &:hover {
