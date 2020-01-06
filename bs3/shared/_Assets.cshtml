@@ -1,3 +1,4 @@
+@using DotNetNuke.Framework.JavaScriptLibraries;
 @* show warning for admin if koi.json is missing *@
 @RenderPage("_Koi Admin Messages.cshtml")
 
@@ -18,6 +19,11 @@
   var styles = all || parts.Contains("styles");
   var scripts = all || parts.Contains("scripts");
   var height = all || parts.Contains("height");
+}
+@if(fancybox || scripts)
+{
+  // tell DNN to load jquery as it's needed by fancybox and our basic scripts
+  JavaScript.RequestRegistration(CommonJs.jQuery);
 }
 @if(fancybox)
 {
