@@ -1,4 +1,5 @@
 @using Connect.Koi;
+@using DotNetNuke.Framework.JavaScriptLibraries;
 
 @* show warning for admin if koi.json is missing *@
 @RenderPage("_Koi Admin Messages.cshtml")
@@ -30,6 +31,8 @@
 }
 @if(fancybox)
 {
+  // tell DNN to load jquery as it's needed by fancybox
+  JavaScript.RequestRegistration(CommonJs.jQuery);
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" data-enableoptimizations="bottom" />
   <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js" data-enableoptimizations="bottom"></script>
 }
