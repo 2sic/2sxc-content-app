@@ -1,5 +1,5 @@
 $json = ConvertFrom-Json -InputObject (Get-Content -Path "brand-icons.json")
-$baseCss = [System.IO.File]::ReadAllText("fontawesome-all.min.css")
+$baseCss = Get-Content -Path "all.min.css" # [System.IO.File]::ReadAllText("all.min.css")
 
 foreach($hit in $json.hits) {
     $name = $hit.name
@@ -8,4 +8,5 @@ foreach($hit in $json.hits) {
     
 }
 
-[System.IO.File]::WriteAllText("fontawesome-nobrands.min.css", $baseCss)
+Set-Content -Path "fontawesome-nobrands.min.css" -Value $baseCss
+# [System.IO.File]::WriteAllText("fontawesome-nobrands.min.css", $baseCss)
