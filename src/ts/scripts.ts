@@ -24,10 +24,8 @@ declare const google : any;
 /* Google Maps API Key */
 (function ($) {
   const winAny = window as any;
-  // Change this GoogleApiKey. Get it on Google API Console (https://console.developers.google.com/apis/)
-  // read instructions here: https://github.com/2sic/2sxc-content-app/wiki/google-maps-api-key
+  // Change this GoogleApiKey. They are in the App-Settings. Read instructions here: https://azing.org/2sxc/r/ippFQYkz
   let googleApiKey = winAny.googleMapsApiKey;
-
   if(!googleApiKey) return; 
 
   const showApiKeyWarning = googleApiKey.indexOf("warning!") > -1;
