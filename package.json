@@ -4,8 +4,7 @@
   "description": "(bootstrap-based) content templates for websites built with 2sxc and the 2sic bootstrap skin",
   "main": "(none)",
   "scripts": {
-    "develop": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "webpack": "webpack"
   },
   "author": "2sic internet solutions 2020",
   "license": "ISC",

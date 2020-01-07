@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
@@ -13,7 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].min.js',
   },
-  mode: 'development',
+  mode: 'production',
   devtool: 'source-map',
   watch: true,
   stats: {
@@ -22,6 +23,18 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.scss']
+  },
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: {
+          map: {
+            inline: false,
+            annotation: true,
+          }
+        }
+      })
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
