@@ -11,7 +11,7 @@
 @*
   Bootstrap 4 or Unknown CSS Framework
 *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles, fancybox"})
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,fancybox,icons"})
 
 @{
   var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
