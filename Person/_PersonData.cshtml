@@ -30,7 +30,6 @@
    @if (Text.Has(person.Email)) {
     <div itemprop="email">
       <i class="fas fa-envelope text-center" style="width:30px;"></i>
-      @* temp 2dm removed one ../ in path *@
       @RenderPage("../shared/_TryToEncryptMail.cshtml", new { email = person.Email })
     </div>
   }
