@@ -42,3 +42,12 @@
     return mInfo;
 	}
 }
+@helper AddGoogleMapsKey() {
+  // get key from settings and remove empty lines
+  // will also add warning! in front, if the settings say to include a warning
+  var warning = (App.Settings.GoogleMapsShowWarning ? "warning!" : "");
+  var key = warning + App.Settings.GoogleMapsKey.Replace("\n", "");
+  <script>
+    var googleMapsApiKey = "@key";
+  </script>
+}
