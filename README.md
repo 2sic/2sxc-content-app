@@ -1,4 +1,4 @@
-# 2sxc: Content Types and Templates for many CSS Frameworks
+# 2sxc: Content Types & Templates for many CSS Frameworks 10.24.01
 
 The default **Content** types and templates for [DNN (DotNetNuke)](https://www.dnnsoftware.com/) using [2sxc][2sxc] for the following CSS frameworks:
 
