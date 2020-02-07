@@ -28,7 +28,7 @@
             @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
           }
             <i class="mb-3 text-primary fas @linkInfo.Icon" aria-hidden="true" style="font-size: 40px;"></i>
-            <h3>@link.Title</h3>
+            <h4>@link.Title</h4>
             <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
             @if(linkInfo.Found) {
             <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
