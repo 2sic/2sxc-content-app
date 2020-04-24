@@ -1,16 +1,5 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Link/_List of icon-links.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})
 
 @{
   // get helper commands
@@ -25,17 +14,19 @@
 
 				<div class="col-md-6 col-lg-4 mb-4 mb-md-5" @Edit.TagToolbar(link)>
           @if(linkInfo.Found) {
-            @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
+            @:<a class="co-linkblock" href="@Tags.SafeUrl(link.Link)" target="@linkInfo.Window" title="@link.Title">
           }
             <i class="mb-3 text-primary fas @linkInfo.Icon" aria-hidden="true" style="font-size: 40px;"></i>
             <h4>@link.Title</h4>
             <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
-            @if(linkInfo.Found) {
+          @if(linkInfo.Found) {
             <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
-            @Tag.A().TagEnd
+            @:</a>
           }
         </div>
       }
     </div>
   </div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})

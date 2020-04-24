@@ -1,16 +1,5 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Link/_List of document-links.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,icons"})
 
 @{
   // get helper commands
@@ -24,7 +13,7 @@
         var linkInfo = linkHelper.LinkInfos(link.Link, link.Window, link.Icon);
         <li @Edit.TagToolbar(link)>
           @if(linkInfo.Found) {
-            @Tag.A().Class("co-linkblock").Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
+            @:<a class="co-linkblock" href='@Tags.SafeUrl(link.Link)' target="@linkInfo.Window" title="@link.Title">
           }
             <div class="d-flex flex-row">
               <div class="pr-2 pl-0 pt-1 pb-0">
@@ -36,10 +25,12 @@
               </div>
             </div>
           @if(linkInfo.Found) {
-            @Tag.A().TagEnd
+            @:</a>
           }
         </li>
       }
     </ul>
 	</div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,icons"})

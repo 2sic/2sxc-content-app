@@ -1,16 +1,5 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Link/_Large emphasized link.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,icons"})
 
 @{
   // get helper commands
@@ -31,10 +20,12 @@
       )
     }
     @if(linkInfo.Found) {
-      <a target="@linkInfo.Window" class="btn btn-lg btn-outline-primary" href="@Content.Link">
+      <a target="@linkInfo.Window" class="btn btn-lg btn-outline-primary" href="@Tags.SafeUrl(Content.Link)">
         <i class="co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
         <span>@Content.LinkText</span>
       </a>
     }
   </div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,icons"})

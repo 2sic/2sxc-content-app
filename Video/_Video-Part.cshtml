@@ -9,7 +9,7 @@
 *@
 
 @{
-	var youTube = Regex.Match(Content.VideoLink, 
+	var youTube = Regex.Match(Content.VideoLink,
     @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
   var isYouTube = youTube.Success;
   var youTubeUrl = isYouTube
@@ -33,15 +33,14 @@
 @if(Content.Presentation.VideoLightbox) {
   // open in lightbox
   <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
-      @if(Text.Has(Content.Image)) { 
+      @if(Text.Has(Content.Image)) {
       <figure>
         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
           <i class="fab fa-youtube"></i>
         </div>
-        @(Tag.Img()
-          .Class("img-fluid")
-          .Src(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)
-          .Alt(Content.Title))
+        <img class="img-fluid"
+          src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)'
+          alt="@Content.Title" />
       </figure>
       } else {
         <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>

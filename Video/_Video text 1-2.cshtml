@@ -1,18 +1,6 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Video/_Video Text 1-2.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,fancybox,icons"})
-
 @{
   var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
   var youtubeMatch = new System.Text.RegularExpressions.Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)").Match(Content.VideoLink);
@@ -31,3 +19,5 @@
     </div>
   </div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,fancybox,icons"})

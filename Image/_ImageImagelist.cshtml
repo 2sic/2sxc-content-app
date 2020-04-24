@@ -2,9 +2,7 @@
 @using ToSic.Razor.Blade;
 @*
 	This is a sub-template of the image templates
-	Put all necessary link/script tags here
 *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})
 
 @{
 	var width = PageData["width"];
@@ -23,15 +21,13 @@
 		<div class="row">
 			@foreach (var img in AsList(Data)) {
 
-				<div class="@((columns) > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3" @Edit.TagToolbar(img)>
+				<div class='@((columns) > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
 					@if (img.Presentation.ImageLightbox) {
-            @(Tag.A()
-              .Class("fancybox")
-              .Href(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)
-              .Attr("data-caption", img.Presentation.TitleLightbox ? img.Title : "")
-              .Attr("data-fancybox", "group-" + Dnn.Module.ModuleID)
-              .TagStart)
+            @:<a class="fancybox"
+                href='@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)'
+                data-caption='@(img.Presentation.TitleLightbox ? img.Title : "")'
+                data-fancbox="@Dnn.Module.ModuleID">
 					}
 					<figure>
 							<div class="overlay w-100 h-100"></div>
@@ -39,15 +35,13 @@
 								<figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
 							}
 
-						@(Tag.Img()
-							.Class("w-100")
-							.Src(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)
-              .Alt(img.title))
-
+              <img class="w-100"
+                src='@Tags.SafeUrl(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
+                alt="@img.Title" />
 					</figure>
 
 					@if (img.Presentation.ImageLightbox) {
-						@Tag.A().TagEnd
+						@:</a>
 					}
 
 				</div>
@@ -55,3 +49,5 @@
 		</div>
 	</div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})

@@ -1,15 +1,6 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Location/_Address with Map 50-50.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
+
 @{
   // get helper commands
   var locationHelper = CreateInstance("_LocationHelper.cshtml");
@@ -19,9 +10,6 @@
   var mapId = Dnn.Module.ModuleID;
 }
 @locationHelper.AddGoogleMapsKey()
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,icons"})
-
-
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
@@ -80,4 +68,5 @@
 	</div>
 </div>
 
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,icons"})
 @RenderPage("_LocationScript.cshtml", new { markerImage = Content.Presentation.MarkerImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })

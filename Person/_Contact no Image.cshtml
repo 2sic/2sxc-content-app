@@ -1,15 +1,4 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Person/_Contact no Image.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner">
@@ -22,3 +11,5 @@
     </div>
   </div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})

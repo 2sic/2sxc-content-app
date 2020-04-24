@@ -1,16 +1,5 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Link/_List of links.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})
 
 @{
   // get helper commands
@@ -26,10 +15,14 @@
           <h4>@link.Title</h4>
           <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
           @if(linkInfo.Found) {
-            <a target="@linkInfo.Window" title="@link.Title" class="co-linkblock" href="@link.Link"><span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span></a>
+            <a class="co-linkblock" href="@Tags.SafeUrl(link.Link)" target="@linkInfo.Window" title="@link.Title">
+              <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+            </a>
           }
         </div>
       }
     </div>
   </div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})

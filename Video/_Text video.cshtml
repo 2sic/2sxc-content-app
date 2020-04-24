@@ -1,18 +1,6 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("../bs3/Video/_Text Video.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,fancybox,icons"})
-
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner" @Edit.TagToolbar(Content)>
     <div class="row">
@@ -27,3 +15,5 @@
     </div>
   </div>
 </div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,fancybox,icons"})
