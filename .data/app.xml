@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="10.25.00" ExportDate="2020-01-08T12:56:34.1654173+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.00.00" ExportDate="2020-05-01T18:23:17.0093145+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -3149,7 +3149,7 @@
       <Value Key="ImageCaption" Value="Legenda da imagem" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Click the &lt;em&gt;pencil-icon&lt;/em&gt; to edit content. This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum.&amp;nbsp;&lt;/p&gt;" Type="String">
+      <Value Key="Text" Value="&lt;p&gt;Click the &lt;em&gt;pencil-icon&lt;/em&gt; to edit &lt;a href=&quot;/content-bootstrap/en/basic-content&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;content&lt;/a&gt;. This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Text" Value="&lt;p&gt;Pulse el icono del l&amp;aacute;piz para editar contenido. Esto solo es texto de muestra con Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
@@ -3276,7 +3276,7 @@
       <Value Key="Image" Value="file:4205" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;" Type="String">
+      <Value Key="Text" Value="&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Te&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="New video" Type="String">
@@ -5239,16 +5239,16 @@
       <Value Key="OriginalId" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredDnnVersion" Value="07.02.00" Type="String">
+      <Value Key="RequiredDnnVersion" Value="07.04.02" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="10.24.00" Type="String">
+      <Value Key="RequiredVersion" Value="11.00.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="10.24.01" Type="String">
+      <Value Key="Version" Value="11.00.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5465,7 +5465,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="App" AttributeSetStaticName="App-Settings" AttributeSetName="App-Settings" EntityGUID="b567f24a-a856-4de1-ab81-6289a88fa698" KeyNumber="20">
-      <Value Key="AssetsBootstrap" Value="&lt;link rel=&quot;stylesheet&quot; href=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css&quot; integrity=&quot;sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; /&gt;&#xA;&lt;script src=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js&quot; integrity=&quot;sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; &gt;&lt;/script&gt;" Type="String">
+      <Value Key="AssetsBootstrap" Value="&lt;link rel=&quot;stylesheet&quot; href=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; /&gt;&#xA;&lt;script src=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js&quot; integrity=&quot;sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; &gt;&lt;/script&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="AssetsFancybox" Value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css&quot; data-enableoptimizations=&quot;bottom&quot; /&gt;&#xA;&lt;script defer src=&quot;https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js&quot; data-enableoptimizations=&quot;bottom&quot;&gt;&lt;/script&gt;" Type="String">
@@ -5482,6 +5482,25 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="App" AttributeSetStaticName="App-Resources" AttributeSetName="App-Resources" EntityGUID="d32e4150-c0aa-4758-946e-e8ff3e540a05" KeyNumber="20" />
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="Content" EntityGUID="92f7aad9-ecf1-4baf-9bda-a464605e7d1e">
+      <Value Key="Image" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ImageCaption" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="&lt;h1&gt;Heading 1&lt;/h1&gt;&#xA;&lt;h2&gt;Heading 2&lt;/h2&gt;&#xA;&lt;h3&gt;Heading 3&lt;/h3&gt;&#xA;&lt;p&gt;Paragraph 1&lt;/p&gt;&#xA;&lt;p&gt;Paragraph 2&lt;/p&gt;&#xA;&lt;p&gt;Paragraph 3&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Paragraph 1&lt;/p&gt;&#xA;&lt;p&gt;Paragraph 2&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&quot;#&quot;&gt;Link in Paragraph&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Paragraph next to Link&lt;/p&gt;&#xA;&lt;a href=&quot;#&quot;&gt;Link next to Paragraph&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Paragraph&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;I look like data! { id : &quot;1&quot;}&lt;/pre&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Strong in List Element&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;2&lt;/li&gt;&#xA;&lt;li&gt;3&lt;/li&gt;&#xA;&lt;li&gt;4&lt;/li&gt;&#xA;&lt;li&gt;5&lt;/li&gt;&#xA;&lt;li&gt;6&lt;/li&gt;&#xA;&lt;li&gt;7&lt;/li&gt;&#xA;&lt;li&gt;8&lt;/li&gt;&#xA;&lt;li&gt;9&lt;/li&gt;&#xA;&lt;li&gt;10&lt;/li&gt;&#xA;&lt;li&gt;11&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Paragraph in Paragraph&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="HTML Snippet" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="3937fa17-ef2d-40a7-b089-64164eb10bab" AttributeSetName="2sxcPolymorphismConfiguration" EntityGUID="943cd9be-0d46-46fa-9913-6cb621863ebc">
+      <Value Key="Mode" Value="Koi?cssFramework" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
@@ -5498,6 +5517,8 @@
     <File Id="4229" RelativePath="adam\Content\iFAOuyHgDU2HLNoCpQtjVA\MarkerImage\location-marker-300x300.png" />
     <File Id="4230" RelativePath="adam\Content\iFAOuyHgDU2HLNoCpQtjVA\MarkerImage\parking_lot_maps.png" />
     <File Id="4302" RelativePath="adam\Content\PKiuqV1LW0-BAguKrxIPHA\Image\placeholder.png" />
+    <File Id="4376" RelativePath="adam\Content\ylLL3GRTQ0KVZBAhDA_lPQ\Text\do-d-00.05-BurWeb-18.pdf" />
+    <File Id="4375" RelativePath="adam\Content\ylLL3GRTQ0KVZBAhDA_lPQ\Text\Job4You-Reforesting.jpg" />
     <File Id="4306" RelativePath="adam\Content\zzuRm2WuP0uyZS1S4gD1HQ\Image\placeholder.png" />
   </PortalFiles>
   <PortalFolders>
@@ -5508,6 +5529,7 @@
     <Folder Id="7138" RelativePath="adam/Content/bZBy--RCPka5bEB7Cjc27w/Image/" />
     <Folder Id="7100" RelativePath="adam/Content/iFAOuyHgDU2HLNoCpQtjVA/MarkerImage/" />
     <Folder Id="7136" RelativePath="adam/Content/PKiuqV1LW0-BAguKrxIPHA/Image/" />
+    <Folder Id="7585" RelativePath="adam/Content/ylLL3GRTQ0KVZBAhDA_lPQ/Text/" />
     <Folder Id="7144" RelativePath="adam/Content/zzuRm2WuP0uyZS1S4gD1HQ/Image/" />
     <Folder Id="285" RelativePath="adam/Content/" />
     <Folder Id="7151" RelativePath="adam/Content/_5PPc3V-X0iLEJfrZmBISQ/" />
@@ -5585,6 +5607,7 @@
     <Folder Id="7174" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/" />
     <Folder Id="7176" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/Image/" />
     <Folder Id="7175" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/Link/" />
+    <Folder Id="7584" RelativePath="adam/Content/ylLL3GRTQ0KVZBAhDA_lPQ/" />
     <Folder Id="7182" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/" />
     <Folder Id="7184" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Description/" />
     <Folder Id="7183" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/" />
