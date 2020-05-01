@@ -24,10 +24,7 @@
 				<div class='@((columns) > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
 					@if (img.Presentation.ImageLightbox) {
-            @:<a class="fancybox"
-                href='@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)'
-                data-caption='@(img.Presentation.TitleLightbox ? img.Title : "")'
-                data-fancbox="@Dnn.Module.ModuleID">
+             @:<a class="fancybox" href="@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)" data-caption="@(img.Presentation.TitleLightbox ? img.Title : "")" data-fancbox="@Dnn.Module.ModuleID">
 					}
 					<figure>
 							<div class="overlay w-100 h-100"></div>
