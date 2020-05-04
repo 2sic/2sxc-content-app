@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.00.00" ExportDate="2020-05-01T18:23:17.0093145+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.00.00" ExportDate="2020-05-04T17:49:03.8427255+02:00">
   <Header>
     <Language Default="en-US" />
     <Dimensions>
@@ -2416,7 +2416,10 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="InputType" Value="string-dropdown" Type="String" />
-            <Value Key="Name" Value="HeadingType" Type="String" />
+            <Value Key="Name" Value="Heading type" Type="String" />
+            <Value Key="Name" Value="Überschrift" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2447,8 +2450,29 @@
         </Attribute>
         <Attribute StaticName="VideoLightbox" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="8783ae5a-dbe5-4c45-8cfc-cbe9346cba28" KeyNumber="3383">
-            <Value Key="InputType" Value="boolean-default" Type="String" />
-            <Value Key="Name" Value="VideoLightbox" Type="String" />
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="boolean-tristate" Type="String" />
+            <Value Key="Name" Value="Enable video zoom" Type="String" />
+            <Value Key="Name" Value="Grossbild-Ansicht aktivieren?" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Required" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
           </Entity>
         </Attribute>
@@ -2461,15 +2485,13 @@
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="DefaultValue" Value="False" Type="String">
+            <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="boolean-tristate" Type="String" />
             <Value Key="Name" Value="Click to See Large" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2511,15 +2533,13 @@
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="DefaultValue" Value="true" Type="String">
+            <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="boolean-tristate" Type="String" />
             <Value Key="Name" Value="Show a title in lightbox" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2561,16 +2581,14 @@
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="DefaultValue" Value="false" Type="String">
+            <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Use content title in lightbox" Type="String">
+            <Value Key="InputType" Value="boolean-tristate" Type="String" />
+            <Value Key="Name" Value="Show image title" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Name" Value="Titel als Bildlegende verwenden?" Type="String">
@@ -2582,7 +2600,7 @@
             <Value Key="Name" Value="Utilizar o título do conteúdo em lightbox" Type="String">
               <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;If activated, it will use the title of the content in the large view, instead of the image label. Usually not recommended.&amp;nbsp;&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;Show the title / name of the image as legend.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Geactiveerd, wordt de titel van de content getoond in de grotere weergave in plaats van het image label. Wordt doorgaans niet geadviseerd.&lt;/p&gt;" Type="String">
@@ -2590,6 +2608,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Se activado, vai mostrar o t&amp;iacute;tulo do conte&amp;uacute;do em ponto grande, em vez da legenda da imagem. Normalmente n&amp;atilde;o recomendado.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Den Titel / Namen des Bildes als Legende anzeigen.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2836,15 +2857,13 @@
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="DefaultValue" Value="True" Type="String">
+            <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="boolean-tristate" Type="String" />
             <Value Key="Name" Value="Enable image zoom" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2877,15 +2896,16 @@
         </Attribute>
         <Attribute StaticName="TitleLightbox" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="8fb2ef48-e037-4e21-a0ca-cf3907b6dff5" KeyNumber="533">
-            <Value Key="DefaultValue" Value="True" Type="String">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
+            <Value Key="InputType" Value="boolean-tristate" Type="String" />
             <Value Key="Name" Value="Show title in lightbox" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -3227,10 +3247,10 @@
       <Value Key="HeadingType" Value="h2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageLightbox" Value="True" Type="Boolean">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="TitleLightbox" Value="True" Type="Boolean">
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -4718,7 +4738,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="07de9445-dcf6-4b21-b2db-56fdfffd98f3" KeyString="ef3be8fc-1c17-4680-8306-73a44fde53c6">
-      <Value Key="Description" Value="Settings for the Google Map Template (Standort Karte)" Type="String">
+      <Value Key="Description" Value="Settings for the Google Map Template (Location Map)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="Instellingen voor templates met Google Maps" Type="String">
@@ -4727,13 +4747,16 @@
       <Value Key="Description" Value="Definições para Template de Google Maps (Standort Karte)" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="Description" Value="Einstellungen für die Google Map-Vorlage (Standortkarte)" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Pres. Settings for Map Templates" Type="String">
+      <Value Key="Label" Value="Location Presentation" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Presentatieinstellingen templates met kaarten" Type="String">
@@ -4765,13 +4788,16 @@
       <Value Key="Description" Value="Definições para todos os Templates de Texto (Texto, Texto com Imagem à direita e esquerda)" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="Description" Value="Einstellungen für alle Textvorlagen (Text, Text mit Bild rechts &amp; links)" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Pres. Settings for Text/Image Templates" Type="String">
+      <Value Key="Label" Value="Basic Content Presentation" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Presentatieinstellingen voor templates met tekst en plaatjes" Type="String">
@@ -4780,7 +4806,7 @@
       <Value Key="Label" Value="Definições de apresentação para Templates de Texto/Imagens" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Präsentations Einstellungen für Text-/Bildvorlagen" Type="String">
+      <Value Key="Label" Value="Präsentations Einstellungen für Einfacher Inhalt" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
@@ -4803,13 +4829,16 @@
       <Value Key="Description" Value="Definições para todos os Templates de Imagens" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="Description" Value="Einstellungen für alle Bildvorlagen" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Pres. Settings for Image Templates" Type="String">
+      <Value Key="Label" Value="Image Presentation" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Presentatieinstelllingen voor templates met plaatjes" Type="String">
@@ -4972,10 +5001,10 @@
       <Value Key="HeadingType" Value="h1" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageLightbox" Value="True" Type="Boolean">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="TitleLightbox" Value="True" Type="Boolean">
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5117,13 +5146,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="243c0740-c6a6-460c-9fed-3ef5ae309632">
-      <Value Key="ImageLightbox" Value="True" Type="Boolean">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="TitleLegend" Value="True" Type="Boolean">
+      <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="TitleLightbox" Value="True" Type="Boolean">
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5207,13 +5236,13 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="50e499fb-1b0b-462d-bc77-e9dd4053419f">
-      <Value Key="ImageLightbox" Value="True" Type="Boolean">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="TitleLegend" Value="True" Type="Boolean">
+      <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="TitleLightbox" Value="True" Type="Boolean">
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5248,7 +5277,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="11.00.00" Type="String">
+      <Value Key="Version" Value="11.00.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5303,7 +5332,7 @@
       <Value Key="HeadingType" Value="h2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="VideoLightbox" Value="True" Type="Boolean">
+      <Value Key="VideoLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5311,7 +5340,7 @@
       <Value Key="HeadingType" Value="h2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="VideoLightbox" Value="True" Type="Boolean">
+      <Value Key="VideoLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5460,7 +5489,7 @@
       <Value Key="HeadingType" Value="h2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="VideoLightbox" Value="False" Type="Boolean">
+      <Value Key="VideoLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5498,6 +5527,35 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="3937fa17-ef2d-40a7-b089-64164eb10bab" AttributeSetName="2sxcPolymorphismConfiguration" EntityGUID="943cd9be-0d46-46fa-9913-6cb621863ebc">
       <Value Key="Mode" Value="Koi?cssFramework" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="fe7c3562-bbd2-4f66-b223-1ee366ce0de6" KeyString="e3315455-98a4-4ac4-911f-956de8645f53">
+      <Value Key="Description" Value="Settings for all Video Templates (Video, Video with Text right &amp; left)" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Einstellungen für alle Videovorlagen (Video, Video mit Text rechts &amp; links)" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="EditInstructions" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Icon" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Label" Value="Video Presentation" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Label" Value="Präsentations Einstellungen für Videovorlagen" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Link" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ListInstructions" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Notes" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
