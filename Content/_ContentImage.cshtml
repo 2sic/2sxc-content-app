@@ -25,7 +25,7 @@
 
   // prepare the title, either the default or the additional image caption
   var title="";
-  if(imgItem.Presentation.TitleLightbox){
+  if(imgItem.Presentation.TitleLightbox != false){
     title = Text.Has(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
   }
 
@@ -34,7 +34,7 @@
 }
 
 @if(hasImage) {
-  if (imgItem.Presentation.ImageLightbox) {
+  if (imgItem.Presentation.ImageLightbox != false) {
     @:<a class="fancybox" href='@Tags.SafeUrl(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality)' data-caption="@title">
   }
     <figure>
@@ -45,7 +45,7 @@
 
       <img class="img-fluid" src='@Tags.SafeUrl(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)' alt="@title" />
     </figure>
-  if (imgItem.Presentation.ImageLightbox) {
+  if (imgItem.Presentation.ImageLightbox != false) {
     @:</a>
   }
 }
