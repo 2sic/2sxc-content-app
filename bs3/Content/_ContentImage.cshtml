@@ -25,7 +25,7 @@
 
   // prepare the title, either the default or the additional image caption
   var title="";
-  if(imgItem.Presentation.TitleLightbox){
+  if(imgItem.Presentation.TitleLightbox != false){
     title = Text.Has(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
   }
 
@@ -35,7 +35,7 @@
 
 @if(hasImage) {
   <div class="co-img-wrapper">
-    @if (imgItem.Presentation.ImageLightbox) {
+    @if (imgItem.Presentation.TitleLightbox != false) {
       @Tag.A().Class("fancybox").Href(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality).Attr("data-caption", title).TagStart
     }
 
@@ -52,7 +52,7 @@
         .Alt(title))
     </figure>
 
-    @if (imgItem.Presentation.ImageLightbox) {
+    @if (imgItem.Presentation.TitleLightbox != false) {
       @Tag.A().TagEnd
     }
   </div>

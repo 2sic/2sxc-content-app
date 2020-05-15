@@ -24,17 +24,17 @@
 			@foreach (var img in AsList(Data))
 			{
 				<div class="co-img-imagelist @((columns) > 10 ? "col-xs-12" : "col-xs-6") col-md-@columns" @Edit.TagToolbar(img)>
-					@if (img.Presentation.ImageLightbox) {
+					@if (img.Presentation.ImageLightbox != false) {
             @(Tag.A()
               .Class("fancybox")
               .Href(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)
-              .Attr("data-caption", img.Presentation.TitleLightbox ? img.Title : "")
+              .Attr("data-caption", img.Presentation.TitleLightbox != false ? img.Title : "")
               .Attr("data-fancybox", "group-" + Dnn.Module.ModuleID)
               .TagStart)
 					}
 					<figure>
             <div class="co-overlay">
-              @if(img.Presentation.TitleLegend is bool && img.Presentation.TitleLegend){
+              @if(img.Presentation.TitleLegend != false){
                 <figcaption>@img.Title</figcaption>
               }
             </div>
@@ -44,7 +44,7 @@
               .Src(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)
               .Alt(img.title))
 					</figure>
-					@if (img.Presentation.ImageLightbox) {
+					@if (img.Presentation.ImageLightbox != false) {
 						@Tag.A().TagEnd
 					}
 
