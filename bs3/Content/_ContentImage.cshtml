@@ -35,7 +35,7 @@
 
 @if(hasImage) {
   <div class="co-img-wrapper">
-    @if (imgItem.Presentation.TitleLightbox != false) {
+    @if (imgItem.Presentation.ImageLightbox != false) {
       @Tag.A().Class("fancybox").Href(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality).Attr("data-caption", title).TagStart
     }
 
@@ -52,7 +52,7 @@
         .Alt(title))
     </figure>
 
-    @if (imgItem.Presentation.TitleLightbox != false) {
+    @if (imgItem.Presentation.ImageLightbox != false) {
       @Tag.A().TagEnd
     }
   </div>
