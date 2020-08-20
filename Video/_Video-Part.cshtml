@@ -50,6 +50,17 @@
   // no lightbox, show directly
   <div class="embed-responsive embed-responsive-16by9">
     @if(isYouTube) {
+      @* <iframe id="iframe-@Dnn.Module.ModuleID" class="embed-responsive-item" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
+
+      <script>
+        $(document).ready(function() {
+          $("[data-youtube-src]").each(function() {
+            var youtubeSrc = $(this).data("youtube-src");
+            $(this).attr("src", youtubeSrc);
+          })
+        })
+      </script> *@
+      
       <iframe class="embed-responsive-item" src="@youTubeUrl" allowfullscreen></iframe>
     } else {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
