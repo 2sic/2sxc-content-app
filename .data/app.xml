@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.01.00" ExportDate="2020-05-15T09:33:52.7745517+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.07.03" ExportDate="2020-10-15T13:31:45.744061+02:00">
   <Header>
-    <Language Default="en-US" />
+    <Language Default="en-us" />
     <Dimensions>
       <Dimension DimensionID="19" Name="English (United States)" SystemKey="" ExternalKey="en-US" Active="true" />
       <Dimension DimensionID="20" Name="Deutsch (Deutschland)" SystemKey="" ExternalKey="de-DE" Active="true" />
@@ -83,7 +83,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="0fdf00f4-9e48-4fb0-a689-0bd13ac811bd" Json="True" KeyNumber="3388">
-            <Value Key="RowCount" Value="3.0" Type="Number">
+            <Value Key="RowCount" Value="3" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -121,7 +121,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="9d0adfc3-6a05-482c-92c1-fb33acac1e07" Json="True" KeyNumber="3389">
-            <Value Key="RowCount" Value="3.0" Type="Number">
+            <Value Key="RowCount" Value="3" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -159,7 +159,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ae4787ab-52b4-4605-a197-32fb4b8601a3" Json="True" KeyNumber="3390">
-            <Value Key="RowCount" Value="3.0" Type="Number">
+            <Value Key="RowCount" Value="3" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -227,7 +227,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="798fe777-20df-4459-a600-9f3a0bc399d7" Json="True" KeyNumber="3392">
-            <Value Key="RowCount" Value="5.0" Type="Number">
+            <Value Key="RowCount" Value="5" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -324,7 +324,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="a94e8a90-4f7e-45e4-83a2-ebdc66fe8f6c" Json="True" KeyNumber="495">
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -390,7 +390,7 @@
             <Value Key="InputType" Value="wysiwyg" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -765,7 +765,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ef092ade-7829-445d-a4b1-2e44704a2895" Json="True" KeyNumber="542">
-            <Value Key="RowCount" Value="3.0" Type="Number">
+            <Value Key="RowCount" Value="3" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -877,12 +877,12 @@
             <Value Key="InputType" Value="default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="4.0" Type="Number">
+            <Value Key="RowCount" Value="4" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="01d7c0dd-290b-424d-aa70-00469c93e25f" Json="True" KeyNumber="517">
-            <Value Key="RowCount" Value="3.0" Type="Number">
+            <Value Key="RowCount" Value="3" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1068,7 +1068,7 @@
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1430,7 +1430,7 @@
             <Value Key="InputType" Value="wysiwyg" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1516,7 +1516,7 @@
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="9dd6de75-a572-43e9-bd19-beedc8cfa384" Json="True" KeyNumber="501" />
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="965d6148-8376-4fec-af51-c5c94beda097" Json="True" KeyNumber="501">
-            <Value Key="RowCount" Value="3.0" Type="Number">
+            <Value Key="RowCount" Value="3" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1803,7 +1803,7 @@
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="b91da03d-f7ba-46f0-b35a-927cf9e192e8" Json="True" KeyNumber="508" />
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="cb7571e3-1af4-4b02-a8b5-4e7430ead7ce" Json="True" KeyNumber="508" />
         </Attribute>
-        <Attribute StaticName="GPS Coordinates" Type="Empty" IsTitle="false">
+        <Attribute StaticName="GroupGps" Type="Empty" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="1ea720cc-de28-406c-a5cd-0cef7ce919be" Json="True" KeyNumber="865">
             <Value Key="DefaultValue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2101,7 +2101,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="e7ff83fc-afb9-42a9-8431-b20ce5fff295" Json="True" KeyNumber="521">
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2155,12 +2155,12 @@
             <Value Key="InputType" Value="wysiwyg" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ccb6d94f-ad60-45f4-aa60-581105689227" Json="True" KeyNumber="526">
-            <Value Key="RowCount" Value="2.0" Type="Number">
+            <Value Key="RowCount" Value="2" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2680,7 +2680,7 @@
             <Value Key="InputType" Value="dropdown" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2831,7 +2831,7 @@
             <Value Key="InputType" Value="dropdown" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2994,7 +2994,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="3b0721ea-ca20-4d58-8869-74739d2fc4b0" Json="True" KeyNumber="543">
-            <Value Key="RowCount" Value="1.0" Type="Number">
+            <Value Key="RowCount" Value="1" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3784,7 +3784,7 @@
       <Value Key="Location" Value="Portal File System" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Full width (100%)" Type="String">
+      <Value Key="Name" Value="Full width Video (100%)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Gesamte Breite (100%)" Type="String">
@@ -5277,7 +5277,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="11.00.03" Type="String">
+      <Value Key="Version" Value="11.00.04" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5489,7 +5489,7 @@
       <Value Key="HeadingType" Value="h2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="VideoLightbox" Value="" Type="Boolean">
+      <Value Key="VideoLightbox" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5633,6 +5633,9 @@
     <Folder Id="7191" RelativePath="adam/Content/HS0EEnvFy0SGVS4VXlqxPg/" />
     <Folder Id="7192" RelativePath="adam/Content/HS0EEnvFy0SGVS4VXlqxPg/Image/" />
     <Folder Id="7193" RelativePath="adam/Content/HS0EEnvFy0SGVS4VXlqxPg/Text/" />
+    <Folder Id="10243" RelativePath="adam/Content/HTiiH0tEFE6z2h86aByR6w/" />
+    <Folder Id="10244" RelativePath="adam/Content/HTiiH0tEFE6z2h86aByR6w/Image/" />
+    <Folder Id="10245" RelativePath="adam/Content/HTiiH0tEFE6z2h86aByR6w/Link/" />
     <Folder Id="7098" RelativePath="adam/Content/iFAOuyHgDU2HLNoCpQtjVA/" />
     <Folder Id="7161" RelativePath="adam/Content/JBuP_xMgDE-G6jZAXbNkwA/" />
     <Folder Id="7164" RelativePath="adam/Content/JBuP_xMgDE-G6jZAXbNkwA/Image/" />
@@ -5640,6 +5643,9 @@
     <Folder Id="7200" RelativePath="adam/Content/mS_169mcWUuWHnxRZ9PdIA/" />
     <Folder Id="7202" RelativePath="adam/Content/mS_169mcWUuWHnxRZ9PdIA/Description/" />
     <Folder Id="7201" RelativePath="adam/Content/mS_169mcWUuWHnxRZ9PdIA/Photo/" />
+    <Folder Id="10201" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/" />
+    <Folder Id="10202" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/Image/" />
+    <Folder Id="10203" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/Link/" />
     <Folder Id="7148" RelativePath="adam/Content/parGvYUcxE-tfHvn50TXRg/" />
     <Folder Id="7150" RelativePath="adam/Content/parGvYUcxE-tfHvn50TXRg/Image/" />
     <Folder Id="7135" RelativePath="adam/Content/PKiuqV1LW0-BAguKrxIPHA/" />
@@ -5650,18 +5656,30 @@
     <Folder Id="7235" RelativePath="adam/Content/rCALHddYHkCMMTe9aaDY8w/" />
     <Folder Id="7238" RelativePath="adam/Content/rCALHddYHkCMMTe9aaDY8w/Description/" />
     <Folder Id="7237" RelativePath="adam/Content/rCALHddYHkCMMTe9aaDY8w/Photo/" />
+    <Folder Id="10192" RelativePath="adam/Content/SwyWpDm3bUyBJbsIOMQhhw/" />
+    <Folder Id="10194" RelativePath="adam/Content/SwyWpDm3bUyBJbsIOMQhhw/Image/" />
+    <Folder Id="10193" RelativePath="adam/Content/SwyWpDm3bUyBJbsIOMQhhw/Link/" />
     <Folder Id="7211" RelativePath="adam/Content/u_GyRK6u0kyvr6JoG2-_VA/" />
     <Folder Id="7212" RelativePath="adam/Content/u_GyRK6u0kyvr6JoG2-_VA/Notes/" />
+    <Folder Id="10240" RelativePath="adam/Content/u6FBD_5Jm0aZcMP8qW0k-g/" />
+    <Folder Id="10242" RelativePath="adam/Content/u6FBD_5Jm0aZcMP8qW0k-g/Image/" />
+    <Folder Id="10241" RelativePath="adam/Content/u6FBD_5Jm0aZcMP8qW0k-g/Link/" />
     <Folder Id="7216" RelativePath="adam/Content/vhwS6nN3IUKXjn4sylC3qg/" />
     <Folder Id="7217" RelativePath="adam/Content/vhwS6nN3IUKXjn4sylC3qg/Image/" />
     <Folder Id="7218" RelativePath="adam/Content/vhwS6nN3IUKXjn4sylC3qg/Link/" />
     <Folder Id="7219" RelativePath="adam/Content/VLxSSBiJYkqEQGc8ztc8PA/" />
     <Folder Id="7220" RelativePath="adam/Content/VLxSSBiJYkqEQGc8ztc8PA/Notes/" />
+    <Folder Id="10198" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/" />
+    <Folder Id="10200" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/Image/" />
+    <Folder Id="10199" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/Link/" />
     <Folder Id="7145" RelativePath="adam/Content/W7Xj1VRCLE-1YOmsW_J99w/" />
     <Folder Id="7147" RelativePath="adam/Content/W7Xj1VRCLE-1YOmsW_J99w/Image/" />
     <Folder Id="7194" RelativePath="adam/Content/x34eivSvhkuX2Ax2t4BbCQ/" />
     <Folder Id="7196" RelativePath="adam/Content/x34eivSvhkuX2Ax2t4BbCQ/Image/" />
     <Folder Id="7195" RelativePath="adam/Content/x34eivSvhkuX2Ax2t4BbCQ/Link/" />
+    <Folder Id="10195" RelativePath="adam/Content/XdkrzetWKUm_9QaXC3tOMA/" />
+    <Folder Id="10197" RelativePath="adam/Content/XdkrzetWKUm_9QaXC3tOMA/Image/" />
+    <Folder Id="10196" RelativePath="adam/Content/XdkrzetWKUm_9QaXC3tOMA/Link/" />
     <Folder Id="7174" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/" />
     <Folder Id="7176" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/Image/" />
     <Folder Id="7175" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/Link/" />
