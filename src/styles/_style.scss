@@ -86,4 +86,39 @@
       }
     }
   }
+
+  .co-video-embed {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: auto;
+    }
+    
+    .overlay {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      background-color: rgba($dark, 0.4);
+      transition: background-color 0.3s ease-in-out;
+      cursor: pointer;
+
+      &.hide {
+        display: none !important;
+      }
+
+      svg {
+        font-size: 72px;
+        color: rgba(255, 255, 255, 1.0);
+        transition: color 0.3s ease-in-out;
+      }
+      &:hover {
+        svg {
+          color: red;
+        }
+      }
+    }
+  }
 }

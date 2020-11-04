@@ -1,6 +1,6 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @* This adds all link/script tags *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
 @{
   var videoId = System.Text.RegularExpressions.Regex.Match(Content.VideoLink, "v=([^&]+)");
@@ -8,11 +8,19 @@
 }
 <div class="co-container-outer">
 	<div class="co-container-inner co-youtube-video-wrapper mb-4" @Edit.TagToolbar(Content)>
-		<div class="embed-responsive embed-responsive-16by9">
+		<div class="co-video-embed embed-responsive embed-responsive-16by9">
 			@if (youtubeMatch.Success)
 			{
-				<iframe class="co-ytplayer"
-          src="@("https://www.youtube.com/embed/" + @youtubeMatch.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent")"
+        <img src="https://img.youtube.com/vi/@youtubeMatch.Groups[1].Value/maxresdefault.jpg" class="img-responsive">
+
+        <div class="overlay" data-youtube="iframe-@Dnn.Module.ModuleID">
+          <i class="fab fa-youtube"></i>
+        </div>
+   
+        <iframe 
+          id="iframe-@Dnn.Module.ModuleID"
+          class="co-ytplayer"
+          data-youtube-src="@("https://www.youtube.com/embed/" + @youtubeMatch.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true")"
           allowfullscreen></iframe>
 			}
 			else

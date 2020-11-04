@@ -13,7 +13,7 @@
     @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
   var isYouTube = youTube.Success;
   var youTubeUrl = isYouTube
-    ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent"
+    ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
   // configuration
@@ -48,20 +48,15 @@
   </a>
 } else {
   // no lightbox, show directly
-  <div class="embed-responsive embed-responsive-16by9">
+  <div class="co-video-embed embed-responsive embed-responsive-16by9">
     @if(isYouTube) {
-      @* <iframe id="iframe-@Dnn.Module.ModuleID" class="embed-responsive-item" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
+      <img src="https://img.youtube.com/vi/@youTube.Groups[1].Value/maxresdefault.jpg" class="img-fluid">
 
-      <script>
-        $(document).ready(function() {
-          $("[data-youtube-src]").each(function() {
-            var youtubeSrc = $(this).data("youtube-src");
-            $(this).attr("src", youtubeSrc);
-          })
-        })
-      </script> *@
-      
-      <iframe class="embed-responsive-item" src="@youTubeUrl" allowfullscreen></iframe>
+      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@Dnn.Module.ModuleID">
+        <i class="fab fa-youtube"></i>
+      </div>
+
+      <iframe id="iframe-@Dnn.Module.ModuleID" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
     } else {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
