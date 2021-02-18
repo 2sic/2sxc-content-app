@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.07.03" ExportDate="2020-10-15T13:31:45.744061+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.11.03" ExportDate="2021-02-18T15:35:19.3438888+01:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -243,9 +243,15 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="InputType" Value="boolean-default" Type="String" />
             <Value Key="Name" Value="Show Warning" Type="String" />
             <Value Key="Notes" Value="&lt;p&gt;Show the admin-warning that the default key is being used.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
@@ -255,6 +261,17 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="faedbbd1-9b85-427f-9a6b-2c166546440f" Json="True" KeyNumber="3393">
+            <Value Key="TitleFalse" Value="Hide Warning" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Shows Warning" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
       </Attributes>
@@ -2459,12 +2476,18 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="InputType" Value="boolean-tristate" Type="String" />
             <Value Key="Name" Value="Enable video zoom" Type="String" />
             <Value Key="Name" Value="Grossbild-Ansicht aktivieren?" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
@@ -2474,6 +2497,26 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="f273041b-be6a-405f-bcca-91c32d2b0e0e" Json="True" KeyNumber="3383">
+            <Value Key="TitleFalse" Value="Opens the video as iframe" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Öffnet das Video im Iframe" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Opens the video in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Öffnet das Video in einer Gross-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Opens the video in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Öffnet das Video in einer Gross-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
       </Attributes>
@@ -2489,6 +2532,9 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="InputType" Value="boolean-tristate" Type="String" />
@@ -2516,6 +2562,9 @@
             <Value Key="Notes" Value="&lt;p&gt;Permite ao utilizador carregar na imagem e ver uma vers&amp;atilde;o maior como uma lightbox.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2526,7 +2575,26 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="6f718a51-2840-4973-a16a-7a294985145b" Json="True" KeyNumber="528" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="6f718a51-2840-4973-a16a-7a294985145b" Json="True" KeyNumber="528">
+            <Value Key="TitleFalse" Value="Click has no action" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Der Klick hat keine Auswirkung" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Opens the image in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Das Bild öffnet eine Grossbild-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Opens the image in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Das Bild öffnet eine Grossbild-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
         <Attribute StaticName="TitleLightbox" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="bae75b8f-240e-4359-a6de-02f60c2261c1" Json="True" KeyNumber="529">
@@ -2537,6 +2605,9 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="InputType" Value="boolean-tristate" Type="String" />
@@ -2564,6 +2635,9 @@
             <Value Key="Notes" Value="&lt;p&gt;Mostrar o t&amp;iacute;tulo / nome da imagem em ponto maior.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="137" ReadOnly="false" />
             </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2574,7 +2648,26 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="05bed2c6-1119-4002-a5d0-a334a3721ebc" Json="True" KeyNumber="529" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="05bed2c6-1119-4002-a5d0-a334a3721ebc" Json="True" KeyNumber="529">
+            <Value Key="TitleFalse" Value="Does not show the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Zeigt den Titel in der Grossansicht nicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Shows the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Zeigt den Titel in der Grossansicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Shows the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Zeigt den Titel in der Grossansicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
         <Attribute StaticName="TitleLegend" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="c05cd2c0-8967-4e81-9e2b-47c58ccdbb9c" Json="True" KeyNumber="530">
@@ -2585,6 +2678,9 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="InputType" Value="boolean-tristate" Type="String" />
@@ -2612,6 +2708,9 @@
             <Value Key="Notes" Value="&lt;p&gt;Den Titel / Namen des Bildes als Legende anzeigen.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2622,7 +2721,26 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="bba847e1-edb3-46e7-9f9b-0af03aea1cc8" Json="True" KeyNumber="530" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="bba847e1-edb3-46e7-9f9b-0af03aea1cc8" Json="True" KeyNumber="530">
+            <Value Key="TitleFalse" Value="Does not show the title as imagelegend" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Zeigt den Titel als Bildeslegende nicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Shows the title as imagelegend" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Zeigt den Titel als Bildeslegende an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Shows the title as imagelegend" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Zeigt den Titel als Bildeslegende an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
       </Attributes>
     </AttributeSet>
@@ -2863,6 +2981,9 @@
             <Value Key="Disabled" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="InputType" Value="boolean-tristate" Type="String" />
             <Value Key="Name" Value="Enable image zoom" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -2882,6 +3003,9 @@
             <Value Key="Notes" Value="&lt;p&gt;Erm&amp;ouml;glicht eine Grossbild-Ansicht durch Anklicken des Bildes.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2892,7 +3016,26 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="3d73ac4f-94e1-45f4-bd42-e0a999917f80" Json="True" KeyNumber="532" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="3d73ac4f-94e1-45f4-bd42-e0a999917f80" Json="True" KeyNumber="532">
+            <Value Key="TitleFalse" Value="Click has no action" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Der Klick hat keine Auswirkung" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Opens the image in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Bild öffnet in Grossbild-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Opens the image in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Bild öffnet in Grossbild-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
         <Attribute StaticName="TitleLightbox" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="8fb2ef48-e037-4e21-a0ca-cf3907b6dff5" Json="True" KeyNumber="533">
@@ -2903,6 +3046,9 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="InputType" Value="boolean-tristate" Type="String" />
@@ -2921,6 +3067,9 @@
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2931,7 +3080,26 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="dfd69402-5405-460e-8113-3ee84eb9f617" Json="True" KeyNumber="533" />
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="dfd69402-5405-460e-8113-3ee84eb9f617" Json="True" KeyNumber="533">
+            <Value Key="TitleFalse" Value="Does not show the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Zeigt den Titel in der Grossansicht nicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Shows the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Zeigt den Titel in der Grossansicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Shows the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Zeigt den Titel in der Grossansicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
         </Attribute>
       </Attributes>
     </AttributeSet>
@@ -5277,7 +5445,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="11.00.04" Type="String">
+      <Value Key="Version" Value="11.00.06" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5599,6 +5767,7 @@
     <Folder Id="7304" RelativePath="adam/Content/-_QIL3p_Q0eXXXk7NQ3R5A/Text/" />
     <Folder Id="7400" RelativePath="adam/Content/_QjZ3nml20C0I-mUlRUDUQ/" />
     <Folder Id="7401" RelativePath="adam/Content/_QjZ3nml20C0I-mUlRUDUQ/Image/" />
+    <Folder Id="10352" RelativePath="adam/Content/_QjZ3nml20C0I-mUlRUDUQ/VideoLink/" />
     <Folder Id="7158" RelativePath="adam/Content/1dqlfq5UCEOmoUZyqj5j8w/" />
     <Folder Id="7160" RelativePath="adam/Content/1dqlfq5UCEOmoUZyqj5j8w/MarkerImage/" />
     <Folder Id="2983" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/" />
@@ -5615,21 +5784,36 @@
     <Folder Id="7177" RelativePath="adam/Content/3FEUgi3BQ0OyM5aBbXXRhQ/" />
     <Folder Id="7179" RelativePath="adam/Content/3FEUgi3BQ0OyM5aBbXXRhQ/Image/" />
     <Folder Id="7178" RelativePath="adam/Content/3FEUgi3BQ0OyM5aBbXXRhQ/Link/" />
+    <Folder Id="10375" RelativePath="adam/Content/49sQmM_6ekOVvbAMQXD_Vg/" />
+    <Folder Id="10376" RelativePath="adam/Content/49sQmM_6ekOVvbAMQXD_Vg/Image/" />
     <Folder Id="7171" RelativePath="adam/Content/4pso-KIU-0y2aOhgbLl5qQ/" />
     <Folder Id="7172" RelativePath="adam/Content/4pso-KIU-0y2aOhgbLl5qQ/Image/" />
     <Folder Id="7173" RelativePath="adam/Content/4pso-KIU-0y2aOhgbLl5qQ/Text/" />
+    <Folder Id="10371" RelativePath="adam/Content/6hv8oc9kXECZBCQ_GLSpBg/" />
+    <Folder Id="10372" RelativePath="adam/Content/6hv8oc9kXECZBCQ_GLSpBg/Image/" />
     <Folder Id="7208" RelativePath="adam/Content/7ZGA0vSAGk-xnUccCeEBEg/" />
     <Folder Id="7209" RelativePath="adam/Content/7ZGA0vSAGk-xnUccCeEBEg/Image/" />
     <Folder Id="7210" RelativePath="adam/Content/7ZGA0vSAGk-xnUccCeEBEg/Link/" />
     <Folder Id="7168" RelativePath="adam/Content/8oJT98bZe0-DyIyreUO1wQ/" />
     <Folder Id="7170" RelativePath="adam/Content/8oJT98bZe0-DyIyreUO1wQ/Image/" />
     <Folder Id="7169" RelativePath="adam/Content/8oJT98bZe0-DyIyreUO1wQ/Text/" />
+    <Folder Id="10365" RelativePath="adam/Content/bOdbCZA6ZEKueEthL1Yytw/" />
+    <Folder Id="10366" RelativePath="adam/Content/bOdbCZA6ZEKueEthL1Yytw/Image/" />
     <Folder Id="7137" RelativePath="adam/Content/bZBy--RCPka5bEB7Cjc27w/" />
+    <Folder Id="10363" RelativePath="adam/Content/Cu9vNL1jAUercYKnP9_5hw/" />
+    <Folder Id="10364" RelativePath="adam/Content/Cu9vNL1jAUercYKnP9_5hw/Image/" />
     <Folder Id="7213" RelativePath="adam/Content/dmqRIBPMrU-4Jaj-oDinSQ/" />
     <Folder Id="7214" RelativePath="adam/Content/dmqRIBPMrU-4Jaj-oDinSQ/Image/" />
     <Folder Id="7215" RelativePath="adam/Content/dmqRIBPMrU-4Jaj-oDinSQ/Link/" />
     <Folder Id="7157" RelativePath="adam/Content/dwViTjCaVUatDaL-D27loA/" />
     <Folder Id="7159" RelativePath="adam/Content/dwViTjCaVUatDaL-D27loA/Description/" />
+    <Folder Id="10369" RelativePath="adam/Content/EeGaPMro3UuQ9_Gwgp92Yg/" />
+    <Folder Id="10370" RelativePath="adam/Content/EeGaPMro3UuQ9_Gwgp92Yg/Image/" />
+    <Folder Id="10479" RelativePath="adam/Content/gOLs4Hz1TUmN2hJuDrsjOg/" />
+    <Folder Id="10480" RelativePath="adam/Content/gOLs4Hz1TUmN2hJuDrsjOg/Image/" />
+    <Folder Id="10353" RelativePath="adam/Content/h2-8BhJ0NUGei92EZAPIRQ/" />
+    <Folder Id="10355" RelativePath="adam/Content/h2-8BhJ0NUGei92EZAPIRQ/Image/" />
+    <Folder Id="10354" RelativePath="adam/Content/h2-8BhJ0NUGei92EZAPIRQ/VideoLink/" />
     <Folder Id="7191" RelativePath="adam/Content/HS0EEnvFy0SGVS4VXlqxPg/" />
     <Folder Id="7192" RelativePath="adam/Content/HS0EEnvFy0SGVS4VXlqxPg/Image/" />
     <Folder Id="7193" RelativePath="adam/Content/HS0EEnvFy0SGVS4VXlqxPg/Text/" />
@@ -5640,9 +5824,16 @@
     <Folder Id="7161" RelativePath="adam/Content/JBuP_xMgDE-G6jZAXbNkwA/" />
     <Folder Id="7164" RelativePath="adam/Content/JBuP_xMgDE-G6jZAXbNkwA/Image/" />
     <Folder Id="7163" RelativePath="adam/Content/JBuP_xMgDE-G6jZAXbNkwA/Text/" />
+    <Folder Id="10356" RelativePath="adam/Content/KOISzOTx20iW0z67ZNlMEg/" />
+    <Folder Id="10357" RelativePath="adam/Content/KOISzOTx20iW0z67ZNlMEg/Photo/" />
+    <Folder Id="10323" RelativePath="adam/Content/KULfaLT9Ak2qFUVQvd1fZQ/" />
+    <Folder Id="10325" RelativePath="adam/Content/KULfaLT9Ak2qFUVQvd1fZQ/Image/" />
+    <Folder Id="10324" RelativePath="adam/Content/KULfaLT9Ak2qFUVQvd1fZQ/VideoLink/" />
     <Folder Id="7200" RelativePath="adam/Content/mS_169mcWUuWHnxRZ9PdIA/" />
     <Folder Id="7202" RelativePath="adam/Content/mS_169mcWUuWHnxRZ9PdIA/Description/" />
     <Folder Id="7201" RelativePath="adam/Content/mS_169mcWUuWHnxRZ9PdIA/Photo/" />
+    <Folder Id="10379" RelativePath="adam/Content/nEk2J5PiYkuDUTbSvKOoiA/" />
+    <Folder Id="10380" RelativePath="adam/Content/nEk2J5PiYkuDUTbSvKOoiA/MarkerImage/" />
     <Folder Id="10201" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/" />
     <Folder Id="10202" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/Image/" />
     <Folder Id="10203" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/Link/" />
@@ -5656,14 +5847,25 @@
     <Folder Id="7235" RelativePath="adam/Content/rCALHddYHkCMMTe9aaDY8w/" />
     <Folder Id="7238" RelativePath="adam/Content/rCALHddYHkCMMTe9aaDY8w/Description/" />
     <Folder Id="7237" RelativePath="adam/Content/rCALHddYHkCMMTe9aaDY8w/Photo/" />
+    <Folder Id="10367" RelativePath="adam/Content/rq9BvTr1cEW98EiyWuY2ew/" />
+    <Folder Id="10368" RelativePath="adam/Content/rq9BvTr1cEW98EiyWuY2ew/Image/" />
+    <Folder Id="10469" RelativePath="adam/Content/sanax-9kkEWEHxobEboEeQ/" />
+    <Folder Id="10470" RelativePath="adam/Content/sanax-9kkEWEHxobEboEeQ/Image/" />
+    <Folder Id="10348" RelativePath="adam/Content/SbpMX9oXV02pWGhBr-IzOQ/" />
+    <Folder Id="10350" RelativePath="adam/Content/SbpMX9oXV02pWGhBr-IzOQ/Image/" />
+    <Folder Id="10351" RelativePath="adam/Content/SbpMX9oXV02pWGhBr-IzOQ/VideoLink/" />
     <Folder Id="10192" RelativePath="adam/Content/SwyWpDm3bUyBJbsIOMQhhw/" />
     <Folder Id="10194" RelativePath="adam/Content/SwyWpDm3bUyBJbsIOMQhhw/Image/" />
     <Folder Id="10193" RelativePath="adam/Content/SwyWpDm3bUyBJbsIOMQhhw/Link/" />
     <Folder Id="7211" RelativePath="adam/Content/u_GyRK6u0kyvr6JoG2-_VA/" />
     <Folder Id="7212" RelativePath="adam/Content/u_GyRK6u0kyvr6JoG2-_VA/Notes/" />
+    <Folder Id="10473" RelativePath="adam/Content/U3jeHgMg1kC-pYopIHMwvQ/" />
+    <Folder Id="10474" RelativePath="adam/Content/U3jeHgMg1kC-pYopIHMwvQ/Image/" />
     <Folder Id="10240" RelativePath="adam/Content/u6FBD_5Jm0aZcMP8qW0k-g/" />
     <Folder Id="10242" RelativePath="adam/Content/u6FBD_5Jm0aZcMP8qW0k-g/Image/" />
     <Folder Id="10241" RelativePath="adam/Content/u6FBD_5Jm0aZcMP8qW0k-g/Link/" />
+    <Folder Id="10471" RelativePath="adam/Content/Ufaf9MwPSk-sFrT_gM_mVA/" />
+    <Folder Id="10472" RelativePath="adam/Content/Ufaf9MwPSk-sFrT_gM_mVA/Image/" />
     <Folder Id="7216" RelativePath="adam/Content/vhwS6nN3IUKXjn4sylC3qg/" />
     <Folder Id="7217" RelativePath="adam/Content/vhwS6nN3IUKXjn4sylC3qg/Image/" />
     <Folder Id="7218" RelativePath="adam/Content/vhwS6nN3IUKXjn4sylC3qg/Link/" />
@@ -5672,8 +5874,14 @@
     <Folder Id="10198" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/" />
     <Folder Id="10200" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/Image/" />
     <Folder Id="10199" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/Link/" />
+    <Folder Id="10358" RelativePath="adam/Content/vWbPeLSHJ0GijVFr7KlzrA/" />
+    <Folder Id="10359" RelativePath="adam/Content/vWbPeLSHJ0GijVFr7KlzrA/MarkerImage/" />
     <Folder Id="7145" RelativePath="adam/Content/W7Xj1VRCLE-1YOmsW_J99w/" />
     <Folder Id="7147" RelativePath="adam/Content/W7Xj1VRCLE-1YOmsW_J99w/Image/" />
+    <Folder Id="10377" RelativePath="adam/Content/wtaV6qmPkEaiBAMmGvvUhA/" />
+    <Folder Id="10378" RelativePath="adam/Content/wtaV6qmPkEaiBAMmGvvUhA/Image/" />
+    <Folder Id="10449" RelativePath="adam/Content/X0eXVnvAPUeky0QVZz7Qdg/" />
+    <Folder Id="10450" RelativePath="adam/Content/X0eXVnvAPUeky0QVZz7Qdg/Image/" />
     <Folder Id="7194" RelativePath="adam/Content/x34eivSvhkuX2Ax2t4BbCQ/" />
     <Folder Id="7196" RelativePath="adam/Content/x34eivSvhkuX2Ax2t4BbCQ/Image/" />
     <Folder Id="7195" RelativePath="adam/Content/x34eivSvhkuX2Ax2t4BbCQ/Link/" />
@@ -5683,6 +5891,11 @@
     <Folder Id="7174" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/" />
     <Folder Id="7176" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/Image/" />
     <Folder Id="7175" RelativePath="adam/Content/xhkd90AP_UCUHVX7J0EfyQ/Link/" />
+    <Folder Id="10360" RelativePath="adam/Content/XNXYsb6fkkmaNSalyTAJUg/" />
+    <Folder Id="10362" RelativePath="adam/Content/XNXYsb6fkkmaNSalyTAJUg/Image/" />
+    <Folder Id="10361" RelativePath="adam/Content/XNXYsb6fkkmaNSalyTAJUg/Link/" />
+    <Folder Id="10373" RelativePath="adam/Content/YhOBqutvUUmYr8q_KqhiGA/" />
+    <Folder Id="10374" RelativePath="adam/Content/YhOBqutvUUmYr8q_KqhiGA/Image/" />
     <Folder Id="7584" RelativePath="adam/Content/ylLL3GRTQ0KVZBAhDA_lPQ/" />
     <Folder Id="7182" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/" />
     <Folder Id="7184" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Description/" />

@@ -3,6 +3,9 @@
 @using System.IO;
 @using ToSic.Razor.Blade;
 
+@using System.Threading;
+@using System.Globalization;
+
 @functions {
   public class MapInfo
   {
@@ -27,7 +30,7 @@
     // this link will be used to open the Google-Directions in a new window
     var directionurl = gpsLong > 0
       // if we have coordinates, use them
-      ? "https://www.google.com/maps/dir/" + gpsLat + "," + gpsLong
+      ? "https://www.google.com/maps/dir/" + gpsLat.ToString("G", CultureInfo.InvariantCulture) + "," + gpsLong.ToString("G", CultureInfo.InvariantCulture)
       // otherwise use the address
       : "https://maps.google.com/maps?daddr="
         + (content.Street + " " + content.ZipCode + " " + content.City + " " + content.Country)
