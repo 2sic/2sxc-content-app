@@ -1,0 +1,13 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+
+<div class="max-w-full mb-10 md:mb-16">
+  <div class="w-full mx-auto md:w-8/12" @Edit.TagToolbar(Content)>
+    <div class="text-center")>
+      @* call sub-template to show the title with the correct H1-H6 tag *@
+      <div class="mb-2 text-2xl font-semibold md:text-3xl ">@RenderPage("../shared/_Header tag.cshtml")</div>
+      <div class="max-w-full tracking-tight prose">@Html.Raw(Content.Text)</div>
+    </div>
+  </div>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})

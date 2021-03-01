@@ -1,0 +1,19 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+
+<div class="max-w-full mb-12 md:mb-16">
+	<div class="grid grid-rows-1 gap-6 text-left md:gap-8 md:grid-cols-2" @Edit.TagToolbar(Content)>
+		<div>
+			@* call sub-template to show the title with the correct H1-H6 tag *@
+			<div class="mb-2 text-2xl font-semibold md:text-3xl ">@RenderPage("../shared/_Header tag.cshtml")</div>  
+			<div class="max-w-full tracking-tight prose">@Html.Raw(Content.Text)</div> 
+		</div>
+		<div>
+			@* call sub-template to show the image with all possible options *@
+			@RenderPage("_ContentImage.cshtml", new { img = Content, width = 540 })
+		</div>
+	</div>
+</div>
+
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts"})
+
