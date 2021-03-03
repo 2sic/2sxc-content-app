@@ -13,8 +13,8 @@
 
 <div class="max-w-full mb-10 md:mb-16">
   <div @Edit.TagToolbar(Content)>
-    <div class="co-google-map-container embed-responsive embed-responsive-21by9">
-      <div class="embed-responsive-item" id="GoogleMap-@mapId"></div>
+    <div class="co-google-map-container relative block w-full overflow:hidden aspect-w-15 aspect-h-6">
+      <div class="absolute inset-0 w-full h-auto border-0" id="GoogleMap-@mapId"></div>
       <div id="GoogleMap-Content-@mapId" style="display:none;">
         <div class="p-2 text-center">
           <h4>@Content.Company</h4>

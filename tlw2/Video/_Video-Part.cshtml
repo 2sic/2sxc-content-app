@@ -36,7 +36,7 @@
       @if(Text.Has(Content.Image)) {
       <figure>
         <div class="absolute hover:bg-gray-700 hover:bg-opacity-40 tansition-opacity duration-300 ease-in-out z-20 inset-0 flex justify-center items-center w-full h-full group text-lg">
-          <i class="fab fa-youtube fa-4x text-white group-hover:text-red-500 tansition-opacity duration-300 ease-in-out"></i>
+          <i class="fab fa-youtube fa-4x text-white group-hover:text-red-600 tansition-opacity duration-300 ease-in-out"></i>
         </div>
         <img class="max-w-full h-auto"
           src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)'
@@ -48,12 +48,12 @@
   </a>
 } else {
   // no lightbox, show directly
-  <div class="relative block w-auto">
+  <div class="relative block w-auto aspect-w-16 aspect-h-9">
     @if(isYouTube) {
-      <img src="https://img.youtube.com/vi/@youTube.Groups[1].Value/maxresdefault.jpg" class="max-w-full h-auto" />
+      <img src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)' class="max-w-full" />
 
       <div class="absolute bg-gray-700 bg-opacity-40 tansition-opacity duration-300 ease-in-out z-20 inset-0 flex justify-center items-center w-full h-full group text-lg" data-youtube="iframe-@Dnn.Module.ModuleID">
-        <i class="fab fa-youtube fa-4x text-white group-hover:text-red-500 tansition-opacity duration-300 ease-in-out"></i>
+        <i class="fab fa-youtube fa-4x text-white group-hover:text-red-600 tansition-opacity duration-300 ease-in-out"></i>
       </div>
 
       <iframe class="absolute inset-0 z-10 w-full h-full" id="iframe-@Dnn.Module.ModuleID" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
