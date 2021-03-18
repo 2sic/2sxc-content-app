@@ -1,0 +1,11 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+
+@{
+	var lineHalf = PageData["lineHalf"] ? "w-1/2 mx-auto py-4" : "w-full py-4";
+}
+
+<div class="w-full mb-2">
+  <hr class="@lineHalf"/>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})

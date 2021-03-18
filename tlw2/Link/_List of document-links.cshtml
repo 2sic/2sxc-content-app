@@ -1,0 +1,38 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+
+@{
+  // get helper commands
+  var linkHelper = CreateInstance("_LinkHelper.cshtml");
+}
+
+<div class="max-w-full mb-10 text-left md:mb-16">
+  <ul>
+    @foreach (var link in AsList(Data))
+    {
+      var linkInfo = linkHelper.LinkInfos(link.Link, link.Window, link.Icon);
+      <li class="pb-3" @Edit.TagToolbar(link)>
+        @if (linkInfo.Found)
+        {
+          @:<a class="text-black hover:text-black hover:no-underline group" href='@Tags.SafeUrl(link.Link)' target="@linkInfo.Window" title="@link.Title">
+        }
+        <div class="flex-row flex">
+          <div class="pt-1 pb-0 pl-0 pr-2">
+            <i class="text-primary-500 text-2xl fas @linkInfo.Icon"></i>
+          </div>
+          <div class="px-2 py-0">
+            <span class="text-xl text-primary-500 group-hover:text-primary-800 group-hover:underline">@link.Title</span>
+            <p class="mt-1 leading-relaxed hover:no-underline">@Html.Raw(Tags.Nl2Br(link.Description))</p>
+          </div>
+        </div>
+
+        @if (linkInfo.Found)
+        {
+          @:</a>
+        }
+      </li>
+    }
+  </ul>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,icons"})

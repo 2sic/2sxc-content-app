@@ -1,0 +1,10 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+
+<div class="max-w-full mb-10 md:mb-16">
+	<div class="text-left" @Edit.TagToolbar(Content)>
+    @* call sub-template to show the title with the correct H1-H6 tag *@
+    <div class="mb-2 text-2xl font-semibold md:text-4xl ">@RenderPage("../shared/_Header tag.cshtml")</div>
+  </div>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})

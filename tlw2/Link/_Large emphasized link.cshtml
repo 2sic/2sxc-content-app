@@ -1,0 +1,28 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+
+@{
+  // get helper commands
+  var linkHelper = CreateInstance("_LinkHelper.cshtml");
+  // run helper command
+  var linkInfo = linkHelper.LinkInfos(Content.Link, Content.Window, Content.Icon);
+}
+
+<div class="mb-8 md:mb-12">
+  <div class="py-12 text-center" @Edit.TagToolbar(Content)>
+    @if (Content.Presentation.HeadingType != "hide")
+    {
+      <h2 class="mb-2 text-3xl font-medium lg:text-4xl">@Content.Title</h2>
+      <p class="mb-10 text-xl lg:text-2xl">@Content.Description</p>
+    }
+    @if (linkInfo.Found)
+    {
+      <a target="@linkInfo.Window" class="group px-3 py-2.5 text-xl border-2 border-opacity-50 rounded-lg border-primary-500 hover:no-underline text-primary-500 hover:bg-primary-500" href="@Tags.SafeUrl(Content.Link)">
+        <i class="co-icon fas @linkInfo.Icon group-hover:text-white" aria-hidden="true"></i>
+        <span class="group-hover:text-white">@Content.LinkText</span>
+      </a>
+    }
+  </div>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,icons"})

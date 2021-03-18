@@ -1,0 +1,30 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+
+@{
+	// get helper commands
+	var locationHelper = CreateInstance("_LocationHelper.cshtml");
+	// run helper command
+	var mapInfo = locationHelper.MapInfos(Content);
+	// we need a unique ID for the map, in case there are many on the same page
+	var mapId = Dnn.Module.ModuleID;
+}
+@locationHelper.AddGoogleMapsKey()
+
+<div class="max-w-full mb-10 md:mb-16">
+  <div @Edit.TagToolbar(Content)>
+    <div class="co-google-map-container relative block w-full overflow:hidden aspect-w-15 aspect-h-6">
+      <div class="absolute inset-0 w-full h-auto border-0" id="GoogleMap-@mapId"></div>
+      <div id="GoogleMap-Content-@mapId" style="display:none;">
+        <div class="p-2 text-center">
+          <h4>@Content.Company</h4>
+          <div>@Html.Raw(Content.Description)</div>
+          <a class="btn btn-outline-primary" target="_blank" href="@mapInfo.DirectionUrl">@Content.LabelDirections</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "scripts,icons"})
+@RenderPage("_LocationScript.cshtml", new { markerImage = Content.Presentation.MarkerImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })

@@ -1,0 +1,20 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+
+@{
+  // this is the parameter passed in from the calling page
+  var width = PageData["width"];
+  var height = PageData["height"];
+
+  var quality = 75;
+}
+
+<div class="max-w-full mb-12 md:mb-16">
+ <div class="w-full" @Edit.TagToolbar(Content)>
+    <img class="w-full"
+      src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&anchor=" + Content.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
+      alt="@Content.Title" />
+  </div>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})

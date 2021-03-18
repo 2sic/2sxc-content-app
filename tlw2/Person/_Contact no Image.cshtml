@@ -1,0 +1,14 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+
+<div class="max-w-full mb-10 md:mb-16">
+  <div class="grid grid-cols-1 text-left md:grid-cols-3 gap-4">
+    @foreach (var person in AsList(Data))
+    {
+      <div class="mb-4" itemscope itemtype="http://schema.org/Person" @Edit.TagToolbar(person) >
+        @RenderPage("_PersonData.cshtml", new { data = person })
+      </div>
+    }
+    </div>
+</div>
+
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})

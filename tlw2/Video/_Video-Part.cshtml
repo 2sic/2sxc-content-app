@@ -1,0 +1,64 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@using System.Text.RegularExpressions;
+@*
+  this is a partial template which is re-used in many other templates,
+  so it's shared here. Expects:
+  * width - an int
+  * height - an int
+*@
+
+@{
+	var youTube = Regex.Match(Content.VideoLink,
+    @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+  var isYouTube = youTube.Success;
+  var youTubeUrl = isYouTube
+    ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
+    : "";
+
+  // configuration
+  var retina = true;
+  var quality = 75;
+  var lightboxQuality = 90;
+
+  // this is the parameter passed in from the calling page
+  int width = PageData["width"];
+  int height = PageData["height"];
+  if(retina) {
+    width += width; // double if retina
+    height += height; // double if retina
+    quality = 50;
+  }
+}
+@if(Content.Presentation.VideoLightbox != false) {
+  // open in lightbox
+  <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="relative block w-auto" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
+      @if(Text.Has(Content.Image)) {
+      <figure>
+        <div class="absolute hover:bg-gray-700 hover:bg-opacity-40 tansition-opacity duration-300 ease-in-out z-20 inset-0 flex justify-center items-center w-full h-full group text-lg">
+          <i class="fab fa-youtube fa-4x text-white group-hover:text-red-600 tansition-opacity duration-300 ease-in-out"></i>
+        </div>
+        <img class="max-w-full h-auto"
+          src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)'
+          alt="@Content.Title" />
+      </figure>
+      } else {
+        <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
+      }
+  </a>
+} else {
+  // no lightbox, show directly
+  <div class="relative block w-auto aspect-w-16 aspect-h-9">
+    @if(isYouTube) {
+      <img src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)' class="max-w-full" />
+
+      <div class="absolute bg-gray-700 bg-opacity-40 tansition-opacity duration-300 ease-in-out z-20 inset-0 flex justify-center items-center w-full h-full group text-lg" data-youtube="iframe-@Dnn.Module.ModuleID">
+        <i class="fab fa-youtube fa-4x text-white group-hover:text-red-600 tansition-opacity duration-300 ease-in-out"></i>
+      </div>
+
+      <iframe class="absolute inset-0 z-10 w-full h-full" id="iframe-@Dnn.Module.ModuleID" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
+    } else {
+      <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
+    }
+  </div>
+}

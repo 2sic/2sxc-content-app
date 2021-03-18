@@ -1,0 +1,40 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@*
+  this is a partial template which is re-used in many other templates, so it's shared here
+  its shows the person data like name, position, concact data and description
+*@
+@{
+  var person = PageData["data"];
+}
+<div class="mb-2">
+  <div class="text-xl font-bold" itemprop="name">@person.FullName</div>
+  @if (Text.Has(person.Position))
+  {
+    <div class="mb-2 text-xl font-normal" itemprop="jobTitle">@person.Position</div>
+  }
+  <div class="prose mb-2.5" itemprop="description">@Html.Raw((string)person.Description)</div>
+</div>
+<div class="">
+  @if (Text.Has(person.Mobile))
+  {
+    <div class="mb-1" itemprop="telephone">
+      <i class="text-center fas fa-mobile" style="width:30px;" aria-hidden="true"></i>
+      <a class="text-primary-500 hover:text-primary-800 hover:underline" href="tel:@person.Mobile.Replace(" ", "")" itemprop="telephone">@person.Mobile</a>
+    </div>
+  }
+  @if (Text.Has(person.Phone))
+  {
+    <div class="mb-1" itemprop="telephone">
+      <i class="text-center fas fa-phone" style="width:30px;" aria-hidden="true"></i>
+      <a class="text-primary-500 hover:text-primary-800 hover:underline" href="tel:@person.Phone.Replace(" ", "")" itemprop="telephone">@person.Phone</a>
+    </div>
+  }
+   @if (Text.Has(person.Email))
+  {
+    <div class="mb-1" itemprop="email">
+      <i class="text-center fas fa-envelope" style="width:30px;"></i>
+      <span class="text-primary-500 hover:text-primary-800 hover:underline">@RenderPage("../shared/_TryToEncryptMail.cshtml", new { email = person.Email })</span>
+    </div>
+  }
+</div>
