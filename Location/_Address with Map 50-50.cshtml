@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits ToSic.Custom.Razor12
 @using ToSic.Razor.Blade;
 
 @{
@@ -7,7 +7,7 @@
   // run helper command
   var mapInfo = locationHelper.MapInfos(Content);
   // we need a unique ID for the map, in case there are many on the same page
-  var mapId = Dnn.Module.ModuleID;
+  var mapId = CmsContext.Module.Id;
 }
 @locationHelper.AddGoogleMapsKey()
 

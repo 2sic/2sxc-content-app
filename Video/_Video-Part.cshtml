@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits ToSic.Custom.Razor12
 @using ToSic.Razor.Blade;
 @using System.Text.RegularExpressions;
 @*
@@ -32,7 +32,7 @@
 }
 @if(Content.Presentation.VideoLightbox != false) {
   // open in lightbox
-  <a data-fancybox="fancybox-@Dnn.Module.ModuleID" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
+  <a data-fancybox="fancybox-@CmsContext.Module.Id" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
       @if(Text.Has(Content.Image)) {
       <figure>
         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
@@ -52,11 +52,11 @@
     @if(isYouTube) {
       <img src="https://img.youtube.com/vi/@youTube.Groups[1].Value/maxresdefault.jpg" class="img-fluid">
 
-      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@Dnn.Module.ModuleID">
+      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>
       </div>
 
-      <iframe id="iframe-@Dnn.Module.ModuleID" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
+      <iframe id="iframe-@CmsContext.Module.Id" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
     } else {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }

@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits ToSic.Custom.Razor12
 @using System.Dynamic;
 @using System.IO;
 @using ToSic.Razor.Blade;
@@ -20,7 +20,8 @@
     var mInfo = new MapInfo();
 
     // Language is used for the map-link
-    var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
+    // TODO V12 - this is probably not the final object name!
+    var language = CmsContext.Culture.CurrentCode.Split(new[] { '-' })[0];
 
     // GPS is a JSON field, so we must use AsDynamic to access the properties
     var gps = AsDynamic(content.GPS);
