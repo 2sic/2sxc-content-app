@@ -23,10 +23,11 @@
 
     // process remaining properties, in case we want to override them with automatic stuff
     if(found) {
-      var linkExt = System.IO.Path.GetExtension(link.ToLower());
+      var linkExt = Path.GetExtension(link.ToLower());
       var isDoc = fileExtensions.Contains(linkExt);
 
       // try to find out if it's a local link
+      // TODO: V12 - this shouldn't use Dnn.*
       var isInternal = link.Contains(Dnn.Portal.PortalAlias.HTTPAlias)
         || link.StartsWith("/") // absolute link in same site
         || link.StartsWith("#") // hash-link on same page
