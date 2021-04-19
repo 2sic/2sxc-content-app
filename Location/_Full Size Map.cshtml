@@ -9,7 +9,8 @@
   // we need a unique ID for the map, in case there are many on the same page
   var mapId = CmsContext.Module.Id;
 }
-@locationHelper.AddGoogleMapsKey()
+@RenderPage("_GoogleMapsKey.cshtml")
+
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
