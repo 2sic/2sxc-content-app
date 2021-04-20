@@ -5,11 +5,11 @@
     <div class="row">
       <div class="col-md-8 offset-md-2" @Edit.TagToolbar(Content)>
           @* call sub-template to show the title with the correct H1-H6 tag *@
-          @RenderPage("../shared/_Header tag.cshtml")
+          @Html.Partial("../shared/_Header tag.cshtml")
           @Html.Raw(Content.Text)
       </div>
     </div>
   </div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts"})

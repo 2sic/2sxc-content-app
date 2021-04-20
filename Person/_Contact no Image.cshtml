@@ -5,11 +5,11 @@
     <div class="row">
       @foreach (var person in AsList(Data)) {
         <div class="col-md-4 mb-4" itemscope itemtype="http://schema.org/Person" @Edit.TagToolbar(person) >
-          @RenderPage("_PersonData.cshtml", new { data = person })
+          @Html.Partial("_PersonData.cshtml", new { data = person })
         </div>
       }
     </div>
   </div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})

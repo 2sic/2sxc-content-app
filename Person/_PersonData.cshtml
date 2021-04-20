@@ -30,7 +30,7 @@
    @if (Text.Has(person.Email)) {
     <div itemprop="email">
       <i class="fas fa-envelope text-center" style="width:30px;"></i>
-      @RenderPage("../shared/_TryToEncryptMail.cshtml", new { email = person.Email })
+      @Html.Partial("../shared/_TryToEncryptMail.cshtml", new { email = person.Email })
     </div>
   }
 </div>

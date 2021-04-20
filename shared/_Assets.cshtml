@@ -6,7 +6,7 @@
   var koiCss = GetService<Connect.Koi.ICssInfo>();
 }
 @* show warning for admin if koi.json is missing *@
-@RenderPage("_Koi Admin Messages.cshtml")
+@Html.Partial("_Koi Admin Messages.cshtml")
 
 @* include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page *@
 @if(!koiCss.Is("bs4")) { @Html.Raw(App.Settings.AssetsBootstrap) }

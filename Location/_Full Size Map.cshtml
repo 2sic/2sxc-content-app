@@ -9,7 +9,7 @@
   // we need a unique ID for the map, in case there are many on the same page
   var mapId = CmsContext.Module.Id;
 }
-@RenderPage("_GoogleMapsKey.cshtml")
+@Html.Partial("_GoogleMapsKey.cshtml")
 
 
 <div class="co-container-outer mb-4 mb-md-5">
@@ -27,5 +27,5 @@
 	</div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "scripts,icons"})
-@RenderPage("_LocationScript.cshtml", new { markerImage = Content.Presentation.MarkerImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts,icons"})
+@Html.Partial("_LocationScript.cshtml", new { markerImage = Content.Presentation.MarkerImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })
