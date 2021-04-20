@@ -22,8 +22,8 @@
   var lightboxQuality = 90;
 
   // this is the parameter passed in from the calling page
-  int width = PageData["width"];
-  int height = PageData["height"];
+  int width = DynamicModel.width;
+  int height = DynamicModel.height;
   if(retina) {
     width += width; // double if retina
     height += height; // double if retina

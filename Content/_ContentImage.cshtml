@@ -15,8 +15,8 @@
   var lightboxQuality = 90;
 
   // this is the parameter passed in from the calling page
-  var imgItem = PageData["img"];
-  int width = PageData["width"];
+  var imgItem = DynamicModel.img;
+  int width = DynamicModel.width;
   if(retina) {
     width += width; // double if retina
     quality = 50;

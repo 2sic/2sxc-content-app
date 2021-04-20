@@ -3,15 +3,15 @@
 
 <script type="text/javascript">
 	$(function(){
-		var markerImage = "@Text.First(PageData["markerImage"], "")";
-		$("#GoogleMap-@(PageData["mapId"])").toGoogleMap({
+		var markerImage = "@Text.First(DynamicModel.markerImage, "")";
+		$("#GoogleMap-@(DynamicModel.mapId)").toGoogleMap({
 			position: {
-        lat: @PageData["mapInfo"].GpsLat.ToString().Replace(",","."),
-				lng: @PageData["mapInfo"].GpsLong.ToString().Replace(",",".")
+        lat: @DynamicModel.mapInfo.GpsLat.ToString().Replace(",","."),
+				lng: @DynamicModel.mapInfo.GpsLong.ToString().Replace(",",".")
 			},
 			zoom: @Content.Presentation.Zoom,
 			mapTypeId: "ROADMAP",
-			infoWindowHtml: "@PageData["company"]",
+			infoWindowHtml: "@DynamicModel.company",
 			showInfoWindow: false,
 			icon: markerImage
 		});

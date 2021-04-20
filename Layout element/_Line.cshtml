@@ -1,7 +1,7 @@
 @inherits ToSic.Custom.Razor12
 
 @{
-	var lineHalf = PageData["lineHalf"] ? "w-50 m-auto py-4" : "w-100 py-4";
+	var lineHalf = DynamicModel.lineHalf ? "w-50 m-auto py-4" : "w-100 py-4";
 }
 
 <div class="co-container-outer">

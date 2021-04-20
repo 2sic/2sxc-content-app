@@ -1,10 +1,11 @@
+@inherits ToSic.Custom.Razor12
 @*
   This sub template just places parts of the mail in span-attributes
   so that a JS can then re-asseble it when needed
   This is to prevent robots from collecting the e-mail address
 *@
 @{
-  var eMail = PageData["email"];
+  var eMail = DynamicModel.email;
   var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(eMail);
   if(isValid) {
     var madr = eMail.Split('@');
