@@ -1,5 +1,8 @@
 @inherits Custom.Hybrid.Razor12
+@* Only include this namespace for DNN (to tell it to load jQuery), not for Oqtane*@
+@{#if !NETCOREAPP}
 @using DotNetNuke.Framework.JavaScriptLibraries;
+@{#endif}
 @{
   // get CSS information about the current Theme
   var pageCss = GetService<Connect.Koi.ICssInfo>();
@@ -30,8 +33,11 @@
   }
 
   // tell DNN to load jquery as it's needed by fancybox and our basic scripts
+  // Oqtane doesn't need this, as jQuery is always preloaded as of now
   if(fancybox || scripts) {
-    JavaScript.RequestRegistration(CommonJs.jQuery);
+      #if !NETCOREAPP
+      JavaScript.RequestRegistration(CommonJs.jQuery);
+      #endif
   }
 
 }
