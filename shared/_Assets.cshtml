@@ -1,7 +1,7 @@
 @inherits Custom.Hybrid.Razor12
 @{
   // get CSS information about the current Theme
-  var pageCss = GetService<Connect.Koi.ICssInfo>();
+  var pageCss = GetService<Connect.Koi.ICss>();
 }
 @* show warning for admin if koi.json is missing *@
 @Html.Partial("_Koi Admin Messages.cshtml")

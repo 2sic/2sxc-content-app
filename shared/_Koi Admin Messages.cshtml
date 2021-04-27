@@ -7,9 +7,9 @@
 *@
 @{
   // get CSS information about the current Theme
-  var koiCss = GetService<Connect.Koi.ICssInfo>();
+  var pageCss = GetService<Connect.Koi.ICss>();
 }
-@if(koiCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
+@if(pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
 	<div class='dnnFormMessage dnnFormWarning'>
 		This component supports multiple CSS frameworks (Bootstrap3, Bootstrap4). It uses <a href='http://connect-koi.net/' target='_blank'>Koi</a> to detect the CSS framework of the theme/skin. Your theme doesn't broadcast it's CSS-Framework, so the output may look wrong. <br>
 		To fix this, <a href='http://connect-koi.net/dnn-themes'>add a koi.json file to your theme/skin folder</a>.<br>
