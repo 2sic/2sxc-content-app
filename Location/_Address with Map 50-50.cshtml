@@ -3,7 +3,7 @@
 
 @{
   // get helper commands
-  var locationHelper = CreateInstance("_LocationHelper.cshtml");
+  var locationHelper = CreateInstance("LocationHelper.cs");
   // run helper command
   var mapInfo = locationHelper.MapInfos(Content);
   // we need a unique ID for the map, in case there are many on the same page

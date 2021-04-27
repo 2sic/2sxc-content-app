@@ -1,15 +1,12 @@
-@inherits Custom.Hybrid.Razor12
-@using ToSic.Razor.Blade;
-@using System.Globalization;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.IO;
+using System.Globalization;
+using ToSic.Razor.Blade;
 
-@functions {
-  public class MapInfo
-  {
-    public double GpsLong;
-    public double GpsLat;
-    public string DirectionUrl;
-  }
-
+public class LocationHelper: Custom.Hybrid.Code12
+{
+  
   // check a link, prepare target window, icon etc. based on various settings
 	public MapInfo MapInfos(dynamic content) {
     // this will contain the result
@@ -41,4 +38,13 @@
 
     return mInfo;
 	}
+  
 }
+
+
+  public class MapInfo
+  {
+    public double GpsLong;
+    public double GpsLat;
+    public string DirectionUrl;
+  }
