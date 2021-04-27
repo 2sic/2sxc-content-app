@@ -26,7 +26,7 @@ public class LinkHelper
       #if NETCOREAPP
       bool isInternal = false; // TODO: OQTANE
       #else
-      bool isInternal = link.Contains(Dnn.Portal.PortalAlias.HTTPAlias)
+      bool isInternal = link.Contains(DotNetNuke.Entities.Portals.PortalSettings.Current.PortalAlias.HTTPAlias)
         || link.StartsWith("/") // absolute link in same site
         || link.StartsWith("#") // hash-link on same page
         || link.StartsWith("."); // relative link from this page
