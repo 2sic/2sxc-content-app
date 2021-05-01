@@ -1,36 +1,8 @@
-$(document).ready(function () {
-  /* mailencrypting */
-  setTimeout(function () {
-    $('[data-madr1]').not('.madr-done').each(function () {
-      const $this = $(this);
-      const maddr = $this.attr('data-madr1') + '@' + $this.attr('data-madr2') + '.' + $this.attr('data-madr3');
-      const linktext = $this.attr('data-linktext') ? $this.attr('data-linktext') : maddr;
-      $this.after('<a href="mailto:' + maddr + '">' + linktext + '</a> ');
-      $this.addClass('madr-done').hide();
-    });
-  }, 500);
-
-  /* Fancybox */
-  if ($('.fancybox').fancybox) {
-    $('.fancybox').fancybox(<FancyBoxOptions>{
-      parent: 'form:first',
-      padding: 1
-    });
-  }
-
-  $("[data-youtube^='iframe-']").on("click", function() {
-    var iframeId = $(this).data("youtube");
-    var iframeElem = $("#" + iframeId);
-    var youtubeUrl = iframeElem.data("youtube-src");
-    iframeElem.attr("src", youtubeUrl);
-    $(this).addClass('hide');
-  })
-});
 
 declare const google : any;
 
 /* Google Maps API Key */
-(function ($) {
+export function activateGoogleMaps() {
   const winAny = window as any;
   // Change this GoogleApiKey. They are in the App-Settings. Read instructions here: https://azing.org/2sxc/r/ippFQYkz
   let googleApiKey = winAny.googleMapsApiKey;
@@ -130,4 +102,4 @@ declare const google : any;
 
   initGoogleMaps();
 
-}(jQuery));
+}

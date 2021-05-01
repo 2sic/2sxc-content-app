@@ -47,4 +47,10 @@
 @if(fancybox) { @Html.Raw(App.Settings.AssetsFancybox) }
 
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }
-@if(scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> }
+@if(scripts) { 
+  <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
+  <script type="text/javascript">
+    // if reloaded on a dynamic page, re-activate all
+    $(function() { if(window.appContent) window.appContent.activateAll() });
+  </script>
+}
