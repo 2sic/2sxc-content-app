@@ -3,7 +3,7 @@ using System.Dynamic;
 using System.IO;
 using ToSic.Razor.Blade;
 
-public class LinkHelper
+public class LinkHelper: Custom.Hybrid.Code12
 {
   // check a link, prepare target window, icon etc. based on various settings
   public LinkInfo LinkInfos(string link, string window, string icon) {
@@ -21,16 +21,11 @@ public class LinkHelper
       var linkExt = Path.GetExtension(link.ToLower());
       var isDoc = fileExtensions.Contains(linkExt);
 
-      // try to find out if it's a local link
-      // TODO: V12 - this shouldn't use Dnn.*
-      #if NETCOREAPP
-      bool isInternal = false; // TODO: OQTANE
-      #else
-      bool isInternal = link.Contains(DotNetNuke.Entities.Portals.PortalSettings.Current.PortalAlias.HTTPAlias)
+    // try to find out if it's a local link
+    bool isInternal = link.Contains(CmsContext.Site.Url)
         || link.StartsWith("/") // absolute link in same site
         || link.StartsWith("#") // hash-link on same page
         || link.StartsWith("."); // relative link from this page
-      #endif
 
       // auto-detect icon based on file type if it's stays on the same site
       // but only if no icon was specified already
