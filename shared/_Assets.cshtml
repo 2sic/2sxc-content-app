@@ -50,7 +50,7 @@
 @if(scripts) { 
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   <script type="text/javascript">
-    // if reloaded on a dynamic page, re-activate all
+    // if reloaded on a dynamic page, re-activate all parts
     $(function() { if(window.appContent) window.appContent.activateAll() });
   </script>
 }
