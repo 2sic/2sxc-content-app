@@ -6,6 +6,7 @@ import { activateGoogleMaps } from './google-maps';
 
 /** activate all the content-app features */
 function activateAll() {
+  console.log('activateAll')
   activateObfuscatedMails();
   activateFancybox();
   activateYouTubePreviews();
