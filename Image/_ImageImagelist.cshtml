@@ -32,8 +32,8 @@
 								<figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
 							}
 
-              <img class="w-100 lazy"
-                data-src='@Tags.SafeUrl(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
+              <img class="w-100"
+                src='@Tags.SafeUrl(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
                 alt="@img.Title" />
 					</figure>
 
@@ -47,4 +47,4 @@
 	</div>
 </div>
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "fancybox,lazy,styles,scripts,height"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})

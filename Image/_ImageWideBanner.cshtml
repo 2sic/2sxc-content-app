@@ -12,11 +12,11 @@
 <div class="co-container-outer">
 	<div class="co-container-inner">
     <div class="co-header" @Edit.TagToolbar(Content)>
-      <img class="w-100 lazy"
-        data-src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&anchor=" + Content.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
+      <img class="w-100"
+        src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&anchor=" + Content.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
         alt="@Content.Title" />
     </div>
   </div>
 </div>
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,lazy" })
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles" })

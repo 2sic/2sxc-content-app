@@ -43,7 +43,7 @@
         <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
       }
 
-      <img class="img-fluid lazy" data-src='@Tags.SafeUrl(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)' alt="@title" />
+      <img class="img-fluid" src='@Tags.SafeUrl(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)' alt="@title" />
     </figure>
   if (imgItem.Presentation.ImageLightbox != false) {
     @:</a>
