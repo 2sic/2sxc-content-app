@@ -2,7 +2,7 @@ import { monkeyPatchjQueryFade } from './jquery-fade-in';
 import { activateObfuscatedMails } from './mail-obfuscator';
 import { activateYouTubePreviews } from './youtube-preview';
 import { activateFancybox } from './content-fancybox';
-import { activateGoogleMaps } from './google-maps';
+import { activateGoogleMaps, processQueue } from './google-maps';
 
 /** activate all the content-app features */
 function activateAll() {
@@ -20,6 +20,7 @@ $(monkeyPatchjQueryFade);
 const win2Ext = (window as any);
 const appC = win2Ext.appContent = win2Ext.appContent || {};
 appC.activateAll = appC.activateAll || activateAll;
+appC.processQueue = appC.processQueue || processQueue;
 
 // If loaded the first time on a dynamic page, activate automatically
 // Later reloads will need to call the activateAll from the reloaded content

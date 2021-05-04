@@ -54,7 +54,7 @@
 @if(scripts) { 
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   <script type="text/javascript">
-    // if reloaded on a dynamic page, re-activate all parts
-    $(function() { if(window.appContent) window.appContent.activateAll() });
+    // if reloaded on a dynamic page, re-activate all parts - just ensure the objects exist
+    $(function() { if(window.appContent && window.appContent.activateAll) window.appContent.activateAll() });
   </script>
 }

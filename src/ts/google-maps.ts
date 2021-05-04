@@ -2,7 +2,20 @@
 declare const google : any;
 
 const winAny = window as any;
+
 let googleApiKey = winAny.googleMapsApiKey;
+
+/**
+ * Process the queue on window.appContent.mapQueue if there is something to process
+ */
+export function processQueue() {
+  var mapQueue = (window as any)?.appContent?.mapQueue as Function[];
+  if(mapQueue?.length) {
+    mapQueue.forEach(fn => {
+      fn();
+    });
+  }
+}
 
 // the init-code
 function giveJqueryGoogleMaps() {
@@ -73,16 +86,21 @@ function giveJqueryGoogleMaps() {
 
   // Register google map load callback
   winAny.googleMapLoadCallback = function () {
-      googleMapLoadDeferred.resolve(true);
+    console.log('googleMapLoadCallback')
+    googleMapLoadDeferred
+      .resolve(true)
+      // process the queue after init, in case something is waiting
+      .then(processQueue);
   };
 
   if (!winAny.googleMapsLoaded) {
     winAny.googleMapsLoaded = true;
-      getScript("//maps.google.com/maps/api/js?key=" + googleApiKey + "&sensor=true&callback=googleMapLoadCallback");
+    getScript("//maps.google.com/maps/api/js?key=" + googleApiKey + "&sensor=true&callback=googleMapLoadCallback", winAny.googleMapLoadCallback);
   }
 }
 
-function getScript(source: string) {
+// https://stackoverflow.com/a/28002292/6834738
+function getScript(source: string, callback: any) {
   var script = document.createElement('script');
   var prior = document.getElementsByTagName('script')[0];
   (script as any).async = 1;
@@ -91,6 +109,8 @@ function getScript(source: string) {
       if(isAbort || !(script as any).readyState || /loaded|complete/.test((script as any).readyState) ) {
           script.onload = (script as any).onreadystatechange = null;
           script = undefined;
+
+          if(!isAbort && callback) setTimeout(callback, 0);
       }
   };
 
@@ -120,11 +140,11 @@ export function activateGoogleMaps() {
   }
 
   if(googleMapsElem.length != 0) {
-
     googleMapsElem.each(function() {
       showWarningIfDemoKeyIsUsed(this);
+
     })
   }
-
   giveJqueryGoogleMaps();
+
 }
