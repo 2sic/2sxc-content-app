@@ -88,9 +88,25 @@ export function activateGoogleMaps() {
 
     if (!winAny.googleMapsLoaded) {
       winAny.googleMapsLoaded = true;
-        $.getScript("//maps.google.com/maps/api/js?key=" + googleApiKey + "&sensor=true&callback=googleMapLoadCallback");
+        getScript("//maps.google.com/maps/api/js?key=" + googleApiKey + "&sensor=true&callback=googleMapLoadCallback");
     }
   }
+
+  function getScript(source: string) {
+    var script = document.createElement('script');
+    var prior = document.getElementsByTagName('script')[0];
+    (script as any).async = 1;
+
+    (script as any).onload = (script as any).onreadystatechange = function( _: any, isAbort: any ) {
+        if(isAbort || !(script as any).readyState || /loaded|complete/.test((script as any).readyState) ) {
+            script.onload = (script as any).onreadystatechange = null;
+            script = undefined;
+        }
+    };
+
+    script.src = source;
+    prior.parentNode.insertBefore(script, prior);
+}
 
 
   // check if it's the original key, which shouldn't be used in live sites
