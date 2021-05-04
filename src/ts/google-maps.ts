@@ -1,6 +1,6 @@
 import { getScript } from './get-script';
 
-const debug = true;
+const debug = false;
 
 declare const google : any;
 
@@ -109,14 +109,10 @@ export function giveJqueryGoogleMaps() {
 
   if (!winAny.googleMapsLoading) {
     winAny.googleMapsLoading = true;
-    getScript("//maps.google.com/maps/api/js?key=" + winAny.googleMapsApiKey + "&sensor=true&callback=googleMapLoadCallback", winAny.googleMapLoadCallback);
+    const keyWithoutWarning = winAny.googleMapsApiKey.replace("warning!", "");
+    getScript("//maps.google.com/maps/api/js?key=" + keyWithoutWarning + "&sensor=true&callback=googleMapLoadCallback", null); //, winAny.googleMapLoadCallback);
   }
 }
-
-
-
-
-let showApiKeyWarning = false;
 
 /* Google Maps API Key */
 export function activateGoogleMaps() {
@@ -124,15 +120,11 @@ export function activateGoogleMaps() {
   // Change this GoogleApiKey. They are in the App-Settings. Read instructions here: https://azing.org/2sxc/r/ippFQYkz
   if(!winAny.googleMapsApiKey) return; 
 
-  showApiKeyWarning = winAny.googleMapsApiKey.indexOf("warning!") > -1;
-
-  // const googleMapsElem = $('.co-google-map-container');
-  winAny.googleMapsApiKey = winAny.googleMapsApiKey.replace("warning!", "");
-
   giveJqueryGoogleMaps();
 }
 
 function showKeyWarnings() {
+  const showApiKeyWarning = winAny.googleMapsApiKey.indexOf("warning!") > -1;
   if(!showApiKeyWarning) return;
 
   const googleMapsElem = $('.co-google-map-container');
