@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 <div class="co-container-outer mb-4 mb-md-5">
@@ -16,7 +16,7 @@
 							}
 						</div>
 						<div class="col-8" itemscope itemtype="http://schema.org/Person">
-							@RenderPage("_PersonData.cshtml", new { data = person})
+							@Html.Partial("_PersonData.cshtml", new { data = person})
 						</div>
 					</div>
 				</div>
@@ -25,4 +25,4 @@
 	</div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})

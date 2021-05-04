@@ -1,4 +1,4 @@
-# 2sxc: Content Types & Templates for many CSS Frameworks 10.24.01
+# 2sxc: Content Types & Templates for many CSS Frameworks 12.00.00
 
 The default **Content** types and templates for [DNN (DotNetNuke)](https://www.dnnsoftware.com/) using [2sxc][2sxc] for the following CSS frameworks:
 
@@ -24,6 +24,10 @@ This package **Content-Bootstrap3** is the default configuration package which 2
 1. **Installation**: Whenever you install 2sxc on a DNN portal, or when you create a new portal on a [DNN with 2sxc installed](http://2sxc.org/en/Learn/Install-2sxc), 2sxc will automatically ask you to install this. If you need to know more, read about [installations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Installation-Instructions).
 1. **Skin/Theme Optimizations**: We have some recommendations, if you care about this, read about the [optimizations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Theme-Optimizations)
 1. **Customize to your colors and CSS**: check out the [instructions in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Customizing%20CSS%20or%20SASS)
+
+## New Hybrid Version
+
+2sxc 12 supports hybrid Apps which run on Dnn ☢ and Oqtane 💧. These content-templates are the first generation of such apps. 
 
 ## Questions and Support
 

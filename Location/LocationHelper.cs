@@ -1,26 +1,20 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
-@using System.Dynamic;
-@using System.IO;
-@using ToSic.Razor.Blade;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.IO;
+using System.Globalization;
+using ToSic.Razor.Blade;
 
-@using System.Threading;
-@using System.Globalization;
-
-@functions {
-  public class MapInfo
-  {
-    public double GpsLong;
-    public double GpsLat;
-    public string DirectionUrl;
-  }
-
+public class LocationHelper: Custom.Hybrid.Code12
+{
+  
   // check a link, prepare target window, icon etc. based on various settings
 	public MapInfo MapInfos(dynamic content) {
     // this will contain the result
     var mInfo = new MapInfo();
 
     // Language is used for the map-link
-    var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
+    // TODO V12 - this is probably not the final object name!
+    var language = CmsContext.Culture.CurrentCode.Split(new[] { '-' })[0];
 
     // GPS is a JSON field, so we must use AsDynamic to access the properties
     var gps = AsDynamic(content.GPS);
@@ -44,13 +38,13 @@
 
     return mInfo;
 	}
+  
 }
-@helper AddGoogleMapsKey() {
-  // get key from settings and remove empty lines
-  // will also add warning! in front, if the settings say to include a warning
-  var warning = (App.Settings.GoogleMapsShowWarning ? "warning!" : "");
-  var key = warning + App.Settings.GoogleMapsKey.Replace("\n", ""); 
-  <script>
-    var googleMapsApiKey = "@key";
-  </script>
-}
+
+
+  public class MapInfo
+  {
+    public double GpsLong;
+    public double GpsLat;
+    public string DirectionUrl;
+  }

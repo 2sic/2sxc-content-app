@@ -1,18 +1,27 @@
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 <script type="text/javascript">
-	$(function(){
-		var markerImage = "@Text.First(PageData["markerImage"], "")";
-		$("#GoogleMap-@(PageData["mapId"])").toGoogleMap({
-			position: {
-        lat: @PageData["mapInfo"].GpsLat.ToString().Replace(",","."),
-				lng: @PageData["mapInfo"].GpsLong.ToString().Replace(",",".")
-			},
-			zoom: @Content.Presentation.Zoom,
-			mapTypeId: "ROADMAP",
-			infoWindowHtml: "@PageData["company"]",
-			showInfoWindow: false,
-			icon: markerImage
-		});
-	});
+  (function () {
+    // for now we must queue the init calls - our maps library will pick this up later on to init once it's ready
+    const appC = window.appContent = window.appContent || { }
+    const mapQueue = appC.mapQueue = appC.mapQueue || [];
+    mapQueue.push(
+      function() {
+        var markerImage = "@Text.First(DynamicModel.markerImage, "")";
+        $("#GoogleMap-@(DynamicModel.mapId)").toGoogleMap({
+          position: {
+            lat: @DynamicModel.mapInfo.GpsLat.ToString().Replace(",","."),
+            lng: @DynamicModel.mapInfo.GpsLong.ToString().Replace(",",".")
+          },
+          zoom: @Content.Presentation.Zoom,
+          mapTypeId: "ROADMAP",
+          infoWindowHtml: "@DynamicModel.company",
+          showInfoWindow: false,
+          icon: markerImage
+        });
+      });
+    if(window.appContent.processQueue)
+      window.appContent.processQueue();
+  })();
 </script>

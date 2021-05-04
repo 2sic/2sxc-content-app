@@ -1,10 +1,10 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 @{
   // this is the parameter passed in from the calling page
-  var width = PageData["width"];
-  var height = PageData["height"];
+  var width = DynamicModel.width;
+  var height = DynamicModel.height;
 
 	var quality = 75;
 }
@@ -19,4 +19,4 @@
   </div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles" })

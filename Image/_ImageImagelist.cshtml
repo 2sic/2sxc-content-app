@@ -1,13 +1,13 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @*
 	This is a sub-template of the image templates
 *@
 
 @{
-	var width = PageData["width"];
-	var height = PageData["height"];
-	var columns = PageData["gridColumns"];
+	var width = DynamicModel.width;
+	var height = DynamicModel.height;
+	var columns = DynamicModel.gridColumns;
 
 	var retina = false;
 	var zoomW = retina ? 3200 : 1600;
@@ -24,7 +24,7 @@
 				<div class='@((columns) > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
 					@if (img.Presentation.ImageLightbox != false) {
-             @:<a class="fancybox" href="@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancbox="@Dnn.Module.ModuleID">
+             @:<a class="fancybox" href="@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancbox="@CmsContext.Module.Id">
 					}
 					<figure>
 							<div class="overlay w-100 h-100"></div>
@@ -47,4 +47,4 @@
 	</div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})

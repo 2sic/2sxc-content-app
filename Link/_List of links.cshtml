@@ -1,13 +1,13 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 @{
   // get helper commands
-  var linkHelper = CreateInstance("_LinkHelper.cshtml");
+  var linkHelper = CreateInstance("LinkHelper.cs");
 }
 
 <div class="co-container-outer">
-	<div class="co-container-inner co-navigation co-navigation-@(Dnn.Module.ModuleID) co-navigation-text">
+	<div class="co-container-inner co-navigation co-navigation-@(CmsContext.Module.Id) co-navigation-text">
     <div class="row">
       @foreach (var link in AsList(Data)) {
         var linkInfo = linkHelper.LinkInfos(link.Link, link.Window, link.Icon);
@@ -25,4 +25,4 @@
   </div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})

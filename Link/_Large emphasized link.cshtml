@@ -1,9 +1,9 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 @{
   // get helper commands
-  var linkHelper = CreateInstance("_LinkHelper.cshtml");
+  var linkHelper = CreateInstance("LinkHelper.cs");
   // run helper command
   var linkInfo = linkHelper.LinkInfos(Content.Link, Content.Window, Content.Icon);
 }
@@ -28,4 +28,4 @@
   </div>
 </div>
 
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,icons"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,icons"})

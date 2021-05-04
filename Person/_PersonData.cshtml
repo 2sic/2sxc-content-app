@@ -1,11 +1,11 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @*
   this is a partial template which is re-used in many other templates, so it's shared here
   its shows the person data like name, position, concact data and description
 *@
 @{
-  var person = PageData["data"];
+  var person = DynamicModel.data;
 }
 <div class="mb-2">
   <div class="lead font-weight-bold" itemprop="name">@person.FullName</div>
@@ -30,7 +30,7 @@
    @if (Text.Has(person.Email)) {
     <div itemprop="email">
       <i class="fas fa-envelope text-center" style="width:30px;"></i>
-      @RenderPage("../shared/_TryToEncryptMail.cshtml", new { email = person.Email })
+      @Html.Partial("../shared/_TryToEncryptMail.cshtml", new { email = person.Email })
     </div>
   }
 </div>
