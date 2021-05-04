@@ -6,6 +6,7 @@ import { activateGoogleMaps, processQueue } from './google-maps';
 
 /** activate all the content-app features */
 function activateAll() {
+  console.log('activate all');
   activateObfuscatedMails();
   activateFancybox();
   activateYouTubePreviews();
