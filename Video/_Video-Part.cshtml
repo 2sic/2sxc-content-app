@@ -38,8 +38,8 @@
         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
           <i class="fab fa-youtube"></i>
         </div>
-        <img class="img-fluid"
-          src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)'
+        <img class="img-fluid lazy"
+          data-src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + quality)'
           alt="@Content.Title" />
       </figure>
       } else {
@@ -50,7 +50,7 @@
   // no lightbox, show directly
   <div class="co-video-embed embed-responsive embed-responsive-16by9">
     @if(isYouTube) {
-      <img src="https://img.youtube.com/vi/@youTube.Groups[1].Value/maxresdefault.jpg" class="img-fluid">
+      <img data-src="https://img.youtube.com/vi/@youTube.Groups[1].Value/maxresdefault.jpg" class="img-fluid lazy">
 
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>

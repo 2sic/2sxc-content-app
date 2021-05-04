@@ -27,6 +27,7 @@
   var scripts = all || parts.Contains("scripts");
   var height = all || parts.Contains("height");
   var icons = all || parts.Contains("icons");
+  var lazy = all || parts.Contains("lazy");
 
   // Include icon font - the exact HTML for this is in the App Settings
   if(icons) {
@@ -45,6 +46,9 @@
 
 @* Add Fancybox if required - as specified in the App Settings *@
 @if(fancybox) { @Html.Raw(App.Settings.AssetsFancybox) }
+
+@* Add Lazyload if required - as specified in the App Settings *@
+@if(lazy) { @Html.Raw(App.Settings.AssetsLazyload) }
 
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }
 @if(scripts) { 

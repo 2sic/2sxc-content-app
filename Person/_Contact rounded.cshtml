@@ -9,8 +9,8 @@
 					<div class="row">
 						<div class="col-4 mb-2">
 							@if (Text.Has(person.Photo)) {
-                <img class="img-fluid rounded-circle"
-                  src='@Tags.SafeUrl(person.Photo + "?w=379&h=379&mode=crop&scale=both&quality=90")'
+                <img class="img-fluid rounded-circle lazy"
+                  data-src='@Tags.SafeUrl(person.Photo + "?w=379&h=379&mode=crop&scale=both&quality=90")'
                   alt="@person.FullName" />
 							}
 							else {
@@ -28,4 +28,4 @@
 	</div>
 </div>
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,height,icons"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,lazy,height,icons"})

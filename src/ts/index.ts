@@ -3,14 +3,15 @@ import { activateObfuscatedMails } from './mail-obfuscator';
 import { activateYouTubePreviews } from './youtube-preview';
 import { activateFancybox } from './content-fancybox';
 import { activateGoogleMaps } from './google-maps';
+import { activateLazyLoad } from './lazyload';
 
 /** activate all the content-app features */
 function activateAll() {
-  console.log('activateAll')
   activateObfuscatedMails();
   activateFancybox();
   activateYouTubePreviews();
   activateGoogleMaps();
+  activateLazyLoad();
 }
 
 // Work around a limitation of jQuery if it's installed in slim mode
