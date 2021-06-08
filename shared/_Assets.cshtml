@@ -10,7 +10,7 @@
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page 
   if(!pageCss.Is("bs4")) { 
     // Note that the link and script tags are in the App Settings to make it easier to update a live installation
-    @Html.Raw(App.Settings.AssetsBootstrap) 
+    @Html.Raw(Settings.AssetsBootstrap) 
   }
 }
 
@@ -31,7 +31,7 @@
 
   // Include icon font - the exact HTML for this is in the App Settings
   if(icons) {
-    @Html.Raw(App.Settings.AssetsIconFont);
+    @Html.Raw(Settings.AssetsIconFont);
   }
 
   // tell DNN to load jquery as it's needed by fancybox and our basic scripts
@@ -45,10 +45,10 @@
 }
 
 @* Add Fancybox if required - as specified in the App Settings *@
-@if(fancybox) { @Html.Raw(App.Settings.AssetsFancybox) }
+@if(fancybox) { @Html.Raw(Settings.AssetsFancybox) }
 
 @* Add Lazyload if required - as specified in the App Settings *@
-@if(lazy) { @Html.Raw(App.Settings.AssetsLazyload) }
+@if(lazy) { @Html.Raw(Settings.AssetsLazyload) }
 
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }
 @if(scripts) { 
