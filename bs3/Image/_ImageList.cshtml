@@ -7,9 +7,9 @@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,height"})
 
 @{
-	var width = PageData["width"];
-	var height = PageData["height"];
-	var columns = PageData["gridColumns"];
+  var width = Settings.MaxWidth;
+  var height = Settings.MaxHeight;
+  var columns = 12 / Settings.MaxPerRow;
 
 	var retina = false;
 	var zoomW = retina ? 3200 : 1600;
