@@ -34,12 +34,9 @@
     @Html.Raw(Settings.AssetsIconFont);
   }
 
-  // tell DNN to load jquery as it's needed by fancybox and our basic scripts
-  // Oqtane doesn't need this, as jQuery is always preloaded as of now
+  // Tell DNN & Oqtane to load jquery as it's needed by fancybox and our basic scripts
   if(fancybox || scripts) {
-    #if !NETCOREAPP
-      DotNetNuke.Framework.JavaScriptLibraries.JavaScript.RequestRegistration(DotNetNuke.Framework.JavaScriptLibraries.CommonJs.jQuery);
-    #endif
+    GetService<ToSic.Sxc.Web.IPageService>().Activate("jQuery");
   }
 
 }
