@@ -2,15 +2,23 @@
 @using ToSic.Razor.Blade;
 
 @{
-  var width = Settings.MaxWidth;
-  var height = Settings.MaxHeight;
-  var columns = 12 / Settings.MaxPerRow;
+  // Resolution multiplier - usually set at App level
+  var resFactor = Settings.ImageUseHighResolution ? 2 : 1;
 
-  var retina = false;
-  var zoomW = retina ? 3200 : 1600;
-  var zoomH = retina ? 1800 : 900;
-  var quality = 75;
-  var lightboxQuality = 90;
+  var columns = 12 / (Settings.MaxPerRow ?? 1);
+  var width = (Settings.MaxWidth ?? 100) * resFactor;
+  
+  // Get height - note that it's often not defined = automatic
+  var height = Settings.MaxHeight;
+  if(height != null) { height = height * resFactor; }
+
+  // All these settings are required at App level
+  var quality = Settings.ImageQuality;
+  var lightboxQuality = Settings.LightboxImageQuality;
+  var lightboxFactor = Settings.LightboxUseHighResolution ? 2 : 1;
+  var zoomW = Settings.LightboxWidth * lightboxFactor;
+  var zoomH = Settings.LightboxHeight * lightboxFactor;
+  
 }
 
 <div class="co-container-outer">
@@ -21,7 +29,7 @@
         <div class='@((columns) > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
           @if (img.Presentation.ImageLightbox != false) {
-             @:<a class="fancybox" href="@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancbox="@CmsContext.Module.Id">
+             @:<a class="fancybox" href="@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
           }
           <figure>
               <div class="overlay w-100 h-100"></div>
