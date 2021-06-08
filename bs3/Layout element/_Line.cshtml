@@ -2,7 +2,7 @@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
 
 @{
-	var lineHalf = PageData["lineHalf"] ? "ly-primaryhr-half" : "";
+	var lineHalf = CmsContext.View.Identifier == "half" ? "ly-primaryhr-half" : "";
 }
 
 <div class="co-container-outer">

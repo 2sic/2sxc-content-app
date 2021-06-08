@@ -1,7 +1,7 @@
 @inherits Custom.Hybrid.Razor12
 
 @{
-	var lineHalf = DynamicModel.lineHalf ? "w-50 m-auto py-4" : "w-100 py-4";
+  var lineHalf = CmsContext.View.Identifier == "half" ? "w-50 m-auto py-4" : "w-100 py-4";
 }
 
 <div class="co-container-outer">
