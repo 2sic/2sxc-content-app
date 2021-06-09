@@ -1,0 +1,50 @@
+@inherits Custom.Hybrid.Razor12
+@using ToSic.Razor.Blade;
+@*
+  this is a partial template which is re-used in many other templates,
+  so it's shared here
+
+  expects
+  * "width" - an int
+*@
+
+@{
+  // this is the parameter passed in from the calling page
+  var imgItem = DynamicModel.img;
+  int width = DynamicModel.width;
+
+  // If there is no image, exit now
+  if(!Text.Has(imgItem.Image)) { return; }
+
+
+  // configuration
+  var retina = Settings.ImageUseHighResolution;
+  var quality = Settings.ImageQuality;
+  var lightboxQuality = Settings.LightboxImageQuality;
+
+  if(retina) {
+    width += width; // double if retina
+    quality = Settings.ImageHighResQuality;
+    lightboxQuality = Settings.LightboxImageHighResQuality;
+  }
+
+  // prepare the title, either the default or the additional image caption
+  var title="";
+  if(imgItem.Presentation.TitleLightbox != false){
+    title = Text.Has(imgItem.ImageCaption) ? imgItem.ImageCaption : imgItem.Title;
+  }
+}
+@if(imgItem.Presentation.ImageLightbox != false) {
+  @:<a class="fancybox" href='@Tags.SafeUrl(imgItem.Image + "?maxwidth=1400&maxheight=990&quality=" + lightboxQuality)' data-caption="@title">
+}
+  <figure>
+    <div class="overlay w-100 h-100"></div>
+    @if(Text.Has(imgItem.ImageCaption)){
+      <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
+    }
+
+    <img class="img-fluid" src='@Tags.SafeUrl(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)' alt="@title" />
+  </figure>
+@if(imgItem.Presentation.ImageLightbox != false) {
+  @:</a>
+}

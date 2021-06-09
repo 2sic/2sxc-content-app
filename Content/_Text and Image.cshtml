@@ -2,17 +2,16 @@
 @{
   /* This Template is used in ca. 5 Views which show title, text and image */
 
-  const int bootstrapCols = 12;
-
-  var imgFirst = Settings.ImageFirst == true;
+  // Determine which part comes first
+  var imgFirst = Settings.ImageFirst;
   var txtFirst = !imgFirst;
   
-  var firstCol = Settings.ColsElement1;
-  var secondCol = bootstrapCols - firstCol;
-
-  var colsImg = imgFirst ? firstCol : secondCol;
+  // Determine the widths of each part, based on 12 Bootstrap Cols
+  const int bootstrapCols = 12;
+  var colsImg = imgFirst ? Settings.ColsElement1 : bootstrapCols - Settings.ColsElement1;
   var colsText = bootstrapCols - colsImg;
 
+  // Find out how large the image should be based on View or App Settings
   var imgWidth = (int)Settings.ImageWidth;
 }
 <div class="co-container-outer mb-4 mb-md-5">
@@ -24,7 +23,7 @@
 
         @* If the image doesn't have it's own column, its between title/text *@
         @if(colsImg == 0) {
-          @Html.Partial("_ContentImage.cshtml", new { img = Content, width = imgWidth })
+          @Html.Partial("_Shared Image.cshtml", new { img = Content, width = imgWidth })
         }
 
         @Html.Raw(Content.Text)
@@ -32,7 +31,7 @@
       @if(colsImg != 0) {
         <div class='col-md-@colsImg order-@(imgFirst ? "first" : "last")'>
           @* call sub-template to show the image with all possible options *@
-          @Html.Partial("_ContentImage.cshtml", new { img = Content, width = imgWidth })
+          @Html.Partial("_Shared Image.cshtml", new { img = Content, width = imgWidth })
         </div>
       }
     </div>
