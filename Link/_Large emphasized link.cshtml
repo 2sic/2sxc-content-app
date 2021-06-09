@@ -5,18 +5,19 @@
   // get helper commands
   var linkHelper = CreateInstance("LinkHelper.cs");
   // run helper command
-  var linkInfo = linkHelper.LinkInfos(Content.Link, Content.Window, Content.Icon);
+  var linkInfo = linkHelper.LinkInfos(Content);
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner text-center py-5" @Edit.TagToolbar(Content)>
     @if(Content.Presentation.HeadingType != "hide") {
-      @((Tag.Custom(Content.Presentation.HeadingType)).Wrap(
-        Content.Title,
-        Tag.Br(),
-        Tag.Small(Content.Description)
-      )
-      .Class("mb-4")
+      @(Tag.Custom(Content.Presentation.HeadingType)
+        .Class("mb-4")
+        .Wrap(
+          Content.Title,
+          Tag.Br(),
+          Tag.Small(Content.Description)
+        )
       )
     }
     @if(linkInfo.Found) {

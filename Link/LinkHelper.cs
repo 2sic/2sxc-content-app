@@ -5,6 +5,10 @@ using ToSic.Razor.Blade;
 
 public class LinkHelper: Custom.Hybrid.Code12
 {
+  public LinkInfo LinkInfos(dynamic item) {
+    return LinkInfos(item.Link, item.Window, item.Icon);
+  }
+  
   // check a link, prepare target window, icon etc. based on various settings
   public LinkInfo LinkInfos(string link, string window, string icon) {
     var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
