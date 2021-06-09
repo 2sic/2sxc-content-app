@@ -1,0 +1,32 @@
+@inherits Custom.Hybrid.Razor12
+@{
+  const int bootstrapCols = 12;
+
+  // WIP -  Goals:
+  // Image : Text 50/50
+  var imgFirst = Settings.ImageFirst == true;
+  var txtFirst = !imgFirst;
+  
+  var firstCol = Settings.ColsElement1;
+  var secondCol = bootstrapCols - firstCol;
+
+  var colsImg = imgFirst ? firstCol : secondCol;
+  var colsText = bootstrapCols - colsImg;
+}
+<div class="co-container-outer mb-4 mb-md-5">
+  <div class="co-container-inner" @Edit.TagToolbar(Content)>
+    <div class="row">
+      <div class='col-md-@colsText order-@(txtFirst ? "first" : "last")'>
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @Html.Partial("../shared/_Header tag.cshtml")
+        @Html.Raw(Content.Text)
+      </div>
+      <div class='col-md-@colsImg order-@(imgFirst ? "first" : "last")'>
+        @* call sub-template to show the image with all possible options *@
+        @Html.Partial("_ContentImage.cshtml", new { img = Content, width = 540 })
+      </div>
+    </div>
+  </div>
+</div>
+
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts"})

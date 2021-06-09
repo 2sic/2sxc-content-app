@@ -5,11 +5,10 @@
   // Resolution multiplier - usually set at App level
   var resFactor = Settings.ImageUseHighResolution ? 2 : 1;
 
+  // Size usually comes from View Settings
   var width = Settings.MaxWidth * resFactor;
   var height = Settings.MaxHeight * resFactor;
 	var quality = Settings.ImageQuality;
-
-
 }
 
 <div class="co-container-outer">
