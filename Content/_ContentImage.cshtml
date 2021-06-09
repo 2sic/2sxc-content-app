@@ -10,9 +10,9 @@
 
 @{
   // configuration
-  var retina = true;
-  var quality = 75;
-  var lightboxQuality = 90;
+  var retina = Settings.ImageUseHighResolution;
+  var quality = Settings.ImageQuality;
+  var lightboxQuality = Settings.LightboxImageQuality;
 
   // this is the parameter passed in from the calling page
   var imgItem = DynamicModel.img;

@@ -2,8 +2,6 @@
 @{
   const int bootstrapCols = 12;
 
-  // WIP -  Goals:
-  // Image : Text 50/50
   var imgFirst = Settings.ImageFirst == true;
   var txtFirst = !imgFirst;
   
@@ -12,6 +10,8 @@
 
   var colsImg = imgFirst ? firstCol : secondCol;
   var colsText = bootstrapCols - colsImg;
+
+  var imgWidth = (int)Settings.ImageWidth;
 }
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner" @Edit.TagToolbar(Content)>
@@ -19,12 +19,20 @@
       <div class='col-md-@colsText order-@(txtFirst ? "first" : "last")'>
         @* call sub-template to show the title with the correct H1-H6 tag *@
         @Html.Partial("../shared/_Header tag.cshtml")
+
+        @* If the image doesn't have it's own column, its between title/text *@
+        @if(colsImg == 0) {
+          @Html.Partial("_ContentImage.cshtml", new { img = Content, width = imgWidth })
+        }
+
         @Html.Raw(Content.Text)
       </div>
-      <div class='col-md-@colsImg order-@(imgFirst ? "first" : "last")'>
-        @* call sub-template to show the image with all possible options *@
-        @Html.Partial("_ContentImage.cshtml", new { img = Content, width = 540 })
-      </div>
+      @if(colsImg != 0) {
+        <div class='col-md-@colsImg order-@(imgFirst ? "first" : "last")'>
+          @* call sub-template to show the image with all possible options *@
+          @Html.Partial("_ContentImage.cshtml", new { img = Content, width = imgWidth })
+        </div>
+      }
     </div>
   </div>
 </div>
