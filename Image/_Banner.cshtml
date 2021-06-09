@@ -2,11 +2,14 @@
 @using ToSic.Razor.Blade;
 
 @{
-  // this is the parameter passed in from the calling page
-  var width = DynamicModel.width;
-  var height = DynamicModel.height;
+  // Resolution multiplier - usually set at App level
+  var resFactor = Settings.ImageUseHighResolution ? 2 : 1;
 
-	var quality = 75;
+  var width = Settings.MaxWidth * resFactor;
+  var height = Settings.MaxHeight * resFactor;
+	var quality = Settings.ImageQuality;
+
+
 }
 
 <div class="co-container-outer">
