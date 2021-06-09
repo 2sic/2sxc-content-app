@@ -3,11 +3,11 @@
 
 @{
   // Resolution multiplier - usually set at App level
-  var resFactor = Settings.ImageUseHighResolution ? 2 : 1;
+  var resFactor = Settings.ImageHighResOn ? 2 : 1;
 
   // Size usually comes from View Settings
-  var width = Settings.MaxWidth * resFactor;
-  var height = Settings.MaxHeight * resFactor;
+  var width = Settings.ImageWidth * resFactor;
+  var height = Settings.ImageHeight * resFactor;
 	var quality = Settings.ImageQuality;
 }
 
