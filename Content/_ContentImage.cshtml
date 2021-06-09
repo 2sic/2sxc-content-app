@@ -19,8 +19,8 @@
   int width = DynamicModel.width;
   if(retina) {
     width += width; // double if retina
-    quality = 50;
-    lightboxQuality = 75;
+    quality = Settings.ImageHighResQuality;
+    lightboxQuality = Settings.LightboxImageHighResQuality;
   }
 
   // prepare the title, either the default or the additional image caption
