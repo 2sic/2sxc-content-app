@@ -8,10 +8,9 @@
 
 @{
   // Check if the link is a youtube, and convert that to a youtube embed
-	var youTube = Regex.Match(Content.VideoLink, @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
-  var isYouTube = youTube.Success;
-  var youTubeUrl = isYouTube
-    ? "https://www.youtube.com/embed/" + youTube.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
+	var youTubeLink = Regex.Match(Content.VideoLink, @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+  var youTubeUrl = youTubeLink.Success
+    ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
   // configuration
@@ -41,8 +40,8 @@
 } else {
   // no lightbox, show directly
   <div class="co-video-embed embed-responsive embed-responsive-16by9">
-    @if(isYouTube) {
-      <img src="https://img.youtube.com/vi/@youTube.Groups[1].Value/maxresdefault.jpg" class="img-fluid lazy">
+    @if(youTubeLink.Success) {
+      <img src="https://img.youtube.com/vi/@youTubeLink.Groups[1].Value/maxresdefault.jpg" class="img-fluid lazy">
 
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>
