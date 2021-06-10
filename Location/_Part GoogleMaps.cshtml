@@ -1,5 +1,14 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@{
+  // get key from settings and remove empty lines
+  // will also add warning! in front, if the settings say to include a warning
+  var warning = (Settings.GoogleMapsShowWarning ? "warning!" : "");
+  var key = warning + Settings.GoogleMapsKey.Replace("\n", ""); 
+}
+<script>
+  var googleMapsApiKey = "@key";
+</script>
 
 <script type="text/javascript">
   (function () {

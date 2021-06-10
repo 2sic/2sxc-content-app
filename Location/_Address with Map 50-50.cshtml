@@ -1,15 +1,13 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
-
 @{
-  // get helper commands
+  // Build Helper object and get map infos
   var locationHelper = CreateInstance("LocationHelper.cs");
-  // run helper command
   var mapInfo = locationHelper.MapInfos(Content);
+
   // we need a unique ID for the map, in case there are many on the same page
   var mapId = CmsContext.Module.Id;
 }
-@Html.Partial("_GoogleMapsKey.cshtml")
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
@@ -69,4 +67,4 @@
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,icons"})
-@Html.Partial("_LocationScript.cshtml", new { markerImage = Content.Presentation.MarkerImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })
+@Html.Partial("_Part GoogleMaps.cshtml", new { markerImage = Content.Presentation.MarkerImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })

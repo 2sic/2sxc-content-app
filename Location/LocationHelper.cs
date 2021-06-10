@@ -6,14 +6,12 @@ using ToSic.Razor.Blade;
 
 public class LocationHelper: Custom.Hybrid.Code12
 {
-  
   // check a link, prepare target window, icon etc. based on various settings
 	public MapInfo MapInfos(dynamic content) {
     // this will contain the result
     var mInfo = new MapInfo();
 
     // Language is used for the map-link
-    // TODO V12 - this is probably not the final object name!
     var language = CmsContext.Culture.CurrentCode.Split(new[] { '-' })[0];
 
     // GPS is a JSON field, so we must use AsDynamic to access the properties
