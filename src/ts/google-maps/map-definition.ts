@@ -1,8 +1,9 @@
 export interface MapDefinition{
-  id: number;
+  domId: string;
   marker: string;
   zoom: number;
   lat: string;
   lng: string;
   info: string;
+  warn: boolean;
 }

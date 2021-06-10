@@ -3,9 +3,7 @@
 @using Newtonsoft.Json;
 @{
   // get key from settings and remove empty lines
-  // will also add warning! in front, if the settings say to include a warning
-  var warning = (Settings.GoogleMapsShowWarning ? "warning!" : "");
-  var key = warning + Settings.GoogleMapsKey.Replace("\n", ""); 
+  var key = Settings.GoogleMapsKey.Replace("\n", ""); 
 }
 <script>
   var googleMapsApiKey = "@key";
@@ -13,54 +11,16 @@
 @{
   // Get TurnOn to be included
   GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
-  @* var turnOnSpecs = {
-    x = { "window.appContent.map" },
-  }; *@
-  var mapParams = new {
-    marker = Text.First(DynamicModel.markerImage, ""),
-    lat = DynamicModel.mapInfo.GpsLat.ToString().Replace(",","."),
-    lng = DynamicModel.mapInfo.GpsLong.ToString().Replace(",","."),
-    zoom = Content.Presentation.Zoom,
-    info = DynamicModel.company,
-  };
-  var asText = JsonConvert.SerializeObject(mapParams);
-  var marker = Text.First(DynamicModel.markerImage, "");
-  var lat = DynamicModel.mapInfo.GpsLat.ToString().Replace(",",".");
-  var lng = DynamicModel.mapInfo.GpsLong.ToString().Replace(",",".");
 }
 
-<span turn-on='{ "xawait": ["window.appContent.map"], "run": "window.appContent.turnOnMap()", "data": { "id": @DynamicModel.mapId, "marker": "@marker","lat": @lat, "lng": @lng, "zoom": @Content.Presentation.Zoom, "info": "@DynamicModel.company" }}' />
+<script turn-on='{ "run": "window.appContent.maps.activate()", "data": "@key"}'></script>
 
-
-@* <script>
-  window.testMapInit = function(turnOn) {
-    const data = turnOn.data;
-    console.log('test-map-init', data);
-    window.appContent.map(data);
-  }
-</script> *@
-
-@* <script type="text/javascript">
-  (function () {
-    // for now we must queue the init calls - our maps library will pick this up later on to init once it's ready
-    const appC = window.appContent = window.appContent || { }
-    const mapQueue = appC.mapQueue = appC.mapQueue || [];
-    mapQueue.push(
-      function() {
-        var markerImage = "@Text.First(DynamicModel.markerImage, "")";
-        $("#GoogleMap-@(DynamicModel.mapId)").toGoogleMap({
-          position: {
-            lat: @DynamicModel.mapInfo.GpsLat.ToString().Replace(",","."),
-            lng: @DynamicModel.mapInfo.GpsLong.ToString().Replace(",",".")
-          },
-          zoom: @Content.Presentation.Zoom,
-          mapTypeId: "ROADMAP",
-          infoWindowHtml: "@DynamicModel.company",
-          showInfoWindow: false,
-          icon: markerImage
-        });
-      });
-    if(window.appContent.processQueue)
-      window.appContent.processQueue();
-  });//();
-</script> *@
+<script turn-on='{ "run": "window.appContent.maps.turnOnMap()", "data": { 
+  "domId": "GoogleMap-@DynamicModel.mapId", 
+  "marker": "@Text.First(DynamicModel.markerImage, "")",
+  "lat": @DynamicModel.mapInfo.GpsLat.ToString("R"), 
+  "lng": @DynamicModel.mapInfo.GpsLong.ToString("R"), 
+  "zoom": @Content.Presentation.Zoom, 
+  "info": "@DynamicModel.company",
+  "warn": @(App.Settings.GoogleMapsShowWarning ? "true" : "false")
+}}'></script>
