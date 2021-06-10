@@ -1,127 +1,95 @@
 import { getScript } from './get-script';
+import { MapDefinition } from './google-maps/map-definition';
+import { registerToGoogleMap } from './google-maps/maps-jquery';
 
-const debug = false;
-
-declare const google : any;
-
+const debug = true;
 const winAny = window as any;
+// let readyToProcessQueue = false;
 
-let readyToProcessQueue = false;
+// This will be completed once google maps loaded - for listener to wait for
+const googleMapLoadDeferred = $.Deferred();
 
-/**
- * Process the queue on window.appContent.mapQueue if there is something to process
- */
-export function processQueue() {
-  if(!readyToProcessQueue) return;
-  var mapQueue = winAny?.appContent?.mapQueue as Function[];
-  if(mapQueue?.length) {
-    mapQueue.forEach(fn => {
-      fn();
-    });
-    showKeyWarnings();
-    // reset queue
-    winAny.appContent.mapQueue = new Array<Function>();
-  }
-}
+let alreadyActivating = false;
 
-// the init-code
-export function giveJqueryGoogleMaps() {
-  if(debug) console.log('giveJqueryMaps-before');
-  // if this had already been run, stop here
-  if (($.fn as any).toGoogleMap) {
-    return;
-  }
+/* Boot Google Maps with the API Key */
+export function activateGoogleMaps(objToExpandWhenDone: any) {
+  
+  // Change this GoogleApiKey. They are in the App-Settings. Read instructions here: https://azing.org/2sxc/r/ippFQYkz
+  if(!winAny.googleMapsApiKey) return;
+  if(alreadyActivating) return;
+  alreadyActivating = true;
 
-  if(debug) console.log('giveJqueryGoogleMaps-after check');
+  registerToGoogleMap(googleMapLoadDeferred, debug);
 
-  var googleMapLoadDeferred = $.Deferred();
-
-  ($.fn as any).toGoogleMap = function (options: any) {
-      var mapElement = this.get(0);
-
-      googleMapLoadDeferred.promise().then(function () {
-
-          var settings = $.extend({
-              position: {
-                  lat: 0,
-                  lng: 0
-              },
-              zoom: 8,
-              mapTypeId: "HYBRID",
-              infoWindowHtml: "",
-              showInfoWindow: true
-          }, options);
-
-          var mapOptions = {
-              zoom: settings.zoom,
-              mapTypeControl: true,
-              center: settings.position,
-              zoomControl: true,
-              scaleControl: true,
-              scrollwheel: false,
-              mapTypeId: google.maps.MapTypeId[settings.mapTypeId]
-          };
-
-          var map = new google.maps.Map(mapElement, mapOptions);
-
-          // Create Marker
-          var marker = new google.maps.Marker({
-              position: settings.position,
-              map: map,
-              icon: settings.icon
-          });
-
-          if (settings.infoWindowHtml && settings.infoWindowHtml !== '') {
-              // Create InfoWindow
-              var infoWindow = new google.maps.InfoWindow({
-                  content: settings.infoWindowHtml
-              });
-              // Add Event listener
-              google.maps.event.addListener(marker, 'click', function () {
-                  infoWindow.open(map, marker);
-              });
-          }
-
-          google.maps.event.addListenerOnce(map, 'idle', function () {
-              if (settings.showInfoWindow)
-                  infoWindow.open(map, marker);
-          });
-
-      });
-
-      return this;
-  };
-
-  // Register google map load callback
-  winAny.googleMapLoadCallback = function () {
-    if(debug) console.log('googleMapLoadCallback');
-    googleMapLoadDeferred
-      .resolve(true)
-      // process the queue after init, in case something is waiting
-      .then(() => {
-        readyToProcessQueue = true;
-        processQueue();
-      });
-  };
-
-  if(debug) console.log('giveJqueryGoogleMaps-after');
-
-
+  // Load Google Maps if not already loading (prevent duplicate inits)
   if (!winAny.googleMapsLoading) {
     winAny.googleMapsLoading = true;
     const keyWithoutWarning = winAny.googleMapsApiKey.replace("warning!", "");
-    getScript("//maps.google.com/maps/api/js?key=" + keyWithoutWarning + "&sensor=true&callback=googleMapLoadCallback", null); //, winAny.googleMapLoadCallback);
+    getScript("//maps.google.com/maps/api/js?key=" + keyWithoutWarning + "&sensor=true&callback=googleMapLoadCallback", null);
   }
+
+  googleMapLoadDeferred.then(function() {
+    if(debug) console.log('maps loaded - will attach turnOnMap');
+    objToExpandWhenDone.turnOnMap = turnOnMap;
+  });
 }
 
-/* Google Maps API Key */
-export function activateGoogleMaps() {
-  
-  // Change this GoogleApiKey. They are in the App-Settings. Read instructions here: https://azing.org/2sxc/r/ippFQYkz
-  if(!winAny.googleMapsApiKey) return; 
 
-  giveJqueryGoogleMaps();
+// Callback which google-maps will trigger automatically when loaded
+winAny.googleMapLoadCallback = function() {
+  if(debug) console.log('googleMapLoadCallback');
+  googleMapLoadDeferred.state
+  googleMapLoadDeferred
+    .resolve(true)
+    // process the queue after init, in case something is waiting
+    // .then(() => {
+    //   readyToProcessQueue = true;
+    //   processQueue();
+    // })
+    ;
 }
+
+function turnOnMap(turnOn: any) {
+  if(debug) console.log('turn on map', turnOn);
+  buildMap(turnOn.data);
+}
+
+// TODO: SET ID to be the full id
+function buildMap({id, marker, zoom, lat, lng, info} : MapDefinition) {
+  console.log('build map', id, marker, arguments);
+
+  ($("#GoogleMap-" + id) as any).toGoogleMap({
+    position: {
+      lat: lat,
+      lng: lng
+    },
+    zoom: zoom,
+    mapTypeId: "ROADMAP",
+    infoWindowHtml: info,
+    showInfoWindow: false,
+    icon: marker
+  });
+
+  showKeyWarnings();
+};
+
+// /**
+//  * Process the queue on window.appContent.mapQueue if there is something to process
+//  */
+// export function processQueue() {
+//   if(!readyToProcessQueue) return;
+//   var mapQueue = winAny?.appContent?.mapQueue as Function[];
+//   if(mapQueue?.length) {
+//     mapQueue.forEach(fn => {
+//       fn();
+//     });
+//     showKeyWarnings();
+//     // reset queue
+//     winAny.appContent.mapQueue = new Array<Function>();
+//   }
+// }
+
+
 
 function showKeyWarnings() {
   const showApiKeyWarning = winAny.googleMapsApiKey.indexOf("warning!") > -1;
@@ -139,9 +107,8 @@ function showKeyWarnings() {
     }
   }
 
-  if(googleMapsElem.length != 0) {
+  if(googleMapsElem.length != 0)
     googleMapsElem.each(function() {
       showWarningIfDemoKeyIsUsed(this);
-    })
-  }
+    });
 }

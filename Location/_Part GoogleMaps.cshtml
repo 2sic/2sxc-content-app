@@ -1,5 +1,6 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using Newtonsoft.Json;
 @{
   // get key from settings and remove empty lines
   // will also add warning! in front, if the settings say to include a warning
@@ -9,8 +10,37 @@
 <script>
   var googleMapsApiKey = "@key";
 </script>
+@{
+  // Get TurnOn to be included
+  GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
+  @* var turnOnSpecs = {
+    x = { "window.appContent.map" },
+  }; *@
+  var mapParams = new {
+    marker = Text.First(DynamicModel.markerImage, ""),
+    lat = DynamicModel.mapInfo.GpsLat.ToString().Replace(",","."),
+    lng = DynamicModel.mapInfo.GpsLong.ToString().Replace(",","."),
+    zoom = Content.Presentation.Zoom,
+    info = DynamicModel.company,
+  };
+  var asText = JsonConvert.SerializeObject(mapParams);
+  var marker = Text.First(DynamicModel.markerImage, "");
+  var lat = DynamicModel.mapInfo.GpsLat.ToString().Replace(",",".");
+  var lng = DynamicModel.mapInfo.GpsLong.ToString().Replace(",",".");
+}
 
-<script type="text/javascript">
+<span turn-on='{ "xawait": ["window.appContent.map"], "run": "window.appContent.turnOnMap()", "data": { "id": @DynamicModel.mapId, "marker": "@marker","lat": @lat, "lng": @lng, "zoom": @Content.Presentation.Zoom, "info": "@DynamicModel.company" }}' />
+
+
+@* <script>
+  window.testMapInit = function(turnOn) {
+    const data = turnOn.data;
+    console.log('test-map-init', data);
+    window.appContent.map(data);
+  }
+</script> *@
+
+@* <script type="text/javascript">
   (function () {
     // for now we must queue the init calls - our maps library will pick this up later on to init once it's ready
     const appC = window.appContent = window.appContent || { }
@@ -32,5 +62,5 @@
       });
     if(window.appContent.processQueue)
       window.appContent.processQueue();
-  })();
-</script>
+  });//();
+</script> *@
