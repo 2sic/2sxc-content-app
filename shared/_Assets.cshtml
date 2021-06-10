@@ -25,7 +25,7 @@
   var videos = parts.Contains("videos");
 
   // TODO: CHECK W/2RO - lazy is never requested - but maybe it should be?
-  // TODO: ALSO check - init could conflict w/gallery, but unclear why it doesn't
+  // TODO: ALSO check - init fancybox could conflict w/gallery, but unclear why it doesn't
   var lazy = parts.Contains("lazy");
 
   // Include icon font - the exact HTML for this is in the App Settings
@@ -49,10 +49,8 @@
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }
 @if(scripts || videos) { 
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
-  <script type="text/javascript">
-    // if reloaded on a dynamic page, re-activate all parts - just ensure the objects exist
-    $(function() { if(window.appContent && window.appContent.activateAll) window.appContent.activateAll() });
-  </script>
+  @* if reloaded on a dynamic page, re-activate all parts - just ensure the objects exist *@
+  <script turn-on='{ "await": ["window.$"], "run": "window.appContent.activateAll()" }'></script>
 }
 @* Turn On various features as needed *@
 @if(videos) {
