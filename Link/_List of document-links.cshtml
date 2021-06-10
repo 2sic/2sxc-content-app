@@ -7,7 +7,7 @@
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
-	<div class="co-container-inner">
+  <div class="co-container-inner">
     <ul class="list-unstyled">
       @foreach (var link in AsList(Data)) {
         var linkInfo = linkHelper.LinkInfos(link);
@@ -30,7 +30,7 @@
         </li>
       }
     </ul>
-	</div>
+  </div>
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,icons"})

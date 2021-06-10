@@ -9,7 +9,7 @@
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
-	<div class="co-container-inner text-center py-5" @Edit.TagToolbar(Content)>
+  <div class="co-container-inner text-center py-5" @Edit.TagToolbar(Content)>
     @if(Content.Presentation.HeadingType != "hide") {
       @(Tag.Custom(Content.Presentation.HeadingType)
         .Class("mb-4")
