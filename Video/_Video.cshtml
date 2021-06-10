@@ -10,16 +10,23 @@
 }
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner row" @Edit.TagToolbar(Content)>
-    @* <div class="row"> *@
-      <div class='col-md-@colsText order-@(Settings.TextFirst ? "first" : "last")'>
-        @* call sub-template to show the title with the correct H1-H6 tag *@
-        @Html.Partial("../shared/_Header tag.cshtml")
-        @Html.Raw(Content.Text)
-      </div>
+    <div class='col-md-@colsText order-@(Settings.TextFirst ? "first" : "last")'>
+      @* call sub-template to show the title with the correct H1-H6 tag *@
+      @Html.Partial("../shared/_Header tag.cshtml")
+
+      @* If the image doesn't have it's own column, its between title/text *@
+      @if(colsImg == 0) {
+        @Html.Partial("_Part Video.cshtml")
+      }
+
+      @Html.Raw(Content.Text)
+    </div>
+    @* If the image has it's own column, it's here *@
+    @if(colsImg != 0) {
       <div class='col-md-@colsImg order-@(Settings.TextFirst ? "last" : "first")'>
-        @Html.Partial("_Video-Part.cshtml", new { width = 640, height = 360 })
+        @Html.Partial("_Part Video.cshtml")
       </div>
-    @* </div> *@
+    }
   </div>
 </div>
 

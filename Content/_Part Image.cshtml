@@ -11,22 +11,14 @@
 @{
   // this is the parameter passed in from the calling page
   var imgItem = DynamicModel.img;
-  int width = DynamicModel.width;
+  int width = DynamicModel.width * (Settings.ImageHighResOn ? 2 : 1);
 
   // If there is no image, exit now
   if(!Text.Has(imgItem.Image)) { return; }
 
-
   // configuration
-  var retina = Settings.ImageHighResOn;
-  var quality = Settings.ImageQuality;
-  var lightboxQuality = Settings.LightboxImageQuality;
-
-  if(retina) {
-    width += width; // double if retina
-    quality = Settings.ImageHighResQuality;
-    lightboxQuality = Settings.LightboxImageHighResQuality;
-  }
+  var quality = Settings.ImageHighResOn ? Settings.ImageHighResQuality : Settings.ImageQuality;
+  var lightboxQuality = Settings.LightboxImageHighResOn ? Settings.LightboxImageHighResQuality : Settings.LightboxImageQuality;
 
   // prepare the title, either the default or the additional image caption
   var title="";
