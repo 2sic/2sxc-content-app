@@ -2,25 +2,23 @@
 @using ToSic.Razor.Blade;
 @using Newtonsoft.Json;
 @{
-  // get key from settings and remove empty lines
+  // They Google API key is in the App-Settings. See instructions: https://azing.org/2sxc/r/ippFQYkz
+  // Get key from settings and remove empty lines. 
   var key = Settings.GoogleMapsKey.Replace("\n", ""); 
-}
-<script>
-  var googleMapsApiKey = "@key";
-</script>
-@{
-  // Get TurnOn to be included
+
+  // Activate turnOn in the page
   GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
 }
+@* Instruct turnOn to activate GoogleMaps with the API key once everything is loaded *@
+<script turn-on='{ "run": "window.appContent.maps.load()", "data": "@key"}'></script>
 
-<script turn-on='{ "run": "window.appContent.maps.activate()", "data": "@key"}'></script>
-
-<script turn-on='{ "run": "window.appContent.maps.turnOnMap()", "data": { 
+@* Instruct turnOn to init this specific Map once everything is loaded *@
+<script turn-on='{ "run": "window.appContent.maps.configureMap()", "data": { 
   "domId": "GoogleMap-@DynamicModel.mapId", 
   "marker": "@Text.First(DynamicModel.markerImage, "")",
   "lat": @DynamicModel.mapInfo.GpsLat.ToString("R"), 
   "lng": @DynamicModel.mapInfo.GpsLong.ToString("R"), 
   "zoom": @Content.Presentation.Zoom, 
   "info": "@DynamicModel.company",
-  "warn": @(App.Settings.GoogleMapsShowWarning ? "true" : "false")
+  "warn": @(Settings.GoogleMapsShowWarning ? "true" : "false")
 }}'></script>
