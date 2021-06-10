@@ -10,7 +10,7 @@
   GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
 }
 @* Instruct turnOn to activate GoogleMaps with the API key once everything is loaded *@
-<script turn-on='{ "run": "window.appContent.maps.load()", "data": "@key"}'></script>
+<script turn-on='{ "await": ["window.$"], "run": "window.appContent.maps.load()", "data": "@key"}'></script>
 
 @* Instruct turnOn to init this specific Map once everything is loaded *@
 <script turn-on='{ "run": "window.appContent.maps.configureMap()", "data": { 

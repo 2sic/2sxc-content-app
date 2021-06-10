@@ -1,6 +1,6 @@
 import { monkeyPatchjQueryFade } from './jquery-fade-in';
 import { activateObfuscatedMails } from './mail-obfuscator';
-import { activateYouTubePreviews } from './youtube-preview';
+import { activateYouTubeInline } from './youtube-preview';
 import { activateFancybox } from './content-fancybox';
 import { GoogleMapsTurnOn } from './google-maps/google-maps';
 
@@ -8,13 +8,13 @@ import { GoogleMapsTurnOn } from './google-maps/google-maps';
 const winAny = (window as any);
 winAny.appContent = winAny.appContent || {};
 winAny.appContent.maps = winAny.appContent.maps || new GoogleMapsTurnOn();
+winAny.appContent.activateYouTubeInline = activateYouTubeInline;
 
 /** activate all the content-app features */
 function activateAll() {
   // console.log('activate all');
   activateObfuscatedMails();
   activateFancybox();
-  activateYouTubePreviews();
 }
 
 // Work around a limitation of jQuery if it's installed in slim mode

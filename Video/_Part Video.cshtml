@@ -52,4 +52,6 @@
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
   </div>
+  @* activate scripts because they are needed for the iframe-embed mode *@
+  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos" })
 }

@@ -1,4 +1,4 @@
-export function activateYouTubePreviews() {
+export function activateYouTubeInline() {
   var youtubeElem = $("[data-youtube^='iframe-']");
   // If youtube element is on page
   if(youtubeElem.length != 0) {

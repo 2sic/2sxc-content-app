@@ -2,31 +2,31 @@
 @{
   // get CSS information about the current Theme
   var pageCss = GetService<Connect.Koi.ICss>();
-}
-@* show warning for admin if koi.json is missing *@
-@Html.Partial("_Koi Admin Messages.cshtml")
 
-@{
+  // show warning for admin if koi.json is missing
+  @Html.Partial("_Koi Admin Messages.cshtml");
+
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page 
+  // Note that the link and script tags are in the App Settings to make it easier to update a live installation
   if(!pageCss.Is("bs4")) { 
-    // Note that the link and script tags are in the App Settings to make it easier to update a live installation
     @Html.Raw(Settings.AssetsBootstrap) 
   }
-}
 
-@{
   // This sub template just places all the very-often used
   // style and link tags into the code.
   // We put this in a sub-template because we use it so often, and want to make sure
   // nobody accidentally uses the wrong url or forgets data-enableoptimizations
   string partList = DynamicModel.parts;
   var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
-  var all = parts.Contains("all");
-  var fancybox = all || parts.Contains("fancybox");
-  var styles = all || parts.Contains("styles");
-  var scripts = all || parts.Contains("scripts");
-  var icons = all || parts.Contains("icons");
-  var lazy = all || parts.Contains("lazy");
+  var fancybox = parts.Contains("fancybox");
+  var styles = parts.Contains("styles");
+  var scripts = parts.Contains("scripts");
+  var icons = parts.Contains("icons");
+  var videos = parts.Contains("videos");
+
+  // TODO: CHECK W/2RO - lazy is never requested - but maybe it should be?
+  // TODO: ALSO check - init could conflict w/gallery, but unclear why it doesn't
+  var lazy = parts.Contains("lazy");
 
   // Include icon font - the exact HTML for this is in the App Settings
   if(icons) {
@@ -34,10 +34,10 @@
   }
 
   // Tell DNN & Oqtane to load jquery as it's needed by fancybox and our basic scripts
-  if(fancybox || scripts) {
-    GetService<ToSic.Sxc.Web.IPageService>().Activate("jQuery");
+  // Most of the basic scripts will also use turnOn to activate
+  if(fancybox || scripts || videos) {
+    GetService<ToSic.Sxc.Web.IPageService>().Activate("jQuery", "turnOn");
   }
-
 }
 
 @* Add Fancybox if required - as specified in the App Settings *@
@@ -47,10 +47,14 @@
 @if(lazy) { @Html.Raw(Settings.AssetsLazyload) }
 
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }
-@if(scripts) { 
+@if(scripts || videos) { 
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   <script type="text/javascript">
     // if reloaded on a dynamic page, re-activate all parts - just ensure the objects exist
     $(function() { if(window.appContent && window.appContent.activateAll) window.appContent.activateAll() });
   </script>
+}
+@* Turn On various features as needed *@
+@if(videos) {
+  <script turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></script>
 }
