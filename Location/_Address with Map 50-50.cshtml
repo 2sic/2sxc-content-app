@@ -42,7 +42,7 @@
 						@if (Text.Has(Content.Mail)) {
 							<div itemprop="email">
 								<span class="fas fa-envelope"></span>
-								@Html.Partial("../shared/_TryToEncryptMail.cshtml", new { email = Content.Mail })
+								@Html.Partial("../shared/_TryToEncryptMail.cshtml", new { Email = Content.Mail })
 							</div>
 						}
 						@if (Text.Has(Content.Tel)) {

@@ -35,9 +35,14 @@
 
   // Tell DNN & Oqtane to load jquery as it's needed by fancybox and our basic scripts
   // Most of the basic scripts will also use turnOn to activate
+  var page = GetService<ToSic.Sxc.Web.IPageService>();
   if(fancybox || scripts || videos) {
-    GetService<ToSic.Sxc.Web.IPageService>().Activate("jQuery", "turnOn");
+    page.Activate("jQuery");
   }
+  if(scripts || videos) {
+    page.Activate("turnOn");
+  }
+  
 }
 
 @* Add Fancybox if required - as specified in the App Settings *@
@@ -50,7 +55,7 @@
 @if(scripts || videos) { 
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   @* if reloaded on a dynamic page, re-activate all parts - just ensure the objects exist *@
-  <script turn-on='{ "await": ["window.$"], "run": "window.appContent.activateAll()" }'></script>
+  <script turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></script>
 }
 @* Turn On various features as needed *@
 @if(videos) {

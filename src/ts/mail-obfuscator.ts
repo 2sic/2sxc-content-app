@@ -1,5 +1,5 @@
 
-export function activateObfuscatedMails() {
+export function showEncryptedMails() {
   /* mailencrypting */
   setTimeout(function () {
     $('[data-madr1]').not('.madr-done').each(function () {
