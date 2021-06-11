@@ -22,7 +22,7 @@ export class GoogleMapsTurnOn {
   isLoading = false;
 
   /** Load Google Maps and prepare for use */
-  load(apiKey: any) {
+  load(apiKey: string) {
     if(debug) console.log('activate', apiKey);
     if(!apiKey) return;           // check api key exists
     if(this.isLoading) return;    // Prevent multiple inits in case this is triggered again
@@ -42,7 +42,7 @@ export class GoogleMapsTurnOn {
       loadPromise.resolve(true);
       
       // Now Activate the turnOnMap command so this can be used from outside
-      thisInCallback.configureMap = buildMap; 
+      thisInCallback.configureMap = configureMap; 
     };
 
     // Load the Google Maps scripts - will trigger the callback (see above)
@@ -52,10 +52,10 @@ export class GoogleMapsTurnOn {
 
 
 
-function buildMap({domId: id, marker, zoom, lat, lng, info, warn } : MapDefinition) {
+function configureMap({domId, marker, zoom, lat, lng, info, warn } : MapDefinition) {
   if(debug) console.log('build map', arguments);
 
-  ($('#' + id) as any).toGoogleMap({
+  ($('#' + domId) as any).toGoogleMap({
     position: {
       lat: lat,
       lng: lng

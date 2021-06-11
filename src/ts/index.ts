@@ -1,7 +1,6 @@
 import { monkeyPatchjQueryFade } from './jquery-fade-in';
 import { activateObfuscatedMails } from './mail-obfuscator';
 import { activateYouTubeInline } from './youtube-preview';
-import { activateFancybox } from './content-fancybox';
 import { GoogleMapsTurnOn } from './google-maps/google-maps';
 
 // so it can be called from the HTML when content re-initializes dynamically
@@ -14,10 +13,10 @@ winAny.appContent.activateYouTubeInline = activateYouTubeInline;
 function activateAll() {
   // console.log('activate all');
   activateObfuscatedMails();
-  activateFancybox();
 }
 
 // Work around a limitation of jQuery if it's installed in slim mode
+// because FancyBox will access this jQuery feature
 $(monkeyPatchjQueryFade);
 
 winAny.appContent.activateAll = winAny.appContent.activateAll || activateAll;
