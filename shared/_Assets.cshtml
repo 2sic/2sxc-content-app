@@ -40,7 +40,7 @@
     page.Activate("jQuery");
   }
   if(scripts || videos) {
-    page.Activate("turnOn");
+    page.Activate("turnOn"); // see https://r.2sxc.org/turnon
   }
   
 }
@@ -54,10 +54,10 @@
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }
 @if(scripts || videos) { 
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
-  @* if reloaded on a dynamic page, re-activate all parts - just ensure the objects exist *@
-  <script turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></script>
+  @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
+  <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
-@* Turn On various features as needed *@
+@* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if(videos) {
-  <script turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></script>
+  <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
 }
