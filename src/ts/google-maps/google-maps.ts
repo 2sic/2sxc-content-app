@@ -52,7 +52,7 @@ export class GoogleMapsTurnOn {
 
 
 
-function configureMap({domId, marker, zoom, lat, lng, info, warn } : MapDefinition) {
+function configureMap({domId, icon, zoom, lat, lng, info, warn } : MapDefinition) {
   if(debug) console.log('build map', arguments);
 
   ($('#' + domId) as any).toGoogleMap({
@@ -64,7 +64,7 @@ function configureMap({domId, marker, zoom, lat, lng, info, warn } : MapDefiniti
     mapTypeId: "ROADMAP",
     infoWindowHtml: info,
     showInfoWindow: false,
-    icon: marker
+    icon: icon
   });
 
   if(warn) showKeyWarnings();

@@ -1,6 +1,6 @@
 export interface MapDefinition{
   domId: string;
-  marker: string;
+  icon: string;
   zoom: number;
   lat: string;
   lng: string;

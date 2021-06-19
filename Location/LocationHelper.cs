@@ -7,7 +7,7 @@ using ToSic.Razor.Blade;
 public class LocationHelper: Custom.Hybrid.Code12
 {
   // check a link, prepare target window, icon etc. based on various settings
-	public MapInfo MapInfos(dynamic content) {
+  public MapInfo MapInfos(dynamic content) {
     // this will contain the result
     var mInfo = new MapInfo();
 
@@ -22,7 +22,7 @@ public class LocationHelper: Custom.Hybrid.Code12
     // this link will be used to open the Google-Directions in a new window
     var directionurl = gpsLong > 0
       // if we have coordinates, use them
-      ? "https://www.google.com/maps/dir/" + gpsLat.ToString("G", CultureInfo.InvariantCulture) + "," + gpsLong.ToString("G", CultureInfo.InvariantCulture)
+      ? "https://www.google.com/maps/dir/" + gpsLat.ToString("R") + "," + gpsLong.ToString("R")
       // otherwise use the address
       : "https://maps.google.com/maps?daddr="
         + (content.Street + " " + content.ZipCode + " " + content.City + " " + content.Country)
@@ -35,7 +35,7 @@ public class LocationHelper: Custom.Hybrid.Code12
     mInfo.DirectionUrl = directionurl;
 
     return mInfo;
-	}
+  }
   
 }
 
