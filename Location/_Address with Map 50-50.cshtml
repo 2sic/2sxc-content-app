@@ -16,10 +16,6 @@
   // TODO: 2RO - DUPLICATE ON bs3
 }
 
-Test: @mapResources.MapsLabelDirections | @mapResources.LabelDirections  <br>
-Test icon: @mapSettings.MapsPinImage  - @mapSettings.MapsEnableDirections
-<hr>
-
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner" @Edit.TagToolbar(Content)>
     <div class="row">
@@ -78,4 +74,4 @@ Test icon: @mapSettings.MapsPinImage  - @mapSettings.MapsEnableDirections
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,icons"})
-@Html.Partial("_Part GoogleMaps.cshtml", new { markerImage = mapSettings.MapsPinImage, mapId = mapId, mapInfo = mapInfo, company = Content.Company })
+@Html.Partial("_Part GoogleMaps.cshtml")
