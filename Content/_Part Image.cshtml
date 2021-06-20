@@ -27,7 +27,7 @@
   }
 }
 @if(imgItem.Presentation.ImageLightbox != false) {
-  @:<a data-fancybox href='@Tags.SafeUrl(imgItem.Image + "?mode=max&w=" + lightbox.Width + "&h=" + lightbox.Height + "&quality=" + lightbox.Quality)' data-caption="@lightboxCaption">
+  @:<a data-fancybox href='@Tags.SafeUrl(imgItem.Image + "?mode=" + lightbox.ResizeMode + "&w=" + lightbox.Width + "&h=" + lightbox.Height + "&quality=" + lightbox.Quality)' data-caption="@lightboxCaption">
 }
   <figure>
     <div class="overlay w-100 h-100"></div>

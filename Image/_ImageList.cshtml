@@ -24,7 +24,7 @@ Fraction: @fraction | width: @width | height: @height
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (img.Presentation.ImageLightbox != false) {
-            @:<a href="@Tags.SafeUrl(img.Image + "?mode=max&quality=" + lightbox.Quality + "&w=" + lightbox.Width + "&h=" + lightbox.Height)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
+            @:<a href="@Tags.SafeUrl(img.Image + "?mode=" + lightbox.ResizeMode + "&quality=" + lightbox.Quality + "&w=" + lightbox.Width + "&h=" + lightbox.Height)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
         }
         <figure>
             <div class="overlay w-100 h-100"></div>
