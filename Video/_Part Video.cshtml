@@ -17,8 +17,8 @@
   var quality = Settings.Images.Content.Quality;
 
   // this is the parameter passed in from the calling page
-  int width = (int)Settings.ImageWidth * (Settings.ImageHighResOn ? 2 : 1);
-  int height = (int)Settings.ImageWidth * 9/16 * (Settings.ImageHighResOn ? 2 : 1);
+  int width = (int)Settings.ImageWidth;
+  int height = (int)(Settings.ImageWidth * 9/16);
 }
 @if(Content.Presentation.VideoLightbox != false) {
   // open in lightbox

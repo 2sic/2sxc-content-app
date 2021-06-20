@@ -2,12 +2,9 @@
 @using ToSic.Razor.Blade;
 
 @{
-  // Resolution multiplier - usually set at App level
-  var resFactor = Settings.ImageHighResOn ? 2 : 1;
-
   // Size usually comes from View Settings
-  var width = Settings.ImageWidth * resFactor;
-  var height = Settings.ImageHeight * resFactor;
+  var width = Settings.ImageWidth;
+  var height = Settings.ImageHeight;
 	var quality = Settings.ImageQuality;
 }
 
