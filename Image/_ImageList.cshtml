@@ -14,11 +14,8 @@
 
   // All these settings are required at App level
   var quality = Settings.ImageQuality;
-  var lightboxQuality = Settings.LightboxImageQuality;
-  var lightboxFactor = Settings.LightboxImageHighResOn ? 2 : 1;
-  var zoomW = Settings.LightboxImageWidth * lightboxFactor;
-  var zoomH = Settings.LightboxImageHeight * lightboxFactor;
-  
+
+  var lightbox = Settings.Images.Lightbox;
 }
 
 <div class="co-container-outer">
@@ -28,7 +25,7 @@
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (img.Presentation.ImageLightbox != false) {
-            @:<a href="@Tags.SafeUrl(img.Image + "?quality=" + lightboxQuality + "&maxwidth=" + zoomW + "&maxheight=" + zoomH)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
+            @:<a href="@Tags.SafeUrl(img.Image + "?mode=max&quality=" + lightbox.Quality + "&w=" + lightbox.Width + "&h=" + lightbox.Height)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
         }
         <figure>
             <div class="overlay w-100 h-100"></div>

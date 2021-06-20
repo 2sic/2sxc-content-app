@@ -14,8 +14,7 @@
     : "";
 
   // configuration
-  var quality = Settings.ImageHighResOn ? Settings.ImageHighResQuality : Settings.ImageQuality;
-  var lightboxQuality = Settings.LightboxImageHighResOn ? Settings.LightboxImageHighResQuality : Settings.LightboxImageQuality;
+  var quality = Settings.Images.Content.Quality;
 
   // this is the parameter passed in from the calling page
   int width = (int)Settings.ImageWidth * (Settings.ImageHighResOn ? 2 : 1);
