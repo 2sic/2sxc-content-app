@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-20T09:41:37.3510434+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-22T19:41:16.3100488+02:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -112,55 +112,6 @@
             </Value>
           </Entity>
         </Attribute>
-        <Attribute StaticName="ImageWidth" Type="Number" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="9c9d3acc-d252-42eb-aaf3-f443ff82c47d" Json="True" KeyNumber="4678">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="number-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Image Width for Server-Side Resizing" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Default Image Width used&lt;/p&gt;" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="0e75ed71-f3e7-432d-b10c-324b2b2ac3f6" Json="True" KeyNumber="4678">
-            <Value Key="Decimals" Value="0" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="GroupImageEnd" Type="Empty" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="a92a3ec9-4ae8-412d-9c2b-4a91f4314725" Json="True" KeyNumber="4686">
-            <Value Key="InputType" Value="empty-end" Type="String" />
-            <Value Key="Name" Value="GroupImageEnd" Type="String" />
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
-          </Entity>
-        </Attribute>
         <Attribute StaticName="GroupAssets" Type="Empty" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="abaa894f-b0e1-49a3-b4c1-729ef1ad2177" Json="True" KeyNumber="3387">
             <Value Key="CustomJavaScript" Value="" Type="String">
@@ -178,10 +129,10 @@
             <Value Key="InputType" Value="empty-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Assets from CDNs" Type="String">
+            <Value Key="Name" Value="Assets / Resources from CDNs" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;The Conten App uses standard Resources like Bootstrap4 (if not already loaded in the theme) and Fancybox3. Since these are standard 2sxc assets, they are not listed here but come from global settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Placeholder" Value="" Type="String">
@@ -199,203 +150,6 @@
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@empty-default" AttributeSetName="@empty-default" EntityGUID="3f95c252-cc95-4d27-a435-8733a5dfd392" Json="True" KeyNumber="3387">
             <Value Key="DefaultCollapsed" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="AssetsIconFont" Type="String" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="a5b88980-8791-4977-8dcd-7ccfdd55d232" Json="True" KeyNumber="3388">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="string-default" Type="String" />
-            <Value Key="Name" Value="Icon Font" Type="String" />
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="49a4ab8a-98f2-407b-8aac-4f83e87ae4a4" Json="True" KeyNumber="3388">
-            <Value Key="DropdownValues" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="0fdf00f4-9e48-4fb0-a689-0bd13ac811bd" Json="True" KeyNumber="3388">
-            <Value Key="RowCount" Value="3" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="AssetsFancybox" Type="String" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="be4e9d58-ae20-4b40-98e6-8386fce1a52b" Json="True" KeyNumber="3389">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="string-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Fancybox" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="d92b0459-a744-4220-a4ee-9c4584bb8e4d" Json="True" KeyNumber="3389">
-            <Value Key="DropdownValues" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="9d0adfc3-6a05-482c-92c1-fb33acac1e07" Json="True" KeyNumber="3389">
-            <Value Key="InputFontFamily" Value="monospace" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="RowCount" Value="10" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="AssetsBootstrap" Type="String" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="bdea90d5-a948-4f96-ae8a-a6affff0e99b" Json="True" KeyNumber="3390">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="string-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Bootstrap" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="&lt;p&gt;This is only loaded if the skin/theme is&amp;nbsp;&lt;em&gt;not&amp;nbsp;&lt;/em&gt;bootstrap 3 or 4, so if it's unknown or another framework.&amp;nbsp;&lt;/p&gt;" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="78f34102-0c0c-42b8-82cc-8dc45f817fed" Json="True" KeyNumber="3390">
-            <Value Key="DropdownValues" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ae4787ab-52b4-4605-a197-32fb4b8601a3" Json="True" KeyNumber="3390">
-            <Value Key="InputFontFamily" Value="monospace" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="RowCount" Value="10" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="AssetsLazyload" Type="String" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="1bde08d1-a447-45de-9116-5ccfacd996ba" Json="True" KeyNumber="4655">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="string-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Lazyload" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="b6eac026-7e12-4845-84e6-16a92389d7b6" Json="True" KeyNumber="4655">
-            <Value Key="DropdownValues" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="0413c76d-e46d-4ac4-a0a8-23eb4eeb9edc" Json="True" KeyNumber="4655">
-            <Value Key="InputFontFamily" Value="monospace" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="RowCount" Value="10" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1107,22 +861,8 @@
             </Value>
           </Entity>
         </Attribute>
-        <Attribute StaticName="ImageWidth" Type="Number" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="3a35e18e-3a6a-42e5-b1c9-96a27def7bc1" Json="True" KeyNumber="4664">
-            <Value Key="InputType" Value="number-default" Type="String" />
-            <Value Key="Name" Value="MaxWidth" Type="String" />
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
-          </Entity>
-        </Attribute>
         <Attribute StaticName="ImageHeight" Type="Number" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="c701d92a-e3ff-465e-bdfe-9491dbce3515" Json="True" KeyNumber="4665">
-            <Value Key="InputType" Value="number-default" Type="String" />
-            <Value Key="Name" Value="MaxHeight" Type="String" />
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="ImageHighResOn" Type="Boolean" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="8882c5ef-fb87-4030-944d-d19625ce9af1" Json="True" KeyNumber="4668">
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -1135,16 +875,16 @@
             <Value Key="DisableTranslation" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="boolean-tristate" Type="String">
+            <Value Key="InputType" Value="number-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="ImagesHighResolution" Type="String">
+            <Value Key="Name" Value="Image Height" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Placeholder" Value="" Type="String">
+            <Value Key="Placeholder" Value="Leave empty for default ratio as specified in Settings.Images.Content" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
@@ -1157,14 +897,8 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="527f18b2-4c82-4176-aa4c-91690f93fed2" Json="True" KeyNumber="4668">
-            <Value Key="TitleFalse" Value="Use default images" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="Use app setting for Image Resolution (default)" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Use high resolution Images with double the pixels" Type="String">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="92478b00-f3f0-422a-ab2e-e0d9afe1d358" Json="True" KeyNumber="4665">
+            <Value Key="Decimals" Value="0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3488,48 +3222,6 @@
             </Value>
           </Entity>
         </Attribute>
-        <Attribute StaticName="ImageWidth" Type="Number" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="72bd3f20-fac8-4ee4-9f26-8d328d044008" Json="True" KeyNumber="4679">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="number-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Image Width for Server-Side Resizing" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="leave empty to use default in App Settings" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="14c04a29-b510-4d85-ba71-3bbd86600a46" Json="True" KeyNumber="4679">
-            <Value Key="Decimals" Value="0" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
       </Attributes>
     </AttributeSet>
     <AttributeSet StaticName="bbfd2e61-d7f3-4d76-bd7c-f870f3e10307" Name="TextViewSettings" Description="" Scope="System.Configuration" AlwaysShareConfiguration="false">
@@ -3558,7 +3250,7 @@
             <Value Key="InputType" Value="number-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Colsumns Main Element (of 12)" Type="String">
+            <Value Key="Name" Value="Columns Main Element (of 12)" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
@@ -6832,13 +6524,13 @@
       <Value Key="RequiredOqtaneVersion" Value="02.00.02" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="12.00.00" Type="String">
+      <Value Key="RequiredVersion" Value="12.02.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="12.00.00" Type="String">
+      <Value Key="Version" Value="12.03.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -7133,21 +6825,6 @@
       <Value Key="Template" Value="f7045144-1f69-4cad-bea1-a3fb5cb5a1e9" Type="Entity" />
     </Entity>
     <Entity AssignmentObjectType="App" AttributeSetStaticName="App-Settings" AttributeSetName="App-Settings" EntityGUID="b567f24a-a856-4de1-ab81-6289a88fa698" KeyNumber="20">
-      <Value Key="AssetsBootstrap" Value="&lt;link rel=&quot;stylesheet&quot; href=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; /&gt;&#xA;&lt;script src=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js&quot; integrity=&quot;sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; &gt;&lt;/script&gt;" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="AssetsFancybox" Value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css&quot; data-enableoptimizations=&quot;bottom&quot; /&gt;&#xA;&lt;script defer src=&quot;https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js&quot; data-enableoptimizations=&quot;bottom&quot;&gt;&lt;/script&gt;" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="AssetsIconFont" Value="&lt;script defer async src=&quot;https://use.fontawesome.com/releases/v5.12.0/js/all.js&quot;&gt;&lt;/script&gt;" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="AssetsLazyload" Value="&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js&quot; data-enableoptimizations=&quot;bottom&quot;&gt;&lt;/script&gt;" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="800" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="MapsEnableDirections" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7419,12 +7096,6 @@
       <Value Key="ImageHeight" Value="" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageHighResOn" Value="True" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="1400" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="MaxPerRow" Value="1" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7433,13 +7104,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="5bd2cf7c-28ad-45f5-845e-9b8b9ca03721" AttributeSetName="ImageViewSettings" EntityGUID="3ad6a25c-a5ef-435c-bd7c-28e7cb3a4052">
-      <Value Key="ImageHeight" Value="400" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageHighResOn" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="640" Type="Number">
+      <Value Key="ImageHeight" Value="" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="MaxPerRow" Value="2" Type="Number">
@@ -7450,13 +7115,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="5bd2cf7c-28ad-45f5-845e-9b8b9ca03721" AttributeSetName="ImageViewSettings" EntityGUID="4c7b305e-36b7-4a73-9bf2-0596f6532d4f">
-      <Value Key="ImageHeight" Value="302" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageHighResOn" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="528" Type="Number">
+      <Value Key="ImageHeight" Value="" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="MaxPerRow" Value="3" Type="Number">
@@ -7467,13 +7126,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="5bd2cf7c-28ad-45f5-845e-9b8b9ca03721" AttributeSetName="ImageViewSettings" EntityGUID="fec76c84-5e05-4bde-b669-dce2fa442b8e">
-      <Value Key="ImageHeight" Value="302" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageHighResOn" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="528" Type="Number">
+      <Value Key="ImageHeight" Value="" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="MaxPerRow" Value="4" Type="Number">
@@ -7487,12 +7140,6 @@
       <Value Key="ImageHeight" Value="300" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageHighResOn" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="1600" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="MaxPerRow" Value="1" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7502,12 +7149,6 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="5bd2cf7c-28ad-45f5-845e-9b8b9ca03721" AttributeSetName="ImageViewSettings" EntityGUID="781d30bd-d1c9-4ae6-b30d-2ec39fc352ce">
       <Value Key="ImageHeight" Value="600" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageHighResOn" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="1600" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="MaxPerRow" Value="1" Type="Number">
@@ -7521,9 +7162,6 @@
       <Value Key="ColsElement1" Value="6" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TextFirst" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7533,9 +7171,6 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="c584f286-9e80-4a1c-8dec-3b945b7c20fa" AttributeSetName="TextImageViewSettings" EntityGUID="6ef8a5a6-b187-4587-ac2b-d89e450b6824">
       <Value Key="ColsElement1" Value="6" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TextFirst" Value="True" Type="Boolean">
@@ -7549,9 +7184,6 @@
       <Value Key="ColsElement1" Value="8" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TextFirst" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7563,9 +7195,6 @@
       <Value Key="ColsElement1" Value="4" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TextFirst" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7575,9 +7204,6 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="c584f286-9e80-4a1c-8dec-3b945b7c20fa" AttributeSetName="TextImageViewSettings" EntityGUID="3be3d2bd-d8ab-4447-8916-3062c4e058b7">
       <Value Key="ColsElement1" Value="12" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="1600" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TextFirst" Value="True" Type="Boolean">
@@ -7724,9 +7350,6 @@
       <Value Key="ColsElement1" Value="6" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TextFirst" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7736,9 +7359,6 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="c584f286-9e80-4a1c-8dec-3b945b7c20fa" AttributeSetName="TextImageViewSettings" EntityGUID="43c47c13-dff3-4a52-99a6-65ba3ede7d45">
       <Value Key="ColsElement1" Value="6" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TextFirst" Value="True" Type="Boolean">
@@ -7752,9 +7372,6 @@
       <Value Key="ColsElement1" Value="8" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TextFirst" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7764,9 +7381,6 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="c584f286-9e80-4a1c-8dec-3b945b7c20fa" AttributeSetName="TextImageViewSettings" EntityGUID="3ad65310-1258-49e8-a197-9ddef7c28da6">
       <Value Key="ColsElement1" Value="4" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TextFirst" Value="False" Type="Boolean">
@@ -7824,9 +7438,6 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="c584f286-9e80-4a1c-8dec-3b945b7c20fa" AttributeSetName="TextImageViewSettings" EntityGUID="e425fedf-f238-48e2-a1a6-f4470d9f57ff">
       <Value Key="ColsElement1" Value="12" Type="Number">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ImageWidth" Value="1280" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TextFirst" Value="True" Type="Boolean">
