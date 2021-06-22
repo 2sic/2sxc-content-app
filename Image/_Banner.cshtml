@@ -2,14 +2,14 @@
 @using ToSic.Razor.Blade;
 
 @{
-  // Size usually comes from View Settings
-  var width = Settings.ImageWidth;
-  var height = Settings.ImageHeight;
-	var quality = Settings.ImageQuality;
+  // Quality/Width come from System-Settings, Height from View Settings
+  var quality = Settings.Images.Content.Quality;
+  var width = Settings.Images.Content.Width;
+  var height = Settings.ImageHeight ?? 400; // default to 300 if not set
 }
 
 <div class="co-container-outer">
-	<div class="co-container-inner">
+  <div class="co-container-inner">
     <div class="co-header" @Edit.TagToolbar(Content)>
       <img class="w-100"
         src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&anchor=" + Content.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'

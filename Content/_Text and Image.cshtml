@@ -3,9 +3,9 @@
   /* This Template is used in ca. 5 Views which show title, text and image */
 
   // Determine the widths of each part, based on 12 Bootstrap Cols
-  const int bootstrapCols = 12;
-  var colsText = Settings.TextFirst ? Settings.ColsElement1 : bootstrapCols - Settings.ColsElement1;
-  var colsImg = bootstrapCols - colsText;
+  const int bsColumns = 12;
+  var colsText = Settings.TextFirst ? Settings.ColsElement1 : bsColumns - Settings.ColsElement1;
+  var colsImg = bsColumns - colsText;
 }
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner row" @Edit.TagToolbar(Content)>
@@ -15,7 +15,7 @@
 
       @* If the image doesn't have it's own column, its between title/text *@
       @if(colsImg == 0) {
-        @Html.Partial("_Part Image.cshtml", new { img = Content, width = (int)Settings.ImageWidth })
+        @Html.Partial("_Part Image.cshtml", new { Item = Content })
       }
 
       @Html.Raw(Content.Text)
@@ -24,7 +24,7 @@
     @if(colsImg != 0) {
       <div class='col-md-@colsImg order-@(Settings.TextFirst ? "last" : "first")'>
         @* call sub-template to show the image with all possible options *@
-        @Html.Partial("_Part Image.cshtml", new { img = Content, width = (int)Settings.ImageWidth })
+        @Html.Partial("_Part Image.cshtml", new { Item = Content, Columns = colsImg })
       </div>
     }
   </div>

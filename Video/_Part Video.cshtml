@@ -1,12 +1,9 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @using System.Text.RegularExpressions;
-@*
-  this is a partial template which is re-used in _Video.cshtml. 
-  It will show the video preview and link-to-lightbox of the Content item
-*@
-
 @{
+  /* Partial template which is re-used in _Video.cshtml to show the video preview and link-to-lightbox for the video */
+
   // Check if the link is a youtube, and convert that to a youtube embed
 	var youTubeLink = Regex.Match(Content.VideoLink, @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
   var youTubeUrl = youTubeLink.Success
@@ -17,8 +14,11 @@
   var quality = Settings.Images.Content.Quality;
 
   // this is the parameter passed in from the calling page
-  int width = (int)Settings.ImageWidth;
-  int height = (int)(Settings.ImageWidth * 9/16);
+  // Figure out width of the image based on max-width of a content-image
+  const int bsColumns = 12;
+  var imgColumns = (int)(DynamicModel.Columns ?? bsColumns);
+  var width = (int)(imgColumns / bsColumns * Settings.Images.Content.Width);
+  int height = (int)(width * 9/16);
 }
 @if(Content.Presentation.VideoLightbox != false) {
   // open in lightbox

@@ -1,21 +1,19 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
-
 @{
-  var columns = 12 / Settings.MaxPerRow;
+  // Determine the widths of each part, based on 12 Bootstrap Cols
+  const int bsColumns = 12;
+  var columns = bsColumns / Settings.MaxPerRow;
   var fraction = 1 / Settings.MaxPerRow; // percentage of the content-width
   var width = (int)(Settings.Images.Content.Width * fraction);
   
   // Get height - note that it's often not defined = automatic
-  var height = Settings.ImageHeight;
-  if(height != null) { height = height; }
+  var height = Settings.ImageHeight ?? 0; // 0 means not set
 
   // All these settings are required at App level
   var quality = Settings.Images.Content.Quality;
-
   var lightbox = Settings.Images.Lightbox;
 }
-Fraction: @fraction | width: @width | height: @height
 
 <div class="co-container-outer">
   <div class="co-container-inner row">

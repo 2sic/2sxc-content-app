@@ -1,20 +1,16 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
-@*
-  this is a partial template which is re-used in many other templates so it's shared here
-
-  expects
-  * img - the image to show
-  * "width" - an int
-*@
-
 @{
-  // this is the parameter passed in from the calling page
-  var imgItem = DynamicModel.img;
-  int width = DynamicModel.width;
+  /* This is a partial template which is re-used in the Content-Templates */
 
-  // If there is no image, exit now
+  // Parameter passed in from the calling page - if we don't have an image, exit
+  var imgItem = DynamicModel.Item;  // The content-item with the image
   if(!Text.Has(imgItem.Image)) { return; }
+
+  // Figure out width of the image based on max-width of a content-image
+  const int bsColumns = 12;
+  var imgColumns = (int)(DynamicModel.Columns ?? bsColumns);
+  var width = (int)(imgColumns / bsColumns * Settings.Images.Content.Width);
 
   // configuration
   var lightbox = Settings.Images.Lightbox;

@@ -3,13 +3,17 @@
   // show warning for admin if koi.json is missing
   @Html.Partial("_Koi Admin Messages.cshtml");
 
+  // The Settings contains rules for  predefined web resources
+  var webResources = Settings.WebResources;
+
   // get CSS information about the current Theme
   var pageCss = GetService<Connect.Koi.ICss>();
 
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page 
-  // Note that the link and script tags are in the App Settings to make it easier to update a live installation
-  if(!pageCss.Is("bs4")) { 
-    @Html.Raw(Settings.AssetsBootstrap) 
+  // Note that the link and script tags are in the System Settings to make it easier to update a live installation
+  if(!pageCss.Is("bs4")) {
+    var resBs4 = webResources.Bootstrap4;
+    if(resBs4.Enabled) { @Html.Raw(resBs4.Html) }
   }
 
   // This sub template just places all the very-often used
@@ -24,19 +28,11 @@
   var icons = parts.Contains("icons");
   var videos = parts.Contains("videos");
 
-  // TODO: CHECK W/2RO - lazy is never requested - but maybe it should be?
-  // TODO: ALSO check - init fancybox could conflict w/gallery, but unclear why it doesn't
-  var lazy = parts.Contains("lazy");
-
-  // The Settings contains rules for  predefined web resources
-  var webResources = Settings.WebResources;
 
   // Include icon font - the exact HTML for this is in the SystemSettings
   if(icons) {
     var resIcons = webResources.FontAwesome5;
-    if(resIcons.Enabled) {
-      @Html.Raw(resIcons.Html);
-    }
+    if(resIcons.Enabled) { @Html.Raw(resIcons.Html) }
   }
 
   // Tell DNN & Oqtane to load jquery as it's needed by fancybox and our basic scripts
@@ -45,20 +41,17 @@
   if(fancybox || scripts || videos) {
     page.Activate("jQuery");
   }
-  if(scripts || videos) {
-    page.Activate("turnOn"); // see https://r.2sxc.org/turnon
-  }
-  
 }
 
 @* Add Fancybox if required - as specified in the App Settings *@
-@if(fancybox) { @Html.Raw(Settings.AssetsFancybox) }
-
-@* Add Lazyload if required - as specified in the App Settings *@
-@if(lazy) { @Html.Raw(Settings.AssetsLazyload) }
+@if(fancybox) {
+  var resFb = webResources.fancybox3;
+  if(resFb.Enabled) { @Html.Raw(resFb.Html) }
+}
 
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" /> }
-@if(scripts || videos) { 
+@if(scripts || videos) {
+  page.Activate("turnOn"); // see https://r.2sxc.org/turnon
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
   <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></turnOn>
