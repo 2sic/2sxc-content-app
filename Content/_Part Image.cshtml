@@ -10,7 +10,7 @@
   // Figure out width of the image based on max-width of a content-image
   const int bsColumns = 12;
   var imgColumns = (int)(DynamicModel.Columns ?? bsColumns);
-  var width = (int)(imgColumns / bsColumns * Settings.Images.Content.Width);
+  var width = (int)(Settings.Images.Content.Width * imgColumns / bsColumns);
 
   // configuration
   var lightbox = Settings.Images.Lightbox;
