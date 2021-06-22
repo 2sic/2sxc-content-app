@@ -3,9 +3,9 @@
 
 @{
   // Quality/Width come from System-Settings, Height from View Settings
-  var quality = Settings.Images.Content.Quality;
-  var width = Settings.Images.Content.Width;
-  var height = Settings.ImageHeight ?? 400; // default to 300 if not set
+  var quality = (int)Settings.Images.Content.Quality;
+  var width = (int)Settings.Images.Content.Width;
+  var height = (int)(Settings.ImageHeight ?? 400); // default to 300 if not set
 }
 
 <div class="co-container-outer">
