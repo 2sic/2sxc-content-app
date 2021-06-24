@@ -1,13 +1,17 @@
 @inherits Custom.Hybrid.Razor12
 @{
+  // Basics / Preparation
+  var webResources = Settings.WebResources;             // Global predefined web resources
+  var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
+  var page = GetService<ToSic.Sxc.Web.IPageService>();  // Service to set titles etc. on the page
+
   // show warning for admin if koi.json is missing
-  @Html.Partial("_Koi Admin Messages.cshtml");
-
-  // The Settings contains rules for  predefined web resources
-  var webResources = Settings.WebResources;
-
-  // get CSS information about the current Theme
-  var pageCss = GetService<Connect.Koi.ICss>();
+  if(pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
+    <div class='dnnFormMessage dnnFormWarning'>
+      @Html.Raw(Connect.Koi.Messages.CssInformationMissing) <br>
+      @Html.Raw(Connect.Koi.Messages.OnlyAdminsSeeThis)
+    </div>
+  }
 
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page 
   // Note that the link and script tags are in the System Settings to make it easier to update a live installation
@@ -37,7 +41,6 @@
 
   // Tell DNN & Oqtane to load jquery as it's needed by fancybox and our basic scripts
   // Most of the basic scripts will also use turnOn to activate
-  var page = GetService<ToSic.Sxc.Web.IPageService>();
   if(fancybox || scripts || videos) {
     page.Activate("jQuery");
   }
