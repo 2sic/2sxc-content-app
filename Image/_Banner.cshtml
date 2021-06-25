@@ -1,18 +1,15 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
-
 @{
-  // Quality/Width come from System-Settings, Height from View Settings
-  var quality = (int)Settings.Images.Content.Quality;
-  var width = (int)Settings.Images.Content.Width;
-  var height = (int)(Settings.ImageHeight ?? 400); // default to 300 if not set
+  // Most Params come come from System-Settings, Height from View Settings
+  var height = (int)(Settings.ImageHeight ?? 400); // Should be set on all banner-views
 }
 
 <div class="co-container-outer">
   <div class="co-container-inner">
     <div class="co-header" @Edit.TagToolbar(Content)>
       <img class="w-100"
-        src='@Tags.SafeUrl(Content.Image + "?w=" + width + "&h=" + height + "&anchor=" + Content.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
+        src='@(Link.Image(Content.Image, Settings.Images.Content, height: height) + "&anchor=" + Content.CropAnchor)'
         alt="@Content.Title" />
     </div>
   </div>

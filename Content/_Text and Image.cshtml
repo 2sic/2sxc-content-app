@@ -3,9 +3,8 @@
   /* This Template is used in ca. 5 Views which show title, text and image */
 
   // Determine the widths of each part, based on 12 Bootstrap Cols
-  const int bsColumns = 12;
-  var colsText = Settings.TextFirst ? Settings.ColsElement1 : bsColumns - Settings.ColsElement1;
-  var colsImg = bsColumns - colsText;
+  var colsText = Settings.TextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
+  var colsImg = 12 - colsText;
 }
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner row" @Edit.TagToolbar(Content)>

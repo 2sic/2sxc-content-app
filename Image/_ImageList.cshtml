@@ -5,15 +5,7 @@
   const int bsColumns = 12;
   var columns = bsColumns / Settings.MaxPerRow;
   var fraction = 1 / Settings.MaxPerRow; // percentage of the content-width
-  var width = (int)(Settings.Images.Content.Width * fraction);
-  
-  // Get height - note that it's often not defined = automatic
-  var height = Settings.ImageHeight ?? 0; // 0 means not set
-
-  // All these settings are required at App level
-  var quality = Settings.Images.Content.Quality;
-  var lightbox = Settings.Images.Lightbox;
-}
+  }
 
 <div class="co-container-outer">
   <div class="co-container-inner row">
@@ -22,7 +14,7 @@
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (img.Presentation.ImageLightbox != false) {
-            @:<a href="@Tags.SafeUrl(img.Image + "?mode=" + lightbox.ResizeMode + "&quality=" + lightbox.Quality + "&w=" + lightbox.Width + "&h=" + lightbox.Height)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
+            @:<a href="@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
         }
         <figure>
             <div class="overlay w-100 h-100"></div>
@@ -31,7 +23,7 @@
             }
 
             <img class="w-100"
-              src='@Tags.SafeUrl(img.Image + "?w=" + width + "&h=" + height + "&anchor=" + img.CropAnchor + "&mode=crop&scale=both&quality=" + quality)'
+              src='@(Link.Image(img.Image, Settings.Images.Content, factor: fraction) + "&anchor=" + img.CropAnchor)'
               alt="@img.Title" />
         </figure>
 

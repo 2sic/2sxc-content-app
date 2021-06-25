@@ -7,14 +7,9 @@
   var imgItem = DynamicModel.Item;  // The content-item with the image
   if(!Text.Has(imgItem.Image)) { return; }
 
-  // Figure out width of the image based on max-width of a content-image
-  const int bsColumns = 12;
-  var imgColumns = (int)(DynamicModel.Columns ?? bsColumns);
-  var width = (int)(Settings.Images.Content.Width * imgColumns / bsColumns);
-
-  // configuration
-  var lightbox = Settings.Images.Lightbox;
-  var quality = (int)Settings.Images.Content.Quality;
+  // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
+  var imgColumns = (int)(DynamicModel.Columns ?? 12);
+  var resizeFactor = (float)imgColumns / 12;
 
   // prepare the title, either the default or the additional image caption
   var lightboxCaption = "";
@@ -23,7 +18,7 @@
   }
 }
 @if(imgItem.Presentation.ImageLightbox != false) {
-  @:<a data-fancybox href='@Tags.SafeUrl(imgItem.Image + "?mode=" + lightbox.ResizeMode + "&w=" + lightbox.Width + "&h=" + lightbox.Height + "&quality=" + lightbox.Quality)' data-caption="@lightboxCaption">
+  @:<a data-fancybox href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption">
 }
   <figure>
     <div class="overlay w-100 h-100"></div>
@@ -31,7 +26,7 @@
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
     }
 
-    <img class="img-fluid" src='@Tags.SafeUrl(imgItem.Image + "?w=" + width + "&scale=both&quality=" + quality)' alt="@Text.First(imgItem.ImageCaption, imgItem.Title)" />
+    <img class="img-fluid" src='@Link.Image(imgItem.Image, Settings.Images.Content, factor: resizeFactor)' alt="@Text.First(imgItem.ImageCaption, imgItem.Title)" />
   </figure>
 @if(imgItem.Presentation.ImageLightbox != false) {
   @:</a>
