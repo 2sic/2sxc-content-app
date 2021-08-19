@@ -7,11 +7,14 @@
   var styling = Settings.TextAlignment == "c" ? "text-center" : "";
 }
 <div class="co-container-outer mb-4 mb-md-5">
-	<div class="co-container-inner row">
-    <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(Content, prefill: new { VarShowImage = false })>
-      @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/_Header tag.cshtml")
-      @Html.Raw(Content.Text)
+  <div class="co-container-inner">
+    <div class="row">
+      <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(Content, prefill: new { VarShowImage =
+        false })>
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @Html.Partial("../shared/_Header tag.cshtml")
+        @Html.Raw(Content.Text)
+      </div>
     </div>
   </div>
 </div>

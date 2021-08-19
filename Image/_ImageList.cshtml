@@ -8,7 +8,8 @@
   }
 
 <div class="co-container-outer">
-  <div class="co-container-inner row">
+  <div class="co-container-inner">
+    <div class="row">
     @foreach (var img in AsList(Data)) {
 
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
@@ -33,6 +34,7 @@
 
       </div>
     }
+    </div>
   </div>
 </div>
 
