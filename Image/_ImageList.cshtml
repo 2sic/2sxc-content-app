@@ -2,10 +2,9 @@
 @using ToSic.Razor.Blade;
 @{
   // Determine the widths of each part, based on 12 Bootstrap Cols
-  const int bsColumns = 12;
-  var columns = bsColumns / Settings.MaxPerRow;
+  var columns = 12 / Settings.MaxPerRow;
   var fraction = 1 / Settings.MaxPerRow; // percentage of the content-width
-  }
+}
 
 <div class="co-container-outer">
   <div class="co-container-inner">
@@ -15,11 +14,11 @@
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (img.Presentation.ImageLightbox != false) {
-            @:<a href="@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")" data-fancybox="group-@CmsContext.Module.Id">
+            @:<a href='@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")' data-fancybox="group-@CmsContext.Module.Id">
         }
         <figure>
             <div class="overlay w-100 h-100"></div>
-            @if(img.Presentation.TitleLegend != false) {
+            @if (img.Presentation.TitleLegend != false) {
               <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
             }
 

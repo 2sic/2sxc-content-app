@@ -19,10 +19,10 @@
   var width = (int)(Settings.Images.Content.Width * imgColumns / 12);
   int height = (int)(width * 9/16);
 }
-@if(Content.Presentation.VideoLightbox != false) {
+@if (Content.Presentation.VideoLightbox != false) {
   // open in lightbox
   <a data-fancybox="fancybox-@CmsContext.Module.Id" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
-      @if(Text.Has(Content.Image)) {
+      @if (Text.Has(Content.Image)) {
       <figure>
         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
           <i class="fab fa-youtube"></i>
@@ -38,7 +38,7 @@
 } else {
   // no lightbox, show directly
   <div class="co-video-embed embed-responsive embed-responsive-16by9">
-    @if(youTubeLink.Success) {
+    @if (youTubeLink.Success) {
       <img src="https://img.youtube.com/vi/@youTubeLink.Groups[1].Value/maxresdefault.jpg" class="img-fluid lazy">
 
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">

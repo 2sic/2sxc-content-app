@@ -15,10 +15,10 @@
     @foreach (var link in AsList(Data)) {
       var linkInfo = linkHelper.LinkInfos(link);
       <div class='col-md-6 col-lg-4 mb-4 mb-md-5 @(!linkInfo.Found ? "co-linkblock" : "")' @Edit.TagToolbar(link)>
-        @if(linkInfo.Found) {
+        @if (linkInfo.Found) {
           @:<a class="co-linkblock" href="@Tags.SafeUrl(link.Link)" target="@linkInfo.Window" title="@link.Title">
         }
-          @if(Text.Has(link.Image)) {
+          @if (Text.Has(link.Image)) {
             <figure>
               <div class="overlay w-100 h-100"></div>
               <img class="img-fluid" src='@Link.Image(link.Image, Settings.Images.Content, factor: 1f/3)' alt="@link.Title" />
@@ -27,10 +27,10 @@
             <div class="bg-primary placeholder" style="padding-bottom: 58%; margin-bottom:1rem;"></div>
           }
         <h4>@link.Title</h4>
-        @if(Text.Has(link.Description)) {
+        @if (Text.Has(link.Description)) {
           <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
         }
-        @if(linkInfo.Found) {
+        @if (linkInfo.Found) {
           <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
           @:</a>
         }

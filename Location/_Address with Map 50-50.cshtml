@@ -58,7 +58,7 @@
             @if (Text.Has(Content.Fax)) {
               <span class="fas fa-fax" aria-hidden="true"></span> <span itemprop="faxNumber">@Content.Fax</span><br/>
             }
-            @if(mapSettings.MapsEnableDirections) {
+            @if (mapSettings.MapsEnableDirections) {
               <span class="fas fa-map-marker-alt"></span> <a target="_blank" href="@mapInfo.DirectionUrl">@mapResources.MapsLabelDirections</a>
             }
           </div>

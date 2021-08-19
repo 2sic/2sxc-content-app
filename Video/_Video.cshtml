@@ -16,16 +16,14 @@
         @Html.Partial("../shared/_Header tag.cshtml")
 
         @* If the image doesn't have it's own column, its between title/text *@
-        @if (colsImg == 0)
-        {
+        @if (colsImg == 0) {
           @Html.Partial("_Part Video.cshtml", new { Columns = 12 })
         }
 
         @Html.Raw(Content.Text)
       </div>
       @* If the image has it's own column, it's here *@
-      @if (colsImg != 0)
-      {
+      @if (colsImg != 0) {
         <div class='col-md-@colsImg order-@(Settings.TextFirst ? "last" : "first")'>
           @Html.Partial("_Part Video.cshtml", new { Columns = colsImg })
         </div>

@@ -56,6 +56,7 @@ public class LinkHelper: Custom.Hybrid.Code12
   }
 }
 
+
 public class LinkInfo
 {
   public string Window;

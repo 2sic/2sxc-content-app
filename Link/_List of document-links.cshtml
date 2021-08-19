@@ -1,6 +1,5 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
-
 @{
   // get helper commands
   var linkHelper = CreateInstance("LinkHelper.cs");
@@ -12,7 +11,7 @@
       @foreach (var link in AsList(Data)) {
         var linkInfo = linkHelper.LinkInfos(link);
         <li @Edit.TagToolbar(link) class='@(!linkInfo.Found ? "co-linkblock" : "")'>
-          @if(linkInfo.Found) {
+          @if (linkInfo.Found) {
             @:<a class="co-linkblock" href='@Tags.SafeUrl(link.Link)' target="@linkInfo.Window" title="@link.Title">
           }
             <div class="d-flex flex-row">
@@ -24,7 +23,7 @@
                 <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
               </div>
             </div>
-          @if(linkInfo.Found) {
+          @if (linkInfo.Found) {
             @:</a>
           }
         </li>

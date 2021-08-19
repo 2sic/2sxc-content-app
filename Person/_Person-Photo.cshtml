@@ -1,8 +1,7 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @{
-  /* Used in two views */
-
+  /* This is used in two views */
   var isRound = CmsContext.View.Identifier == "round";
   var photoSuffix = "?mode=crop&quality=90&" + (isRound ? "w=379&h=379&scale=both" : "w=379&h=488");
 
@@ -10,22 +9,18 @@
   var imgClass = isRound ? "rounded-circle" : "";
   var placeholderStyle = "padding-bottom: " + (isRound ? "100%;" : "128.57%");
 
-  // todo: Change to use Link.Image
-  // todo: find out why it's 128.57% - super strange number
+  // TODO: Change to use Link.Image
+  // TODO: find out why it's 128.57% - super strange number
 }
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner">
     <div class="row">
-      @foreach (var person in AsList(Data))
-      {
+      @foreach (var person in AsList(Data)) {
         <div class="col-md-6 mb-4 mb-md-5 row" @Edit.TagToolbar(person)>
           <div class="col-4 @mbClass">
-            @if (Text.Has(person.Photo))
-            {
+            @if (Text.Has(person.Photo)) {
               <img class="img-fluid @imgClass" src='@Tags.SafeUrl(person.Photo + photoSuffix)' alt="@person.FullName" />
-            }
-            else
-            {
+            } else {
               <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
             }
           </div>

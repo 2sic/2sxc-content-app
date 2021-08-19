@@ -40,9 +40,9 @@ public class LocationHelper: Custom.Hybrid.Code12
 }
 
 
-  public class MapInfo
-  {
-    public double GpsLong;
-    public double GpsLat;
-    public string DirectionUrl;
-  }
+public class MapInfo
+{
+  public double GpsLong;
+  public double GpsLat;
+  public string DirectionUrl;
+}

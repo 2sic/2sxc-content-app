@@ -1,10 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
-@*
-  this is a partial template which is re-used in many other templates, so it's shared here
-  its shows the person data like name, position, contact data and description
-*@
 @{
+  // This is a partial template which is re-used in many other templates, so it's shared here
+  // its shows the person data like name, position, contact data and description
   var person = DynamicModel.data;
 }
 <div class="mb-2">
