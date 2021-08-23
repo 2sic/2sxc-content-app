@@ -1,7 +1,9 @@
-/* note: this file name must start with an underscore "_" so it wont be generated in the output */
-$grid-gutter-width: 30px;
-$brand-primary: #4A148C ;
-$text-color: #333;
-$gray-light: #eee;
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
+$primary:       #65345c;
+$secondary:     #6c757d;
+
+$body-bg:       #efefef;
+$body-color:    #222222;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans",sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
