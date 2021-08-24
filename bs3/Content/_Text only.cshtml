@@ -1,11 +1,23 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
-@* This adds all link/script tags *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
+@{
+  /* This Template is used in ca. 3 Views which only show the title and the text */
+
+  var cols = Settings.ColsElement1;
+  var padding = Settings.ColsPaddingLeft;
+  var styling = Settings.TextAlignment == "c" ? "text-center" : "";
+}
 
 <div class="co-container-outer">
-	<div class="co-container-inner clearfix co-content co-content-text-only mb-4" @Edit.TagToolbar(Content)>
-    @* call sub-template to show the title with the correct H1-H6 tag *@
-    @RenderPage("../shared/_Header tag.cshtml")
-    <div class="co-text">@Html.Raw(Content.Text)</div>
+  <div class="co-container-inner">
+    <div class="row">
+      <div class="co-content @styling col-md-@cols col-md-push-@padding" @Edit.TagToolbar(Content)>
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @RenderPage("../shared/_Header tag.cshtml")
+        @Html.Raw(Content.Text)
+      </div>
+    </div>
   </div>
 </div>
+
+@* This adds all link/script tags *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
