@@ -7,6 +7,28 @@
 //
 
 @media all {
+
+  figure {
+    position: relative;
+    margin: 0 0 1rem !important;
+    .overlay {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      background-color: rgba($dark, 0.0);
+      transition: background-color 0.3s ease-in-out;
+    }
+    figcaption {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
+  }
+
   .co-video-embed {
     .overlay {
       position: absolute;
@@ -52,16 +74,10 @@
 	/* Default Content */
 	.co-content {
 		margin-bottom: $grid-gutter-width;
-	}
 
-	.co-text-beside-image {
-		h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6 {
 			margin-top: 0;
 		}
-	}
-	.co-content-image {
-		margin-bottom: $grid-gutter-width;
-		width: 100%;
 	}
 
 	/* Content Navigation */
@@ -154,28 +170,28 @@
 
       }
     }
-    figure {
-      position: relative;
-      margin-bottom:0;
-      .co-overlay {
-        position: absolute;
-        top:0;left:0;bottom:0;
-        z-index:10;
-        width:100%;
-        background-color: rgba(0,0,0,0.0);
-        transition: background-color 0.2s ease-in-out;
-        figcaption {
-          position: absolute;
-          left:0;
-          bottom:0;
-          width:100%;
-          padding:20px;
-          font-size:0.85em;
-          background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
-          color:#FFF;
-        }
-      }
-    }
+    // figure {
+    //   position: relative;
+    //   margin-bottom:0;
+    //   .co-overlay {
+    //     position: absolute;
+    //     top:0;left:0;bottom:0;
+    //     z-index:10;
+    //     width:100%;
+    //     background-color: rgba(0,0,0,0.0);
+    //     transition: background-color 0.2s ease-in-out;
+    //     figcaption {
+    //       position: absolute;
+    //       left:0;
+    //       bottom:0;
+    //       width:100%;
+    //       padding:20px;
+    //       font-size:0.85em;
+    //       background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    //       color:#FFF;
+    //     }
+    //   }
+    // }
 	}
 	.co-img-wrapper.co-2colimg {
 		margin-bottom: 0;
