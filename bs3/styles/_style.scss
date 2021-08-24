@@ -30,6 +30,15 @@
     }
   }
 
+  .co-person-image-wrapper {
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      backface-visibility: hidden;
+    }
+  }
+
   .co-video-embed {
     .overlay {
       position: absolute;
@@ -272,14 +281,14 @@
 		padding-bottom: 128%;
 	}
 	.co-person-image-rounded {
-		.co-person-image-wrapper {
-			border-radius: 50%;
-			overflow: hidden;
+		// .co-person-image-wrapper {
+		// 	border-radius: 50%;
+		// 	overflow: hidden;
 
-			img {
-				backface-visibility: hidden;
-			}
-		}
+		// 	img {
+		// 		backface-visibility: hidden;
+		// 	}
+		// }
 		.co-person-placeholder {
 			border-radius: 50%;
 			padding-bottom: 100%;
