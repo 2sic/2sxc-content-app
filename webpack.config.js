@@ -8,7 +8,7 @@ const WebpackBar = require('webpackbar');
 
 module.exports = {
   entry: {
-    // bs3: './bs3/styles/bs3.scss',
+    bs3: './bs3/styles/bs3.scss',
     bs4: './src/styles/bs4.scss',
     scripts: './src/ts/index.ts',
   },
