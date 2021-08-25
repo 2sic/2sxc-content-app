@@ -17,7 +17,7 @@
 
         <li class="co-document col col-md-12" @Edit.TagToolbar(link)>
           @if(linkInfo.Found) {
-            @Tag.A().Title(link.Title).Href(link.Link).Target(linkInfo.Window).TagStart
+            @:<a title="@link.Title" href="@link.Link" target="@linkInfo.Window">
           }
             <span class="text-primary fas @linkInfo.Icon pull-left"></span>
             <div class="co-document-text">
@@ -25,7 +25,7 @@
               <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
             </div>
           @if(linkInfo.Found){
-            @Tag.A().TagEnd
+            @:</a>
           }
         </li>
       }

@@ -265,39 +265,39 @@
 	hr.ly-primaryhr-half { width: 50%; margin-right: auto; margin-left: auto }
 
 	/* Person */
-	.co-person { overflow:hidden; }
-	.co-person-wrapper img { width: 100%; }
-	.co-person-text {
-		 word-wrap: break-word;
-		 strong {
-			 font-size: 1.25em;
-		 }
-		 svg {
-			 min-width:20px;
-		 }
-	}
-	.co-person-placeholder {
-		background: $gray-200;
-		padding-bottom: 128%;
-	}
-	.co-person-image-rounded {
-		// .co-person-image-wrapper {
-		// 	border-radius: 50%;
-		// 	overflow: hidden;
+	// .co-person { overflow:hidden; }
+	// .co-person-wrapper img { width: 100%; }
+	// .co-person-text {
+	// 	 word-wrap: break-word;
+	// 	 strong {
+	// 		 font-size: 1.25em;
+	// 	 }
+	// 	 svg {
+	// 		 min-width:20px;
+	// 	 }
+	// }
+	// .co-person-placeholder {
+	// 	background: $gray-200;
+	// 	padding-bottom: 128%;
+	// }
+	// .co-person-image-rounded {
+	// 	// .co-person-image-wrapper {
+	// 	// 	border-radius: 50%;
+	// 	// 	overflow: hidden;
 
-		// 	img {
-		// 		backface-visibility: hidden;
-		// 	}
-		// }
-		.co-person-placeholder {
-			border-radius: 50%;
-			padding-bottom: 100%;
-		}
-	}
-	@include media-breakpoint-up(xs) {
-		.co-person-wrapper .co-person-image { width: 50%; margin-bottom: 15px;  padding-right: 19px; }
-		.co-person-wrapper .co-person-text {width: 100%;}
-	}
+	// 	// 	img {
+	// 	// 		backface-visibility: hidden;
+	// 	// 	}
+	// 	// }
+	// 	.co-person-placeholder {
+	// 		border-radius: 50%;
+	// 		padding-bottom: 100%;
+	// 	}
+	// }
+	// @include media-breakpoint-up(xs) {
+	// 	.co-person-wrapper .co-person-image { width: 50%; margin-bottom: 15px;  padding-right: 19px; }
+	// 	.co-person-wrapper .co-person-text {width: 100%;}
+	// }
 
 	/* Youtube */
   .role-admin .co-youtube-video-wrapper { padding-top: 40px; }

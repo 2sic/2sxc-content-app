@@ -16,8 +16,8 @@
   <div class="co-container-inner">
     <div class="row mb-4">
       @foreach (var person in AsList(Data)) {
-        <div class="col-md-6 row mb-4" @Edit.TagToolbar(person)>
-          <div class="col-md-4 @mbClass">
+        <div class="col-sm-6 row mb-4" @Edit.TagToolbar(person)>
+          <div class="col-xs-4 @mbClass">
             @if (Text.Has(person.Photo)) {
               <img class="img-responsive @imgClass" src='@Tags.SafeUrl(person.Photo + photoSuffix)' alt="@person.FullName" />
             } else {
@@ -25,7 +25,7 @@
             }
           </div>
 
-          <div class="col-md-8" itemscope itemtype="http://schema.org/Person">
+          <div class="col-xs-8" itemscope itemtype="http://schema.org/Person">
             @Html.Partial("_Part Properties.cshtml", new { data = person})
           </div>
         </div>
