@@ -9,9 +9,9 @@
   var colsImg = bootstrapCols - colsText;
 }
 <div class="co-container-outer mb-4 mb-md-5">
-  <div class="co-container-inner" @Edit.TagToolbar(Content)>
+  <div class="co-container-inner clearfix co-content" @Edit.TagToolbar(Content)>
     <div class="row">
-      <div class='col-md-@colsText order-md-@(Settings.TextFirst ? "first" : "last")'>
+      <div class='col-md-@colsText @(Settings.TextFirst ? "" : "col-md-push-" + @colsImg)'>
         @* call sub-template to show the title with the correct H1-H6 tag *@
         @Html.Partial("../shared/_Header tag.cshtml")
 
@@ -24,7 +24,7 @@
       </div>
       @* If the image has it's own column, it's here *@
       @if (colsImg != 0) {
-        <div class='col-md-@colsImg order-md-@(Settings.TextFirst ? "last" : "first")'>
+        <div class='col-md-@colsImg @(Settings.TextFirst ?  "" : "col-md-pull-" + @colsText)'>
           @Html.Partial("_Part Video.cshtml", new { Columns = colsImg })
         </div>
       }
