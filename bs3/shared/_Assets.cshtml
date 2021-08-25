@@ -1,46 +1,54 @@
-@using DotNetNuke.Framework.JavaScriptLibraries;
-@* show warning for admin if koi.json is missing *@
-@RenderPage("_Koi Admin Messages.cshtml")
-
-@* include icon font *@
-<script defer async src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
-
-@*
-  This sub template just places all the very-often used
-  style and link tags into the code.
-  We put this in a sub-template because we use it so often, and want to make sure
-  nobody accidentally uses the wrong url or forgets data-enableoptimizations
-*@
+@inherits Custom.Hybrid.Razor12
 @{
-
+  // Basics / Preparation
+  var webResources = Settings.WebResources;             // Global predefined web resources
+  var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
   var page = GetService<ToSic.Sxc.Web.IPageService>();  // Service to set titles etc. on the page
 
+  // show warning for admin if koi.json is missing
+  if (pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
+    <div class='dnnFormMessage dnnFormWarning'>
+      @Html.Raw(Connect.Koi.Messages.CssInformationMissing) <br>
+      @Html.Raw(Connect.Koi.Messages.OnlyAdminsSeeThis)
+    </div>
+  }
 
-  string partList = PageData["parts"];
+  // This sub template just places all the very-often used
+  // style and link tags into the code.
+  // We put this in a sub-template because we use it so often, and want to make sure
+  // nobody accidentally uses the wrong url or forgets data-enableoptimizations
+  string partList = DynamicModel.parts;
   var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
   var all = parts.Contains("all");
   var fancybox = all || parts.Contains("fancybox");
   var styles = all || parts.Contains("styles");
   var scripts = all || parts.Contains("scripts");
-  var height = all || parts.Contains("height");
+  var icons = all || parts.Contains("icons");
   var videos = all || parts.Contains("videos");
-}
-@if(fancybox || scripts)
-{
-  // tell DNN to load jquery as it's needed by fancybox and our basic scripts
-  JavaScript.RequestRegistration(CommonJs.jQuery);
-}
-@if(fancybox)
-{
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" data-enableoptimizations="bottom" />
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js" data-enableoptimizations="bottom"></script>
+  var height = all || parts.Contains("height");
+
+  // Include icon font - the exact HTML for this is in the SystemSettings
+  if (icons) {
+    var resIcons = webResources.FontAwesome5;
+    if (resIcons.Enabled) { @Html.Raw(resIcons.Html) }
+  }
+
+  // Tell DNN & Oqtane to load jquery as it's needed by fancybox and our basic scripts
+  // Most of the basic scripts will also use turnOn to activate
+  if (fancybox || scripts || videos) {
+    page.Activate("jQuery");
+  }
 }
 
-@if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs3.min.css" data-enableoptimizations="true" /> }
-@if(scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> }
-@if(height) { <script type="text/javascript" src="@App.Path/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
+@* Add Fancybox if required - as specified in the App Settings *@
+@if (fancybox) {
+  var resFb = webResources.fancybox3;
+  if (resFb.Enabled) { @Html.Raw(resFb.Html) }
+}
 
-@* include video assets as needed by iframe-embed mode *@
+@if (styles) { <link rel="stylesheet" href="@App.Path/dist/bs3.min.css" data-enableoptimizations="true" /> }
+@if (scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> }
+@if (height) { <script type="text/javascript" src="@App.Path/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
 
 @if (videos) {
   page.Activate("turnOn"); // see https://r.2sxc.org/turnon
@@ -48,7 +56,6 @@
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
   <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
-
 @* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if (videos) {
   <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
