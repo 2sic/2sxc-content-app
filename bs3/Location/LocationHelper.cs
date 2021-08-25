@@ -1,26 +1,18 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
-@using System.Dynamic;
-@using System.IO;
-@using ToSic.Razor.Blade;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.IO;
+using System.Globalization;
+using ToSic.Razor.Blade;
 
-@using System.Threading;
-@using System.Globalization;
-
-@functions {
-  public class MapInfo
-  {
-    public double GpsLong;
-    public double GpsLat;
-    public string DirectionUrl;
-  }
-
+public class LocationHelper: Custom.Hybrid.Code12
+{
   // check a link, prepare target window, icon etc. based on various settings
-	public MapInfo MapInfos(dynamic content) {
+  public MapInfo MapInfos(dynamic content) {
     // this will contain the result
     var mInfo = new MapInfo();
 
     // Language is used for the map-link
-    var language = Dnn.Portal.CultureCode.Split(new[] { '-' })[0];
+    var language = CmsContext.Culture.CurrentCode.Split(new[] { '-' })[0];
 
     // GPS is a JSON field, so we must use AsDynamic to access the properties
     var gps = AsDynamic(content.GPS);
@@ -30,7 +22,7 @@
     // this link will be used to open the Google-Directions in a new window
     var directionurl = gpsLong > 0
       // if we have coordinates, use them
-      ? "https://www.google.com/maps/dir/" + gpsLat.ToString("G", CultureInfo.InvariantCulture) + "," + gpsLong.ToString("G", CultureInfo.InvariantCulture)
+      ? "https://www.google.com/maps/dir/" + gpsLat.ToString("R") + "," + gpsLong.ToString("R")
       // otherwise use the address
       : "https://maps.google.com/maps?daddr="
         + (content.Street + " " + content.ZipCode + " " + content.City + " " + content.Country)
@@ -43,14 +35,14 @@
     mInfo.DirectionUrl = directionurl;
 
     return mInfo;
-	}
+  }
+  
 }
-@helper AddGoogleMapsKey() {
-  // get key from settings and remove empty lines
-  // will also add warning! in front, if the settings say to include a warning
-  var warning = (App.Settings.GoogleMapsShowWarning ? "warning!" : "");
-  var key = warning + App.Settings.GoogleMapsKey.Replace("\n", ""); 
-  <script>
-    var googleMapsApiKey = "@key";
-  </script>
+
+
+public class MapInfo
+{
+  public double GpsLong;
+  public double GpsLat;
+  public string DirectionUrl;
 }

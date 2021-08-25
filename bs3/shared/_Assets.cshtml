@@ -12,6 +12,10 @@
   nobody accidentally uses the wrong url or forgets data-enableoptimizations
 *@
 @{
+
+  var page = GetService<ToSic.Sxc.Web.IPageService>();  // Service to set titles etc. on the page
+
+
   string partList = PageData["parts"];
   var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
   var all = parts.Contains("all");
@@ -19,6 +23,7 @@
   var styles = all || parts.Contains("styles");
   var scripts = all || parts.Contains("scripts");
   var height = all || parts.Contains("height");
+  var videos = all || parts.Contains("videos");
 }
 @if(fancybox || scripts)
 {
@@ -34,3 +39,17 @@
 @if(styles) { <link rel="stylesheet" href="@App.Path/dist/bs3.min.css" data-enableoptimizations="true" /> }
 @if(scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> }
 @if(height) { <script type="text/javascript" src="@App.Path/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
+
+@* include video assets as needed by iframe-embed mode *@
+
+@if (videos) {
+  page.Activate("turnOn"); // see https://r.2sxc.org/turnon
+  <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
+  @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
+  <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></turnOn>
+}
+
+@* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
+@if (videos) {
+  <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
+}
