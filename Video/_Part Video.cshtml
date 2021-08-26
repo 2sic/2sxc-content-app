@@ -19,9 +19,10 @@
   var width = (int)(Settings.Images.Content.Width * imgColumns / 12);
   int height = (int)(width * 9/16);
 }
+
 @if (Content.Presentation.VideoLightbox != false) {
   // open in lightbox
-  <a data-fancybox="fancybox-@CmsContext.Module.Id" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
+  <a data-app-video-fancybox="video-@CmsContext.Module.Id" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
       @if (Text.Has(Content.Image)) {
       <figure>
         <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
@@ -35,6 +36,8 @@
         <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
       }
   </a>
+  @* activate scripts because they are needed by fancybox *@
+  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox" })
 } else {
   // no lightbox, show directly
   <div class="co-video-embed embed-responsive embed-responsive-16by9">

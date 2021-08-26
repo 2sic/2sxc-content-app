@@ -14,7 +14,7 @@
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (img.Presentation.ImageLightbox != false) {
-            @:<a href='@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")' data-fancybox="group-@CmsContext.Module.Id">
+          @:<a href='@Link.Image(img.Image, Settings.Images.Lightbox) data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")' data-app-image-fancybox="image-@CmsContext.Module.Id">
         }
         <figure>
             <div class="overlay w-100 h-100"></div>
@@ -37,4 +37,4 @@
   </div>
 </div>
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts"})
+@Html.Partial("../Shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts,images"})

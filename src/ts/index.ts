@@ -3,6 +3,8 @@ import { showEncryptedMails } from './mail-obfuscator';
 import { activateYouTubeInline } from './youtube-preview';
 import { GoogleMapsTurnOn } from './google-maps/google-maps';
 
+declare let Fancybox: any;
+
 // so it can be called from the HTML when content re-initializes dynamically
 const winAny = (window as any);
 winAny.appContent = winAny.appContent || {};
@@ -12,4 +14,13 @@ winAny.appContent.showEncryptedMails = winAny.appContent.showEncryptedMails || s
 
 // Work around a limitation of jQuery if it's installed in slim mode
 // because FancyBox will access this jQuery feature
-$(monkeyPatchjQueryFade);
+// $(monkeyPatchjQueryFade);
+
+
+
+(window as any).appFb = {
+    initFancybox: function initFancybox(module: any) {
+        console.log(`[data-app-${module.type}-fancybox="${module.type}-${module.moduleId}"]`);
+        Fancybox.bind(`[data-app-${module.type}-fancybox="${module.type}-${module.moduleId}"]`, module.options);        
+    }
+}
