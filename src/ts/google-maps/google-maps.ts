@@ -55,7 +55,7 @@ export class GoogleMapsTurnOn {
 function configureMap({domId, icon, zoom, lat, lng, info, warn } : MapDefinition) {
   if(debug) console.log('build map', arguments);
 
-  (window as any).toGoogleMap(document.getElementById(domId), {
+  ($('#' + domId) as any).toGoogleMap({
     position: {
       lat: lat,
       lng: lng
@@ -71,16 +71,16 @@ function configureMap({domId, icon, zoom, lat, lng, info, warn } : MapDefinition
 };
 
 function showKeyWarnings() {
+  const googleMapsElem = $('.co-google-map-container');
+
   // check if it's the original key, which shouldn't be used in live sites
   // do not turn this off, it's important!
   // to disable the warning, replace the API key as explained on //github.com/2sic/2sxc-content-bootstrap3/wiki/google-maps-api-key
-  var googleMapsElem = document.getElementsByClassName('co-google-map-container');
-  if(googleMapsElem.length != 0) {
-    for(var i = 0; i < googleMapsElem.length; i++) {
-      if(!googleMapsElem[i].classList.contains('has-warning')) {
-        googleMapsElem[i].classList.add('has-warning');
-        googleMapsElem[i].innerHTML = googleMapsElem[i].innerHTML + '<p class="alert alert-danger googlemap-apiwarning"><strong>Warning:</strong> This map uses a demo API-Key, which will cause problems on live web sites. Change the GoogleApiKey using <a class="alert-link target="_blank" href="https://azing.org/2sxc/r/ippFQYkz" target="_blank">these instructions</a></p>';
+  if(googleMapsElem.length != 0)
+    googleMapsElem.each(function(i, elem) {
+      if (!$(elem).hasClass('has-warning')) {
+        $(elem).addClass('has-warning');
+        $(elem).append('<p class="alert alert-danger googlemap-apiwarning"><strong>Warning:</strong> This map uses a demo API-Key, which will cause problems on live web sites. Change the GoogleApiKey using <a class="alert-link target="_blank" href="https://azing.org/2sxc/r/ippFQYkz" target="_blank">these instructions</a></p>');
       }
-    }
-  }
+    });
 }
