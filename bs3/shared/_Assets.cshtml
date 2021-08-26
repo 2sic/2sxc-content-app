@@ -26,6 +26,7 @@
   var icons = all || parts.Contains("icons");
   var videos = all || parts.Contains("videos");
   var height = all || parts.Contains("height");
+  var images = all || parts.Contains("images");
 
   // Include icon font - the exact HTML for this is in the SystemSettings
   if (icons) {
@@ -33,20 +34,17 @@
     if (resIcons.Enabled) { @Html.Raw(resIcons.Html) }
   }
 
-  // Tell DNN & Oqtane to load jquery as it's needed by fancybox and our basic scripts
-  // Most of the basic scripts will also use turnOn to activate
-  if (fancybox || scripts || videos) {
-    page.Activate("jQuery");
-  }
 }
 
 @* Add Fancybox if required - as specified in the App Settings *@
 @if (fancybox) {
-  var resFb = webResources.fancybox3;
-  if (resFb.Enabled) { @Html.Raw(resFb.Html) }
+  page.Activate("turnOn");
+  var resFb = webResources.fancybox4;
+  @Html.Raw(resFb.Html)
 }
 
 @if (styles) { <link rel="stylesheet" href="@App.Path/dist/bs3.min.css" data-enableoptimizations="true" /> }
+@if (images) { <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appFb.initFancybox()", "data": { "moduleId": "@CmsContext.Module.Id", "type": "image", "options": { "groupAll": true, "Thumbs": {"autoStart": false}, "Image": {"zoom": false}}}}'></turnOn>}
 @if (scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> }
 @if (height) { <script type="text/javascript" src="@App.Path/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
 
@@ -59,4 +57,5 @@
 @* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if (videos) {
   <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
+  <turnOn turn-on='{ "await": ["window.Fancybox"], "run": "window.appFb.initFancybox()", "data": { "moduleId": "@CmsContext.Module.Id", "type": "video" }}'></turnOn>
 }

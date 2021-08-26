@@ -16,7 +16,7 @@ export function registerToGoogleMap(mapsLoadedPromise: JQuery.Deferred<any, any,
 
     mapsLoadedPromise.promise().then(function () {
 
-      var settings = $.extend({
+      var settings = Object.assign({
           position: {
               lat: 0,
               lng: 0

@@ -21,20 +21,22 @@
 }
 @if (Content.Presentation.VideoLightbox != false) {
   // open in lightbox
-  <a data-fancybox="fancybox-@CmsContext.Module.Id" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
-      @if (Text.Has(Content.Image)) {
-      <figure>
-        <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
-          <i class="fab fa-youtube"></i>
-        </div>
-        <img class="img-responsive"
-          src='@Link.Image(Content.Image, width: width, height: height, resizeMode: "crop", scaleMode: "both", quality: quality)'
-          alt="@Content.Title" />
-      </figure>
-      } else {
-        <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
-      }
+  <a data-app-video-fancybox="video-@CmsContext.Module.Id" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
+    @if (Text.Has(Content.Image)) {
+    <figure>
+      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
+        <i class="fab fa-youtube"></i>
+      </div>
+      <img class="img-responsive"
+        src='@Link.Image(Content.Image, width: width, height: height, resizeMode: "crop", scaleMode: "both", quality: quality)'
+        alt="@Content.Title" />
+    </figure>
+    } else {
+      <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
+    }
   </a>
+  @* activate scripts because they are needed by fancybox *@
+  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox" })
 } else {
   // no lightbox, show directly
 

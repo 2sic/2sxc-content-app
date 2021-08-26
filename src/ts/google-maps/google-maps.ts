@@ -77,9 +77,9 @@ function showKeyWarnings() {
   var googleMapsElem = document.getElementsByClassName('co-google-map-container');
   if(googleMapsElem.length != 0) {
     for(var i = 0; i < googleMapsElem.length; i++) {
-      if(googleMapsElem[i].classList.contains('has-warning')) {
+      if(!googleMapsElem[i].classList.contains('has-warning')) {
         googleMapsElem[i].classList.add('has-warning');
-        googleMapsElem[i].innerHTML = '<p class="alert alert-danger googlemap-apiwarning"><strong>Warning:</strong> This map uses a demo API-Key, which will cause problems on live web sites. Change the GoogleApiKey using <a class="alert-link target="_blank" href="https://azing.org/2sxc/r/ippFQYkz" target="_blank">these instructions</a></p>';
+        googleMapsElem[i].innerHTML = googleMapsElem[i].innerHTML + '<p class="alert alert-danger googlemap-apiwarning"><strong>Warning:</strong> This map uses a demo API-Key, which will cause problems on live web sites. Change the GoogleApiKey using <a class="alert-link target="_blank" href="https://azing.org/2sxc/r/ippFQYkz" target="_blank">these instructions</a></p>';
       }
     }
   }
