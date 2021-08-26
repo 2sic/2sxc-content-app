@@ -1,9 +1,10 @@
-# 2sxc: Content Types & Templates for many CSS Frameworks 12.00.00
+# 2sxc: Content Types & Templates for many CSS Frameworks 12.04.00
 
-The default **Content** types and templates for [DNN (DotNetNuke)](https://www.dnnsoftware.com/) using [2sxc][2sxc] for the following CSS frameworks:
+The default **Content** types and templates for [DNN (DotNetNuke)](https://www.dnnsoftware.com/) and [Oqtane](https://www.oqtane.org/) using [2sxc][2sxc] for the following CSS frameworks:
 
 1. Bootstrap 3.3
 1. Bootstrap 4.0
+1. Note that Bootstrap 5 is WIP and should be released ca. September 2021
 1. other frameworks - please contribute
 
 The Multi-CSS-Framework implementation uses [Connect.Koi][koi]. Here some thumbnails of the result:
@@ -16,8 +17,6 @@ You can read more about the included content-types and templates in this [blog-p
 
 Each DNN portal using [2sxc][2sxc] has a section called **Content** which contains the main content-types and main templates. This could be initialized manually, but in most cases it's more efficient to install a set of best-practice content-types and templates. To ensure this stuff looks good, these content-types and templates should be optimized to the CSS-framework in use.
 
-This package **Content-Bootstrap3** is the default configuration package which 2sxc offers for Bootstrap installations.
-
 ## Quick-Start
 
 1. Almost everything you want to know is in the [wiki](https://github.com/2sic/2sxc-content-app/wiki)
@@ -27,7 +26,7 @@ This package **Content-Bootstrap3** is the default configuration package which 2
 
 ## New Hybrid Version
 
-2sxc 12 supports hybrid Apps which run on Dnn ☢ and Oqtane 💧. These content-templates are the first generation of such apps. 
+2sxc 12 supports hybrid Apps which run on Dnn ☢️ and Oqtane 💧. These content-templates are the first generation of such apps. 
 
 ## Questions and Support
 
