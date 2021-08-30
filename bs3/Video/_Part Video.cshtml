@@ -21,7 +21,7 @@
 }
 @if (Content.Presentation.VideoLightbox != false) {
   // open in lightbox
-  <a data-app-video-fancybox="video-@CmsContext.Module.Id" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
+  <a data-app-content-fancybox="videos" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
     @if (Text.Has(Content.Image)) {
     <figure>
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
@@ -36,7 +36,7 @@
     }
   </a>
   @* activate scripts because they are needed by fancybox *@
-  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox" })
+  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox", fancyboxGroup = "videos" })
 } else {
   // no lightbox, show directly
 

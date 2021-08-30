@@ -30,5 +30,5 @@
     </div>
   </div>
 </div>
-
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "fancybox,styles,scripts"})
+@Html.Partial("../Shared/_Assets.cshtml", new { parts = "fancybox,styles", fancyboxGroup = "content" })
+@* Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts"}) *@

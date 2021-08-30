@@ -1,8 +1,7 @@
 @inherits Custom.Hybrid.Razor12
 @{
   // Basics / Preparation
-  var webResources = Settings.WebResources;             // Global predefined web resources
-  var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
+var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
   var page = GetService<ToSic.Sxc.Web.IPageService>();  // Service to set titles etc. on the page
 
   // show warning for admin if koi.json is missing
@@ -26,25 +25,22 @@
   var icons = all || parts.Contains("icons");
   var videos = all || parts.Contains("videos");
   var height = all || parts.Contains("height");
-  var images = all || parts.Contains("images");
 
   // Include icon font - the exact HTML for this is in the SystemSettings
   if (icons) {
-    var resIcons = webResources.FontAwesome5;
-    if (resIcons.Enabled) { @Html.Raw(resIcons.Html) }
+    page.Activate("FontAwesome5");
   }
 
 }
 
-@* Add Fancybox if required - as specified in the App Settings *@
+@* Add Fancybox if required *@
 @if (fancybox) {
-  page.Activate("turnOn");
-  var resFb = webResources.fancybox4;
-  @Html.Raw(resFb.Html)
+  page.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon
+  var groupId = DynamicModel.fancyboxGroup ?? CmsContext.Module.Id.ToString();
+  <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appContent.initFancybox()", "data": { "groupId": "@groupId", "options": { "groupAll": true, "Thumbs": {"autoStart": false} }}}'></turnOn>
 }
 
 @if (styles) { <link rel="stylesheet" href="@App.Path/dist/bs3.min.css" data-enableoptimizations="true" /> }
-@if (images) { <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appFb.initFancybox()", "data": { "moduleId": "@CmsContext.Module.Id", "type": "image", "options": { "groupAll": true, "Thumbs": {"autoStart": false}, "Image": {"zoom": false}}}}'></turnOn>}
 @if (scripts) { <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script> }
 @if (height) { <script type="text/javascript" src="@App.Path/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
 
@@ -54,8 +50,8 @@
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
   <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
+
 @* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if (videos) {
   <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
-  <turnOn turn-on='{ "await": ["window.Fancybox"], "run": "window.appFb.initFancybox()", "data": { "moduleId": "@CmsContext.Module.Id", "type": "video" }}'></turnOn>
 }
