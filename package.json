@@ -9,6 +9,7 @@
   "author": "2sic internet solutions 2020",
   "license": "ISC",
   "devDependencies": {
+    "@googlemaps/js-api-loader": "^1.12.2",
     "@types/fancybox": "^3.5.3",
     "@types/jquery": "^3.5.6",
     "autoprefixer": "^10.3.2",

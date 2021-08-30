@@ -1,4 +1,5 @@
 export interface MapDefinition{
+  apiKey: string;
   domId: string;
   icon: string;
   zoom: number;

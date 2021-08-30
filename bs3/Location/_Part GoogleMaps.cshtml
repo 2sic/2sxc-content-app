@@ -24,10 +24,9 @@
 }
 
 @* Instruct turnOn to activate GoogleMaps with the API key once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.maps.load()", "data": "@googleApikey" }'></turnOn>
-
 @* Instruct turnOn to init this specific Map once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "run": "window.appContent.maps.configureMap()", "data": { 
+<turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activeGoogleMaps()", "data": { 
+  "apiKey": "@googleApikey", 
   "domId": "GoogleMap-@mapId", 
   "icon": "@Text.First(mapSettings.Icon, "")",
   "lat": @gpsLat,

@@ -21,15 +21,12 @@
   var gps = AsDynamic(Content.GPS);
   var gpsLong = (gps.Longitude ?? 0).ToString("R"); // use 0 if not defined, R means dot-number no matter what culture
   var gpsLat = (gps.Latitude ?? 0).ToString("R");	  // see above
-
-  // TODO: 2RO - DUPLICATE ON bs3
 }
 
 @* Instruct turnOn to activate GoogleMaps with the API key once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.maps.load()", "data": "@googleApikey" }'></turnOn>
-
 @* Instruct turnOn to init this specific Map once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "run": "window.appContent.maps.configureMap()", "data": { 
+<turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activeGoogleMaps()", "data": { 
+  "apiKey": "@googleApikey", 
   "domId": "GoogleMap-@mapId", 
   "icon": "@Text.First(mapSettings.Icon, "")",
   "lat": @gpsLat,
