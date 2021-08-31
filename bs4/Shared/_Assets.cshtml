@@ -14,7 +14,7 @@
 
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page 
   // Note that the link and script tags are in the System Settings to make it easier to update a live installation
-  if (pageCss.IsUnknown) { //Is("bs4")) {
+  if (pageCss.IsUnknown) {
     page.Activate("Bootstrap4");
   }
 
@@ -42,6 +42,7 @@
   page.Activate("turnOn"); // see https://r.2sxc.org/turnon
   <script type="text/javascript" src="@App.Path/bs4/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
+  @* TODO: 2ro / 2dm - check how to do this without jQuery *@
   <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
 
