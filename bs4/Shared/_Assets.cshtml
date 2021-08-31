@@ -14,7 +14,7 @@
 
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page 
   // Note that the link and script tags are in the System Settings to make it easier to update a live installation
-  if (!pageCss.Is("bs4")) {
+  if (pageCss.IsUnknown) { //Is("bs4")) {
     page.Activate("Bootstrap4");
   }
 
