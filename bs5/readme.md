@@ -1,0 +1,1 @@
+# 2sxc: Content Types & Templates for many BS5 Framework 12.04.00
