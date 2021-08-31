@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-22T19:41:16.3100488+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.04.00" ExportDate="2021-08-31T19:02:35.9160334+02:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -87,10 +87,10 @@
             <Value Key="InputType" Value="empty-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Configure Images in Content" Type="String">
+            <Value Key="Name" Value="Configure Images in Content (ℹ️)" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;The Content App uses standard Image definitions like &lt;em&gt;Content&lt;/em&gt; and &lt;em&gt;Lightbox&lt;/em&gt;. Since these are standard 2sxc assets, they are not listed here but come from system settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can also modify the Razor files to use any value you prefer, but we recommend to use the Settings-concept.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Placeholder" Value="" Type="String">
@@ -129,10 +129,10 @@
             <Value Key="InputType" Value="empty-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Assets / Resources from CDNs" Type="String">
+            <Value Key="Name" Value="Assets / Resources from CDNs (ℹ️)" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;The Conten App uses standard Resources like Bootstrap4 (if not already loaded in the theme) and Fancybox3. Since these are standard 2sxc assets, they are not listed here but come from global settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;The Content App uses standard Resources like Bootstrap4 (if not already loaded in the theme) and Fancybox3. Since these are standard 2sxc assets, they are not listed here but come from system settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can also modify the Razor files to use any value you prefer, but we recommend to use the Settings-concept.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Placeholder" Value="" Type="String">
@@ -174,7 +174,7 @@
             <Value Key="Name" Value="Google Maps" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;This is the Google Maps API key for the map views. You must change it to your own - see &lt;a href=&quot;https://azing.org/2sxc/r/ippFQYkz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;reasons and instructions&lt;/a&gt;.&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;This is the Google Maps API key for the map views. You must change it to your own - see &lt;a href=&quot;https://r.2sxc.org/google-maps&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;reasons and instructions&lt;/a&gt;.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Placeholder" Value="" Type="String">
@@ -191,7 +191,7 @@
             </Value>
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@empty-default" AttributeSetName="@empty-default" EntityGUID="a0a29e42-f1da-4c98-a76a-fabf683237ae" Json="True" KeyNumber="3391">
-            <Value Key="DefaultCollapsed" Value="False" Type="Boolean">
+            <Value Key="DefaultCollapsed" Value="True" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2805,13 +2805,6 @@
         </Attribute>
         <Attribute StaticName="MapsEnableDirections" Type="Boolean" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="a390257c-ca1f-478e-b84f-a5056cd4e18e" Json="True" KeyNumber="4694">
-            <Value Key="InputType" Value="boolean-tristate" Type="String" />
-            <Value Key="Name" Value="MapsEnableDirections" Type="String" />
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="GoogleMaps" Type="Entity" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="4f8e45d6-c11e-4067-9fa0-e58482956b5c" Json="True" KeyNumber="4697">
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -2824,13 +2817,16 @@
             <Value Key="DisableTranslation" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="InputType" Value="entity-default" Type="String">
+            <Value Key="InputType" Value="boolean-tristate" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Google Maps Configuration" Type="String">
+            <Value Key="Name" Value="Enable Directions Button on Maps" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Only add a configuration if you need to change the defaults.&amp;nbsp;&lt;/p&gt;" Type="String">
+            <Value Key="Name" Value="Routenplaner Link Anzeigen" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Placeholder" Value="" Type="String">
@@ -2846,29 +2842,14 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Entity" AttributeSetName="@Entity" EntityGUID="80d7a67e-61e3-4234-aee2-f46f2a0e2571" Json="True" KeyNumber="4697">
-            <Value Key="AllowMultiValue" Value="False" Type="Boolean">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="420a58f2-3736-4a21-99e8-be9adb80a33d" Json="True" KeyNumber="4694">
+            <Value Key="TitleFalse" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="EnableAddExisting" Value="False" Type="Boolean">
+            <Value Key="TitleIndeterminate" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="EnableCreate" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="EnableDelete" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="EnableEdit" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="EnableRemove" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="EntityType" Value="⚙GoogleMaps" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Prefill" Value="" Type="String">
+            <Value Key="TitleTrue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3859,7 +3840,7 @@
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Image/Preview-Image-1.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Image-1.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -3883,7 +3864,7 @@
       <Value Key="Name" Value="Ganze Breite" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Image/_ImageList.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Image/_ImageList.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="243c0740-c6a6-460c-9fed-3ef5ae309632" Type="Entity" />
@@ -3921,7 +3902,7 @@
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Image/Preview-Banner-Narrow.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Banner-Narrow.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -3945,7 +3926,7 @@
       <Value Key="Name" Value="Banner, schmal (für Kopfbereich)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Image/_Banner.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Image/_Banner.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -3982,6 +3963,12 @@
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Icons/_Large emphasized link.png" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -3991,7 +3978,7 @@
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="List with icon on the side" Type="String">
@@ -4000,13 +3987,19 @@
       <Value Key="Name" Value="Liste mit seitlichem Symbol" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Link/_List of document-links.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Link/_List of document-links.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
@@ -4018,6 +4011,9 @@
       <Value Key="UseForList" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="ViewController" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -4027,7 +4023,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Text-Only.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Text-Only.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4051,7 +4047,7 @@
       <Value Key="Name" Value="Nur Text" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text only.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text only.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -4089,7 +4085,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Image-Text.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Image-Text.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4113,7 +4109,7 @@
       <Value Key="Name" Value="Bild | Text" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text and Image.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text and Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -4151,7 +4147,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Text-Image.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Text-Image.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4175,7 +4171,7 @@
       <Value Key="Name" Value="Text | Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text and Image.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text and Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -4213,7 +4209,7 @@
       <Value Key="ContentTypeStaticName" Value="09ad77bb-66e8-4a1c-92ac-27253afb251d" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Person/Preview-Rectangle.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Rectangle.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4237,7 +4233,7 @@
       <Value Key="Name" Value="Rechteckiges Foto" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Person/_Person-Photo.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Person/_Person-Photo.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -4273,7 +4269,7 @@
       <Value Key="ContentTypeStaticName" Value="09ad77bb-66e8-4a1c-92ac-27253afb251d" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Person/Preview-No-Photo.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-No-Photo.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4297,7 +4293,7 @@
       <Value Key="Name" Value="ohne Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Person/_Person.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Person/_Person.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -4333,6 +4329,12 @@
       <Value Key="ContentTypeStaticName" Value="3168c0b7-c5b9-4aa8-9ada-773890339e58" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Icons/_Full Size Map.png" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -4342,7 +4344,7 @@
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Full-Size Map" Type="String">
@@ -4351,7 +4353,7 @@
       <Value Key="Name" Value="Grosse Karte" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Location/_Full Size Map.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Location/_Full Size Map.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="73cf93ff-7e75-485f-8b10-97eb66604849" Type="Entity" />
@@ -4359,6 +4361,12 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
@@ -4370,6 +4378,9 @@
       <Value Key="UseForList" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="ViewController" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -4377,6 +4388,12 @@
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="9d14d2b2-8231-4f34-b2e6-ad5bd86857db" Json="True">
       <Value Key="ContentDemoEntity" Value="efa687d8-3f0e-46d5-9570-744ec2985007" Type="Entity" />
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Icon" Value="[App:Path]/Icons/_List of links.png" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
@@ -4388,7 +4405,7 @@
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Text only, max. 3 in a row" Type="String">
@@ -4397,13 +4414,19 @@
       <Value Key="Name" Value="Nur Text, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Link/_List of links.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Link/_List of links.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
@@ -4415,6 +4438,9 @@
       <Value Key="UseForList" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="ViewController" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -4424,7 +4450,7 @@
       <Value Key="ContentTypeStaticName" Value="b3957ce5-847e-4191-b98a-550d1b9f838c" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Video/Preview-Video100.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Video100.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4448,7 +4474,7 @@
       <Value Key="Name" Value="Gesamte Breite (100%)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Video/_Video.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Video/_Video.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="f04747c6-d2d1-49f4-be97-ac57108818ca" Type="Entity">
@@ -4499,7 +4525,7 @@
       <Value Key="ContentTypeStaticName" Value="93714840-bb10-442d-b290-7d8a7b005dc0" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Layout/Preview-Wide.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Wide.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="wide" Type="String">
@@ -4523,7 +4549,7 @@
       <Value Key="Name" Value="Trennlinie, ganze Breite" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Layout/_Line.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Layout/_Line.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -4559,6 +4585,12 @@
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Icons/_List of image-links.png" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -4568,7 +4600,7 @@
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Image on top, max. 3 in a row" Type="String">
@@ -4577,13 +4609,19 @@
       <Value Key="Name" Value="Bild oben, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Link/_List of image-links.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Link/_List of image-links.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="Default,ListContent" Type="String">
@@ -4593,6 +4631,9 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="UseForList" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewController" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
@@ -4642,6 +4683,12 @@
       <Value Key="ContentTypeStaticName" Value="3168c0b7-c5b9-4aa8-9ada-773890339e58" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Icons/_Address with Map 50-50.png" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -4651,7 +4698,7 @@
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Address with map 50/50" Type="String">
@@ -4660,7 +4707,7 @@
       <Value Key="Name" Value="Adresse mit Karte 50/50" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Location/_Address with Map 50-50.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Location/_Address with Map 50-50.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="73cf93ff-7e75-485f-8b10-97eb66604849" Type="Entity" />
@@ -4668,6 +4715,12 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="Default,ListContent" Type="String">
@@ -4679,6 +4732,9 @@
       <Value Key="UseForList" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="ViewController" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -4688,7 +4744,7 @@
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Image/Preview-Banner-Wide.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Banner-Wide.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4712,7 +4768,7 @@
       <Value Key="Name" Value="Banner, hoch (für Kopfbereich)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Image/_Banner.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Image/_Banner.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -4749,7 +4805,7 @@
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Image/Preview-Image-2.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Image-2.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -4773,7 +4829,7 @@
       <Value Key="Name" Value="Kacheln - 2 pro Reihe" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Image/_ImageList.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Image/_ImageList.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="243c0740-c6a6-460c-9fed-3ef5ae309632" Type="Entity" />
@@ -4880,10 +4936,13 @@
       <Value Key="Description" Value="Imagem com título" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Image/Type-Icon-Image.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Image.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Image" Type="String">
@@ -4950,10 +5009,13 @@
       <Value Key="Description" Value="Contenido básico con texto y, a veces, imagen." Type="String">
         <Dimension DimensionID="140" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Type-Icon-Content.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Content.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Basic content" Type="String">
@@ -4994,10 +5056,13 @@
       <Value Key="Description" Value="Para mapa com endereço" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Location/Type-Icon-Location.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Location.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Location / address" Type="String">
@@ -5061,10 +5126,13 @@
       <Value Key="Description" Value="Link com título e descrição" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Link/Type-Icon-Links.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Links.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Links (urls, pages, files)" Type="String">
@@ -5102,6 +5170,9 @@
       <Value Key="Description" Value="Informação sobre uma pesssoa (contacto)" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="&lt;p&gt;Please write everything you know about this person.&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -5111,7 +5182,7 @@
       <Value Key="EditInstructions" Value="&lt;p&gt;Noteer alles wat je weet over deze persoon.&lt;/p&gt;" Type="String">
         <Dimension DimensionID="139" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Person/Type-Icon-Person.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Person.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Person(s)" Type="String">
@@ -5172,10 +5243,13 @@
       <Value Key="Description" Value="Elemento de disposição" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Layout/Type-Icon-Layout.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Layout.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Layout element" Type="String">
@@ -5207,10 +5281,13 @@
       <Value Key="Description" Value="Vídeo" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Video/Type-Icon-Video.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Video.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Video" Type="String">
@@ -5247,7 +5324,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Image-Text-1-2.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Image-Text-1-2.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -5271,7 +5348,7 @@
       <Value Key="Name" Value="Bild | Text 1:2" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text and Image.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text and Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -5309,7 +5386,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Text-Image-2-1.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Text-Image-2-1.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -5333,7 +5410,7 @@
       <Value Key="Name" Value="Text | Bild 2:1" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text and Image.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text and Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -5371,7 +5448,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Text-Emphasized.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Text-Emphasized.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -5395,7 +5472,7 @@
       <Value Key="Name" Value="Nur Text - hervorgehoben" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text only.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text only.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -5459,6 +5536,12 @@
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Icons/_List of icon-links.png" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -5468,7 +5551,7 @@
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Icon on the side, max. 3 in a row" Type="String">
@@ -5477,13 +5560,19 @@
       <Value Key="Name" Value="Symbol seitlich, max. 3 pro Zeile" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Link/_List of icon-links.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Link/_List of icon-links.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
@@ -5493,6 +5582,9 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="UseForList" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewController" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
@@ -5507,6 +5599,12 @@
       <Value Key="ContentTypeStaticName" Value="36ab91f9-8388-4728-9bee-62ac898300a3" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Icons/_Large emphasized link.png" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -5516,7 +5614,7 @@
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Large (full-width) with icon-button" Type="String">
@@ -5525,7 +5623,7 @@
       <Value Key="Name" Value="Gross (gesamte Breite) Symbol-Button" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Link/_Large emphasized link.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Link/_Large emphasized link.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -5535,6 +5633,12 @@
       <Value Key="PublishData" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -5542,6 +5646,9 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="UseForList" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewController" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
@@ -5788,7 +5895,7 @@
       <Value Key="ContentTypeStaticName" Value="09ad77bb-66e8-4a1c-92ac-27253afb251d" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Person/Preview-Rounded.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Rounded.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="round" Type="String">
@@ -5812,7 +5919,7 @@
       <Value Key="Name" Value="Rundes Foto" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Person/_Person-Photo.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Person/_Person-Photo.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -5853,7 +5960,7 @@
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Image/Preview-Image-3.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Image-3.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -5877,7 +5984,7 @@
       <Value Key="Name" Value="Kacheln - 3 pro Reihe" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Image/_ImageList.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Image/_ImageList.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="243c0740-c6a6-460c-9fed-3ef5ae309632" Type="Entity" />
@@ -5941,7 +6048,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Title.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Title.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -5965,7 +6072,7 @@
       <Value Key="Name" Value="Nur Titel" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Title only.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Title only.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="4eea6c54-1c0e-4f9f-927c-fcf146c37edf" Type="Entity" />
@@ -6013,7 +6120,7 @@
       <Value Key="ContentTypeStaticName" Value="0b27cd61-d29d-4fee-b284-dcb1a6090873" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Image/Preview-Image-4.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Image-4.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -6037,7 +6144,7 @@
       <Value Key="Name" Value="Kacheln - 4 pro Reihe" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Image/_ImageList.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Image/_ImageList.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="243c0740-c6a6-460c-9fed-3ef5ae309632" Type="Entity" />
@@ -6084,7 +6191,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Image-Max.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Image-Max.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -6108,7 +6215,7 @@
       <Value Key="Name" Value="Titel oberhalb Bild" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text and Image.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text and Image.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="4eea6c54-1c0e-4f9f-927c-fcf146c37edf" Type="Entity" />
@@ -6151,7 +6258,7 @@
       <Value Key="ContentTypeStaticName" Value="93714840-bb10-442d-b290-7d8a7b005dc0" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Layout/Preview-Half.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Half.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="half" Type="String">
@@ -6175,7 +6282,7 @@
       <Value Key="Name" Value="Trennlinie, halbe Breite" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Layout/_Line.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Layout/_Line.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -6233,7 +6340,7 @@
       <Value Key="ContentTypeStaticName" Value="9992aed3-0623-4a63-bf91-4bfe952f5a38" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Content/Preview-Text-Centered.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Text-Centered.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -6257,7 +6364,7 @@
       <Value Key="Name" Value="Text zentriert" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Content/_Text only.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Content/_Text only.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="986fa35a-7e15-4368-9822-e80dec230be9" Type="Entity" />
@@ -6541,7 +6648,7 @@
       <Value Key="ContentTypeStaticName" Value="b3957ce5-847e-4191-b98a-550d1b9f838c" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Video/Preview-Video-Text.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Video-Text.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -6562,7 +6669,7 @@
       <Value Key="Name" Value="Video | Text" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Video/_Video.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Video/_Video.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="345542ef-843c-4f02-a317-f5af62ec5955" Type="Entity">
@@ -6620,7 +6727,7 @@
       <Value Key="ContentTypeStaticName" Value="b3957ce5-847e-4191-b98a-550d1b9f838c" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Video/Preview-Text-Video.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Text-Video.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -6641,7 +6748,7 @@
       <Value Key="Name" Value="Text | Video" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Video/_Video.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Video/_Video.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="345542ef-843c-4f02-a317-f5af62ec5955" Type="Entity">
@@ -6683,7 +6790,7 @@
       <Value Key="ContentTypeStaticName" Value="b3957ce5-847e-4191-b98a-550d1b9f838c" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Video/Preview-Text2-Video1.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Text2-Video1.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -6704,7 +6811,7 @@
       <Value Key="Name" Value="Text | Video 2:1" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Video/_Video.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Video/_Video.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="345542ef-843c-4f02-a317-f5af62ec5955" Type="Entity">
@@ -6746,7 +6853,7 @@
       <Value Key="ContentTypeStaticName" Value="b3957ce5-847e-4191-b98a-550d1b9f838c" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Icon" Value="[App:Path]/Video/Preview-Video1-Text2.png" Type="Hyperlink">
+      <Value Key="Icon" Value="[App:Path]/Icons/Preview-Video1-Text2.png" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Identifier" Value="" Type="String">
@@ -6767,7 +6874,7 @@
       <Value Key="Name" Value="Video | Text 1:2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="Video/_Video.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/Video/_Video.cshtml" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="345542ef-843c-4f02-a317-f5af62ec5955" Type="Entity">
@@ -7459,6 +7566,53 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="83ffa5d4-bfc4-49af-ba36-34cef5baa962" Json="True">
+      <Value Key="Template" Value="0d27475f-fbc1-4d09-92de-1e4a407a0ddb" Type="Entity" />
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="03a7279d-054c-4b63-9b4d-56e6ab93c2f9" Json="True">
+      <Value Key="Content" Value="1fe79d5f-58b3-482b-8e7a-dfb742286657" Type="Entity" />
+      <Value Key="Template" Value="0d27475f-fbc1-4d09-92de-1e4a407a0ddb" Type="Entity" />
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="cd77d9ec-1e11-4837-b42b-986b89bcc70e" Json="True">
+      <Value Key="Content" Value="1fe79d5f-58b3-482b-8e7a-dfb742286657" Type="Entity" />
+      <Value Key="Presentation" Value="null" Type="Entity" />
+      <Value Key="Template" Value="b03c6df0-e36c-4ba9-951a-dfd14e2eda5f" Type="Entity" />
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="3168c0b7-c5b9-4aa8-9ada-773890339e58" AttributeSetName="Location" EntityGUID="1fe79d5f-58b3-482b-8e7a-dfb742286657">
+      <Value Key="City" Value="Domat/Ems" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Company" Value="Romana" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Country" Value="Switzerland" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Fax" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="GPS" Value="{&quot;latitude&quot;:46.8367858,&quot;longitude&quot;:9.4623964}" Type="Custom">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Mail" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Street" Value="Via Burgaisa, 5a" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Tel" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ZipCode" Value="7013" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="71f7b063-d2b0-467e-b33e-c99bca723cc0" Json="True">
+      <Value Key="Template" Value="0d27475f-fbc1-4d09-92de-1e4a407a0ddb" Type="Entity" />
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
@@ -7521,10 +7675,15 @@
     <Folder Id="12881" RelativePath="adam/Content/3bOVpHtgekyKNbLtQEiUcQ/Link/" />
     <Folder Id="12874" RelativePath="adam/Content/3kZ4q3tSlk6uO_pXOUtJZg/" />
     <Folder Id="12875" RelativePath="adam/Content/3kZ4q3tSlk6uO_pXOUtJZg/Icon/" />
+    <Folder Id="13332" RelativePath="adam/Content/3q6V8Rk2U0iEyfgKLnMv8w/" />
+    <Folder Id="13335" RelativePath="adam/Content/3q6V8Rk2U0iEyfgKLnMv8w/Image/" />
+    <Folder Id="13334" RelativePath="adam/Content/3q6V8Rk2U0iEyfgKLnMv8w/Link/" />
     <Folder Id="10375" RelativePath="adam/Content/49sQmM_6ekOVvbAMQXD_Vg/" />
     <Folder Id="10376" RelativePath="adam/Content/49sQmM_6ekOVvbAMQXD_Vg/Image/" />
     <Folder Id="12898" RelativePath="adam/Content/4heHHQmFZ0WKVDCsvFrRBQ/" />
     <Folder Id="12899" RelativePath="adam/Content/4heHHQmFZ0WKVDCsvFrRBQ/MarkerImage/" />
+    <Folder Id="13347" RelativePath="adam/Content/4KMFbU0ZhkibuRNbUaVmFQ/" />
+    <Folder Id="13348" RelativePath="adam/Content/4KMFbU0ZhkibuRNbUaVmFQ/Icon/" />
     <Folder Id="12815" RelativePath="adam/Content/5bbhHgrLxUWE4huOO3t98g/" />
     <Folder Id="12816" RelativePath="adam/Content/5bbhHgrLxUWE4huOO3t98g/Image/" />
     <Folder Id="12853" RelativePath="adam/Content/5GoH7ug-Gk2I_RwNcTPeiQ/" />
@@ -7561,6 +7720,8 @@
     <Folder Id="12865" RelativePath="adam/Content/97K7E-4x7ECZHCoT6WvONQ/Link/" />
     <Folder Id="12697" RelativePath="adam/Content/9r_nfuezyUmWqLjSQij4-A/" />
     <Folder Id="12698" RelativePath="adam/Content/9r_nfuezyUmWqLjSQij4-A/MarkerImage/" />
+    <Folder Id="13326" RelativePath="adam/Content/a_fyDQdpIE6w5QhR7eXJfg/" />
+    <Folder Id="13327" RelativePath="adam/Content/a_fyDQdpIE6w5QhR7eXJfg/MarkerIcon/" />
     <Folder Id="12801" RelativePath="adam/Content/abNfeMZspESGWe45-Cp33A/" />
     <Folder Id="12802" RelativePath="adam/Content/abNfeMZspESGWe45-Cp33A/Image/" />
     <Folder Id="12886" RelativePath="adam/Content/aKp50HR-9UWSp7GQFCT11g/" />
@@ -7580,6 +7741,9 @@
     <Folder Id="12764" RelativePath="adam/Content/BQVtn5npMUayFQ8_qpddMg/Icon/" />
     <Folder Id="12920" RelativePath="adam/Content/BXBKea_z2UethTpyXMD7eQ/" />
     <Folder Id="12921" RelativePath="adam/Content/BXBKea_z2UethTpyXMD7eQ/MarkerImage/" />
+    <Folder Id="13336" RelativePath="adam/Content/cFYe4nVef0aRsrfe9gHutg/" />
+    <Folder Id="13337" RelativePath="adam/Content/cFYe4nVef0aRsrfe9gHutg/Image/" />
+    <Folder Id="13338" RelativePath="adam/Content/cFYe4nVef0aRsrfe9gHutg/Link/" />
     <Folder Id="12621" RelativePath="adam/Content/CLJAPAtSAUuqiLjNTn5RKw/" />
     <Folder Id="12622" RelativePath="adam/Content/CLJAPAtSAUuqiLjNTn5RKw/Image/" />
     <Folder Id="12665" RelativePath="adam/Content/CPq0ffpk0U2cvtQJNXUs1Q/" />
@@ -7592,6 +7756,8 @@
     <Folder Id="12648" RelativePath="adam/Content/CZJsGzmS-EKrs9xmkmJPTA/" />
     <Folder Id="12650" RelativePath="adam/Content/CZJsGzmS-EKrs9xmkmJPTA/Image/" />
     <Folder Id="12649" RelativePath="adam/Content/CZJsGzmS-EKrs9xmkmJPTA/VideoLink/" />
+    <Folder Id="13349" RelativePath="adam/Content/d3idm4bYkkqompgx2mJCQw/" />
+    <Folder Id="13350" RelativePath="adam/Content/d3idm4bYkkqompgx2mJCQw/Icon/" />
     <Folder Id="12829" RelativePath="adam/Content/dJaM8X1V70S1aXnOMZoAYw/" />
     <Folder Id="12830" RelativePath="adam/Content/dJaM8X1V70S1aXnOMZoAYw/ContentCss/" />
     <Folder Id="12623" RelativePath="adam/Content/DolG5umALkWlGE1LIt5Xig/" />
@@ -7642,6 +7808,8 @@
     <Folder Id="12858" RelativePath="adam/Content/JmwNIsAf8UiY2qxweE5Sqw/Image/" />
     <Folder Id="12765" RelativePath="adam/Content/jqqrlpobLUSzVAgwqcZuFw/" />
     <Folder Id="12766" RelativePath="adam/Content/jqqrlpobLUSzVAgwqcZuFw/Icon/" />
+    <Folder Id="13328" RelativePath="adam/Content/KNZLRkYSHES0YNLJ-r4rvg/" />
+    <Folder Id="13329" RelativePath="adam/Content/KNZLRkYSHES0YNLJ-r4rvg/MarkerIcon/" />
     <Folder Id="10356" RelativePath="adam/Content/KOISzOTx20iW0z67ZNlMEg/" />
     <Folder Id="10357" RelativePath="adam/Content/KOISzOTx20iW0z67ZNlMEg/Photo/" />
     <Folder Id="12884" RelativePath="adam/Content/kTcFF9f-_0uXnYXu4VgaRA/" />
@@ -7684,6 +7852,8 @@
     <Folder Id="10201" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/" />
     <Folder Id="10202" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/Image/" />
     <Folder Id="10203" RelativePath="adam/Content/on5ox2D1akm0xTHFE2yGSg/Link/" />
+    <Folder Id="13330" RelativePath="adam/Content/oo4vxsdxfk6z60SMMrIvvA/" />
+    <Folder Id="13331" RelativePath="adam/Content/oo4vxsdxfk6z60SMMrIvvA/MarkerIcon/" />
     <Folder Id="10597" RelativePath="adam/Content/Ow5gKQiKTkeMXm-MaitYHQ/" />
     <Folder Id="10598" RelativePath="adam/Content/Ow5gKQiKTkeMXm-MaitYHQ/Link/" />
     <Folder Id="12707" RelativePath="adam/Content/p_uYLYWUbEuV3J8ITTOn7w/" />
@@ -7725,6 +7895,10 @@
     <Folder Id="10348" RelativePath="adam/Content/SbpMX9oXV02pWGhBr-IzOQ/" />
     <Folder Id="10350" RelativePath="adam/Content/SbpMX9oXV02pWGhBr-IzOQ/Image/" />
     <Folder Id="10351" RelativePath="adam/Content/SbpMX9oXV02pWGhBr-IzOQ/VideoLink/" />
+    <Folder Id="13341" RelativePath="adam/Content/SRwVQLGIdUKsBpt_c_2IYg/" />
+    <Folder Id="13342" RelativePath="adam/Content/SRwVQLGIdUKsBpt_c_2IYg/Icon/" />
+    <Folder Id="13345" RelativePath="adam/Content/stIUnTGCNE-y5q1b2GhX2w/" />
+    <Folder Id="13346" RelativePath="adam/Content/stIUnTGCNE-y5q1b2GhX2w/Icon/" />
     <Folder Id="12924" RelativePath="adam/Content/SvJntVao4U2rgWKJqI-mmA/" />
     <Folder Id="12925" RelativePath="adam/Content/SvJntVao4U2rgWKJqI-mmA/MapsPinImage/" />
     <Folder Id="10192" RelativePath="adam/Content/SwyWpDm3bUyBJbsIOMQhhw/" />
@@ -7752,6 +7926,8 @@
     <Folder Id="10472" RelativePath="adam/Content/Ufaf9MwPSk-sFrT_gM_mVA/Image/" />
     <Folder Id="12781" RelativePath="adam/Content/ujw35WSoa0KeMFHdxDaZgw/" />
     <Folder Id="12782" RelativePath="adam/Content/ujw35WSoa0KeMFHdxDaZgw/Icon/" />
+    <Folder Id="13232" RelativePath="adam/Content/UzmBu84cREam8djO560dAw/" />
+    <Folder Id="13233" RelativePath="adam/Content/UzmBu84cREam8djO560dAw/Image/" />
     <Folder Id="10198" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/" />
     <Folder Id="10200" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/Image/" />
     <Folder Id="10199" RelativePath="adam/Content/VVRdLuCYfk-KS73BZVpp-A/Link/" />
@@ -7773,6 +7949,8 @@
     <Folder Id="10378" RelativePath="adam/Content/wtaV6qmPkEaiBAMmGvvUhA/Image/" />
     <Folder Id="12795" RelativePath="adam/Content/WX4vVi9La0qd0MWtBj6xNg/" />
     <Folder Id="12796" RelativePath="adam/Content/WX4vVi9La0qd0MWtBj6xNg/Icon/" />
+    <Folder Id="13339" RelativePath="adam/Content/X0cnDcH7CU2S3h5KQHoN2w/" />
+    <Folder Id="13340" RelativePath="adam/Content/X0cnDcH7CU2S3h5KQHoN2w/Icon/" />
     <Folder Id="10449" RelativePath="adam/Content/X0eXVnvAPUeky0QVZz7Qdg/" />
     <Folder Id="10450" RelativePath="adam/Content/X0eXVnvAPUeky0QVZz7Qdg/Image/" />
     <Folder Id="12837" RelativePath="adam/Content/X4XALDVOG0mQy-EBsMAyJg/" />
@@ -7796,10 +7974,14 @@
     <Folder Id="12871" RelativePath="adam/Content/XzbbbXn9W0esopQVNqAwmg/Icon/" />
     <Folder Id="10600" RelativePath="adam/Content/YChJy0tPQUiQuxUQfZe69Q/" />
     <Folder Id="10601" RelativePath="adam/Content/YChJy0tPQUiQuxUQfZe69Q/Link/" />
+    <Folder Id="13343" RelativePath="adam/Content/YCiu_ooR70KwOjNt4Op8OA/" />
+    <Folder Id="13344" RelativePath="adam/Content/YCiu_ooR70KwOjNt4Op8OA/Icon/" />
     <Folder Id="10373" RelativePath="adam/Content/YhOBqutvUUmYr8q_KqhiGA/" />
     <Folder Id="10374" RelativePath="adam/Content/YhOBqutvUUmYr8q_KqhiGA/Image/" />
     <Folder Id="12777" RelativePath="adam/Content/YhrGyTm4qE-lEwjpQvwQtA/" />
     <Folder Id="12778" RelativePath="adam/Content/YhrGyTm4qE-lEwjpQvwQtA/Icon/" />
+    <Folder Id="13234" RelativePath="adam/Content/yI-pNuzTCUq3z_wle8AgnQ/" />
+    <Folder Id="13235" RelativePath="adam/Content/yI-pNuzTCUq3z_wle8AgnQ/Image/" />
     <Folder Id="12746" RelativePath="adam/Content/YjV8_tK7Zk-yIx7jZs4N5g/" />
     <Folder Id="12748" RelativePath="adam/Content/YjV8_tK7Zk-yIx7jZs4N5g/Icon/" />
     <Folder Id="12747" RelativePath="adam/Content/YjV8_tK7Zk-yIx7jZs4N5g/Link/" />
