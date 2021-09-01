@@ -7,7 +7,6 @@
     "build-bs3": "webpack --env style=bs3",
     "build-bs4": "webpack --env style=bs4",
     "build-bs5": "webpack --env style=bs5"
-
   },
   "author": "2sic internet solutions 2020",
   "license": "ISC",
@@ -16,7 +15,6 @@
     "@types/fancybox": "^3.5.3",
     "@types/jquery": "^3.5.6",
     "autoprefixer": "^10.3.2",
-    "bootstrap": "^5.1.0",
     "cpx": "^1.5.0",
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
@@ -34,5 +32,7 @@
     "webpack-fix-style-only-entries": "^0.6.1",
     "webpackbar": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
 }
