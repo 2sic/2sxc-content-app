@@ -48,10 +48,10 @@ var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS info
   page.Activate("turnOn"); // see https://r.2sxc.org/turnon
   <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
-  <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.showEncryptedMails()" }'></turnOn>
+  <turnOn turn-on='{ "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
 
 @* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if (videos) {
-  <turnOn turn-on='{ "await": ["window.$"], "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
+  <turnOn turn-on='{ "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
 }

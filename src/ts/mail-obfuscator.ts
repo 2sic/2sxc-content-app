@@ -7,7 +7,12 @@ export function showEncryptedMails() {
     mailElement.forEach((mail: HTMLElement, index) => {
       const maddr = mail.getAttribute('data-madr1') + '@' + mail.getAttribute('data-madr2') + '.' + mail.getAttribute('data-madr3');
       const linktext = mail.getAttribute('data-linktext') ? mail.getAttribute('data-linktext') : maddr;
-      mail.after('<a href="mailto:' + maddr + '">' + linktext + '</a> ')
+
+      const a = document.createElement('a')
+      a.setAttribute('href', `mailto:${maddr}`)
+      a.innerHTML = linktext;
+      
+      mail.parentElement.appendChild(a);
       mail.classList.add('madr-done');      
       mail.style.display = 'none';
    });
