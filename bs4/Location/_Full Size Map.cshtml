@@ -17,7 +17,8 @@
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
 		<div class="co-google-map-container embed-responsive embed-responsive-21by9">
-			<div class="embed-responsive-item" id="GoogleMap-@mapId"></div>
+      @* // ratio ratio-21x9 only for octane - should be removed when bs5 is prepared *@
+			<div class="embed-responsive-item ratio ratio-21x9" id="GoogleMap-@mapId"></div>
 			<div id="GoogleMap-Content-@mapId" style="display:none;">
 				<div class="p-2 text-center">
 					<h4>@Content.Company</h4>

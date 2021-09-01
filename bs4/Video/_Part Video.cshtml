@@ -40,7 +40,8 @@
   @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox", fancyboxGroup = "videos" })
 } else {
   // no lightbox, show directly
-  <div class="co-video-embed embed-responsive embed-responsive-16by9">
+  // ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
+  <div class="co-video-embed ratio ratio-16x9 embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
       <img src="https://img.youtube.com/vi/@youTubeLink.Groups[1].Value/maxresdefault.jpg" class="img-fluid lazy">
 

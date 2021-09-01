@@ -17,7 +17,7 @@
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner" @Edit.TagToolbar(Content)>
     <div class="row">
-      <div class="col-md-6 order-md-6 d-flex align-items-center">
+      <div class="col-md-6 order-md-1 d-flex align-items-center">
         <address itemscope itemtype="http://schema.org/LocalBusiness">
           <div class="mb-2 pr-md-5" itemprop="name">
             <h4>@Content.Company</h4>
@@ -64,7 +64,7 @@
       </div>
       <div class="col-md-6 order-md-1">
         <div class="co-google-map-container embed-responsive embed-responsive-16by9">
-          <div class="embed-responsive-item" id="GoogleMap-@mapId"></div>
+          <div class="embed-responsive-item ratio ratio-16x9" id="GoogleMap-@mapId"></div>
         </div>
       </div>
     </div>
