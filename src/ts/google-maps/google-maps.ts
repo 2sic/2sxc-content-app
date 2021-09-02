@@ -3,7 +3,7 @@ import { MapDefinition } from './map-definition';
 
 const debug = false;
 
-export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info, warn } : MapDefinition) {
+export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info, warn, warning } : MapDefinition) {
   if(debug) console.log('build map', arguments);
 
   const loader = new Loader({
@@ -25,7 +25,7 @@ export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info, war
     mapTypeId: 'roadmap'
   };
 
-  if(warn) showKeyWarnings();
+  if(warn) showKeyWarnings(warning);
 
   loader.load().then((google) => {
     var map = new google.maps.Map(document.getElementById(`${domId}`), mapOptions);
@@ -54,14 +54,15 @@ export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info, war
     if(debug) console.log('map loaded');
   });
 
-  function showKeyWarnings() {
+  function showKeyWarnings(warning: string) {
     var googleMapsElem = document.getElementsByClassName('co-google-map-container');
 
     if(googleMapsElem.length != 0) {
       for(var i = 0; i < googleMapsElem.length; i++) {
         if(!googleMapsElem[i].classList.contains('has-warning')) {
           googleMapsElem[i].classList.add('has-warning');
-          googleMapsElem[i].innerHTML = googleMapsElem[i].innerHTML + '<p class="alert alert-danger googlemap-apiwarning"><strong>Warning:</strong> This map uses a demo API-Key, which will cause problems on live web sites. Change the GoogleApiKey using <a class="alert-link target="_blank" href="https://azing.org/2sxc/r/ippFQYkz" target="_blank">these instructions</a></p>';
+          googleMapsElem[i].innerHTML = googleMapsElem[i].innerHTML + '<div class="alert alert-danger">' + warning + '</div>';
+
         }
       }
     }

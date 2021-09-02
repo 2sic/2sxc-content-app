@@ -17,21 +17,22 @@
   // we need a unique ID for the map, in case there are many on the same page
   var mapId = CmsContext.Module.Id;
 
-  // GPS is a JSON field, so we must use AsDynamic to access the properties
+  // GPS is a JSON field, so we must use AsDynamic to easily access the properties
   var gps = AsDynamic(Content.GPS);
-  var gpsLong = (gps.Longitude ?? 0).ToString("R"); // use 0 if not defined, R means dot-number no matter what culture
-  var gpsLat = (gps.Latitude ?? 0).ToString("R");	  // see above
+
+  var data = new {
+    apiKey = googleApikey,
+    domId = "GoogleMap-" + mapId,
+    icon = Text.First(mapSettings.Icon, ""),
+    lat = gps.Latitude ?? 0,
+    lng = gps.Longitude ?? 0, 
+    zoom = mapSettings.Zoom, 
+    info = @Content.Company,
+    warn = (mapSettings.ShowApiKeyWarning == true ? "true" : "false"),
+    warning = Resources.GoogleMaps.WarningApiKeyForDemoOnly
+  };
+  var jsonSafeData = JsonConvert.SerializeObject(data);
 }
 
-@* Instruct turnOn to activate GoogleMaps with the API key once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-@* Instruct turnOn to init this specific Map once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": { 
-  "apiKey": "@googleApikey", 
-  "domId": "GoogleMap-@mapId", 
-  "icon": "@Text.First(mapSettings.Icon, "")",
-  "lat": @gpsLat,
-  "lng": @gpsLong, 
-  "zoom": @mapSettings.InitialZoom, 
-  "info": "@Content.Company",
-  "warn": @(mapSettings.ShowApiKeyWarning == true ? "true" : "false")
-}}'></turnOn>
+@* Instruct turnOn to activate GoogleMaps with the API key and everything once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
+<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(jsonSafeData) }'></turnOn>

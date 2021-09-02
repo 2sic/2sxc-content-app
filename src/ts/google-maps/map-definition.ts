@@ -7,4 +7,5 @@ export interface MapDefinition{
   lng: string;
   info: string;
   warn: boolean;
+  warning: string;
 }
