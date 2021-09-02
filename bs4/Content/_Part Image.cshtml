@@ -26,7 +26,7 @@
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
     }
 
-    <img class="img-fluid" src='@Link.Image(imgItem.Image, Settings.Images.Content, factor: resizeFactor)' alt="@Text.First(imgItem.ImageCaption, imgItem.Title)" />
+    <img loading="lazy" class="img-fluid" src='@Link.Image(imgItem.Image, Settings.Images.Content, factor: resizeFactor)' alt="@Text.First(imgItem.ImageCaption, imgItem.Title)" />
   </figure>
 @if (imgItem.Presentation.ImageLightbox != false) {
   @:</a>

@@ -21,7 +21,7 @@
           @if (Text.Has(link.Image)) {
             <figure>
               <div class="overlay w-100 h-100"></div>
-              <img class="img-fluid" src='@Link.Image(link.Image, Settings.Images.Content, factor: 1f/3)' alt="@link.Title" />
+              <img loading="lazy" class="img-fluid" src='@Link.Image(link.Image, Settings.Images.Content, factor: 1f/3)' alt="@link.Title" />
             </figure>
           } else {
             <div class="bg-primary placeholder" style="padding-bottom: 58%; margin-bottom:1rem;"></div>

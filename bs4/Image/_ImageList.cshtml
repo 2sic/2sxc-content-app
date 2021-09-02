@@ -22,7 +22,7 @@
               <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
             }
 
-            <img class="w-100"
+            <img loading="lazy" class="w-100"
               src='@(Link.Image(img.Image, Settings.Images.Content, factor: fraction) + "&anchor=" + img.CropAnchor)'
               alt="@img.Title" />
         </figure>
