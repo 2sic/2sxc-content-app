@@ -7,10 +7,8 @@
 
   var mbClass = isRound ? "mb-2" : "";
   var imgClass = isRound ? "rounded-circle" : "";
-  var placeholderStyle = "padding-bottom: " + (isRound ? "100%;" : "128.57%");
 
-  // TODO: Change to use Link.Image
-  // TODO: @2tl find out why it's 128.57% - super strange number
+  var placeholderStyle = "padding-bottom: " + (isRound ? "100%;" : "125%");
 }
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner">
@@ -19,7 +17,7 @@
         <div class="col-md-6 mb-4 mb-md-5 row" @Edit.TagToolbar(person)>
           <div class="col-4 @mbClass">
             @if (Text.Has(person.Photo)) {
-              <img loading="lazy" class="img-fluid @imgClass" src='@Tags.SafeUrl(person.Photo + photoSuffix)' alt="@person.FullName" />
+              <img loading="lazy" class="img-fluid @imgClass" src='@Link.Image(person.Photo + photoSuffix)' alt="@person.FullName" />
             } else {
               <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
             }
