@@ -40,8 +40,8 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 ## History
 
-* 2021-04 v12.00 released for 2sxc 12, now compatible with Oqtane as well
-* 2021-08 v12.04 released for 2sxc 12.04 
+* 2021-05-04 v12.00 released for 2sxc 12, now compatible with Oqtane as well
+* 2021-09-02 v12.04 released for 2sxc 12.04 
   * [major clean-up - see blog](https://2sxc.org/en/blog/post/content-is-now-70-off-get-it-asap)
   * also minor changes for Oqtane 2.2 which is now Bootstrap5
-* 2021-09-16 v12.05 updated for 2sxc 12.05
+* 2021-09-17 v12.05 updated for 2sxc 12.05 and clean npm issues
