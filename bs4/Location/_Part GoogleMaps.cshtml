@@ -1,6 +1,5 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
-@using Newtonsoft.Json;
 @{
   // Activate turnOn in the page - see https://r.2sxc.org/turnon
   GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
@@ -31,8 +30,10 @@
     warn = (mapSettings.ShowApiKeyWarning == true ? "true" : "false"),
     warning = Resources.GoogleMaps.WarningApiKeyForDemoOnly
   };
-  var jsonSafeData = JsonConvert.SerializeObject(data);
+
+  // Convert the Object to JSON for the turnOn data attribute (req. 2sxc 12.05)
+  var jsonData = GetService<ToSic.Sxc.Web.IJsonService>().ToJson(data);
 }
 
 @* Instruct turnOn to activate GoogleMaps with the API key and everything once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(jsonSafeData) }'></turnOn>
+<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(jsonData) }'></turnOn>

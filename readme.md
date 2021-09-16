@@ -1,6 +1,6 @@
-# 2sxc: Content Types & Templates for many CSS Frameworks 12.04.00
+# 2sxc: Content Types & Templates for many CSS Frameworks 12.05.00
 
-The default **Content** types and templates for [DNN (DotNetNuke)](https://www.dnnsoftware.com/) and [Oqtane](https://www.oqtane.org/) using [2sxc][2sxc] for the following CSS frameworks:
+The default **Content** types and templates for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/) using [2sxc][2sxc] for the following CSS frameworks:
 
 1. Bootstrap 3.3
 1. Bootstrap 4.0
@@ -37,3 +37,11 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 [StackOverflow]:http://stackoverflow.com/questions/tagged/2sxc
 [SCSS]:http://sass-lang.com/
 [koi]:https://connect-koi.net/
+
+## History
+
+* 2021-04 v12.00 released for 2sxc 12, now compatible with Oqtane as well
+* 2021-08 v12.04 released for 2sxc 12.04 
+  * [major clean-up - see blog](https://2sxc.org/en/blog/post/content-is-now-70-off-get-it-asap)
+  * also minor changes for Oqtane 2.2 which is now Bootstrap5
+* 2021-09-16 v12.05 updated for 2sxc 12.05

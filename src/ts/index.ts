@@ -10,4 +10,3 @@ winAny.appContent.activeGoogleMaps = winAny.appContent.activeGoogleMaps || activ
 winAny.appContent.activateYouTubeInline = winAny.appContent.activateYouTubeInline || activateYouTubeInline;
 winAny.appContent.showEncryptedMails = winAny.appContent.showEncryptedMails || showEncryptedMails;
 winAny.appContent.initFancybox = initFancybox;
-
