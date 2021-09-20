@@ -15,7 +15,7 @@
 
         @* If the image doesn't have it's own column, its between title/text *@
         @if (colsImg == 0) {
-          @Html.Partial("_Part Image.cshtml", new { Item = Content })
+          @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = Content })
         }
 
         @Html.Raw(Content.Text)
@@ -24,7 +24,7 @@
       @if (colsImg != 0) {
         <div class='col-md-@colsImg order-md-@(Settings.TextFirst ? "last" : "first")'>
           @* call sub-template to show the image with all possible options *@
-          @Html.Partial("_Part Image.cshtml", new { Item = Content, Columns = colsImg })
+          @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = Content, Columns = colsImg })
         </div>
       }
     </div>
