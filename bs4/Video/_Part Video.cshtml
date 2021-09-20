@@ -10,16 +10,12 @@
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
-  // configuration
-  var quality = (int)Settings.Images.Content.Quality;
-
   // this is the parameter passed in from the calling page
   // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
-  var imgColumns = (int)(DynamicModel.Columns ?? 12);
-  var width = (int)(Settings.Images.Content.Width * imgColumns / 12);
-  int height = (int)(width * 9/16);
+  // The resulting string will be something like "12/12" or "4/12" which is used by the Link.Image
+  var factor = (DynamicModel.Columns ?? 12) + "/12";
 }
-
+Factor: @factor
 @if (Content.Presentation.VideoLightbox != false) {
   // open in lightbox
   <a data-app-content-fancybox="videos" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
@@ -29,7 +25,7 @@
           <i class="fab fa-youtube"></i>
         </div>
         <img loading="lazy" class="img-fluid"
-          src='@Link.Image(Content.Image, width: width, height: height, resizeMode: "crop", scaleMode: "both", quality: quality)'
+          src='@Link.Image(Content.Image, Settings.Images.Content, factor: factor, aspectRatio: "16:9", scaleMode: "both")'
           alt="@Content.Title" />
       </figure>
       } else {
