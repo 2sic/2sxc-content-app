@@ -8,6 +8,7 @@
   if (!Text.Has(imgItem.Image)) { return; }
 
   // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
+  // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
   var resizeFactor = (DynamicModel.Columns ?? 12) + "/12";
 
   // prepare the title, either the default or the additional image caption

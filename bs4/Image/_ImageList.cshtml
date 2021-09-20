@@ -3,7 +3,7 @@
 @{
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / Settings.MaxPerRow;
-  var fraction = 1 / Settings.MaxPerRow; // percentage of the content-width
+  var factor = 1 / Settings.MaxPerRow; // percentage of the content-width
 }
 
 <div class="co-container-outer">
@@ -23,7 +23,7 @@
             }
 
             <img loading="lazy" class="w-100"
-              src='@(Link.Image(img.Image, Settings.Images.Content, factor: fraction) + "&anchor=" + img.CropAnchor)'
+              src='@(Link.Image(img.Image, Settings.Images.Content, factor: factor) + "&anchor=" + img.CropAnchor)'
               alt="@img.Title" />
         </figure>
 

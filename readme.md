@@ -44,4 +44,7 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 * 2021-09-02 v12.04 released for 2sxc 12.04 
   * [major clean-up - see blog](https://2sxc.org/en/blog/post/content-is-now-70-off-get-it-asap)
   * also minor changes for Oqtane 2.2 which is now Bootstrap5
-* 2021-09-17 v12.05 updated for 2sxc 12.05 and clean npm issues
+* 2021-09-17 v12.05 
+  * updated for 2sxc 12.05 and clean npm issues
+  * enhanced all use cases of `Link.Image(...)` to use latest features
+  * renamed partial files to better match latest conventions
