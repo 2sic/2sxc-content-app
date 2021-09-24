@@ -15,7 +15,6 @@
   // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
   var factor = (DynamicModel.Columns ?? 12) + "/12";
 }
-Factor: @factor
 @if (Content.Presentation.VideoLightbox != false) {
   // open in lightbox
   <a data-app-content-fancybox="videos" class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
