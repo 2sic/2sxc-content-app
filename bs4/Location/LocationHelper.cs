@@ -16,8 +16,8 @@ public class LocationHelper: Custom.Hybrid.Code12
 
     // GPS is a JSON field, so we must use AsDynamic to access the properties
     var gps = AsDynamic(content.GPS);
-    var gpsLong = gps.Longitude ?? 0; // use 0 if not defined
-    var gpsLat = gps.Latitude ?? 0;	  // use 0 if not defined
+    var gpsLong = Convert.ToDouble(gps.Longitude); // use 0 if not defined
+    var gpsLat = Convert.ToDouble(gps.Latitude);	  // use 0 if not defined
 
     // this link will be used to open the Google-Directions in a new window
     var directionurl = gpsLong > 0

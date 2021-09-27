@@ -11,7 +11,6 @@
   // Combine the Presentation with Resources & Settings to get the best possible settings/resources
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
   var mapResources = AsDynamic(Content.Presentation, Resources);
-  var mapSettings = Settings;
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
@@ -51,12 +50,12 @@
               </div>
             }
             @if (Text.Has(Content.Tel)) {
-              <span class="fas fa-phone" aria-hidden="true"></span> <a href="tel:@Content.Tel.Replace(" ", "")" itemprop="telephone">@Content.Tel</a><br/>
+              <span class="fas fa-phone" aria-hidden="true"></span> <a href='tel:@Content.Tel.Replace(" ", "")' itemprop="telephone">@Content.Tel</a><br/>
             }
             @if (Text.Has(Content.Fax)) {
               <span class="fas fa-fax" aria-hidden="true"></span> <span itemprop="faxNumber">@Content.Fax</span><br/>
             }
-            @if (mapSettings.MapsEnableDirections) {
+            @if (Settings.MapsEnableDirections) {
               <span class="fas fa-map-marker-alt"></span> <a target="_blank" href="@mapInfo.DirectionUrl">@mapResources.MapsLabelDirections</a>
             }
           </div>

@@ -27,13 +27,10 @@
     lng = gps.Longitude ?? 0, 
     zoom = mapSettings.Zoom, 
     info = Content.Company,
-    warn = (mapSettings.ShowApiKeyWarning == true ? "true" : "false"),
+    warn = Convert.ToBool(mapSettings.ShowApiKeyWarning, fallback: false),
     warning = Resources.GoogleMaps.WarningApiKeyForDemoOnly
   };
-
-  // Convert the Object to JSON for the turnOn data attribute (req. 2sxc 12.05)
-  var jsonData = GetService<ToSic.Sxc.Web.IJsonService>().ToJson(data);
 }
 
 @* Instruct turnOn to activate GoogleMaps with the API key and everything once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(jsonData) }'></turnOn>
+<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(Convert.Json.ToJson(data)) }'></turnOn>
