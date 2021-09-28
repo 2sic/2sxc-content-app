@@ -5,28 +5,24 @@ using ToSic.Razor.Blade;
 
 public class LinkHelper: Custom.Hybrid.Code12
 {
-  public LinkInfo LinkInfos(dynamic item) {
+  public dynamic LinkInfos(dynamic item) {
     return LinkInfos(item.Link, item.Window, item.Icon);
   }
   
   // check a link, prepare target window, icon etc. based on various settings
-  public LinkInfo LinkInfos(string link, string window, string icon) {
+  public dynamic LinkInfos(string link, string window, string icon) {
     var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
-
-    // this will contain the result
-    var lInfo = new LinkInfo();
 
     // found something?
     var found = Text.Has(link);
-    lInfo.Found = found;
 
     // process remaining properties, in case we want to override them with automatic stuff
     if(found) {
       var linkExt = Path.GetExtension(link.ToLower());
       var isDoc = fileExtensions.Contains(linkExt);
 
-    // try to find out if it's a local link
-    bool isInternal = link.Contains(CmsContext.Site.Url)
+      // try to find out if it's a local link
+      bool isInternal = link.Contains(CmsContext.Site.Url)
         || link.StartsWith("/") // absolute link in same site
         || link.StartsWith("#") // hash-link on same page
         || link.StartsWith("."); // relative link from this page
@@ -45,21 +41,11 @@ public class LinkHelper: Custom.Hybrid.Code12
         window = isInternal && !isDoc ? "_self" : "_blank";
     }
 
-    // add properties
-    lInfo.Icon = icon;
-    lInfo.Window = window;
-
-    return lInfo;
-    // we could add these properties too, but at the moment they are not needed
-    // linkInfo.Add("Extension", linkExt);
-    // linkInfo.Add("IsDoc", isDoc);
+    // Return a dynamic object with these properties. It must be dynamic, otherwise the other page cannot use the 
+    return AsDynamic(new {
+      Found = found,
+      Icon = icon,
+      Window = window,
+    });
   }
-}
-
-
-public class LinkInfo
-{
-  public string Window;
-  public string Icon;
-  public bool Found;
 }

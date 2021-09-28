@@ -3,7 +3,7 @@
 @{
   /* This is used in two views */
   var isRound = CmsContext.View.Identifier == "round";
-  var photoSettings = AsDynamic( new {
+  var photoSettings = AsDynamic(new {
     Width = 400,
     AspectRatio = isRound ? "1" : "1:1.25",
     ScaleMode = "both",

@@ -10,7 +10,7 @@
   @if (Text.Has(person.Position)) {
     <div class="mb-2 lead font-weight-normal" itemprop="jobTitle">@person.Position</div>
   }
-  <div itemprop="description">@Html.Raw((string)person.Description)</div>
+  <div itemprop="description">@Html.Raw(person.Description)</div>
 </div>
 <div class="co-p">
   @if (Text.Has(person.Mobile)) {

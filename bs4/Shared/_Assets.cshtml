@@ -52,7 +52,7 @@
   <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appContent.initFancybox()", "data": { "groupId": "@groupId", "options": { "groupAll": true, "Thumbs": {"autoStart": false} }}}'></turnOn>
 }
 
-@* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
+@* Turn On video features. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if (videos) {
   <turnOn turn-on='{ "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
 }
