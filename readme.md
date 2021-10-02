@@ -1,11 +1,28 @@
-# 2sxc: Content Types & Templates for many CSS Frameworks 12.05.00
+<img src="app-icon.png" align="right" width="200px">
 
-The default **Content** types and templates for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/) using [2sxc][2sxc] for the following CSS frameworks:
+# Content Types & Templates for .net CMSs
 
-1. Bootstrap 3.3
-1. Bootstrap 4.0
-1. Note that Bootstrap 5 is WIP and should be released ca. September 2021
-1. other frameworks - please contribute
+> This is a [2sxc](https://2sxc.org) App for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/)
+
+These are the primary **Content** parts for 2sxc 12.05 supporting many CSS Frameworks.
+
+| Aspect              | Status | Comments or Version |
+| ------------------- | :----: | ------------------- |
+| 2sxc                | ✅    | requires 2sxc v12.05
+| Dnn                 | ✅    | For v7, v8 and v9
+| Oqtane 2            | ✅    | Requires v2.02
+| No jQuery           | ✅    | 
+| Live Demo           | ➖    |
+| Install Checklist   | ✅    | see below
+| Source & License    | ✅    | included, ISC/MIT
+| App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
+| Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
+| Best Practices      | ✅    | Uses v12.05 conventions
+| Bootstrap 3         | ✅    | Optimized for 3.3
+| Bootstrap 4         | ✅    | Optimised for latest v4
+| Bootstrap 5         | ✔️    | Works well, but not optimized; WIP ca. 2021-10
+
+Other CSS frameworks: please contribute
 
 The Multi-CSS-Framework implementation uses [Connect.Koi][koi]. Here some thumbnails of the result:
 
@@ -21,12 +38,12 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 1. Almost everything you want to know is in the [wiki](https://github.com/2sic/2sxc-content-app/wiki)
 1. **Installation**: Whenever you install 2sxc on a DNN portal, or when you create a new portal on a [DNN with 2sxc installed](http://2sxc.org/en/Learn/Install-2sxc), 2sxc will automatically ask you to install this. If you need to know more, read about [installations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Installation-Instructions).
+
+## Customize the App
+
 1. **Skin/Theme Optimizations**: We have some recommendations, if you care about this, read about the [optimizations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Theme-Optimizations)
 1. **Customize to your colors and CSS**: check out the [instructions in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Customizing%20CSS%20or%20SASS)
 
-## New Hybrid Version
-
-2sxc 12 supports hybrid Apps which run on Dnn ☢️ and Oqtane 💧. These content-templates are the first generation of such apps. 
 
 ## Questions and Support
 
@@ -41,6 +58,7 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 ## History
 
 * 2021-05-04 v12.00 released for 2sxc 12, now compatible with Oqtane as well
+  * 2sxc 12 supports hybrid Apps which run on Dnn ☢️ and Oqtane 💧. These content-templates are the first generation of such apps. 
 * 2021-09-02 v12.04 released for 2sxc 12.04 
   * [major clean-up - see blog](https://2sxc.org/en/blog/post/content-is-now-70-off-get-it-asap)
   * also minor changes for Oqtane 2.2 which is now Bootstrap5
@@ -48,3 +66,5 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * updated for 2sxc 12.05 and clean npm issues
   * enhanced all use cases of `Link.Image(...)` to use latest features
   * renamed partial files to better match latest conventions
+  * reorganized files
+  * Moved icons to /Icons for clearer structure
