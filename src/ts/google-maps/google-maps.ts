@@ -28,7 +28,7 @@ export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info, war
   if(warn) showKeyWarnings(warning);
 
   loader.load().then((google) => {
-    var map = new google.maps.Map(document.getElementById(`${domId}`), mapOptions);
+    var map = new google.maps.Map(document.getElementById(domId), mapOptions);
 
     var marker = new google.maps.Marker({
       position: {
@@ -55,7 +55,7 @@ export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info, war
   });
 
   function showKeyWarnings(warning: string) {
-    var googleMapsElem = document.getElementsByClassName('co-google-map-container');
+    var googleMapsElem = document.getElementsByClassName('app-content-js-google-map-container');
 
     if(googleMapsElem.length != 0) {
       for(var i = 0; i < googleMapsElem.length; i++) {

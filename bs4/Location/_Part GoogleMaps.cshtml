@@ -13,15 +13,12 @@
   // Get key from settings and remove empty lines. 
   var googleApikey = mapSettings.ApiKey.Replace("\n", ""); 
 
-  // we need a unique ID for the map, in case there are many on the same page
-  var mapId = CmsContext.Module.Id;
-
   // GPS is a JSON field, so we must use AsDynamic to easily access the properties
   var gps = AsDynamic(Content.GPS);
 
   var data = new {
     apiKey = googleApikey,
-    domId = "GoogleMap-" + mapId,
+    domId = DynamicModel.DomId,
     icon = Text.First(mapSettings.Icon, ""),
     lat = gps.Latitude ?? 0,
     lng = gps.Longitude ?? 0, 

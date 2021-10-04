@@ -5,20 +5,20 @@
   var locationHelper = CreateInstance("LocationHelper.cs");
   var mapInfo = locationHelper.MapInfos(Content);
 
-  // we need a unique ID for the map, in case there are many on the same page
-  var mapId = CmsContext.Module.Id;
-
   // Combine the Presentation with Resources & Settings to get the best possible settings/resources
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
   var mapResources = AsDynamic(Content.Presentation, Resources);
+
+  // defines a unique dom Id for google map
+  var googleMapDomId = "app-content-google-map-js-" + @CmsContext.Module.Id;
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
-		<div class="co-google-map-container embed-responsive embed-responsive-21by9">
+		<div class="app-content-js-google-map-container embed-responsive embed-responsive-21by9">
       @* // ratio ratio-21x9 only for octane - should be removed when bs5 is prepared *@
-			<div class="embed-responsive-item ratio ratio-21x9" id="GoogleMap-@mapId"></div>
-			<div id="GoogleMap-Content-@mapId" style="display:none;">
+			<div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
+			<div style="display:none;">
 				<div class="p-2 text-center">
 					<h4>@Content.Company</h4>
 					<div>@Html.Raw(Content.Description)</div>
@@ -30,4 +30,4 @@
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts,icons"})
-@Html.Partial("_Part GoogleMaps.cshtml")
+@Html.Partial("_Part GoogleMaps.cshtml", new { DomId = googleMapDomId })

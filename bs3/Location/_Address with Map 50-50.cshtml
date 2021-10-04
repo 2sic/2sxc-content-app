@@ -5,13 +5,13 @@
   var locationHelper = CreateInstance("LocationHelper.cs");
   var mapInfo = locationHelper.MapInfos(Content);
 
-  // we need a unique ID for the map, in case there are many on the same page
-  var mapId = CmsContext.Module.Id;
-
   // Combine the Presentation with Resources & Settings to get the best possible settings/resources
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
   var mapResources = AsDynamic(Content.Presentation, Resources);
   var mapSettings = Settings;
+  
+  // defines a unique dom Id for google map
+  var googleMapDomId = "app-content-google-map-js-" + @CmsContext.Module.Id;
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
@@ -63,8 +63,8 @@
         </address>
       </div>
       <div class="col col-sm-6 col-md-pull-6">
-				<div class="co-google-map-container embed-responsive embed-responsive-16by9">
-					<div class="co-google-map embed-responsive-item" id="GoogleMap-@mapId">
+				<div class="app-content-js-google-map-container embed-responsive embed-responsive-16by9">
+					<div class="co-google-map embed-responsive-item" id="@googleMapDomId">
 					</div>
 				</div>
 			</div>
@@ -73,4 +73,4 @@
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,icons"})
-@Html.Partial("_Part GoogleMaps.cshtml")
+@Html.Partial("_Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
