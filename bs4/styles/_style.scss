@@ -11,7 +11,7 @@
       z-index: 1;
       left: 0;
       top: 0;
-      background-color: rgba($dark, 0.0);
+      background-color: rgba($dark, 0);
       transition: background-color 0.3s ease-in-out;
     }
     figcaption {
@@ -29,6 +29,12 @@
       p {
         color: $body-color;
       }
+      &.co-linkblock-overlay {
+        color: $white;
+        p {
+          color: $white;
+        }
+      }
     }
   }
   a {
@@ -36,14 +42,13 @@
     &.co-video {
       svg {
         font-size: 72px;
-        color: rgba(255, 255, 255, 1.0);
+        color: rgba(255, 255, 255, 1);
         transition: color 0.3s ease-in-out;
       }
       &:hover {
         svg {
           color: red;
         }
-        
       }
     }
     &.co-linkblock {
@@ -61,7 +66,7 @@
           transition: margin-left 0.3s ease-in-out;
           margin-left: 0;
           vertical-align: text-bottom;
-          margin-bottom:3px;
+          margin-bottom: 3px;
           height: 12px;
         }
       }
@@ -74,6 +79,61 @@
           svg {
             transition: margin-left 0.3s ease-in-out;
             margin-left: 8px;
+          }
+        }
+      }
+      &.co-linkblock-overlay {
+        color: $white;
+        p,
+        h4 {
+          color: $white;
+        }
+        span {
+          color: $link-color;
+          background: $white;
+          vertical-align: middle;
+          display: inline-block;
+          padding: 5px 10px;
+          align-self: flex-start;
+          border-radius: 4px;
+          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+          svg {
+            transition: margin-left 0.3s ease-in-out;
+            margin-left: 0;
+            vertical-align: text-bottom;
+            margin-bottom: 3px;
+            height: 12px;
+          }
+        }
+        &:hover {
+          text-decoration: none;
+
+          span {
+            color: $link-hover-color;
+            text-decoration: none;
+            background-color: $body-color;
+            color: $white;
+            svg {
+              transition: margin-left 0.3s ease-in-out;
+              margin-left: 8px;
+            }
+          }
+        }
+        figure {
+          .overlay {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            background-color: rgba($dark, 0.4);
+            transition: background-color 0.3s ease-in-out;
+          }
+        }
+        &:hover {
+          figure {
+            .overlay {
+              background-color: rgba($dark, 0.2);
+            }
           }
         }
       }
@@ -95,7 +155,7 @@
       width: 100%;
       max-width: auto;
     }
-    
+
     .overlay {
       position: absolute;
       z-index: 1;
@@ -111,7 +171,7 @@
 
       svg {
         font-size: 72px;
-        color: rgba(255, 255, 255, 1.0);
+        color: rgba(255, 255, 255, 1);
         transition: color 0.3s ease-in-out;
       }
       &:hover {
