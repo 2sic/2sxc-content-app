@@ -1,0 +1,49 @@
+@inherits Custom.Hybrid.Razor12
+@using ToSic.Razor.Blade;
+@* This adds all link/script tags *@
+@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
+
+@{
+  // get helper commands
+  var linkHelper = CreateInstance("_LinkHelper.cshtml");
+}
+
+<div class="co-container-outer mb-4 mb-md-5">
+  <div class="co-container-inner">
+    <div class="row">
+  	@foreach (var link in AsList(Data))
+			{
+				var linkInfo = linkHelper.LinkInfos(link.Link, link.Window, link.Icon);
+      <div class='col-md-6 col-lg-4 mb-3 mb-md-4 @(!linkInfo.Found ? "co-linkblock" : "")' @Edit.TagToolbar(link)>
+        @if (linkInfo.Found) {
+          @:<a class="co-linkblock co-linkblock-overlay" href="@Tags.SafeUrl(link.Link)" target="@linkInfo.Window" title="@link.Title">
+        }
+          @if (Text.Has(link.Image)) {
+            <figure>
+              <div class="overlay">
+                <div>
+                 <h4>@link.Title</h4>
+                  @if (Text.Has(link.Description)) {
+                    <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+                  }
+                  </div>
+                 
+                    <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+                   
+              </div>
+              <img loading="lazy" class="img-fluid" src='@Link.Image(link.Image, Settings.Images.Content, factor: "1/3")' alt="@link.Title" />
+            </figure>
+          if (linkInfo.Found) {
+            @:</a>
+          }
+          } else {
+            <div class="bg-primary placeholder" style="padding-bottom: 58%; margin-bottom:1rem;"></div>
+          }
+       
+      </div>
+    }
+    </div>
+  </div>
+</div>
+
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,icons"})

@@ -9,6 +9,7 @@
   <div class="co-container-inner">
     <div class="co-header" @Edit.TagToolbar(Content)>
       <img class="w-100"
+        loading="lazy"
         src='@(Link.Image(Content.Image, Settings.Images.Content, height: height) + "&anchor=" + Content.CropAnchor)'
         alt="@Content.Title" />
     </div>

@@ -57,14 +57,16 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 ## History
 
-* 2021-05-04 v12.00 released for 2sxc 12, now compatible with Oqtane as well
+* v12.00 2021-05-04 released for 2sxc 12, now compatible with Oqtane as well
   * 2sxc 12 supports hybrid Apps which run on Dnn ☢️ and Oqtane 💧. These content-templates are the first generation of such apps. 
-* 2021-09-02 v12.04 released for 2sxc 12.04 
+* v12.04 2021-09-02 released for 2sxc 12.04 
   * [major clean-up - see blog](https://2sxc.org/en/blog/post/content-is-now-70-off-get-it-asap)
   * also minor changes for Oqtane 2.2 which is now Bootstrap5
-* 2021-09-17 v12.05 
+* v12.05 2021-10
   * updated for 2sxc 12.05 and clean npm issues
   * enhanced all use cases of `Link.Image(...)` to use latest features
   * renamed partial files to better match latest conventions
   * reorganized files
   * Moved icons to /Icons for clearer structure
+
+TODO: @2ro - standardize code of google-maps across apps
