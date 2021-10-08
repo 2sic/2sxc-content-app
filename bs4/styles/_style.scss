@@ -24,6 +24,11 @@
     }
   }
 
+  .bg-primary.placeholder {
+    padding-bottom: 58%;
+    margin-bottom:1rem;
+  }
+
   .alert p:last-child {
     margin-bottom: 0;
   }
@@ -42,7 +47,7 @@
       }
     }
   }
-  a {
+  a, div {
     /* links in link blocks */
     &.co-video {
       svg {
