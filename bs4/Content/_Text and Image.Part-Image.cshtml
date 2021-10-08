@@ -18,7 +18,7 @@
   }
 }
 @if (imgItem.Presentation.ImageLightbox != false) {
-  @:<a data-app-content-fancybox="content" href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption">
+  @:<a @DynamicModel.FancyboxAttribute href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption">
 }
   <figure>
     <div class="overlay w-100 h-100"></div>

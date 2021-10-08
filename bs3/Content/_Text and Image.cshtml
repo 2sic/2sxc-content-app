@@ -5,6 +5,9 @@
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var colsText = Settings.TextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
   var colsImg = 12 - colsText;
+  
+  // define dom attribute for fancybox
+  var fancyboxAttribute = "app-content-fancybox-group"; 
 }
 <div class="co-container-outer">
   <div class="co-container-inner clearfix co-content" @Edit.TagToolbar(Content)>
@@ -24,11 +27,10 @@
       @if (colsImg != 0) {
         <div class='col-md-@colsImg @(Settings.TextFirst ?  "" : "col-md-pull-" + @colsText)'>
           @* call sub-template to show the image with all possible options *@
-          @Html.Partial("_Part Image.cshtml", new { Item = Content, Columns = colsImg })
+          @Html.Partial("_Part Image.cshtml", new { Item = Content, Columns = colsImg, FancyboxAttribute = fancyboxAttribute })
         </div>
       }
     </div>
   </div>
 </div>
-
-@Html.Partial("../Shared/_Assets.cshtml", new { parts = "fancybox,styles", fancyboxGroup = "content" })
+@Html.Partial("../Shared/_Assets.cshtml", new { parts = "fancybox,styles", FancyboxAttribute = fancyboxAttribute })

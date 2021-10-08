@@ -36,8 +36,18 @@ var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS info
 @* Add Fancybox if required *@
 @if (fancybox) {
   page.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon
-  var groupId = DynamicModel.fancyboxGroup ?? CmsContext.Module.Id.ToString();
-  <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appContent.initFancybox()", "data": { "groupId": "@groupId", "options": { "groupAll": true, "Thumbs": {"autoStart": false} }}}'></turnOn>
+
+  // Init options for fancybox binding
+  // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
+  var fancyboxOptions = new {
+    groupAll = true,
+    mainClass = "app-ga7-fancybox", 
+    Thumbs = new {
+      autoStart = false
+    }
+  };
+  
+  <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appContent.initFancybox()", "data": { "attribute": "@DynamicModel.FancyboxAttribute", "options": @Html.Raw(Convert.Json.ToJson(fancyboxOptions)) }}'></turnOn>
 }
 
 @if (styles) { <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" data-enableoptimizations="true" /> }
