@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @{
   /* This Template is used in ca. 3 Views which only show the title and the text */
 
@@ -12,7 +12,7 @@
     <div class="row">
       <div class="clearfix co-content @styling col-md-@cols col-md-push-@padding" @Edit.TagToolbar(Content)>
         @* call sub-template to show the title with the correct H1-H6 tag *@
-        @RenderPage("../shared/_Header tag.cshtml")
+        @Html.Partial("../shared/_Header tag.cshtml")
         @Html.Raw(Content.Text)
       </div>
     </div>
@@ -20,4 +20,4 @@
 </div>
 
 @* This adds all link/script tags *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
