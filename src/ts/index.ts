@@ -1,6 +1,6 @@
 import { showEncryptedMails } from './mail-obfuscator';
 import { activateYouTubeInline } from './youtube-preview';
-import { activeGoogleMaps } from './google-maps/google-maps';
+import { activeGoogleMaps } from './lib-2sxc-google-maps';
 import { initFancybox } from './fancybox';
 
 // so it can be called from the HTML when content re-initializes dynamically

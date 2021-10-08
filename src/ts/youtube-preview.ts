@@ -1,6 +1,5 @@
 export function activateYouTubeInline() {
   let youtubeElem = document.querySelectorAll('[data-youtube^="iframe-"]');
-  console.log(youtubeElem)
   // If youtube element is on page
   if(youtubeElem.length != 0) {
 

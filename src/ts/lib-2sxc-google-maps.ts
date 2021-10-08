@@ -1,5 +1,5 @@
 import { Loader } from '@googlemaps/js-api-loader';
-import { GoogleMapsOptions } from './google-maps-options-definition';
+import { GoogleMapsOptions } from './lib-2sxc-google-maps-options';
 
 const debug = false;
 
