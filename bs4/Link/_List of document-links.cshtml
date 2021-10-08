@@ -12,7 +12,7 @@
         var linkInfo = linkHelper.LinkInfos(link);
         <li @Edit.TagToolbar(link) class='@(!linkInfo.Found ? "co-linkblock" : "")'>
           @if (linkInfo.Found) {
-            @:<a class="co-linkblock" href='@Tags.SafeUrl(link.Link)' target="@linkInfo.Window" title="@link.Title">
+            @:<a class="co-linkblock" href='@link.Link' target="@linkInfo.Window" title="@link.Title">
           }
             <div class="d-flex flex-row">
               <div class="pr-2 pl-0 pt-1 pb-0">

@@ -22,7 +22,7 @@ public class LinkHelper: Custom.Hybrid.Code12
       var isDoc = fileExtensions.Contains(linkExt);
 
       // try to find out if it's a local link
-      bool isInternal = link.Contains(CmsContext.Site.Url)
+      bool isInternal = link.Contains(Link.To())
         || link.StartsWith("/") // absolute link in same site
         || link.StartsWith("#") // hash-link on same page
         || link.StartsWith("."); // relative link from this page
