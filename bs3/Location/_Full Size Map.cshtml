@@ -18,13 +18,8 @@
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
 		<div class="app-content-js-google-map-container embed-responsive embed-responsive-16by9">
 			<div class="co-google-map embed-responsive-item" id="@googleMapDomId"></div>
-			<div class="co-google-map-content" style="display:none;">
-				<div>
-					<strong>@Content.Company</strong>
-					<div>@Html.Raw(Content.Description)</div>
-					<a target="_blank" href="@mapInfo.DirectionUrl">@Content.LabelDirections</a>
-				</div>
-			</div>
+			
+      @Html.Partial("_Part GoogleMapsWarning.cshtml")
 		</div>
 	</div>
 </div>

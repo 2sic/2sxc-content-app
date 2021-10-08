@@ -1,4 +1,4 @@
-export interface MapDefinition{
+export interface GoogleMapsOptions {
   apiKey: string;
   domId: string;
   icon: string;
@@ -6,6 +6,4 @@ export interface MapDefinition{
   lat: string;
   lng: string;
   info: string;
-  warn: boolean;
-  warning: string;
 }

@@ -14,7 +14,7 @@
           <h4>@link.Title</h4>
           <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
           @if (linkInfo.Found) {
-            <a class="co-linkblock" href="@Tags.SafeUrl(link.Link)" target="@linkInfo.Window" title="@link.Title">
+            <a class="co-linkblock" href="@link.Link" target="@linkInfo.Window" title="@link.Title">
               <span>@link.LinkText&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></span>
             </a>
           }

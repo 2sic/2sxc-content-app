@@ -23,9 +23,7 @@
     lat = gps.Latitude ?? 0,
     lng = gps.Longitude ?? 0, 
     zoom = mapSettings.Zoom, 
-    info = Content.Company,
-    warn = Convert.ToBool(mapSettings.ShowApiKeyWarning, fallback: false),
-    warning = Resources.GoogleMaps.WarningApiKeyForDemoOnly
+    info = Content.Company
   };
 }
 

@@ -18,13 +18,8 @@
 		<div class="app-content-js-google-map-container embed-responsive embed-responsive-21by9">
       @* // ratio ratio-21x9 only for octane - should be removed when bs5 is prepared *@
 			<div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
-			<div style="display:none;">
-				<div class="p-2 text-center">
-					<h4>@Content.Company</h4>
-					<div>@Html.Raw(Content.Description)</div>
-					<a class="btn btn-outline-primary" target="_blank" href="@mapInfo.DirectionUrl">@mapResources.MapsLabelDirections</a>
-				</div>
-			</div>
+
+      @Html.Partial("_Part GoogleMapsWarning.cshtml")
 		</div>
 	</div>
 </div>
