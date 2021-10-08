@@ -68,5 +68,3 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * renamed partial files to better match latest conventions
   * reorganized files
   * Moved icons to /Icons for clearer structure
-
-TODO: @2ro - standardize code of google-maps across apps
