@@ -20,7 +20,7 @@
 @if (imgItem.Presentation.ImageLightbox != false) {
   @:<a @DynamicModel.FancyboxAttribute href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption">
 }
-  <figure>
+  <figure class='@(imgItem.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
     @if (Text.Has(imgItem.ImageCaption)) {
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
     }

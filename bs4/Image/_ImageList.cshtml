@@ -19,7 +19,7 @@
         @if (img.Presentation.ImageLightbox != false) {
           @:<a @fancyboxAttribute href="@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")">
         }
-        <figure>
+        <figure class='@(img.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
             @if (img.Presentation.TitleLegend != false) {
               <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
             }

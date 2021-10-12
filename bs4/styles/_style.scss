@@ -23,6 +23,22 @@
     }
   }
 
+  a:hover {
+    figure {
+      &.effect-zoom {
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      &.effect-darken {
+        img {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
   .bg-primary.placeholder {
     padding-bottom: 58%;
     margin-bottom:1rem;
@@ -30,21 +46,6 @@
 
   .alert p:last-child {
     margin-bottom: 0;
-  }
-  
-  div {
-    &.co-linkblock {
-      color: $body-color;
-      p {
-        color: $body-color;
-      }
-      &.co-linkblock-overlay {
-        color: $white;
-        p {
-          color: $white;
-        }
-      }
-    }
   }
 
   a {
@@ -66,20 +67,6 @@
       &:hover {
         svg {
           color: red;
-        }
-
-        figure {
-          &.effect-zoom {
-            img {
-              transform: scale(1.05);
-            }
-          }
-
-          &.effect-darken {
-            img {
-              opacity: 0.8;
-            }
-          }
         }
       }
     }
