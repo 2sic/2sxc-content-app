@@ -47,8 +47,9 @@
       }
     }
   }
-  a, div {
-    /* links in link blocks */
+
+  a {
+    /* video link */
     &.co-video {
       svg {
         font-size: 72px;
@@ -59,19 +60,80 @@
         svg {
           color: red;
         }
+
+        figure {
+          .overlay {
+            background-color: rgba($dark, 0.2);
+          }
+        }
       }
     }
-    &.co-linkblock {
+  }
+
+  .co-linkblock {
+    color: $body-color;
+
+    p {
       color: $body-color;
-      p {
-        color: $body-color;
+    }
+    
+    span {
+      color: $link-color;
+      vertical-align: middle;
+      display: inline-block;
+      padding: 3px 0;
+      transition: color 0.3s ease-in-out;
+
+      svg {
+        transition: margin-left 0.3s ease-in-out;
+        margin-left: 0;
+        vertical-align: text-bottom;
+        margin-bottom: 3px;
+        height: 12px;
       }
+    }
+
+    &:hover {
+      a {
+        text-decoration: none;
+        color: $body-color;
+
+        figure {
+          .overlay {
+            background-color: rgba($dark, 0.4);
+          }
+        }
+      }
+
+      span {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+
+        svg {
+          transition: margin-left 0.3s ease-in-out;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &.co-linkblock-overlay {
+      color: $white;
+      
+      p,
+      h4 {
+        color: $white;
+      }
+
       span {
         color: $link-color;
+        background: $white;
         vertical-align: middle;
         display: inline-block;
-        padding: 3px 0;
-        transition: color 0.3s ease-in-out;
+        padding: 5px 10px;
+        align-self: flex-start;
+        border-radius: 4px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
         svg {
           transition: margin-left 0.3s ease-in-out;
           margin-left: 0;
@@ -80,42 +142,9 @@
           height: 12px;
         }
       }
+
       &:hover {
-        text-decoration: none;
-        color: $body-color;
-        span {
-          color: $link-hover-color;
-          text-decoration: $link-hover-decoration;
-          svg {
-            transition: margin-left 0.3s ease-in-out;
-            margin-left: 8px;
-          }
-        }
-      }
-      &.co-linkblock-overlay {
-        color: $white;
-        p,
-        h4 {
-          color: $white;
-        }
-        span {
-          color: $link-color;
-          background: $white;
-          vertical-align: middle;
-          display: inline-block;
-          padding: 5px 10px;
-          align-self: flex-start;
-          border-radius: 4px;
-          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-          svg {
-            transition: margin-left 0.3s ease-in-out;
-            margin-left: 0;
-            vertical-align: text-bottom;
-            margin-bottom: 3px;
-            height: 12px;
-          }
-        }
-        &:hover {
+        a {
           text-decoration: none;
 
           span {
@@ -123,35 +152,30 @@
             text-decoration: none;
             background-color: $body-color;
             color: $white;
+  
             svg {
               transition: margin-left 0.3s ease-in-out;
               margin-left: 8px;
             }
           }
-        }
-        figure {
-          .overlay {
-            position: absolute;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            background-color: rgba($dark, 0.4);
-            transition: background-color 0.3s ease-in-out;
-          }
-        }
-        &:hover {
+
           figure {
             .overlay {
               background-color: rgba($dark, 0.2);
             }
           }
         }
+        
       }
-    }
-    &:hover {
+
       figure {
         .overlay {
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          top: 0;
           background-color: rgba($dark, 0.4);
+          transition: background-color 0.3s ease-in-out;
         }
       }
     }

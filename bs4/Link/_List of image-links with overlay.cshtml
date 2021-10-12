@@ -10,9 +10,9 @@
     <div class="row">
     @foreach (var link in AsList(Data)) {
       var linkInfo = linkHelper.LinkInfos(link);
-      <div class='col-md-6 col-lg-4 mb-3 mb-md-4 @(!linkInfo.Found ? "co-linkblock co-linkblock-overlay" : "")' @Edit.TagToolbar(link)>
+      <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Edit.TagToolbar(link)>
         @if (linkInfo.Found) {
-          @:<a class="co-linkblock co-linkblock-overlay d-flex flex-column justify-content-between" href="@link.Link" target="@linkInfo.Window" title="@link.Title">
+          @:<a class= d-flex flex-column justify-content-between" href="@link.Link" target="@linkInfo.Window" title="@link.Title">
         }
 
         @if (Text.Has(link.Image)) {

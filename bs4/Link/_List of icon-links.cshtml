@@ -11,9 +11,9 @@
     @foreach (var link in AsList(Data)) {
       var linkInfo = linkHelper.LinkInfos(link);
 
-      <div class='col-md-6 col-lg-4 mb-4 mb-md-5 @(!linkInfo.Found ? "co-linkblock" : "")' @Edit.TagToolbar(link)>
+      <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Edit.TagToolbar(link)>
         @if (linkInfo.Found) {
-          @:<a class="co-linkblock" href="@link.Link" target="@linkInfo.Window" title="@link.Title">
+          @:<a href="@link.Link" target="@linkInfo.Window" title="@link.Title">
         }
           <i class="mb-3 text-primary fas @linkInfo.Icon" aria-hidden="true" style="font-size: 40px;"></i>
           <h4>@link.Title</h4>
