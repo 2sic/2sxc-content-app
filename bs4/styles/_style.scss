@@ -7,7 +7,6 @@
   figure {
     position: relative;
     overflow: hidden;    
-    background-color: $primary;
     transition: background-color 0.3s ease-in-out;
         
     img {
@@ -93,7 +92,11 @@
   }
 
   .co-linkblock {
-    color: $body-color;    
+    color: $body-color;   
+    
+    a {
+      text-decoration: none;
+    }
 
     p {
       color: $body-color;
@@ -128,6 +131,8 @@
           }
 
           &.effect-darken {
+            background-color: $primary;
+
             img {
               opacity: 0.8;
             }
