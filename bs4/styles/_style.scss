@@ -50,6 +50,9 @@
   a {
     /* video link */
     &.co-video {
+      display: block;
+      position: relative;
+
       svg {
         position: absolute;
         top: 50%;
