@@ -23,14 +23,12 @@
   // open in lightbox
   <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
       @if (Text.Has(Content.Image)) {
-      <figure>
-        <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
-          <i class="fab fa-youtube"></i>
-        </div>
+      <figure class="effect-zoom">                
         <img loading="lazy" class="img-fluid"
           src='@Link.Image(Content.Image, Settings.Images.Content, factor: factor, aspectRatio: "16:9", scaleMode: "both")'
           alt="@Content.Title" />
       </figure>
+      <i class="fab fa-youtube"></i>
       } else {
         <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
       }

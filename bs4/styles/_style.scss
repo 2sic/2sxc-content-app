@@ -6,6 +6,14 @@
   /* Linkblock with Image and Images with Caption */
   figure {
     position: relative;
+    overflow: hidden;    
+    background-color: $primary;
+    transition: background-color 0.3s ease-in-out;
+        
+    img {
+      transition: transform .5s ease, opacity 0.3s ease-in-out;
+    }
+
     .overlay {
       position: absolute;
       z-index: 1;
@@ -14,6 +22,7 @@
       background-color: rgba($dark, 0);
       transition: background-color 0.3s ease-in-out;
     }
+    
     figcaption {
       position: absolute;
       z-index: 2;
@@ -52,18 +61,31 @@
     /* video link */
     &.co-video {
       svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 72px;
         color: rgba(255, 255, 255, 1);
         transition: color 0.3s ease-in-out;
       }
+
       &:hover {
         svg {
           color: red;
         }
 
         figure {
-          .overlay {
-            background-color: rgba($dark, 0.2);
+          &.effect-zoom {
+            img {
+              transform: scale(1.05);
+            }
+          }
+
+          &.effect-darken {
+            img {
+              opacity: 0.8;
+            }
           }
         }
       }
@@ -71,7 +93,7 @@
   }
 
   .co-linkblock {
-    color: $body-color;
+    color: $body-color;    
 
     p {
       color: $body-color;
@@ -99,9 +121,18 @@
         color: $body-color;
 
         figure {
-          .overlay {
-            background-color: rgba($dark, 0.4);
+          &.effect-zoom {
+            img {
+              transform: scale(1.05);
+            }
           }
+
+          &.effect-darken {
+            img {
+              opacity: 0.8;
+            }
+          }
+          
         }
       }
 
@@ -118,6 +149,12 @@
 
     &.co-linkblock-overlay {
       color: $white;
+
+      figure {
+        .overlay {
+          background-color: rgba($dark, 0.4);
+        }
+      }
       
       p,
       h4 {
@@ -160,24 +197,19 @@
           }
 
           figure {
-            .overlay {
-              background-color: rgba($dark, 0.2);
-            }
+            &.effect-darken {
+              .overlay {
+                background-color: rgba($dark, 0.2);
+              }
+
+              img {
+                opacity: 1;
+              }
+            }            
           }
         }
         
-      }
-
-      figure {
-        .overlay {
-          position: absolute;
-          z-index: 1;
-          left: 0;
-          top: 0;
-          background-color: rgba($dark, 0.4);
-          transition: background-color 0.3s ease-in-out;
-        }
-      }
+      }      
     }
   }
 
