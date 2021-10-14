@@ -10,8 +10,9 @@
   var mapSettings = AsDynamic(Content.Presentation.GoogleMaps, Settings.GoogleMaps);
 
   // They Google API key is in the App-Settings. See instructions: https://azing.org/2sxc/r/ippFQYkz
-  // Get key from settings and remove empty lines. 
-  var googleApikey = mapSettings.ApiKey.Replace("\n", ""); 
+  // The Preset-data is encrypted, so we must decrypt it to use
+  var secureData = GetService<ToSic.Sxc.Services.ISecureDataService>();
+  var googleApikey = secureData.Parse(mapSettings.ApiKey).Value;
 
   // GPS is a JSON field, so we must use AsDynamic to easily access the properties
   var gps = AsDynamic(Content.GPS);
@@ -26,6 +27,6 @@
     info = Content.Company
   };
 }
-
+Test: @googleApikey
 @* Instruct turnOn to activate GoogleMaps with the API key and everything once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
 <turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(Convert.Json.ToJson(data)) }'></turnOn>
