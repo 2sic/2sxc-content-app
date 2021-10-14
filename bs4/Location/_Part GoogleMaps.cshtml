@@ -9,7 +9,7 @@
   var mapResources = AsDynamic(Content.Presentation, Resources);
   var mapSettings = AsDynamic(Content.Presentation.GoogleMaps, Settings.GoogleMaps);
 
-  // They Google API key is in the App-Settings. See instructions: https://azing.org/2sxc/r/ippFQYkz
+  // They Google API key is in the App-Settings. See instructions: https://azing.org/2sxc/r/ApSwlItl
   // The Preset-data is encrypted, so we must decrypt it to use
   var secureData = GetService<ToSic.Sxc.Services.ISecureDataService>();
   var googleApikey = secureData.Parse(mapSettings.ApiKey).Value;

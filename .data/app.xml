@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-10-12T16:37:09.3788811+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-10-14T19:14:04.0116043+02:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -4653,11 +4653,11 @@
       <Value Key="Company" Value="New location" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Company" Value="Nova localização" Type="String">
-        <Dimension DimensionID="137" ReadOnly="false" />
-      </Value>
       <Value Key="Company" Value="Neuer Standort" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Company" Value="Nova localização" Type="String">
+        <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
       <Value Key="Country" Value="Schweiz" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -4671,7 +4671,7 @@
       <Value Key="GPS" Value="{&quot;latitude&quot;:47.17468907237284,&quot;longitude&quot;:9.469614568786596}" Type="Custom">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Mail" Value="info@2sic.com" Type="String">
+      <Value Key="Mail" Value="dummy@2sxc.org" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Street" Value="Langäulistrasse 62" Type="String">
@@ -6643,7 +6643,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="12.05.01" Type="String">
+      <Value Key="Version" Value="12.05.02" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
