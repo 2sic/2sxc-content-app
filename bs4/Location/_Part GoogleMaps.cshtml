@@ -27,6 +27,6 @@
     info = Content.Company
   };
 }
-Test: @googleApikey
+
 @* Instruct turnOn to activate GoogleMaps with the API key and everything once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
 <turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(Convert.Json.ToJson(data)) }'></turnOn>
