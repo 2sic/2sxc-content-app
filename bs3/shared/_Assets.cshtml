@@ -33,6 +33,21 @@ var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS info
 
 }
 
+@if (styles) { <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" data-enableoptimizations="true" /> }
+
+@if (fancybox || scripts || videos) {
+  page.Activate("turnOn"); // see https://r.2sxc.org/turnon
+  <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
+  @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
+  <turnOn turn-on='{ "run": "window.appContent.showEncryptedMails()" }'></turnOn>
+}
+@if (height) { <script type="text/javascript" src="@App.Path/bs3/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
+
+@* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
+@if (videos) {
+  <turnOn turn-on='{ "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
+}
+
 @* Add Fancybox if required *@
 @if (fancybox) {
   page.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon
@@ -48,20 +63,4 @@ var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS info
   };
   
   <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appContent.initFancybox()", "data": { "attribute": "@DynamicModel.FancyboxAttribute", "options": @Html.Raw(Convert.Json.ToJson(fancyboxOptions)) }}'></turnOn>
-}
-
-@if (styles) { <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" data-enableoptimizations="true" /> }
-@if (scripts) { <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" data-enableoptimizations="bottom"></script> }
-@if (height) { <script type="text/javascript" src="@App.Path/bs3/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
-
-@if (videos) {
-  page.Activate("turnOn"); // see https://r.2sxc.org/turnon
-  <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
-  @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
-  <turnOn turn-on='{ "run": "window.appContent.showEncryptedMails()" }'></turnOn>
-}
-
-@* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
-@if (videos) {
-  <turnOn turn-on='{ "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
 }
