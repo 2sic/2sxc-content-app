@@ -1,0 +1,37 @@
+@inherits Custom.Hybrid.Razor12
+@{
+  /* This Template is used in ca. 5 Views which show title, text and image */
+
+  // Determine the widths of each part, based on 12 Bootstrap Cols
+  var colsText = Settings.TextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
+  var colsImg = 12 - colsText;
+
+  // define dom attribute for fancybox
+  var fancyboxAttribute = "app-content-fancybox-group"; 
+}
+<div class="co-container-outer mb-4 mb-md-5">
+  <div class="co-container-inner" @Edit.TagToolbar(Content)>
+    <div class="row">
+      <div class='col-md-@colsText order-md-@(Settings.TextFirst ? "first" : "last")'>
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @Html.Partial("../shared/_Header tag.cshtml")
+
+        @* If the image doesn't have it's own column, its between title/text *@
+        @if (colsImg == 0) {
+          @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = Content })
+        }
+
+        @Html.Raw(Content.Text)
+      </div>
+      @* If the image has it's own column, it's here *@
+      @if (colsImg != 0) {
+        <div class='col-md-@colsImg order-md-@(Settings.TextFirst ? "last" : "first")'>
+          @* call sub-template to show the image with all possible options *@
+          @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = Content, Columns = colsImg, FancyboxAttribute = fancyboxAttribute})
+        </div>
+      }
+    </div>
+  </div>
+</div>
+@Html.Partial("../Shared/_Assets.cshtml", new { parts = "fancybox,styles", FancyboxAttribute = fancyboxAttribute })
+@* Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts"}) *@
