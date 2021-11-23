@@ -9,7 +9,7 @@
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-group"; 
 }
-<div class="row py-2 py-md-3" @Edit.TagToolbar(Content)>
+<div class="row" @Edit.TagToolbar(Content)>
   <div class='col-md-@colsText order-md-@(Settings.TextFirst ? "first" : "last")'>
     @* call sub-template to show the title with the correct H1-H6 tag *@
     @Html.Partial("../shared/_Header tag.cshtml")

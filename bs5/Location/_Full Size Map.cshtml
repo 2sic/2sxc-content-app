@@ -13,15 +13,9 @@
   var googleMapDomId = "app-content-google-map-js-" + @CmsContext.Module.Id;
 }
 
-<div class="co-container-outer mb-4 mb-md-5">
-	<div class="co-container-inner" @Edit.TagToolbar(Content)>
-		<div class="app-content-js-google-map-container embed-responsive embed-responsive-21by9">
-      @* // ratio ratio-21x9 only for octane - should be removed when bs5 is prepared *@
-			<div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
-
-      @Html.Partial("_Part GoogleMapsWarning.cshtml")
-		</div>
-	</div>
+<div class="app-content-js-google-map-container position-relative" @Edit.TagToolbar(Content)>
+  <div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
+  @Html.Partial("_Part GoogleMapsWarning.cshtml")
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts,icons"})

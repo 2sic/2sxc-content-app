@@ -3,10 +3,6 @@
   var lineHalf = CmsContext.View.Identifier == "half" ? "w-50 m-auto py-4" : "w-100 py-4";
 }
 
-<div class="co-container-outer">
-	<div class="co-container-inner">
-		<hr class="@lineHalf"/>
-	</div>
-</div>
+<hr class="@lineHalf"/>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles"})

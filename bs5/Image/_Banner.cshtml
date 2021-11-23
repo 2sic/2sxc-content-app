@@ -5,15 +5,11 @@
   var height = Convert.To(Settings.ImageHeight, fallback: 400); // Should be set on all banner-views
 }
 
-<div class="co-container-outer">
-  <div class="co-container-inner">
-    <div class="co-header" @Edit.TagToolbar(Content)>
-      <img class="w-100"
-        loading="lazy"
-        src='@(Link.Image(Content.Image, Settings.Images.Content, height: height) + "&anchor=" + Content.CropAnchor)'
-        alt="@Content.Title" />
-    </div>
-  </div>
+<div class="co-header" @Edit.TagToolbar(Content)>
+  <img class="w-100"
+    loading="lazy"
+    src='@(Link.Image(Content.Image, Settings.Images.Content, height: height) + "&anchor=" + Content.CropAnchor)'
+    alt="@Content.Title" />
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles" })

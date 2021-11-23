@@ -9,7 +9,7 @@
   var warn = apiKey.IsSecuredBy("preset");
 }
 @if(warn) {
-  <div class="alert alert-danger">
+  <div class="alert alert-danger position-absolute bottom-0 start-0">
     @Html.Raw(Resources.GoogleMaps.WarningApiKeyForDemoOnly)
   </div>
 }

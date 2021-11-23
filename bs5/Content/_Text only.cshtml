@@ -6,7 +6,7 @@
   var padding = Settings.ColsPaddingLeft;
   var styling = Settings.TextAlignment == "c" ? "text-center" : "";
 }
-<div class="row py-2 py-md-3">
+<div class="row">
   <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(Content, prefill: new { VarShowImage = false })>
     @* call sub-template to show the title with the correct H1-H6 tag *@
     @Html.Partial("../shared/_Header tag.cshtml")

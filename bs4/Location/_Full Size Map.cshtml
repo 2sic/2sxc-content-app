@@ -16,8 +16,7 @@
 <div class="co-container-outer mb-4 mb-md-5">
 	<div class="co-container-inner" @Edit.TagToolbar(Content)>
 		<div class="app-content-js-google-map-container embed-responsive embed-responsive-21by9">
-      @* // ratio ratio-21x9 only for octane - should be removed when bs5 is prepared *@
-			<div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
+			<div class="embed-responsive-item" id="@googleMapDomId"></div>
 
       @Html.Partial("_Part GoogleMapsWarning.cshtml")
 		</div>
