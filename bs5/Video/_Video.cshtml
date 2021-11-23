@@ -1,0 +1,35 @@
+@inherits Custom.Hybrid.Razor12
+@using ToSic.Razor.Blade;
+@{
+  /* This Template is used in ca. 5 Views which show title, text and video */
+
+  // Determine the widths of each part, based on 12 Bootstrap Cols
+  const int bootstrapCols = 12;
+  var colsText = Settings.TextFirst ? Settings.ColsElement1 : bootstrapCols - Settings.ColsElement1;
+  var colsImg = bootstrapCols - colsText;
+}
+<div class="co-container-outer mb-4 mb-md-5">
+  <div class="co-container-inner" @Edit.TagToolbar(Content)>
+    <div class="row">
+      <div class='col-md-@colsText order-md-@(Settings.TextFirst ? "first" : "last")'>
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @Html.Partial("../shared/_Header tag.cshtml")
+
+        @* If the image doesn't have it's own column, its between title/text *@
+        @if (colsImg == 0) {
+          @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = 12 })
+        }
+
+        @Html.Raw(Content.Text)
+      </div>
+      @* If the image has it's own column, it's here *@
+      @if (colsImg != 0) {
+        <div class='col-md-@colsImg order-md-@(Settings.TextFirst ? "last" : "first")'>
+          @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = colsImg })
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,icons"})

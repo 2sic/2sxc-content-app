@@ -36,11 +36,11 @@
   }
 }
 
-@if (styles) { <link rel="stylesheet" href="@App.Path/bs4/dist/styles.min.css" data-enableoptimizations="true" /> }
+@if (styles) { <link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" data-enableoptimizations="true" /> }
 
 @if (fancybox || scripts || videos) {
   page.Activate("turnOn"); // see https://r.2sxc.org/turnon
-  <script type="text/javascript" src="@App.Path/bs4/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
+  <script type="text/javascript" src="@App.Path/bs5/dist/scripts.min.js" data-enableoptimizations="bottom"></script> 
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
   <turnOn turn-on='{ "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
