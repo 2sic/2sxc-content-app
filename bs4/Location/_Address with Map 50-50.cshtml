@@ -1,6 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @{
+  var mapFirst = CmsContext.View.Identifier == "map-first";
+
   // Build Helper object and get map infos
   var locationHelper = CreateInstance("LocationHelper.cs");
   var mapInfo = locationHelper.MapInfos(Content);
@@ -61,7 +63,7 @@
           </div>
         </address>
       </div>
-      <div class="col-md-6 order-md-1">
+      <div class='col-md-6 @(mapFirst ? "order-md-0" : "order-md-1")'>
         <div class="app-content-js-google-map-container embed-responsive embed-responsive-16by9">
           <div class="embed-responsive-item" id="@googleMapDomId"></div>
           @Html.Partial("_Part GoogleMapsWarning.cshtml")

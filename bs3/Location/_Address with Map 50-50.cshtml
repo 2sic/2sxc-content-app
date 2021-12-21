@@ -1,6 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @{
+  var mapFirst = CmsContext.View.Identifier == "map-first";
+
   // Build Helper object and get map infos
   var locationHelper = CreateInstance("LocationHelper.cs");
   var mapInfo = locationHelper.MapInfos(Content);
@@ -17,7 +19,7 @@
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner co-contactmap mb-4" @Edit.TagToolbar(Content)>
 		<div class="row">
-			<div class="col col-sm-6 col-md-push-6">
+      <div class='col col-sm-6 @(mapFirst ? "col-md-push-6" : "")'>
         <address itemscope itemtype="http://schema.org/LocalBusiness">
           <div class="mb-2 pr-md-5" itemprop="name">
             <h4>@Content.Company</h4>
@@ -62,7 +64,7 @@
           </div>
         </address>
       </div>
-      <div class="col col-sm-6 col-md-pull-6">
+      <div class='col col-sm-6 @(mapFirst ? "col-md-pull-6" : "")'>
 				<div class="app-content-js-google-map-container embed-responsive embed-responsive-16by9">
 					<div class="co-google-map embed-responsive-item" id="@googleMapDomId"></div>
           @Html.Partial("_Part GoogleMapsWarning.cshtml")
