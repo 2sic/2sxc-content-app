@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.08.02" ExportDate="2021-11-24T07:54:05.7706228+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.00" ExportDate="2021-12-20T21:04:41.5721595+01:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -15,7 +15,7 @@
     </Dimensions>
   </Header>
   <AttributeSets>
-    <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="2SexyContent-App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="GroupMaps" Type="Empty" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="ec719e7a-c535-412b-a8de-b8a09e718c69" Json="True" KeyNumber="4690">
@@ -68,7 +68,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="2SexyContent-App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="GroupImages" Type="Empty" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="b4dd4efd-e8bd-42df-805b-66bc8493a1c6" Json="True" KeyNumber="4666">
@@ -205,7 +205,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" Name="Content" Description="Content" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" Name="Content" Description="Content" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="d2a651fd-9dec-4785-a773-165ef46211b6" Json="True" KeyNumber="495">
@@ -636,7 +636,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" Name="Image" Description="Image" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" Name="Image" Description="Image" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="04082586-693a-4fc3-bf85-546d155f6b49" Json="True" KeyNumber="490">
@@ -905,7 +905,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="93714840-bb10-442d-b290-7d8a7b005dc0" Name="LayoutElement" Description="Design Element" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="93714840-bb10-442d-b290-7d8a7b005dc0" Name="LayoutElement" Description="Design Element" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Notes" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="80e2becc-7ad6-4c89-bd4f-7f326ea5182e" Json="True" KeyNumber="542">
@@ -962,7 +962,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="36ab91f9-8388-4728-9bee-62ac898300a3" Name="Link" Description="link for blocks or lists" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="36ab91f9-8388-4728-9bee-62ac898300a3" Name="Link" Description="link for blocks or lists" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="f4de499d-2f60-48f4-8ab4-dc50e3e7d741" Json="True" KeyNumber="515">
@@ -1514,7 +1514,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="3168c0b7-c5b9-4aa8-9ada-773890339e58" Name="Location" Description="Location / Address" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="3168c0b7-c5b9-4aa8-9ada-773890339e58" Name="Location" Description="Location / Address" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Company" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="4e1dc733-fcd8-4c5b-b16a-a0f207437a24" Json="True" KeyNumber="499">
@@ -2123,7 +2123,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="09ad77bb-66e8-4a1c-92ac-27253afb251d" Name="Person" Description="Person" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="09ad77bb-66e8-4a1c-92ac-27253afb251d" Name="Person" Description="Person" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="FullName" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="18a0726d-e161-4694-a9e0-6acdaa517a06" Json="True" KeyNumber="520">
@@ -2525,7 +2525,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" Name="PresSetImage" Description="Settings for all Image Templates" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" Name="PresSetImage" Description="Settings for all Image Templates" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="ImageLightbox" Type="Boolean" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="f2a44d25-fac2-48cf-bd35-090e9c62539d" Json="True" KeyNumber="528">
@@ -2748,7 +2748,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="ef3be8fc-1c17-4680-8306-73a44fde53c6" Name="PresSetMap" Description="Settings for the map template (Standort Karte)" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="ef3be8fc-1c17-4680-8306-73a44fde53c6" Name="PresSetMap" Description="Settings for the map template (Standort Karte)" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="MapsLabelDirections" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="eecc95b1-2474-4c68-8130-209386e7180c" Json="True" KeyNumber="4689">
@@ -2862,7 +2862,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" Name="PresSetText" Description="Settings for all Text Templates (Text, Text with Image right &amp; left)" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" Name="PresSetText" Description="Settings for all Text Templates (Text, Text with Image right &amp; left)" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="HeadingType" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="5ef9fa64-cf55-49a3-9f3d-cc97d3a3d995" Json="True" KeyNumber="531">
@@ -3359,7 +3359,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="b3957ce5-847e-4191-b98a-550d1b9f838c" Name="Video" Description="Video from external source" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="b3957ce5-847e-4191-b98a-550d1b9f838c" Name="Video" Description="Video from external source" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="6328572e-9afd-4b14-b2de-c7fee5ba93fc" Json="True" KeyNumber="543">
@@ -3561,7 +3561,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="e3315455-98a4-4ac4-911f-956de8645f53" Name="VideoPresentation" Description="Settings for all Video Templates (Video, Video width Text right &amp; left)" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="e3315455-98a4-4ac4-911f-956de8645f53" Name="VideoPresentation" Description="Settings for all Video Templates (Video, Video width Text right &amp; left)" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="HeadingType" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="99c058b2-50cd-4d2d-b97a-c6daf2ae0599" Json="True" KeyNumber="3382">
@@ -6643,7 +6643,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="12.08.00" Type="String">
+      <Value Key="Version" Value="12.10.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -7744,6 +7744,13 @@
       <Value Key="Presentation" Value="null,null" Type="Entity" />
       <Value Key="Template" Value="feae2860-118a-42ef-b03a-336de0ea7c38" Type="Entity" />
     </Entity>
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="6aff07ec-88a1-4100-baa2-3536ee084a7a" Json="True" KeyGuid="472882fc-f65c-4a8b-9408-7398b11bda2e" />
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="1e21f6de-13df-4421-8bf4-e250fa381e1c" Json="True" KeyGuid="f7045144-1f69-4cad-bea1-a3fb5cb5a1e9" />
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="e809cb06-fae9-4c62-aa24-b503a1541cd6" Json="True" KeyGuid="96abaa8e-1b9a-442d-b354-0830a9c66e17" />
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="a08a80b9-8bf9-4794-8a1d-8abc627c62df" Json="True" KeyGuid="b0acb15b-202c-413a-93e6-12c6afdd7f81" />
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="737d8c9e-014f-46d0-bd20-56eef47e57d3" Json="True" KeyGuid="b03c6df0-e36c-4ba9-951a-dfd14e2eda5f" />
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="970e52e9-9495-4065-bffb-e95d45ea35f0" Json="True" KeyGuid="17053791-fed7-4bff-979d-85eee1581a44" />
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="e5f9917d-8029-4a50-a4da-bc4034c511b8" Json="True" KeyGuid="a215abc5-8dfa-493d-88aa-c659dc35f503" />
   </Entities>
   <PortalFiles>
     <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />

@@ -18,9 +18,9 @@ These are the primary **Content** parts for 2sxc 12.05 supporting many CSS Frame
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Best Practices      | ✅    | Uses v12.05 conventions
-| Bootstrap 3         | ✅    | Optimized for 3.3
+| Bootstrap 3         | ✅    | Optimized for v3.3
 | Bootstrap 4         | ✅    | Optimised for latest v4
-| Bootstrap 5         | ✔️    | Works well, but not optimized; WIP ca. 2021-10
+| Bootstrap 5         | ✅    | Optimized for v5.1
 
 Other CSS frameworks: please contribute
 
