@@ -5,13 +5,19 @@
   var cols = Settings.ColsElement1;
   var padding = Settings.ColsPaddingLeft;
   var styling = Settings.TextAlignment == "c" ? "text-center" : "";
+  var hasMultipleItems = AsList(Data).Count() > 1;
 }
-<div class="row">
-  <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(Content, prefill: new { VarShowImage = false })>
-    @* call sub-template to show the title with the correct H1-H6 tag *@
-    @Html.Partial("../shared/_Header tag.cshtml")
-    @Html.Raw(Content.Text)
-  </div>
+<div class='@(hasMultipleItems && Edit.Enabled ? "pt-4" : "")' @(hasMultipleItems ? Edit.TagToolbar(Header) : "")>
+  @foreach (var contentItem in AsList(Data))
+  {
+    <div class="row">
+      <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "new?contentType=Content&prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })>
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @Html.Partial("../shared/_Header tag.cshtml")
+        @Html.Raw(contentItem.Text)
+      </div>
+    </div> 
+  }
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts"})

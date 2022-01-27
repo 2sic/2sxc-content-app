@@ -1,10 +1,18 @@
 @inherits Custom.Hybrid.Razor12
+@{
+  var hasMultipleItems = AsList(Data).Count() > 1;
+}
 
-<div class="co-container-outer mb-4 mb-md-5">
-	<div class="co-container-inner" @Edit.TagToolbar(Content, prefill: new { VarShowImage = false, VarShowText = false })>
-    @* call sub-template to show the title with the correct H1-H6 tag *@
-    @Html.Partial("../shared/_Header tag.cshtml")
-  </div>
+<div class='@(hasMultipleItems && Edit.Enabled ? "pt-4" : "")' @(hasMultipleItems ? Edit.TagToolbar(Header) : "")>
+  @foreach (var contentItem in AsList(Data))
+  {
+    <div class="co-container-outer mb-4 mb-md-5">
+      <div class="co-container-inner" @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "+new?contentType=Content&prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })>
+        @* call sub-template to show the title with the correct H1-H6 tag *@
+        @Html.Partial("../shared/_Header tag.cshtml")
+      </div>
+    </div>
+  }
 </div>
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts" })
