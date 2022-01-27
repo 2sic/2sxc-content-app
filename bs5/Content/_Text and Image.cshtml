@@ -16,7 +16,7 @@
 <div class='@(hasMultipleItems && Edit.Enabled ? "pt-4" : "")' @(hasMultipleItems ? Edit.TagToolbar(Header) : "")>
   @foreach (var contentItem in AsList(Data))
   {
-    <div class="row" @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "+new?contentType=Content&prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })>
+    <div class="row" @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "+new?prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })>
       <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
         @* call sub-template to show the title with the correct H1-H6 tag *@
         @Html.Partial("../shared/_Header tag.cshtml")

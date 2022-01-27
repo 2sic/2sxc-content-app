@@ -11,7 +11,7 @@
   @foreach (var contentItem in AsList(Data))
   {
     <div class="row">
-      <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "new?contentType=Content&prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })>
+      <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "new?&prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })>
         @* call sub-template to show the title with the correct H1-H6 tag *@
         @Html.Partial("../shared/_Header tag.cshtml")
         @Html.Raw(contentItem.Text)
