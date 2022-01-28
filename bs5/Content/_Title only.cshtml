@@ -6,7 +6,7 @@
 <div class='@(hasMultipleItems && Edit.Enabled ? "pt-4" : "")' @(hasMultipleItems ? Edit.TagToolbar(Header) : "")>
   @foreach (var contentItem in AsList(Data))
   {
-    <div @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "+new?&prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })>
+    <div @Edit.TagToolbar(contentItem)>
       @* call sub-template to show the title with the correct H1-H6 tag *@
       @Html.Partial("../shared/_Header tag.cshtml", new { Title = contentItem.Title })
     </div>
