@@ -1,19 +1,20 @@
 @inherits Custom.Hybrid.Razor12
 @{
-  var hasMultipleItems = AsList(Data).Count() > 1;
+  var allContent = AsList(Data);
+  var allContentLength = allContent.Count();
+  var hasMultipleItems = allContentLength > 1;
 }
 
 @* This adds all link/script tags *@
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
 
-<div class='@(hasMultipleItems && Edit.Enabled ? "pt-4" : "")' @(hasMultipleItems ? Edit.TagToolbar(Header) : "")>
-  @foreach (var contentItem in AsList(Data))
-  {
-    <div class="co-container-outer">
-      <div class="co-container-inner clearfix co-content" @Edit.TagToolbar(contentItem)>
-        @* call sub-template to show the title with the correct H1-H6 tag *@
-        @Html.Partial("../shared/_Header tag.cshtml", new { Title = contentItem.Title })
-      </div>
+@if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
+@for(var iteration = 0; iteration < allContentLength; iteration++)
+
+  <div class="co-container-outer">
+    <div class='co-container-inner clearfix co-content @(iteration == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")' @Edit.TagToolbar(allContent.ElementAt(iteration))>
+      @* call sub-template to show the title with the correct H1-H6 tag *@
+      @Html.Partial("../shared/_Header tag.cshtml", new { Title = allContent.ElementAt(iteration).Title })
     </div>
-  }
-</div>
+  </div>
+}

@@ -10,39 +10,42 @@
   var colsText = isTextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
   var colsImg = 12 - colsText;
 
-  var hasMultipleItems = AsList(Data).Count() > 1;
-
+  var allContent = AsList(Data);
+  var allContentLength = allContent.Count();
+  var hasMultipleItems = allContentLength > 1;
 }
-<div class='@(hasMultipleItems && Edit.Enabled ? "pt-4" : "")' @(hasMultipleItems ? Edit.TagToolbar(Header) : "")>
-  @foreach (var contentItem in AsList(Data)) {
-    <div class="co-container-outer mb-4 mb-md-5">
-      <div class="co-container-inner" @Edit.TagToolbar(contentItem)>
-        <div class="row">
-          <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
-            @* call sub-template to show the title with the correct H1-H6 tag *@
-            @Html.Partial("../shared/_Header tag.cshtml", new { Title = contentItem.Title })
 
-            @* If the image doesn't have it's own column, its between title/text *@
-            @if (colsImg == 0) {
-              @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = contentItem })
-            }
+@if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
+@for(var iteration = 0; iteration < allContentLength; iteration++)
+{
+  <div class="co-container-outer mb-4 mb-md-5">
+    <div class="co-container-inner" @Edit.TagToolbar(allContent.ElementAt(iteration))>
+      <div class='row @(iteration == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")'>
+        <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
+          @* call sub-template to show the title with the correct H1-H6 tag *@
+          @Html.Partial("../shared/_Header tag.cshtml", new { Title = allContent.ElementAt(iteration).Title })
 
-            @Html.Raw(contentItem.Text)
-          </div>
-          @* If the image has it's own column, it's here *@
-          @if (colsImg != 0) {
-            <div class='col-md-@colsImg order-md-@(!isTextFirst ? "first" : "last")'>
-              @* call sub-template to show the image with all possible options *@
-              @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = contentItem, Columns = colsImg, FancyboxAttribute = fancyboxAttribute})
-            </div>
+          @* If the image doesn't have it's own column, its between title/text *@
+          @if (colsImg == 0) {
+            @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = allContent.ElementAt(iteration) })
           }
+
+          @Html.Raw(allContent.ElementAt(iteration).Text)
         </div>
+        @* If the image has it's own column, it's here *@
+        @if (colsImg != 0) {
+          <div class='col-md-@colsImg order-md-@(!isTextFirst ? "first" : "last")'>
+            @* call sub-template to show the image with all possible options *@
+            @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = allContent.ElementAt(iteration), Columns = colsImg, FancyboxAttribute = fancyboxAttribute})
+          </div>
+        }
       </div>
     </div>
+  </div>
 
-    if (!Header.AlternatePositions) { continue; }
-    isTextFirst = !isTextFirst;
-  }
-</div>
+  if (!Header.AlternatePositions) { continue; }
+  isTextFirst = !isTextFirst;
+}
+
 @Html.Partial("../Shared/_Assets.cshtml", new { parts = "fancybox,styles", FancyboxAttribute = fancyboxAttribute })
 @* Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts"}) *@

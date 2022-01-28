@@ -5,19 +5,22 @@
   var cols = Settings.ColsElement1;
   var padding = Settings.ColsPaddingLeft;
   var styling = Settings.TextAlignment == "c" ? "text-center" : "";
-  var hasMultipleItems = AsList(Data).Count() > 1;
+
+  var allContent = AsList(Data);
+  var allContentLength = allContent.Count();
+  var hasMultipleItems = allContentLength > 1;
 }
-<div class='@(hasMultipleItems && Edit.Enabled ? "pt-4" : "")' @(hasMultipleItems ? Edit.TagToolbar(Header) : "")>
-  @foreach (var contentItem in AsList(Data))
-  {
-    <div class="row">
-      <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(contentItem)>
-        @* call sub-template to show the title with the correct H1-H6 tag *@
-        @Html.Partial("../shared/_Header tag.cshtml", new { Title = contentItem.Title })
-        @Html.Raw(contentItem.Text)
-      </div>
-    </div> 
-  }
-</div>
+@if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
+@for(var iteration = 0; iteration < allContentLength; iteration++)
+{
+  <div class='row @(iteration == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")'>
+    <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(allContent.ElementAt(iteration))>
+      @* call sub-template to show the title with the correct H1-H6 tag *@
+      @Html.Partial("../shared/_Header tag.cshtml", new { Title = allContent.ElementAt(iteration).Title })
+      @Html.Raw(allContent.ElementAt(iteration).Text)
+    </div>
+  </div> 
+}
+
 
 @Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts"})
