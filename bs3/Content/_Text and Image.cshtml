@@ -32,7 +32,7 @@
           </div>
           @* If the image has it's own column, it's here *@
           @if (colsImg != 0) {
-            <div class='col-md-@colsImg @(isTextFirst ?  "" : "col-md-pull-" + @colsText)'>
+            <div class='col-md-@colsImg @(!isTextFirst ? "col-md-pull-" + @colsText : "")'>
               @* call sub-template to show the image with all possible options *@
               @Html.Partial("_Part Image.cshtml", new { Item = contentItem, Columns = colsImg, FancyboxAttribute = fancyboxAttribute })
             </div>
@@ -42,9 +42,7 @@
     </div>
 
     if (!Header.AlternatePositions) { continue; }
-
     isTextFirst = !isTextFirst;
-    colsText = isTextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
   }
 </div>
 @Html.Partial("../Shared/_Assets.cshtml", new { parts = "scripts,fancybox,styles", FancyboxAttribute = fancyboxAttribute })
