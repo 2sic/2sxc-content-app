@@ -20,7 +20,7 @@
         <div class="row">
           <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
             @* call sub-template to show the title with the correct H1-H6 tag *@
-            @Html.Partial("../shared/_Header tag.cshtml")
+            @Html.Partial("../shared/_Header tag.cshtml", new { Title = contentItem.Title })
 
             @* If the image doesn't have it's own column, its between title/text *@
             @if (colsImg == 0) {
