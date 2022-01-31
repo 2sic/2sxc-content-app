@@ -68,3 +68,7 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * renamed partial files to better match latest conventions
   * reorganized files
   * Moved icons to /Icons for clearer structure
+* v13.01 2022-01
+  * extended clickable space of _List of links view
+  * changed datamodel of basic content and video views to list
+  * basic content and video views can now be alternated
