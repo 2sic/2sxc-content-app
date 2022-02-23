@@ -18,25 +18,26 @@
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
 @for(var iteration = 0; iteration < allContentLength; iteration++)
 {
+  var item = allContent.ElementAt(iteration);
   <div class="co-container-outer">
-    <div class="co-container-inner clearfix co-content" @Edit.TagToolbar(allContent.ElementAt(iteration))>
+    <div class="co-container-inner clearfix co-content" @Edit.TagToolbar(item)>
       <div class="row @(iteration == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")">
         <div class='col-md-@colsText @(isTextFirst ? "" : "col-md-push-" + @colsImg)'>
           @* call sub-template to show the title with the correct H1-H6 tag *@
-          @Html.Partial("../shared/_Header tag.cshtml", new { Title = allContent.ElementAt(iteration).Title })
+          @Html.Partial("../shared/_Header tag.cshtml", new { Title = item.Title })
 
           @* If the image doesn't have it's own column, its between title/text *@
           @if (colsImg == 0) {
-            @Html.Partial("_Part Image.cshtml", new { Item = allContent.ElementAt(iteration) })
+            @Html.Partial("_Part Image.cshtml", new { Item = item })
           }
 
-          @Html.Raw(allContent.ElementAt(iteration).Text)
+          @Html.Raw(item.Text)
         </div>
         @* If the image has it's own column, it's here *@
         @if (colsImg != 0) {
           <div class='col-md-@colsImg @(!isTextFirst ? "col-md-pull-" + @colsText : "")'>
             @* call sub-template to show the image with all possible options *@
-            @Html.Partial("_Part Image.cshtml", new { Item = allContent.ElementAt(iteration), Columns = colsImg, FancyboxAttribute = fancyboxAttribute })
+            @Html.Partial("_Part Image.cshtml", new { Item = item, Columns = colsImg, FancyboxAttribute = fancyboxAttribute })
           </div>
         }
       </div>
