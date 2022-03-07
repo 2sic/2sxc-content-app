@@ -53,20 +53,35 @@
     &.co-video {
       display: block;
       position: relative;
+      figure {
+        z-index: -2;
+      }
 
       svg {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 72px;
-        color: rgba(255, 255, 255, 1);
-        transition: color 0.3s ease-in-out;
-      }
 
-      &:hover {
+        filter: drop-shadow(0px 0px 8px rgb(0 0 0 / 0.3));
+        height: 54px;
+        .st0,
+        .st1 {
+          transition: fill 0.3s ease-in-out;
+        }
+      }
+    }
+    &:hover {
+      &.co-video {
         svg {
-          color: red;
+          .st0 {
+            fill: red !important;
+            filter: none;
+          }
+          .st1 {
+            fill: #fff !important;
+            filter: none;
+          }
         }
       }
     }
@@ -227,13 +242,28 @@
       }
 
       svg {
-        font-size: 72px;
-        color: rgba(255, 255, 255, 1);
-        transition: color 0.3s ease-in-out;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        filter: drop-shadow(0px 0px 8px rgb(0 0 0 / 0.3));
+        height: 54px;
+        .st0,
+        .st1 {
+          transition: fill 0.3s ease-in-out;
+        }
       }
       &:hover {
         svg {
-          color: red;
+          .st0 {
+            fill: red !important;
+            filter: none;
+          }
+          .st1 {
+            fill: #fff !important;
+            filter: none;
+          }
         }
       }
     }
