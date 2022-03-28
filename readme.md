@@ -74,4 +74,5 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * basic content and video views can now be alternated
 * v13.01.01 2022-03
   * Bugfix bs4 banner
+* v13.01.02 2022-03
   * Bugfix video list
