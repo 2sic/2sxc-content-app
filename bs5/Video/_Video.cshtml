@@ -26,7 +26,7 @@
 
       @* If the image doesn't have it's own column, its between title/text *@
       @if (colsImg == 0) {
-        @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = 12 })
+        @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = 12, Video = item })
       }
 
       @Html.Raw(item.Text)
@@ -34,7 +34,7 @@
     @* If the image has it's own column, it's here *@
     @if (colsImg != 0) {
       <div class='col-md-@colsImg order-md-@(!isTextFirst ? "first" : "last")'>
-        @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = colsImg })
+        @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = colsImg, Video = item })
       </div>
     }
   </div>

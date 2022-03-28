@@ -4,8 +4,10 @@
 @{
   /* Partial template which is re-used in _Video.cshtml to show the video preview and link-to-lightbox for the video */
 
+	var video = DynamicModel.Video;
+
   // Check if the link is a youtube, and convert that to a youtube embed
-	var youTubeLink = Regex.Match(Content.VideoLink, @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+	var youTubeLink = Regex.Match(Text.First(video.VideoLink, Content.VideoLink), @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
   var youTubeUrl = youTubeLink.Success
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
@@ -15,18 +17,22 @@
   // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
   var factor = (DynamicModel.Columns ?? 12) + "/12";
 
+  var image = Text.First(video.Image, Content.Image);
+  var title = Text.First(video.Title, Content.Title);
+  var hasVideoLightbox = Text.First(video.Presentation.VideoLightbox, Content.Presentation.VideoLightbox);
+
 }
-@if (Content.Presentation.VideoLightbox != false) {
+@if (hasVideoLightbox != false) {
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos"; 
 
   // open in lightbox
-  <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@Content.Title" href="@youTubeUrl">
-      @if (Text.Has(Content.Image)) {
+  <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
+      @if (Text.Has(image)) {
       <figure class="effect-zoom">                
         <img loading="lazy" class="img-fluid"
-          src='@Link.Image(Content.Image, Settings.Images.Content, factor: factor, aspectRatio: "16:9", scaleMode: "both")'
-          alt="@Content.Title" />
+          src='@Link.Image(image, Settings.Images.Content, factor: factor, aspectRatio: "16:9", scaleMode: "both")'
+          alt="@title" />
       </figure>
       <i class="fab fa-youtube"></i>
       } else {
