@@ -1,6 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
+  var imgSvc = GetService<IImageService>();
   // get helper commands
   var linkHelper = CreateInstance("LinkHelper.cs");
 }
@@ -14,7 +16,7 @@
     }
       @if (Text.Has(link.Image)) {
         <figure class="effect-zoom">
-          <img loading="lazy" class="img-fluid" src='@Link.Image(link.Image, Settings.Images.Content, factor: "1/3")' alt="@link.Title" />
+          @imgSvc.Picture(link.Image, settings: Settings.Images.Content, factor: "1/3", imgClass:"img-fluid", imgAlt: link.Title)
         </figure>
       } else {
         <div class="bg-primary placeholder"></div>

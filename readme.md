@@ -76,3 +76,8 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Bugfix bs4 banner
 * v13.01.02 2022-03
   * Bugfix video list
+* v13.02.00 2022-04
+  * Moved access to services to ToSic.Sxc.Services
+  * Changed images to use the IImageService and Picture tags
+  * Enabled image configurations 
+  

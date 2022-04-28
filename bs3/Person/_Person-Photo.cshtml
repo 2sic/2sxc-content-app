@@ -1,6 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
+  var imgSvc = GetService<IImageService>();
   /* This is used in two views */
   var isRound = CmsContext.View.Identifier == "round";
 
@@ -9,6 +11,8 @@
   var placeholderStyle = "padding-bottom: " + (isRound ? "100%;" : "128.57%");
 
   // TODO: @2tl find out why it's 128.57% - super strange number
+  var height = isRound ? 379 : 488; 
+  var photoSettings = imgSvc.Settings("PersonPhoto", height: height);
 }
 <div class="co-container-outer">
   <div class="co-container-inner">
@@ -17,7 +21,7 @@
         <div class="col-sm-6 row mb-4" @Edit.TagToolbar(person)>
           <div class="col-xs-4 @mbClass">
             @if (Text.Has(person.Photo)) {
-              <img class="img-responsive @imgClass" src='@Link.Image(person.Photo, height: isRound ? 379 : 488, width: 379)' alt="@person.FullName" />
+              @imgSvc.Picture(person.Photo, settings: photoSettings, width: 379, imgClass:"img-responsive " + imgClass, imgAlt: @person.FullName)
             } else {
               <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
             }

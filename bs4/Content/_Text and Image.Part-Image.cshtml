@@ -1,6 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
+  var imgSvc = GetService<IImageService>();
   /* This is a partial template which is re-used in the Content-Templates */
 
   // Parameter passed in from the calling page - if we don't have an image, exit
@@ -25,7 +27,7 @@
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
     }
 
-    <img loading="lazy" class="img-fluid" src='@Link.Image(imgItem.Image, Settings.Images.Content, factor: resizeFactor)' alt="@Text.First(imgItem.ImageCaption, imgItem.Title)" />
+    @imgSvc.Picture(imgItem.Image, settings: Settings.Images.Content, factor: resizeFactor, imgClass:"img-fluid", imgAlt: Text.First(imgItem.ImageCaption, imgItem.Title))
   </figure>
 @if (imgItem.Presentation.ImageLightbox != false) {
   @:</a>

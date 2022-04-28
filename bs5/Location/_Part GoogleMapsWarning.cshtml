@@ -1,8 +1,9 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
   var mapSettings = AsDynamic(Content.Presentation.GoogleMaps, Settings.GoogleMaps);
-  var secureData = GetService<ToSic.Sxc.Services.ISecureDataService>();
+  var secureData = GetService<ISecureDataService>();
   
   // Decrypt the Api key and find out where it's from. If it's from preset, then we must show the warning
   var apiKey = secureData.Parse(mapSettings.ApiKey); 

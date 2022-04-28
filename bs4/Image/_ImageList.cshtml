@@ -1,6 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
+  var imgSvc = GetService<IImageService>();
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / Settings.MaxPerRow;
   var factor = 1 / Settings.MaxPerRow; // percentage of the content-width
@@ -23,10 +25,8 @@
             @if (img.Presentation.TitleLegend != false) {
               <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
             }
+            @imgSvc.Picture(img.Image, settings: Settings.Images.Content, factor: factor, imgClass:"w-100", imgAlt: @img.Title)
 
-            <img loading="lazy" class="w-100"
-              src='@(Link.Image(img.Image, Settings.Images.Content, factor: factor) + "&anchor=" + img.CropAnchor)'
-              alt="@img.Title" />
         </figure>
 
         @if (img.Presentation.ImageLightbox != false) {

@@ -1,9 +1,11 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
 @{
+  var imgSvc = GetService<IImageService>();
   // get helper commands
   var linkHelper = CreateInstance("_LinkHelper.cshtml");
 }
@@ -38,7 +40,7 @@
                         <span class="co-link">@link.LinkText&nbsp;<span class="" aria-hidden="true">&rsaquo;</span></span>
                       }
                 </div>
-                <img src='@link.Image?w=690&h=450&quality=80&mode=crop&scale=both' title="@link.Title"/>
+                @imgSvc.Picture(link.Image, width: "690", settings: imgSvc.Settings("Content"), imgClass:"img-fluid", imgAlt:@link.Title)
               </figure>
             } else {
               <div class="co-img-placeholder"></div>

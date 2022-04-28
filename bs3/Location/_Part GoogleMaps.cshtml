@@ -1,8 +1,9 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
   // Activate turnOn in the page - see https://r.2sxc.org/turnon
-  GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
+  GetService<IPageService>().Activate("turnOn");
 
   // Merge the Presentation with Resources & Settings to get the best possible settings/resources
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
@@ -11,7 +12,7 @@
 
   // They Google API key is in the App-Settings. See instructions: https://azing.org/2sxc/r/ApSwlItl
   // The Preset-data is encrypted, so we must decrypt it to use
-  var secureData = GetService<ToSic.Sxc.Services.ISecureDataService>();
+  var secureData = GetService<ISecureDataService>();
   var googleApikey = secureData.Parse(mapSettings.ApiKey).Value;
 
   // GPS is a JSON field, so we must use AsDynamic to easily access the properties
