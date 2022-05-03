@@ -2,7 +2,6 @@
 @using ToSic.Razor.Blade;
 @using ToSic.Sxc.Services;
 @{
-  var imgSvc = GetService<IImageService>();
   /* This is used in two views */
   var isRound = CmsContext.View.Identifier == "round";
 
@@ -13,6 +12,7 @@
   // TODO: @2tl find out why it's 128.57% - super strange number
   var height = isRound ? 379 : 488; 
   var photoSettings = imgSvc.Settings("PersonPhoto", height: height);
+  var imgSvc = GetService<IImageService>();
 }
 <div class="co-container-outer">
   <div class="co-container-inner">

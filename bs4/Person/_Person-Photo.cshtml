@@ -2,7 +2,6 @@
 @using ToSic.Razor.Blade;
 @using ToSic.Sxc.Services;
 @{
-  var imgSvc = GetService<IImageService>();
   /* This is used in two views */
   var isRound = CmsContext.View.Identifier == "round";
 
@@ -13,6 +12,8 @@
   var imgClass = isRound ? "rounded-circle" : "";
 
   var placeholderStyle = "padding-bottom: " + (isRound ? "100%;" : "125%");
+  
+  var imgSvc = GetService<IImageService>();
 }
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner">

@@ -2,13 +2,14 @@
 @using ToSic.Razor.Blade;
 @using ToSic.Sxc.Services;
 @{
-  var imgSvc = GetService<IImageService>();
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / Settings.MaxPerRow;
   var factor = 1 / Settings.MaxPerRow; // percentage of the content-width
   
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-" + CmsContext.Module.Id; 
+  
+  var imgSvc = GetService<IImageService>();
 }
 
 <div class="row">
