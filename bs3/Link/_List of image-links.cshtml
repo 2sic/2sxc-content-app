@@ -27,7 +27,7 @@
             {
               <figure>
                 <div class="co-overlay"></div>
-                @imgSvc.Picture(link.Image, width: "690", settings: imgSvc.Settings("Content"), imgClass:"img-fluid", imgAlt: link.Title)
+                @imgSvc.Picture(link.Field("Image"), width: "690", settings: imgSvc.Settings("Content"))
 
               </figure>
             } else {

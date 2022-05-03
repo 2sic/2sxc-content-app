@@ -23,8 +23,8 @@
   var width = (int)(Settings.Images.Content.Width * imgColumns / 12);
   int height = (int)(width * 9/16);
 
-  var image = Text.First(video.Image, Content.Image);
-  var title = Text.First(video.Title, Content.Title);
+  var image = video.Field("Image");
+  var title = Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title);
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
 
   var videoSettings = imgSvc.Settings(Settings.Images.Content, height: height);
@@ -36,12 +36,12 @@
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos"; 
   <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
-    @if (Text.Has(image)) {
+    @if (image != null) {
     <figure>
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
         <i class="fab fa-youtube"></i>
       </div>
-      @imgSvc.Picture(image, width: width, settings: videoSettings, imgAlt: title, imgClass:"img-responsive")
+      @imgSvc.Picture(image, width: width, settings: videoSettings, imgAlt: title)
     </figure>
     } else {
       <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>

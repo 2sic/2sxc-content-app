@@ -21,7 +21,7 @@
         <div class="col-sm-6 row mb-4" @Edit.TagToolbar(person)>
           <div class="col-xs-4 @mbClass">
             @if (Text.Has(person.Photo)) {
-              @imgSvc.Picture(person.Photo, settings: photoSettings, width: 379, imgClass:"img-responsive " + imgClass, imgAlt: @person.FullName)
+              @imgSvc.Picture(person.Field("Photo"), settings: photoSettings, width: 379, imgClass:"img-responsive " + imgClass)
             } else {
               <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
             }

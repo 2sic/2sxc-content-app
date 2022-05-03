@@ -30,7 +30,7 @@
                 <span>@link.LinkText <i class="fas fa-chevron-right" aria-hidden="true"></i></span>
               }
             </div>
-            @imgSvc.Picture(link.Image, settings: Settings.Images.Content, factor: "1/3", imgClass:"img-fluid", imgAlt:@link.Title)
+            @imgSvc.Picture(link.Field("Image"), settings: Settings.Images.Content, factor: "1/3")
           </figure>          
         } else {
           <div class="bg-primary placeholder"></div>

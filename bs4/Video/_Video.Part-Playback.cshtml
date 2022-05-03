@@ -20,8 +20,8 @@
   // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
   var factor = (DynamicModel.Columns ?? 12) + "/12";
 
-  var image = Text.First(video.Image, Content.Image);
-  var title = Text.First(video.Title, Content.Title);
+  var image = video.Field("Image");
+  var title = Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title);
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
 
   var videoSettings = imgSvc.Settings(Settings.Images.Content, aspectRatio: "16:9");
@@ -34,9 +34,9 @@
 
   // open in lightbox
   <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
-      @if (Text.Has(image)) {
+      @if (image != null) {
       <figure class="effect-zoom">                
-        @imgSvc.Picture(image, settings: videoSettings, factor: factor, imgAlt: title, imgClass:"img-fluid")
+        @imgSvc.Picture(image, settings: videoSettings, factor: factor, imgAlt: title)
       </figure>
       <i class="fab fa-youtube"></i>
       } else {
