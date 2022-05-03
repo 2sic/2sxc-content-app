@@ -13,6 +13,10 @@
   var allContent = AsList(Data);
   var allContentLength = allContent.Count();
   var hasMultipleItems = allContentLength > 1;
+  var toolbarConfig = new [] {
+    "%edit?prefill:VarShowImage=false&prefill:VarShowText=false",
+    "%new?prefill:VarShowImage=false&prefill:VarShowText=false",
+  };
 }
 
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
@@ -20,7 +24,7 @@
 {
   var item = allContent.ElementAt(iteration);
   <div class="co-container-outer mb-4 mb-md-5">
-    <div class="co-container-inner" @Edit.TagToolbar(item)>
+    <div class="co-container-inner" @Edit.TagToolbar(item, toolbar: toolbarConfig)>
       <div class='row @(iteration == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")'>
         <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
           @* call sub-template to show the title with the correct H1-H6 tag *@

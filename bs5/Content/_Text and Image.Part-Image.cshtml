@@ -24,7 +24,7 @@
 }
   <figure class='@(imgItem.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
     @if (Text.Has(imgItem.ImageCaption)) {
-      <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.ImageCaption</figcaption>
+      <figcaption class="pt-1 px-4 pb-4 text-white">@imgItem.HasMetadata</figcaption>
     }
     @imgSvc.Picture(imgItem.Image, settings: Settings.Images.Content, factor: resizeFactor, imgClass:"img-fluid", imgAlt: Text.First(imgItem.ImageCaption, imgItem.Title))
   </figure>
