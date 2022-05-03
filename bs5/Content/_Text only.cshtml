@@ -11,8 +11,8 @@
   var hasMultipleItems = allContentLength > 1;
 
   var toolbarConfig = new [] {
-    "%edit?prefill:VarShowImage=false&prefill:VarShowText=false",
-    "%new?prefill:VarShowImage=false&prefill:VarShowText=false",
+    "%edit?prefill:VarShowImage=false",
+    "%new?prefill:VarShowImage=false",
   };
 }
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }

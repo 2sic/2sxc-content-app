@@ -30,7 +30,7 @@
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgField.Metadata.Description</figcaption>
     }
 
-    @imgSvc.Picture(imgItem.Field("Image"), settings: Settings.Images.Content, factor: resizeFactor, imgClass:"img-fluid", imgAlt: Text.First(imgField.Metadata.Description, imgItem.Title))
+    @imgSvc.Picture(imgItem.Field("Image"), settings: Settings.Images.Content, factor: resizeFactor, imgClass:"img-fluid")
   </figure>
 @if (imgItem.Presentation.ImageLightbox != false) {
   @:</a>
