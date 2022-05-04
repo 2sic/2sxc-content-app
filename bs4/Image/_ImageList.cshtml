@@ -19,7 +19,7 @@
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (img.Presentation.ImageLightbox != false) {
-          @:<a @fancyboxAttribute href="@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption="@(img.Presentation.TitleLightbox != false ? img.Title : "")">
+          @:<a @fancyboxAttribute href="@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption='@(img.Presentation.TitleLightbox != false ? img.Title : "")'>
         }
         <figure class='@(img.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
             @if (img.Presentation.TitleLegend != false) {

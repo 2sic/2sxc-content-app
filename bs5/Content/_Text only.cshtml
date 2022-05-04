@@ -16,13 +16,12 @@
   };
 }
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
-@for(var iteration = 0; iteration < allContentLength; iteration++)
+@for(var i = 0; i < allContentLength; i++)
 {
-  var item = allContent.ElementAt(iteration);
-  <div class='row @(iteration == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")'>
+  var item = allContent.ElementAt(i);
+  var isLastRowClass = i == allContentLength -1 ? "" : "mb-4 mb-lg-5";
+  <div class='row @isLastRowClass'>
     <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(item , toolbar : toolbarConfig )>
-    @* TODO: 2DAR - NO UNUSED CODE SHOULD REMAIN *@
-    @* <div class="clearfix co-content @styling col-md-@cols col-md-push-@padding" @Edit.TagToolbar(contentItem, toolbar: new [] { "-new", "+new?&prefill:VarShowImage=false&prefill:VarShowText=false", "remove" })> *@
       @* call sub-template to show the title with the correct H1-H6 tag *@
       @Html.Partial("../shared/_Header tag.cshtml", new { Title = item.Title })
       @Html.Raw(item.Text)

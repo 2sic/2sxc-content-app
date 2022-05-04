@@ -80,5 +80,5 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Moved access to services to ToSic.Sxc.Services
   * Changed images to use the IImageService and Picture tags
   * Enabled image configurations 
-  * Cleaned up 
+  * Replaced data-enableoptimizations with IPageService.AssetAttributes()
   
