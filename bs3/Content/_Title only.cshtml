@@ -15,7 +15,7 @@
 @for(var i = 0; i < allContentLength; i++)
 {
   var item = allContent.ElementAt(i);
-  var isLasRowClass = i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5";
+  var isLastRowClass = i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5";
   <div class="co-container-outer">
     <div class='co-container-inner clearfix co-content @isLastRowClass' @Edit.TagToolbar(item, toolbar: toolbarConfig)>
       @* call sub-template to show the title with the correct H1-H6 tag *@
