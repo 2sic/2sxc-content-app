@@ -16,13 +16,13 @@
   @if (Text.Has(person.Mobile)) {
     <div itemprop="telephone">
       <i class="fas fa-mobile text-center" style="width:30px;" aria-hidden="true"></i>
-      <a href="tel:@person.Mobile.Replace(" ", "")" itemprop="telephone">@person.Mobile</a>
+      <a href='tel:@person.Mobile.Replace(" ", "")' itemprop="telephone">@person.Mobile</a>
     </div>
   }
   @if (Text.Has(person.Phone)) {
     <div itemprop="telephone">
       <i class="fas fa-phone text-center" style="width:30px;" aria-hidden="true"></i>
-      <a href="tel:@person.Phone.Replace(" ", "")" itemprop="telephone">@person.Phone</a>
+      <a href='tel:@person.Phone.Replace(" ", "")' itemprop="telephone">@person.Phone</a>
     </div>
   }
    @if (Text.Has(person.Email)) {

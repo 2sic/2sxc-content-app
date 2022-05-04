@@ -16,7 +16,7 @@
     }
       @if (Text.Has(link.Image)) {
         <figure class="effect-zoom">
-          @imgSvc.Picture(link.Field("Image"), settings: Settings.Images.Content, factor: "1/3")
+          @imgSvc.Picture(link.Field("Image"), settings: "Content", factor: "1/3")
         </figure>
       } else {
         <div class="bg-primary placeholder"></div>

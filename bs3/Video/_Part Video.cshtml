@@ -27,7 +27,7 @@
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
 
   var imgSvc = GetService<IImageService>();
-  var videoSettings = imgSvc.Settings(Settings.Images.Content, height: height);
+  var videoSettings = imgSvc.Settings("Content", height: height);
 
   var videoImage = "https://img.youtube.com/vi/" + @youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
   
@@ -55,7 +55,7 @@
 
   <div class="co-video-embed embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
-      @imgSvc.Picture(videoImage, settings: Settings.Images.Content, imgClass:"img-responsive lazy")
+      @imgSvc.Picture(videoImage, settings: "Content", imgClass:"img-responsive lazy")
 
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>

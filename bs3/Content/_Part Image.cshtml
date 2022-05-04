@@ -19,10 +19,11 @@
   if (imgItem.Presentation.TitleLightbox != false) {
     lightboxCaption = Text.First(imgField.Metadata.Description, imgItem.Title);
   }
-  
+  var wrapInLink = imgItem.Presentation.ImageLightbox != false;
+
   var imgSvc = GetService<IImageService>();
 }
-@if (imgItem.Presentation.ImageLightbox != false) {
+@if (wrapInLink) {
   @:<a @DynamicModel.FancyboxAttribute href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption">
 }
   <figure>
@@ -30,8 +31,8 @@
     @if (Text.Has(imgField.Metadata.Description)) {
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgField.Metadata.Description</figcaption>
     }
-    @imgSvc.Picture(imgItem.Field("Image"), settings: Settings.Images.Content, factor: resizeFactor)
+    @imgSvc.Picture(imgItem.Field("Image"), settings: "Content", factor: resizeFactor)
   </figure>
-@if (imgItem.Presentation.ImageLightbox != false) {
+@if (wrapInLink) {
   @:</a>
 }

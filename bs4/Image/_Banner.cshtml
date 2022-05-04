@@ -5,7 +5,7 @@
   // Most Params come come from System-Settings, Height from View Settings
   var height = Convert.To(Settings.ImageHeight, fallback: 400); // Should be set on all banner-views
   var imgSvc = GetService<IImageService>();
-  var bannerSettings = imgSvc.Settings(Settings.Images.Content, height: height);
+  var bannerSettings = imgSvc.Settings("Content", height: height);
 }
 
 <div class="co-header" @Edit.TagToolbar(Content)>
