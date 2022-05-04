@@ -3,10 +3,9 @@
   var allContent = AsList(Data);
   var allContentLength = allContent.Count();
   var hasMultipleItems = allContentLength > 1;
-  var toolbarConfig = new [] {
-    "%edit?prefill:VarShowImage=false&prefill:VarShowText=false",
-    "%new?prefill:VarShowImage=false&prefill:VarShowText=false",
-  };
+  
+  var buttonConfig = "?prefill:VarShowImage=false&prefill:VarShowText=false";
+  var toolbarConfig = new [] { "%edit" + buttonConfig, "%new" + buttonConfig };
 }
 
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
