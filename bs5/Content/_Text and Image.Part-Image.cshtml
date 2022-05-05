@@ -26,7 +26,14 @@
 }
 
 @if (wrapInLink) {
-  @:<a @DynamicModel.FancyboxAttribute href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption">
+  <div id="@DynamicModel.FancyboxAttribute" style="display:none;"> 
+  @{
+    var lightboxImage = imgSvc.Picture(imgItem.Field("Image"), settings: "Content");
+  }
+  @lightboxImage
+  </div>
+  @:<a @DynamicModel.FancyboxAttribute data-src="#@DynamicModel.FancyboxAttribute" data-preload="false" data-caption="@lightboxCaption">
+  @* @:<a @DynamicModel.FancyboxAttribute href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption"> *@
 }
   <figure class='@(imgItem.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
     @if (Text.Has(imgField.Metadata.Description)) {
@@ -34,6 +41,6 @@
     }
     @imgSvc.Picture(imgItem.Field("Image"), settings: "Content", factor: resizeFactor)
   </figure>
-@if (imgItem.Presentation.ImageLightbox != false) {
+@if (wrapInLink) {
   @:</a>
 }
