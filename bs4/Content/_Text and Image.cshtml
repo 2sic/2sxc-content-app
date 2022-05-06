@@ -13,9 +13,6 @@
   var allContent = AsList(Data);
   var allContentLength = allContent.Count();
   var hasMultipleItems = allContentLength > 1;
-
-  var buttonConfig = "?prefill:VarShowImage=true&prefill:VarShowText=true";
-  var toolbarConfig = new [] { "%edit" + buttonConfig, "%new" + buttonConfig };
 }
 
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
@@ -23,7 +20,7 @@
 {
   var item = allContent.ElementAt(i);
   <div class="co-container-outer mb-4 mb-md-5">
-    <div class="co-container-inner" @Edit.TagToolbar(item, toolbar: toolbarConfig)>
+    <div class="co-container-inner" @Edit.TagToolbar(item)>
       @{
         var isLastRowClass = i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5";
       }
