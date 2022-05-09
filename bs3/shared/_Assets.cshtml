@@ -3,7 +3,7 @@
 @{
   // Basics / Preparation
 var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
-  var page = GetService<IPageService>();  // Service to set titles etc. on the page
+  var pageSvc = GetService<IPageService>();  // Service to set titles etc. on the page
 
   // show warning for admin if koi.json is missing
   if (pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
@@ -29,20 +29,20 @@ var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS info
 
   // Include icon font - the exact HTML for this is in the SystemSettings
   if (icons) {
-    page.Activate("FontAwesome5");
+    pageSvc.Activate("FontAwesome5");
   }
 
 }
 
-@if (styles) { <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" @(page.AssetAttributes()) /> }
+@if (styles) { <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" @pageSvc.AssetAttributes() /> }
 
 @if (fancybox || scripts || videos) {
-  page.Activate("turnOn"); // see https://r.2sxc.org/turnon
-  <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" @(page.AssetAttributes(position:"bottom"))></script>
+  pageSvc.Activate("turnOn"); // see https://r.2sxc.org/turnon
+  <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" @pageSvc.AssetAttributes(position:"bottom")></script>
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
   <turnOn turn-on='{ "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
-@if (height) { <script type="text/javascript" src="@App.Path/bs3/dist/lib/jquery.syncHeightResponsive.min.js" data-enableoptimizations="bottom"></script> }
+@if (height) { <script type="text/javascript" src="@App.Path/bs3/dist/lib/jquery.syncHeightResponsive.min.js" @pageSvc.AssetAttributes(position:"bottom")></script> }
 
 @* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if (videos) {
@@ -51,7 +51,7 @@ var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS info
 
 @* Add Fancybox if required *@
 @if (fancybox) {
-  page.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon
+  pageSvc.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon
 
   // Init options for fancybox binding
   // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
