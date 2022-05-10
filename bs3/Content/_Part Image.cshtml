@@ -24,7 +24,9 @@
   var imgSvc = GetService<IImageService>();
 }
 @if (wrapInLink) {
-  @:<a @DynamicModel.FancyboxAttribute href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption">
+  var lbPic = imgSvc.Picture(imgItem.Field("Image"), settings: "Lightbox");
+  @:<a @DynamicModel.FancyboxAttribute data-src="@lbPic.Url" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@lightboxCaption">
+  @* @:<a @DynamicModel.FancyboxAttribute href='@Link.Image(imgItem.Image, Settings.Images.Lightbox)' data-caption="@lightboxCaption"> *@
 }
   <figure>
     <div class="overlay w-100 h-100"></div>

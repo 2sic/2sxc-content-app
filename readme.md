@@ -81,4 +81,6 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Changed images to use the IImageService and Picture tags
   * Enabled image configurations 
   * Replaced data-enableoptimizations with IPageService.AssetAttributes()
+* v13.10.03 2022-05 
+  * Changed fancybox to use the IImageService to render images
   

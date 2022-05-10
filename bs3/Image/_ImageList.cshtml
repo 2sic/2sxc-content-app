@@ -3,35 +3,37 @@
 @using ToSic.Sxc.Services;
 @{
   var imgSvc = GetService<IImageService>();
-  
+
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / Settings.MaxPerRow;
   var fraction = 1 / Settings.MaxPerRow; // percentage of the content-width
 
   // define dom attribute for fancybox
-  var fancyboxAttribute = "app-content-fancybox-" + CmsContext.Module.Id; 
+  var fancyboxAttribute = "app-content-fancybox-" + CmsContext.Module.Id;
 }
 
 <div class="co-container-outer">
   <div class="co-container-inner">
     <div class="row">
     @foreach (var img in AsList(Data)) {
+      var wrapInLink = img.Presentation.ImageLightbox != false;
 
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
-        @if (img.Presentation.ImageLightbox != false) {
-          @:<a @fancyboxAttribute href="@Link.Image(img.Image, Settings.Images.Lightbox)" data-caption='@(img.Presentation.TitleLightbox != false ? img.Title : "")'>
+        @if (wrapInLink) {
+          var lbPic = imgSvc.Picture(img.Field("Image"), settings: "Lightbox");
+          @:<a @fancyboxAttribute data-src="@lbPic.Url" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption='@(img.Presentation.TitleLightbox != false ? img.Title : "")'>
         }
         <figure>
             <div class="overlay w-100 h-100"></div>
             @if (img.Presentation.TitleLegend != false) {
               <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
             }
-            @imgSvc.Picture(img.Field("Image") , settings: "Content", factor: fraction, imgClass:"w-100") 
+            @imgSvc.Picture(img.Field("Image") , settings: "Content", factor: fraction, imgClass:"w-100")
 
         </figure>
 
-        @if (img.Presentation.ImageLightbox != false) {
+        @if (wrapInLink) {
           @:</a>
         }
 
