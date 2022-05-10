@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.10.00" ExportDate="2022-05-04T17:04:12.420252+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.11.00" ExportDate="2022-05-10T14:29:12.5361315+02:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -6249,8 +6249,8 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a069a1de-f04b-44d7-8ad6-6af85a0476fd" Json="True">
-      <Value Key="Content" Value="null,null,null,null,null" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,9b5a98d6-715e-4998-89cf-66cfae8efd70,null,null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null,null,null,null" Type="Entity" />
       <Value Key="Template" Value="64cc61e5-121f-4910-a61c-82717d61b6fd" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="1e03119e-7409-467b-8c7d-a771fe5955a4" Json="True">
@@ -6710,7 +6710,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="13.10.00" Type="String">
+      <Value Key="Version" Value="13.10.03" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8091,7 +8091,7 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="1a86b080-9e0d-4207-97d2-04edf80b4f2f" AttributeSetName="⚙️Image" EntityGUID="e7b647d4-9550-469e-a964-e4ae24258f82" Json="True">
-      <Value Key="Advanced" Value="{&#xD;&#xA;  &quot;recipe&quot;: {&#xD;&#xA;    &quot;setWidth&quot;: true, &#xD;&#xA;    &quot;setHeight&quot;: true, &#xD;&#xA;    &quot;variants&quot;: &quot;2* , 1*, 0.75*, 0.5*&quot;,&#xD;&#xA;    &quot;attributes&quot;: {&#xD;&#xA;      &quot;sizes&quot;: &quot;(max-width: 1400px) 150px, (max-width:1200px) 120px, (max-width: 991px) 80px, (max-width: 767px) 140px, (max-width: 575px) 152px&quot;&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;}" Type="String">
+      <Value Key="Advanced" Value="{&#xD;&#xA;  &quot;recipe&quot;: {&#xD;&#xA;    &quot;setWidth&quot;: true, &#xD;&#xA;    &quot;setHeight&quot;: true, &#xD;&#xA;    &quot;variants&quot;: &quot;2* , 1*, 0.75*, 0.5*&quot;,&#xD;&#xA;    &quot;attributes&quot;: {&#xD;&#xA;      &quot;loading&quot;: &quot;lazy&quot;,&#xD;&#xA;      &quot;sizes&quot;: &quot;(max-width: 1400px) 150px, (max-width:1200px) 120px, (max-width: 991px) 80px, (max-width: 767px) 140px, (max-width: 575px) 152px&quot;&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;}" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="AspectRatio" Value="1" Type="Number">
@@ -8156,23 +8156,86 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="16d7f232-0b81-4982-8357-9bb0f2d47609" Json="True">
+      <Value Key="Content" Value="2269a412-3d26-4319-98e5-a066e6c25803" Type="Entity" />
+      <Value Key="Presentation" Value="null" Type="Entity" />
+      <Value Key="Template" Value="c7af4d82-6ec3-4507-95bd-c8c7962b7925" Type="Entity" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="Content" EntityGUID="2269a412-3d26-4319-98e5-a066e6c25803">
+      <Value Key="Image" Value="file:6154" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ImageCaption" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="&lt;p&gt;test-text&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="test" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="9b5a98d6-715e-4998-89cf-66cfae8efd70">
+      <Value Key="Image" Value="file:6155" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="test" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="be34f64b-7d1f-4ad0-b488-dabbbb01a186" AttributeSetName="LightSpeedOutputDecorator" EntityGUID="fa0406f4-fe52-4def-9c85-5cc68a194bd0" Json="True" KeyNumber="20">
+      <Value Key="Advanced" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ByUrlParameters" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Duration" Value="14400" Type="Number">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationEditors" Value="300" Type="Number">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationSystemAdmin" Value="300" Type="Number">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationUsers" Value="-1" Type="Number">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="IsEnabled" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="✅ - Users 14400s, Reg 🚫, Editors 300s, SysAdmins 300s" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlParametersCaseSensitive" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
     <File Id="5899" RelativePath="adam\Content\Z02Nnt9oI0uWji44g8Ss6w\Photo\demo-portrait.jpg" />
     <File Id="6126" RelativePath="adam\Content\FGY0Y11vmUWniKQtSGOqLA\Image\Platzhalterbild_Inhalt-1.jpg" />
     <File Id="6127" RelativePath="adam\Content\JtB9k8NR4kGmHx60Hopq1A\Image\Platzhalterbild_Inhalt-1.jpg" />
+    <File Id="6154" RelativePath="adam\Content\EqRpIiY9GUOY5aBm5sJYAw\Image\thumb16.jpg" />
+    <File Id="6155" RelativePath="adam\Content\1pham15xmEmJz2bPro79cA\Image\80-806204_wallpaper-waves-ocean-stock-hd-photography-high-resolution.jpg" />
     <File Id="6115" RelativePath="adam\Content\gYs3kM81JkuGbwWib6fsMA\Image\Platzhalterbild_Inhalt-1.jpg" />
     <File Id="6137" RelativePath="adam\Content\Iej4TyZnAkaSgNLTPzulog\Image\binary-code-background-digital-abstract-technology-cyber-122478205.jpg" />
+    <File Id="6153" RelativePath="adam\Content\y9qulMxjJkKtZIrfWCtRSw\Image\thumb16.jpg" />
   </PortalFiles>
   <PortalFolders>
     <Folder Id="2984" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/Image/" />
     <Folder Id="12626" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/" />
     <Folder Id="13697" RelativePath="adam/Content/FGY0Y11vmUWniKQtSGOqLA/Image/" />
     <Folder Id="13699" RelativePath="adam/Content/JtB9k8NR4kGmHx60Hopq1A/Image/" />
+    <Folder Id="13723" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/Image/" />
+    <Folder Id="13725" RelativePath="adam/Content/1pham15xmEmJz2bPro79cA/Image/" />
     <Folder Id="13675" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/Image/" />
     <Folder Id="13713" RelativePath="adam/Content/Iej4TyZnAkaSgNLTPzulog/Image/" />
+    <Folder Id="13721" RelativePath="adam/Content/y9qulMxjJkKtZIrfWCtRSw/Image/" />
     <Folder Id="285" RelativePath="adam/Content/" />
+    <Folder Id="13724" RelativePath="adam/Content/1pham15xmEmJz2bPro79cA/" />
     <Folder Id="2983" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/" />
     <Folder Id="3320" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/Text/" />
     <Folder Id="13404" RelativePath="adam/Content/5Tb6OCa-wkuP68L9Ud97lg/" />
@@ -8181,6 +8244,7 @@
     <Folder Id="13711" RelativePath="adam/Content/aZ4iE4fiOk-ld6z2NyLzug/Image/" />
     <Folder Id="13708" RelativePath="adam/Content/bhi2N9oaTEevrjSdU6TAUA/" />
     <Folder Id="13709" RelativePath="adam/Content/bhi2N9oaTEevrjSdU6TAUA/Image/" />
+    <Folder Id="13722" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/" />
     <Folder Id="13696" RelativePath="adam/Content/FGY0Y11vmUWniKQtSGOqLA/" />
     <Folder Id="13674" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/" />
     <Folder Id="13704" RelativePath="adam/Content/hc-xFgA_iU-QWEpPzns8Bg/" />
@@ -8191,6 +8255,7 @@
     <Folder Id="13707" RelativePath="adam/Content/Ke3yEgVHikyDVsbVyf6c0A/Image/" />
     <Folder Id="13714" RelativePath="adam/Content/LmEiSsl99kO4XkUspkY5IQ/" />
     <Folder Id="13715" RelativePath="adam/Content/LmEiSsl99kO4XkUspkY5IQ/Image/" />
+    <Folder Id="13720" RelativePath="adam/Content/y9qulMxjJkKtZIrfWCtRSw/" />
     <Folder Id="12625" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/" />
     <Folder Id="13634" RelativePath="adam/Content/ZunsPe4q2kG_87F_pTsCmw/" />
     <Folder Id="13635" RelativePath="adam/Content/ZunsPe4q2kG_87F_pTsCmw/Photo/" />
