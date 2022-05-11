@@ -3,7 +3,6 @@
 @using System.Text.RegularExpressions;
 @using ToSic.Sxc.Services;
 @{
-
   /* Partial template which is re-used in _Video.cshtml to show the video preview and link-to-lightbox for the video */
 
 	var video = DynamicModel.Video;
@@ -14,21 +13,22 @@
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
+  var youTubeVideoImage = "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
+  
   // this is the parameter passed in from the calling page
   // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
   // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
   var factor = (DynamicModel.Columns ?? 12) + "/12";
 
-  var image = video.Field("Image");
+  var imageSelection = Text.First(video.ImageSelection, Content.ImageSelection);
+  var image = (!Text.Has(imageSelection) ? null : imageSelection == "upload" ? video.Field("Image") : imageSelection == "default" ? App.Resources.Field("VideoDefaultPreviewImage") : youTubeVideoImage);
   var title = Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title);
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
-
+  
   var imgSvc = GetService<IImageService>();
   var videoSettings = imgSvc.Settings("Content", aspectRatio: "16:9");
-
-  var videoImage = "https://img.youtube.com/vi/" + @youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
-  
 }
+
 @if (hasVideoLightbox != false) {
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos"; 
@@ -39,10 +39,8 @@
       <figure class="effect-zoom">                
         @imgSvc.Picture(image, settings: videoSettings, factor: factor, imgAlt: title)
       </figure>
-      <i class="fab fa-youtube"></i>
-      } else {
-        <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
       }
+      <i class="fab fa-youtube"></i>
   </a>
   @* activate scripts because they are needed by fancybox *@
   @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
@@ -51,8 +49,9 @@
   // ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
   <div class="co-video-embed ratio ratio-16x9 embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
-      @imgSvc.Picture(videoImage, settings: "Content", imgClass:"img-fluid lazy")
-
+      if (image != null) {
+        @imgSvc.Picture(image, settings: videoSettings, imgClass:"img-fluid lazy")
+      }
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>
       </div>

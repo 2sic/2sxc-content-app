@@ -13,6 +13,8 @@
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
+  var youTubeVideoImage = "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
+
   // configuration
   var quality = (int)Settings.Images.Content.Quality;
 
@@ -22,31 +24,28 @@
   var width = (int)(Settings.Images.Content.Width * imgColumns / 12);
   int height = (int)(width * 9/16);
 
-  var image = video.Field("Image");
+  var imageSelection = Text.First(video.ImageSelection, Content.ImageSelection);
+
+  var image = (!Text.Has(imageSelection) ? null : imageSelection == "upload" ? video.Field("Image") : imageSelection == "default" ? App.Resources.Field("VideoDefaultPreviewImage") : youTubeVideoImage);
   var title = Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title);
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
 
   var imgSvc = GetService<IImageService>();
   var videoSettings = imgSvc.Settings("Content", height: height);
-
-  var videoImage = "https://img.youtube.com/vi/" + @youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
-  
 }
 @if (hasVideoLightbox != false) {
   // open in lightbox
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos"; 
   <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
-    @if (image != null) {
     <figure>
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
         <i class="fab fa-youtube"></i>
       </div>
-      @imgSvc.Picture(image, width: width, settings: videoSettings, imgAlt: title)
+      @if (image != null) {
+        @imgSvc.Picture(image, width: width, settings: videoSettings, imgAlt: title)
+      }
     </figure>
-    } else {
-      <div class="dnnFormMessage dnnFormWarning">Preview Image not found. Please add Preview Image or turn off Video-Lightbox</div>
-    }
   </a>
   @* activate scripts because they are needed by fancybox *@
   @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
@@ -55,8 +54,9 @@
 
   <div class="co-video-embed embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
-      @imgSvc.Picture(videoImage, settings: "Content", imgClass:"img-responsive lazy")
-
+      if (image != null) {
+        @imgSvc.Picture(image, settings: videoSettings, imgClass:"img-responsive lazy")
+      }
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>
       </div>
