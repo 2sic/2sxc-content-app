@@ -17,7 +17,7 @@
   // prepare the title, either the default or the additional image caption
   var lightboxCaption = "";
   if (imgItem.Presentation.TitleLightbox != false) {
-    lightboxCaption = Text.First(imgField.Metadata.Description, imgItem.Title);
+    lightboxCaption = imgField.Metadata.Description;
   }
   var wrapInLink = imgItem.Presentation.ImageLightbox != false;
 
