@@ -366,6 +366,17 @@
 
   a {
     &.co-video {
+
+      &.co-video-no-image {
+        figure {
+          .overlay {
+            position: static;
+            background-color: rgba($dark,0.4);
+          }
+        }
+        
+      }
+      
       figure {
         position: relative;
 

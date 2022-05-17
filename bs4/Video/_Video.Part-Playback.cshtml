@@ -34,7 +34,7 @@
   var fancyboxAttribute = "app-content-fancybox-videos"; 
 
   // open in lightbox
-  <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
+  <a @fancyboxAttribute class='co-video @(!Text.Has(imageSelection) ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
       @if (image != null) {
       <figure class="effect-zoom">                
         @imgSvc.Picture(image, settings: videoSettings, factor: factor, imgAlt: title)

@@ -37,7 +37,7 @@
   // open in lightbox
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos"; 
-  <a @fancyboxAttribute class="co-video" data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
+  <a @fancyboxAttribute class='co-video @(!Text.Has(imageSelection) ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
     <figure>
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
         <i class="fab fa-youtube"></i>

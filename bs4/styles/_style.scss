@@ -53,6 +53,24 @@ a {
     display: block;
     position: relative;
 
+    &.co-video-no-image {
+      text-align: center;
+      background-color: rgba($dark,0.4);          
+      
+      > svg {
+        transform: none;
+        position: static;
+      }
+
+      figure {
+        .overlay {
+          position: static;
+          background-color: rgba($dark,0.4);          
+        }
+      }
+      
+    }
+
     svg {
       position: absolute;
       top: 50%;

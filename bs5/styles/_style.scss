@@ -53,6 +53,25 @@
     &.co-video {
       display: block;
       position: relative;
+
+      &.co-video-no-image {
+        background-color: rgba($dark,0.4);
+        
+        > svg {
+          position: relative;
+          transform: translate(-50%, 0);
+          margin: 10px 0;
+        }
+
+        figure {
+          .overlay {
+            position: static;
+            background-color: rgba($dark,0.4);
+          }
+        }
+        
+      }
+      
       figure {
         z-index: 0;
       }
