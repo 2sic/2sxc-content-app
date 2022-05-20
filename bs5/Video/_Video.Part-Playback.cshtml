@@ -22,7 +22,7 @@
   
   var imageSelection = Text.First(video.ImageSelection, Content.ImageSelection);
   var image = (!Text.Has(imageSelection) ? null : imageSelection == "upload" ? video.Field("Image") : imageSelection == "default" ? App.Resources.Field("VideoDefaultPreviewImage") : youTubeVideoImage);
-  var title = Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title);
+  var title = (Text.Has(Content.Image) ? Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title) : Text.First(video.Title, Content.Title));
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
   
   var imgSvc = GetService<IImageService>();
