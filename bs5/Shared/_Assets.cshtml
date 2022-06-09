@@ -22,7 +22,7 @@
   // This sub template just places all the very-often used
   // style and link tags into the code.
   // We put this in a sub-template because we use it so often, and want to make sure
-  // nobody accidentally uses the wrong url or forgets data-enableoptimizations
+  // nobody accidentally uses the wrong url or forgets pageSvc.AssetAttributes()
   string partList = DynamicModel.parts;
   var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
   var fancybox = parts.Contains("fancybox");
