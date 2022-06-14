@@ -8,7 +8,7 @@ These are the primary **Content** parts for 2sxc 12.05 supporting many CSS Frame
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v12.05
+| 2sxc                | ✅    | requires 2sxc v13.10
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
 | No jQuery           | ✅    | 
@@ -17,7 +17,7 @@ These are the primary **Content** parts for 2sxc 12.05 supporting many CSS Frame
 | Source & License    | ✅    | included, ISC/MIT
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
-| Best Practices      | ✅    | Uses v12.05 conventions
+| Best Practices      | ✅    | Uses v13.10 conventions
 | Bootstrap 3         | ✅    | Optimized for v3.3
 | Bootstrap 4         | ✅    | Optimised for latest v4
 | Bootstrap 5         | ✅    | Optimized for v5.1
