@@ -83,6 +83,6 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Replaced data-enableoptimizations with IPageService.AssetAttributes()
 * v13.10.03 2022-05 
   * Changed fancybox to use the IImageService to render images
-* v13.11.00 2022-06
+* v14.07.00 2022-06
   * Replaced all base classes with their new sxc14 equivalents
   * Changed from GetService<> to the new ServiceKit14
