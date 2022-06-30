@@ -86,3 +86,5 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 * v14.07.00 2022-06
   * Replaced all base classes with their new sxc14 equivalents
   * Changed from GetService<> to the new ServiceKit14
+  * Updated webpack 
+  * Changed all toolbar configurations to use the IToolbarService
