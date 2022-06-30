@@ -1,9 +1,8 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
   // Activate turnOn in the page - see https://r.2sxc.org/turnon
-  GetService<IPageService>().Activate("turnOn");
+  Kit.Page.Activate("turnOn");
 
   // Merge the Presentation with Resources & Settings to get the best possible settings/resources
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
@@ -12,8 +11,7 @@
 
   // They Google API key is in the App-Settings. See instructions: https://azing.org/2sxc/r/ApSwlItl
   // The Preset-data is encrypted, so we must decrypt it to use
-  var secureData = GetService<ISecureDataService>();
-  var googleApikey = secureData.Parse(mapSettings.ApiKey).Value;
+  var googleApikey = Kit.SecureData.Parse(mapSettings.ApiKey).Value;
 
   // GPS is a JSON field, so we must use AsDynamic to easily access the properties
   var gps = AsDynamic(Content.GPS);
@@ -30,4 +28,4 @@
 }
 
 @* Instruct turnOn to activate GoogleMaps with the API key and everything once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(Convert.Json.ToJson(data)) }'></turnOn>
+<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(Kit.Json.ToJson(data)) }'></turnOn>

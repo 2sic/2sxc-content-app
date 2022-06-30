@@ -3,7 +3,7 @@ using System.Dynamic;
 using System.IO;
 using ToSic.Razor.Blade;
 
-public class LinkHelper: Custom.Hybrid.Code12
+public class LinkHelper: Custom.Hybrid.Code14
 {
   public dynamic LinkInfos(dynamic item) {
     return LinkInfos(item.Link, item.Window, item.Icon);

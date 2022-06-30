@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @{
   /* This Template is used in ca. 3 Views which only show the title and the text */
 
@@ -10,8 +10,7 @@
   var allContentLength = allContent.Count();
   var hasMultipleItems = allContentLength > 1;
 
-  var buttonConfig = "?prefill:VarShowImage=false";
-  var toolbarConfig = new [] { "%edit" + buttonConfig, "%new" + buttonConfig };
+  var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false");
 }
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
 @for(var i = 0; i < allContentLength; i++)
@@ -21,7 +20,7 @@
   <div class="co-container-outer mb-4 mb-md-5">
     <div class="co-container-inner">
       <div  class='row @isLastRowClass'>
-        <div class='col-md-@cols offset-md-@padding @styling' @Edit.TagToolbar(item, toolbar: toolbarConfig)>
+        <div class='col-md-@cols offset-md-@padding @styling' @itemToolbar.For(item)>
           @* call sub-template to show the title with the correct H1-H6 tag *@
           @Html.Partial("../shared/_Header tag.cshtml", new { Title = item.Title })
           @Html.Raw(item.Text)

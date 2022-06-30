@@ -1,9 +1,6 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
-  var imgSvc = GetService<IImageService>();
-
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / Settings.MaxPerRow;
   var fraction = 1 / Settings.MaxPerRow; // percentage of the content-width
@@ -21,7 +18,7 @@
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (wrapInLink) {
-          var lbPic = imgSvc.Picture(img.Field("Image"), settings: "Lightbox");
+          var lbPic = Kit.Image.Picture(img.Field("Image"), settings: "Lightbox");
           @:<a @fancyboxAttribute data-src="@img.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption='@(img.Presentation.TitleLightbox != false ? img.Title : "")'>
         }
         <figure>
@@ -29,7 +26,7 @@
             @if (img.Presentation.TitleLegend != false) {
               <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
             }
-            @imgSvc.Picture(img.Field("Image") , settings: "Content", factor: fraction, imgClass:"w-100")
+            @Kit.Image.Picture(img.Field("Image") , settings: "Content", factor: fraction, imgClass:"w-100")
 
         </figure>
 

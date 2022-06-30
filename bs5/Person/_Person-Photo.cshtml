@@ -1,13 +1,11 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
   /* This is used in two views */
   var isRound = CmsContext.View.Identifier == "round";
 
   var aspectRatio = isRound ? "1" : "1:1.25";
-  var imgSvc = GetService<IImageService>();
-  var photoSettings = imgSvc.Settings("PersonPhoto", aspectRatio: aspectRatio);
+  var photoSettings = Kit.Image.Settings("PersonPhoto", aspectRatio: aspectRatio);
 
   var mbClass = isRound ? "mb-2" : "";
   var imgClass = isRound ? "rounded-circle" : "";
@@ -20,7 +18,7 @@
     <div class="col-md-6 mb-4 mb-md-5 row" @Edit.TagToolbar(person)>
       <div class="col-4 @mbClass">
         @if (Text.Has(person.Photo)) {
-          @imgSvc.Picture(person.Field("Photo") , settings: photoSettings, imgClass:"img-fluid " + imgClass)
+          @Kit.Image.Picture(person.Field("Photo") , settings: photoSettings, imgClass:"img-fluid " + imgClass)
         
         } else {
           <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>

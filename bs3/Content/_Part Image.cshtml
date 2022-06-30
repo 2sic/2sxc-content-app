@@ -1,6 +1,5 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
   /* This is a partial template which is re-used in the Content-Templates */
 
@@ -20,11 +19,9 @@
     lightboxCaption = imgField.Metadata.Description;
   }
   var wrapInLink = imgItem.Presentation.ImageLightbox != false;
-
-  var imgSvc = GetService<IImageService>();
 }
 @if (wrapInLink) {
-  var lbPic = imgSvc.Picture(imgItem.Field("Image"), settings: "Lightbox");
+  var lbPic = Kit.Image.Picture(imgItem.Field("Image"), settings: "Lightbox");
   @:<a @DynamicModel.FancyboxAttribute data-src="@imgItem.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@lightboxCaption">
 }
   <figure>
@@ -32,7 +29,7 @@
     @if (Text.Has(imgField.Metadata.Description)) {
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgField.Metadata.Description</figcaption>
     }
-    @imgSvc.Picture(imgItem.Field("Image"), settings: "Content", factor: resizeFactor)
+    @Kit.Image.Picture(imgItem.Field("Image"), settings: "Content", factor: resizeFactor)
   </figure>
 @if (wrapInLink) {
   @:</a>

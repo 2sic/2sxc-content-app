@@ -1,11 +1,9 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @* This adds all link/script tags *@
 @RenderPage("../shared/_Assets.cshtml", new { parts = "styles,scripts,height"})
 
 @{
-  var imgSvc = GetService<IImageService>();
   // get helper commands
   var linkHelper = CreateInstance("_LinkHelper.cshtml");
 }
@@ -27,7 +25,7 @@
             {
               <figure>
                 <div class="co-overlay"></div>
-                @imgSvc.Picture(link.Field("Image"), width: "690", settings: imgSvc.Settings("Content"))
+                @Kit.Image.Picture(link.Field("Image"), width: "690", settings: Kit.Image.Settings("Content"))
 
               </figure>
             } else {

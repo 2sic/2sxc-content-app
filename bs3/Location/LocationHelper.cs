@@ -4,7 +4,7 @@ using System.IO;
 using System.Globalization;
 using ToSic.Razor.Blade;
 
-public class LocationHelper: Custom.Hybrid.Code12
+public class LocationHelper: Custom.Hybrid.Code14
 {
   // check a link, prepare target window, icon etc. based on various settings
   public MapInfo MapInfos(dynamic content) {

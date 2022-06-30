@@ -1,6 +1,5 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / Settings.MaxPerRow;
@@ -8,8 +7,6 @@
   
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-" + CmsContext.Module.Id; 
-  
-  var imgSvc = GetService<IImageService>();
 }
 
 <div class="row">
@@ -19,14 +16,14 @@
   <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns py-3' @Edit.TagToolbar(img)>
 
     @if (wrapInLink) {
-      var lbPic = imgSvc.Picture(img.Field("Image"), settings: "Lightbox");
+      var lbPic = Kit.Image.Picture(img.Field("Image"), settings: "Lightbox");
       @:<a @fancyboxAttribute data-src="@img.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption='@(img.Presentation.TitleLightbox != false ? img.Title : "")'>
     }
     <figure class='@(img.Presentation.ImageLightbox != false ? "effect-zoom" : "") mb-0'>
         @if (img.Presentation.TitleLegend != false) {
           <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
         }
-        @imgSvc.Picture(img.Field("Image"), settings: "Content", factor: factor, imgClass:"w-100")
+        @Kit.Image.Picture(img.Field("Image"), settings: "Content", factor: factor, imgClass:"w-100")
         
     </figure>
 

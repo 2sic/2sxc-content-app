@@ -1,7 +1,6 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
 @using System.Text.RegularExpressions;
-@using ToSic.Sxc.Services;
 @{
   /* Partial template which is re-used in _Video.cshtml to show the video preview and link-to-lightbox for the video */
 
@@ -25,8 +24,7 @@
   var title = (Text.Has(Content.Image) ? Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title) : Text.First(video.Title, Content.Title));
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
   
-  var imgSvc = GetService<IImageService>();
-  var videoSettings = imgSvc.Settings("Content", aspectRatio: "16:9");
+  var videoSettings = Kit.Image.Settings("Content", aspectRatio: "16:9");
 }
 
 @if (hasVideoLightbox != false) {
@@ -37,7 +35,7 @@
   <a @fancyboxAttribute class='co-video @(!Text.Has(imageSelection) ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
       @if (image != null) {
       <figure class="effect-zoom">                
-        @imgSvc.Picture(image, settings: videoSettings, factor: factor, imgAlt: title)
+        @Kit.Image.Picture(image, settings: videoSettings, factor: factor, imgAlt: title)
       </figure>
       }
       <i class="fab fa-youtube"></i>
@@ -50,7 +48,7 @@
   <div class="co-video-embed ratio ratio-16x9 embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
       if (image != null) {
-        @imgSvc.Picture(image, settings: videoSettings, imgClass:"img-fluid lazy")
+        @Kit.Image.Picture(image, settings: videoSettings, imgClass:"img-fluid lazy")
       }
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>
