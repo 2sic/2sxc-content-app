@@ -10,22 +10,23 @@
   var imgField = imgItem.Field("Image");
 
   // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
-  var imgColumns = (int)(DynamicModel.Columns ?? 12);
-  var resizeFactor = (float)imgColumns / 12;
+  // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
+  var resizeFactor = (DynamicModel.Columns ?? 12) + "/12";
 
   // prepare the title, either the default or the additional image caption
   var lightboxCaption = "";
   if (imgItem.Presentation.TitleLightbox != false) {
     lightboxCaption = imgField.Metadata.Description;
   }
+
   var wrapInLink = imgItem.Presentation.ImageLightbox != false;
 }
+
 @if (wrapInLink) {
   var lbPic = Kit.Image.Picture(imgItem.Field("Image"), settings: "Lightbox");
   @:<a @DynamicModel.FancyboxAttribute data-src="@imgItem.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@lightboxCaption">
 }
-  <figure>
-    <div class="overlay w-100 h-100"></div>
+  <figure class='@(imgItem.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
     @if (Text.Has(imgField.Metadata.Description)) {
       <figcaption class="pt-1 px-4 pb-4 text-white">@imgField.Metadata.Description</figcaption>
     }

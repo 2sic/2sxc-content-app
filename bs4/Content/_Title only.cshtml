@@ -4,7 +4,7 @@
   var allContentLength = allContent.Count();
   var hasMultipleItems = allContentLength > 1;
   
-  var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false&VarShowText=false");
+  var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false&hideText=true");
 }
 
 @if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
