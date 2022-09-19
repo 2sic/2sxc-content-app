@@ -1,5 +1,5 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
+@inherits Custom.Hybrid.Razor14
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles"})
 
 @{
 	var lineHalf = CmsContext.View.Identifier == "half" ? "ly-primaryhr-half" : "";

@@ -1,11 +1,12 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
 @* This adds all link/script tags *@
-@RenderPage("../shared/_Assets.cshtml", new { parts = "styles"})
+@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles"})
+
 
 @{
   // get helper commands
-  var linkHelper = CreateInstance("_LinkHelper.cshtml");
+  var linkHelper = CreateInstance("LinkHelper.cs");
 }
 
 <div class="co-container-outer">
