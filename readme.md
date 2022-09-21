@@ -90,3 +90,6 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Changed all toolbar configurations to use the IToolbarService
 * v14.08.00 2022-08
   * Removed unnecessary ephemeral fields
+* v14.09.00 2022-09
+  * Refactored bs3
+  * Added app.json

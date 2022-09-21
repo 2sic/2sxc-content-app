@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.07.01" ExportDate="2022-06-30T17:12:07.9812102+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.09.00" ExportDate="2022-09-21T11:18:22.9213987+02:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -385,57 +385,6 @@
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="InlineInitialHeight" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="VarShowText" Type="Boolean" IsTitle="false">
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="88ee8428-1931-4891-9fa9-f729804dbde6" Json="True" KeyNumber="4685">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="true" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="boolean-default" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="IsEphemeral" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="VarShowText" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="b43cc50c-fd8e-4299-8f8e-30d498b5e896" Json="True" KeyNumber="4685">
-            <Value Key="TitleFalse" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3987,29 +3936,29 @@
       <Value Key="Text" Value="&lt;p&gt;Click the &lt;em&gt;pencil-icon&lt;/em&gt; to edit &lt;strong&gt;content&lt;/strong&gt;. This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Klik op het &lt;em&gt;potlood icoon&lt;/em&gt; om de content te bewerken. Dit is slechts demo-text met&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="139" ReadOnly="false" />
-      </Value>
-      <Value Key="Text" Value="&lt;p&gt;Dies ist nur Demo-Inhalt.&amp;nbsp;This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="20" ReadOnly="false" />
+      <Value Key="Text" Value="&lt;p&gt;Pulse el icono del l&amp;aacute;piz para editar contenido. Esto solo es texto de muestra con Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="140" ReadOnly="false" />
       </Value>
       <Value Key="Text" Value="&lt;p&gt;Clique no &lt;em&gt;&amp;iacute;con-l&amp;aacute;pis&lt;/em&gt; para editar o conte&amp;uacute;do. Isto &amp;eacute; apenas um texto demonstra&amp;ccedil;&amp;atilde;o com&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Pulse el icono del l&amp;aacute;piz para editar contenido. Esto solo es texto de muestra con Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="140" ReadOnly="false" />
+      <Value Key="Text" Value="&lt;p&gt;Dies ist nur Demo-Inhalt.&amp;nbsp;This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="&lt;p&gt;Klik op het &lt;em&gt;potlood icoon&lt;/em&gt; om de content te bewerken. Dit is slechts demo-text met&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="139" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Demo content" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Conteúdo demonstrativo" Type="String">
-        <Dimension DimensionID="137" ReadOnly="false" />
+      <Value Key="Title" Value="Contenido demo" Type="String">
+        <Dimension DimensionID="140" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Neuer Inhalt" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Contenido demo" Type="String">
-        <Dimension DimensionID="140" ReadOnly="false" />
+      <Value Key="Title" Value="Conteúdo demonstrativo" Type="String">
+        <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="09ad77bb-66e8-4a1c-92ac-27253afb251d" AttributeSetName="Person" EntityGUID="9e8d4d67-68df-4b23-968e-2e3883c4aceb">
@@ -4123,11 +4072,11 @@
       <Value Key="Title" Value="New video" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Neues Video" Type="String">
-        <Dimension DimensionID="20" ReadOnly="false" />
-      </Value>
       <Value Key="Title" Value="Novo vídeo" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Neues Video" Type="String">
+        <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="VideoLink" Value="https://www.youtube.com/watch?v=6Hx8FzJaV18" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -6053,8 +6002,8 @@
       <Value Key="Template" Value="6e2b17f1-502b-4484-bdf0-99b64735f0a8" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="36791986-e48d-4d16-9072-b1a7f68ed2dd" Json="True">
-      <Value Key="Content" Value="null,null,null" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,null,null,null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null,null,null,null" Type="Entity" />
       <Value Key="Template" Value="feae2860-118a-42ef-b03a-336de0ea7c38" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="d0104f6b-7785-4015-8f39-bdfc1ccd877a" Json="True">
@@ -6330,7 +6279,7 @@
       <Value Key="Template" Value="472882fc-f65c-4a8b-9408-7398b11bda2e" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="052c2d24-053a-4a5b-8960-849f953a7d6e" Json="True">
-      <Value Key="Content" Value="null,null,7228d1ae-e61e-4386-9de0-2a0cbff18c32" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
       <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="9b9d7877-d886-4a92-a89a-9831da624243" Type="Entity" />
     </Entity>
@@ -6485,8 +6434,8 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a069a1de-f04b-44d7-8ad6-6af85a0476fd" Json="True">
-      <Value Key="Content" Value="null,null,null,null,null" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
       <Value Key="Template" Value="64cc61e5-121f-4910-a61c-82717d61b6fd" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="1e03119e-7409-467b-8c7d-a771fe5955a4" Json="True">
@@ -6913,6 +6862,7 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="426e4177-a9e0-4177-a59f-17e566bf2452" Json="True">
+      <Value Key="Content" Value="620aa5d9-e5c5-42b3-8279-51fe5e71e645" Type="Entity" />
       <Value Key="Template" Value="0c650deb-9b70-4ae0-bca1-ccfb7b11af10" Type="Entity" />
     </Entity>
     <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="2SexyContent-App" AttributeSetName="2SexyContent-App" EntityGUID="18e4a1bc-d492-427d-adee-f388af1d7b3c" Json="True" KeyNumber="20">
@@ -6943,13 +6893,13 @@
       <Value Key="RequiredOqtaneVersion" Value="03.01.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="14.07.00" Type="String">
+      <Value Key="RequiredVersion" Value="14.09.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="14.07.00" Type="String">
+      <Value Key="Version" Value="14.09.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -7731,7 +7681,7 @@
       <Value Key="Enabled" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Formula" Value="v1(data, context) { return !!(data.Text || data.VarShowText); }" Type="String">
+      <Value Key="Formula" Value="v1(data, context) {&#xD;&#xA;  return !!data.Text || !data.parameters.hideText;&#xD;&#xA;}" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Notes" Value="" Type="String">
@@ -8459,29 +8409,6 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="36ab91f9-8388-4728-9bee-62ac898300a3" AttributeSetName="Link" EntityGUID="7228d1ae-e61e-4386-9de0-2a0cbff18c32">
-      <Value Key="Description" Value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Icon" Value="fa-address-book" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Link" Value="" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="LinkText" Value="more" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Test" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Window" Value="auto" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
     <Entity TargetType="5" AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="30d406bc-468a-48d0-907a-ebd13a8670c5" Json="True" KeyString="97bb146b-5b82-455a-b87e-d1a6179cf122">
       <Value Key="Description" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -8514,6 +8441,48 @@
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="b002fcd0-271d-474d-a846-24f76e244c78" Json="True">
       <Value Key="Template" Value="cf857bb5-f8b6-4ad9-8545-405d70101409" Type="Entity" />
     </Entity>
+    <Entity TargetType="10" AssignmentObjectType="CmsObject" AttributeSetStaticName="cb27a0f2-f921-48d0-a3bc-37c0e77b1d0c" AttributeSetName="ImageDecorator" EntityGUID="9359e7be-d21e-4d86-80af-9099fad82410" Json="True" KeyString="file:6255">
+      <Value Key="CropBehavior" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="CropTo" Value="tr" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="ae75632a-9132-4f0e-a79e-4856002f51ce">
+      <Value Key="Image" Value="file:6255" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="testimage" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="36ab91f9-8388-4728-9bee-62ac898300a3" AttributeSetName="Link" EntityGUID="51d13545-54a1-429e-8164-a58b69c92c83">
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Icon" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Image" Value="file:6260" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Link" Value="/" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="LinkText" Value="more" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Test" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Window" Value="auto" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
@@ -8524,6 +8493,8 @@
     <File Id="6127" RelativePath="adam\Content\JtB9k8NR4kGmHx60Hopq1A\Image\Platzhalterbild_Inhalt-1.jpg" />
     <File Id="6154" RelativePath="adam\Content\EqRpIiY9GUOY5aBm5sJYAw\Image\thumb16.jpg" />
     <File Id="6155" RelativePath="adam\Content\1pham15xmEmJz2bPro79cA\Image\80-806204_wallpaper-waves-ocean-stock-hd-photography-high-resolution.jpg" />
+    <File Id="6255" RelativePath="adam\Content\KmN1rjKRDk-nnkhWAC9Rzg\Image\Test.svg" />
+    <File Id="6260" RelativePath="adam\Content\RTXRUaFUnkKBZKWLacksgw\Image\Demo-2.jpg" />
     <File Id="6115" RelativePath="adam\Content\gYs3kM81JkuGbwWib6fsMA\Image\Platzhalterbild_Inhalt-1.jpg" />
     <File Id="6137" RelativePath="adam\Content\Iej4TyZnAkaSgNLTPzulog\Image\binary-code-background-digital-abstract-technology-cyber-122478205.jpg" />
     <File Id="6161" RelativePath="adam\Content\m58zmm7ztE-NHIFd28Dncg\Image\Demo-100.jpg" />
@@ -8539,6 +8510,8 @@
     <Folder Id="13699" RelativePath="adam/Content/JtB9k8NR4kGmHx60Hopq1A/Image/" />
     <Folder Id="13723" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/Image/" />
     <Folder Id="13725" RelativePath="adam/Content/1pham15xmEmJz2bPro79cA/Image/" />
+    <Folder Id="13810" RelativePath="adam/Content/KmN1rjKRDk-nnkhWAC9Rzg/Image/" />
+    <Folder Id="13820" RelativePath="adam/Content/RTXRUaFUnkKBZKWLacksgw/Image/" />
     <Folder Id="13675" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/Image/" />
     <Folder Id="13713" RelativePath="adam/Content/Iej4TyZnAkaSgNLTPzulog/Image/" />
     <Folder Id="13740" RelativePath="adam/Content/m58zmm7ztE-NHIFd28Dncg/Image/" />
@@ -8563,9 +8536,11 @@
     <Folder Id="13698" RelativePath="adam/Content/JtB9k8NR4kGmHx60Hopq1A/" />
     <Folder Id="13706" RelativePath="adam/Content/Ke3yEgVHikyDVsbVyf6c0A/" />
     <Folder Id="13707" RelativePath="adam/Content/Ke3yEgVHikyDVsbVyf6c0A/Image/" />
+    <Folder Id="13809" RelativePath="adam/Content/KmN1rjKRDk-nnkhWAC9Rzg/" />
     <Folder Id="13714" RelativePath="adam/Content/LmEiSsl99kO4XkUspkY5IQ/" />
     <Folder Id="13715" RelativePath="adam/Content/LmEiSsl99kO4XkUspkY5IQ/Image/" />
     <Folder Id="13739" RelativePath="adam/Content/m58zmm7ztE-NHIFd28Dncg/" />
+    <Folder Id="13819" RelativePath="adam/Content/RTXRUaFUnkKBZKWLacksgw/" />
     <Folder Id="13726" RelativePath="adam/Content/UEEu06rAWEeUbuj_PlQKBQ/" />
     <Folder Id="13720" RelativePath="adam/Content/y9qulMxjJkKtZIrfWCtRSw/" />
     <Folder Id="12625" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/" />
