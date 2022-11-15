@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.09.00" ExportDate="2022-09-21T11:18:22.9213987+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.12.01" ExportDate="2022-11-15T10:26:02.8656943+01:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -293,7 +293,7 @@
             <Value Key="InputFontFamily" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -366,7 +366,7 @@
             <Value Key="InputType" Value="wysiwyg" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -794,7 +794,7 @@
             </Value>
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="a0c9d2a4-1d49-4151-8e7d-4b13148e7a1e" Json="True" KeyNumber="4663">
-            <Value Key="Decimals" Value="0" Type="Number">
+            <Value Key="Decimals" Value="0.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -836,7 +836,7 @@
             </Value>
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="92478b00-f3f0-422a-ab2e-e0d9afe1d358" Json="True" KeyNumber="4665">
-            <Value Key="Decimals" Value="0" Type="Number">
+            <Value Key="Decimals" Value="0.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -902,7 +902,7 @@
             <Value Key="InputFontFamily" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="3" Type="Number">
+            <Value Key="RowCount" Value="3.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1040,7 +1040,7 @@
             <Value Key="InputType" Value="default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="4" Type="Number">
+            <Value Key="RowCount" Value="4.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1048,7 +1048,7 @@
             <Value Key="InputFontFamily" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="3" Type="Number">
+            <Value Key="RowCount" Value="3.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1255,7 +1255,7 @@
             <Value Key="InputType" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1645,7 +1645,7 @@
             <Value Key="InputType" Value="wysiwyg" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1747,7 +1747,7 @@
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="9dd6de75-a572-43e9-bd19-beedc8cfa384" Json="True" KeyNumber="501" />
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="965d6148-8376-4fec-af51-c5c94beda097" Json="True" KeyNumber="501">
-            <Value Key="RowCount" Value="3" Type="Number">
+            <Value Key="RowCount" Value="3.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2265,7 +2265,7 @@
             </Value>
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="e7ff83fc-afb9-42a9-8431-b20ce5fff295" Json="True" KeyNumber="521">
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -2325,12 +2325,12 @@
             <Value Key="InputType" Value="wysiwyg" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ccb6d94f-ad60-45f4-aa60-581105689227" Json="True" KeyNumber="526">
-            <Value Key="RowCount" Value="2" Type="Number">
+            <Value Key="RowCount" Value="2.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3063,7 +3063,7 @@
             <Value Key="InputType" Value="dropdown" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3361,7 +3361,7 @@
             </Value>
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="ed154c62-97e7-4dc7-bc71-801f60e8d06c" Json="True" KeyNumber="4677">
-            <Value Key="Decimals" Value="0" Type="Number">
+            <Value Key="Decimals" Value="0.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3414,7 +3414,7 @@
             </Value>
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="9a7764be-9351-47aa-890d-9408809746d1" Json="True" KeyNumber="4681">
-            <Value Key="Decimals" Value="0" Type="Number">
+            <Value Key="Decimals" Value="0.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3456,7 +3456,7 @@
             </Value>
           </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Number" AttributeSetName="@Number" EntityGUID="54ce2d5b-ad00-45b4-9cc4-4c9448450c49" Json="True" KeyNumber="4682">
-            <Value Key="Decimals" Value="0" Type="Number">
+            <Value Key="Decimals" Value="0.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -3584,7 +3584,7 @@
             <Value Key="InputFontFamily" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="RowCount" Value="1" Type="Number">
+            <Value Key="RowCount" Value="1.0" Type="Number">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
           </Entity>
@@ -6718,7 +6718,7 @@
       <Value Key="Text" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Test" Type="String">
+      <Value Key="Title" Value="Test without Image" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Teste" Type="String">
@@ -6899,7 +6899,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="14.09.00" Type="String">
+      <Value Key="Version" Value="14.12.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -7834,45 +7834,13 @@
       <Value Key="Template" Value="0d27475f-fbc1-4d09-92de-1e4a407a0ddb" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="03a7279d-054c-4b63-9b4d-56e6ab93c2f9" Json="True">
-      <Value Key="Content" Value="1fe79d5f-58b3-482b-8e7a-dfb742286657" Type="Entity" />
+      <Value Key="Content" Value="null" Type="Entity" />
       <Value Key="Template" Value="0d27475f-fbc1-4d09-92de-1e4a407a0ddb" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="cd77d9ec-1e11-4837-b42b-986b89bcc70e" Json="True">
-      <Value Key="Content" Value="1fe79d5f-58b3-482b-8e7a-dfb742286657" Type="Entity" />
+      <Value Key="Content" Value="null" Type="Entity" />
       <Value Key="Presentation" Value="null" Type="Entity" />
       <Value Key="Template" Value="b03c6df0-e36c-4ba9-951a-dfd14e2eda5f" Type="Entity" />
-    </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="3168c0b7-c5b9-4aa8-9ada-773890339e58" AttributeSetName="Location" EntityGUID="1fe79d5f-58b3-482b-8e7a-dfb742286657">
-      <Value Key="City" Value="Domat/Ems" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Company" Value="Romana" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Country" Value="Switzerland" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Description" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Fax" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="GPS" Value="{&quot;latitude&quot;:46.8367858,&quot;longitude&quot;:9.4623964}" Type="Custom">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Mail" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Street" Value="Via Burgaisa, 5a" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Tel" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="ZipCode" Value="7013" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="71f7b063-d2b0-467e-b33e-c99bca723cc0" Json="True">
       <Value Key="Template" Value="0d27475f-fbc1-4d09-92de-1e4a407a0ddb" Type="Entity" />
@@ -8274,7 +8242,7 @@
       <Value Key="Advanced" Value="{&#xD;&#xA;  &quot;recipe&quot;: {&#xD;&#xA;    &quot;setWidth&quot;: true, &#xD;&#xA;    &quot;setHeight&quot;: true, &#xD;&#xA;    &quot;variants&quot;: &quot;2* , 1*, 0.75*, 0.5*&quot;,&#xD;&#xA;    &quot;attributes&quot;: {&#xD;&#xA;      &quot;loading&quot;: &quot;lazy&quot;,&#xD;&#xA;      &quot;sizes&quot;: &quot;(max-width: 1400px) 150px, (max-width:1200px) 120px, (max-width: 991px) 80px, (max-width: 767px) 140px, (max-width: 575px) 152px&quot;&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;}" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="AspectRatio" Value="1" Type="Number">
+      <Value Key="AspectRatio" Value="1.0" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Format" Value="" Type="String">
@@ -8292,7 +8260,7 @@
       <Value Key="SettingsIdentifier" Value="Images.PersonPhoto" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Width" Value="155" Type="Number">
+      <Value Key="Width" Value="155.0" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8352,14 +8320,6 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="9b5a98d6-715e-4998-89cf-66cfae8efd70">
-      <Value Key="Image" Value="file:6155" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="test" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
     <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="be34f64b-7d1f-4ad0-b488-dabbbb01a186" AttributeSetName="LightSpeedOutputDecorator" EntityGUID="fa0406f4-fe52-4def-9c85-5cc68a194bd0" Json="True" KeyNumber="20">
       <Value Key="Advanced" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -8367,16 +8327,16 @@
       <Value Key="ByUrlParameters" Value="False" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Duration" Value="14400" Type="Number">
+      <Value Key="Duration" Value="14400.0" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="DurationEditors" Value="300" Type="Number">
+      <Value Key="DurationEditors" Value="300.0" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="DurationSystemAdmin" Value="300" Type="Number">
+      <Value Key="DurationSystemAdmin" Value="300.0" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="DurationUsers" Value="-1" Type="Number">
+      <Value Key="DurationUsers" Value="-1.0" Type="Number">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="IsEnabled" Value="True" Type="Boolean">
@@ -8452,37 +8412,6 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="ae75632a-9132-4f0e-a79e-4856002f51ce">
-      <Value Key="Image" Value="file:6255" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="testimage" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="36ab91f9-8388-4728-9bee-62ac898300a3" AttributeSetName="Link" EntityGUID="51d13545-54a1-429e-8164-a58b69c92c83">
-      <Value Key="Description" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Icon" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Image" Value="file:6260" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Link" Value="/" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="LinkText" Value="more" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Test" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Window" Value="auto" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
@@ -8493,12 +8422,12 @@
     <File Id="6127" RelativePath="adam\Content\JtB9k8NR4kGmHx60Hopq1A\Image\Platzhalterbild_Inhalt-1.jpg" />
     <File Id="6154" RelativePath="adam\Content\EqRpIiY9GUOY5aBm5sJYAw\Image\thumb16.jpg" />
     <File Id="6155" RelativePath="adam\Content\1pham15xmEmJz2bPro79cA\Image\80-806204_wallpaper-waves-ocean-stock-hd-photography-high-resolution.jpg" />
-    <File Id="6255" RelativePath="adam\Content\KmN1rjKRDk-nnkhWAC9Rzg\Image\Test.svg" />
-    <File Id="6260" RelativePath="adam\Content\RTXRUaFUnkKBZKWLacksgw\Image\Demo-2.jpg" />
     <File Id="6115" RelativePath="adam\Content\gYs3kM81JkuGbwWib6fsMA\Image\Platzhalterbild_Inhalt-1.jpg" />
     <File Id="6137" RelativePath="adam\Content\Iej4TyZnAkaSgNLTPzulog\Image\binary-code-background-digital-abstract-technology-cyber-122478205.jpg" />
+    <File Id="6255" RelativePath="adam\Content\KmN1rjKRDk-nnkhWAC9Rzg\Image\Test.svg" />
     <File Id="6161" RelativePath="adam\Content\m58zmm7ztE-NHIFd28Dncg\Image\Demo-100.jpg" />
     <File Id="6163" RelativePath="adam\Content\m58zmm7ztE-NHIFd28Dncg\Image\Demo-100-1.jpg" />
+    <File Id="6260" RelativePath="adam\Content\RTXRUaFUnkKBZKWLacksgw\Image\Demo-2.jpg" />
     <File Id="6153" RelativePath="adam\Content\y9qulMxjJkKtZIrfWCtRSw\Image\thumb16.jpg" />
   </PortalFiles>
   <PortalFolders>
@@ -8510,11 +8439,11 @@
     <Folder Id="13699" RelativePath="adam/Content/JtB9k8NR4kGmHx60Hopq1A/Image/" />
     <Folder Id="13723" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/Image/" />
     <Folder Id="13725" RelativePath="adam/Content/1pham15xmEmJz2bPro79cA/Image/" />
-    <Folder Id="13810" RelativePath="adam/Content/KmN1rjKRDk-nnkhWAC9Rzg/Image/" />
-    <Folder Id="13820" RelativePath="adam/Content/RTXRUaFUnkKBZKWLacksgw/Image/" />
     <Folder Id="13675" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/Image/" />
     <Folder Id="13713" RelativePath="adam/Content/Iej4TyZnAkaSgNLTPzulog/Image/" />
+    <Folder Id="13810" RelativePath="adam/Content/KmN1rjKRDk-nnkhWAC9Rzg/Image/" />
     <Folder Id="13740" RelativePath="adam/Content/m58zmm7ztE-NHIFd28Dncg/Image/" />
+    <Folder Id="13820" RelativePath="adam/Content/RTXRUaFUnkKBZKWLacksgw/Image/" />
     <Folder Id="13721" RelativePath="adam/Content/y9qulMxjJkKtZIrfWCtRSw/Image/" />
     <Folder Id="285" RelativePath="adam/Content/" />
     <Folder Id="13741" RelativePath="adam/Content/_QjZ3nml20C0I-mUlRUDUQ/" />
