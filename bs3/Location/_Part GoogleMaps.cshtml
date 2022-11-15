@@ -11,7 +11,7 @@
 
   // They Google API key is in the App-Settings. See instructions: https://azing.org/2sxc/r/ApSwlItl
   // The Preset-data is encrypted, so we must decrypt it to use
-  var googleApikey = Kit.Secure.Parse(mapSettings.ApiKey).Value;
+  var googleApikey = Kit.SecureData.Parse(mapSettings.ApiKey).Value;
 
   // GPS is a JSON field, so we must use AsDynamic to easily access the properties
   var gps = AsDynamic(Content.GPS);
