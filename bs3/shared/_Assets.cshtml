@@ -11,7 +11,7 @@
   // This sub template just places all the very-often used
   // style and link tags into the code.
   // We put this in a sub-template because we use it so often, and want to make sure
-  // nobody accidentally uses the wrong url or forgets data-enableoptimizations
+  // nobody accidentally uses the wrong url or forgets @Kit.Page.AssetAttributes()
   string partList = DynamicModel.parts;
   var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
   var all = parts.Contains("all");
@@ -37,7 +37,10 @@
   @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
   <turnOn turn-on='{ "run": "window.appContent.showEncryptedMails()" }'></turnOn>
 }
-@if (height) { <script type="text/javascript" src="@App.Path/bs3/dist/lib/jquery.syncHeightResponsive.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script> }
+@if (height) { 
+  // 2sxclint:disable:js-no-jquery
+  <script type="text/javascript" src="@App.Path/bs3/dist/lib/jquery.syncHeightResponsive.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script> 
+}
 
 @* Turn On various features as needed. Activation uses turnOn https://r.2sxc.org/turnon *@
 @if (videos) {

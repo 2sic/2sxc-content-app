@@ -3,6 +3,7 @@
   so that a JS can then re-asseble it when needed
   This is to prevent robots from collecting the e-mail address
 *@
+@inherits Custom.Hybrid.Razor14
 @{
   var eMail = PageData["email"];
   var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(eMail);
