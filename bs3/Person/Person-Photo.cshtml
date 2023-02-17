@@ -18,7 +18,7 @@
         <div class="col-sm-6 row mb-4" @Edit.TagToolbar(person)>
           <div class="col-xs-4 @mbClass">
             @if (Text.Has(person.Photo)) {
-              @Kit.Image.Picture(person.Field("Photo"), settings: photoSettings, width: 379, imgClass:"img-responsive " + imgClass)
+              @Kit.Image.Picture(person.Field("Photo"), settings: photoSettings, width: 379, imgClass:"img-responsive " + imgClass, imgAltFallback: person.FullName)
             } else {
               <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
             }

@@ -26,7 +26,7 @@
             {
               <figure>
                 <div class="co-overlay"></div>
-                @Kit.Image.Picture(link.Field("Image"), width: "690", settings: Kit.Image.Settings("Content"))
+                @Kit.Image.Picture(link.Field("Image"), width: "690", settings: Kit.Image.Settings("Content"), imgAltFallback: link.Title)
 
               </figure>
             } else {

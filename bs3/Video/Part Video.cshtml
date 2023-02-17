@@ -12,36 +12,44 @@
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
-  var youTubeVideoImage = "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
-
   // configuration
   var quality = (int)Settings.Images.Content.Quality;
 
   // this is the parameter passed in from the calling page
   // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
-  var imgColumns = (int)(DynamicModel.Columns ?? 12);
-  var width = (int)(Settings.Images.Content.Width * imgColumns / 12);
+  var factor = (int)(DynamicModel.Columns ?? 12);
+
+  var width = (int)(Settings.Images.Content.Width * factor / 12);
   int height = (int)(width * 9/16);
 
-  var imageSelection = Text.First(video.ImageSelection, Content.ImageSelection);
+  var previewIsFrom = Text.First(video.ImageSelection, Content.ImageSelection);
 
-  var image = (!Text.Has(imageSelection) ? null : imageSelection == "upload" ? video.Field("Image") : imageSelection == "default" ? App.Resources.Field("VideoDefaultPreviewImage") : youTubeVideoImage);
-  var title = (Text.Has(Content.Image) ? Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title) : Text.First(video.Title, Content.Title));
-  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
+ var hasPreviewSource = Text.Has(previewIsFrom);
+  object previewSource = !hasPreviewSource
+    ? null
+    : previewIsFrom == "upload"
+      ? video.Field("Image")
+      : previewIsFrom == "default"
+        ? App.Resources.Field("VideoDefaultPreviewImage")
+        // Fallback: use standard youtube image link
+        : "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
 
   var videoSettings = Kit.Image.Settings("Content", height: height);
+  var pic = Kit.Image.Picture(previewSource, width: width, settings: videoSettings, factor: factor, imgAltFallback: video.EntityTitle);
+  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
+
 }
 @if (hasVideoLightbox != false) {
   // open in lightbox
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos"; 
-  <a @fancyboxAttribute class='co-video @(!Text.Has(imageSelection) ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
+   <a @fancyboxAttribute class='co-video @(!hasPreviewSource ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@pic.Alt" href="@youTubeUrl">
     <figure>
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
         <i class="fab fa-youtube"></i>
       </div>
-      @if (image != null) {
-        @Kit.Image.Picture(image, width: width, settings: videoSettings, imgAlt: title, imgClass:"img-responsive lazy")
+      @if (hasPreviewSource) {
+       @pic
       }
     </figure>
   </a>
@@ -52,8 +60,8 @@
 
   <div class="co-video-embed embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
-      if (image != null) {
-        @Kit.Image.Picture(image, settings: videoSettings, imgClass:"img-responsive lazy")
+      if (hasPreviewSource) {
+        @pic  
       }
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>

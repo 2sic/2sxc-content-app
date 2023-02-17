@@ -3,7 +3,7 @@
 @{
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / Settings.MaxPerRow;
-  var fraction = 1 / Settings.MaxPerRow; // percentage of the content-width
+  var factor = 1 / Settings.MaxPerRow; // percentage of the content-width
 
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-" + CmsContext.Module.Id;
@@ -15,18 +15,22 @@
     @foreach (var img in AsList(Data)) {
       var wrapInLink = img.Presentation.ImageLightbox != false;
 
+      var imgField = img.Field("Image");
+      var pic = Kit.Image.Picture(imgField, settings: "Content", factor: factor, imgClass: "w-100", imgAltFallback: img.EntityTitle);
+
       <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns mb-3' @Edit.TagToolbar(img)>
 
         @if (wrapInLink) {
-          var lbPic = Kit.Image.Picture(img.Field("Image"), settings: "Lightbox");
-          @:<a @fancyboxAttribute data-src="@img.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption='@(img.Presentation.TitleLightbox != false ? img.Title : "")'>
+          var lbPic = Kit.Image.Picture(imgField, settings: "Lightbox");
+          var caption = img.Presentation.TitleLightbox != false ? pic.Alt : "";
+          @:<a @fancyboxAttribute data-src="@img.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
         }
         <figure>
             <div class="overlay w-100 h-100"></div>
             @if (img.Presentation.TitleLegend != false) {
-              <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
+              <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@pic.Alt</figcaption>
             }
-            @Kit.Image.Picture(img.Field("Image") , settings: "Content", factor: fraction, imgClass:"w-100")
+             @pic
 
         </figure>
 

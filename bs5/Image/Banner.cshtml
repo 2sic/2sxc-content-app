@@ -7,7 +7,7 @@
 }
 
 <div class="co-header" @Edit.TagToolbar(Content)>
-  @Kit.Image.Picture(Content.Image , settings: bannerSettings, imgClass:"w-100", imgAltFallback: Content.Title)
+  @Kit.Image.Picture(Content.Field("Image") , settings: bannerSettings, imgClass:"w-100", imgAltFallback: Content.Title)
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "styles" })

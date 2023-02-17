@@ -8,12 +8,6 @@
     </div>
   }
 
-  // Include bootstrap 5 if the framework isn't known - then this file is still called, and we add Bootstrap to the page 
-  // Note that the link and script tags are in the System Settings to make it easier to update a live installation
-  if (Kit.Css.IsUnknown) {
-    Kit.Page.Activate("Bootstrap5");
-  }
-
   // This sub template just places all the very-often used
   // style and link tags into the code.
   // We put this in a sub-template because we use it so often, and want to make sure

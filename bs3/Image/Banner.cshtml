@@ -9,7 +9,7 @@
 <div class="co-container-outer">
   <div class="co-container-inner">
     <div class="co-header" @Edit.TagToolbar(Content)>
-      @Kit.Image.Picture(Content.Field("Image"), settings: bannerSettings, imgClass:"w-100")
+      @Kit.Image.Picture(Content.Field("Image"), settings: bannerSettings, imgClass:"w-100",  imgAltFallback: Content.Title )
     </div>
   </div>
 </div>

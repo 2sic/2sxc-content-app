@@ -89,9 +89,8 @@
           transition: fill 0.3s ease-in-out;
         }
       }
-    }
-    &:hover {
-      &.co-video {
+
+      &:hover {
         svg {
           .st0 {
             fill: red !important;

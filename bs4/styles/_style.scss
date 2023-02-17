@@ -54,21 +54,25 @@ a {
     position: relative;
 
     &.co-video-no-image {
-      text-align: center;
-      background-color: rgba($dark,0.4);          
+      background-color: rgba($dark,0.4);
       
       > svg {
-        transform: none;
-        position: static;
+        position: relative;
+        transform: translate(-50%, 0);
+        margin: 10px 0;
       }
 
       figure {
         .overlay {
           position: static;
-          background-color: rgba($dark,0.4);          
+          background-color: rgba($dark,0.4);
         }
       }
       
+    }
+    
+    figure {
+      z-index: 0;
     }
 
     svg {
@@ -76,14 +80,25 @@ a {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 72px;
-      color: rgba(255, 255, 255, 1);
-      transition: color 0.3s ease-in-out;
+
+      filter: drop-shadow(0px 0px 8px rgb(0 0 0 / 0.3));
+      height: 54px;
+      .st0,
+      .st1 {
+        transition: fill 0.3s ease-in-out;
+      }
     }
 
     &:hover {
       svg {
-        color: red;
+        .st0 {
+          fill: red !important;
+          filter: none;
+        }
+        .st1 {
+          fill: #fff !important;
+          filter: none;
+        }
       }
     }
   }
@@ -244,13 +259,28 @@ a {
     }
 
     svg {
-      font-size: 72px;
-      color: rgba(255, 255, 255, 1);
-      transition: color 0.3s ease-in-out;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      filter: drop-shadow(0px 0px 8px rgb(0 0 0 / 0.3));
+      height: 54px;
+      .st0,
+      .st1 {
+        transition: fill 0.3s ease-in-out;
+      }
     }
     &:hover {
       svg {
-        color: red;
+        .st0 {
+          fill: red !important;
+          filter: none;
+        }
+        .st1 {
+          fill: #fff !important;
+          filter: none;
+        }
       }
     }
   }

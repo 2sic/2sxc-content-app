@@ -13,7 +13,9 @@
   // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
   var resizeFactor = (DynamicModel.Columns ?? 12) + "/12";
 
-  // prepare the title, either the default or the additional image caption
+ var pic = Kit.Image.Picture(imgField, settings: "Content", factor: resizeFactor, imgAltFallback: imgItem.EntityTitle);
+
+
   var lightboxCaption = "";
   if (imgItem.Presentation.TitleLightbox != false) {
     lightboxCaption = imgField.Metadata.Description;
@@ -27,10 +29,10 @@
   @:<a @DynamicModel.FancyboxAttribute data-src="@imgItem.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@lightboxCaption">
 }
   <figure class='@(imgItem.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
-    @if (Text.Has(imgField.Metadata.Description)) {
-      <figcaption class="pt-1 px-4 pb-4 text-white">@imgField.Metadata.Description</figcaption>
+    @if (Text.Has(pic.Alt)) {
+      <figcaption class="pt-1 px-4 pb-4 text-white">@pic.Alt</figcaption>
     }
-    @Kit.Image.Picture(imgItem.Field("Image"), settings: "Content", factor: resizeFactor)
+     @pic
   </figure>
 @if (wrapInLink) {
   @:</a>

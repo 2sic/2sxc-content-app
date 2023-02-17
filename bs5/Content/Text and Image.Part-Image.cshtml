@@ -4,7 +4,7 @@
   /* This is a partial template which is re-used in the Content-Templates */
 
   // Parameter passed in from the calling page - if we don't have an image, exit
-  var imgItem = AsDynamic(DynamicModel.Item);  // The content-item with the image
+  var imgItem = DynamicModel.Item;  // The content-item with the image
   if (!Text.Has(imgItem.Image)) { return; }
 
   // Get the image field - this object will contain the url, metadata and more

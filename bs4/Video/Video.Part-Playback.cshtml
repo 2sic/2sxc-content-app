@@ -12,19 +12,26 @@
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
-  var youTubeVideoImage = "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
-  
   // this is the parameter passed in from the calling page
   // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
   // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
   var factor = (DynamicModel.Columns ?? 12) + "/12";
-
-  var imageSelection = Text.First(video.ImageSelection, Content.ImageSelection);
-  var image = (!Text.Has(imageSelection) ? null : imageSelection == "upload" ? video.Field("Image") : imageSelection == "default" ? App.Resources.Field("VideoDefaultPreviewImage") : youTubeVideoImage);
-  var title = (Text.Has(Content.Image) ? Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title) : Text.First(video.Title, Content.Title));
-  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
   
+  var previewIsFrom = Text.First(video.ImageSelection, Content.ImageSelection);
+  var hasPreviewSource = Text.Has(previewIsFrom);
+  object previewSource = !hasPreviewSource
+    ? null
+    : previewIsFrom == "upload"
+      ? video.Field("Image")
+      : previewIsFrom == "default"
+        ? App.Resources.Field("VideoDefaultPreviewImage")
+        // Fallback: use standard youtube image link
+        : "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
+
   var videoSettings = Kit.Image.Settings("Content", aspectRatio: "16:9");
+  var pic = Kit.Image.Picture(previewSource, settings: videoSettings, factor: factor, imgAltFallback: video.EntityTitle);
+ 
+  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
 }
 
 @if (hasVideoLightbox != false) {
@@ -32,13 +39,15 @@
   var fancyboxAttribute = "app-content-fancybox-videos"; 
 
   // open in lightbox
-  <a @fancyboxAttribute class='co-video @(!Text.Has(imageSelection) ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
-      @if (image != null) {
-      <figure class="effect-zoom">                
-        @Kit.Image.Picture(image, settings: videoSettings, factor: factor, imgAlt: title)
-      </figure>
+  <a @fancyboxAttribute class='co-video @(!hasPreviewSource ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@pic.Alt" href="@youTubeUrl">
+      @if (hasPreviewSource) {
+        <figure class="effect-zoom">
+          @pic
+        </figure>
       }
-      <i class="fab fa-youtube"></i>
+      @* SVG Code for Play Button *@
+      @Html.Partial("Play SVG.cshtml")
+
   </a>
   @* activate scripts because they are needed by fancybox *@
   @Html.Partial("../shared/Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
@@ -47,11 +56,14 @@
   // ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
   <div class="co-video-embed ratio ratio-16x9 embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
-      if (image != null) {
-        @Kit.Image.Picture(image, settings: videoSettings, imgClass:"img-fluid lazy")
+      if (hasPreviewSource) {
+        @pic  
       }
+      
+      @* This SVG shows the play-icon on top of the video iframe *@
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
-        <i class="fab fa-youtube"></i>
+        @* SVG Code for Play Button *@
+        @Html.Partial("Play SVG.cshtml")
       </div>
 
       <iframe id="iframe-@CmsContext.Module.Id" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
