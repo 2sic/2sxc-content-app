@@ -19,11 +19,11 @@
 		<div class="app-content-js-google-map-container embed-responsive embed-responsive-16by9">
 			<div class="co-google-map embed-responsive-item" id="@googleMapDomId"></div>
 			
-      @Html.Partial("_Part GoogleMapsWarning.cshtml")
+      @Html.Partial("Part GoogleMapsWarning.cshtml")
 		</div>
 	</div>
 </div>
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts,icons"})
-@Html.Partial("_Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
+@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts,icons"})
+@Html.Partial("Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
 

@@ -25,7 +25,7 @@
           </div>
 
           <div class="col-xs-8" itemscope itemtype="http://schema.org/Person">
-            @Html.Partial("_Part Properties.cshtml", new { data = person})
+            @Html.Partial("Part Properties.cshtml", new { data = person})
           </div>
         </div>
       }
@@ -33,4 +33,4 @@
   </div>
 </div>
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,scripts,icons"})
+@Html.Partial("../shared/Assets.cshtml", new { parts = "styles,scripts,icons"})

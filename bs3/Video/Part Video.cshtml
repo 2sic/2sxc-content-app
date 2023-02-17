@@ -46,7 +46,7 @@
     </figure>
   </a>
   @* activate scripts because they are needed by fancybox *@
-  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
+  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
 } else {
   // no lightbox, show directly
 
@@ -65,5 +65,5 @@
     }
   </div>
   @* activate scripts because they are needed for the iframe-embed mode *@
-  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos" })
+  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos" })
 }
