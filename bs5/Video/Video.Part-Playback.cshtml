@@ -4,7 +4,7 @@
 @{
   /* Partial template which is re-used in _Video.cshtml to show the video preview and link-to-lightbox for the video */
 
-	var video = DynamicModel.Video;
+	var video = AsDynamic(DynamicModel.Video);
 
   // Check if the link is a youtube, and convert that to a youtube embed
 	var youTubeLink = Regex.Match(Text.First(video.VideoLink, Content.VideoLink), @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
@@ -21,10 +21,11 @@
   
   var imageSelection = Text.First(video.ImageSelection, Content.ImageSelection);
   var image = (!Text.Has(imageSelection) ? null : imageSelection == "upload" ? video.Field("Image") : imageSelection == "default" ? App.Resources.Field("VideoDefaultPreviewImage") : youTubeVideoImage);
-  var title = (Text.Has(Content.Image) ? Text.First(video.Field("Image").Metadata.Description, video.Title, Content.Title) : Text.First(video.Title, Content.Title));
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
   
   var videoSettings = Kit.Image.Settings("Content", aspectRatio: "16:9");
+
+  var pic = Kit.Image.Picture(image, settings: videoSettings, factor: factor, imgAltFallback: video.EntityTitle);
 }
 
 @if (hasVideoLightbox != false) {
@@ -32,10 +33,10 @@
   var fancyboxAttribute = "app-content-fancybox-videos"; 
 
   // open in lightbox
-  <a @fancyboxAttribute class='co-video @(!Text.Has(imageSelection) ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@title" href="@youTubeUrl">
+  <a @fancyboxAttribute class='co-video @(!Text.Has(imageSelection) ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@pic.Alt" href="@youTubeUrl">
       @if (image != null) {
         <figure class="effect-zoom">
-          @Kit.Image.Picture(image, settings: videoSettings, factor: factor, imgAlt: title)
+          @pic
         </figure>
       }
       
@@ -60,7 +61,7 @@
   <div class="co-video-embed ratio ratio-16x9 embed-responsive embed-responsive-16by9">
     @if (youTubeLink.Success) {
       if (image != null) {
-        @Kit.Image.Picture(image, settings: videoSettings, imgClass:"img-fluid lazy")    
+        @pic  
       }
       
       @* This SVG shows the play-icon on top of the video iframe *@

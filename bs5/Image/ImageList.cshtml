@@ -13,18 +13,26 @@
 @foreach (var img in AsList(Data)) {
   var wrapInLink = img.Presentation.ImageLightbox != false;
 
+  var imgField = img.Field("Image");
+  var pic = Kit.Image.Picture(imgField, settings: "Content", factor: factor, imgClass: "w-100", imgAltFallback: img.EntityTitle);
+
+  var lightboxCaption = "";
+  if (img.Presentation.TitleLightbox != false) {
+    lightboxCaption = pic.Alt;
+  }
+
+
   <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns py-3' @Edit.TagToolbar(img)>
 
     @if (wrapInLink) {
       var lbPic = Kit.Image.Picture(img.Field("Image"), settings: "Lightbox");
-      @:<a @fancyboxAttribute data-src="@img.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption='@(img.Presentation.TitleLightbox != false ? img.Title : "")'>
+      @:<a @fancyboxAttribute data-src="@img.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@lightboxCaption">
     }
     <figure class='@(img.Presentation.ImageLightbox != false ? "effect-zoom" : "") mb-0'>
         @if (img.Presentation.TitleLegend != false) {
-          <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@img.Title</figcaption>
+          <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@pic.Alt</figcaption>
         }
-        @Kit.Image.Picture(img.Field("Image"), settings: "Content", factor: factor, imgClass: "w-100")
-        
+        @pic
     </figure>
 
     @if (wrapInLink) {
