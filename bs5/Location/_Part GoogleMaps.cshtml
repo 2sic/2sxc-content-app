@@ -1,8 +1,9 @@
 @inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
 @{
+  // TODO: @2dg - these must go away, they are automatic when using the new Kit.Page.TurnOn(...)
   // Activate turnOn in the page - see https://r.2sxc.org/turnon
-  Kit.Page.Activate("turnOn");
+  // Kit.Page.Activate("turnOn");
 
   // Merge the Presentation with Resources & Settings to get the best possible settings/resources
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
@@ -28,4 +29,11 @@
 }
 
 @* Instruct turnOn to activate GoogleMaps with the API key and everything once everything is loaded - uses turnOn https://r.2sxc.org/turnon *@
-<turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(Kit.Json.ToJson(data)) }'></turnOn>
+@Kit.Page.TurnOn("window.appContent.activeGoogleMaps()", data: data)
+
+@* TODO: @2dg ^^^ is new, below is old *@
+@* <turnOn turn-on='{ "run": "window.appContent.activeGoogleMaps()", "data": @Html.Raw(Kit.Json.ToJson(data)) }'></turnOn> *@
+
+Test
+
+
