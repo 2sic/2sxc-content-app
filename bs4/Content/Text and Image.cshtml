@@ -27,11 +27,11 @@
       <div class='row @isLastRowClass'>
         <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
           @* call sub-template to show the title with the correct H1-H6 tag *@
-          @Html.Partial("../shared/_Header tag.cshtml", new { Title = item.Title })
+          @Html.Partial("../shared/Header tag.cshtml", new { Title = item.Title })
 
           @* If the image doesn't have it's own column, its between title/text *@
           @if (colsImg == 0) {
-            @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = item })
+            @Html.Partial("Text and Image.Part-Image.cshtml", new { Item = item })
           }
 
           @Html.Raw(item.Text)
@@ -40,7 +40,7 @@
         @if (colsImg != 0) {
           <div class='col-md-@colsImg order-md-@(!isTextFirst ? "first" : "last")'>
             @* call sub-template to show the image with all possible options *@
-            @Html.Partial("_Text and Image.Part-Image.cshtml", new { Item = item, Columns = colsImg, FancyboxAttribute = fancyboxAttribute})
+            @Html.Partial("Text and Image.Part-Image.cshtml", new { Item = item, Columns = colsImg, FancyboxAttribute = fancyboxAttribute})
           </div>
         }
       </div>
@@ -51,4 +51,4 @@
   isTextFirst = !isTextFirst;
 }
 
-@Html.Partial("../Shared/_Assets.cshtml", new { parts = "fancybox,styles", FancyboxAttribute = fancyboxAttribute })
+@Html.Partial("../shared/Assets.cshtml", new { parts = "fancybox,styles", FancyboxAttribute = fancyboxAttribute })

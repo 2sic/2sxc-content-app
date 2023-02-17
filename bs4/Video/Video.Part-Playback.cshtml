@@ -41,7 +41,7 @@
       <i class="fab fa-youtube"></i>
   </a>
   @* activate scripts because they are needed by fancybox *@
-  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
+  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
 } else {
   // no lightbox, show directly
   // ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
@@ -60,5 +60,5 @@
     }
   </div>
   @* activate scripts because they are needed for the iframe-embed mode *@
-  @Html.Partial("../shared/_Assets.cshtml", new { parts = "videos" })
+  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos" })
 }

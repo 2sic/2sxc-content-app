@@ -24,11 +24,11 @@
       <div class='row @(i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")'>
         <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
           @* call sub-template to show the title with the correct H1-H6 tag *@
-          @Html.Partial("../shared/_Header tag.cshtml", new { Title = item.Title })
+          @Html.Partial("../shared/Header tag.cshtml", new { Title = item.Title })
 
           @* If the image doesn't have it's own column, its between title/text *@
           @if (colsImg == 0) {
-            @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = 12, Video = item })
+            @Html.Partial("Video.Part-Playback.cshtml", new { Columns = 12, Video = item })
           }
 
           @Html.Raw(item.Text)
@@ -36,7 +36,7 @@
         @* If the image has it's own column, it's here *@
         @if (colsImg != 0) {
           <div class='col-md-@colsImg order-md-@(isTextFirst ? "last" : "first")'>
-            @Html.Partial("_Video.Part-Playback.cshtml", new { Columns = colsImg, Video = item })
+            @Html.Partial("Video.Part-Playback.cshtml", new { Columns = colsImg, Video = item })
           </div>
         }
       </div>
@@ -47,4 +47,4 @@
   isTextFirst = !isTextFirst;
 }
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "styles,icons"})
+@Html.Partial("../shared/Assets.cshtml", new { parts = "styles,icons"})
