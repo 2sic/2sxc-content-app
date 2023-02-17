@@ -12,19 +12,19 @@
   // style and link tags into the code.
   // We put this in a sub-template because we use it so often, and want to make sure
   // nobody accidentally uses the wrong url or forgets Kit.Page.AssetAttributes()
-  @* @DynamicModel.parts *@
-  string partList = DynamicModel.parts;
+  string partList = DynamicModel.parts != null ? DynamicModel.parts : "";
   var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
-  var styles = parts.Contains("styles");
   var scripts = parts.Contains("scripts");
   var icons = parts.Contains("icons");
+
 }
+
+@* Include styles *@
+<link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" @Kit.Page.AssetAttributes() />
 
 @* Include icon font - the exact HTML for this is in the SystemSettings *@
 @if (icons) { Kit.Page.Activate("FontAwesome5"); }
 
-@* Include styles *@
-@if (styles) { <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" @Kit.Page.AssetAttributes() /> }
 
 @* Include javascript *@
-@if (scripts) { <script type="text/javascript" src="@App.Path/bs5/dist/scripts.min.js" @Kit.Page.AssetAttributes(position: "bottom") ></script> }
+@if (scripts) { <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" @Kit.Page.AssetAttributes(position: "bottom") ></script> }
