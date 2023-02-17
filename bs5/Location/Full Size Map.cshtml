@@ -15,8 +15,8 @@
 
 <div class="app-content-js-google-map-container position-relative" @Edit.TagToolbar(Content)>
   <div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
-  @Html.Partial("_Part GoogleMapsWarning.cshtml")
+  @Html.Partial("Part GoogleMapsWarning.cshtml")
 </div>
 
-@Html.Partial("../shared/_Assets.cshtml", new { parts = "scripts,icons"})
-@Html.Partial("_Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
+@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts,icons"})
+@Html.Partial("Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
