@@ -39,4 +39,5 @@
 }
 </div>
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "fancybox,styles,scripts", FancyboxAttribute = fancyboxAttribute })
+@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts" })
+@Html.Partial("../shared/FancyboxAssets.cshtml", new { FancyboxAttribute = fancyboxAttribute })

@@ -54,7 +54,8 @@
     </figure>
   </a>
   @* activate scripts because they are needed by fancybox *@
-  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
+  @Html.Partial("../shared/FancyboxAssets.cshtml", new { FancyboxAttribute = fancyboxAttribute })
+
 } else {
   // no lightbox, show directly
 

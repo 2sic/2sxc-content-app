@@ -12,47 +12,20 @@
   // style and link tags into the code.
   // We put this in a sub-template because we use it so often, and want to make sure
   // nobody accidentally uses the wrong url or forgets Kit.Page.AssetAttributes()
+  @* @DynamicModel.parts *@
   string partList = DynamicModel.parts;
   var parts = partList.Split(',').Select(s => ((string)s).ToLower().Trim()).ToArray();
-  var fancybox = parts.Contains("fancybox");
   var styles = parts.Contains("styles");
   var scripts = parts.Contains("scripts");
   var icons = parts.Contains("icons");
-  var videos = parts.Contains("videos");
 
-  // Include icon font - the exact HTML for this is in the SystemSettings
-  if (icons) {
-    Kit.Page.Activate("FontAwesome5");
-  }
 }
 
+@* Include icon font - the exact HTML for this is in the SystemSettings *@
+@if (icons) { Kit.Page.Activate("FontAwesome5"); }
+
+@* Include styles *@
 @if (styles) { <link rel="stylesheet" href="@App.Path/bs4/dist/styles.min.css" @Kit.Page.AssetAttributes() /> }
 
-@if (fancybox || scripts || videos) {
-  Kit.Page.Activate("turnOn"); // see https://r.2sxc.org/turnon
-  <script type="text/javascript" src="@App.Path/bs4/dist/scripts.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script> 
-  @* Trigger protected mails to appear; activation uses turnOn https://r.2sxc.org/turnon *@
-  <turnOn turn-on='{ "run": "window.appContent.showEncryptedMails()" }'></turnOn>
-}
-
-@* Add Fancybox if required *@
-@if (fancybox) {
-  Kit.Page.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon
-
-  // Init options for fancybox binding
-  // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
-  var fancyboxOptions = new {
-    groupAll = true,
-    mainClass = "app-content-fancybox", 
-    Thumbs = new {
-      autoStart = false
-    }
-  };
-  
-  <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appContent.initFancybox()", "data": { "attribute": "@DynamicModel.FancyboxAttribute", "options": @Html.Raw(Kit.Json.ToJson(fancyboxOptions)) }}'></turnOn>
-}
-
-@* Turn On video features. Activation uses turnOn https://r.2sxc.org/turnon *@
-@if (videos) {
-  <turnOn turn-on='{ "run": "window.appContent.activateYouTubeInline()" }'></turnOn>
-}
+@* Include javascript *@
+@if (scripts) { <script type="text/javascript" src="@App.Path/bs4/dist/scripts.min.js" @Kit.Page.AssetAttributes(position: "bottom") ></script> }

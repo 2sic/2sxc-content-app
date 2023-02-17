@@ -50,7 +50,7 @@
 
   </a>
   @* activate scripts because they are needed by fancybox *@
-  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos,fancybox", FancyboxAttribute = fancyboxAttribute })
+  @Html.Partial("../shared/FancyboxAssets.cshtml", new { FancyboxAttribute = fancyboxAttribute })
 } else {
   // no lightbox, show directly
   // ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
@@ -71,6 +71,6 @@
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
   </div>
-  @* activate scripts because they are needed for the iframe-embed mode *@
-  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos" })
+  @* Turn On video features. Activation uses turnOn https://r.2sxc.org/turnon *@
+  @Kit.Page.TurnOn("window.appContent.activateYouTubeInline()")
 }

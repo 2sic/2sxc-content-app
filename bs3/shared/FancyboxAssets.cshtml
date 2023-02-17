@@ -1,0 +1,22 @@
+@inherits Custom.Hybrid.Razor14
+
+@{
+  Kit.Page.Activate("fancybox4"); // see https://r.2sxc.org/turnon
+
+  // Init options for fancybox binding
+  // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
+  var fancyboxOptions = new {
+    groupAll = true,
+    mainClass = "app-content-fancybox", 
+    Thumbs = new {
+      autoStart = false
+    }
+  };
+
+  var data = new {
+    attribute = DynamicModel.FancyboxAttribute,
+    options = fancyboxOptions
+  };
+
+  Kit.Page.TurnOn("window.appContent.initFancybox()", data: data);
+}

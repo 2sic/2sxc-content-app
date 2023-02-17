@@ -45,4 +45,5 @@
   isTextFirst = !isTextFirst;
 }
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "fancybox,styles", FancyboxAttribute = fancyboxAttribute })
+@Html.Partial("../shared/Assets.cshtml")
+@Html.Partial("../shared/FancyboxAssets.cshtml", new { FancyboxAttribute = fancyboxAttribute })
