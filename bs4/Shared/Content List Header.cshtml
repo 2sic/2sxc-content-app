@@ -1,5 +1,6 @@
 @inherits Custom.Hybrid.Razor14
-
-@if (DynamicModel.HasMultipleItems && Edit.Enabled) {
+@using System.Linq
+@* If we have more than one content item in this view, then also show the header so we can configure how the items are arranged *@
+@if (AsList(Data).Count() > 1 && Edit.Enabled) {
     <div class='p-4' @Edit.TagToolbar(Header)></div>
 }

@@ -1,8 +1,8 @@
 @inherits Custom.Hybrid.Razor14
 @{
-  var allContent = AsList(Data);
-  var allContentLength = allContent.Count();
-  var hasMultipleItems = allContentLength > 1;
+  var allItems = AsList(Data);
+  var itemsCount = allItems.Count();
+  var itemIndex = 0;
   
   var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false&hideText=true");
 }
@@ -10,18 +10,18 @@
 @* This adds all link/script tags *@
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})
 
-@* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
-@Html.Partial("../shared/Content List Header.cshtml", new { HasMultipleItems = hasMultipleItems })
+@* Show list header if necessary for configuration *@
+@Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@for (var i = 0; i < allContentLength; i++)
-{
-  var item = allContent.ElementAt(i);
-  var isLastRowClass = i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5";
+@foreach(var item in allItems) {
+
+  var rowClass = ++itemIndex == itemsCount ? "mb-4 mb-lg-5" : ""; // if last item, add class to the row to add margin-bottom
+
   <div class="co-container-outer">
-    <div class='co-container-inner clearfix co-content @isLastRowClass' @itemToolbar.For(item)>
+    <div class='co-container-inner clearfix co-content @rowClass' @itemToolbar.For(item)>
       @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { Title = item.Title })
+      @Html.Partial("../shared/Header tag.cshtml", new { Item = item })
     </div>
   </div>
 }

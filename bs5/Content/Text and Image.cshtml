@@ -6,31 +6,33 @@
   var fancyboxAttribute = "app-content-fancybox-group";
   var isTextFirst = Settings.TextFirst;
 
-  // Determine the widths of each part, based on 12 Bootstrap Cols
+// TODO: @2dg - same on bs3/4 and other templates
+  // Determine the widths of each part, based on 12 Bootstrap columns
   var colsText = isTextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
   var colsImg = 12 - colsText;
+  var showImgBetweenTitleAndText = colsImg == 0; // if image has 0 columns, it's between title / text
 
-  var allContent = AsList(Data);
-  var allContentLength = allContent.Count();
-  var hasMultipleItems = allContentLength > 1;
+// TODO: @2dg - same on bs3/4 and other templates
+  // Prepare items to show, count and index to find the last item (for styling)
+  var allItems = AsList(Data);
+  var itemsCount = allItems.Count();
+  var itemIndex = 0;
 }
 
-@* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
-@Html.Partial("../shared/Content List Header.cshtml", new { HasMultipleItems = hasMultipleItems })
+@* Show list header if necessary for configuration *@
+@Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@for (var i = 0; i < allContentLength; i++)
-{
-  var item = allContent.ElementAt(i);
-  var isLastRowClass = i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5";
+@foreach(var item in allItems) {
+  // TODO: @2dg - same on bs3/4 and other templates
+  var rowClass = ++itemIndex == itemsCount ? "mb-4 mb-lg-5" : ""; // if last item, add class to the row to add margin-bottom
 
-  <div class='row @isLastRowClass' @Edit.TagToolbar(item)>
+  <div class='row @rowClass' @Edit.TagToolbar(item)>
     <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
       @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { Title = item.Title })
+      @Html.Partial("../shared/Header tag.cshtml", new { Item = item })
 
-      @* If the image doesn't have it's own column, its between title/text *@
-      @if (colsImg == 0) {
+      @if (showImgBetweenTitleAndText) {
         @Html.Partial("Text and Image.Part-Image.cshtml", new { Item = item })
       }
 
@@ -38,7 +40,7 @@
     </div>
 
     @* If the image has it's own column, it's here *@
-    @if (colsImg != 0) {
+    @if (!showImgBetweenTitleAndText) {
       <div class='col-md-@colsImg order-md-@(!isTextFirst ? "first" : "last")'>
         @* call sub-template to show the image with all possible options *@
         @Html.Partial("Text and Image.Part-Image.cshtml", new { Item = item, Columns = colsImg, FancyboxAttribute = fancyboxAttribute})

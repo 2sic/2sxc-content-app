@@ -6,44 +6,44 @@
   var isTextFirst = Settings.TextFirst;
 
   // Determine the widths of each part, based on 12 Bootstrap Cols
-  const int bootstrapCols = 12;
-  var colsText = isTextFirst ? Settings.ColsElement1 : bootstrapCols - Settings.ColsElement1;
-  var colsImg = bootstrapCols - colsText;
+  var colsText = isTextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
+  var colsImg = 12 - colsText;
+  var showImgBetweenTitleAndText = colsImg == 0; // if image has 0 columns, it's between title / text
 
-  var allContent = AsList(Data);
-  var allContentLength = allContent.Count();
-  var hasMultipleItems = allContentLength > 1;
+  // Prepare items to show, count and index to find the last item (for styling)
+  var allItems = AsList(Data);
+  var itemsCount = allItems.Count();
+  var itemIndex = 0;
+
+	var sizes = "(max-width: 320px) 210px, (min-width: 375px) 252px, (min-width: 425px) 289px, (min-width: 768px) 236px, (min-width: 1024px) 332px, (min-width: 1440px) 400px";
 }
 
-@* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
-@Html.Partial("../shared/Content List Header.cshtml", new { HasMultipleItems = hasMultipleItems })
+@* Show list header if necessary for configuration *@
+@Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@for (var i = 0; i < allContentLength; i++)
-{
-  var item = allContent.ElementAt(i);
-  <div class="co-container-outer mb-4 mb-md-5">
-    <div class="co-container-inner" @Edit.TagToolbar(item)>
-      <div class='row @(i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5")'>
-        <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
-          @* call sub-template to show the title with the correct H1-H6 tag *@
-          @Html.Partial("../shared/Header tag.cshtml", new { Title = item.Title })
+@foreach(var item in allItems) {
 
-          @* If the image doesn't have it's own column, its between title/text *@
-          @if (colsImg == 0) {
-            @Html.Partial("Video.Part-Playback.cshtml", new { Columns = 12, Video = item })
-          }
+  var rowClass = ++itemIndex == itemsCount ? "mb-4 mb-lg-5" : ""; // if last item, add class to the row to add margin-bottom
 
-          @Html.Raw(item.Text)
-        </div>
-        @* If the image has it's own column, it's here *@
-        @if (colsImg != 0) {
-          <div class='col-md-@colsImg order-md-@(isTextFirst ? "last" : "first")'>
-            @Html.Partial("Video.Part-Playback.cshtml", new { Columns = colsImg, Video = item })
-          </div>
-        }
-      </div>
+  <div class='row @rowClass' @Edit.TagToolbar(item)>
+    <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
+      @* call sub-template to show the title with the correct H1-H6 tag *@
+      @Html.Partial("../shared/Header tag.cshtml", new { Item = item })
+
+      @* If the image doesn't have it's own column, its between title/text *@
+      @if (showImgBetweenTitleAndText) {
+        @Html.Partial("Video.Part-Playback.cshtml", new { Columns = 12, Video = item })
+      }
+
+      @Html.Raw(item.Text)
     </div>
+    @* If the image has it's own column, it's here *@
+    @if (!showImgBetweenTitleAndText) {
+      <div class='col-md-@colsImg order-md-@(!isTextFirst ? "first" : "last")'>
+        @Html.Partial("Video.Part-Playback.cshtml", new { Columns = colsImg, Video = item })
+      </div>
+    }
   </div>
 
   if (!Header.AlternatePositions) { continue; }
