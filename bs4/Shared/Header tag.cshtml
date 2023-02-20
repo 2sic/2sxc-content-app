@@ -5,5 +5,5 @@
   it shows the header text inside an H-tag, but the number comes from the presentation settings
 *@
 @if (Content.Presentation.HeadingType != "hide") {
-  @Tag.Custom(Content.Presentation.HeadingType, Text.First(DynamicModel.Title, Content.Title))
+  @Kit.HtmlTag.Custom(Content.Presentation.HeadingType, Text.First(DynamicModel.Title, Content.Title))
 }
