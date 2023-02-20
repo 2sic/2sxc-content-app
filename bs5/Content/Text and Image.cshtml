@@ -15,7 +15,7 @@
   var hasMultipleItems = allContentLength > 1;
 }
 
-
+@* TODO: @2dg *@
 @* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
 @if (hasMultipleItems && Edit.Enabled) {
   <div class='pt-4' @Edit.TagToolbar(Header)></div>
@@ -49,8 +49,11 @@
     }
   </div>
   
-  if (!Header.AlternatePositions) { continue; }
-  isTextFirst = !isTextFirst;
+  @* TODO: @2dg - same on bs3/4 *@
+  @* If the header has AlternatePositions, switch the order of title/text for the next item *@
+  if (Header.AlternatePositions) {
+    isTextFirst = !isTextFirst;
+  }
 }
 
 @Html.Partial("../shared/Assets.cshtml")

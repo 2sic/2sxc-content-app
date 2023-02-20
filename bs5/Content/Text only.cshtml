@@ -13,6 +13,7 @@
   var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false");
 }
 
+@* TODO: @2dg *@
 @* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
 @if (hasMultipleItems && Edit.Enabled) {
   <div class='pt-4' @Edit.TagToolbar(Header)></div>
@@ -31,6 +32,5 @@
     </div>
   </div> 
 }
-
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})

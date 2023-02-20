@@ -25,10 +25,10 @@
     }
     
     <figure class='@(img.Presentation.ImageLightbox != false ? "effect-zoom" : "") mb-0'>
-        @if (img.Presentation.TitleLegend != false) {
-          <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@pic.Alt</figcaption>
-        }
-        @pic
+      @if (img.Presentation.TitleLegend != false) {
+        <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@pic.Alt</figcaption>
+      }
+      @pic
     </figure>
 
     @if (wrapInLink) {
