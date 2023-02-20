@@ -4,17 +4,20 @@
   // get helper commands and run it to get additional information about the link
   var linkHelper = CreateInstance("LinkHelper.cs");
   var linkInfo = linkHelper.LinkInfos(Content);
+
+  // Get HtmlTags service for use below
+  var t = Kit.HtmlTag;
 }
 
 <div class="co-container-outer mb-4 mb-md-5">
   <div class="co-container-inner text-center py-5" @Edit.TagToolbar(Content)>
     @if (Content.Presentation.HeadingType != "hide") {
-      @(Tag.Custom(Content.Presentation.HeadingType)
+      @(t.Custom(Content.Presentation.HeadingType)
         .Class("mb-4")
         .Wrap(
           Content.Title,
-          Tag.Br(),
-          Tag.Small(Content.Description)
+          t.Br(),
+          t.Small(Content.Description)
         )
       )
     }

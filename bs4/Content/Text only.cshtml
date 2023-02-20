@@ -12,7 +12,13 @@
 
   var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false");
 }
-@if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
+
+@* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
+@if (hasMultipleItems && Edit.Enabled) {
+  <div class='pt-4' @Edit.TagToolbar(Header)></div>
+}
+
+@* Show all the content-items - one or more *@
 @for(var i = 0; i < allContentLength; i++)
 {
   var item = allContent.ElementAt(i);

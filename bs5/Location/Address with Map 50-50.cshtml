@@ -12,7 +12,7 @@
   var mapResources = AsDynamic(Content.Presentation, Resources);
 
   // defines a unique dom Id for google map
-  var googleMapDomId = "app-content-google-map-js-" + @CmsContext.Module.Id;
+  var googleMapDomId = "app-content-google-map-js-" + CmsContext.Module.Id;
 }
 
 <div class="row" @Edit.TagToolbar(Content)>
@@ -69,5 +69,5 @@
   </div>
 </div>
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = " scripts, icons"})
+@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts, icons"})
 @Html.Partial("Part GoogleMaps.cshtml", new { DomId = googleMapDomId })

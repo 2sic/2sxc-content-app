@@ -15,11 +15,18 @@
   var hasMultipleItems = allContentLength > 1;
 }
 
-@if (hasMultipleItems && Edit.Enabled) { <div class='pt-4' @Edit.TagToolbar(Header)></div> }
+
+@* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
+@if (hasMultipleItems && Edit.Enabled) {
+  <div class='pt-4' @Edit.TagToolbar(Header)></div>
+}
+
+@* Show all the content-items - one or more *@
 @for (var i = 0; i < allContentLength; i++)
 {
   var item = allContent.ElementAt(i);
   var isLastRowClass = i == (allContentLength - 1) ? "" : "mb-4 mb-lg-5";
+
   <div class='row @isLastRowClass' @Edit.TagToolbar(item)>
     <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
       @* call sub-template to show the title with the correct H1-H6 tag *@
@@ -32,6 +39,7 @@
 
       @Html.Raw(item.Text)
     </div>
+
     @* If the image has it's own column, it's here *@
     @if (colsImg != 0) {
       <div class='col-md-@colsImg order-md-@(!isTextFirst ? "first" : "last")'>
