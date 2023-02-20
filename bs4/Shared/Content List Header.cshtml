@@ -1,0 +1,5 @@
+@inherits Custom.Hybrid.Razor14
+
+@if (DynamicModel.HasMultipleItems && Edit.Enabled) {
+    <div class='p-4' @Edit.TagToolbar(Header)></div>
+}

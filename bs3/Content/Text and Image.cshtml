@@ -16,9 +16,7 @@
 }
 
 @* If it's a list of items, also show edit-options for the header to allow configuring how the list should show *@
-@if (hasMultipleItems && Edit.Enabled) {
-  <div class='pt-4' @Edit.TagToolbar(Header)></div>
-}
+@Html.Partial("../shared/Content List Header.cshtml", new { HasMultipleItems = hasMultipleItems })
 
 @* Show all the content-items - one or more *@
 @for (var i = 0; i < allContentLength; i++)

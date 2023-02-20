@@ -17,7 +17,6 @@
 @* Include bootstrap 5 if the framework isn't known - then this file is still called, and we add Bootstrap to the page *@
 @Kit.Page.Activate(condition: Kit.Css.IsUnknown, features: "Bootstrap5")
 
-
 @* Always Include styles *@
 <link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" @Kit.Page.AssetAttributes() />
 
