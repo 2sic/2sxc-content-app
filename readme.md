@@ -4,11 +4,11 @@
 
 > This is a [2sxc](https://2sxc.org) App for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/)
 
-These are the primary **Content** parts for 2sxc 12.05 supporting many CSS Frameworks.
+These are the primary **Content** parts for 2sxc 15.03 supporting many CSS Frameworks.
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v13.10
+| 2sxc                | ✅    | requires 2sxc v15.03
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
 | No jQuery           | ✅    | 
@@ -17,10 +17,10 @@ These are the primary **Content** parts for 2sxc 12.05 supporting many CSS Frame
 | Source & License    | ✅    | included, ISC/MIT
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
-| Best Practices      | ✅    | Uses v13.10 conventions
+| Best Practices      | ✅    | Uses v15.03 conventions
 | Bootstrap 3         | ✅    | Optimized for v3.3
-| Bootstrap 4         | ✅    | Optimised for latest v4
-| Bootstrap 5         | ✅    | Optimized for v5.1
+| Bootstrap 4         | ✅    | Optimized for latest v4
+| Bootstrap 5         | ✅    | Optimized for v5.2
 
 Other CSS frameworks: please contribute
 
@@ -93,3 +93,8 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 * v14.09.00 2022-09
   * Refactored bs3
   * Added app.json
+* v15.03.00 2023-02
+  * Replaced Tag.Custom with `Kit.HtmlTags`
+  * Enhanced Kit.Image with `imgAltFallback`
+  * Replaced turnOn Tag with `Kit.Page.TurnOn`
+  * Removed _ from Filenames 
