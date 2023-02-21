@@ -6,13 +6,11 @@
   var fancyboxAttribute = "app-content-fancybox-group";
   var isTextFirst = Settings.TextFirst;
 
-// TODO: @2dg - same on bs3/4 and other templates
   // Determine the widths of each part, based on 12 Bootstrap columns
   var colsText = isTextFirst ? Settings.ColsElement1 : 12 - Settings.ColsElement1;
   var colsImg = 12 - colsText;
   var showImgBetweenTitleAndText = colsImg == 0; // if image has 0 columns, it's between title / text
 
-// TODO: @2dg - same on bs3/4 and other templates
   // Prepare items to show, count and index to find the last item (for styling)
   var allItems = AsList(Data);
   var itemsCount = allItems.Count();
@@ -24,18 +22,16 @@
 
 @* Show all the content-items - one or more *@
 @foreach(var item in allItems) {
-  // TODO: @2dg - same on bs3/4 and other templates
   var rowClass = ++itemIndex == itemsCount ? "mb-4 mb-lg-5" : ""; // if last item, add class to the row to add margin-bottom
 
   <div class='row @rowClass' @Edit.TagToolbar(item)>
     <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
+
       @* call sub-template to show the title with the correct H1-H6 tag *@
       @Html.Partial("../shared/Header tag.cshtml", new { Item = item })
-
       @if (showImgBetweenTitleAndText) {
         @Html.Partial("Text and Image.Part-Image.cshtml", new { Item = item })
       }
-
       @Html.Raw(item.Text)
     </div>
 
@@ -48,7 +44,6 @@
     }
   </div>
   
-  @* TODO: @2dg - same on bs3/4 *@
   @* If the header has AlternatePositions, switch the order of title/text for the next item *@
   if (Header.AlternatePositions) {
     isTextFirst = !isTextFirst;
