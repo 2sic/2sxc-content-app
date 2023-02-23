@@ -7,7 +7,7 @@
   var apiKey = Kit.SecureData.Parse(mapSettings.ApiKey); 
   var warn = apiKey.IsSecuredBy("preset");
 }
-@if(warn) {
+@if (warn) {
   <div class="alert alert-danger">
     @Html.Raw(Resources.GoogleMaps.WarningApiKeyForDemoOnly)
   </div>

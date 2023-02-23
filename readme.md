@@ -98,3 +98,5 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Enhanced Kit.Image with `imgAltFallback`
   * Replaced turnOn Tag with `Kit.Page.TurnOn`
   * Removed _ from Filenames 
+* v15.03.01 2023-02
+  * Bug Fixing `imgAltFallback` in BS3

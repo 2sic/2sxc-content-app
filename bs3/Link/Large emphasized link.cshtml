@@ -22,7 +22,7 @@
 
       <div @Edit.TagToolbar(link)>
         <div class="co-title">
-          @if(link.Presentation.HeadingType != "hide")
+          @if (link.Presentation.HeadingType != "hide")
           {
             @((t.Custom(link.Presentation.HeadingType)).Wrap(
               link.Title,
@@ -31,7 +31,7 @@
             ))
           }
         </div>
-        @if(linkInfo.Found) {
+        @if (linkInfo.Found) {
           <a target="@linkInfo.Window" class="btn btn-primary" href="@link.Link">
             <i class="co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
             <span>@link.LinkText</span>

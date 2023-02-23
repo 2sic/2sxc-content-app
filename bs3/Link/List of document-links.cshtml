@@ -17,7 +17,7 @@
         var linkInfo = linkHelper.LinkInfos(link.Link, link.Window, link.Icon);
 
         <li class="co-document col col-md-12" @Edit.TagToolbar(link)>
-          @if(linkInfo.Found) {
+          @if (linkInfo.Found) {
             @:<a title="@link.Title" href="@link.Link" target="@linkInfo.Window">
           }
             <span class="text-primary fas @linkInfo.Icon pull-left"></span>
@@ -25,7 +25,7 @@
               <span class="@(linkInfo.Found ? "co-link" : "")">@link.Title</span>
               <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
             </div>
-          @if(linkInfo.Found){
+          @if (linkInfo.Found){
             @:</a>
           }
         </li>
