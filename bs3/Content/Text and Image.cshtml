@@ -20,7 +20,7 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@foreachforeach ((var item in allItems) {
+@foreach (var item in allItems) {
 
   var rowClass = ++itemIndex == itemsCount ? "mb-4 mb-lg-5" : ""; // if last item, add class to the row to add margin-bottom
 
@@ -29,7 +29,7 @@
       <div class="row @rowClass">
         <div class='col-md-@colsText @(isTextFirst ? "" : "col-md-push-" + @colsImg)'>
           @* call sub-template to show the title with the correct H1-H6 tag *@
-          @Html.Partial("../shared/Header tag.cshtml", new { Item = item })
+          @Html.Partial("../shared/Header tag.cshtml", new { Item = item, HeadingType = item.Presentation.HeadingType })
 
           @* If the image doesn't have it's own column, its between title/text *@
           @if (showImgBetweenTitleAndText) {

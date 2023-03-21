@@ -7,7 +7,7 @@
 @{
   // Get Item to show title for as passed in by the parent template
   var item = DynamicModel.Item;
-  var headingType = Content.Presentation.HeadingType;
+  var headingType = Text.First(DynamicModel.HeadingType, Content.Presentation.HeadingType);
 }
 @if (headingType != "hide") {
   @Kit.HtmlTags.Custom(headingType, item.Title)

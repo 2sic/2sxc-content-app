@@ -25,7 +25,7 @@
   <div class='row @rowClass'>
     <div class='col-md-@cols offset-md-@padding @styling' @itemToolbar.For(item)>
       @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { Item = item })
+      @Html.Partial("../shared/Header tag.cshtml", new { Item = item, HeadingType = item.Presentation.HeadingType })
       @Html.Raw(item.Text)
     </div>
   </div> 
