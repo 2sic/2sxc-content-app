@@ -25,7 +25,7 @@
               <span class="@(linkInfo.Found ? "co-link" : "")">@link.Title</span>
               <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
             </div>
-          @if (linkInfo.Found){
+          @if (linkInfo.Found) {
             @:</a>
           }
         </li>
