@@ -10,7 +10,7 @@
   var itemsCount = allItems.Count();
   var itemIndex = 0;
   // Default Toolbar with prefill for add and Edit Title with Text 
-  var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false");
+  var itemToolbar = Kit.Toolbar.Default(tweak: b => b.FormParameters("hideImage", true));
 }
 
 @* Show list header if necessary for configuration *@

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.00.00" ExportDate="2023-05-03T10:57:28.0512529+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.02.00" ExportDate="2023-06-01T18:28:45.1737141+02:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -390,6 +390,23 @@
           </Entity>
         </Attribute>
         <Attribute StaticName="VarShowImage" Type="Boolean" IsTitle="false">
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="92fa362e-88e8-4653-9eb1-f25bf35dd08b" Json="True" KeyNumber="4684">
+            <Value Key="TitleFalse" Value="Don't add image as this view doesn't show it" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Kein Bild anfügen, da die Anzeige keine Bilder zeigt" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Add image even if this view doesn't show it" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Bild anfügen auch wenn die Anzeige keine Bilder zeigt" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="937bb0eb-a43e-46e2-807d-aa5bec13f029" Json="True" KeyNumber="4684">
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -403,7 +420,7 @@
             <Value Key="DisableTranslation" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Formulas" Value="1e97cfe3-8a80-4898-9b06-1c85cde3677b" Type="Entity" />
+            <Value Key="Formulas" Value="a974afd9-7f08-428a-871e-96cf36c1ce40,1e97cfe3-8a80-4898-9b06-1c85cde3677b" Type="Entity" />
             <Value Key="InputType" Value="boolean-default" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
@@ -427,23 +444,6 @@
             </Value>
             <Value Key="VisibleInEditUI" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="92fa362e-88e8-4653-9eb1-f25bf35dd08b" Json="True" KeyNumber="4684">
-            <Value Key="TitleFalse" Value="Don't add image as this view doesn't show it" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleFalse" Value="Kein Bild anfügen, da die Anzeige keine Bilder zeigt" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Add image even if this view doesn't show it" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Bild anfügen auch wenn die Anzeige keine Bilder zeigt" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
           </Entity>
         </Attribute>
@@ -6859,19 +6859,19 @@
       <Value Key="OriginalId" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredDnnVersion" Value="07.04.02" Type="String">
+      <Value Key="RequiredDnnVersion" Value="09.06.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredOqtaneVersion" Value="03.01.00" Type="String">
+      <Value Key="RequiredOqtaneVersion" Value="03.04.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="15.03.00" Type="String">
+      <Value Key="RequiredVersion" Value="16.02.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="16.00.00" Type="String">
+      <Value Key="Version" Value="16.02.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -7500,7 +7500,7 @@
       <Value Key="Enabled" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Formula" Value="v1(data, context) {&#xA;  if(context.cache.secondRun) return data.value;&#xA;  context.cache.secondRun = true;&#xA;&#xA;  // on first run only make visible if it's value is false from prefill&#xA;  return !data.VarShowImage;&#xA;}" Type="String">
+      <Value Key="Formula" Value="v2((data, context) =&gt; {&#xD;&#xA;  // Hide if there is an image&#xD;&#xA;  if (data.Image) return false;&#xD;&#xA;&#xD;&#xA;  // Show if the parameter said we should hide it (so we need the toggle)&#xD;&#xA;  return data.parameters.hideImage === 'true';&#xD;&#xA;});" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Notes" Value="" Type="String">
@@ -7517,7 +7517,7 @@
       <Value Key="Enabled" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Formula" Value="v1(data, context) {&#xA;  return !!(data.Image || data.VarShowImage);&#xA;}" Type="String">
+      <Value Key="Formula" Value="v2((data, context) =&gt; {&#xA;  // Show if it has an image&#xA;  if (data.Image) return true;&#xA;  // otherwise show if the toggle is on (default)&#xA;  return data.VarShowImage;&#xA;});&#xA;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Notes" Value="" Type="String">
@@ -7537,7 +7537,7 @@
       <Value Key="Enabled" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Formula" Value="v1(data, context) {&#xD;&#xA;  return !!data.Text || !data.parameters.hideText;&#xD;&#xA;}" Type="String">
+      <Value Key="Formula" Value="v2((data, context) =&gt; {&#xD;&#xA;  return {&#xD;&#xA;    value: !!data.Text || data.parameters.hideText != 'true',&#xD;&#xA;    stop: true&#xD;&#xA;  };&#xD;&#xA;});&#xD;&#xA;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Notes" Value="" Type="String">
@@ -8238,6 +8238,20 @@
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="97bb146b-5b82-455a-b87e-d1a6179cf122" AttributeSetName="ContentListHeader" EntityGUID="957c3e91-f8fb-41e8-98c8-ce3e6e566cb7">
       <Value Key="AlternatePositions" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="772dfff1-b236-4aa9-8359-5f53c08ff7bf" AttributeSetName="UiFormula" EntityGUID="a974afd9-7f08-428a-871e-96cf36c1ce40" Json="True">
+      <Value Key="Enabled" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Formula" Value="// Just set the initial value&#xA;v2((data, context) =&gt; {&#xA;  return {&#xA;    // true if it has an image or if parameter not set to 'false'&#xA;    value: !!data.Image || data.parameters.hideImage !== 'true',&#xA;    // stop after first run&#xA;    stop: true&#xA;  };&#xA;});" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Target" Value="Field.Value" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Field.Value" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>

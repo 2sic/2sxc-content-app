@@ -5,7 +5,7 @@
   var itemIndex = 0;
   
   // Default Toolbar with prefill for only add and Edit Title
-  var itemToolbar = Kit.Toolbar.Default(prefill: "VarShowImage=false&hideText=true");
+  var itemToolbar = Kit.Toolbar.Default(tweak: b => b.FormParameters(new { hideImage = true, hideText = true }));
 }
 
 @* This adds all link/script tags *@
