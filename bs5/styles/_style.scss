@@ -55,7 +55,7 @@
       position: relative;
 
       &.co-video-no-image {
-        background-color: rgba($dark,0.4);
+        background-color: color-mix(in srgb, transparent, var(--bs-dark) 40%);
         
         > svg {
           position: relative;
@@ -66,7 +66,7 @@
         figure {
           .overlay {
             position: static;
-            background-color: rgba($dark,0.4);
+            background-color: color-mix(in srgb, transparent, var(--bs-dark) 40%);
           }
         }
         
@@ -106,22 +106,36 @@
   }
 
   .co-linkblock {
-    color: $body-color;   
+    color: var(--bs-body-color);   
+
+    &:hover {
+      figure {
+        &.effect-zoom {
+          img {
+            transform: scale(1.05);
+          }
+        }
+
+        &.effect-darken {
+          background-color: var(--bs-primary);
+
+          img {
+            opacity: 0.8;
+          }
+        }
+      } 
+    }
     
     a {
       text-decoration: none;
-    }
-
-    p {
-      color: $body-color;
-    }
-    
-    span {
-      color: $link-color;
-      vertical-align: middle;
-      display: inline-block;
-      padding: 3px 0;
-      transition: color 0.3s ease-in-out;
+      color: var(--bs-link-color);
+      
+      &:hover {
+        svg {
+          transition: margin-left 0.3s ease-in-out;
+          margin-left: 8px;
+        }               
+      }
 
       svg {
         transition: margin-left 0.3s ease-in-out;
@@ -132,109 +146,27 @@
       }
     }
 
-    &:hover {
-      a {
-        text-decoration: none;
-        color: $body-color;
-
-        figure {
-          &.effect-zoom {
-            img {
-              transform: scale(1.05);
-            }
-          }
-
-          &.effect-darken {
-            background-color: $primary;
-
-            img {
-              opacity: 0.8;
-            }
-          }
-          
-        }
-      }
-
-      span {
-        color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
-
-        svg {
-          transition: margin-left 0.3s ease-in-out;
-          margin-left: 8px;
-        }
-      }
-    }
+    p {
+      color: var(--bs-body-color);
+    }  
 
     &.co-linkblock-overlay {
-      color: $white;
-
+      color: var(--bs-white);
+      
+      h4, p {
+        color: var(--bs-white);
+      } 
+      
       figure {
         .overlay {
           position: absolute;
           z-index: 1;
           left: 0;
           top: 0;
-          background-color: rgba($dark, 0.4);
+          background-color: color-mix(in srgb, transparent, var(--bs-dark) 40%);
           transition: background-color 0.3s ease-in-out;
-          pointer-events: none;
         }
       }
-      
-      p,
-      h4 {
-        color: $white;
-      }
-
-      span {
-        color: $link-color;
-        background: $white;
-        vertical-align: middle;
-        display: inline-block;
-        padding: 5px 10px;
-        align-self: flex-start;
-        border-radius: 4px;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-        svg {
-          transition: margin-left 0.3s ease-in-out;
-          margin-left: 0;
-          vertical-align: text-bottom;
-          margin-bottom: 3px;
-          height: 12px;
-        }
-      }
-
-      &:hover {
-        a {
-          text-decoration: none;
-
-          span {
-            color: $link-hover-color;
-            text-decoration: none;
-            background-color: $body-color;
-            color: $white;
-  
-            svg {
-              transition: margin-left 0.3s ease-in-out;
-              margin-left: 8px;
-            }
-          }
-
-          figure {
-            &.effect-darken {
-              .overlay {
-                background-color: rgba($dark, 0.2);
-              }
-
-              img {
-                opacity: 1;
-              }
-            }            
-          }
-        }
-        
-      }      
     }
   }
 
@@ -252,7 +184,7 @@
       z-index: 1;
       left: 0;
       top: 0;
-      background-color: rgba($dark, 0.4);
+      background-color: color-mix(in srgb, transparent, var(--bs-dark) 40%);
       transition: background-color 0.3s ease-in-out;
       cursor: pointer;
 

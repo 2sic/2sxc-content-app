@@ -8,20 +8,17 @@
   @foreach (var link in AsList(Data)) {
     var linkInfo = linkHelper.LinkInfos(link);
     <li @Edit.TagToolbar(link) class="co-linkblock">
-      @if (linkInfo.Found) {
-        @:<a href='@link.Link' target="@linkInfo.Window" title="@link.Title">
-      }
-        <div class="d-flex flex-row">
-          <div class="pr-2 pl-0 pt-1 pb-0">
-            <i class="text-primary fas @linkInfo.Icon" style="font-size: 24px;"></i>
-          </div>
-          <div class="px-2 py-0">
-            <span class="lead font-weight-normal">@link.Title</span>
-            <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
-          </div>
+      <div class="d-flex flex-row">
+        <div class="pr-2 pl-0 pt-1 pb-0">
+          <i class="text-primary fas @linkInfo.Icon" style="font-size: 24px;"></i>
         </div>
+        <div class="px-2 py-0">
+          <p class="lead font-weight-normal">@link.Title</p>
+          <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+        </div>
+      </div>
       @if (linkInfo.Found) {
-        @:</a>
+        <a href='@link.Link' target="@linkInfo.Window" title="@link.Title" class="stretched-link"></a>
       }
     </li>
   }

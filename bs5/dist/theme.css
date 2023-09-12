@@ -1,0 +1,6 @@
+#theme-page-main {
+  --bs-primary: green;
+  --bs-secondary: #001D38;
+  --bs-body-color: yellow;
+  --bs-link-color: var(--bs-primary);
+}

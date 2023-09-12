@@ -18,6 +18,7 @@
 @Kit.Page.Activate(condition: Kit.Css.IsUnknown, features: "Bootstrap5")
 
 @* Always Include styles *@
+<link rel="stylesheet" href="@App.Path/bs5/dist/theme.css" @Kit.Page.AssetAttributes() />
 <link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" @Kit.Page.AssetAttributes() />
 
 @* Include icon font from SystemSettings if we need them *@
