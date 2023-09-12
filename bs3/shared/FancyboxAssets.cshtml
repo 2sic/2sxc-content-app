@@ -1,7 +1,6 @@
 @inherits Custom.Hybrid.Razor14
 
 @{
-
   // Init options for fancybox binding
   // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
   var fancyboxOptions = new {
@@ -17,6 +16,8 @@
     options = fancyboxOptions
   };
 
-  Kit.Page.Activate("fancybox4"); // see https://r.2sxc.org/turnon
-  Kit.Page.TurnOn("window.appContent.initFancybox()", data: data);
+  @* see https://r.2sxc.org/turnon *@
+  Kit.Page.Activate("fancybox4");
+  @* When the page is ready, run initFancybox JS *@
+  Kit.Page.TurnOn("window.appContent.initFancybox()", data: data, require: "window.Fancybox");
 }
