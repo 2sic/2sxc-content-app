@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
   // get helper commands
@@ -6,14 +6,15 @@
 }
 
 <div class="row">
-  @foreach (var link in AsList(Data)) {
-    var linkInfo = linkHelper.LinkInfos(link);
-    <div class="mb-4 col-12 col-md-6 col-lg-4 co-linkblock" @Edit.TagToolbar(link)>
+  @foreach (var link in AsItems(MyData)) {
+    var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
+    <div class="mb-4 col-12 col-md-6 col-lg-4 co-linkblock" @Kit.Toolbar.Default(link)>
       <h4>@link.Title</h4>
-      <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+      @* TODO: @2dm - USE NEW html modifier? *@
+      <p>@Html.Raw(Tags.Nl2Br(link.String("Description")))</p>
 
-      @if (linkInfo.Found) {
-        <a title="@link.Title" href="@link.Link" target="@linkInfo.Window" class="stretched-link">@link.LinkText <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+      @if (linkInfo.Bool("Found")) {
+        <a href='@link.Url("Link")' target='@linkInfo.String("Window")' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
       }
     </div>
   }

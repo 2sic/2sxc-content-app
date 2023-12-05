@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
   // get helper commands
@@ -6,16 +6,16 @@
 }
 
 <div class="row">
-@foreach (var link in AsList(Data)) {
-  var linkInfo = linkHelper.LinkInfos(link);
+@foreach (var link in AsItems(MyData)) {
+  var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
 
-  <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Edit.TagToolbar(link)>
-    <i class="mb-3 text-primary fas @linkInfo.Icon" aria-hidden="true" style="font-size: 40px;"></i>
+  <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Kit.Toolbar.Default(link)>
+    <i class='mb-3 text-primary fas @linkInfo.String("Icon")' aria-hidden="true" style="font-size: 40px;"></i>
     <h4>@link.Title</h4>
-    <p>@Html.Raw(Tags.Nl2Br(link.Description))</p>
+    <p>@Html.Raw(Tags.Nl2Br(link.String("Description")))</p>
 
-    @if (linkInfo.Found) {
-      <a href="@link.Link" target="@linkInfo.Window" title="@link.Title" class="stretched-link">@link.LinkText <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+    @if (linkInfo.Bool("Found")) {
+      <a href='@link.Url("Link")' target='@linkInfo.String("Window")' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
     }
   </div>
 }

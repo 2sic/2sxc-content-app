@@ -1,16 +1,16 @@
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using ToSic.Razor.Blade;
+using ToSic.Sxc.Data;
 
-public class LinkHelper: Custom.Hybrid.Code14
+public class LinkHelper: Custom.Hybrid.CodeTyped
 {
-  public dynamic LinkInfos(dynamic item) {
-    return LinkInfos(item.Link, item.Window, item.Icon);
+  public object LinkInfos(ITypedItem item) {
+    return LinkInfos(item.Url("Link"), item.String("Window"), item.String("Icon"));
   }
   
   // check a link, prepare target window, icon etc. based on various settings
-  public dynamic LinkInfos(string link, string window, string icon) {
+  public object LinkInfos(string link, string window, string icon) {
     var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
 
     // found something?
@@ -42,10 +42,10 @@ public class LinkHelper: Custom.Hybrid.Code14
     }
 
     // Return a dynamic object with these properties. It must be dynamic, otherwise the other page cannot use the 
-    return AsDynamic(new {
+    return new {
       Found = found,
       Icon = icon,
       Window = window,
-    });
+    };
   }
 }

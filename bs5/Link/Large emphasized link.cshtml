@@ -1,29 +1,23 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
   // get helper commands and run it to get additional information about the link
   var linkHelper = GetCode("LinkHelper.cs");
-  var linkInfo = linkHelper.LinkInfos(Content);
+  var linkInfo = AsTyped(linkHelper.LinkInfos(MyItem) as object);
+  // var linkInfo = linkHelper.LinkInfos(MyItem.Dyn);
 
-  // Get HtmlTags service for use below
-  var t = Kit.HtmlTags;
+  var headingTag = MyItem.Presentation.String("HeadingType");
 }
 
-<div class="text-center py-5" @Edit.TagToolbar(Content)>
-  @if (Content.Presentation.HeadingType != "hide") {
-    @(t.Custom(Content.Presentation.HeadingType)
-      .Class("mb-4")
-      .Wrap(
-        Content.Title,
-        t.Br(),
-        t.Small(Content.Description)
-      )
-    )
+<div class="text-center py-5" @Kit.Toolbar.Default(MyItem)>
+  @if (headingTag != "hide") {
+    var t = Kit.HtmlTags; // Get HtmlTags service for shorter code
+    @t.Custom(headingTag).Class("mb-4").Wrap(MyItem.Title, t.Br(), t.Small(MyItem.Get("Description")))
   }
-  @if (linkInfo.Found) {
-    <a target="@linkInfo.Window" class="btn btn-lg btn-outline-primary" href="@Tags.SafeUrl(Content.Link)">
-      <i class="co-icon fas @linkInfo.Icon" aria-hidden="true"></i>
-      <span>@Content.LinkText</span>
+  @if (linkInfo.Bool("Found")) {
+    <a href='@MyItem.Url("Link")' target='@linkInfo.String("Window")' title="@MyItem.Title" class="btn btn-lg btn-outline-primary">
+      <i class='co-icon fas @linkInfo.String("Icon")' aria-hidden="true"></i>
+      <span>@MyItem.Get("LinkText")</span>
     </a>
   }
 </div>
