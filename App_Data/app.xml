@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.02.00" ExportDate="2023-06-01T18:28:45.1737141+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.17.00" ExportDate="2023-12-05T07:30:05.2163237+01:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -390,23 +390,6 @@
           </Entity>
         </Attribute>
         <Attribute StaticName="VarShowImage" Type="Boolean" IsTitle="false">
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="92fa362e-88e8-4653-9eb1-f25bf35dd08b" Json="True" KeyNumber="4684">
-            <Value Key="TitleFalse" Value="Don't add image as this view doesn't show it" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleFalse" Value="Kein Bild anfügen, da die Anzeige keine Bilder zeigt" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Add image even if this view doesn't show it" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Bild anfügen auch wenn die Anzeige keine Bilder zeigt" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-          </Entity>
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="937bb0eb-a43e-46e2-807d-aa5bec13f029" Json="True" KeyNumber="4684">
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -444,6 +427,23 @@
             </Value>
             <Value Key="VisibleInEditUI" Value="False" Type="Boolean">
               <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="92fa362e-88e8-4653-9eb1-f25bf35dd08b" Json="True" KeyNumber="4684">
+            <Value Key="TitleFalse" Value="Don't add image as this view doesn't show it" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Kein Bild anfügen, da die Anzeige keine Bilder zeigt" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Add image even if this view doesn't show it" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Bild anfügen auch wenn die Anzeige keine Bilder zeigt" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
           </Entity>
         </Attribute>
@@ -6422,8 +6422,8 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a069a1de-f04b-44d7-8ad6-6af85a0476fd" Json="True">
-      <Value Key="Content" Value="null,null,null,null" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,null,null,null,b23f9e7e-0518-42b9-8287-f1ee6362eafe" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null,null,null" Type="Entity" />
       <Value Key="Template" Value="64cc61e5-121f-4910-a61c-82717d61b6fd" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="1e03119e-7409-467b-8c7d-a771fe5955a4" Json="True">
@@ -6844,6 +6844,9 @@
       <Value Key="AllowTokenTemplates" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
+      <Value Key="DebugLog" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="Description" Value="Content App" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -6862,16 +6865,16 @@
       <Value Key="RequiredDnnVersion" Value="09.06.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredOqtaneVersion" Value="03.04.00" Type="String">
+      <Value Key="RequiredOqtaneVersion" Value="04.00.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="16.02.00" Type="String">
+      <Value Key="RequiredVersion" Value="17.00.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="16.02.00" Type="String">
+      <Value Key="Version" Value="17.00.00" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8255,6 +8258,115 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
+    <Entity TargetType="10" AssignmentObjectType="CmsObject" AttributeSetStaticName="cb27a0f2-f921-48d0-a3bc-37c0e77b1d0c" AttributeSetName="ImageDecorator" EntityGUID="3ad22e9c-eab8-4dde-a546-c3412dd3f079" Json="True" KeyString="file:6394">
+      <Value Key="CropBehavior" Value="none" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="CropTo" Value="tl" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="b23f9e7e-0518-42b9-8287-f1ee6362eafe">
+      <Value Key="Image" Value="file:6395" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Test" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="b2619f3d-eb65-4bc8-a67b-d4f2f6777c7c">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLegend" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="18506170-d5b8-4468-bb40-996ccdf19efb">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLegend" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="cf9ca6ae-c63e-4a59-89f4-3def9943ae52">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLegend" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="20b42702-e34c-4dca-97a6-f57e10abe04e">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLegend" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="10" AssignmentObjectType="CmsObject" AttributeSetStaticName="cb27a0f2-f921-48d0-a3bc-37c0e77b1d0c" AttributeSetName="ImageDecorator" EntityGUID="ff0c95ce-fc40-47dc-a329-4d578aa884c7" Json="True" KeyString="file:6395">
+      <Value Key="CropBehavior" Value="to" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="CropTo" Value="tl" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="53695b72-5ca8-4023-9380-c6a3292f2872">
+      <Value Key="ImageLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLegend" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="e3315455-98a4-4ac4-911f-956de8645f53" AttributeSetName="VideoPresentation" EntityGUID="f00942ba-5eae-41bf-98fe-1c2547b97bc6">
+      <Value Key="HeadingType" Value="h2" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="e3315455-98a4-4ac4-911f-956de8645f53" AttributeSetName="VideoPresentation" EntityGUID="e19a8f48-69fe-46c4-97f8-e51be84fcf59">
+      <Value Key="HeadingType" Value="h2" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="e3315455-98a4-4ac4-911f-956de8645f53" AttributeSetName="VideoPresentation" EntityGUID="09da29e0-df2e-46cb-a3dc-a6586db1f39a">
+      <Value Key="HeadingType" Value="h2" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
@@ -8262,6 +8374,7 @@
     <File Id="6162" RelativePath="adam\Content\_QjZ3nml20C0I-mUlRUDUQ\Image\Demo-100.jpg" />
     <File Id="6327" RelativePath="adam\Content\UEEu06rAWEeUbuj_PlQKBQ\VideoDefaultPreviewImage\placeholder-video.png" />
     <File Id="6328" RelativePath="adam\Content\FGY0Y11vmUWniKQtSGOqLA\Image\Demo-1.jpg" />
+    <File Id="6395" RelativePath="adam\Content\fp4_shgFuUKCh_HuY2Lq_g\Image\leonhard-niederwimmer-cF0Z5ZRtQGY-unsplash.jpg" />
     <File Id="6155" RelativePath="adam\Content\1pham15xmEmJz2bPro79cA\Image\80-806204_wallpaper-waves-ocean-stock-hd-photography-high-resolution.jpg" />
     <File Id="6325" RelativePath="adam\Content\CjeO-zo-3EeFOuTS8nhlKw\Image\outrun-vaporwave-hd-wallpaper-thumb.jpg" />
     <File Id="6115" RelativePath="adam\Content\gYs3kM81JkuGbwWib6fsMA\Image\Platzhalterbild_Inhalt-1.jpg" />
@@ -8278,6 +8391,7 @@
     <Folder Id="13742" RelativePath="adam/Content/_QjZ3nml20C0I-mUlRUDUQ/Image/" />
     <Folder Id="13727" RelativePath="adam/Content/UEEu06rAWEeUbuj_PlQKBQ/VideoDefaultPreviewImage/" />
     <Folder Id="13697" RelativePath="adam/Content/FGY0Y11vmUWniKQtSGOqLA/Image/" />
+    <Folder Id="14008" RelativePath="adam/Content/fp4_shgFuUKCh_HuY2Lq_g/Image/" />
     <Folder Id="13725" RelativePath="adam/Content/1pham15xmEmJz2bPro79cA/Image/" />
     <Folder Id="13904" RelativePath="adam/Content/CjeO-zo-3EeFOuTS8nhlKw/Image/" />
     <Folder Id="13675" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/Image/" />
@@ -8301,6 +8415,7 @@
     <Folder Id="13722" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/" />
     <Folder Id="13723" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/Image/" />
     <Folder Id="13696" RelativePath="adam/Content/FGY0Y11vmUWniKQtSGOqLA/" />
+    <Folder Id="14007" RelativePath="adam/Content/fp4_shgFuUKCh_HuY2Lq_g/" />
     <Folder Id="13674" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/" />
     <Folder Id="13704" RelativePath="adam/Content/hc-xFgA_iU-QWEpPzns8Bg/" />
     <Folder Id="13705" RelativePath="adam/Content/hc-xFgA_iU-QWEpPzns8Bg/Image/" />
