@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @*
   this is a sub template which is re-used in many other templates.
@@ -6,9 +6,11 @@
 *@
 @{
   // Get Item to show title for as passed in by the parent template
-  var item = DynamicModel.Item;
-  var headingType = Text.First(DynamicModel.HeadingType, Content.Presentation.HeadingType);
+  var item = MyModel.Item("Item");
+  var headingType = MyModel.String("HeadingType", fallback: item.Presentation.String("HeadingType"));
+
+  // if the heading type is "hide", we don't show anything
+  if (headingType == "hide") { return; }
 }
-@if (headingType != "hide") {
-  @Kit.HtmlTags.Custom(headingType, item.Title)
-}
+@* Create an HTML tag which has the h1, h2 etc. from the heading type*@
+@Kit.HtmlTags.Custom(headingType, item.Title)
