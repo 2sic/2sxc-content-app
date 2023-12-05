@@ -4,7 +4,7 @@
   var mapFirst = CmsContext.View.Identifier == "map-first";
   
   // Build Helper object and get map infos
-  var locationHelper = CreateInstance("LocationHelper.cs");
+  var locationHelper = GetCode("LocationHelper.cs");
   var mapInfo = locationHelper.MapInfos(Content);
 
   // Combine the Presentation with Resources & Settings to get the best possible settings/resources

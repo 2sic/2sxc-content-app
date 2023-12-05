@@ -17,7 +17,7 @@ public class LinkHelper: Custom.Hybrid.Code14
     var found = Text.Has(link);
 
     // process remaining properties, in case we want to override them with automatic stuff
-    if(found) {
+    if (found) {
       var linkExt = Path.GetExtension(link.ToLower());
       var isDoc = fileExtensions.Contains(linkExt);
 
@@ -29,7 +29,7 @@ public class LinkHelper: Custom.Hybrid.Code14
 
       // auto-detect icon based on file type if it's stays on the same site
       // but only if no icon was specified already
-      if(string.IsNullOrEmpty(icon))
+      if (string.IsNullOrEmpty(icon))
         icon = isDoc
         ? "fas fa-file" // if doc, then file-icon
         : (isInternal
@@ -37,7 +37,7 @@ public class LinkHelper: Custom.Hybrid.Code14
           : "fas fa-external-link-alt");   // else if external, show "open new window"
 
       // optionally auto-detect the window
-      if(string.IsNullOrEmpty(window) || window == "auto")
+      if (string.IsNullOrEmpty(window) || window == "auto")
         window = isInternal && !isDoc ? "_self" : "_blank";
     }
 

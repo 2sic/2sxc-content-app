@@ -2,7 +2,7 @@
 @using ToSic.Razor.Blade;
 @{
   // get helper commands and run it to get additional information about the link
-  var linkHelper = CreateInstance("LinkHelper.cs");
+  var linkHelper = GetCode("LinkHelper.cs");
   var linkInfo = linkHelper.LinkInfos(Content);
 
   // Get HtmlTags service for use below

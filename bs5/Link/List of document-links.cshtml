@@ -2,7 +2,7 @@
 @using ToSic.Razor.Blade;
 @{
   // get helper commands
-  var linkHelper = CreateInstance("LinkHelper.cs");
+  var linkHelper = GetCode("LinkHelper.cs");
 }
 <ul class="list-unstyled">
   @foreach (var link in AsList(Data)) {
