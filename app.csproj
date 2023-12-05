@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <!-- This file helps VS Code provide IntelliSense - see https://go.2sxc.org/vscode -->
+
+  <PropertyGroup>
+    <TargetFramework>net4.7.2</TargetFramework>
+    <RootNamespace>App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Tell Visual Studio & VSCode to respect all ToSic.* DLLs in the root bin folder -->
+    <Reference Include="..\..\..\..\bin\ToSic.*.dll" />
+
+    <!-- also add DotNetNuke DLLs - we don't recommend this, because then your code will never be hybrid -->
+    <!-- <Reference Include="..\..\..\..\bin\DotNetNuke.*.dll" /> -->
+  </ItemGroup>
+
+  <!-- Polymorphism
+    If you're working with Polymorphism then you have many of the same files, which confuses Intellisense eg.
+    - /live and /staging have the same files
+    - /bs3 /bs4 / bs5 have the same files
+    The following is meant to exclude some of these folders from intellisense
+  -->
+  <!-- Exclude /bs3 as we're always working on /bs5 -->
+  <ItemGroup>
+    <None Remove="bs3\**" />
+    <Content Remove="bs3\**" />
+    <Compile Remove="bs3\**" />
+    <EmbeddedResource Remove="bs3\**" />
+  </ItemGroup>
+  <!-- Exclude /bs4 as we're always working on /bs5 -->
+  <ItemGroup>
+    <None Remove="bs4\**" />
+    <Content Remove="bs4\**" />
+    <Compile Remove="bs4\**" />
+    <EmbeddedResource Remove="bs4\**" />
+  </ItemGroup>
+</Project>
