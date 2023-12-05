@@ -1,6 +1,6 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @{
-  var lineHalf = CmsContext.View.Identifier == "half" ? "w-50 m-auto shadow" : "w-100 shadow";
+  var lineHalf = MyView.Identifier == "half" ? "w-50 m-auto shadow" : "w-100 shadow";
 }
 
 <hr class="@lineHalf"/>
