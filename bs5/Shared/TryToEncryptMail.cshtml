@@ -1,9 +1,9 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @{
   // This sub template places parts of the mail in span-attributes so that a JS can then re-assemble it when needed
   // This is to prevent robots from collecting the e-mail address
 
-  var eMail = DynamicModel.Email;
+  var eMail = MyModel.String("Email");
 
   var isValid = new System.Text.RegularExpressions.Regex("^[^@]+@[^@]+\\.[^\\.]+$").IsMatch(eMail);
   if (isValid) {

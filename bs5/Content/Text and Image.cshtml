@@ -23,13 +23,16 @@
 
   // Prepare classes for styling and bundle with the item to show
   var itemsWithClasses = allItems.Select((item, index) => {
-    var textIsFirst = alternatePositions ? (initialTextFirst ^ (index % 2) == 0) : initialTextFirst;
+    var textIsFirst = alternatePositions
+      ? (initialTextFirst ^ (index % 2) == 0)
+      : initialTextFirst;
     return new {
       Item = item,
       ImagePlacement = textIsFirst ? "last" : "first",
       TextPlacement = textIsFirst ? "first" : "last",
       // if last item, add class to the row to add margin-bottom
-      LastRowClass = index == itemsCount - 1 ? "mb-4 mb-lg-5" : ""
+      LastRowClass = index == itemsCount - 1 ? "mb-4 mb-lg-5" : "",
+      HeadingType = item.Presentation.String("HeadingType")
     };
   });
 }
@@ -42,7 +45,7 @@
     <div class='col-md-@colsText order-md-@itemSet.ImagePlacement'>
 
       @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { item, HeadingType = item.Presentation.String("HeadingType") })
+      @Html.Partial("../shared/Header tag.cshtml", new { item, itemSet.HeadingType })
       @if (showImgBetweenTitleAndText) {
         @Html.Partial("Text and Image.Part-Image.cshtml", new { item })
       }

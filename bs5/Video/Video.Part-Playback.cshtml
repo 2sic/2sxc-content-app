@@ -1,13 +1,13 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @using System.Text.RegularExpressions;
 @{
   /* Partial template which is re-used in _Video.cshtml to show the video preview and link-to-lightbox for the video */
 
-	var video = DynamicModel.Video;
+	var video = MyModel.Item("Item");
 
   // Check if the link is a youtube, and convert that to a youtube embed
-	var youTubeLink = Regex.Match(Text.First(video.VideoLink, Content.VideoLink), @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+	var youTubeLink = Regex.Match(video.Url("VideoLink"), @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
   var youTubeUrl = youTubeLink.Success
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
@@ -15,26 +15,24 @@
   // this is the parameter passed in from the calling page
   // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
   // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
-  var factor = (DynamicModel.Columns ?? 12) + "/12";
+  var factor = MyModel.Int("Columns", fallback: 12) + "/12";
   
-  var previewIsFrom = Text.First(video.ImageSelection, Content.ImageSelection);
+  var previewIsFrom = video.String("ImageSelection");
   var hasPreviewSource = Text.Has(previewIsFrom);
   object previewSource = !hasPreviewSource
     ? null
     : previewIsFrom == "upload"
       ? video.Field("Image")
       : previewIsFrom == "default"
-        ? App.Resources.Field("VideoDefaultPreviewImage")
+        ? App.Resources.Field("VideoDefaultPreviewImage") as object
         // Fallback: use standard youtube image link
         : "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
 
   var videoSettings = Kit.Image.Settings("Content", aspectRatio: "16:9");
-  var pic = Kit.Image.Picture(previewSource, settings: videoSettings, factor: factor, imgAltFallback: video.EntityTitle);
- 
-  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
+  var pic = Kit.Image.Picture(previewSource, settings: videoSettings, factor: factor, imgAltFallback: video.Title);
 }
 
-@if (hasVideoLightbox != false) {
+@if (video.Presentation.Bool("VideoLightbox")) {
   // define dom attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos"; 
 
@@ -62,12 +60,12 @@
       }
       
       @* This SVG shows the play-icon on top of the video iframe *@
-      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
+      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@UniqueKey">
         @* SVG Code for Play Button *@
         @Html.Partial("Play SVG.cshtml")
       </div>
 
-      <iframe id="iframe-@CmsContext.Module.Id" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
+      <iframe id="iframe-@UniqueKey" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
     } else {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
