@@ -1,8 +1,8 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
   /* This is used in two views */
-  var isRound = CmsContext.View.Identifier == "round";
+  var isRound = MyView.Identifier == "round";
 
   var aspectRatio = isRound ? "1" : "1:1.25";
   var photoSettings = Kit.Image.Settings("PersonPhoto", aspectRatio: aspectRatio);
@@ -14,11 +14,11 @@
   
 }
 <div class="row">
-  @foreach (var person in AsList(Data)) {
-    <div class="col-md-6 mb-4 mb-md-5 row" @Edit.TagToolbar(person)>
+  @foreach (var person in MyItems) {
+    <div class="col-md-6 mb-4 mb-md-5 row" @Kit.Toolbar.Default(person)>
       <div class="col-4 @mbClass">
-        @if (Text.Has(person.Photo)) {
-          @Kit.Image.Picture(person.Field("Photo") , settings: photoSettings, imgClass:"img-fluid " + imgClass, imgAltFallback: person.FullName)        
+        @if (person.IsNotEmpty("Photo")) {
+          @person.Picture("Photo" , settings: photoSettings, imgClass:"img-fluid " + imgClass, imgAltFallback: person.String("FullName"))        
         } else {
           <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
         }

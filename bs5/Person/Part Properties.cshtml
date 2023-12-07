@@ -1,34 +1,38 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
   // This is a partial template which is re-used in many other templates, so it's shared here
   // its shows the person data like name, position, contact data and description
-  var person = DynamicModel.data;
+  var person = MyModel.Item("data");
+  var position = person.String("Position");
+  var mobile = person.String("Mobile");
+  var phone = person.String("Phone");
+  var email = person.String("Email");
 }
 <div class="mb-2">
-  <div class="lead font-weight-bold" itemprop="name">@person.FullName</div>
-  @if (Text.Has(person.Position)) {
-    <div class="mb-2 lead font-weight-normal" itemprop="jobTitle">@person.Position</div>
+  <div class="lead font-weight-bold" itemprop="name">@person.String("FullName")</div>
+  @if (Text.Has(position)) {
+    <div class="mb-2 lead font-weight-normal" itemprop="jobTitle">@position</div>
   }
-  <div itemprop="description">@Html.Raw(person.Description)</div>
+  <div itemprop="description">@person.Html("Description")</div>
 </div>
 <div class="co-p">
-  @if (Text.Has(person.Mobile)) {
+  @if (Text.Has(mobile)) {
     <div itemprop="telephone">
       <i class="fas fa-mobile text-center" style="width:30px;" aria-hidden="true"></i>
-      <a href='tel:@person.Mobile.Replace(" ", "")' itemprop="telephone">@person.Mobile</a>
+      <a href='tel:@mobile.Replace(" ", "")' itemprop="telephone">@mobile</a>
     </div>
   }
-  @if (Text.Has(person.Phone)) {
+  @if (Text.Has(phone)) {
     <div itemprop="telephone">
       <i class="fas fa-phone text-center" style="width:30px;" aria-hidden="true"></i>
-      <a href='tel:@person.Phone.Replace(" ", "")' itemprop="telephone">@person.Phone</a>
+      <a href='tel:@phone.Replace(" ", "")' itemprop="telephone">@phone</a>
     </div>
   }
-   @if (Text.Has(person.Email)) {
+   @if (Text.Has(email)) {
     <div itemprop="email">
       <i class="fas fa-envelope text-center" style="width:30px;"></i>
-      @Html.Partial("../shared/TryToEncryptMail.cshtml", new { Email = person.Email })
+      @Html.Partial("../shared/TryToEncryptMail.cshtml", new { email })
     </div>
   }
 </div>
