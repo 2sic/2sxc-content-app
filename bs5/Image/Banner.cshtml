@@ -1,13 +1,13 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
   // Most Params come come from System-Settings, Height from View Settings
-  var height = Kit.Convert.To(Settings.ImageHeight, fallback: 400); // Should be set on all banner-views
+  var height = MyView.Settings.Int("ImageHeight", fallback: 400); // Should be set on all banner-views
   var bannerSettings = Kit.Image.Settings("Content", height: height);
 }
 
-<div class="co-header" @Edit.TagToolbar(Content)>
-  @Kit.Image.Picture(Content.Field("Image") , settings: bannerSettings, imgClass:"w-100", imgAltFallback: Content.Title)
+<div class="co-header" @Kit.Toolbar.Default(MyItem)>
+  @MyItem.Picture("Image" , settings: bannerSettings, imgClass:"w-100", imgAltFallback: MyItem.Title)
 </div>
 
 @Html.Partial("../shared/Assets.cshtml")
