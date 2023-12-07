@@ -6,7 +6,7 @@
 }
 
 <div class="row">
-@foreach (var link in AsItems(MyData)) {
+@foreach (var link in MyItems) {
   var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
 
   <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Kit.Toolbar.Default(link)>

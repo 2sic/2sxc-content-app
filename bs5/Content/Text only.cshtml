@@ -12,8 +12,7 @@
   var styling = MyView.Settings.String("TextAlignment") == "c" ? "text-center" : "";
 
   // Prepare items to show, count and index to find the last item (for styling)
-  var allItems = AsItems(MyData);
-  var itemsCount = allItems.Count();
+  var itemsCount = MyItems.Count();
   var itemIndex = 0;
 
   // Default Toolbar with prefill for add and Edit Title with Text 
@@ -21,7 +20,7 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in allItems) 
+@foreach (var item in MyItems) 
 {
   // if last item, add class to the row to add margin-bottom
   var rowClass = ++itemIndex == itemsCount ? "mb-4 mb-lg-5" : "";

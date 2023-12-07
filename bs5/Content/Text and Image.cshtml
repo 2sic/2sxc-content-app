@@ -18,11 +18,10 @@
   var alternatePositions = MyHeader.Bool("AlternatePositions");
 
   // Prepare items to show and count to find the last item (for styling)
-  var allItems = AsItems(MyData);
-  var itemsCount = allItems.Count();
+  var itemsCount = MyItems.Count();
 
   // Prepare classes for styling and bundle with the item to show
-  var itemsWithClasses = allItems.Select((item, index) => {
+  var itemsWithClasses = MyItems.Select((item, index) => {
     var textIsFirst = alternatePositions
       ? (initialTextFirst ^ (index % 2) == 0)
       : initialTextFirst;

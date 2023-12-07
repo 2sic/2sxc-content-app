@@ -5,7 +5,7 @@
   var linkHelper = GetCode("LinkHelper.cs");
 }
 <ul class="list-unstyled">
-  @foreach (var link in AsItems(MyData)) {
+  @foreach (var link in MyItems) {
     var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
     <li @Kit.Toolbar.Default(link) class="co-linkblock">
       <div class="d-flex flex-row">
