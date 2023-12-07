@@ -1,14 +1,11 @@
-@inherits Custom.Hybrid.Razor14
-@using ToSic.Razor.Blade;
+@inherits Custom.Hybrid.RazorTyped
 @{
-  var mapSettings = AsDynamic(Content.Presentation.GoogleMaps, Settings.GoogleMaps);
+  // Decrypt the Api key
+  var apiKey = Kit.SecureData.Parse(AllSettings.String("GoogleMaps.ApiKey")); 
   
-  // Decrypt the Api key and find out where it's from. If it's from preset, then we must show the warning
-  var apiKey = Kit.SecureData.Parse(mapSettings.ApiKey); 
-  var warn = apiKey.IsSecuredBy("preset");
+  // If the key is not from preset, then we don't need to show the warning (return)
+  if (!apiKey.IsSecuredBy("preset")) { return; }
 }
-@if (warn) {
-  <div class="alert alert-danger position-absolute bottom-0 start-0">
-    @Html.Raw(Resources.GoogleMaps.WarningApiKeyForDemoOnly)
-  </div>
-}
+<div class="alert alert-danger position-absolute bottom-0 start-0">
+  @Html.Raw(AllResources.String("GoogleMaps.WarningApiKeyForDemoOnly"))
+</div>

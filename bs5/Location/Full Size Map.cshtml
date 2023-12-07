@@ -1,19 +1,15 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
   // Build Helper object and get map infos
   var locationHelper = GetCode("LocationHelper.cs");
-  var mapInfo = locationHelper.MapInfos(Content);
-
-  // Combine the Presentation with Resources & Settings to get the best possible settings/resources
-  // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
-  var mapResources = AsDynamic(Content.Presentation, Resources);
+  var mapInfo = AsTyped(locationHelper.MapInfos(MyItem) as object);
 
   // defines a unique dom Id for google map
-  var googleMapDomId = "app-content-google-map-js-" + @CmsContext.Module.Id;
+  var googleMapDomId = "app-content-google-map-js-" + MyContext.Module.Id;
 }
 
-<div class="app-content-js-google-map-container position-relative" @Edit.TagToolbar(Content)>
+<div class="app-content-js-google-map-container position-relative" @Kit.Toolbar.Default(MyItem)>
   <div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
   @Html.Partial("Part GoogleMapsWarning.cshtml")
 </div>
