@@ -14,7 +14,7 @@
         </div>
         <div class="px-2 py-0">
           <p class="lead font-weight-normal">@link.Title</p>
-          <p>@Html.Raw(Tags.Nl2Br(link.String("Description")))</p>
+          <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
         </div>
       </div>
       @if (linkInfo.Bool("Found")) {

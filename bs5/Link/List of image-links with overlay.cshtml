@@ -17,7 +17,7 @@
           <div>
             <h4>@link.Title</h4>
             @if (Text.Has(link.String("Description"))) {
-              <p>@Html.Raw(Tags.Nl2Br(link.String("Description")))</p>
+              <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
             }
           </div>
           @if (linkInfo.Bool("Found")) {

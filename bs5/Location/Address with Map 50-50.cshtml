@@ -27,7 +27,7 @@
       <div class="mb-2" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         @if (MyItem.IsNotEmpty("Street")) {
           <span itemprop="streetAddress">
-            @Html.Raw(Tags.Nl2Br(MyItem.String("Street")))<br>
+            @MyItem.Html("Street", tweak: t => t.Input(Tags.Nl2Br))<br>
           </span>
         }
         @if (MyItem.IsNotEmpty("City")) {
