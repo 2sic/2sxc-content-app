@@ -17,7 +17,7 @@
 
 <div class="row" @Kit.Toolbar.Default(MyItem)>
   <div class="col-md-6 order-md-1 d-flex align-items-center">
-    <address itemscope itemtype="http://schema.org/LocalBusiness">
+    <address class="w-100" itemscope itemtype="http://schema.org/LocalBusiness">
       <div class="mb-2 pr-md-5" itemprop="name">
         <h4>@MyItem.String("Company")</h4>
         @if (MyItem.IsNotEmpty("Description")) {
