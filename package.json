@@ -1,7 +1,7 @@
 {
   "name": "app-content-templates",
-  "version": "12.05.00",
-  "description": "Bootstrap 3/4 based content templates for websites built with 2sxc and the 2sic bootstrap skin",
+  "version": "17.00.00",
+  "description": "Bootstrap 3,4,5 based content templates for websites built with 2sxc and the 2sic bootstrap skin",
   "main": "(none)",
   "scripts": {
     "build-bs3": "webpack --env style=bs3",

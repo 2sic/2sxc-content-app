@@ -11,7 +11,7 @@ These are the primary **Content** parts for 2sxc 15.03 supporting many CSS Frame
 | 2sxc                | ✅    | requires 2sxc v15.03
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
-| No jQuery           | ✅    | 
+| No jQuery           | ✅    |
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | see below
 | Source & License    | ✅    | included, ISC/MIT
@@ -52,14 +52,13 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 [2sxc]:https://2sxc.org
 [StackOverflow]:http://stackoverflow.com/questions/tagged/2sxc
-[SCSS]:http://sass-lang.com/
 [koi]:https://connect-koi.net/
 
 ## History
 
 * v12.00 2021-05-04 released for 2sxc 12, now compatible with Oqtane as well
-  * 2sxc 12 supports hybrid Apps which run on Dnn ☢️ and Oqtane 💧. These content-templates are the first generation of such apps. 
-* v12.04 2021-09-02 released for 2sxc 12.04 
+  * 2sxc 12 supports hybrid Apps which run on Dnn ☢️ and Oqtane 💧. These content-templates are the first generation of such apps.
+* v12.04 2021-09-02 released for 2sxc 12.04
   * [major clean-up - see blog](https://2sxc.org/en/blog/post/content-is-now-70-off-get-it-asap)
   * also minor changes for Oqtane 2.2 which is now Bootstrap5
 * v12.05 2021-10
@@ -79,14 +78,14 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 * v13.10.00 2022-04
   * Moved access to services to ToSic.Sxc.Services
   * Changed images to use the IImageService and Picture tags
-  * Enabled image configurations 
+  * Enabled image configurations
   * Replaced data-enableoptimizations with IPageService.AssetAttributes()
-* v13.10.03 2022-05 
+* v13.10.03 2022-05
   * Changed fancybox to use the IImageService to render images
 * v14.07.00 2022-06
   * Replaced all base classes with their new sxc14 equivalents
   * Changed from GetService<> to the new ServiceKit14
-  * Updated webpack 
+  * Updated webpack
   * Changed all toolbar configurations to use the IToolbarService
 * v14.08.00 2022-08
   * Removed unnecessary ephemeral fields
@@ -97,6 +96,20 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Replaced Tag.Custom with `Kit.HtmlTags`
   * Enhanced Kit.Image with `imgAltFallback`
   * Replaced turnOn Tag with `Kit.Page.TurnOn`
-  * Removed _ from Filenames 
+  * Removed _ from Filenames
 * v15.03.01 2023-02
   * Bug Fixing `imgAltFallback` in BS3
+* v16.00.00 2023-05
+  * minor enhancements in assets
+  * minor comments / spaces in code conventions etc.
+* v16.0x.00 or v17 2023-12
+  * Updated BS5 to use Typed Code (inherit from `RazorTyped`)
+  * CSS Variables ?? 2ro
+  * also use new `MyView.Settings` (req. v17)
+
+
+TODO: @2ro
+
+1. what BS5 version is it for now - it says 5.2 but is it really?
+1. I don't see BS5 in the package.json, I think something is confusing here
+1. We probably need newer instructions for the latest using CSS variables
