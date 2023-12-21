@@ -1,0 +1,6 @@
+#theme-page-main {
+  --bs-primary: var(--bs-primary, #0060AC);
+  --bs-secondary: var(--bs-secondary, #001D38);
+  --bs-body-color: var(--bs-body-color, #222222);
+  --bs-link-color: var(--bs-primary);
+}
