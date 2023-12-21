@@ -1,3 +1,7 @@
+/*
+Bootstrap 5 uses CSS variables. You can use app-related variables in this file. The standard Bootstrap values are used as a fallback 
+Check our Docs for more information: https://go.2sxc.org/app-theme
+*/
 #theme-page-main {
   --bs-primary: var(--bs-primary, #0060AC);
   --bs-secondary: var(--bs-secondary, #001D38);

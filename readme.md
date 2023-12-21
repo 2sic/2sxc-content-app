@@ -104,5 +104,5 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * minor comments / spaces in code conventions etc.
 * v16.0x.00 or v17 2023-12
   * Updated BS5 to use Typed Code (inherit from `RazorTyped`)
-  * CSS Variables ?? 2ro
+  * CSS Variables for Bootstrap 5, for more information check out the [documentation](https://go.2sxc.org/app-theme)
   * also use new `MyView.Settings` (req. v17)
