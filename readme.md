@@ -20,7 +20,7 @@ These are the primary **Content** parts for 2sxc 15.03 supporting many CSS Frame
 | Best Practices      | ✅    | Uses v15.03 conventions
 | Bootstrap 3         | ✅    | Optimized for v3.3
 | Bootstrap 4         | ✅    | Optimized for latest v4
-| Bootstrap 5         | ✅    | Optimized for v5.2
+| Bootstrap 5         | ✅    | Optimized for v5.3.2
 
 Other CSS frameworks: please contribute
 
@@ -106,10 +106,3 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Updated BS5 to use Typed Code (inherit from `RazorTyped`)
   * CSS Variables ?? 2ro
   * also use new `MyView.Settings` (req. v17)
-
-
-TODO: @2ro
-
-1. what BS5 version is it for now - it says 5.2 but is it really?
-1. I don't see BS5 in the package.json, I think something is confusing here
-1. We probably need newer instructions for the latest using CSS variables
