@@ -9,7 +9,7 @@
 @import "sass-comments.scss";
 
 // Include needed functions and mixins from Bootstrap 4
-@import "../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap5/scss/_functions";
 
 // If you want to use breakpoints, you have to use the mixins and breakpoint sass 
 // @import "../../node_modules/bootstrap/scss/mixins";
@@ -23,6 +23,6 @@
 
 // Now the standard bootstrap functionality
 // It will use our variables
-@import "../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap5/scss/variables";
 
 @import "_style.scss"; // General CSS stuff for everything
