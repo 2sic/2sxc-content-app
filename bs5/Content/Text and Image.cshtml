@@ -1,4 +1,6 @@
 @inherits Custom.Hybrid.RazorTyped
+@using ThisApp.Code
+@using ThisApp.Data
 
 @*  This Template is used in ca. 5 Views which show title, text and image  *@
 
@@ -6,59 +8,34 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
-  // define dom attribute for fancybox
+  // Html DOM attribute for fancybox, settings, etc.
   var fancyboxAttribute = "app-content-fancybox-group";
-
-  // Determine the widths of each part, based on 12 Bootstrap columns
-  var initialTextFirst = MyView.Settings.Bool("TextFirst");
-  var cols = MyView.Settings.Int("ColsElement1");
-  var colsText = initialTextFirst ? cols : 12 - cols;
-  var colsImg = 12 - colsText;
-  var showImgBetweenTitleAndText = colsImg == 0; // if image has 0 columns, it's between title / text
-  var alternatePositions = MyHeader.Bool("AlternatePositions");
-
-  // Prepare items to show and count to find the last item (for styling)
-  var itemsCount = MyItems.Count();
-
-  // Prepare classes for styling and bundle with the item to show
-  var itemsWithClasses = MyItems.Select((item, index) => {
-    var textIsFirst = alternatePositions
-      ? (initialTextFirst ^ (index % 2) == 0)
-      : initialTextFirst;
-    return new {
-      Item = item,
-      ImagePlacement = textIsFirst ? "last" : "first",
-      TextPlacement = textIsFirst ? "first" : "last",
-      // if last item, add class to the row to add margin-bottom
-      LastRowClass = index == itemsCount - 1 ? "mb-4 mb-lg-5" : "",
-      HeadingType = item.Presentation.String("HeadingType")
-    };
-  });
+  var settings = new TextMediaViewSettings(MyView.Settings);
+  var header = new ContentListHeader(MyHeader);
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var itemSet in itemsWithClasses) {
-  var item = itemSet.Item;
+@foreach (var item in ContentHelpers.Prepare(MyItems, settings, header)) {
 
-  <div class='row @itemSet.LastRowClass' @Kit.Toolbar.Default(item)>
-    <div class='col-md-@colsText order-md-@itemSet.ImagePlacement'>
+  <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
 
-      @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { item, itemSet.HeadingType })
-      @if (showImgBetweenTitleAndText) {
+    <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
+      @TitleMaker.Title(Kit, item)
+      @if (settings.ImgIsBetweenTitleAndText) {
         @Html.Partial("Text and Image.Part-Image.cshtml", new { item })
       }
       @item.Html("Text", toolbar: false)
     </div>
 
     @* If the image has it's own column, it's here *@
-    @if (!showImgBetweenTitleAndText) {
-      <div class='col-md-@colsImg order-md-@itemSet.TextPlacement'>
+    @if (!settings.ImgIsBetweenTitleAndText) {
+      <div class='col-md-@settings.ColsMedia order-md-@item.TextPlacement'>
         @* call sub-template to show the image with all possible options *@
-        @Html.Partial("Text and Image.Part-Image.cshtml", new { item, Columns = colsImg, fancyboxAttribute})
+        @Html.Partial("Text and Image.Part-Image.cshtml", new { item, Columns = settings.ColsMedia, fancyboxAttribute })
       </div>
     }
   </div>
+
 }
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})

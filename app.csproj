@@ -37,10 +37,13 @@
     <Reference Include="$(PathBin)\ToSic.*.dll" />
 
     <!-- also add System.Web and DotNetNuke DLLs - useful when creating APIs, but be aware that it may make your code less hybrid -->
-    <!-- <Reference Include="$(PathBin)\DotNetNuke.dll" />
+    <Reference Include="$(PathBin)\DotNetNuke.dll" />
     <Reference Include="$(PathBin)\DotNetNuke.*.dll" />
     <Reference Include="$(PathBin)\System.Web.Http.dll" />
-    <Reference Include="$(PathBin)\System.Net.Http.dll" /> -->
+    <Reference Include="$(PathBin)\System.Net.Http.dll" />
+
+    <!-- System.Web is not in the DNN folder but in the .net Framework installed on the server -->
+    <Reference Include="System.Web" />
   </ItemGroup>
 
   <!-- Polymorphism

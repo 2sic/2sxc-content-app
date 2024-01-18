@@ -1,4 +1,7 @@
 @inherits Custom.Hybrid.RazorTyped
+@using ThisApp
+@using ThisApp.Code
+@using ThisApp.Data
 
 @*  This Template is used in ca. 3 Views which only show the title and the text *@
 
@@ -6,29 +9,17 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
-  // Get the number of columns and the padding for the first column
-  var cols = MyView.Settings.Int("ColsElement1");
-  var padding = MyView.Settings.Int("ColsPaddingLeft");
-  var styling = MyView.Settings.String("TextAlignment") == "c" ? "text-center" : "";
-
-  // Prepare items to show, count and index to find the last item (for styling)
-  var itemsCount = MyItems.Count();
-  var itemIndex = 0;
+  var settings = new TextOnlyViewSettings(MyView.Settings);
 
   // Default Toolbar with prefill for add and Edit Title with Text 
   var itemToolbar = Kit.Toolbar.Default(tweak: b => b.FormParameters("hideImage", true));
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in MyItems) 
-{
-  // if last item, add class to the row to add margin-bottom
-  var rowClass = ++itemIndex == itemsCount ? "mb-4 mb-lg-5" : "";
-  
-  <div class='row @rowClass'>
-    <div class='col-md-@cols offset-md-@padding @styling' @itemToolbar.For(item)>
-      @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { item, HeadingType = item.Presentation.String("HeadingType") })
+@foreach (var item in ContentHelpers.PrepareList(MyItems)) {
+  <div class='row @item.RowClass'>
+    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @itemToolbar.For(item)>
+      @TitleMaker.Title(Kit, item)
       @item.Html("Text", toolbar: false)
     </div>
   </div> 
