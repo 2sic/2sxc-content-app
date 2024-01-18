@@ -10,19 +10,18 @@
 
 @{
   var settings = new TextOnlyViewSettings(MyView.Settings);
-
-  // Default Toolbar with prefill for add and Edit Title with Text 
-  var itemToolbar = Kit.Toolbar.Default(tweak: b => b.FormParameters("hideImage", true));
 }
 
 @* Show all the content-items - one or more *@
 @foreach (var item in ContentHelpers.PrepareList(MyItems)) {
+
   <div class='row @item.RowClass'>
-    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @itemToolbar.For(item)>
+    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @ContentHelpers.Toolbar(Kit, item)>
       @TitleMaker.Title(Kit, item)
       @item.Html("Text", toolbar: false)
     </div>
-  </div> 
+  </div>
+
 }
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})
