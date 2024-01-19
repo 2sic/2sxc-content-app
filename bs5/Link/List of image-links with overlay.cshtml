@@ -4,32 +4,33 @@
 @using ThisApp.Links
 
 <div class="row">
-@foreach (var link in MyItems) {
-  var linkInfo = new LinkSpecs(Kit, link);
-  <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Kit.Toolbar.Default(link)>
-    @if (Text.Has(link.String("Image"))) {
-      <figure class="effect-zoom">
-        @link.Picture("Image", settings: "Content", factor: "1/3", imgAltFallback: link.Title)
-        
-        <div class="overlay w-100 p-4 h-100 d-flex flex-column justify-content-between">
-          <div>
-            <h4>@link.Title</h4>
-            @if (Text.Has(link.String("Description"))) {
-              <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
+  @foreach (var link in AsItems<LinkExtended>(MyItems)) {
+
+    <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Kit.Toolbar.Default(link)>
+      @if (Text.Has(link.String("Image"))) {
+        <figure class="effect-zoom">
+          @link.Picture("Image", settings: "Content", factor: "1/3", imgAltFallback: link.Title)
+          
+          <div class="overlay w-100 p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h4>@link.Title</h4>
+              @if (Text.Has(link.String("Description"))) {
+                <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
+              }
+            </div>
+            @if (link.Found) {
+              <div>
+                <a href='@link.Url("Link")' target='@link.Window' title="@link.Title" class="btn btn-primary stretched-link w-auto">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+              </div>
             }
           </div>
-          @if (linkInfo.Found) {
-            <div>
-              <a href='@link.Url("Link")' target='@linkInfo.Window' title="@link.Title" class="btn btn-primary stretched-link w-auto">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          }
-        </div>
-      </figure>          
-    } else {
-      <div class="bg-primary placeholder"></div>
-    } 
-  </div>
-}
+        </figure>          
+      } else {
+        <div class="bg-primary placeholder"></div>
+      } 
+    </div>
+
+  }
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts,icons"})

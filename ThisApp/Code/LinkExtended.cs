@@ -1,48 +1,43 @@
 using System.Collections.Generic;
 using System.IO;
 using ToSic.Razor.Blade;
-using ToSic.Razor.Html5;
-using ToSic.Sxc.Data;
-using ToSic.Sxc.Services;
+using ThisApp.Data;
+using System;
 
-namespace ThisApp.Data
+namespace ThisApp.Links
 {
   public partial class LinkExtended : Link
   {
-    public LinkExtended(ITypedItem item, ServiceKit16 kit) : base(item, kit) { }
-
+    /// <summary>
+    /// Report if there really was a link
+    /// </summary>
     public bool Found => Text.Has(Link);
 
-    public new string Icon
-    {
-      get
-      {
-        if (_icon != null) return _icon;
-        if (string.IsNullOrEmpty(base.Icon))
-          _icon = IsDocument
-            ? "fas fa-file" // if doc, then file-icon
-            : (LinkIsInternal()
-              ? "fas fa-caret-right" // else if internal, use play-button
-              : "fas fa-external-link-alt");   // else if external, show "open new window"
-        return _icon = base.Icon;
-      }
-    }
+    public new string Icon => _icon ??= GetIcon();
     private string _icon;
 
-    // TODO: @2dm NOTE that properties can't have the same name as the class
-
-    public new string Window
-    {
-      get
-      {
-        if (_window != null) return _window;
-        return _window = (string.IsNullOrEmpty(base.Window) || base.Window == "auto")
-          ? LinkIsInternal() && !IsDocument ? "_self" : "_blank"
-          : base.Window;
-      }
-    }
+    public new string Window => _window ??= GetWindow();
     private string _window;
 
+    #region Getters for advanced properties
+
+    private string GetIcon() =>!string.IsNullOrEmpty(base.Icon)
+      ? base.Icon
+      : IsDocument
+        ? "fas fa-file" // if doc, then file-icon
+        : (LinkIsInternal()
+          ? "fas fa-caret-right" // else if internal, use play-button
+          : "fas fa-external-link-alt");   // else if external, show "open new window"
+
+    private string GetWindow() => (string.IsNullOrEmpty(base.Window) || base.Window == "auto")
+      ? LinkIsInternal() && !IsDocument
+        ? "_self"
+        : "_blank"
+      : base.Window;
+
+    #endregion
+
+    #region Private Helpers
 
     private bool IsDocument => _isDoc ??= DocumentExtensions.Contains(Path.GetExtension(Link.ToLower()));
     private bool? _isDoc;
@@ -58,6 +53,8 @@ namespace ThisApp.Data
       return _linkIsInternal.Value;
     }
     private bool? _linkIsInternal;
+
+    #endregion
   }
 
 }

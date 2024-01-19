@@ -3,14 +3,14 @@
 @using ThisApp.Code
 @using ThisApp.Links
 @{
-  var linkInfo = new LinkSpecs(Kit, MyItem);
+  var linkInfo = AsItem<LinkExtended>(MyItem);
   var headingTag = MyItem.Presentation.String("HeadingType");
+  var t = Kit.HtmlTags; // Short name for HtmlTags service for use below
 }
 
 <div class="text-center py-5" @Kit.Toolbar.Default(MyItem)>
   
   @if (headingTag != "hide") {
-    var t = Kit.HtmlTags; // Get HtmlTags service for shorter code
     @t.Custom(headingTag).Class("mb-4").Wrap(
       MyItem.Title,
       t.Br(),

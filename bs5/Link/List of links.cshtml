@@ -4,15 +4,14 @@
 @using ThisApp.Links
 
 <div class="row">
-  @foreach (var link in MyItems) {
-    var linkInfo = new LinkSpecs(Kit, link);
+  @foreach (var link in AsItems<LinkExtended>(MyItems)) {
     
     <div class="mb-4 col-12 col-md-6 col-lg-4 co-linkblock" @Kit.Toolbar.Default(link)>
       <h4>@link.Title</h4>
       <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
 
-      @if (linkInfo.Found) {
-        <a href='@link.Url("Link")' target='@linkInfo.Window' title="@link.Title" class="stretched-link">@link.Get("LinkText")
+      @if (link.Found) {
+        <a href='@link.Url("Link")' target='@link.Window' title="@link.Title" class="stretched-link">@link.Get("LinkText")
           <i class="fas fa-chevron-right" aria-hidden="true"></i>
         </a>
       }

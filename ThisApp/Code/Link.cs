@@ -6,7 +6,7 @@ namespace ThisApp.Data
   public partial class Link : LinkBase
   {
     // public Link(ITypedItem item) : base(item) { }
-    public Link(ITypedItem item, ServiceKit16 kit) : base(item, kit) { }
+    // public Link(ITypedItem item, ServiceKit16 kit) : base(item, kit) { }
 
     public string Description => GetThis(fallback: "");
 
@@ -25,7 +25,7 @@ namespace ThisApp.Data
 
   public class LinkBase : Custom.Data.Item16Experimental
   {
-    public LinkBase(ITypedItem item, ServiceKit16 kit) : base(item, kit) { }
+    // public LinkBase(ITypedItem item, ServiceKit16 kit) : base(item, kit) { }
 
     public string Link => GetThis(fallback: "");
   }
