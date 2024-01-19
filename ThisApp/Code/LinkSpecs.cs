@@ -50,6 +50,7 @@ namespace ThisApp.Links
 
     private static List<string> DocumentExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
 
+
     private bool LinkIsInternal(ServiceKit16 kit, string link)
       => link.Contains(kit.Link.To()) // Link to the same page
         || link.StartsWith("/") // absolute link in same site, eg. "/about-us"

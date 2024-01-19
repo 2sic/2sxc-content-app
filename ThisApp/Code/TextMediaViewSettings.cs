@@ -4,17 +4,15 @@ namespace ThisApp.Data
 {
   public partial class TextMediaViewSettings : Custom.Data.Item16Experimental
   {
-    public TextMediaViewSettings(ITypedItem item) : base(item) { }
-
     public bool TextFirst => GetThis(fallback: false);
     public int ColsElement1 => GetThis(fallback: 0);
   }
 
   public partial class TextMediaViewSettings
   {
-    public int ColsText => TextFirst ? ColsElement1 : Constants.TotalColumns - ColsElement1;
+    public int ColsText => TextFirst ? ColsElement1 : Styling.TotalColumns - ColsElement1;
 
-    public int ColsMedia => TextFirst ? Constants.TotalColumns - ColsElement1 : ColsElement1;
+    public int ColsMedia => TextFirst ? Styling.TotalColumns - ColsElement1 : ColsElement1;
 
     /// <summary>
     /// if image has 0 columns, it's between title / text

@@ -9,7 +9,7 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
-  var settings = new TextOnlyViewSettings(MyView.Settings);
+  var settings = AsItem<TextOnlyViewSettings>(MyView.Settings);
 }
 
 @* Show all the content-items - one or more *@

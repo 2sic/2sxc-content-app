@@ -1,10 +1,12 @@
 using ToSic.Sxc.Data;
+using ToSic.Sxc.Services;
 
 namespace ThisApp.Data
 {
-  public partial class Link : Custom.Data.Item16Experimental
+  public partial class Link : LinkBase
   {
-    public Link(ITypedItem item) : base(item) { }
+    // public Link(ITypedItem item) : base(item) { }
+    public Link(ITypedItem item, ServiceKit16 kit) : base(item, kit) { }
 
     public string Description => GetThis(fallback: "");
 
@@ -21,4 +23,10 @@ namespace ThisApp.Data
     public string Window => GetThis(fallback: "");
   }
 
+  public class LinkBase : Custom.Data.Item16Experimental
+  {
+    public LinkBase(ITypedItem item, ServiceKit16 kit) : base(item, kit) { }
+
+    public string Link => GetThis(fallback: "");
+  }
 }

@@ -10,8 +10,8 @@
 @{
   // Html DOM attribute for fancybox, settings, etc.
   var fancyboxAttribute = "app-content-fancybox-group";
-  var settings = new TextMediaViewSettings(MyView.Settings);
-  var header = new ContentListHeader(MyHeader);
+  var settings = AsItem<TextMediaViewSettings>(MyView.Settings);
+  var header = AsItem<ContentListHeader>(MyHeader);
 }
 
 @* Show all the content-items - one or more *@
