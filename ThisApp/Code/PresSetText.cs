@@ -6,11 +6,11 @@ namespace ThisApp.Data
   {
     public PresSetText(ITypedItem item) : base(item) { }
 
-    public string HeadingType => GetThis(fallback: "");
+    public string HeadingType => String(fallback: "");
 
-    public bool ImageLightbox => GetThis(fallback: true);
+    public bool ImageLightbox => Bool(fallback: true);
 
-    public bool TitleLightbox => GetThis(fallback: true);
+    public bool TitleLightbox => Bool(fallback: true);
   }
 
 }

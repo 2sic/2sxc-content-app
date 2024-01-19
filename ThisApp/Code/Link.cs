@@ -1,3 +1,5 @@
+using log4net.Util;
+
 namespace ThisApp.Data
 {
   public partial class Link : LinkBase
@@ -8,7 +10,6 @@ namespace ThisApp.Data
 
     public string Icon => String(fallback: "");
 
-    // TODO: @2dm NOTE that properties can't have the same name as the class
 
     public string LinkUrl => Url(nameof(Link), fallback: "");
 
@@ -19,6 +20,8 @@ namespace ThisApp.Data
 
   public class LinkBase : Custom.Data.Item16Experimental
   {
+    // Properties can't have the same name as the class, so we can't add it directly to the Link class
+    // Which is why we have this base class as a workaround
     public string Link => String(fallback: "");
   }
 }

@@ -2,9 +2,9 @@
 @using ToSic.Razor.Blade
 @using ThisApp
 @using ThisApp.Code
-@{
-  /* This is a partial template which is re-used in the Content-Templates */
 
+@*  This is a partial template which is re-used in the Content-Templates  *@
+@{
   // Parameter passed in from the calling page
   var imgItem = MyModel.Item("Item");
   var columns = MyModel.Int("Columns", fallback: 0);
@@ -16,7 +16,8 @@
 }
 
 @* If we use a lightbox, we must wrap it inside an <a> tag with all the specs *@
-@if (pic.UseLightbox) {
+@if (pic.UseLightbox)
+{
   var picLb = pic.LightboxPic;
   @:<a @fbAttribute data-src='@imgItem.Url("Image")' data-srcset="@picLb.SrcSet" data-sizes="@picLb.Sizes" data-preload="false" data-caption="@pic.LightboxCaption">
 }
@@ -30,6 +31,7 @@
   </figure>
 
 @* closing </a> tag if we used a lightbox *@
-@if (pic.UseLightbox) {
+@if (pic.UseLightbox)
+{
   @:</a>
 }

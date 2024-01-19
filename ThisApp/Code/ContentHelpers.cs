@@ -25,7 +25,6 @@ namespace ThisApp.Code
         hideText
       }));
 
-    // WIP
     /// <summary>
     /// Process a list and return an object with more information.
     /// For example, how to style the last Row etc.

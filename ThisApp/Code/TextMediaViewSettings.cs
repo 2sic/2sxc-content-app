@@ -1,11 +1,9 @@
-using ToSic.Sxc.Data;
-
 namespace ThisApp.Data
 {
   public partial class TextMediaViewSettings : Custom.Data.Item16Experimental
   {
-    public bool TextFirst => GetThis(fallback: false);
-    public int ColsElement1 => GetThis(fallback: 0);
+    public bool TextFirst => Bool(fallback: false);
+    public int ColsElement1 => Int(fallback: 0);
   }
 
   public partial class TextMediaViewSettings
