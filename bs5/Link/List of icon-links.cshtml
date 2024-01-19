@@ -11,7 +11,7 @@
       <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
 
       @if (link.IsNotEmpty("Link")) {
-        <a href='@link.Url("Link")' target='@link.WindowAuto' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+        <a href='@link.LinkUrl' target='@link.WindowAuto' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
       }
     </div>
   }
