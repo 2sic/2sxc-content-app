@@ -1,9 +1,9 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade
 @using ThisApp.Code
-@using ThisApp.Links
+@using ThisApp.Data
 @{
-  var linkInfo = AsItem<LinkExtended>(MyItem);
+  var linkInfo = AsItem<Link>(MyItem);
   var headingTag = MyItem.Presentation.String("HeadingType");
   var t = Kit.HtmlTags; // Short name for HtmlTags service for use below
 }
@@ -18,9 +18,9 @@
     )
   }
 
-  @if (linkInfo.Found) {
-    <a href='@MyItem.Url("Link")' target='@linkInfo.Window' title="@MyItem.Title" class="btn btn-lg btn-outline-primary">
-      <i class='co-icon fas @linkInfo.Icon' aria-hidden="true"></i>
+  @if (linkInfo.IsNotEmpty("Link")) {
+    <a href='@MyItem.Url("Link")' target='@linkInfo.WindowAuto' title="@MyItem.Title" class="btn btn-lg btn-outline-primary">
+      <i class='co-icon fas @linkInfo.IconAuto' aria-hidden="true"></i>
       <span>@MyItem.Get("LinkText")</span>
     </a>
   }

@@ -1,22 +1,22 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @using ThisApp.Code
-@using ThisApp.Links
+@using ThisApp.Data
 
 <ul class="list-unstyled">
-  @foreach (var link in AsItems<LinkExtended>(MyItems)) {
+  @foreach (var link in AsItems<Link>(MyItems)) {
     <li @Kit.Toolbar.Default(link) class="co-linkblock">
       <div class="d-flex flex-row">
         <div class="pr-2 pl-0 pt-1 pb-0">
-          <i class='text-primary fas @link.Icon' style="font-size: 24px;"></i>
+          <i class='text-primary fas @link.IconAuto' style="font-size: 24px;"></i>
         </div>
         <div class="px-2 py-0">
           <p class="lead font-weight-normal">@link.Title</p>
           <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
         </div>
       </div>
-      @if (link.Found) {
-        <a href='@link.Url("Link")' target='@link.Window' title="@link.Title" class="stretched-link"></a>
+      @if (link.IsNotEmpty("Link")) {
+        <a href='@link.Url("Link")' target='@link.WindowAuto' title="@link.Title" class="stretched-link"></a>
       }
     </li>
   }

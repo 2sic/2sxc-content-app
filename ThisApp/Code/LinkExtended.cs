@@ -1,41 +1,43 @@
 using System.Collections.Generic;
 using System.IO;
-using ToSic.Razor.Blade;
-using ThisApp.Data;
-using System;
 
-namespace ThisApp.Links
+namespace ThisApp.Data
 {
-  public partial class LinkExtended : Link
+  public partial class Link
   {
     /// <summary>
-    /// Report if there really was a link
+    /// Better icon, with auto-detection for documents and internal links
     /// </summary>
-    public bool Found => Text.Has(Link);
-
-    public new string Icon => _icon ??= GetIcon();
+    public string IconAuto => _icon ??= OptimalIcon();
     private string _icon;
 
-    public new string Window => _window ??= GetWindow();
+    /// <summary>
+    /// Better window, with auto-detection for on-site vs. external links
+    /// </summary>
+    public string WindowAuto => _window ??= OptimalWindow();
     private string _window;
+
+
 
     #region Getters for advanced properties
 
-    private string GetIcon() =>!string.IsNullOrEmpty(base.Icon)
-      ? base.Icon
+    private string OptimalIcon() =>!string.IsNullOrEmpty(Icon)
+      ? Icon
       : IsDocument
         ? "fas fa-file" // if doc, then file-icon
         : (LinkIsInternal()
           ? "fas fa-caret-right" // else if internal, use play-button
           : "fas fa-external-link-alt");   // else if external, show "open new window"
 
-    private string GetWindow() => (string.IsNullOrEmpty(base.Window) || base.Window == "auto")
+    private string OptimalWindow() => (string.IsNullOrEmpty(Window) || Window == "auto")
       ? LinkIsInternal() && !IsDocument
         ? "_self"
         : "_blank"
-      : base.Window;
+      : Window;
 
     #endregion
+
+
 
     #region Private Helpers
 

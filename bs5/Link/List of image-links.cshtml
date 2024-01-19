@@ -1,10 +1,10 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @using ThisApp.Code
-@using ThisApp.Links
+@using ThisApp.Data
 
 <div class="row">
-  @foreach (var link in AsItems<LinkExtended>(MyItems)) {
+  @foreach (var link in AsItems<Link>(MyItems)) {
 
     <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Kit.Toolbar.Default(link)>
       @if (Text.Has(link.String("Image"))) {
@@ -20,8 +20,8 @@
         <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
       }
       
-      @if (link.Found) {
-        <a href='@link.Url("Link")' target='@link.Window' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+      @if (link.IsNotEmpty("Link")) {
+        <a href='@link.Url("Link")' target='@link.WindowAuto' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
       }
     </div>
 
