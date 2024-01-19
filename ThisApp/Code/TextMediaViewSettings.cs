@@ -1,8 +1,8 @@
 using ToSic.Sxc.Data;
-using ToSic.Sxc.Data.Experimental;
+
 namespace ThisApp.Data
 {
-  public partial class TextMediaViewSettings : TypedItem
+  public partial class TextMediaViewSettings : Custom.Data.Item16Experimental
   {
     public TextMediaViewSettings(ITypedItem item) : base(item) { }
 

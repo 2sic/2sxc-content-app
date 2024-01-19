@@ -1,8 +1,8 @@
 using ToSic.Sxc.Data;
-using ToSic.Sxc.Data.Experimental;
+
 namespace ThisApp.Data
 {
-  public partial class Link : TypedItem
+  public partial class Link : Custom.Data.Item16Experimental
   {
     public Link(ITypedItem item) : base(item) { }
 

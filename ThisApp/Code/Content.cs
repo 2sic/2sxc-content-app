@@ -1,9 +1,8 @@
 using ToSic.Sxc.Data;
-using ToSic.Sxc.Data.Experimental;
 using ToSic.Sxc.Images;
 namespace ThisApp.Data
 {
-  public partial class Content : TypedItem
+  public partial class Content : Custom.Data.Item16Experimental
   {
     public Content(ITypedItem item) : base(item) { }
 

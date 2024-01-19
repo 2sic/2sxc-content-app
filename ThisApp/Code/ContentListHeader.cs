@@ -1,8 +1,8 @@
 using ToSic.Sxc.Data;
-using ToSic.Sxc.Data.Experimental;
+
 namespace ThisApp.Data
 {
-  public partial class ContentListHeader : TypedItem
+  public partial class ContentListHeader : Custom.Data.Item16Experimental
   {
     public ContentListHeader(ITypedItem item) : base(item) { }
 

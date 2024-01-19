@@ -1,8 +1,8 @@
 using ToSic.Sxc.Data;
-using ToSic.Sxc.Data.Experimental;
+
 namespace ThisApp.Data
 {
-  public partial class PresSetText : TypedItem
+  public partial class PresSetText : Custom.Data.Item16Experimental
   {
     public PresSetText(ITypedItem item) : base(item) { }
 

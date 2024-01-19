@@ -1,9 +1,9 @@
 using ToSic.Sxc.Data;
-using ToSic.Sxc.Data.Experimental;
+
 namespace ThisApp.Data
 {
 
-  public partial class TextOnlyViewSettings : TypedItem
+  public partial class TextOnlyViewSettings : Custom.Data.Item16Experimental
   {
     public TextOnlyViewSettings(ITypedItem item) : base(item) { }
 
