@@ -1,5 +1,4 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
 @using ThisApp.Code
 @using ThisApp.Data
 
@@ -17,9 +16,10 @@
       }
 
       <h4>@link.Title</h4>
-      @if (link.IsNotEmpty("Description")) {
+      @link.DescriptionHtml(false)
+      @* @if (link.IsNotEmpty("Description")) {
         <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
-      }
+      } *@
       
       @if (link.IsNotEmpty("Link")) {
         <a href='@link.LinkUrl' target='@link.WindowAuto' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>

@@ -1,5 +1,4 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
 @using ThisApp.Code
 @using ThisApp.Data
 
@@ -13,7 +12,8 @@
         </div>
         <div class="px-2 py-0">
           <p class="lead font-weight-normal">@link.Title</p>
-          <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
+          @link.DescriptionHtml(true)
+          @* <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p> *@
         </div>
       </div>
       @if (link.IsNotEmpty("Link")) {

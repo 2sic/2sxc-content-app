@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using ToSic.Razor.Blade;
 
 namespace ThisApp.Data
 {
@@ -17,6 +18,14 @@ namespace ThisApp.Data
     public string WindowAuto => _window ??= OptimalWindow();
     private string _window;
 
+    /// <summary>
+    /// The description - if provided - is often needed in a <p>
+    /// and the new-lines should become <br>
+    /// </summary>
+    /// <returns></returns>
+    public IHtmlTag DescriptionHtml(bool useEmptyParagraph) => IsEmpty(nameof(Description))
+      ? (useEmptyParagraph ? Tag.P() : null)
+      : Html(nameof(Description), tweak: t => t.Input(Tags.Nl2Br));
 
 
     #region Getters for advanced properties

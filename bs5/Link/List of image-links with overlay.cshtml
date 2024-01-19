@@ -1,5 +1,4 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
 @using ThisApp.Code
 @using ThisApp.Data
 
@@ -16,9 +15,10 @@
           <div class="overlay w-100 p-4 h-100 d-flex flex-column justify-content-between">
             <div>
               <h4>@link.Title</h4>
-              @if (link.IsNotEmpty("Description")) {
+              @link.DescriptionHtml(false)
+              @* @if (link.IsNotEmpty("Description")) {
                 <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
-              }
+              } *@
             </div>
             @if (link.IsNotEmpty("Link"))
             {
