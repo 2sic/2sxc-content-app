@@ -1,38 +1,43 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@using ToSic.Razor.Blade
+@using ThisApp
+@using ThisApp.Code
+@using ThisApp.Data
 @{
   // Determine the widths of each part, based on 12 Bootstrap Cols
   var columns = 12 / MyView.Settings.Int("MaxPerRow");
   var factor = 1f / MyView.Settings.Int("MaxPerRow"); // percentage of the content-width
   
   // define dom attribute for fancybox
-  var fancyboxAttribute = "app-content-fancybox-" + MyContext.Module.Id; 
+  var fancyboxAttribute = "app-content-fancybox-" + UniqueKey; 
 }
 
 <div class="row">
 @foreach (var imgItem in MyItems) {
-  var presSettings = imgItem.Presentation;
-  var wrapInLink = presSettings.Bool("ImageLightbox");
+  var presSettings = AsItem<PresSetImage>(imgItem.Presentation);
+  var wrapInLink = presSettings.ImageLightbox;
 
   var imgField = imgItem.Field("Image");
   var pic = Kit.Image.Picture(imgField, settings: "Content", factor: factor, imgClass: "w-100", imgAltFallback: imgItem.Title);
 
   <div class='@(columns > 10 ? "col-12" : "col-12 col-sm-6") col-lg-@columns py-3' @Kit.Toolbar.Default(imgItem)>
 
-    @if (wrapInLink) {
-      var lbPic = imgItem.Picture("Image", settings: "Lightbox");
-      var caption = presSettings.Bool("TitleLightbox", fallback: true) ? pic.Alt : "";
-      @:<a @fancyboxAttribute data-src='@imgItem.Url("Image")' data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
+    @if (wrapInLink)
+    {
+      var picLb = imgItem.Picture("Image", settings: "Lightbox");
+      var caption = presSettings.TitleLightbox ? pic.Alt : "";
+      @:<a @fancyboxAttribute data-src='@imgItem.Url("Image")' data-srcset="@picLb.SrcSet" data-sizes="@picLb.Sizes" data-preload="false" data-caption="@caption">
     }
     
     <figure class='@(presSettings.Bool("ImageLightbox", fallback: true) ? "effect-zoom" : "") mb-0'>
-      @if (presSettings.Bool("TitleLegend", fallback: true)) {
+      @if (presSettings.TitleLegend) {
         <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@pic.Alt</figcaption>
       }
       @pic
     </figure>
 
-    @if (wrapInLink) {
+    @if (wrapInLink)
+    {
       @:</a>
     }
 
