@@ -1,13 +1,11 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
-@{
-  // get helper commands
-  var linkHelper = GetCode("LinkHelper.cs");
-}
+@using ThisApp.Code
+@using ThisApp.Links
 
 <div class="row">
 @foreach (var link in MyItems) {
-  var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
+  var linkInfo = new LinkSpecs(Kit, link);
   <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Kit.Toolbar.Default(link)>
     @if (Text.Has(link.String("Image"))) {
       <figure class="effect-zoom">
@@ -20,9 +18,9 @@
               <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
             }
           </div>
-          @if (linkInfo.Bool("Found")) {
+          @if (linkInfo.Found) {
             <div>
-              <a href='@link.Url("Link")' target='@linkInfo.String("Window")' title="@link.Title" class="btn btn-primary stretched-link w-auto">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+              <a href='@link.Url("Link")' target='@linkInfo.Window' title="@link.Title" class="btn btn-primary stretched-link w-auto">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
             </div>
           }
         </div>

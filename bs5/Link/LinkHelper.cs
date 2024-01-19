@@ -10,7 +10,7 @@ public class LinkHelper: Custom.Hybrid.CodeTyped
   }
   
   // check a link, prepare target window, icon etc. based on various settings
-  public object LinkInfos(string link, string window, string icon) {
+  private object LinkInfos(string link, string window, string icon) {
     var fileExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
 
     // found something?

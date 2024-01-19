@@ -14,10 +14,4 @@ namespace ThisApp.Data
     public string ImageUrl => Url(nameof(Image), fallback: "");
   }
 
-  public partial class Content
-  {
-    // public IResponsivePicture PicDisplay => _picDisplay 
-    //   ??= Picture(nameof(Image), settings: "Content", factor: resizeFactor, imgAltFallback: Title);
-    // private IResponsivePicture _picDisplay;
-  }
 }

@@ -1,20 +1,18 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
-@{
-  // get helper commands
-  var linkHelper = GetCode("LinkHelper.cs");
-}
+@using ToSic.Razor.Blade
+@using ThisApp.Code
+@using ThisApp.Links
 
 <div class="row">
   @foreach (var link in MyItems) {
-    var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
+    var linkInfo = new LinkSpecs(Kit, link);
     
     <div class="mb-4 col-12 col-md-6 col-lg-4 co-linkblock" @Kit.Toolbar.Default(link)>
       <h4>@link.Title</h4>
       <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
 
-      @if (linkInfo.Bool("Found")) {
-        <a href='@link.Url("Link")' target='@linkInfo.String("Window")' title="@link.Title" class="stretched-link">@link.Get("LinkText")
+      @if (linkInfo.Found) {
+        <a href='@link.Url("Link")' target='@linkInfo.Window' title="@link.Title" class="stretched-link">@link.Get("LinkText")
           <i class="fas fa-chevron-right" aria-hidden="true"></i>
         </a>
       }
