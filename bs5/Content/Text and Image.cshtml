@@ -8,6 +8,7 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
+  // TODO: WHY DIFFERENT Names in Content/Video/Images?
   // Html DOM attribute for fancybox, settings, etc.
   var fancyboxAttribute = "app-content-fancybox-group";
   var settings = AsItem<TextMediaViewSettings>(MyView.Settings);
@@ -15,8 +16,8 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in ContentHelpers.Prepare(MyItems, settings, header)) {
-
+@foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems), header.AlternatePositions, settings.TextFirst))
+{
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
 
     <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
@@ -28,14 +29,14 @@
     </div>
 
     @* If the image has it's own column, it's here *@
-    @if (!settings.ImgIsBetweenTitleAndText) {
+    @if (!settings.ImgIsBetweenTitleAndText)
+    {
       <div class='col-md-@settings.ColsMedia order-md-@item.TextPlacement'>
         @* call sub-template to show the image with all possible options *@
         @Html.Partial("Text and Image.Part-Image.cshtml", new { item, Columns = settings.ColsMedia, fancyboxAttribute })
       </div>
     }
   </div>
-
 }
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})

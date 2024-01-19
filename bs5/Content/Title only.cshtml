@@ -1,17 +1,17 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ThisApp
 @using ThisApp.Code
+@using ThisApp.Data
 
 @* Show list header if necessary for configuration *@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@foreach (var item in ContentHelpers.PrepareList(MyItems)) {
-
+@foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems)))
+{
   <div class='@item.RowClass' @ContentHelpers.Toolbar(Kit, item, hideText: true)>
     @TitleMaker.Title(Kit, item)
   </div>
-
 }
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts" })

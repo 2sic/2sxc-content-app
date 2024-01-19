@@ -13,7 +13,7 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in ContentHelpers.PrepareList(MyItems)) {
+@foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems))) {
 
   <div class='row @item.RowClass'>
     <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @ContentHelpers.Toolbar(Kit, item)>

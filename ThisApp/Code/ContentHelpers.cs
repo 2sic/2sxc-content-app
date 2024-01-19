@@ -25,9 +25,7 @@ namespace ThisApp.Code
         hideText
       }));
 
-    public static List<ContentExtended> Prepare(IEnumerable<ITypedItem> items, TextMediaViewSettings settings, ContentListHeader headerSettings)
-      => PrepareList(items, headerSettings.AlternatePositions, settings.TextFirst);
-
+    // WIP
     /// <summary>
     /// Process a list and return an object with more information.
     /// For example, how to style the last Row etc.
@@ -36,13 +34,13 @@ namespace ThisApp.Code
     /// <param name="alternate"></param>
     /// <param name="startWithText"></param>
     /// <returns></returns>
-    public static List<ContentExtended> PrepareList(IEnumerable<ITypedItem> items, bool alternate = false, bool startWithText = true)
-      => items.Select((item, index) => new ContentExtended(
-            item,
-            textIsFirst: IsCurrentTextFirst(index, alternate, startWithText),
-            isLast: index == items.Count() - 1
-          ))
-        .ToList();
+    public static List<T> PrepareList<T>(IEnumerable<T> items, bool alternate = false, bool startWithText = true) where T : IAlternatingItems
+    => items.Select((item, index) =>
+      {
+        item.TextIsFirst = IsCurrentTextFirst(index, alternate, startWithText);
+        item.IsLast = index == items.Count() - 1;
+        return item;
+      }).ToList();
 
     /// <summary>
     /// Detect if the text should be placed first or last, based on the index and settings.
