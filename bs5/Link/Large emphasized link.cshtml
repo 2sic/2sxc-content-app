@@ -10,7 +10,8 @@
 
 <div class="text-center py-5" @Kit.Toolbar.Default(MyItem)>
   
-  @if (headingTag != "hide") {
+  @if (headingTag != "hide")
+  {
     @htmlTags.Custom(headingTag).Class("mb-4").Wrap(
       MyItem.Title,
       htmlTags.Br(),
@@ -18,7 +19,8 @@
     )
   }
 
-  @if (link.IsNotEmpty("Link")) {
+  @if (link.IsNotEmpty("Link"))
+  {
     <a href='@link.LinkUrl' target='@link.WindowAuto' title="@MyItem.Title" class="btn btn-lg btn-outline-primary">
       <i class='co-icon fas @link.IconAuto' aria-hidden="true"></i>
       <span>@MyItem.Get("LinkText")</span>

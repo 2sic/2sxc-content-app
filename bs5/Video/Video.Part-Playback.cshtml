@@ -18,7 +18,7 @@
   var factor = MyModel.Int("Columns", fallback: 12) + "/12";
   
   var previewIsFrom = video.String("ImageSelection");
-  var hasPreviewSource = Text.Has(previewIsFrom);
+  var hasPreviewSource = video.IsNotEmpty("ImageSelection");
   object previewSource = !hasPreviewSource
     ? null
     : previewIsFrom == "upload"

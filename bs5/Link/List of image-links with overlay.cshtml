@@ -4,32 +4,36 @@
 @using ThisApp.Data
 
 <div class="row">
-  @foreach (var link in AsItems<Link>(MyItems)) {
-
+  @foreach (var link in AsItems<Link>(MyItems))
+  {
     <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Kit.Toolbar.Default(link)>
-      @if (Text.Has(link.String("Image"))) {
+
+      @if (link.IsNotEmpty("Image"))
+      {
         <figure class="effect-zoom">
           @link.Picture("Image", settings: "Content", factor: "1/3", imgAltFallback: link.Title)
           
           <div class="overlay w-100 p-4 h-100 d-flex flex-column justify-content-between">
             <div>
               <h4>@link.Title</h4>
-              @if (Text.Has(link.String("Description"))) {
+              @if (link.IsNotEmpty("Description")) {
                 <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
               }
             </div>
-            @if (link.IsNotEmpty("Link")) {
+            @if (link.IsNotEmpty("Link"))
+            {
               <div>
                 <a href='@link.LinkUrl' target='@link.WindowAuto' title="@link.Title" class="btn btn-primary stretched-link w-auto">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
               </div>
             }
           </div>
         </figure>          
-      } else {
+      }
+      else
+      {
         <div class="bg-primary placeholder"></div>
       } 
     </div>
-
   }
 </div>
 
