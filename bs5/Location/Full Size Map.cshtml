@@ -1,10 +1,7 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@using ToSic.Razor.Blade
+@using ThisApp.Code
 @{
-  // Build Helper object and get map infos
-  var locationHelper = GetCode("LocationHelper.cs");
-  var mapInfo = AsTyped(locationHelper.MapInfos(MyItem) as object);
-
   // defines a unique dom Id for google map
   var googleMapDomId = "app-content-google-map-js-" + MyContext.Module.Id;
 }
