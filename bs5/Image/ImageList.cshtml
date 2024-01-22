@@ -12,7 +12,8 @@
 }
 
 <div class="row">
-@foreach (var imgItem in MyItems) {
+@foreach (var imgItem in MyItems)
+{
   var presSettings = AsItem<PresSetImage>(imgItem.Presentation);
   var wrapInLink = presSettings.ImageLightbox;
 

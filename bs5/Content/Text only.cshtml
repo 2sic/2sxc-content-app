@@ -12,15 +12,14 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems))) {
-
+@foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems)))
+{
   <div class='row @item.RowClass'>
     <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @ContentHelpers.Toolbar(Kit, item)>
       @TitleMaker.Title(Kit, item)
       @item.Html("Text", toolbar: false)
     </div>
   </div>
-
 }
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})

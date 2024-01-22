@@ -25,6 +25,7 @@
 @Kit.Page.Activate(condition: partList.Contains("icons"), features: "FontAwesome5")
 
 @* Include javascript *@
-@if (partList.Contains("scripts")) {
+@if (partList.Contains("scripts"))
+{
   <script type="text/javascript" src="@App.Folder.Url/bs5/dist/scripts.min.js" @Kit.Page.AssetAttributes(position: "bottom") ></script>
 }
