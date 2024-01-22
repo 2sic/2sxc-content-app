@@ -2,16 +2,13 @@
 @using ThisApp.Data
 
 @*  Partial template used in _Video.cshtml to show preview and link-to-lightbox for the video  *@
-
 @{
   // The video which was handed in
 	var video = As<Video>(MyModel.Item("Item"));
 
-  // this is the parameter passed in from the calling page, if not set, use 12
-  var columns = MyModel.Int("Columns", fallback: 12);
-
-  // get preview image
-  var preview = GetService<ThisApp.VideoService>().Preview(video, columns);
+  // get preview image for the size specified in the columns parameter (fallback to 12)
+  var preview = GetService<ThisApp.VideoService>()
+    .Preview(video, MyModel.Int("Columns", fallback: 12));
 
   // DOM attribute for fancybox
   const string fancyboxAttribute = "app-content-fancybox-videos"; 
