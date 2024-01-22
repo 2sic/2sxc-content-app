@@ -11,8 +11,8 @@
   // TODO: WHY DIFFERENT Names in Content/Video/Images?
   // Html DOM attribute for fancybox, settings, etc.
   var fancyboxAttribute = "app-content-fancybox-group";
-  var settings = AsItem<TextMediaViewSettings>(MyView.Settings);
-  var header = AsItem<ContentListHeader>(MyHeader);
+  var settings = As<TextMediaViewSettings>(MyView.Settings);
+  var header = As<ContentListHeader>(MyHeader);
 }
 
 @* Show all the content-items - one or more *@

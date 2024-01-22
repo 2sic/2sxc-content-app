@@ -3,7 +3,7 @@
 @{
   // This is a partial template which is re-used in many other templates, so it's shared here
   // its shows the person data like name, position, contact data and description
-  var person = AsItem<Person>(MyModel.Item("data"));
+  var person = As<Person>(MyModel.Item("data"));
 }
 <div class="mb-2">
   <div class="lead font-weight-bold" itemprop="name">@person.String("FullName")</div>

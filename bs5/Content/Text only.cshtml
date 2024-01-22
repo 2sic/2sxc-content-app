@@ -3,13 +3,12 @@
 @using ThisApp.Data
 
 @*  This Template is used in ca. 3 Views which only show the title and the text *@
+@{
+  var settings = As<TextOnlyViewSettings>(MyView.Settings);
+}
 
 @* Show list header if necessary for configuration *@
 @Html.Partial("../shared/Content List Header.cshtml")
-
-@{
-  var settings = AsItem<TextOnlyViewSettings>(MyView.Settings);
-}
 
 @* Show all the content-items - one or more *@
 @foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems)))

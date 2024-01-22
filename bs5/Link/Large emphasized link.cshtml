@@ -1,7 +1,7 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ThisApp.Data
 @{
-  var link = AsItem<Link>(MyItem);
+  var link = As<Link>(MyItem);
   var headingTag = MyItem.Presentation.String("HeadingType");
   var htmlTags = Kit.HtmlTags; // Short name for HtmlTags service for use below
 }

@@ -9,8 +9,8 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
-  var settings = AsItem<TextMediaViewSettings>(MyView.Settings);
-  var header = AsItem<ContentListHeader>(MyHeader);
+  var settings = As<TextMediaViewSettings>(MyView.Settings);
+  var header = As<ContentListHeader>(MyHeader);
 }
 
 @* Show all the content-items - one or more *@
