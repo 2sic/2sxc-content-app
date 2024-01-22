@@ -1,5 +1,3 @@
-using log4net.Util;
-
 namespace ThisApp.Data
 {
   public partial class Link : LinkBase

@@ -1,5 +1,4 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ThisApp.Code
 @using ThisApp.Data
 
 <div class="row">
@@ -9,7 +8,6 @@
       <i class='mb-3 text-primary fas @link.IconAuto' aria-hidden="true" style="font-size: 40px;"></i>
       <h4>@link.Title</h4>
       @link.DescriptionHtml(true)
-      @* <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p> *@
 
       @if (link.IsNotEmpty("Link"))
       {

@@ -1,0 +1,8 @@
+namespace ThisApp.Data
+{
+  public partial class TextMediaViewSettings : Custom.Data.Item16Experimental
+  {
+    public bool TextFirst => Bool(fallback: false);
+    public int ColsElement1 => Int(fallback: 0);
+  }
+}

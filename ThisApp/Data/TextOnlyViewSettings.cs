@@ -7,8 +7,4 @@ namespace ThisApp.Data
     public string TextAlignment => String(fallback: "");
   }
 
-  public partial class TextOnlyViewSettings
-  {
-    public string Styling => TextAlignment == "c" ? "text-center" : "";
-  }
 }

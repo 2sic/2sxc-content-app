@@ -3,7 +3,7 @@ using ToSic.Razor.Blade;
 using ToSic.Sxc.Data;
 using ToSic.Sxc.Services;
 
-namespace ThisApp.Code
+namespace ThisApp
 {
   public static class TitleMaker
   {

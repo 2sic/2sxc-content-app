@@ -1,5 +1,4 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ThisApp.Code
 @using ThisApp.Data
 
 <div class="row">
@@ -16,9 +15,6 @@
             <div>
               <h4>@link.Title</h4>
               @link.DescriptionHtml(false)
-              @* @if (link.IsNotEmpty("Description")) {
-                <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
-              } *@
             </div>
             @if (link.IsNotEmpty("Link"))
             {

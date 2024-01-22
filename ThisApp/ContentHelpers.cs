@@ -5,7 +5,7 @@ using ToSic.Sxc.Data;
 using ToSic.Sxc.Edit.Toolbar;
 using ToSic.Sxc.Services;
 
-namespace ThisApp.Code
+namespace ThisApp
 {
   public static class ContentHelpers
   {

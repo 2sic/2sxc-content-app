@@ -1,5 +1,4 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ThisApp.Code
 @using ThisApp.Data
 
 <div class="row">
@@ -7,7 +6,6 @@
     <div class="mb-4 col-12 col-md-6 col-lg-4 co-linkblock" @Kit.Toolbar.Default(link)>
       <h4>@link.Title</h4>
       @link.DescriptionHtml(true)
-      @* <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p> *@
 
       @if (link.IsNotEmpty("Link")) {
         <a href='@link.LinkUrl' target='@link.WindowAuto' title="@link.Title" class="stretched-link">@link.Get("LinkText")
