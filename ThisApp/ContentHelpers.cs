@@ -3,13 +3,13 @@ using System.Linq;
 using ThisApp.Data;
 using ToSic.Sxc.Data;
 using ToSic.Sxc.Edit.Toolbar;
-using ToSic.Sxc.Services;
 
 namespace ThisApp
 {
-  public static class ContentHelpers
+  public class ContentHelpers: Custom.Hybrid.CodeTyped
   {
-    /// <summary>
+
+     /// <summary>
     /// Create a special toolbar with the option to hide image and/or text.
     /// This works, because the content-type "Content" has formulas which expect these parameters.
     /// </summary>
@@ -18,12 +18,14 @@ namespace ThisApp
     /// <param name="hideImage"></param>
     /// <param name="hideText"></param>
     /// <returns></returns>
-    public static IToolbarBuilder Toolbar(ServiceKit16 kit, ITypedItem item, bool hideImage = true, bool hideText = false)
-      => kit.Toolbar.Default(item, tweak: b => b.FormParameters(new
+    public IToolbarBuilder Toolbar(ITypedItem item, bool hideImage, bool hideText = false)
+      => Kit.Toolbar.Default(item, tweak: b => b.FormParameters(new
       {
         hideImage,
         hideText
       }));
+   
+
 
     /// <summary>
     /// Process a list and return an object with more information.

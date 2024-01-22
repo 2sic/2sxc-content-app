@@ -1,8 +1,9 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits ThisApp.RazorBase
 @using ThisApp
 @using ThisApp.Data
 
-@*  This Template is used in ca. 3 Views which only show the title and the text *@
+@*** This Template is used in ca. 3 Views which only show the title and the text ***@
+
 @{
   var settings = As<TextOnlyViewSettings>(MyView.Settings);
 }
@@ -14,7 +15,7 @@
 @foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems)))
 {
   <div class='row @item.RowClass'>
-    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @ContentHelpers.Toolbar(Kit, item)>
+    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @Helpers.Toolbar(item, hideImage: true, hideText: false)>
       @TitleMaker.Title(Kit, item)
       @item.Html("Text", toolbar: false)
     </div>

@@ -1,6 +1,8 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits ThisApp.RazorBase
 @using ThisApp
 @using ThisApp.Data
+
+@*** This Template is used to only show the title (no text, no image ***@
 
 @* Show list header if necessary for configuration *@
 @Html.Partial("../shared/Content List Header.cshtml")
@@ -8,7 +10,7 @@
 @* Show all the content-items - one or more *@
 @foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems)))
 {
-  <div class='@item.RowClass' @ContentHelpers.Toolbar(Kit, item, hideText: true)>
+  <div class='@item.RowClass' @Helpers.Toolbar(item, hideImage: true, hideText: true)>
     @TitleMaker.Title(Kit, item)
   </div>
 }
