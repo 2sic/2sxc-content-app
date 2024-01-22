@@ -49,7 +49,7 @@
         {
           <div itemprop="email">
             <span class="fas fa-envelope"></span>
-            @Html.Partial("../shared/TryToEncryptMail.cshtml", new { Email = loc.Mail })
+            @(GetService<ThisApp.ProtectMailService>().TryToEncrypt(loc.Mail))
           </div>
         }
         @if (loc.IsNotEmpty("Tel"))

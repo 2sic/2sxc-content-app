@@ -32,7 +32,7 @@
    {
     <div itemprop="email">
       <i class="fas fa-envelope text-center" style="width:30px;"></i>
-      @Html.Partial("../shared/TryToEncryptMail.cshtml", new { person.Email })
+      @(GetService<ThisApp.ProtectMailService>().TryToEncrypt(person.Email))
     </div>
   }
 </div>
