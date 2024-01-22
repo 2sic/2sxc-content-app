@@ -8,7 +8,7 @@
     "build-bs4": "webpack --env style=bs4",
     "build-bs5": "webpack --env style=bs5"
   },
-  "author": "2sic internet solutions 2020",
+  "author": "2sic internet solutions 2024",
   "license": "ISC",
   "devDependencies": {
     "@googlemaps/js-api-loader": "^1.14.3",
