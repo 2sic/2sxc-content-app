@@ -111,3 +111,4 @@ TODO: @2dm
 
 - SYNC FIELDS EMail vs Mail
 - figure out why different attributes for fancybox, simplify
+- TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something

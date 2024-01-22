@@ -1,72 +1,61 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade
+@using ThisApp
+@using ThisApp.Data
 @using System.Text.RegularExpressions;
+
+@*  Partial template used in _Video.cshtml to show preview and link-to-lightbox for the video  *@
+
 @{
-  /* Partial template which is re-used in _Video.cshtml to show the video preview and link-to-lightbox for the video */
+  // The video which was handed in
+	var video = As<Video>(MyModel.Item("Item"));
 
-	var video = MyModel.Item("Item");
+  // this is the parameter passed in from the calling page, if not set, use 12
+  var columns = MyModel.Int("Columns", fallback: 12);
 
-  // Check if the link is a youtube, and convert that to a youtube embed
-	var youTubeLink = Regex.Match(video.Url("VideoLink"), @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
-  var youTubeUrl = youTubeLink.Success
-    ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
-    : "";
+  // get preview image
+  var preview = GetService<ThisApp.VideoService>().Preview(video, columns);
 
-  // this is the parameter passed in from the calling page
-  // Figure out width of the image based on max-width of a content-image and 12 Bootstrap Columns
-  // The resulting value will be something like "12/12" or "4/12" which is used by the Link.Image(...)
-  var factor = MyModel.Int("Columns", fallback: 12) + "/12";
-  
-  var previewIsFrom = video.String("ImageSelection");
-  var hasPreviewSource = video.IsNotEmpty("ImageSelection");
-  object previewSource = !hasPreviewSource
-    ? null
-    : previewIsFrom == "upload"
-      ? video.Field("Image")
-      : previewIsFrom == "default"
-        ? App.Resources.Field("VideoDefaultPreviewImage") as object
-        // Fallback: use standard youtube image link
-        : "https://img.youtube.com/vi/" + youTubeLink.Groups[1].Value + "/maxresdefault.jpg";
-
-  var videoSettings = Kit.Image.Settings("Content", aspectRatio: "16:9");
-  var pic = Kit.Image.Picture(previewSource, settings: videoSettings, factor: factor, imgAltFallback: video.Title);
+  // DOM attribute for fancybox
+  const string fancyboxAttribute = "app-content-fancybox-videos"; 
 }
 
-@if (video.Presentation.Bool("VideoLightbox")) {
-  // define dom attribute for fancybox
-  var fancyboxAttribute = "app-content-fancybox-videos"; 
-
-  // open in lightbox
-  <a @fancyboxAttribute class='co-video @(!hasPreviewSource ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@pic.Alt" href="@youTubeUrl">
-      @if (hasPreviewSource) {
-        <figure class="effect-zoom">
-          @pic
-        </figure>
-      }
-      @* SVG Code for Play Button *@
-      @Html.Partial("Play SVG.cshtml")
-
+@* Case 1: lightbox is active, show lightbox link *@
+@if (video.UseLightbox)
+{
+  <a @fancyboxAttribute class='co-video @(preview == null ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@(preview?.Alt)" href="@video.YouTubeUrl">
+    @if (preview != null)
+    {
+      <figure class="effect-zoom">
+        @preview
+      </figure>
+    }
+    @* SVG Code for Play Button *@
+    @Html.Partial("Play SVG.cshtml")
   </a>
-  @* activate scripts because they are needed by fancybox *@
-  @Html.Partial("../shared/FancyboxAssets.cshtml", new { FancyboxAttribute = fancyboxAttribute })
-
-} else {
-  // no lightbox, show directly
-  // ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
+  @* activate fancybox scripts *@
+  @Html.Partial("../shared/FancyboxAssets.cshtml", new { fancyboxAttribute })
+}
+@* Case 2: no lightbox, show directly *@
+else
+{
+  // TODO: ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
   <div class="co-video-embed ratio ratio-16x9 embed-responsive embed-responsive-16by9">
-    @if (youTubeLink.Success) {
-      if (hasPreviewSource) {
-        @pic  
-      }
-      
+    @if (video.IsValidYouTube)
+    {
+      @* show preview or nothing if it's null *@
+      @preview
+
       @* This SVG shows the play-icon on top of the video iframe *@
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@UniqueKey">
         @* SVG Code for Play Button *@
         @Html.Partial("Play SVG.cshtml")
       </div>
 
-      <iframe id="iframe-@UniqueKey" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
-    } else {
+      <iframe id="iframe-@UniqueKey" data-youtube-src="@video.YouTubeUrl" allowfullscreen></iframe>
+    }
+    else
+    {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
   </div>
