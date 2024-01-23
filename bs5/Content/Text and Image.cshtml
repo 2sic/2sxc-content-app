@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits ThisApp.Razor.RazorBase
 @using ThisApp
 @using ThisApp.Data
 
@@ -16,12 +16,12 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems), header.AlternatePositions, settings.TextFirst))
+@foreach (var item in Helpers.PrepareList(AsItems<TextImage>(MyItems), header.AlternatePositions, settings.TextFirst))
 {
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
 
     <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
-      @TitleMaker.Title(Kit, item)
+      @Helpers.ShowTitle(item)
       @if (settings.ImgIsBetweenTitleAndText) {
         @Html.Partial("Text and Image.Part-Image.cshtml", new { item })
       }

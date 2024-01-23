@@ -1,6 +1,6 @@
 namespace ThisApp.Data
 {
-  public partial class Content : IAlternatingItems
+  public partial class TextImage : IAlternatingItems
   {
     public bool TextIsFirst { get; set; }
     public bool IsLast { get; set; }

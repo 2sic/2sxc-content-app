@@ -16,7 +16,7 @@ namespace ThisApp.Data
     public string Window => String(fallback: "");
   }
 
-  public class LinkBase : Custom.Data.Item16Experimental
+  public class LinkBase : Custom.Data.Item16
   {
     // Properties can't have the same name as the class, so we can't add it directly to the Link class
     // Which is why we have this base class as a workaround

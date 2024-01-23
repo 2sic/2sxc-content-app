@@ -1,11 +1,7 @@
-using ToSic.Sxc.Data;
-
 namespace ThisApp.Data
 {
-  public partial class PresSetText : Custom.Data.Item16Experimental
+  public partial class PresSetText : Custom.Data.Item16
   {
-    public PresSetText(ITypedItem item) : base(item) { }
-
     public string HeadingType => String(fallback: "");
 
     public bool ImageLightbox => Bool(fallback: true);

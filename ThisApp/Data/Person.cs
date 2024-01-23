@@ -1,6 +1,6 @@
 namespace ThisApp.Data
 {
-  public partial class Person : Custom.Data.Item16Experimental
+  public partial class Person : Custom.Data.Item16
   {
     public string FullName => String(fallback: "");
 

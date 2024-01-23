@@ -5,7 +5,7 @@ namespace ThisApp.Data
     public string ImageUrl => Url(nameof(Image), fallback: "");
   }
 
-  public partial class ImageBase : Custom.Data.Item16Experimental
+  public partial class ImageBase : Custom.Data.Item16
   {
     public string Image => String(fallback: "");
   }

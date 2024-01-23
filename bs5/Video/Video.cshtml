@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits ThisApp.Razor.RazorBase
 @using ToSic.Razor.Blade
 @using ThisApp
 @using ThisApp.Data
@@ -14,11 +14,11 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in ContentHelpers.PrepareList(AsItems<Video>(MyItems), header.AlternatePositions, settings.TextFirst))
+@foreach (var item in Helpers.PrepareList(AsItems<Video>(MyItems), header.AlternatePositions, settings.TextFirst))
 {
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
     <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
-      @TitleMaker.Title(Kit, item)
+      @Helpers.ShowTitle(item)
 
       @* If the image doesn't have it's own column, its between title/text *@
       @if (settings.ImgIsBetweenTitleAndText) {

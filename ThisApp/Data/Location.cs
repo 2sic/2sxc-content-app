@@ -1,6 +1,6 @@
 namespace ThisApp.Data
 {
-  public partial class Location : Custom.Data.Item16Experimental
+  public partial class Location : Custom.Data.Item16
   {
     public string Company => String(fallback: "");
 

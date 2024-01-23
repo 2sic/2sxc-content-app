@@ -1,6 +1,6 @@
 namespace ThisApp.Data
 {
-  public partial class PresSetImage : Custom.Data.Item16Experimental
+  public partial class PresSetImage : Custom.Data.Item16
   {
 
     public bool TitleLegend => Bool(fallback: true);

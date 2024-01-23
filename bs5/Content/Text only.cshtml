@@ -1,4 +1,5 @@
-@inherits ThisApp.RazorBase
+@* Use custom Razor base class located in /ThisApp/Razor with additional helpers *@
+@inherits ThisApp.Razor.TextImageBase
 @using ThisApp
 @using ThisApp.Data
 
@@ -12,11 +13,11 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@foreach (var item in ContentHelpers.PrepareList(AsItems<Content>(MyItems)))
+@foreach (var item in Helpers.PrepareList(AsItems<TextImage>(MyItems)))
 {
   <div class='row @item.RowClass'>
-    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @Helpers.Toolbar(item, hideImage: true, hideText: false)>
-      @TitleMaker.Title(Kit, item)
+    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @Helpers.TextImageToolbar(item, hideImage: true, hideText: false)>
+      @Helpers.ShowTitle(item)
       @item.Html("Text", toolbar: false)
     </div>
   </div>
