@@ -15,7 +15,7 @@
   
 }
 <div class="row">
-  @foreach (var person in AsItems<Person>(MyItems))
+  @foreach (var person in AsList<Person>(MyItems))
   {
     <div class="col-md-6 mb-4 mb-md-5 row" @Kit.Toolbar.Default(person)>
       <div class="col-4 @mbClass">

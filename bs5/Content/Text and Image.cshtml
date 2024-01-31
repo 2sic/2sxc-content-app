@@ -16,7 +16,7 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in Helpers.PrepareList(AsItems<TextImage>(MyItems), header.AlternatePositions, settings.TextFirst))
+@foreach (var item in Helpers.PrepareList(AsList<TextImage>(MyItems), header.AlternatePositions, settings.TextFirst))
 {
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
 

@@ -2,7 +2,7 @@
 @using ThisApp.Data
 
 <div class="row">
-  @foreach (var link in AsItems<Link>(MyItems))
+  @foreach (var link in AsList<Link>(MyItems))
   {
     <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Kit.Toolbar.Default(link)>
 

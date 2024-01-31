@@ -9,7 +9,7 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@foreach (var item in Helpers.PrepareList(AsItems<TextImage>(MyItems)))
+@foreach (var item in Helpers.PrepareList(AsList<TextImage>(MyItems)))
 {
   <div class='@item.RowClass' @Helpers.TextImageToolbar(item, hideImage: true, hideText: true)>
     @Helpers.ShowTitle(item)

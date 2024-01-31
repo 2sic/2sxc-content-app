@@ -2,7 +2,7 @@
 @using ThisApp.Data
 
 <ul class="list-unstyled">
-  @foreach (var link in AsItems<Link>(MyItems))
+  @foreach (var link in AsList<Link>(MyItems))
   {
     <li @Kit.Toolbar.Default(link) class="co-linkblock">
       <div class="d-flex flex-row">

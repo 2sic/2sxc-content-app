@@ -14,7 +14,7 @@
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in Helpers.PrepareList(AsItems<Video>(MyItems), header.AlternatePositions, settings.TextFirst))
+@foreach (var item in Helpers.PrepareList(AsList<Video>(MyItems), header.AlternatePositions, settings.TextFirst))
 {
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
     <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
