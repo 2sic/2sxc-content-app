@@ -25,3 +25,7 @@
 @if (partList.Contains("scripts")) {
   <script type="text/javascript" src="@App.Path/bs3/dist/scripts.min.js" @Kit.Page.AssetAttributes(position: "bottom") ></script>
 }
+
+@if (partList.Contains("video")) {
+  @Kit.Page.TurnOn("window.appContent.activateYouTubeInline()");
+}
