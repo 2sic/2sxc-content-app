@@ -171,12 +171,16 @@
   }
 
   .co-video-embed {
+    picture {
+      position: absolute
+    }
+
     img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      max-width: auto;
+      max-width: none;
     }
 
     .overlay {

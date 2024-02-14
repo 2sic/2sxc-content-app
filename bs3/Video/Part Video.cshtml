@@ -12,6 +12,8 @@
     ? "https://www.youtube.com/embed/" + youTubeLink.Groups[1].Value + "?controls=1&fs=1&modestbranding=0&rel=0&showinfo=0&autohide=1&iv_load_policy=3&theme=dark&wmode=transparent&autoplay=true"
     : "";
 
+  var youTubeLightboxUrl = youTubeUrl.Replace("autoplay=true", "autoplay=false");    
+
   // configuration
   var quality = (int)Settings.Images.Content.Quality;
 
@@ -39,11 +41,12 @@
   var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
 
 }
+
 @if (hasVideoLightbox != false) {
   // open in lightbox
   // define dom attribute for fancybox
-  var fancyboxAttribute = "app-content-fancybox-videos"; 
-   <a @fancyboxAttribute class='co-video @(!hasPreviewSource ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@pic.Alt" href="@youTubeUrl">
+  var fancyboxAttribute = "app-content-fancybox-videos" + CmsContext.Module.Id; 
+   <a @fancyboxAttribute class='co-video @(!hasPreviewSource ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@pic.Alt" href="@youTubeLightboxUrl">
     <figure>
       <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
         <i class="fab fa-youtube"></i>
@@ -64,15 +67,13 @@
       if (hasPreviewSource) {
         @pic  
       }
-      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@CmsContext.Module.Id">
+      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@video.EntityId-@CmsContext.Module.Id">
         <i class="fab fa-youtube"></i>
       </div>
 
-      <iframe id="iframe-@CmsContext.Module.Id" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
+      <iframe id="iframe-@video.EntityId-@CmsContext.Module.Id" data-youtube-src="@youTubeUrl" allowfullscreen></iframe>
     } else {
       <div class="dnnFormMessage dnnFormWarning">Video not found. Please check Video-Link.</div>
     }
   </div>
-  @* activate scripts because they are needed for the iframe-embed mode *@
-  @Html.Partial("../shared/Assets.cshtml", new { parts = "videos" })
 }

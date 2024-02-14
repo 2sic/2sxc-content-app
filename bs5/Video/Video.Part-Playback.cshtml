@@ -5,19 +5,20 @@
 @{
   // The video which was handed in
 	var video = As<Video>(MyModel.Item("Item"));
+  var videoLightboxUrl = video.YouTubeUrl.Replace("autoplay=true", "autoplay=false");
 
   // get preview image for the size specified in the columns parameter (fallback to 12)
   var preview = GetService<ThisApp.VideoService>()
     .Preview(video, MyModel.Int("Columns", fallback: 12));
 
   // DOM attribute for fancybox
-  const string fancyboxAttribute = "app-content-fancybox-videos"; 
+  var fancyboxAttribute = "app-content-fancybox-videos=" + UniqueKey; 
 }
 
 @* Case 1: lightbox is active, show lightbox link *@
 @if (video.UseLightbox)
 {
-  <a @fancyboxAttribute class='co-video @(preview == null ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@(preview?.Alt)" href="@video.YouTubeUrl">
+  <a @fancyboxAttribute class='co-video @(preview == null ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@(preview?.Alt)" href="@videoLightboxUrl">
     @if (preview != null)
     {
       <figure class="effect-zoom">
@@ -41,12 +42,12 @@ else
       @preview
 
       @* This SVG shows the play-icon on top of the video iframe *@
-      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@UniqueKey">
+      <div class="overlay d-flex justify-content-center align-items-center w-100 h-100" data-youtube="iframe-@Kit.Key.UniqueKeyWith(video.Id)">
         @* SVG Code for Play Button *@
         @Html.Partial("Play SVG.cshtml")
       </div>
 
-      <iframe id="iframe-@UniqueKey" data-youtube-src="@video.YouTubeUrl" allowfullscreen></iframe>
+      <iframe id="iframe-@Kit.Key.UniqueKeyWith(video.Id)" data-youtube-src="@video.YouTubeUrl" allowfullscreen></iframe>
     }
     else
     {
