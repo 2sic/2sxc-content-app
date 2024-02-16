@@ -1,6 +1,6 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade
-@using ThisApp.Data
+@using AppCode.Data
 @{
   // Get display settings based on view identifier
   var showMapFirst = MyView.Identifier == "map-first";
@@ -49,7 +49,7 @@
         {
           <div itemprop="email">
             <span class="fas fa-envelope"></span>
-            @(GetService<ThisApp.ProtectMailService>().TryToEncrypt(loc.Mail))
+            @(GetService<AppCode.ProtectMailService>().TryToEncrypt(loc.Mail))
           </div>
         }
         @if (loc.IsNotEmpty("Tel"))

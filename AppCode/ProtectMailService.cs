@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using ToSic.Razor.Blade;
 
-namespace ThisApp
+namespace AppCode
 {
   /// <summary>
   /// Simple service to encrypt eMail addresses in the resulting HTML.

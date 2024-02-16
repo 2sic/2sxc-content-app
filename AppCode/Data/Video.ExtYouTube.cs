@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace ThisApp.Data
+namespace AppCode.Data
 {
   public partial class Video
   {

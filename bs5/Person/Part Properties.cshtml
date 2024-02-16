@@ -1,5 +1,5 @@
 @inherits Custom.Hybrid.RazorTyped
-@using ThisApp.Data
+@using AppCode.Data
 @{
   // This is a partial template which is re-used in many other templates, so it's shared here
   // its shows the person data like name, position, contact data and description
@@ -32,7 +32,7 @@
    {
     <div itemprop="email">
       <i class="fas fa-envelope text-center" style="width:30px;"></i>
-      @(GetService<ThisApp.ProtectMailService>().TryToEncrypt(person.Email))
+      @(GetService<AppCode.ProtectMailService>().TryToEncrypt(person.Email))
     </div>
   }
 </div>

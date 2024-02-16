@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using ToSic.Razor.Blade;
 
-namespace ThisApp.Data
+namespace AppCode.Data
 {
   public partial class Link
   {

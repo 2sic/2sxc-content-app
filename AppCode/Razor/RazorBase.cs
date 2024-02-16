@@ -1,4 +1,4 @@
-namespace ThisApp.Razor
+namespace AppCode.Razor
 {
   /// <summary>
   /// todo

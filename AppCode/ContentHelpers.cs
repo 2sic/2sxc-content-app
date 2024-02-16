@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using ThisApp.Data;
+using AppCode.Data;
 using ToSic.Razor.Blade;
 using ToSic.Sxc.Data;
 using ToSic.Sxc.Edit.Toolbar;
 
-namespace ThisApp
+namespace AppCode
 {
   public class ContentHelpers: Custom.Hybrid.CodeTyped
   {

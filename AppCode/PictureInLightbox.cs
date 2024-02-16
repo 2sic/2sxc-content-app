@@ -1,7 +1,7 @@
 using ToSic.Sxc.Data;
 using ToSic.Sxc.Images;
 
-namespace ThisApp
+namespace AppCode
 {
   /// <summary>
   /// Helper class to prepare data/settings for showing an image, possibly with a lightbox link.

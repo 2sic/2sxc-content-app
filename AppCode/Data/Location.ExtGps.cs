@@ -1,6 +1,6 @@
 using ToSic.Sxc.Context;
 
-namespace ThisApp.Data
+namespace AppCode.Data
 {
   public partial class Location
   {

@@ -1,4 +1,4 @@
-namespace ThisApp.Data
+namespace AppCode.Data
 {
   /// <summary>
   /// Class to use when working with data of type TextImage.

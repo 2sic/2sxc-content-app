@@ -1,7 +1,7 @@
-using ThisApp.Data;
+using AppCode.Data;
 using ToSic.Sxc.Images;
 
-namespace ThisApp
+namespace AppCode
 {
   /// <summary>
   /// Simple service to prepare data for youtube embed.

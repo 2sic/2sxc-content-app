@@ -1,12 +1,9 @@
-using ToSic.Sxc.Data;
-using ToSic.Sxc.Edit.Toolbar;
-
-namespace ThisApp.Razor
+namespace AppCode.Razor
 {
   /// <summary>
   /// todo
   /// </summary>
-  public abstract class TextImageBase: ThisApp.Razor.RazorBase
+  public abstract class TextImageBase: AppCode.Razor.RazorBase
   {
   }
 }
