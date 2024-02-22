@@ -1,3 +1,5 @@
+using ToSic.Sxc.Cms.Data;
+
 namespace AppCode.Data
 {
   public partial class Location : Custom.Data.Item16
@@ -12,7 +14,7 @@ namespace AppCode.Data
     public string Tel => String(fallback: "");
     public string Fax => String(fallback: "");
     public string Mail => String(fallback: "");
-    public string Gps => String(fallback: "");
+    public GpsCoordinates Gps => base.Gps("Gps");
   }
 
 }

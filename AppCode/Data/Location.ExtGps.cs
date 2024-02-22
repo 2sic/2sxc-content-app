@@ -4,18 +4,18 @@ namespace AppCode.Data
 {
   public partial class Location
   {
-    public GpsCoordinates GpsCoordinates => _gpsCoordinates ?? (_gpsCoordinates = ParseGps(Gps));
-    private GpsCoordinates _gpsCoordinates;
+    // public GpsCoordinates GpsCoordinates => _gpsCoordinates ?? (_gpsCoordinates = ParseGps(Gps));
+    // private GpsCoordinates _gpsCoordinates;
 
-    private GpsCoordinates ParseGps(string gpsJson)
-    {
-      // GPS is a JSON field, so we must use the Json.ToTyped to access the properties
-      var coords = Kit.Json.ToTyped(gpsJson, propsRequired: false);
-      return new GpsCoordinates {
-        Latitude = coords.Double("Latitude"),
-        Longitude = coords.Double("Longitude")
-      };
-    }
+    // private GpsCoordinates ParseGps(string gpsJson)
+    // {
+    //   // GPS is a JSON field, so we must use the Json.ToTyped to access the properties
+    //   var coords = Kit.Json.ToTyped(gpsJson, propsRequired: false);
+    //   return new GpsCoordinates {
+    //     Latitude = coords.Double("Latitude"),
+    //     Longitude = coords.Double("Longitude")
+    //   };
+    // }
 
     public string RoutingUrl(ICmsContext context)
     {
@@ -23,11 +23,11 @@ namespace AppCode.Data
       // var content = AsItem(dynContent as object);
       var language = context.Culture.CurrentCode.Split(new[] { '-' })[0];
 
-      var gps = GpsCoordinates;
+      var gps = Gps;
       // this link will be used to open the Google-Directions in a new window
       return gps.Longitude > 0
         // if we have coordinates, use them
-        ? "https://www.google.com/maps/dir/" + Kit.Convert.ForCode(gps.Latitude) + "," + Kit.Convert.ForCode(gps.Longitude)
+        ? "https://www.google.com/maps/dir/" + /*Kit.Convert.ForCode( */gps.Latitude /*)*/ + "," + /* Kit.Convert.ForCode( */ gps.Longitude /*)*/
         // otherwise use the address
         : "https://maps.google.com/maps?daddr="
           + (Street + " " + ZipCode + " " + City + " " + Country).Replace(" ", "+")
@@ -36,10 +36,10 @@ namespace AppCode.Data
 
   }
 
-  public class GpsCoordinates
-  {
-    public double Latitude { get; set; }
-    public double Longitude { get; set; }
-  }
+  // public class GpsCoordinates
+  // {
+  //   public double Latitude { get; set; }
+  //   public double Longitude { get; set; }
+  // }
 
 }
