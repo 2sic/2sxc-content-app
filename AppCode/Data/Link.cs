@@ -1,25 +1,71 @@
+using System.Collections.Generic;
+using System.IO;
+using ToSic.Razor.Blade;
+
 namespace AppCode.Data
 {
-  public partial class Link : LinkBase
+  public partial class Link
   {
-    public string Description => String(fallback: "");
+    /// <summary>
+    /// Better icon, with auto-detection for documents and internal links
+    /// </summary>
+    public string IconAuto => _icon ??= OptimalIcon();
+    private string _icon;
 
-    public string Image => String(fallback: "");
+    /// <summary>
+    /// Better window, with auto-detection for on-site vs. external links
+    /// </summary>
+    public string WindowAuto => _window ??= OptimalWindow();
+    private string _window;
 
-    public string Icon => String(fallback: "");
+    /// <summary>
+    /// The description - if provided - is often needed in a <p>
+    /// and the new-lines should become <br>
+    /// </summary>
+    /// <returns></returns>
+    public IHtmlTag DescriptionHtml(bool useEmptyParagraph) => IsEmpty(nameof(Description))
+      ? (useEmptyParagraph ? Tag.P() : null)
+      : Html(nameof(Description), tweak: t => t.Input(Tags.Nl2Br));
 
 
-    public string LinkUrl => Url(nameof(Link), fallback: "");
+    #region Getters for advanced properties
 
-    public string LinkText => String(fallback: "");
+    private string OptimalIcon() =>!string.IsNullOrEmpty(Icon)
+      ? Icon
+      : IsDocument
+        ? "fas fa-file" // if doc, then file-icon
+        : (LinkIsInternal()
+          ? "fas fa-caret-right" // else if internal, use play-button
+          : "fas fa-external-link-alt");   // else if external, show "open new window"
 
-    public string Window => String(fallback: "");
+    private string OptimalWindow() => (string.IsNullOrEmpty(Window) || Window == "auto")
+      ? LinkIsInternal() && !IsDocument
+        ? "_self"
+        : "_blank"
+      : Window;
+
+    #endregion
+
+
+
+    #region Private Helpers
+
+    private bool IsDocument => _isDoc ??= DocumentExtensions.Contains(Path.GetExtension(Link.ToLower()));
+    private bool? _isDoc;
+    private static List<string> DocumentExtensions = new List<string> { ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".ppsx", ".txt" };
+
+    private bool LinkIsInternal()
+    {
+      if (_linkIsInternal.HasValue) return _linkIsInternal.Value;
+      _linkIsInternal = Link.Contains(Kit.Link.To()) // Link to the same page
+            || Link.StartsWith("/") // absolute link in same site, eg. "/about-us"
+            || Link.StartsWith("#") // hash-link on same page eg "#about-us"
+            || Link.StartsWith("."); // relative link from this page eg "../about-us"
+      return _linkIsInternal.Value;
+    }
+    private bool? _linkIsInternal;
+
+    #endregion
   }
 
-  public class LinkBase : Custom.Data.Item16
-  {
-    // Properties can't have the same name as the class, so we can't add it directly to the Link class
-    // Which is why we have this base class as a workaround
-    public string Link => String(fallback: "");
-  }
 }

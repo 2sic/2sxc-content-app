@@ -19,7 +19,7 @@
 
   @if (link.IsNotEmpty("Link"))
   {
-    <a href='@link.LinkUrl' target='@link.WindowAuto' title="@MyItem.Title" class="btn btn-lg btn-outline-primary">
+    <a href='@link.Link' target='@link.WindowAuto' title="@MyItem.Title" class="btn btn-lg btn-outline-primary">
       <i class='co-icon fas @link.IconAuto' aria-hidden="true"></i>
       <span>@MyItem.Get("LinkText")</span>
     </a>

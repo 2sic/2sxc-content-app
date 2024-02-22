@@ -1,20 +1,26 @@
-using ToSic.Sxc.Cms.Data;
+using ToSic.Sxc.Context;
 
 namespace AppCode.Data
 {
-  public partial class Location : Custom.Data.Item16
+  // TODO: @2dm - review use of context and Kit!
+  public partial class Location
   {
-    public string Company => String(fallback: "");
+    public string RoutingUrl(ICmsContext context)
+    {
+      // Language is used for the map-link
+      // var content = AsItem(dynContent as object);
+      var language = context.Culture.CurrentCode.Split(new[] { '-' })[0];
 
-    public string Description => String(fallback: "");
-    public string Street => String(fallback: "");
-    public string ZipCode => String(fallback: "");
-    public string City => String(fallback: "");
-    public string Country => String(fallback: "");
-    public string Tel => String(fallback: "");
-    public string Fax => String(fallback: "");
-    public string Mail => String(fallback: "");
-    public GpsCoordinates Gps => base.Gps("Gps");
+      var gps = GPS;
+      // this link will be used to open the Google-Directions in a new window
+      return gps.Longitude > 0
+        // if we have coordinates, use them
+        ? "https://www.google.com/maps/dir/" + Kit.Convert.ForCode(gps.Latitude) + "," + Kit.Convert.ForCode(gps.Longitude)
+        // otherwise use the address
+        : "https://maps.google.com/maps?daddr="
+          + (Street + " " + ZipCode + " " + City + " " + Country).Replace(" ", "+")
+          + "&amp;saddr=&amp;f=d&amp;hl=" + language + "&amp;ie=UTF8&amp;z=16";
+    }
+
   }
-
 }
