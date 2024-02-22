@@ -112,4 +112,6 @@ TODO: @2dm
 * figure out why different attributes for fancybox, simplify
 * TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something
 * probably rename content-type "Content" to "TextImage"
-  * also rename the folder
+  * also rename the folder in Bs5, 3, 4
+  * also check the label on the content type
+  * ...and on inserting it to the page

@@ -1,6 +1,6 @@
 {
   "name": "app-content-templates",
-  "version": "17.00.00",
+  "version": "17.02.00",
   "description": "Bootstrap 3,4,5 based content templates for websites built with 2sxc and the 2sic bootstrap skin",
   "main": "(none)",
   "scripts": {
