@@ -6,13 +6,13 @@
 
 These are the primary **Content** parts for 2sxc 15.03 supporting many CSS Frameworks.
 
-| Aspect              | Status | Comments or Version |
-| ------------------- | :----: | ------------------- |
+| Aspect              | Status | Comments or Version
+| ------------------- | :----: | -------------------
 | 2sxc                | ✅    | requires 2sxc v15.03
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
-| No jQuery           | ✅    |
-| Live Demo           | ➖    |
+| No jQuery           | ✅    | -
+| Live Demo           | ➖    | -
 | Install Checklist   | ✅    | see below
 | Source & License    | ✅    | included, ISC/MIT
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
@@ -43,7 +43,6 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 1. **Skin/Theme Optimizations**: We have some recommendations, if you care about this, read about the [optimizations in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Theme-Optimizations)
 1. **Customize to your colors and CSS**: check out the [instructions in the wiki](https://github.com/2sic/2sxc-content-app/wiki/Customizing%20CSS%20or%20SASS)
-
 
 ## Questions and Support
 
@@ -109,8 +108,8 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 TODO: @2dm
 
-- SYNC FIELDS EMail vs Mail
-- figure out why different attributes for fancybox, simplify
-- TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something
-- probably rename content-type "Content" to "TextImage"
-  - also rename the folder
+* SYNC FIELDS EMail vs Mail
+* figure out why different attributes for fancybox, simplify
+* TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something
+* probably rename content-type "Content" to "TextImage"
+  * also rename the folder
