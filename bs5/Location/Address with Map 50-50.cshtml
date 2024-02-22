@@ -13,6 +13,9 @@
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
   var mapResources = AsStack(MyItem.Presentation, App.Resources);
 
+  var mailProtectService = GetService<AppCode.ProtectMailService>();
+  var locService = GetService<AppCode.LocationService>();
+
   // defines a unique dom Id for google map
   var googleMapDomId = "app-content-google-map-js-" + MyContext.Module.Id;
 }
@@ -49,7 +52,7 @@
         {
           <div itemprop="email">
             <span class="fas fa-envelope"></span>
-            @(GetService<AppCode.ProtectMailService>().TryToEncrypt(loc.Mail))
+            @mailProtectService.TryToEncrypt(loc.Mail)
           </div>
         }
         @if (loc.IsNotEmpty("Tel"))
@@ -65,7 +68,7 @@
         @if (App.Settings.Bool("MapsEnableDirections"))
         {
           <span class="fas fa-map-marker-alt"></span>
-          <a target="_blank" href='@loc.RoutingUrl(MyContext)'>@mapResources.String("MapsLabelDirections")</a>
+          <a target="_blank" href='@locService.RoutingUrl(loc)'>@mapResources.String("MapsLabelDirections")</a>
         }
       </div>
     </address>
