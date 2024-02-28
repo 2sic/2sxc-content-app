@@ -14,7 +14,7 @@ namespace AppCode.Data
 // Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-28 22:56:53Z
+// When:        2024-02-28 22:58:07Z
 namespace AppCode.Data
 {
   // This is a generated class for ContentListHeader
@@ -22,7 +22,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// ContentListHeader data. <br/>
-  /// Generated 2024-02-28 22:56:53Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-28 22:58:07Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.AlternatePositions`. <br/>

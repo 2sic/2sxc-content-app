@@ -111,7 +111,8 @@ TODO: @2dm
 * Decide on handling Kit, Context etc. in data classes
 * SYNC FIELDS EMail vs Mail
 * figure out why different attributes for fancybox, simplify
-* TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something
+* [x] TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something
+* Remove PresVideo... and use PresentationTextMedia instead
 * probably rename content-type "Content" to "TextImage"
   * also rename the folder in Bs5, 3, 4
   * also check the label on the content type

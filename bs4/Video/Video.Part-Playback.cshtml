@@ -33,7 +33,7 @@
   var videoSettings = Kit.Image.Settings("Content", aspectRatio: "16:9");
   var pic = Kit.Image.Picture(previewSource, settings: videoSettings, factor: factor, imgAltFallback: video.EntityTitle);
  
-  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
+  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).UseLightbox;
 }
 
 @if (hasVideoLightbox != false) {

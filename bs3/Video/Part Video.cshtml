@@ -38,7 +38,7 @@
 
   var videoSettings = Kit.Image.Settings("Content", height: height);
   var pic = Kit.Image.Picture(previewSource, width: width, settings: videoSettings, factor: factor, imgAltFallback: video.EntityTitle);
-  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).VideoLightbox;
+  var hasVideoLightbox = AsDynamic(video.Presentation, Content.Presentation).UseLightbox;
 
 }
 

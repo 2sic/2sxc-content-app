@@ -16,7 +16,7 @@
 }
 
 @* Case 1: lightbox is active, show lightbox link *@
-@if (video.UseLightbox)
+@if (video.Presentation.UseLightbox)
 {
   <a @fancyboxAttribute class='co-video @(preview == null ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@(preview?.Alt)" href="@videoLightboxUrl">
     @if (preview != null)
