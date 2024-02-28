@@ -11,10 +11,10 @@ namespace AppCode.Data
 }
 */
 
-// Generator:   DataModelGenerator v17.02.00
+// Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-22 12:56:40Z
+// When:        2024-02-28 22:56:53Z
 namespace AppCode.Data
 {
   // This is a generated class for AppSettings
@@ -22,7 +22,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// AppSettings data. <br/>
-  /// Generated 2024-02-22 12:56:40Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-28 22:56:53Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.MapsEnableDirections`. <br/>
@@ -41,6 +41,6 @@ namespace AppCode.Data
     /// MapsEnableDirections as bool. <br/>
     /// To get nullable use .Get("MapsEnableDirections") as bool?;
     /// </summary>
-    public bool MapsEnableDirections => base.Bool("MapsEnableDirections");
+    public bool MapsEnableDirections => _item.Bool("MapsEnableDirections");
   }
 }

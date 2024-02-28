@@ -11,10 +11,10 @@ namespace AppCode.Data
 }
 */
 
-// Generator:   DataModelGenerator v17.02.00
+// Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-22 12:56:40Z
+// When:        2024-02-28 22:56:53Z
 using ToSic.Sxc.Adam;
 
 namespace AppCode.Data
@@ -24,7 +24,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// AppResources data. <br/>
-  /// Generated 2024-02-22 12:56:40Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-28 22:56:53Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.MapsLabelDirections`. <br/>
@@ -43,22 +43,22 @@ namespace AppCode.Data
     /// MapsLabelDirections as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("MapsLabelDirections", scrubHtml: true) etc.
     /// </summary>
-    public string MapsLabelDirections => base.String("MapsLabelDirections", fallback: "");
+    public string MapsLabelDirections => _item.String("MapsLabelDirections", fallback: "");
 
     /// <summary>
     /// VideoDefaultPreviewImage as link (url). <br/>
     /// To get the underlying value like 'file:72' use String("VideoDefaultPreviewImage")
     /// </summary>
-    public string VideoDefaultPreviewImage => base.Url("VideoDefaultPreviewImage");
+    public string VideoDefaultPreviewImage => _item.Url("VideoDefaultPreviewImage");
 
     /// <summary>
     /// Get the file object for VideoDefaultPreviewImage - or null if it's empty or not referencing a file.
     /// </summary>
-    public IFile VideoDefaultPreviewImageFile => base.File("VideoDefaultPreviewImageFile");
+    public IFile VideoDefaultPreviewImageFile => _item.File("VideoDefaultPreviewImageFile");
 
     /// <summary>
     /// Get the folder object for VideoDefaultPreviewImage.
     /// </summary>
-    public IFolder VideoDefaultPreviewImageFolder => base.Folder("VideoDefaultPreviewImageFolder");
+    public IFolder VideoDefaultPreviewImageFolder => _item.Folder("VideoDefaultPreviewImageFolder");
   }
 }

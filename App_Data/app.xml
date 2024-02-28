@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="17.00.00" ExportDate="2023-12-21T15:41:01.505628+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="17.02.01" ExportDate="2024-02-28T22:57:19.0169259+01:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -2666,9 +2666,227 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
+    <AttributeSet StaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" Name="PresentationTextMedia" Scope="Default" AlwaysShareConfiguration="false">
+      <Attributes>
+        <Attribute StaticName="HeadingType" Type="String" IsTitle="true">
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="5ef9fa64-cf55-49a3-9f3d-cc97d3a3d995" Json="True" KeyNumber="531">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="string-dropdown" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Heading type" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Überschrift" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Tipo de cabeçalho" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Select which heading layer you want to use or whether it should be hidden.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;W&amp;auml;hlen Sie aus, welche &amp;Uuml;berschrift-Ebene Sie verwenden m&amp;ouml;chten oder ob diese ausgeblendet werden soll.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Required" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="2551429a-a927-4c6c-90af-b004a1e95b25" Json="True" KeyNumber="531">
+            <Value Key="DropdownValues" Value="Heading 1:h1&#xA;Heading 2:h2&#xA;Heading 3:h3&#xA;Hide title:hide" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DropdownValues" Value="Überschrift 1:h1&#xA;Überschrift 2:h2&#xA;Überschrift 3:h3&#xA;Ausblenden:hide" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="dropdown" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="RowCount" Value="1.0" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="c72a4e84-e2af-44e6-b8b1-cb41ad358ed1" Json="True" KeyNumber="531">
+            <Value Key="DropdownValues" Value="Heading 1:h1&#xA;Heading 2:h2&#xA;Heading 3:h3&#xA;Hide:hide" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DropdownValues" Value="Überschrift Ebene 1:h1&#xA;Überschrift Ebene 2:h2&#xA;Überschrift Ebene 3:h3&#xA;Ausblenden:hide" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="DropdownValuesFormat" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="EnableTextEntry" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="54189f81-06ab-4593-accd-92aacb6e66c6" Json="True" KeyNumber="531">
+            <Value Key="RowCount" Value="" Type="Number">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+        </Attribute>
+        <Attribute StaticName="UseLightbox" Type="Boolean" IsTitle="false">
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="205a9903-4022-4be7-be36-9318fde9bff0" Json="True" KeyNumber="532">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="boolean-tristate" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Enable image zoom" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Grossbild-Ansicht aktivieren" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="image zoom mogelijk maken" Type="String">
+              <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Permitir ampliar a imagem" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Allows a large image view by clicking on the image.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="&lt;p&gt;Erm&amp;ouml;glicht eine Grossbild-Ansicht durch Anklicken des Bildes.&lt;/p&gt;" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Required" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="3d73ac4f-94e1-45f4-bd42-e0a999917f80" Json="True" KeyNumber="532">
+            <Value Key="TitleFalse" Value="Click has no action" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Der Klick hat keine Auswirkung" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Opens the image in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Bild öffnet in Grossbild-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Opens the image in a lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Bild öffnet in Grossbild-Ansicht" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
+        </Attribute>
+        <Attribute StaticName="TitleLightbox" Type="Boolean" IsTitle="false">
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="8fb2ef48-e037-4e21-a0ca-cf3907b6dff5" Json="True" KeyNumber="533">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="boolean-tristate" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Show title in lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Grossbild-Ansicht-Titel anzeigen" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Toon titel in lightbox" Type="String">
+              <Dimension DimensionID="139" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Mostrar o título em lightbox" Type="String">
+              <Dimension DimensionID="137" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="Required" Value="False" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="dfd69402-5405-460e-8113-3ee84eb9f617" Json="True" KeyNumber="533">
+            <Value Key="TitleFalse" Value="Does not show the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleFalse" Value="Zeigt den Titel in der Grossansicht nicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Default - Shows the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleIndeterminate" Value="Standard - Zeigt den Titel in der Grossansicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Shows the title in the lightbox" Type="String">
+              <Dimension DimensionID="19" ReadOnly="false" />
+            </Value>
+            <Value Key="TitleTrue" Value="Zeigt den Titel in der Grossansicht an" Type="String">
+              <Dimension DimensionID="20" ReadOnly="false" />
+            </Value>
+          </Entity>
+        </Attribute>
+      </Attributes>
+    </AttributeSet>
     <AttributeSet StaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" Name="PresSetImage" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
-        <Attribute StaticName="ImageLightbox" Type="Boolean" IsTitle="true">
+        <Attribute StaticName="UseLightbox" Type="Boolean" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="f2a44d25-fac2-48cf-bd35-090e9c62539d" Json="True" KeyNumber="528">
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
@@ -3004,224 +3222,6 @@
             </Value>
             <Value Key="TitleTrue" Value="" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-      </Attributes>
-    </AttributeSet>
-    <AttributeSet StaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" Name="PresSetText" Scope="Default" AlwaysShareConfiguration="false">
-      <Attributes>
-        <Attribute StaticName="HeadingType" Type="String" IsTitle="true">
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="5ef9fa64-cf55-49a3-9f3d-cc97d3a3d995" Json="True" KeyNumber="531">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="string-dropdown" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Heading type" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Überschrift" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Tipo de cabeçalho" Type="String">
-              <Dimension DimensionID="137" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Select which heading layer you want to use or whether it should be hidden.&lt;/p&gt;" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="&lt;p&gt;W&amp;auml;hlen Sie aus, welche &amp;Uuml;berschrift-Ebene Sie verwenden m&amp;ouml;chten oder ob diese ausgeblendet werden soll.&lt;/p&gt;" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="2551429a-a927-4c6c-90af-b004a1e95b25" Json="True" KeyNumber="531">
-            <Value Key="DropdownValues" Value="Heading 1:h1&#xA;Heading 2:h2&#xA;Heading 3:h3&#xA;Hide title:hide" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DropdownValues" Value="Überschrift 1:h1&#xA;Überschrift 2:h2&#xA;Überschrift 3:h3&#xA;Ausblenden:hide" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="dropdown" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="RowCount" Value="1.0" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="c72a4e84-e2af-44e6-b8b1-cb41ad358ed1" Json="True" KeyNumber="531">
-            <Value Key="DropdownValues" Value="Heading 1:h1&#xA;Heading 2:h2&#xA;Heading 3:h3&#xA;Hide:hide" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DropdownValues" Value="Überschrift Ebene 1:h1&#xA;Überschrift Ebene 2:h2&#xA;Überschrift Ebene 3:h3&#xA;Ausblenden:hide" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="DropdownValuesFormat" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="EnableTextEntry" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="54189f81-06ab-4593-accd-92aacb6e66c6" Json="True" KeyNumber="531">
-            <Value Key="RowCount" Value="" Type="Number">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="ImageLightbox" Type="Boolean" IsTitle="false">
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="205a9903-4022-4be7-be36-9318fde9bff0" Json="True" KeyNumber="532">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="boolean-tristate" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Enable image zoom" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Grossbild-Ansicht aktivieren" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="image zoom mogelijk maken" Type="String">
-              <Dimension DimensionID="139" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Permitir ampliar a imagem" Type="String">
-              <Dimension DimensionID="137" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Allows a large image view by clicking on the image.&lt;/p&gt;" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="&lt;p&gt;Erm&amp;ouml;glicht eine Grossbild-Ansicht durch Anklicken des Bildes.&lt;/p&gt;" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="3d73ac4f-94e1-45f4-bd42-e0a999917f80" Json="True" KeyNumber="532">
-            <Value Key="TitleFalse" Value="Click has no action" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleFalse" Value="Der Klick hat keine Auswirkung" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="Default - Opens the image in a lightbox" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="Standard - Bild öffnet in Grossbild-Ansicht" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Opens the image in a lightbox" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Bild öffnet in Grossbild-Ansicht" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="TitleLightbox" Type="Boolean" IsTitle="false">
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="8fb2ef48-e037-4e21-a0ca-cf3907b6dff5" Json="True" KeyNumber="533">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="boolean-tristate" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Show title in lightbox" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Grossbild-Ansicht-Titel anzeigen" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Toon titel in lightbox" Type="String">
-              <Dimension DimensionID="139" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Mostrar o título em lightbox" Type="String">
-              <Dimension DimensionID="137" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="dfd69402-5405-460e-8113-3ee84eb9f617" Json="True" KeyNumber="533">
-            <Value Key="TitleFalse" Value="Does not show the title in the lightbox" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleFalse" Value="Zeigt den Titel in der Grossansicht nicht an" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="Default - Shows the title in the lightbox" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleIndeterminate" Value="Standard - Zeigt den Titel in der Grossansicht an" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Shows the title in the lightbox" Type="String">
-              <Dimension DimensionID="19" ReadOnly="false" />
-            </Value>
-            <Value Key="TitleTrue" Value="Zeigt den Titel in der Grossansicht an" Type="String">
-              <Dimension DimensionID="20" ReadOnly="false" />
             </Value>
           </Entity>
         </Attribute>
@@ -4013,14 +4013,14 @@
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" AttributeSetName="PresSetText" EntityGUID="986fa35a-7e15-4368-9822-e80dec230be9">
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" AttributeSetName="PresentationTextMedia" EntityGUID="986fa35a-7e15-4368-9822-e80dec230be9">
       <Value Key="HeadingType" Value="h2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="TitleLightbox" Value="" Type="Boolean">
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -4081,7 +4081,7 @@
       <Value Key="Title" Value="Neues Video" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="VideoLink" Value="https://www.youtube.com/watch?v=6Hx8FzJaV18" Type="Hyperlink">
+      <Value Key="VideoLink" Value="https://www.youtube.com/watch?v=-1GOv7rAX1Y" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -5483,7 +5483,10 @@
       </Value>
     </Entity>
     <Entity TargetType="5" AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="83e065d1-fd01-4354-bef5-769d83580093" Json="True" KeyString="93714840-bb10-442d-b290-7d8a7b005dc0">
-      <Value Key="Description" Value="Layout element" Type="String">
+      <Value Key="AdditionalSettings" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Layout element (fake type, just to enable selection in view-picker)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="Layout-Element" Type="String">
@@ -5495,7 +5498,7 @@
       <Value Key="DynamicChildrenField" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="EditInstructions" Value="" Type="String">
+      <Value Key="EditInstructions" Value="&lt;p&gt;This is fake Content-Type. Don't remove, it's used.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;The view needs this so that the view-picker (which first shows the content-types) knows what views belong to it.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="[App:Path]/Icons/Type-Icon-Layout.png" Type="Hyperlink">
@@ -5950,8 +5953,8 @@
       <Value Key="Template" Value="0c650deb-9b70-4ae0-bca1-ccfb7b11af10" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="2f27f444-f561-4bc7-be9f-47a1fdcf82f6" Json="True">
-      <Value Key="Content" Value="ded908fd-a579-40db-b423-e99495150351" Type="Entity" />
-      <Value Key="Presentation" Value="null" Type="Entity" />
+      <Value Key="Content" Value="ded908fd-a579-40db-b423-e99495150351,null,b3bda774-4714-4694-b5dc-34252cb98bac" Type="Entity" />
+      <Value Key="Presentation" Value="2f131125-6367-4661-9ec7-832d5a8fe9c8,null,da05988f-1505-4097-a00b-4825e35178f3" Type="Entity" />
       <Value Key="Template" Value="a215abc5-8dfa-493d-88aa-c659dc35f503" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="58de1e14-a6d7-4ae6-af07-8546cb56b158" Json="True">
@@ -6064,6 +6067,9 @@
       </Value>
     </Entity>
     <Entity TargetType="5" AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="2f15f5fb-ed51-467e-90ca-51461c8239c4" Json="True" KeyString="5d76c94c-2832-46eb-8ebd-b0def57dbc3f">
+      <Value Key="AdditionalSettings" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="Description" Value="Settings for all Text Templates (Text, Text with Image right &amp; left)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -6076,13 +6082,16 @@
       <Value Key="Description" Value="Einstellungen für alle Textvorlagen (Text, Text mit Bild rechts &amp; links)" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="EditInstructions" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Content Presentation Settings" Type="String">
+      <Value Key="Label" Value="Presentation Settings Text with Media" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Presentatieinstellingen voor templates met tekst en plaatjes" Type="String">
@@ -6091,7 +6100,7 @@
       <Value Key="Label" Value="Definições de apresentação para Templates de Texto/Imagens" Type="String">
         <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Anzeige-Einstellungen für Inhalt" Type="String">
+      <Value Key="Label" Value="Anzeige-Einstellungen für Texte mit Medien" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
       <Value Key="Link" Value="https://github.com/2sic/2sxc-content-bootstrap3/wiki/Help" Type="Hyperlink">
@@ -6570,13 +6579,13 @@
       <Value Key="Template" Value="c9c61a62-b839-4fa8-a513-08e942fc10b4" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="243c0740-c6a6-460c-9fed-3ef5ae309632">
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -6823,13 +6832,13 @@
       <Value Key="Template" Value="cf857bb5-f8b6-4ad9-8545-405d70101409" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="50e499fb-1b0b-462d-bc77-e9dd4053419f">
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -6942,7 +6951,7 @@
       <Value Key="HeadingType" Value="h2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="VideoLightbox" Value="" Type="Boolean">
+      <Value Key="VideoLightbox" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -7206,6 +7215,9 @@
       </Value>
     </Entity>
     <Entity TargetType="5" AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="fe7c3562-bbd2-4f66-b223-1ee366ce0de6" Json="True" KeyString="e3315455-98a4-4ac4-911f-956de8645f53">
+      <Value Key="AdditionalSettings" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
       <Value Key="Description" Value="Settings for all Video Templates (Video, Video with Text right &amp; left)" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
@@ -7221,7 +7233,7 @@
       <Value Key="Icon" Value="" Type="Hyperlink">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Label" Value="Video Presentation Settings" Type="String">
+      <Value Key="Label" Value="Video Presentation Settings - TOREPLACE WITH PresentationTextMedia" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Label" Value="Anzeige-Einstellungen für Videos" Type="String">
@@ -7880,12 +7892,14 @@
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a8cd6f62-dc0c-4d73-9efb-915801b739f3" Json="True">
       <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
+      <Value Key="ListContent" Value="46f92fb1-b5ca-47ff-b501-2313f5e7ef06" Type="Entity" />
+      <Value Key="ListPresentation" Value="null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null,86fcabca-bfd2-4a40-bfa6-6d76942a1b82" Type="Entity" />
       <Value Key="Template" Value="f7045144-1f69-4cad-bea1-a3fb5cb5a1e9" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="f769a2f2-11a9-457c-8798-f0d9da967eb4" Json="True">
       <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null,5c454d6a-bdb5-44c1-8e41-55b4ac960fcc" Type="Entity" />
       <Value Key="Template" Value="c7af4d82-6ec3-4507-95bd-c8c7962b7925" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="8bba424d-4ba4-4563-b3c3-90c64214b07b" Json="True">
@@ -8278,46 +8292,46 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="b2619f3d-eb65-4bc8-a67b-d4f2f6777c7c">
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="18506170-d5b8-4468-bb40-996ccdf19efb">
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="cf9ca6ae-c63e-4a59-89f4-3def9943ae52">
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="20b42702-e34c-4dca-97a6-f57e10abe04e">
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8333,13 +8347,13 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="77628453-e1b3-4df8-b44b-aa706e6e0a07" AttributeSetName="PresSetImage" EntityGUID="53695b72-5ca8-4023-9380-c6a3292f2872">
-      <Value Key="ImageLightbox" Value="" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
       <Value Key="TitleLegend" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8369,6 +8383,91 @@
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="fea82e9f-5a08-45fb-ad9a-bcc7b0329fb2" Json="True">
       <Value Key="Template" Value="00973a24-56dd-42f6-aea8-2ecda5210cd7" Type="Entity" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="97bb146b-5b82-455a-b87e-d1a6179cf122" AttributeSetName="ContentListHeader" EntityGUID="46f92fb1-b5ca-47ff-b501-2313f5e7ef06">
+      <Value Key="AlternatePositions" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" AttributeSetName="PresentationTextMedia" EntityGUID="86fcabca-bfd2-4a40-bfa6-6d76942a1b82">
+      <Value Key="HeadingType" Value="h3" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="5d76c94c-2832-46eb-8ebd-b0def57dbc3f" AttributeSetName="PresentationTextMedia" EntityGUID="5c454d6a-bdb5-44c1-8e41-55b4ac960fcc">
+      <Value Key="HeadingType" Value="h1" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="TitleLightbox" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="UseLightbox" Value="" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="e3315455-98a4-4ac4-911f-956de8645f53" AttributeSetName="VideoPresentation" EntityGUID="2f131125-6367-4661-9ec7-832d5a8fe9c8">
+      <Value Key="HeadingType" Value="h2" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLightbox" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="e3315455-98a4-4ac4-911f-956de8645f53" AttributeSetName="VideoPresentation" EntityGUID="37998e19-9c29-4059-804f-403048b0e334">
+      <Value Key="HeadingType" Value="h2" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLightbox" Value="True" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="b3957ce5-847e-4191-b98a-550d1b9f838c" AttributeSetName="Video" EntityGUID="b3bda774-4714-4694-b5dc-34252cb98bac">
+      <Value Key="Image" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ImageSelection" Value="youtube" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Demo 3" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLink" Value="https://www.youtube.com/watch?v=2frf4RRNy5c" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="b3957ce5-847e-4191-b98a-550d1b9f838c" AttributeSetName="Video" EntityGUID="dd612c53-8130-4ea9-8593-9d62df34c045">
+      <Value Key="Image" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="ImageSelection" Value="youtube" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Demo Iframe" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLink" Value="https://www.youtube.com/watch?v=-1GOv7rAX1Y" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="e3315455-98a4-4ac4-911f-956de8645f53" AttributeSetName="VideoPresentation" EntityGUID="da05988f-1505-4097-a00b-4825e35178f3">
+      <Value Key="HeadingType" Value="h2" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="VideoLightbox" Value="False" Type="Boolean">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
     </Entity>
   </Entities>
   <PortalFiles>

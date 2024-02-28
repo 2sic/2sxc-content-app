@@ -11,10 +11,10 @@ namespace AppCode.Data
 }
 */
 
-// Generator:   DataModelGenerator v17.02.00
+// Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-22 12:56:40Z
+// When:        2024-02-28 22:56:53Z
 using ToSic.Sxc.Adam;
 
 namespace AppCode.Data
@@ -24,7 +24,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// Image data. <br/>
-  /// Generated 2024-02-22 12:56:40Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-28 22:56:53Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.Image`. <br/>
@@ -43,22 +43,22 @@ namespace AppCode.Data
     /// Image as link (url). <br/>
     /// To get the underlying value like 'file:72' use String("Image")
     /// </summary>
-    public string Image => base.Url("Image");
+    public string Image => _item.Url("Image");
 
     /// <summary>
     /// Get the file object for Image - or null if it's empty or not referencing a file.
     /// </summary>
-    public IFile ImageFile => base.File("ImageFile");
+    public IFile ImageFile => _item.File("ImageFile");
 
     /// <summary>
     /// Get the folder object for Image.
     /// </summary>
-    public IFolder ImageFolder => base.Folder("ImageFolder");
+    public IFolder ImageFolder => _item.Folder("ImageFolder");
 
     /// <summary>
     /// Title as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Title", scrubHtml: true) etc.
     /// </summary>
-    public string Title => base.String("Title", fallback: "");
+    public string Title => _item.String("Title", fallback: "");
   }
 }

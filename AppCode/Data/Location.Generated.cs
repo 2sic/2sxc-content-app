@@ -11,10 +11,10 @@ namespace AppCode.Data
 }
 */
 
-// Generator:   DataModelGenerator v17.02.00
+// Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-22 12:56:40Z
+// When:        2024-02-28 22:56:53Z
 using ToSic.Sxc.Cms.Data;
 
 namespace AppCode.Data
@@ -24,7 +24,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// Location data. <br/>
-  /// Generated 2024-02-22 12:56:40Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-28 22:56:53Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.City`. <br/>
@@ -43,59 +43,59 @@ namespace AppCode.Data
     /// City as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("City", scrubHtml: true) etc.
     /// </summary>
-    public string City => base.String("City", fallback: "");
+    public string City => _item.String("City", fallback: "");
 
     /// <summary>
     /// Company as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Company", scrubHtml: true) etc.
     /// </summary>
-    public string Company => base.String("Company", fallback: "");
+    public string Company => _item.String("Company", fallback: "");
 
     /// <summary>
     /// Country as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Country", scrubHtml: true) etc.
     /// </summary>
-    public string Country => base.String("Country", fallback: "");
+    public string Country => _item.String("Country", fallback: "");
 
     /// <summary>
     /// Description as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Description", scrubHtml: true) etc.
     /// </summary>
-    public string Description => base.String("Description", fallback: "");
+    public string Description => _item.String("Description", fallback: "");
 
     /// <summary>
     /// Fax as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Fax", scrubHtml: true) etc.
     /// </summary>
-    public string Fax => base.String("Fax", fallback: "");
+    public string Fax => _item.String("Fax", fallback: "");
 
     /// <summary>
     /// GPS as GPS Coordinates object with Latitude and Longitude.
     /// </summary>
-    public GpsCoordinates GPS => base.Gps("GPS");
+    public GpsCoordinates GPS => _item.Gps("GPS");
 
     /// <summary>
     /// Mail as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Mail", scrubHtml: true) etc.
     /// </summary>
-    public string Mail => base.String("Mail", fallback: "");
+    public string Mail => _item.String("Mail", fallback: "");
 
     /// <summary>
     /// Street as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Street", scrubHtml: true) etc.
     /// </summary>
-    public string Street => base.String("Street", fallback: "");
+    public string Street => _item.String("Street", fallback: "");
 
     /// <summary>
     /// Tel as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Tel", scrubHtml: true) etc.
     /// </summary>
-    public string Tel => base.String("Tel", fallback: "");
+    public string Tel => _item.String("Tel", fallback: "");
 
     /// <summary>
     /// ZipCode as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("ZipCode", scrubHtml: true) etc.
     /// </summary>
-    public string ZipCode => base.String("ZipCode", fallback: "");
+    public string ZipCode => _item.String("ZipCode", fallback: "");
   }
 }

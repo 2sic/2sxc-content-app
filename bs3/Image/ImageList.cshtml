@@ -13,7 +13,7 @@
   <div class="co-container-inner">
     <div class="row">
     @foreach (var img in AsList(Data)) {
-      var wrapInLink = img.Presentation.ImageLightbox != false;
+      var wrapInLink = img.Presentation.UseLightbox != false;
 
       var imgField = img.Field("Image");
       var pic = Kit.Image.Picture(imgField, settings: "Content", factor: factor, imgClass: "w-100", imgAltFallback: img.EntityTitle);

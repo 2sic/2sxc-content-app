@@ -23,14 +23,14 @@
     lightboxCaption = pic.Alt;
   }
 
-  var wrapInLink = imgItem.Presentation.ImageLightbox != false;
+  var wrapInLink = imgItem.Presentation.UseLightbox != false;
 }
 
 @if (wrapInLink) {
   var lbPic = Kit.Image.Picture(imgField, settings: "Lightbox");
   @:<a @DynamicModel.FancyboxAttribute data-src="@imgItem.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@lightboxCaption">
 }
-  <figure class='@(imgItem.Presentation.ImageLightbox != false ? "effect-zoom" : "")'>
+  <figure class='@(imgItem.Presentation.UseLightbox != false ? "effect-zoom" : "")'>
     @if (Text.Has(pic.Alt)) {
       <figcaption class="pt-1 px-4 pb-4 text-white">@pic.Alt</figcaption>
     }

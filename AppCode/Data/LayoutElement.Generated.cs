@@ -11,10 +11,10 @@ namespace AppCode.Data
 }
 */
 
-// Generator:   DataModelGenerator v17.02.00
+// Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-22 12:56:40Z
+// When:        2024-02-28 22:56:53Z
 namespace AppCode.Data
 {
   // This is a generated class for LayoutElement
@@ -22,7 +22,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// LayoutElement data. <br/>
-  /// Generated 2024-02-22 12:56:40Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-28 22:56:53Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.Notes`. <br/>
@@ -41,6 +41,6 @@ namespace AppCode.Data
     /// Notes as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Notes", scrubHtml: true) etc.
     /// </summary>
-    public string Notes => base.String("Notes", fallback: "");
+    public string Notes => _item.String("Notes", fallback: "");
   }
 }

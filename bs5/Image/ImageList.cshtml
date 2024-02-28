@@ -15,7 +15,7 @@
 @foreach (var imgItem in MyItems)
 {
   var presSettings = As<PresSetImage>(imgItem.Presentation);
-  var wrapInLink = presSettings.ImageLightbox;
+  var wrapInLink = presSettings.UseLightbox;
 
   var imgField = imgItem.Field("Image");
   var pic = Kit.Image.Picture(imgField, settings: "Content", factor: factor, imgClass: "w-100", imgAltFallback: imgItem.Title);
@@ -29,7 +29,7 @@
       @:<a @fancyboxAttribute data-src='@imgItem.Url("Image")' data-srcset="@picLb.SrcSet" data-sizes="@picLb.Sizes" data-preload="false" data-caption="@caption">
     }
     
-    <figure class='@(presSettings.Bool("ImageLightbox", fallback: true) ? "effect-zoom" : "") mb-0'>
+    <figure class='@(presSettings.Bool("UseLightbox", fallback: true) ? "effect-zoom" : "") mb-0'>
       @if (presSettings.TitleLegend) {
         <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@pic.Alt</figcaption>
       }

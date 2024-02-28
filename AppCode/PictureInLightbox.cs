@@ -34,7 +34,7 @@ namespace AppCode
     /// <summary>
     /// Determine if we use a lightbox based on the presentation settings
     /// </summary>
-    public bool UseLightbox => _item.Presentation.Bool("ImageLightbox", fallback: true);
+    public bool UseLightbox => _item.Presentation.Bool("UseLightbox", fallback: true);
 
     /// <summary>
     /// The standard Picture object which is used multiple times, incl. to access Metadata.

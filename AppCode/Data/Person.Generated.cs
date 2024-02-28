@@ -11,10 +11,10 @@ namespace AppCode.Data
 }
 */
 
-// Generator:   DataModelGenerator v17.02.00
+// Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-22 12:56:40Z
+// When:        2024-02-28 22:56:53Z
 using ToSic.Sxc.Adam;
 
 namespace AppCode.Data
@@ -24,7 +24,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// Person data. <br/>
-  /// Generated 2024-02-22 12:56:40Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-28 22:56:53Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.Description`. <br/>
@@ -43,52 +43,52 @@ namespace AppCode.Data
     /// Description as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Description", scrubHtml: true) etc.
     /// </summary>
-    public string Description => base.String("Description", fallback: "");
+    public string Description => _item.String("Description", fallback: "");
 
     /// <summary>
     /// Email as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Email", scrubHtml: true) etc.
     /// </summary>
-    public string Email => base.String("Email", fallback: "");
+    public string Email => _item.String("Email", fallback: "");
 
     /// <summary>
     /// FullName as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("FullName", scrubHtml: true) etc.
     /// </summary>
-    public string FullName => base.String("FullName", fallback: "");
+    public string FullName => _item.String("FullName", fallback: "");
 
     /// <summary>
     /// Mobile as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Mobile", scrubHtml: true) etc.
     /// </summary>
-    public string Mobile => base.String("Mobile", fallback: "");
+    public string Mobile => _item.String("Mobile", fallback: "");
 
     /// <summary>
     /// Phone as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Phone", scrubHtml: true) etc.
     /// </summary>
-    public string Phone => base.String("Phone", fallback: "");
+    public string Phone => _item.String("Phone", fallback: "");
 
     /// <summary>
     /// Photo as link (url). <br/>
     /// To get the underlying value like 'file:72' use String("Photo")
     /// </summary>
-    public string Photo => base.Url("Photo");
+    public string Photo => _item.Url("Photo");
 
     /// <summary>
     /// Get the file object for Photo - or null if it's empty or not referencing a file.
     /// </summary>
-    public IFile PhotoFile => base.File("PhotoFile");
+    public IFile PhotoFile => _item.File("PhotoFile");
 
     /// <summary>
     /// Get the folder object for Photo.
     /// </summary>
-    public IFolder PhotoFolder => base.Folder("PhotoFolder");
+    public IFolder PhotoFolder => _item.Folder("PhotoFolder");
 
     /// <summary>
     /// Position as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Position", scrubHtml: true) etc.
     /// </summary>
-    public string Position => base.String("Position", fallback: "");
+    public string Position => _item.String("Position", fallback: "");
   }
 }
