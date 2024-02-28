@@ -1,15 +1,15 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.AppRazor<AppCode.Razor.VideoModel>
 @using AppCode.Data
 
 @*  Partial template used in _Video.cshtml to show preview and link-to-lightbox for the video  *@
 @{
   // The video which was handed in
-	var video = As<Video>(MyModel.Item("Item"));
+	var video = Model.Video;
   var videoLightboxUrl = video.YouTubeUrl.Replace("autoplay=true", "autoplay=false");
 
   // get preview image for the size specified in the columns parameter (fallback to 12)
   var preview = GetService<AppCode.VideoService>()
-    .Preview(video, MyModel.Int("Columns", fallback: 12));
+    .Preview(video, Model.Columns ?? 12);
 
   // DOM attribute for fancybox
   var fancyboxAttribute = "app-content-fancybox-videos=" + UniqueKey; 
