@@ -14,6 +14,8 @@ namespace AppCode.Data
 
     #endregion
 
+    public VideoPresentation Presentation2 => _presentation ??= As<VideoPresentation>(base.Presentation);
+    private VideoPresentation _presentation;
     
     public string HeadingType => Presentation.String("HeadingType");
 

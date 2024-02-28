@@ -1,4 +1,4 @@
-@inherits AppCode.Razor.AppRazor
+@inherits AppCode.Razor.Video
 @using ToSic.Razor.Blade
 @using AppCode
 @using AppCode.Data
@@ -11,8 +11,15 @@
 @{
   var settings = As<TextMediaViewSettings>(MyView.Settings);
   var header = As<ContentListHeader>(MyHeader);
+  var vid = As<Video>(MyItem);
 }
-
+<div>
+  test 2dm
+  @vid.UseLightbox
+  <br>
+  @vid.Presentation2.VideoLightbox
+</div>
+  
 @* Show all the content-items - one or more *@
 @foreach (var item in Helpers.PrepareList(AsList<Video>(MyItems), header.AlternatePositions, settings.TextFirst))
 {
