@@ -3,7 +3,7 @@ namespace AppCode.Razor
   /// <summary>
   /// todo
   /// </summary>
-  public abstract class TextImageBase: AppCode.Razor.Default
+  public abstract class TextImageBase: AppRazor
   {
   }
 }

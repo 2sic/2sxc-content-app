@@ -8,7 +8,7 @@ namespace AppCode.Razor
   /// <summary>
   /// todo
   /// </summary>
-  public abstract class Links: Default
+  public abstract class Links: AppRazor
   {
     protected Link MyLink => _myLink ??= new Func<Link>(() => { var l = As<Link>(MyItem); l.CurrentPageUrl = CurrentPageUrl; return l; })();
     private Link _myLink;

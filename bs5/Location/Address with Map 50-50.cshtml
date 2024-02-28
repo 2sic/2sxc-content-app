@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.AppRazor
 @using ToSic.Razor.Blade
 @using AppCode.Data
 @{
@@ -65,7 +65,7 @@
           <span class="fas fa-fax" aria-hidden="true"></span>
           <span itemprop="faxNumber">@loc.Fax</span><br/>
         }
-        @if (App.Settings.Bool("MapsEnableDirections"))
+        @if (App.Settings.MapsEnableDirections)
         {
           <span class="fas fa-map-marker-alt"></span>
           <a target="_blank" href='@locService.RoutingUrl(loc)'>@mapResources.String("MapsLabelDirections")</a>
