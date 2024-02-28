@@ -1,8 +1,8 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.Links
 @using AppCode.Data
 
 <ul class="list-unstyled">
-  @foreach (var link in AsList<Link>(MyItems))
+  @foreach (var link in MyLinks)
   {
     <li @Kit.Toolbar.Default(link) class="co-linkblock">
       <div class="d-flex flex-row">

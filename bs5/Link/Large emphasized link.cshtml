@@ -1,19 +1,19 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.Links
 @using AppCode.Data
+
 @{
-  var link = As<Link>(MyItem);
-  var headingTag = MyItem.Presentation.String("HeadingType");
-  var htmlTags = Kit.HtmlTags; // Short name for HtmlTags service for use below
+  var link = MyLink;
+  var headingTag = link.Presentation.String("HeadingType");
 }
 
-<div class="text-center py-5" @Kit.Toolbar.Default(MyItem)>
+<div class="text-center py-5" @Kit.Toolbar.Default(link)>
   
   @if (headingTag != "hide")
   {
-    @htmlTags.Custom(headingTag).Class("mb-4").Wrap(
+    @Kit.HtmlTags.Custom(headingTag).Class("mb-4").Wrap(
       MyItem.Title,
-      htmlTags.Br(),
-      htmlTags.Small(MyItem.Get("Description"))
+      Kit.HtmlTags.Br(),
+      Kit.HtmlTags.Small(MyItem.Get("Description"))
     )
   }
 
@@ -24,6 +24,7 @@
       <span>@MyItem.Get("LinkText")</span>
     </a>
   }
+
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "icons"})

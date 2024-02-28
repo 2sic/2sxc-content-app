@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace AppCode.Data
 {
-  public partial class Video
+  public partial class Video : IAlternatingItems
   {
     #region IAlternatingItems Members
 

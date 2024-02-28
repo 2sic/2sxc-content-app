@@ -108,6 +108,7 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 TODO: @2dm
 
+* Decide on handling Kit, Context etc. in data classes
 * SYNC FIELDS EMail vs Mail
 * figure out why different attributes for fancybox, simplify
 * TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something

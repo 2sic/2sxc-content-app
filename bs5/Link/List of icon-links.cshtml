@@ -1,8 +1,8 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.Links
 @using AppCode.Data
 
 <div class="row">
-  @foreach (var link in AsList<Link>(MyItems))
+  @foreach (var link in MyLinks)
   {
     <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Kit.Toolbar.Default(link)>
       <i class='mb-3 text-primary fas @link.IconAuto' aria-hidden="true" style="font-size: 40px;"></i>

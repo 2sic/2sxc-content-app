@@ -1,8 +1,8 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.Links
 @using AppCode.Data
 
 <div class="row">
-  @foreach (var link in AsList<Link>(MyItems))
+  @foreach (var link in MyLinks)
   {
     <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Kit.Toolbar.Default(link)>
 
