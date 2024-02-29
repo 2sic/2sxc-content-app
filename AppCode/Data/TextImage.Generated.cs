@@ -14,7 +14,7 @@ namespace AppCode.Data
 // Generator:   DataModelGenerator v17.02.01
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-02-29 20:20:26Z
+// When:        2024-02-29 20:23:34Z
 using ToSic.Sxc.Adam;
 
 namespace AppCode.Data
@@ -24,7 +24,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// TextImage data. <br/>
-  /// Generated 2024-02-29 20:20:26Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-02-29 20:23:34Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.Image`. <br/>
@@ -65,7 +65,7 @@ namespace AppCode.Data
     /// Title as string. <br/>
     /// For advanced manipulation like scrubHtml, use .String("Title", scrubHtml: true) etc.
     /// </summary>
-    public string Title => _item.String("Title", fallback: "");
+    public new string Title => _item.String("Title", fallback: "");
 
     /// <summary>
     /// VarShowImage as bool. <br/>
