@@ -18,7 +18,9 @@
 @* Case 1: lightbox is active, show lightbox link *@
 @if (video.Presentation.UseLightbox)
 {
-  <a @fancyboxAttribute class='co-video @(preview == null ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@(preview?.Alt)" href="@videoLightboxUrl">
+  var caption = video.Presentation.TitleLightbox ? preview.Alt : "";
+
+  <a @fancyboxAttribute class='co-video @(preview == null ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@caption" href="@videoLightboxUrl">
     @if (preview != null)
     {
       <figure class="effect-zoom">

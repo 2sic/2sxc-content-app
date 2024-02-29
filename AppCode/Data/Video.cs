@@ -16,10 +16,9 @@ namespace AppCode.Data
 
     /// <summary>
     /// Override Presentation with Typed Item
-    /// // TODO: this should become a PresentationTextMedia
     /// </summary>
-    public new VideoPresentation Presentation => _presentation ??= As<VideoPresentation>(base.Presentation);
-    private VideoPresentation _presentation;
+    public new TextMediaPresentation Presentation => _presentation ??= As<TextMediaPresentation>(base.Presentation);
+    private TextMediaPresentation _presentation;
     
     public bool IsValidYouTube => !string.IsNullOrEmpty(YouTubeId);
 
