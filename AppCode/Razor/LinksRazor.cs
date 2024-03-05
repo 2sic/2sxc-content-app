@@ -8,9 +8,9 @@ namespace AppCode.Razor
   /// <summary>
   /// todo
   /// </summary>
-  public abstract class Links: AppRazor
+  public abstract class LinksRazor: AppRazor
   {
-    protected Link MyLink => _myLink ??= new Func<Link>(() => { var l = As<Link>(MyItem); l.CurrentPageUrl = CurrentPageUrl; return l; })();
+    protected Link MyLink => _myLink ??= MyLinks.FirstOrDefault();
     private Link _myLink;
 
     /// <summary>
@@ -19,8 +19,7 @@ namespace AppCode.Razor
     /// </summary>
     protected List<Link> MyLinks => _links ??= AsList<Link>(MyItems)
       .Select(i => {
-        // Initialize a property, so it can be used in calculated properties of Link
-        i.CurrentPageUrl = CurrentPageUrl;
+        i.CurrentPageUrl = CurrentPageUrl;  // Set this property, so it can be used in calculated properties of Link
         return i;
       })
       .ToList();
