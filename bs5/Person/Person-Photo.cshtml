@@ -20,14 +20,14 @@
     <div class="col-md-6 mb-4 mb-md-5 row" @Kit.Toolbar.Default(person)>
       <div class="col-4 @mbClass">
         @if (person.IsNotEmpty("Photo")) {
-          @person.Picture("Photo" , settings: photoSettings, imgClass:"img-fluid " + imgClass, imgAltFallback: person.FullName)        
+          @person.Picture("Photo", settings: photoSettings, imgClass:"img-fluid " + imgClass, imgAltFallback: person.FullName)        
         } else {
           <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
         }
       </div>
 
       <div class="col-8" itemscope itemtype="http://schema.org/Person">
-        @Html.Partial("Part Properties.cshtml", new { data = person })
+        @Html.Partial("Part Properties.cshtml", person)
       </div>
     </div>
   }

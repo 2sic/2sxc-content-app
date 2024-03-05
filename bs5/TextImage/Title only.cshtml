@@ -1,5 +1,5 @@
 @* Use custom Razor base class located in /AppCode/Razor with additional helpers *@
-@inherits AppCode.Razor.TextImageBase
+@inherits AppCode.Razor.TextMediaRazor
 @using AppCode
 @using AppCode.Data
 
@@ -9,7 +9,7 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
-@foreach (var item in Helpers.PrepareList(AsList<TextImage>(MyItems)))
+@foreach (var item in MyTextsWithImages)
 {
   <div class='@item.RowClass' @Helpers.TextImageToolbar(item, hideImage: true, hideText: true)>
     @Helpers.ShowTitle(item)

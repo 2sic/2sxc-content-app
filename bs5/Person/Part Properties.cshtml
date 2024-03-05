@@ -1,9 +1,11 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits Custom.Hybrid.RazorTyped<Person>
 @using AppCode.Data
 @{
   // This is a partial template which is re-used in many other templates, so it's shared here
   // its shows the person data like name, position, contact data and description
-  var person = MyModel.Get<Person>("data");
+
+  // The model is a Person object
+  var person = Model;
 }
 <div class="mb-2">
   <div class="lead font-weight-bold" itemprop="name">@person.String("FullName")</div>

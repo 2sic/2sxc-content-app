@@ -10,12 +10,11 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
-  var settings = As<TextMediaViewSettings>(MyView.Settings);
-  var header = As<TextMediaListHeader>(MyHeader);
+  var settings = MyView.Settings;
 }
   
 @* Show all the content-items - one or more *@
-@foreach (var item in Helpers.PrepareList(MyVideos, header.AlternatePositions, settings.TextFirst))
+@foreach (var item in Helpers.PrepareList(MyVideos, MyHeader.AlternatePositions, settings.TextFirst))
 {
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
     <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>

@@ -1,4 +1,4 @@
-@inherits AppCode.Razor.AppRazor
+@inherits AppCode.Razor.TextMediaRazor
 @using AppCode
 @using AppCode.Data
 
@@ -11,12 +11,11 @@
   // TODO: WHY DIFFERENT Names in Content/Video/Images?
   // Html DOM attribute for fancybox, settings, etc.
   var fancyboxAttribute = "app-content-fancybox-group";
-  var settings = As<TextMediaViewSettings>(MyView.Settings);
-  var header = As<TextMediaListHeader>(MyHeader);
+  var settings = MyView.Settings;
 }
 
 @* Show all the content-items - one or more *@
-@foreach (var item in Helpers.PrepareList(AsList<TextImage>(MyItems), header.AlternatePositions, settings.TextFirst))
+@foreach (var item in MyTextsWithImages)
 {
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
 

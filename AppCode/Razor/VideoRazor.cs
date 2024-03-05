@@ -7,7 +7,7 @@ namespace AppCode.Razor
   /// <summary>
   /// todo
   /// </summary>
-  public abstract class VideoRazor: AppRazor
+  public abstract class VideoRazor: TextMediaRazor
   {
     protected Video MyVideo => _myVideo ??= As<Video>(MyItem);
     private Video _myVideo;

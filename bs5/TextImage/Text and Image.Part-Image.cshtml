@@ -1,11 +1,12 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.AppRazor
 @using ToSic.Razor.Blade
 @using AppCode
+@using AppCode.Data
 
 @*  This is a partial template which is re-used in the Content-Templates  *@
 @{
   // Parameter passed in from the calling page
-  var imgItem = MyModel.Item("Item");
+  var imgItem = MyModel.Get<TextImage>("Item");
   var columns = MyModel.Int("Columns", fallback: 0);
   var fbAttribute = MyModel.String("FancyboxAttribute", required: false);
 
