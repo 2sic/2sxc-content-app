@@ -12,12 +12,15 @@
     .Preview(video, Model.Columns ?? 12);
 
   // DOM attribute for fancybox
+  // TODO: @2ro - stimmt das "=" hier?
   var fancyboxAttribute = "app-content-fancybox-videos=" + UniqueKey; 
 }
 
 @* Case 1: lightbox is active, show lightbox link *@
 @if (video.Presentation.UseLightbox)
 {
+  @ActivateFancyBox(fancyboxAttribute)
+
   var caption = video.Presentation.TitleLightbox ? preview.Alt : "";
 
   <a @fancyboxAttribute class='co-video @(preview == null ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@caption" href="@videoLightboxUrl">
@@ -30,13 +33,11 @@
     @* SVG Code for Play Button *@
     @Html.Partial("Play SVG.cshtml")
   </a>
-  @* activate fancybox scripts *@
-  @Html.Partial("../shared/FancyboxAssets.cshtml", new { fancyboxAttribute })
 }
 @* Case 2: no lightbox, show directly *@
 else
 {
-  // TODO: ratio ratio-16x9 only for octane - should be removed when bs5 is prepared
+   @* TODO: ratio ratio-16x9 only for octane - should be removed when bs5 is prepared *@
   <div class="co-video-embed ratio ratio-16x9 embed-responsive embed-responsive-16by9">
     @if (video.IsValidYouTube)
     {
