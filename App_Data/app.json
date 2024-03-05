@@ -32,7 +32,8 @@
   },
   "editions": {
     "": {
-      "description": "The default / root edition"
+      "description": "The default / root edition",
+      "isDefault": true
     }
   }
 }
