@@ -3,7 +3,7 @@
 
 @{
   var link = MyLink;
-  var headingTag = link.Presentation.String("HeadingType");
+  var headingTag = As<TextMediaPresentation>(link.Presentation).HeadingType;
 }
 
 <div class="text-center py-5" @Kit.Toolbar.Default(link)>
@@ -11,17 +11,17 @@
   @if (headingTag != "hide")
   {
     @Kit.HtmlTags.Custom(headingTag).Class("mb-4").Wrap(
-      MyItem.Title,
+      link.Title,
       Kit.HtmlTags.Br(),
-      Kit.HtmlTags.Small(MyItem.Get("Description"))
+      Kit.HtmlTags.Small(link.Description)
     )
   }
 
   @if (link.IsNotEmpty("Link"))
   {
-    <a href='@link.Link' target='@link.WindowAuto' title="@MyItem.Title" class="btn btn-lg btn-outline-primary">
+    <a href='@link.Link' target='@link.WindowAuto' title="@link.Title" class="btn btn-lg btn-outline-primary">
       <i class='co-icon fas @link.IconAuto' aria-hidden="true"></i>
-      <span>@MyItem.Get("LinkText")</span>
+      <span>@link.LinkText</span>
     </a>
   }
 
