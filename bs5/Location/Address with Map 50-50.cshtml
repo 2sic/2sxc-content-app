@@ -1,4 +1,4 @@
-@inherits AppCode.Razor.AppRazor
+@inherits AppCode.Razor.LocationRazor
 @using ToSic.Razor.Blade
 @using AppCode.Data
 @using AppCode.Services
@@ -7,7 +7,7 @@
   var showMapFirst = MyView.Identifier == "map-first";
 
   // Convert typed Location object
-  var loc = As<Location>(MyItem);
+  var loc = MyLocation;
   
   // TODO: find out if this is till needed
   // Combine the Presentation with Resources & Settings to get the best possible settings/resources
@@ -16,9 +16,6 @@
 
   var mailProtectService = GetService<ProtectMailService>();
   var locService = GetService<LocationService>();
-
-  // defines a unique dom Id for google map
-  var googleMapDomId = "app-content-google-map-js-" + UniqueKey;
 }
 
 <div class="row" @Kit.Toolbar.Default(MyItem)>
@@ -76,11 +73,12 @@
   </div>
   <div class='col-md-6 @(showMapFirst ? "order-md-0" : "order-md-1")'>
     <div class="app-content-js-google-map-container position-relative">
-      <div class="ratio ratio-16x9" id="@googleMapDomId"></div>
-      @Html.Partial("Part GoogleMapsWarning.cshtml")
+      <div class="ratio ratio-16x9" id="@GoogleMapsDomId"></div>
+      @ShowWarningIfKeyMissing()
     </div>
   </div>
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts, icons"})
-@Html.Partial("Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
+
+@ActivateMap()
