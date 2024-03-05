@@ -1,10 +1,10 @@
 using AppCode.Data;
 
-namespace AppCode
+namespace AppCode.Services
 {
   /// <summary>
   /// Simple service to encrypt eMail addresses in the resulting HTML.
-  /// To use, must be created using GetService<ProtectMailService>() in your view, as it needs the Kit.
+  /// To use, must be created using GetService<LocationService>() in your view, as it needs the Kit.
   /// </summary>
   public class LocationService: Custom.Hybrid.CodeTyped
   {
@@ -14,7 +14,7 @@ namespace AppCode
       // var content = AsItem(dynContent as object);
       var language = MyContext.Culture.CurrentCode.Split(new[] { '-' })[0];
 
-      var gps = loc.GPS;
+      var gps = loc.GpsCoordinates;
       // this link will be used to open the Google-Directions in a new window
       return gps.Longitude > 0
         // if we have coordinates, use them

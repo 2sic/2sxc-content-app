@@ -1,5 +1,6 @@
 @inherits Custom.Hybrid.RazorTyped<Person>
 @using AppCode.Data
+@using AppCode.Services
 @{
   // This is a partial template which is re-used in many other templates, so it's shared here
   // its shows the person data like name, position, contact data and description
@@ -8,7 +9,7 @@
   var person = Model;
 }
 <div class="mb-2">
-  <div class="lead font-weight-bold" itemprop="name">@person.String("FullName")</div>
+  <div class="lead font-weight-bold" itemprop="name">@person.FullName</div>
   @if (person.IsNotEmpty("Position"))
   {
     <div class="mb-2 lead font-weight-normal" itemprop="jobTitle">@person.Position</div>
@@ -34,7 +35,7 @@
    {
     <div itemprop="email">
       <i class="fas fa-envelope text-center" style="width:30px;"></i>
-      @(GetService<AppCode.ProtectMailService>().TryToEncrypt(person.Email))
+      @(GetService<ProtectMailService>().TryToEncrypt(person.Email))
     </div>
   }
 </div>

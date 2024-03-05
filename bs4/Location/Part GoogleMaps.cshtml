@@ -13,7 +13,7 @@
   var googleApikey = Kit.SecureData.Parse(mapSettings.ApiKey).Value;
 
   // GPS is a JSON field, so we must use AsDynamic to easily access the properties
-  var gps = AsDynamic(Content.GPS);
+  var gps = AsDynamic(Content.GpsCoordinates);
 
   var data = new {
     apiKey = googleApikey,
