@@ -8,8 +8,9 @@ namespace AppCode
     /// </summary>
     public const int TotalColumns = 12;
 
-    public const string LastRowClass = "mb-4 mb-lg-5";
+    public const string DefaultRowClass = "mb-4 mb-lg-5";
+    public const string LastRowClass = "";
 
-    public static string RowClass(bool isLast) => isLast ? LastRowClass : "";
+    public static string RowClass(bool isLast) => isLast ? LastRowClass : DefaultRowClass;
   }
 }
