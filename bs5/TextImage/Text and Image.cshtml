@@ -8,9 +8,8 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
-  // TODO: WHY DIFFERENT Names in Content/Video/Images?
   // Html DOM attribute for fancybox, settings, etc.
-  var fancyboxAttribute = "app-content-fancybox-group";
+  var fancyboxAttribute = "app-content-fancybox-" + UniqueKey;
   var settings = MyView.Settings;
 }
 
