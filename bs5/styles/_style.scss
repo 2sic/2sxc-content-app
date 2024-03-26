@@ -107,6 +107,7 @@
 
   .co-linkblock {
     color: var(--bs-body-color);   
+    position: relative;
 
     &:hover {
       figure {
