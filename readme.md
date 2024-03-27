@@ -108,11 +108,4 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 
 TODO: @2dm
 
-* SYNC FIELDS EMail vs Mail
-* figure out why different attributes for fancybox, simplify
-* [x] TODO: consider renaming VideoLightbox to same name used in content, probably UseLightbox or something
-* Remove PresVideo... and use PresentationTextMedia instead
-* probably rename content-type "Content" to "TextImage"
-  * also rename the folder in Bs5, 3, 4
-  * also check the label on the content type
-  * ...and on inserting it to the page
+* SYNC FIELD names EMail vs Mail
