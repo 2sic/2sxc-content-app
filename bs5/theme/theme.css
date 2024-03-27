@@ -3,8 +3,8 @@ Bootstrap 5 uses CSS variables. You can use app-related variables in this file. 
 Check our Docs for more information: https://go.2sxc.org/app-theme
 */
 #theme-page-main {
-  --bs-primary: var(--bs-primary, #0060AC);
-  --bs-secondary: var(--bs-secondary, #001D38);
-  --bs-body-color: var(--bs-body-color, #222222);
+  --bs-primary: var(--theme-primary, yellow);
+  --bs-secondary: var(--theme-secondary, #001D38);
+  --bs-body-color: var(--theme-body-color, #222222);
   --bs-link-color: var(--bs-primary);
 }
