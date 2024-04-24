@@ -46,11 +46,11 @@
         }
       </div>
       <div class="mb-2">
-        @if (loc.IsNotEmpty("Mail"))
+        @if (loc.IsNotEmpty("Email"))
         {
           <div itemprop="email">
             <span class="fas fa-envelope"></span>
-            @mailProtectService.TryToEncrypt(loc.Mail)
+            @mailProtectService.TryToEncrypt(loc.Email)
           </div>
         }
         @if (loc.IsNotEmpty("Tel"))

@@ -11,10 +11,10 @@ namespace AppCode.Data
 }
 */
 
-// Generator:   DataClassesGenerator v17.03.01
+// Generator:   CSharpDataModelsGenerator v17.06.04
 // App/Edition: Content/
 // User:        2sic Web-Developer
-// When:        2024-03-05 18:49:04Z
+// When:        2024-04-24 12:37:48Z
 using ToSic.Sxc.Adam;
 
 namespace AppCode.Data
@@ -24,7 +24,7 @@ namespace AppCode.Data
 
   /// <summary>
   /// Person data. <br/>
-  /// Generated 2024-03-05 18:49:04Z. Re-generate whenever you change the ContentType. <br/>
+  /// Generated 2024-04-24 12:37:48Z. Re-generate whenever you change the ContentType. <br/>
   /// <br/>
   /// Default properties such as `.Title` or `.Id` are provided in the base class. <br/>
   /// Most properties have a simple access, such as `.Description`. <br/>

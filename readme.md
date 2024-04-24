@@ -107,7 +107,4 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * also use new `MyView.Settings` (req. v17)
 * v17.0x 2024-04
   * Updated everything to strong typed
-
-TODO: @2dm
-
-* SYNC FIELD names EMail vs Mail
+  * Streamlined field names, always use EMail (prev. one had Mail for the same info)
