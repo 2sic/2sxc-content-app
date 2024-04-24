@@ -12,7 +12,7 @@ namespace AppCode.Razor
   }
 
   /// <summary>
-  /// todo
+  /// Base class for all Razor templates in this app
   /// </summary>
   public abstract partial class AppRazor<TModel>
   {

@@ -1,11 +1,10 @@
 using AppCode.Data;
 using ToSic.Razor.Blade;
-using ToSic.Razor.Html5;
 
 namespace AppCode.Razor
 {
   /// <summary>
-  /// todo
+  /// Base class for Location Razor templates
   /// </summary>
   public abstract class LocationRazor: AppRazor
   {

@@ -7,7 +7,7 @@ using ToSic.Sxc.Context;
 namespace AppCode.Razor
 {
   /// <summary>
-  /// todo
+  /// Base class for Images Razor templates
   /// </summary>
   public abstract class ImagesRazor: AppRazor
   {

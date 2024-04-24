@@ -5,7 +5,7 @@ using ToSic.Sxc.Context;
 namespace AppCode.Razor
 {
   /// <summary>
-  /// todo
+  /// Base class for Text-only Razor templates
   /// </summary>
   public abstract class TextRazor: TextMediaRazor
   {

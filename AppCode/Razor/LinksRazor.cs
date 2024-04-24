@@ -5,7 +5,7 @@ using AppCode.Data;
 namespace AppCode.Razor
 {
   /// <summary>
-  /// todo
+  /// Base class for Links Razor templates
   /// </summary>
   public abstract class LinksRazor: AppRazor
   {

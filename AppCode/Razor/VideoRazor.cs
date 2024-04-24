@@ -5,7 +5,7 @@ using AppCode.Data;
 namespace AppCode.Razor
 {
   /// <summary>
-  /// todo
+  /// Base class for Video Razor templates - extends TextMedia
   /// </summary>
   public abstract class VideoRazor: TextMediaRazor
   {
@@ -16,6 +16,9 @@ namespace AppCode.Razor
     private List<Video> _myVideos;
   }
 
+  /// <summary>
+  /// Helper model to pass parameters to the partial view
+  /// </summary>
   public class VideoModel
   {
     public Video Video { get; set; }
