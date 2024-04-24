@@ -105,6 +105,8 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Updated BS5 to use Typed Code (inherit from `RazorTyped`)
   * CSS Variables for Bootstrap 5, for more information check out the [documentation](https://go.2sxc.org/app-theme)
   * also use new `MyView.Settings` (req. v17)
+* v17.0x 2024-04
+  * Updated everything to strong typed
 
 TODO: @2dm
 
