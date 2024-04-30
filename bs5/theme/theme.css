@@ -4,8 +4,8 @@ Check our Docs for more information: https://go.2sxc.org/app-theme
 */
 
 :root {
-  --bs-primary-fallback-content: #0060AC;
-  --bs-body-color-fallback-content: #222222;
-  --bs-dark-fallback-content: #6c757d;
-  --bs-link-color-fallback-content: #0060AC;
+  --bs-primary-fallback-app-content: #0060AC;
+  --bs-body-color-fallback-app-content: #222222;
+  --bs-dark-fallback-app-content: #6c757d;
+  --bs-link-color-fallback-app-content: #0060AC;
 }

@@ -55,7 +55,7 @@
       position: relative;
 
       &.co-video-no-image {
-        background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-content)) 40%);
+        background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-app-content)) 40%);
         
         > svg {
           position: relative;
@@ -66,7 +66,7 @@
         figure {
           .overlay {
             position: static;
-            background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-content)) 40%);
+            background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-app-content)) 40%);
           }
         }
         
@@ -106,7 +106,7 @@
   }
 
   .co-linkblock {
-    color: var(--bs-body-color, var(--bs-body-color-fallback-content));   
+    color: var(--bs-body-color, var(--bs-body-color-fallback-app-content));   
     position: relative;
 
     &:hover {
@@ -118,7 +118,7 @@
         }
 
         &.effect-darken {
-          background-color: var(--bs-primary, var(--bs-primary-fallback-content));
+          background-color: var(--bs-primary, var(--bs-primary-fallback-app-content));
 
           img {
             opacity: 0.8;
@@ -129,7 +129,7 @@
     
     a {
       text-decoration: none;
-      color: var(--bs-link-color, var(--bs-link-color-fallback-content));
+      color: var(--bs-link-color, var(--bs-link-color-fallback-app-content));
       
       &:hover {
         svg {
@@ -148,7 +148,7 @@
     }
 
     p {
-      color: var(--bs-body-color, var(--bs-body-color-fallback-content));
+      color: var(--bs-body-color, var(--bs-body-color-fallback-app-content));
     }  
 
     &.co-linkblock-overlay {
@@ -164,7 +164,7 @@
           z-index: 1;
           left: 0;
           top: 0;
-          background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-content)) 40%);
+          background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-app-content)) 40%);
           transition: background-color 0.3s ease-in-out;
         }
       }
@@ -189,7 +189,7 @@
       z-index: 1;
       left: 0;
       top: 0;
-      background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-content)) 40%);
+      background-color: color-mix(in srgb, transparent, var(--bs-dark, var(--bs-dark-fallback-app-content)) 40%);
       transition: background-color 0.3s ease-in-out;
       cursor: pointer;
 
