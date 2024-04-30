@@ -4,13 +4,13 @@
 <ul class="list-unstyled">
   @foreach (var link in MyLinks)
   {
-    <li @Kit.Toolbar.Default(link) class="co-linkblock">
+    <li @Kit.Toolbar.Default(link) class="co-linkblock mb-4 mb-md-5">
       <div class="d-flex flex-row">
         <div class="pr-2 pl-0 pt-1 pb-0">
           <i class='text-primary fas @link.IconAuto' style="font-size: 24px;"></i>
         </div>
         <div class="px-2 py-0">
-          <p class="lead font-weight-normal">@link.Title</p>
+          <span class="lead font-weight-normal">@link.Title</span>
           @link.DescriptionHtml(true)
         </div>
       </div>

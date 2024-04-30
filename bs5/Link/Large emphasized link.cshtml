@@ -10,16 +10,16 @@
   
   @if (headingTag != "hide")
   {
-    @Kit.HtmlTags.Custom(headingTag).Class("mb-4").Wrap(
-      link.Title,
-      Kit.HtmlTags.Br(),
-      Kit.HtmlTags.Small(link.Description)
+    @Kit.HtmlTags.Custom(headingTag).Wrap(
+      link.Title
     )
+
+    <p class="lead">@link.Description</p>
   }
 
   @if (link.IsNotEmpty("Link"))
   {
-    <a href='@link.Link' target='@link.WindowAuto' title="@link.Title" class="btn btn-lg btn-outline-primary">
+    <a href='@link.Link' target='@link.WindowAuto' title="@link.Title" class="btn btn-lg btn-primary">
       <i class='co-icon fas @link.IconAuto' aria-hidden="true"></i>
       <span>@link.LinkText</span>
     </a>
