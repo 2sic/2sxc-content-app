@@ -4,13 +4,13 @@
 
 > This is a [2sxc](https://2sxc.org) App for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/)
 
-These are the primary **Content** parts for 2sxc 15.03 supporting many CSS Frameworks.
+These are the primary **Content** parts for 2sxc 17+.
 
 | Aspect              | Status | Comments or Version
 | ------------------- | :----: | -------------------
-| 2sxc                | ✅    | requires 2sxc v15.03
+| 2sxc                | ✅    | requires 2sxc v17.07
 | Dnn                 | ✅    | For v7, v8 and v9
-| Oqtane 2            | ✅    | Requires v2.02
+| Oqtane              | ✅    | Requires v5 (for 2sxc 17.07)
 | No jQuery           | ✅    | -
 | Live Demo           | ➖    | -
 | Install Checklist   | ✅    | see below
@@ -105,6 +105,8 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Updated BS5 to use Typed Code (inherit from `RazorTyped`)
   * CSS Variables for Bootstrap 5, for more information check out the [documentation](https://go.2sxc.org/app-theme)
   * also use new `MyView.Settings` (req. v17)
-* v17.0x 2024-04
+* v17.07 2024-04
   * Updated everything to strong typed
   * Streamlined field names, always use EMail (prev. one had Mail for the same info)
+  * Renamed / corrected various content-types, eg. `TextImage` instead of `Content` to be more descriptive
+  * Ensured to work with the latest 2shine Dnn-Theme Bootstrap Variables
