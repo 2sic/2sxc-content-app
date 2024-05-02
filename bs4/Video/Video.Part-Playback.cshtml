@@ -38,7 +38,7 @@
 
 @if (hasVideoLightbox != false) {
   // define dom attribute for fancybox
-  var fancyboxAttribute = "app-content-fancybox-videos" + CmsContext.Module.Id; 
+  var fancyboxAttribute = "app-content-fancybox-" + CmsContext.Module.Id; 
 
   // open in lightbox
   <a @fancyboxAttribute class='co-video @(!hasPreviewSource ? "co-video-no-image" : "")' data-width="1280" data-height="720" data-caption="@pic.Alt" href="@youTubeLightboxUrl">
