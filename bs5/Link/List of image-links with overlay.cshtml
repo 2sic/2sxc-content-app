@@ -1,37 +1,36 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
-@{
-  // get helper commands
-  var linkHelper = GetCode("LinkHelper.cs");
-}
+@inherits AppCode.Razor.LinksRazor
+@using AppCode.Data
 
 <div class="row">
-@foreach (var link in MyItems) {
-  var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
-  <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Kit.Toolbar.Default(link)>
-    @if (Text.Has(link.String("Image"))) {
-      <figure class="effect-zoom">
-        @link.Picture("Image", settings: "Content", factor: "1/3", imgAltFallback: link.Title)
-        
-        <div class="overlay w-100 p-4 h-100 d-flex flex-column justify-content-between">
-          <div>
-            <h4>@link.Title</h4>
-            @if (Text.Has(link.String("Description"))) {
-              <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
+  @foreach (var link in MyLinks)
+  {
+    <div class="col-md-6 col-lg-4 mb-3 mb-md-4 co-linkblock co-linkblock-overlay" @Kit.Toolbar.Default(link)>
+
+      @if (link.IsNotEmpty("Image"))
+      {
+        <figure class="effect-zoom">
+          @link.Picture("Image", settings: "Content", factor: "1/3", imgAltFallback: link.Title)
+          
+          <div class="overlay w-100 p-4 h-100 d-flex flex-column justify-content-end">
+            <div>
+              <h4>@link.Title</h4>
+              @link.DescriptionHtml(false)
+            </div>
+            @if (link.IsNotEmpty("Link"))
+            {
+              <div class="mt-3">
+                <a href='@link.Link' target='@link.WindowAuto' title="@link.Title" class="btn btn-primary stretched-link w-auto">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+              </div>
             }
           </div>
-          @if (linkInfo.Bool("Found")) {
-            <div>
-              <a href='@link.Url("Link")' target='@linkInfo.String("Window")' title="@link.Title" class="btn btn-primary stretched-link w-auto">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-            </div>
-          }
-        </div>
-      </figure>          
-    } else {
-      <div class="bg-primary placeholder"></div>
-    } 
-  </div>
-}
+        </figure>          
+      }
+      else
+      {
+        <div class="bg-primary placeholder"></div>
+      } 
+    </div>
+  }
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts,icons"})

@@ -1,5 +1,6 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@inherits AppCode.Razor.AppRazor
+@using ToSic.Razor.Blade
+@using AppCode.Data
 @{
   /* This is used in two views */
   var isRound = MyView.Identifier == "round";
@@ -11,21 +12,22 @@
   var imgClass = isRound ? "rounded-circle" : "";
 
   var placeholderStyle = "padding-bottom: " + (isRound ? "100%;" : "125%");
-  
 }
+
 <div class="row">
-  @foreach (var person in MyItems) {
+  @foreach (var person in AsList<Person>(MyItems))
+  {
     <div class="col-md-6 mb-4 mb-md-5 row" @Kit.Toolbar.Default(person)>
       <div class="col-4 @mbClass">
         @if (person.IsNotEmpty("Photo")) {
-          @person.Picture("Photo" , settings: photoSettings, imgClass:"img-fluid " + imgClass, imgAltFallback: person.String("FullName"))        
+          @person.Picture("Photo", settings: photoSettings, imgClass:"img-fluid " + imgClass, imgAltFallback: person.FullName)        
         } else {
           <div class="bg-primary placeholder @imgClass" style="@placeholderStyle"></div>
         }
       </div>
 
       <div class="col-8" itemscope itemtype="http://schema.org/Person">
-        @Html.Partial("Part Properties.cshtml", new { data = person })
+        @Html.Partial("Part Properties.cshtml", person)
       </div>
     </div>
   }

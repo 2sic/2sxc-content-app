@@ -1,5 +1,8 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@inherits AppCode.Razor.VideoRazor
+@using ToSic.Razor.Blade
+@using AppCode
+@using AppCode.Data
+@using AppCode.Razor
 
 @* This Template is used in ca. 5 Views which show title, text and video *@
 
@@ -7,59 +10,32 @@
 @Html.Partial("../shared/Content List Header.cshtml")
 
 @{
-  // Determine the widths of each part, based on 12 Bootstrap Cols
-  var initialTextFirst = MyView.Settings.Bool("TextFirst");
-  var cols = MyView.Settings.Int("ColsElement1");
-  var colsText = initialTextFirst ? cols : 12 - cols;
-  var colsImg = 12 - colsText;
-  var showImgBetweenTitleAndText = colsImg == 0; // if image has 0 columns, it's between title / text
-  var alternatePositions = MyHeader.Bool("AlternatePositions");
-
-  // Prepare items to show, count and index to find the last item (for styling)
-  var itemsCount = MyItems.Count();
-
-  // Prepare classes for styling and bundle with the item to show
-  var itemsWithClasses = MyItems.Select((item, index) => {
-    var textIsFirst = alternatePositions
-      ? (initialTextFirst ^ (index % 2) == 0)
-      : initialTextFirst;
-    return new {
-      Item = item,
-      ImagePlacement = textIsFirst ? "last" : "first",
-      TextPlacement = textIsFirst ? "first" : "last",
-      // if last item, add class to the row to add margin-bottom
-      LastRowClass = index == itemsCount - 1 ? "mb-4 mb-lg-5" : "",
-      HeadingType = item.Presentation.String("HeadingType")
-    };
-  });
+  var settings = MyView.Settings;
 }
-
+  
 @* Show all the content-items - one or more *@
-@foreach (var itemSet in itemsWithClasses) {
-  var item = itemSet.Item;
-
-  <div class='row @itemSet.LastRowClass' @Kit.Toolbar.Default(item)>
-    <div class='col-md-@colsText order-md-@itemSet.ImagePlacement'>
-      @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { item, itemSet.HeadingType })
+@foreach (var item in Helpers.PrepareList(MyVideos, MyHeader.AlternatePositions, settings.TextFirst))
+{
+  <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
+    <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
+      @Helpers.ShowTitle(item)
 
       @* If the image doesn't have it's own column, its between title/text *@
-      @if (showImgBetweenTitleAndText) {
-        @Html.Partial("Video.Part-Playback.cshtml", new { Columns = 12, item })
+      @if (settings.ImgIsBetweenTitleAndText) {
+        @Html.Partial("Video.Part-Playback.cshtml", new VideoModel { Columns = 12, Video = item })
       }
 
       @item.Html("Text", toolbar: false)
     </div>
+
     @* If the image has it's own column, it's here *@
-    @if (!showImgBetweenTitleAndText) {
-      <div class='col-md-@colsImg order-md-@itemSet.TextPlacement'>
-        @Html.Partial("Video.Part-Playback.cshtml", new { Columns = colsImg, item })
+    @if (!settings.ImgIsBetweenTitleAndText)
+    {
+      <div class='col-md-@settings.ColsMedia order-md-@item.TextPlacement'>
+        @Html.Partial("Video.Part-Playback.cshtml", new VideoModel { Columns = settings.ColsMedia, Video = item })
       </div>
     }
   </div>
-
-  @* if (!MyHeader.AlternatePositions) { continue; }
-  isTextFirst = !isTextFirst; *@
 }
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "icons, scripts" })

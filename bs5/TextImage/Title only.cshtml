@@ -1,0 +1,19 @@
+@* Use custom Razor base class located in /AppCode/Razor with additional helpers *@
+@inherits AppCode.Razor.TextMediaRazor
+@using AppCode
+@using AppCode.Data
+
+@*** This Template is used to only show the title (no text, no image ***@
+
+@* Show list header if necessary for configuration *@
+@Html.Partial("../shared/Content List Header.cshtml")
+
+@* Show all the content-items - one or more *@
+@foreach (var item in MyTextsWithImages)
+{
+  <div class='@item.RowClass' @Helpers.TextImageToolbar(item, hideImage: true, hideText: true)>
+    @Helpers.ShowTitle(item)
+  </div>
+}
+
+@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts" })

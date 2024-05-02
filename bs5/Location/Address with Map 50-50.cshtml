@@ -1,71 +1,84 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@inherits AppCode.Razor.LocationRazor
+@using ToSic.Razor.Blade
+@using AppCode.Data
+@using AppCode.Services
 @{
-  var mapFirst = MyView.Identifier == "map-first";
-  
-  // Build Helper object and get map infos
-  var locationHelper = GetCode("LocationHelper.cs");
-  var mapInfo = AsTyped(locationHelper.MapInfos(MyItem) as object);
+  // Get display settings based on view identifier
+  var showMapFirst = MyView.Identifier == "map-first";
 
+  // Convert typed Location object
+  var loc = MyLocation;
+  
+  // TODO: find out if this is till needed
   // Combine the Presentation with Resources & Settings to get the best possible settings/resources
   // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
-  var mapResources = AsStack(MyItem.Presentation, App.Resources);
+  var mapResources = AsStack(loc.Presentation, App.Resources);
 
-  // defines a unique dom Id for google map
-  var googleMapDomId = "app-content-google-map-js-" + MyContext.Module.Id;
+  var mailProtectService = GetService<ProtectMailService>();
+  var locService = GetService<LocationService>();
 }
 
 <div class="row" @Kit.Toolbar.Default(MyItem)>
   <div class="col-md-6 order-md-1 d-flex align-items-center">
     <address class="w-100" itemscope itemtype="http://schema.org/LocalBusiness">
       <div class="mb-2 pr-md-5" itemprop="name">
-        <h4>@MyItem.String("Company")</h4>
-        @if (MyItem.IsNotEmpty("Description")) {
-          <div itemprop="description">@MyItem.Html("Description")</div>
+        <h4>@loc.Company</h4>
+        @if (loc.IsNotEmpty("Description")) {
+          <div itemprop="description">@loc.Html("Description")</div>
         }
       </div>
       <div class="mb-2" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        @if (MyItem.IsNotEmpty("Street")) {
+        @if (loc.IsNotEmpty("Street"))
+        {
           <span itemprop="streetAddress">
-            @MyItem.Html("Street", tweak: t => t.Input(Tags.Nl2Br))<br>
+            @loc.Html("Street", tweak: t => t.Input(Tags.Nl2Br))<br>
           </span>
         }
-        @if (MyItem.IsNotEmpty("City")) {
-          if (MyItem.IsNotEmpty("ZipCode")) {
-            <span itemprop="postalCode">@MyItem.String("ZipCode")</span>
+        @if (loc.IsNotEmpty("City"))
+        {
+          if (loc.IsNotEmpty("ZipCode")) {
+            <span itemprop="postalCode">@loc.ZipCode</span>
           }
-          <span itemprop="addressLocality">@MyItem.Get("City")</span><br>
+          <span itemprop="addressLocality">@loc.City</span><br>
         }
-        @if (MyItem.IsNotEmpty("Country")) {
-          <span itemprop="addressCountry">@MyItem.Get("Country")</span><br>
+        @if (loc.IsNotEmpty("Country")) {
+          <span itemprop="addressCountry">@loc.Country</span><br>
         }
       </div>
       <div class="mb-2">
-        @if (MyItem.IsNotEmpty("Mail")) {
+        @if (loc.IsNotEmpty("Email"))
+        {
           <div itemprop="email">
             <span class="fas fa-envelope"></span>
-            @Html.Partial("../shared/TryToEncryptMail.cshtml", new { Email = MyItem.String("Mail") })
+            @mailProtectService.TryToEncrypt(loc.Email)
           </div>
         }
-        @if (MyItem.IsNotEmpty("Tel")) {
-          <span class="fas fa-phone" aria-hidden="true"></span> <a href='tel:@MyItem.String("Tel").Replace(" ", "")' itemprop="telephone">@MyItem.String("Tel")</a><br/>
+        @if (loc.IsNotEmpty("Tel"))
+        {
+          <span class="fas fa-phone" aria-hidden="true"></span>
+          <a href='tel:@loc.String("Tel").Replace(" ", "")' itemprop="telephone">@loc.Tel</a><br/>
         }
-        @if (MyItem.IsNotEmpty("Fax")) {
-          <span class="fas fa-fax" aria-hidden="true"></span> <span itemprop="faxNumber">@MyItem.String("Fax")</span><br/>
+        @if (loc.IsNotEmpty("Fax"))
+        {
+          <span class="fas fa-fax" aria-hidden="true"></span>
+          <span itemprop="faxNumber">@loc.Fax</span><br/>
         }
-        @if (App.Settings.Bool("MapsEnableDirections")) {
-          <span class="fas fa-map-marker-alt"></span> <a target="_blank" href='@mapInfo.Url("DirectionUrl")'>@mapResources.String("MapsLabelDirections")</a>
+        @if (App.Settings.MapsEnableDirections)
+        {
+          <span class="fas fa-map-marker-alt"></span>
+          <a target="_blank" href='@locService.RoutingUrl(loc)'>@mapResources.String("MapsLabelDirections")</a>
         }
       </div>
     </address>
   </div>
-  <div class='col-md-6 @(mapFirst ? "order-md-0" : "order-md-1")'>
+  <div class='col-md-6 @(showMapFirst ? "order-md-0" : "order-md-1")'>
     <div class="app-content-js-google-map-container position-relative">
-      <div class="ratio ratio-16x9" id="@googleMapDomId"></div>
-      @Html.Partial("Part GoogleMapsWarning.cshtml")
+      <div class="ratio ratio-16x9" id="@GoogleMapsDomId"></div>
+      @ShowWarningIfKeyMissing()
     </div>
   </div>
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts, icons"})
-@Html.Partial("Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
+
+@ActivateMap()

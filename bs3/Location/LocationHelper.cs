@@ -15,7 +15,7 @@ public class LocationHelper: Custom.Hybrid.Code14
     var language = CmsContext.Culture.CurrentCode.Split(new[] { '-' })[0];
 
     // GPS is a JSON field, so we must use AsDynamic to access the properties
-    var gps = AsDynamic(content.GPS);
+    var gps = AsDynamic(content.GpsCoordinates);
     var gpsLong = gps.Longitude ?? 0; // use 0 if not defined
     var gpsLat = gps.Latitude ?? 0;	  // use 0 if not defined
 

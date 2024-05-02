@@ -1,0 +1,26 @@
+@* Use custom Razor base class located in /AppCode/Razor with additional helpers *@
+@inherits AppCode.Razor.TextRazor
+@using AppCode
+@using AppCode.Data
+
+@*** This Template is used in ca. 3 Views which only show the title and the text ***@
+
+@{
+  var settings = MyView.Settings;
+}
+
+@* Show list header if necessary for configuration *@
+@Html.Partial("../shared/Content List Header.cshtml")
+
+@* Show all the content-items - one or more *@
+@foreach (var item in MyTextsWithImages)
+{
+  <div class='row @item.RowClass'>
+    <div class='col-md-@settings.ColsElement1 offset-md-@settings.ColsPaddingLeft @settings.Styling' @Helpers.TextImageToolbar(item, hideImage: true, hideText: false)>
+      @Helpers.ShowTitle(item)
+      @item.Html("Text", toolbar: false)
+    </div>
+  </div>
+}
+
+@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})

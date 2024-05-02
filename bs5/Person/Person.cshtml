@@ -1,9 +1,11 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits AppCode.Razor.AppRazor
+@using AppCode.Data
 
 <div class="row">
-  @foreach (var person in MyItems) {
+  @foreach (var person in AsList<Person>(MyItems))
+  {
     <div class="col-md-4 mb-4" itemscope itemtype="http://schema.org/Person" @Kit.Toolbar.Default(person)>
-      @Html.Partial("Part Properties.cshtml", new { data = person })
+      @Html.Partial("Part Properties.cshtml", person)
     </div>
   }
 </div>

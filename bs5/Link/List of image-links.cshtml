@@ -1,32 +1,28 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
-@{
-  // get helper commands
-  var linkHelper = GetCode("LinkHelper.cs");
-}
+@inherits AppCode.Razor.LinksRazor
+@using AppCode.Data
 
 <div class="row">
-@foreach (var link in MyItems) {
-  var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
-  <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Kit.Toolbar.Default(link)>
-    @if (Text.Has(link.String("Image"))) {
-      <figure class="effect-zoom">
-        @link.Picture("Image", settings: "Content", factor: "1/3", imgAltFallback: link.Title)
-      </figure>
-    } else {
-      <div class="bg-primary placeholder"></div>
-    }
+  @foreach (var link in MyLinks)
+  {
+    <div class="col-md-6 col-lg-4 mb-4 mb-md-5 co-linkblock" @Kit.Toolbar.Default(link)>
 
-    <h4>@link.Title</h4>
-    @if (Text.Has(link.String("Description"))) {
-      <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
-    }
-    
-    @if (linkInfo.Bool("Found")) {
-      <a href='@link.Url("Link")' target='@linkInfo.String("Window")' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-    }
-  </div>
-}
+      @if (link.IsNotEmpty("Image"))
+      {
+        <figure class="effect-zoom">
+          @link.Picture("Image", settings: "Content", factor: "1/3", imgAltFallback: link.Title)
+        </figure>
+      } else {
+        <div class="bg-primary placeholder"></div>
+      }
+
+      <h4>@link.Title</h4>
+      @link.DescriptionHtml(false)
+      
+      @if (link.IsNotEmpty("Link")) {
+        <a href='@link.Link' target='@link.WindowAuto' title="@link.Title" class="stretched-link">@link.Get("LinkText") <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+      }
+    </div>
+  }
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts,icons"})

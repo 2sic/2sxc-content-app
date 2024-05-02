@@ -11,7 +11,7 @@
 
 <div class="row">
 @foreach (var img in AsList(Data)) {
-  var wrapInLink = img.Presentation.ImageLightbox != false;
+  var wrapInLink = img.Presentation.UseLightbox != false;
 
   var imgField = img.Field("Image");
   var pic = Kit.Image.Picture(imgField, settings: "Content", factor: factor, imgClass: "w-100", imgAltFallback: img.EntityTitle);
@@ -24,7 +24,7 @@
       @:<a @fancyboxAttribute data-src="@img.Image" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
     }
     
-    <figure class='@(img.Presentation.ImageLightbox != false ? "effect-zoom" : "") mb-0'>
+    <figure class='@(img.Presentation.UseLightbox != false ? "effect-zoom" : "") mb-0'>
         @if (img.Presentation.TitleLegend != false) {
           <figcaption class="pt-1 px-3 px-md-4 pb-3 pb-md-4 text-white">@pic.Alt</figcaption>
         }

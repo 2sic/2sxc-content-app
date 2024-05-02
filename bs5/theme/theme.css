@@ -2,9 +2,10 @@
 Bootstrap 5 uses CSS variables. You can use app-related variables in this file. The standard Bootstrap values are used as a fallback 
 Check our Docs for more information: https://go.2sxc.org/app-theme
 */
-#theme-page-main {
-  --bs-primary: var(--bs-primary, #0060AC);
-  --bs-secondary: var(--bs-secondary, #001D38);
-  --bs-body-color: var(--bs-body-color, #222222);
-  --bs-link-color: var(--bs-primary);
+
+:root {
+  --bs-primary-fallback-app-content: #0060AC;
+  --bs-body-color-fallback-app-content: #222222;
+  --bs-dark-fallback-app-content: #6c757d;
+  --bs-link-color-fallback-app-content: #0060AC;
 }

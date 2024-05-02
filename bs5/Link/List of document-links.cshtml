@@ -1,24 +1,21 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
-@{
-  // get helper commands
-  var linkHelper = GetCode("LinkHelper.cs");
-}
+@inherits AppCode.Razor.LinksRazor
+@using AppCode.Data
+
 <ul class="list-unstyled">
-  @foreach (var link in MyItems) {
-    var linkInfo = AsTyped(linkHelper.LinkInfos(link) as object);
-    <li @Kit.Toolbar.Default(link) class="co-linkblock">
+  @foreach (var link in MyLinks)
+  {
+    <li @Kit.Toolbar.Default(link) class="co-linkblock mb-4 mb-md-5">
       <div class="d-flex flex-row">
         <div class="pr-2 pl-0 pt-1 pb-0">
-          <i class='text-primary fas @linkInfo.String("Icon")' style="font-size: 24px;"></i>
+          <i class='text-primary fas @link.IconAuto' style="font-size: 24px;"></i>
         </div>
         <div class="px-2 py-0">
-          <p class="lead font-weight-normal">@link.Title</p>
-          <p>@link.Html("Description", tweak: t => t.Input(Tags.Nl2Br))</p>
+          <span class="lead font-weight-normal">@link.Title</span>
+          @link.DescriptionHtml(true)
         </div>
       </div>
-      @if (linkInfo.Bool("Found")) {
-        <a href='@link.Url("Link")' target='@linkInfo.String("Window")' title="@link.Title" class="stretched-link"></a>
+      @if (link.IsNotEmpty("Link")) {
+        <a href='@link.Link' target='@link.WindowAuto' title="@link.Title" class="stretched-link"></a>
       }
     </li>
   }

@@ -1,18 +1,10 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
-@{
-  // Build Helper object and get map infos
-  var locationHelper = GetCode("LocationHelper.cs");
-  var mapInfo = AsTyped(locationHelper.MapInfos(MyItem) as object);
+@inherits AppCode.Razor.LocationRazor
 
-  // defines a unique dom Id for google map
-  var googleMapDomId = "app-content-google-map-js-" + MyContext.Module.Id;
-}
-
-<div class="app-content-js-google-map-container position-relative" @Kit.Toolbar.Default(MyItem)>
-  <div class="embed-responsive-item ratio ratio-21x9" id="@googleMapDomId"></div>
-  @Html.Partial("Part GoogleMapsWarning.cshtml")
+<div class="app-content-js-google-map-container position-relative" @Kit.Toolbar.Default(MyLocation)>
+  <div class="embed-responsive-item ratio ratio-21x9" id="@GoogleMapsDomId"></div>
+  @ShowWarningIfKeyMissing()
 </div>
 
 @Html.Partial("../shared/Assets.cshtml", new { parts = "scripts,icons"})
-@Html.Partial("Part GoogleMaps.cshtml", new { DomId = googleMapDomId })
+
+@ActivateMap()

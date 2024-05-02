@@ -1,0 +1,41 @@
+@inherits AppCode.Razor.TextMediaRazor
+@using AppCode
+@using AppCode.Data
+
+@*  This Template is used in ca. 5 Views which show title, text and image  *@
+
+@* Show list header if necessary for configuration *@
+@Html.Partial("../shared/Content List Header.cshtml")
+
+@{
+  // Html DOM attribute for fancybox, settings, etc.
+  var fancyboxAttribute = "app-content-fancybox-" + UniqueKey;
+  var settings = MyView.Settings;
+}
+
+@* Show all the content-items - one or more *@
+@foreach (var item in MyTextsWithImages)
+{
+  <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
+
+    <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
+      @Helpers.ShowTitle(item)
+      @if (settings.ImgIsBetweenTitleAndText) {
+        @Html.Partial("Text and Image.Part-Image.cshtml", new { item })
+      }
+      @item.Html("Text", toolbar: false)
+    </div>
+
+    @* If the image has it's own column, it's here *@
+    @if (!settings.ImgIsBetweenTitleAndText)
+    {
+      <div class='col-md-@settings.ColsMedia order-md-@item.TextPlacement'>
+        @* call sub-template to show the image with all possible options *@
+        @Html.Partial("Text and Image.Part-Image.cshtml", new { item, Columns = settings.ColsMedia, fancyboxAttribute })
+      </div>
+    }
+  </div>
+}
+
+@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})
+@ActivateFancyBox(fancyboxAttribute)

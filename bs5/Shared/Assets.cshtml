@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.RazorTyped
+@inherits Custom.Hybrid.RazorTyped<string>
 @{
   // show warning for admin if koi.json is missing
   if (Kit.Css.IsUnknown && MyUser.IsSiteAdmin) {
@@ -25,6 +25,7 @@
 @Kit.Page.Activate(condition: partList.Contains("icons"), features: "FontAwesome5")
 
 @* Include javascript *@
-@if (partList.Contains("scripts")) {
+@if (partList.Contains("scripts"))
+{
   <script type="text/javascript" src="@App.Folder.Url/bs5/dist/scripts.min.js" @Kit.Page.AssetAttributes(position: "bottom") ></script>
 }

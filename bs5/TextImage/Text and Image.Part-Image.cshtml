@@ -1,0 +1,37 @@
+@inherits AppCode.Razor.AppRazor
+@using ToSic.Razor.Blade
+@using AppCode
+@using AppCode.Data
+
+@*  This is a partial template which is re-used in the Content-Templates  *@
+@{
+  // Parameter passed in from the calling page
+  var imgItem = MyModel.Get<TextImage>("Item");
+  var columns = MyModel.Int("Columns", fallback: 0);
+  var fbAttribute = MyModel.String("FancyboxAttribute", required: false);
+
+  // Process the data; if we don't have an image, exit
+  var pic = new PictureInLightbox(imgItem, "Image", columns);
+  if (!pic.HasImage) { return; }
+}
+
+@* If we use a lightbox, we must wrap it inside an <a> tag with all the specs *@
+@if (pic.UseLightbox)
+{
+  var picLb = pic.LightboxPic;
+  @:<a @fbAttribute data-src='@imgItem.Url("Image")' data-srcset="@picLb.SrcSet" data-sizes="@picLb.Sizes" data-preload="false" data-caption="@pic.LightboxCaption">
+}
+
+  @* the image inside a figure-tag to show the label nicely *@
+  <figure class='@(pic.UseLightbox ? "effect-zoom" : "")'>
+    @if (Text.Has(pic.Picture.Alt)) {
+      <figcaption class="pt-1 px-4 pb-4 text-white">@pic.Picture.Alt</figcaption>
+    }
+    @pic.Picture
+  </figure>
+
+@* closing </a> tag if we used a lightbox *@
+@if (pic.UseLightbox)
+{
+  @:</a>
+}
