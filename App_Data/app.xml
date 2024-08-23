@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="18.00.00" ExportDate="2024-07-22T07:55:21.8771732+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="18.00.01" ExportDate="2024-08-23T10:49:01.9022429+02:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -6323,7 +6323,7 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a069a1de-f04b-44d7-8ad6-6af85a0476fd" Json="True">
-      <Value Key="Content" Value="null,null,null,null,b23f9e7e-0518-42b9-8287-f1ee6362eafe" Type="Entity" />
+      <Value Key="Content" Value="null,null,null,null,null" Type="Entity" />
       <Value Key="Presentation" Value="null,null,null,null,null" Type="Entity" />
       <Value Key="Template" Value="64cc61e5-121f-4910-a61c-82717d61b6fd" Type="Entity" />
     </Entity>
@@ -6775,7 +6775,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="17.07.02" Type="String">
+      <Value Key="Version" Value="17.07.03" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -7777,44 +7777,44 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a8cd6f62-dc0c-4d73-9efb-915801b739f3" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
       <Value Key="ListContent" Value="46f92fb1-b5ca-47ff-b501-2313f5e7ef06" Type="Entity" />
       <Value Key="ListPresentation" Value="null" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,86fcabca-bfd2-4a40-bfa6-6d76942a1b82" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="f7045144-1f69-4cad-bea1-a3fb5cb5a1e9" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="f769a2f2-11a9-457c-8798-f0d9da967eb4" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,5c454d6a-bdb5-44c1-8e41-55b4ac960fcc" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="c7af4d82-6ec3-4507-95bd-c8c7962b7925" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="8bba424d-4ba4-4563-b3c3-90c64214b07b" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
       <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="e5373cba-a864-426b-9e30-51ddc4369983" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="7e61d345-a15a-4374-b2f6-8509c516fb51" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
       <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="9ca85606-0730-4ca8-ba02-44ad5fb6992b" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="8b30a714-01de-4fcd-9f7f-7a0474a6504c" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="0c650deb-9b70-4ae0-bca1-ccfb7b11af10" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="60d6747b-3bdf-459f-b5fc-863c501fd7fc" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="562f7e59-4b2f-4a6b-9dd0-c5ad063eb136" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="c1802c31-15a7-4f9e-aa5c-334cb72cd37f" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="5eb3c3fb-c51d-45f3-b0d7-9e27eb5d1ccf" Type="Entity" />
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="c2a01d1e-6049-48ac-89ee-23dec72397aa" Json="True">
-      <Value Key="Content" Value="null,null,null,63346614-6f5d-4599-a788-a42d4863aa2c" Type="Entity" />
+      <Value Key="Content" Value="null,null,null" Type="Entity" />
       <Value Key="Presentation" Value="null,null,null" Type="Entity" />
       <Value Key="Template" Value="008da760-8be3-4d51-9618-558a18985d25" Type="Entity" />
     </Entity>
@@ -7941,17 +7941,6 @@
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="97bb146b-5b82-455a-b87e-d1a6179cf122" AttributeSetName="TextMediaListHeader" EntityGUID="c6c4f4c0-8ecb-49b4-ae73-af5524b0c14c">
       <Value Key="AlternatePositions" Value="False" Type="Boolean">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="TextImage" EntityGUID="63346614-6f5d-4599-a788-a42d4863aa2c">
-      <Value Key="Image" Value="file:6328" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Text" Value="&lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Demo content 2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8181,14 +8170,6 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="Description" Value="" Type="String">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-    </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="0b27cd61-d29d-4fee-b284-dcb1a6090873" AttributeSetName="Image" EntityGUID="b23f9e7e-0518-42b9-8287-f1ee6362eafe">
-      <Value Key="Image" Value="file:6395" Type="Hyperlink">
-        <Dimension DimensionID="19" ReadOnly="false" />
-      </Value>
-      <Value Key="Title" Value="Test" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8448,8 +8429,6 @@
     <File Id="5899" RelativePath="adam\Content\Z02Nnt9oI0uWji44g8Ss6w\Photo\demo-portrait.jpg" />
     <File Id="6162" RelativePath="adam\Content\_QjZ3nml20C0I-mUlRUDUQ\Image\Demo-100.jpg" />
     <File Id="6327" RelativePath="adam\Content\UEEu06rAWEeUbuj_PlQKBQ\VideoDefaultPreviewImage\placeholder-video.png" />
-    <File Id="6328" RelativePath="adam\Content\FGY0Y11vmUWniKQtSGOqLA\Image\Demo-1.jpg" />
-    <File Id="6395" RelativePath="adam\Content\fp4_shgFuUKCh_HuY2Lq_g\Image\leonhard-niederwimmer-cF0Z5ZRtQGY-unsplash.jpg" />
     <File Id="6155" RelativePath="adam\Content\1pham15xmEmJz2bPro79cA\Image\80-806204_wallpaper-waves-ocean-stock-hd-photography-high-resolution.jpg" />
     <File Id="6325" RelativePath="adam\Content\CjeO-zo-3EeFOuTS8nhlKw\Image\outrun-vaporwave-hd-wallpaper-thumb.jpg" />
     <File Id="6115" RelativePath="adam\Content\gYs3kM81JkuGbwWib6fsMA\Image\Platzhalterbild_Inhalt-1.jpg" />
@@ -8465,8 +8444,6 @@
     <Folder Id="12626" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/" />
     <Folder Id="13742" RelativePath="adam/Content/_QjZ3nml20C0I-mUlRUDUQ/Image/" />
     <Folder Id="13727" RelativePath="adam/Content/UEEu06rAWEeUbuj_PlQKBQ/VideoDefaultPreviewImage/" />
-    <Folder Id="13697" RelativePath="adam/Content/FGY0Y11vmUWniKQtSGOqLA/Image/" />
-    <Folder Id="14008" RelativePath="adam/Content/fp4_shgFuUKCh_HuY2Lq_g/Image/" />
     <Folder Id="13725" RelativePath="adam/Content/1pham15xmEmJz2bPro79cA/Image/" />
     <Folder Id="13904" RelativePath="adam/Content/CjeO-zo-3EeFOuTS8nhlKw/Image/" />
     <Folder Id="13675" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/Image/" />
@@ -8490,7 +8467,9 @@
     <Folder Id="13722" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/" />
     <Folder Id="13723" RelativePath="adam/Content/EqRpIiY9GUOY5aBm5sJYAw/Image/" />
     <Folder Id="13696" RelativePath="adam/Content/FGY0Y11vmUWniKQtSGOqLA/" />
+    <Folder Id="13697" RelativePath="adam/Content/FGY0Y11vmUWniKQtSGOqLA/Image/" />
     <Folder Id="14007" RelativePath="adam/Content/fp4_shgFuUKCh_HuY2Lq_g/" />
+    <Folder Id="14008" RelativePath="adam/Content/fp4_shgFuUKCh_HuY2Lq_g/Image/" />
     <Folder Id="13674" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/" />
     <Folder Id="13704" RelativePath="adam/Content/hc-xFgA_iU-QWEpPzns8Bg/" />
     <Folder Id="13705" RelativePath="adam/Content/hc-xFgA_iU-QWEpPzns8Bg/Image/" />
