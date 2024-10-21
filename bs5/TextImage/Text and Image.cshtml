@@ -18,7 +18,7 @@
 {
   <div class='row @item.RowClass' @Kit.Toolbar.Default(item)>
 
-    <div class='col-md-@settings.ColsText order-md-@item.ImagePlacement'>
+    <div class='col-md-@settings.ColsText order-md-@item.TextPlacement'>
       @Helpers.ShowTitle(item)
       @if (settings.ImgIsBetweenTitleAndText) {
         @Html.Partial("Text and Image.Part-Image.cshtml", new { item })
@@ -29,7 +29,7 @@
     @* If the image has it's own column, it's here *@
     @if (!settings.ImgIsBetweenTitleAndText)
     {
-      <div class='col-md-@settings.ColsMedia order-md-@item.TextPlacement'>
+      <div class='col-md-@settings.ColsMedia order-md-@item.ImagePlacement'>
         @* call sub-template to show the image with all possible options *@
         @Html.Partial("Text and Image.Part-Image.cshtml", new { item, Columns = settings.ColsMedia, fancyboxAttribute })
       </div>

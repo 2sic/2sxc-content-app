@@ -62,7 +62,7 @@ namespace AppCode
     private static bool IsCurrentTextFirst(int index, bool alternate, bool initialTextFirst)
     {
       // If we don't alternate, then the text is always placed same as initial text
-      if (!alternate) return initialTextFirst;
+      if (!alternate) return !initialTextFirst;
 
       // If we alternate, then flip every even item
       return initialTextFirst ^ (index % 2) == 0;

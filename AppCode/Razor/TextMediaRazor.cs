@@ -20,7 +20,7 @@ namespace AppCode.Razor
       MyHeader?.AlternatePositions ?? false,
       // in some cases the settings are not TextMediaViewSettings, but TextViewSettings which don't have TextFirst
       MyView.Settings?.ContainsKey(nameof(MyView.Settings.TextFirst)) == true
-        && (MyView.Settings?.TextFirst ?? true)
+        && !(MyView.Settings?.TextFirst ?? true)
     );
     private List<TextImage> _myItems;
 
