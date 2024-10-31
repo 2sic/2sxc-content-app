@@ -3,6 +3,7 @@
   var lineHalf = MyView.Identifier == "half" ? "w-50 m-auto shadow" : "w-100 shadow";
 }
 
-<hr class="@lineHalf"/>
+@Kit.Toolbar.Default().AsTag()
+<hr class="@lineHalf" />
 
 @Html.Partial("../shared/Assets.cshtml")
