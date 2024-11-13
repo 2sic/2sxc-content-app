@@ -1,9 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 module.exports = (env) => {
+  let lastMessage = '';
+  
   return {
     entry: {
       styles: `./${env.style}/styles/${env.style}.scss`,      
@@ -28,15 +30,27 @@ module.exports = (env) => {
       compression: 'gzip',
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.scss']
+      extensions: ['.ts', '.js', '.scss']
     },
     plugins: [
-      new FixStyleOnlyEntriesPlugin(),
+      new RemoveEmptyScriptsPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].min.css',
       }),
-      new webpack.ProgressPlugin(),
+      new webpack.ProgressPlugin((percentage, message) => {
+        const progress = Math.round(percentage * 100);
+        const progressBar = `[${'='.repeat(progress / 2)}${' '.repeat(50 - progress / 2)}]`;
+        if (message !== lastMessage) {
+          console.log(`${progress}% ${progressBar} ${message}`);
+          lastMessage = message;
+        }
+      }),
     ],
+    optimization: {
+      splitChunks: {
+        chunks: "all",
+      },
+    },
     module: {
       rules: [
         {
@@ -84,6 +98,3 @@ module.exports = (env) => {
   }
 };
 
-new webpack.ProgressPlugin((percentage, message) => {
-  console.log(`${(percentage * 100).toFixed()}% ${message}`);
-})

@@ -6,11 +6,11 @@
 // npm run build-prod
 
 // Add header-comments to the final file
-@import "sass-comments.scss";
+@use "sass-comments.scss";
 
 // If you want to use breakpoints, you have to use th and breakpoint sass 
 // @import "../../node_modules/bootstrap5/scss/functions";
 // @import "../../node_modules/bootstrap5/scss/variables";
 // @import "../../node_modules/bootstrap5/scss/mixins/breakpoints.scss";
 
-@import "_style.scss"; // General CSS stuff for everything
+@use "_style.scss"; // General CSS stuff for everything
