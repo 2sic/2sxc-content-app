@@ -4,15 +4,19 @@ export function activateYouTubeInline() {
   if(youtubeElem.length != 0) {
 
     // goes through all youtube elements
-    youtubeElem.forEach((ytElem: HTMLElement, index) => {
+    youtubeElem.forEach((ytElem: Element, index) => {
       
       if(!ytElem.classList.contains('added-listener')) {
         // add click event if not available 
         ytElem.addEventListener('click', () => {  
           const iframeId = ytElem.getAttribute('data-youtube');
-          const iframeElem = document.getElementById(iframeId);
-          const youtubeUrl = iframeElem.getAttribute('data-youtube-src');
-          iframeElem.setAttribute('src', youtubeUrl);
+          const iframeElem = iframeId ? document.getElementById(iframeId) : null;
+          if (iframeElem) {
+            const youtubeUrl = iframeElem.getAttribute('data-youtube-src');
+            if (youtubeUrl) {
+              iframeElem.setAttribute('src', youtubeUrl);
+            }
+          }
           ytElem.classList.add('hide');
         });
 
