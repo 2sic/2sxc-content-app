@@ -6,8 +6,6 @@ import scss from 'rollup-plugin-scss';
 export default defineConfig(() => {
   const style = process.env.VITE_STYLE || 'bs5';
 
-  console.log(path.resolve(__dirname, `${style}/styles/${style}.scss`))
-  
   return {
     resolve: {
       alias: {
@@ -20,11 +18,11 @@ export default defineConfig(() => {
       sourcemap: true,
       rollupOptions: {
         input: {
-          index: path.resolve(__dirname, 'src/ts/index.ts'),
+          scripts: path.resolve(__dirname, 'src/ts/index.ts'),
           styles: path.resolve(__dirname, `${style}/styles/${style}.scss`), // Updated to point to the SCSS file
         },
         output: {
-          entryFileNames: 'scripts.min.js',
+          entryFileNames: '[name].min.js',
           assetFileNames: '[name].[ext]',
         },
       },
