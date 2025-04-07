@@ -2,13 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = (env) => {
   let lastMessage = '';
   
   return {
-    mode: 'production',
     entry: {
       styles: `./${env.style}/styles/${env.style}.scss`,      
       scripts: './src/ts/index.ts',
@@ -18,8 +16,14 @@ module.exports = (env) => {
       filename: '[name].min.js',
       assetModuleFilename: 'images/[hash][ext][query]'
     },
+    mode: 'production',
     devtool: 'source-map',
     watch: true,
+    stats: {
+      warnings: false,
+      cachedModules: false,
+      groupModulesByCacheStatus: false
+    },
     cache: {
       type: 'filesystem',
       cacheDirectory: path.resolve(__dirname, '.temp_cache'),
@@ -41,12 +45,6 @@ module.exports = (env) => {
           lastMessage = message;
         }
       }),
-      new ForkTsCheckerWebpackPlugin({
-        async: false, // Blocks the build on type errors
-        typescript: {
-          configFile: path.resolve(__dirname, 'tsconfig.json'),
-        },
-      }),      
     ],
     optimization: {
       splitChunks: {
@@ -59,22 +57,9 @@ module.exports = (env) => {
           test: /\.tsx?$/,
           use: [
             {
-              loader: 'babel-loader', // Babel for transformations
+              loader: 'ts-loader',
               options: {
-                presets: [
-                  '@babel/preset-env',
-                  '@babel/preset-typescript',
-                ],
-                plugins: [
-                  '@babel/plugin-transform-class-properties',
-                  '@babel/plugin-transform-object-rest-spread',
-                ],
-              }
-            },
-            {
-              loader: 'ts-loader', // Type-checking
-              options: {
-                transpileOnly: true, // Skip type-checking; separate type-checker recommended
+                transpileOnly: true,
               },
             },
           ],
@@ -95,10 +80,7 @@ module.exports = (env) => {
                 postcssOptions: {
                   plugins: function () {
                     return [
-                      require('autoprefixer'),
-                      require('cssnano')({
-                        preset: 'default',
-                      }),
+                      require('autoprefixer')
                     ];
                   }
                 }
