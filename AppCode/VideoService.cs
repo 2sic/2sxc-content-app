@@ -12,7 +12,8 @@ namespace AppCode
     public IResponsivePicture Preview(Video video, int columns)
     {
       // If no image selection is set, return null
-      if (video.IsEmpty("ImageSelection")) return null;
+      if (video.IsEmpty("ImageSelection"))
+        return null;
 
       // Figure out which image to use for the preview
       object previewSource = video.ImageSelection switch

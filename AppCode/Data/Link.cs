@@ -62,13 +62,15 @@ namespace AppCode.Data
 
     private bool LinkIsInternal()
     {
-      if (_linkIsInternal.HasValue) return _linkIsInternal.Value;
-      var currentUrl = CurrentPageUrl ?? throw new ArgumentException("CurrentPageUrl is not set");
+      if (_linkIsInternal.HasValue)
+        return _linkIsInternal.Value;
+      var currentUrl = CurrentPageUrl
+        ?? throw new ArgumentException("CurrentPageUrl is not set");
 
       _linkIsInternal = Link.Contains(currentUrl) // Link to the same page
-            || Link.StartsWith("/") // absolute link in same site, eg. "/about-us"
-            || Link.StartsWith("#") // hash-link on same page eg "#about-us"
-            || Link.StartsWith("."); // relative link from this page eg "../about-us"
+        || Link.StartsWith("/") // absolute link in same site, eg. "/about-us"
+        || Link.StartsWith("#") // hash-link on same page eg "#about-us"
+        || Link.StartsWith("."); // relative link from this page eg "../about-us"
       return _linkIsInternal.Value;
     }
     private bool? _linkIsInternal;

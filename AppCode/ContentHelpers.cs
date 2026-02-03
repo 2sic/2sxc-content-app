@@ -49,12 +49,14 @@ namespace AppCode
     /// <param name="startWithText"></param>
     /// <returns></returns>
     public List<T> PrepareList<T>(IEnumerable<T> items, bool alternate = false, bool startWithText = true) where T : IAlternatingItems
-    => items.Select((item, index) =>
-      {
-        item.TextIsFirst = IsCurrentTextFirst(index, alternate, startWithText);
-        item.IsLast = index == items.Count() - 1;
-        return item;
-      }).ToList();
+      => items
+        .Select((item, index) =>
+        {
+          item.TextIsFirst = IsCurrentTextFirst(index, alternate, startWithText);
+          item.IsLast = index == items.Count() - 1;
+          return item;
+        })
+        .ToList();
 
     /// <summary>
     /// Detect if the text should be placed first or last, based on the index and settings.
@@ -62,7 +64,8 @@ namespace AppCode
     private static bool IsCurrentTextFirst(int index, bool alternate, bool initialTextFirst)
     {
       // If we don't alternate, then the text is always placed same as initial text
-      if (!alternate) return !initialTextFirst;
+      if (!alternate)
+        return !initialTextFirst;
 
       // If we alternate, then flip every even item
       return initialTextFirst ^ (index % 2) == 0;
