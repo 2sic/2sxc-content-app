@@ -4,9 +4,9 @@
   "description": "Bootstrap 3,4,5 based content templates for websites built with 2sxc and the 2sic bootstrap skin",
   "main": "(none)",
   "scripts": {
-    "build-bs3": "webpack --env style=bs3",
-    "build-bs4": "webpack --env style=bs4",
-    "build-bs5": "webpack --env style=bs5"
+    "build-bs3": "cross-env STYLE=bs3 vite build --watch",
+    "build-bs4": "cross-env STYLE=bs4 vite build --watch",
+    "build-bs5": "cross-env STYLE=bs5 vite build --watch"
   },
   "author": "2sic internet solutions 2024",
   "license": "ISC",
@@ -15,16 +15,11 @@
     "@types/fancybox": "^3.5.7",
     "@types/jquery": "^3.5.32",
     "autoprefixer": "^10.4.20",
-    "css-loader": "^7.1.2",
-    "mini-css-extract-plugin": "^2.9.2",
-    "postcss-loader": "^8.1.1",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.38",
     "sass": "^1.80.6",
-    "sass-loader": "^16.0.3",
-    "ts-loader": "^9.5.1",
     "typescript": "^5.6.3",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4",
-    "webpack-remove-empty-scripts": "^1.0.4"
+    "vite": "^5.4.11"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",

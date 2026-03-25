@@ -110,3 +110,7 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Streamlined field names, always use EMail (prev. one had Mail for the same info)
   * Renamed / corrected various content-types, eg. `TextImage` instead of `Content` to be more descriptive
   * Ensured to work with the latest 2shine Dnn-Theme Bootstrap Variables
+* v17.08 2026-03
+  * Bugfixes
+  * Clean up and refactor
+  * Changed to Vite from webpack 
