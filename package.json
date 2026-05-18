@@ -6,7 +6,11 @@
   "scripts": {
     "build-bs3": "cross-env STYLE=bs3 vite build --watch",
     "build-bs4": "cross-env STYLE=bs4 vite build --watch",
-    "build-bs5": "cross-env STYLE=bs5 vite build --watch"
+    "build-bs5": "cross-env STYLE=bs5 vite build --watch",
+    "build-prod-bs3": "concurrently -n vite,tsc -c cyan,yellow \"npm run build-bs3\" \"npm run build:tsc\"",
+    "build-prod-bs4": "concurrently -n vite,tsc -c cyan,yellow \"npm run build-bs4\" \"npm run build:tsc\"",
+    "build-prod-bs5": "concurrently -n vite,tsc -c cyan,yellow \"npm run build-bs5\" \"npm run build:tsc\"",
+    "build:tsc": "tsc --noEmit --watch --preserveWatchOutput"
   },
   "author": "2sic internet solutions 2024",
   "license": "ISC",
@@ -15,6 +19,7 @@
     "@types/fancybox": "^3.5.7",
     "@types/jquery": "^3.5.32",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.2.1",
     "cross-env": "^7.0.3",
     "postcss": "^8.4.38",
     "sass": "^1.80.6",
