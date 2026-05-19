@@ -5,7 +5,7 @@ import * as sass from 'sass';
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 
-const style = process.env.STYLE || 'bs3';
+const style = process.env.STYLE || 'bs5';
 const scssPath = resolve(process.cwd(), `${style}/styles/${style}.scss`);
 const scssFiles = new Set();
 
