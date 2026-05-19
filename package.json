@@ -4,12 +4,12 @@
   "description": "Bootstrap 3,4,5 based content templates for websites built with 2sxc and the 2sic bootstrap skin",
   "main": "(none)",
   "scripts": {
-    "build-bs3": "cross-env STYLE=bs3 vite build --watch",
-    "build-bs4": "cross-env STYLE=bs4 vite build --watch",
-    "build-bs5": "cross-env STYLE=bs5 vite build --watch",
     "build-prod-bs3": "concurrently -n vite,tsc -c cyan,yellow \"npm run build-bs3\" \"npm run build:tsc\"",
     "build-prod-bs4": "concurrently -n vite,tsc -c cyan,yellow \"npm run build-bs4\" \"npm run build:tsc\"",
     "build-prod-bs5": "concurrently -n vite,tsc -c cyan,yellow \"npm run build-bs5\" \"npm run build:tsc\"",
+    "build-bs3": "cross-env STYLE=bs3 vite build --watch",
+    "build-bs4": "cross-env STYLE=bs4 vite build --watch",
+    "build-bs5": "cross-env STYLE=bs5 vite build --watch",
     "build:tsc": "tsc --noEmit --watch --preserveWatchOutput"
   },
   "author": "2sic internet solutions 2024",

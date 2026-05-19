@@ -9,7 +9,7 @@ export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info } : 
   const loader = new Loader({
     apiKey: apiKey,
     version: "weekly",
-    libraries: ["places"]
+    libraries: ["places", "marker"]
   });
 
   const mapOptions = {
@@ -22,19 +22,22 @@ export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info } : 
     zoomControl: true,
     scaleControl: true,
     scrollwheel: false,
-    mapTypeId: 'roadmap'
+    mapTypeId: 'roadmap',
+    mapId: domId
   };
 
   loader.load().then((google) => {
     var map = new google.maps.Map(document.getElementById(domId), mapOptions);
 
-    var marker = new google.maps.Marker({
+    const markerContent = icon ? Object.assign(document.createElement('img'), { src: icon }) : undefined;
+
+    var marker = new google.maps.marker.AdvancedMarkerElement({
       position: {
         lat: lat,
         lng: lng
       },
       map: map,
-      icon: icon
+      ...(markerContent && { content: markerContent })
     });
 
     if (info && info !== '') {
@@ -44,8 +47,8 @@ export function activeGoogleMaps({apiKey, domId, icon, zoom, lat, lng, info } : 
       });
 
       // Add Event listener
-      google.maps.event.addListener(marker, 'click', function () {
-          infoWindow.open(map, marker);
+      marker.addListener('gmp-click', function () {
+          infoWindow.open({ anchor: marker, map });
       });
     }
 
