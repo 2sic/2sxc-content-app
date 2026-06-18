@@ -19,7 +19,7 @@ export default defineConfig({
     emptyOutDir: false,
     assetsDir: 'images',
 
-    rollupOptions: {
+    rolldownOptions: {
       input: {
         scripts: resolve(process.cwd(), 'src/ts/index.ts'),
       },
@@ -36,7 +36,7 @@ export default defineConfig({
       },
     },
 
-    minify: 'esbuild',
+    minify: 'oxc',
     target: 'es2020',
     cssCodeSplit: false,
 
@@ -62,7 +62,7 @@ export default defineConfig({
         const result = sass.compile(scssPath, {
           sourceMap: true,
           style: 'compressed',
-          silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import'],
+          silenceDeprecations: ['color-functions', 'global-builtin', 'import'],
         });
 
         result.loadedUrls.forEach(url => {
