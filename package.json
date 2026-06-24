@@ -29,6 +29,6 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "bootstrap5": "npm:bootstrap@^5.3.8",
-    "follow-redirects": "^1.15.11"
+    "follow-redirects": "^1.16.0"
   }
 }
