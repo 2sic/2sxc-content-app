@@ -1,0 +1,21 @@
+name: Retarget Dependabot Security PRs
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  retarget:
+    if: github.actor == 'dependabot[bot]' && github.event.pull_request.base.ref == 'master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Retarget PR to test branch
+        run: gh pr edit "$PR_URL" --base test-dependabot-target
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
