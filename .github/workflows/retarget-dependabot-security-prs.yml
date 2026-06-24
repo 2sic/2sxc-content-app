@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Change PR base branch to test-dependabot-target
-        run: gh pr edit "$PR_URL" --base test-dependabot-target
+        run: gh pr edit "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --base test-dependabot-target
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
 
   retarget-existing-prs:
     name: Retarget existing Dependabot PRs
@@ -31,6 +31,7 @@ jobs:
       - name: Retarget all open Dependabot PRs from master to test-dependabot-target
         run: |
           prs=$(gh pr list \
+            --repo "$GITHUB_REPOSITORY" \
             --state open \
             --author "app/dependabot" \
             --base master \
@@ -44,7 +45,7 @@ jobs:
 
           for pr in $prs; do
             echo "Retargeting PR #$pr to test-dependabot-target..."
-            gh pr edit "$pr" --base test-dependabot-target
+            gh pr edit "$pr" --repo "$GITHUB_REPOSITORY" --base test-dependabot-target
           done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
