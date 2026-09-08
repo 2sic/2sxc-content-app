@@ -10,7 +10,7 @@
 }
 
 @* Show list header if necessary for configuration *@
-@Html.Partial("../shared/Content List Header.cshtml")
+@Html.Partial("../Shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
 @foreach (var item in MyTextsWithImages)
@@ -23,4 +23,4 @@
   </div>
 }
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})
+@Html.Partial("../Shared/Assets.cshtml", new { parts = "scripts"})

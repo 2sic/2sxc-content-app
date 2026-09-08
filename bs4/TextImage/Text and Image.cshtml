@@ -18,7 +18,7 @@
 }
 
 @* Show list header if necessary for configuration *@
-@Html.Partial("../shared/Content List Header.cshtml")
+@Html.Partial("../Shared/Content List Header.cshtml")
 
 @* Show all the content-items - one or more *@
 @foreach (var item in allItems) {
@@ -27,7 +27,7 @@
   <div class='row @rowClass' @Edit.TagToolbar(item)>
     <div class='col-md-@colsText order-md-@(isTextFirst ? "first" : "last")'>
       @* call sub-template to show the title with the correct H1-H6 tag *@
-      @Html.Partial("../shared/Header tag.cshtml", new { Item = item, HeadingType = item.Presentation.HeadingType })
+      @Html.Partial("../Shared/Header tag.cshtml", new { Item = item, HeadingType = item.Presentation.HeadingType })
 
       @if (showImgBetweenTitleAndText) {
         @Html.Partial("Text and Image.Part-Image.cshtml", new { Item = item })
@@ -49,5 +49,5 @@
   isTextFirst = !isTextFirst;
 }
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})
-@Html.Partial("../shared/FancyboxAssets.cshtml", new { FancyboxAttribute = fancyboxAttribute })
+@Html.Partial("../Shared/Assets.cshtml", new { parts = "scripts"})
+@Html.Partial("../Shared/FancyboxAssets.cshtml", new { FancyboxAttribute = fancyboxAttribute })

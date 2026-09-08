@@ -48,7 +48,7 @@
             @if (Text.Has(Content.Email)) {
               <div itemprop="email">
                 <span class="fas fa-envelope"></span>
-                @Html.Partial("../shared/TryToEncryptMail.cshtml", new { Email = Content.Email })
+                @Html.Partial("../Shared/TryToEncryptMail.cshtml", new { Email = Content.Email })
               </div>
             }
             @if (Text.Has(Content.Tel)) {
@@ -73,5 +73,5 @@
   </div>
 </div>
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts,icons"})
+@Html.Partial("../Shared/Assets.cshtml", new { parts = "scripts,icons"})
 @Html.Partial("Part GoogleMaps.cshtml", new { DomId = googleMapDomId })

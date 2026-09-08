@@ -9,10 +9,8 @@
   // Convert typed Location object
   var loc = MyLocation;
   
-  // TODO: find out if this is till needed
   // Combine the Presentation with Resources & Settings to get the best possible settings/resources
-  // Uses the DynamicStack feature https://r.2sxc.org/dynamic-stack
-  var mapResources = AsStack(loc.Presentation, App.Resources);
+  var mapResources = AsStack<AppResources>(loc.Presentation, App.Resources);
 
   var mailProtectService = GetService<ProtectMailService>();
   var locService = GetService<LocationService>();
@@ -79,6 +77,6 @@
   </div>
 </div>
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts, icons"})
+@Html.Partial("../Shared/Assets.cshtml", new { parts = "scripts, icons"})
 
 @ActivateMap()

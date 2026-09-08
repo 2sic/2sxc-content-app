@@ -5,7 +5,7 @@
 @*  This Template is used in ca. 5 Views which show title, text and image  *@
 
 @* Show list header if necessary for configuration *@
-@Html.Partial("../shared/Content List Header.cshtml")
+@Html.Partial("../Shared/Content List Header.cshtml")
 
 @{
   // Html DOM attribute for fancybox, settings, etc.
@@ -37,5 +37,5 @@
   </div>
 }
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "scripts"})
+@Html.Partial("../Shared/Assets.cshtml", new { parts = "scripts"})
 @ActivateFancyBox(fancyboxAttribute)

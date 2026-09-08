@@ -7,7 +7,7 @@
 @* This Template is used in ca. 5 Views which show title, text and video *@
 
 @* Show list header if necessary for configuration *@
-@Html.Partial("../shared/Content List Header.cshtml")
+@Html.Partial("../Shared/Content List Header.cshtml")
 
 @{
   var settings = MyView.Settings;
@@ -38,4 +38,4 @@
   </div>
 }
 
-@Html.Partial("../shared/Assets.cshtml", new { parts = "icons, scripts" })
+@Html.Partial("../Shared/Assets.cshtml", new { parts = "icons, scripts" })
