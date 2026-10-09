@@ -116,3 +116,5 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
   * Added intellisense Extensions for Visual Studio Code
   * Refactoring Google Maps Markers to use the new `AdvancedMarkerElement`
   * Switched from webpack to Vite for faster builds
+* v17.22.00 2026-10
+  * Corrected folder casing for Linux compatibility
