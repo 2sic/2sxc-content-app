@@ -18,13 +18,13 @@ These are the primary **Content** parts for 2sxc 17+.
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Best Practices      | ✅    | Uses v15.03 conventions
-| Bootstrap 3         | ✅    | Optimized for v3.3
-| Bootstrap 4         | ✅    | Optimized for latest v4
+| Bootstrap 3         | ❌    | Last supported in v17.22.00
+| Bootstrap 4         | ❌    | Last supported in v17.22.00
 | Bootstrap 5         | ✅    | Optimized for v5.3.2
 
-Other CSS frameworks: please contribute
+This release targets Bootstrap 5.
 
-The Multi-CSS-Framework implementation uses [Connect.Koi][koi]. Here some thumbnails of the result:
+The Bootstrap 5 implementation uses [Connect.Koi][koi]. Here are some thumbnails of the result:
 
 [<img src="https://github.com/2sic/2sxc-content-app/wiki/assets/thumbnails.jpg">](http://2sxc.org/en/blog/post/27-responsive-bootstrap3-structured-content-design-templates-for-dnn-and-2sxc)
 
@@ -54,6 +54,10 @@ Each DNN portal using [2sxc][2sxc] has a section called **Content** which contai
 [koi]:https://connect-koi.net/
 
 ## History
+
+* v17.22.01 2026-10
+  * Removed Bootstrap 3 and Bootstrap 4 support; the app is now Bootstrap 5 only
+  * For Bootstrap 3 or Bootstrap 4, use v17.22.00
 
 * v12.00 2021-05-04 released for 2sxc 12, now compatible with Oqtane as well
   * 2sxc 12 supports hybrid Apps which run on Dnn ☢️ and Oqtane 💧. These content-templates are the first generation of such apps.

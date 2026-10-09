@@ -146,7 +146,7 @@
             <Value Key="Name" Value="Assets / Resources from CDNs (ℹ️)" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;The Content App uses standard Resources like Bootstrap4 (if not already loaded in the theme) and Fancybox3. Since these are standard 2sxc assets, they are not listed here but come from system settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can also modify the Razor files to use any value you prefer, but we recommend to use the Settings-concept.&amp;nbsp;&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;The Content App uses standard resources like Bootstrap 5 (if not already loaded in the theme) and Fancybox3. Since these are standard 2sxc assets, they are not listed here but come from system settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can also modify the Razor files to use any value you prefer, but we recommend to use the Settings-concept.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Placeholder" Value="" Type="String">
@@ -6778,7 +6778,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="17.22.00" Type="String">
+      <Value Key="Version" Value="17.22.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
