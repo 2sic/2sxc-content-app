@@ -15,7 +15,7 @@
     "@types/fancybox": "^3.5.7",
     "@types/jquery": "^4.0.1",
     "autoprefixer": "^10.5.4",
-    "concurrently": "^10.0.3",
+    "concurrently": "^10.0.6",
     "cross-env": "^10.1.0",
     "postcss": "^8.5.22",
     "sass": "^1.101.3",
