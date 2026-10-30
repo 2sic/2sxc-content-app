@@ -20,7 +20,7 @@
     "postcss": "^8.5.22",
     "sass": "^1.101.3",
     "typescript": "^6.0.3",
-    "vite": "^8.1.5"
+    "vite": "^8.1.6"
   },
   "dependencies": {
     "bootstrap5": "npm:bootstrap@^5.3.8",
