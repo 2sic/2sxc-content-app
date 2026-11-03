@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="21.08.00" ExportDate="2026-06-16T14:06:55.5255505+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="22.01.00" ExportDate="2026-11-03T15:44:52.4709316+01:00">
   <Header>
     <Language Default="en-us" />
     <Dimensions>
@@ -146,7 +146,7 @@
             <Value Key="Name" Value="Assets / Resources from CDNs (ℹ️)" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
-            <Value Key="Notes" Value="&lt;p&gt;The Content App uses standard resources like Bootstrap 5 (if not already loaded in the theme) and Fancybox3. Since these are standard 2sxc assets, they are not listed here but come from system settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can also modify the Razor files to use any value you prefer, but we recommend to use the Settings-concept.&amp;nbsp;&lt;/p&gt;" Type="String">
+            <Value Key="Notes" Value="&lt;p&gt;The Content App uses standard Resources like Bootstrap4 (if not already loaded in the theme) and Fancybox3. Since these are standard 2sxc assets, they are not listed here but come from system settings.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;If you need to use a custom version you can override this in the settings of this App, of this Site or globally across all sites. &lt;a href=&quot;http://r.2sxc.org/settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;See Settings in Docs&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can also modify the Razor files to use any value you prefer, but we recommend to use the Settings-concept.&amp;nbsp;&lt;/p&gt;" Type="String">
               <Dimension DimensionID="19" ReadOnly="false" />
             </Value>
             <Value Key="Placeholder" Value="" Type="String">
@@ -3834,29 +3834,29 @@
       <Value Key="Text" Value="&lt;p&gt;Click the &lt;em&gt;pencil-icon&lt;/em&gt; to edit &lt;strong&gt;content&lt;/strong&gt;. This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Pulse el icono del l&amp;aacute;piz para editar contenido. Esto solo es texto de muestra con Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="140" ReadOnly="false" />
-      </Value>
-      <Value Key="Text" Value="&lt;p&gt;Clique no &lt;em&gt;&amp;iacute;con-l&amp;aacute;pis&lt;/em&gt; para editar o conte&amp;uacute;do. Isto &amp;eacute; apenas um texto demonstra&amp;ccedil;&amp;atilde;o com&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="137" ReadOnly="false" />
+      <Value Key="Text" Value="&lt;p&gt;Klik op het &lt;em&gt;potlood icoon&lt;/em&gt; om de content te bewerken. Dit is slechts demo-text met&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="139" ReadOnly="false" />
       </Value>
       <Value Key="Text" Value="&lt;p&gt;Dies ist nur Demo-Inhalt.&amp;nbsp;This is just a demo-text with&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Text" Value="&lt;p&gt;Klik op het &lt;em&gt;potlood icoon&lt;/em&gt; om de content te bewerken. Dit is slechts demo-text met&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="139" ReadOnly="false" />
+      <Value Key="Text" Value="&lt;p&gt;Clique no &lt;em&gt;&amp;iacute;con-l&amp;aacute;pis&lt;/em&gt; para editar o conte&amp;uacute;do. Isto &amp;eacute; apenas um texto demonstra&amp;ccedil;&amp;atilde;o com&amp;nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="137" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="&lt;p&gt;Pulse el icono del l&amp;aacute;piz para editar contenido. Esto solo es texto de muestra con Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet gravida magna. Proin in porttitor ante. Vestibulum varius pretium libero nec maximus. Nulla ac nulla purus.&lt;/p&gt;&#xA;&lt;p&gt;Phasellus condimentum vehicula felis, quis porttitor enim aliquet in. Praesent consequat neque eget nisl dictum malesuada. Nam id efficitur arcu. Donec id mauris viverra nibh volutpat dapibus. Vivamus molestie sem urna, commodo laoreet nisl fermentum rutrum. Vivamus maximus, est ac gravida mattis, lacus orci gravida ipsum, non viverra leo ligula iaculis libero.&amp;nbsp;&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="140" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Demo content" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Contenido demo" Type="String">
-        <Dimension DimensionID="140" ReadOnly="false" />
+      <Value Key="Title" Value="Conteúdo demonstrativo" Type="String">
+        <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Neuer Inhalt" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Conteúdo demonstrativo" Type="String">
-        <Dimension DimensionID="137" ReadOnly="false" />
+      <Value Key="Title" Value="Contenido demo" Type="String">
+        <Dimension DimensionID="140" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="09ad77bb-66e8-4a1c-92ac-27253afb251d" AttributeSetName="Person" EntityGUID="9e8d4d67-68df-4b23-968e-2e3883c4aceb">
@@ -3919,15 +3919,15 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="36ab91f9-8388-4728-9bee-62ac898300a3" AttributeSetName="Link" EntityGUID="efa687d8-3f0e-46d5-9570-744ec2985007">
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="36ab91f9-8388-4728-9bee-62ac898300a3" AttributeSetName="Link" EntityGUID="efa687d8-3f0e-46d5-9570-744ec2985007" IsPublished="False">
       <Value Key="Description" Value="Edit this by clicking the &#xA;pencil icon when you mouse-over." Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="Edite este item clicando no ícon-lápis quando passa com o cursor." Type="String">
-        <Dimension DimensionID="137" ReadOnly="false" />
-      </Value>
       <Value Key="Description" Value="Bearbeiten Sie den Textblock mit dem Stift-Symbol." Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Description" Value="Edite este item clicando no ícon-lápis quando passa com o cursor." Type="String">
+        <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="fa-yin-yang" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -3947,11 +3947,11 @@
       <Value Key="Title" Value="Demo link" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Link demonstração" Type="String">
-        <Dimension DimensionID="137" ReadOnly="false" />
-      </Value>
       <Value Key="Title" Value="Neuer Link-Block" Type="String">
         <Dimension DimensionID="20" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Link demonstração" Type="String">
+        <Dimension DimensionID="137" ReadOnly="false" />
       </Value>
       <Value Key="Window" Value="auto" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
@@ -6766,10 +6766,10 @@
       <Value Key="OriginalId" Value="" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredDnnVersion" Value="09.06.01" Type="String">
+      <Value Key="RequiredDnnVersion" Value="9.11.2" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredOqtaneVersion" Value="05.00.00" Type="String">
+      <Value Key="RequiredOqtaneVersion" Value="10.0.0" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
       <Value Key="RequiredVersion" Value="21.05.00" Type="String">
@@ -6778,7 +6778,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="17.22.01" Type="String">
+      <Value Key="Version" Value="17.21.01" Type="String">
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
@@ -8474,21 +8474,64 @@
         <Dimension DimensionID="19" ReadOnly="false" />
       </Value>
     </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="a4b0b1cd-58ec-463e-af44-77f6dc807fd4" Json="True">
+      <Value Key="Content" Value="2c65988f-cc52-4c67-a775-a6dc32e5510f" Type="Entity" />
+      <Value Key="Presentation" Value="null" Type="Entity" />
+      <Value Key="Template" Value="0c650deb-9b70-4ae0-bca1-ccfb7b11af10" Type="Entity" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="TextImage" EntityGUID="2c65988f-cc52-4c67-a775-a6dc32e5510f" IsPublished="False">
+      <Value Key="Image" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="&lt;p&gt;This is an new element, not index yet but already in draft state&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Draft" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="c213bc62-5409-4468-a0c9-9105acace9b6" Json="True">
+      <Value Key="Content" Value="9a7089b9-d15c-4178-a8e7-4fbb6305ba1c" Type="Entity" />
+      <Value Key="Presentation" Value="null" Type="Entity" />
+      <Value Key="Template" Value="0c650deb-9b70-4ae0-bca1-ccfb7b11af10" Type="Entity" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="TextImage" EntityGUID="9a7089b9-d15c-4178-a8e7-4fbb6305ba1c">
+      <Value Key="Image" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="&lt;p&gt;This is an already initialized Item and edited in the second Step&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Initialized Item - edited later" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="9992aed3-0623-4a63-bf91-4bfe952f5a38" AttributeSetName="TextImage" EntityGUID="9a7089b9-d15c-4178-a8e7-4fbb6305ba1c">
+      <Value Key="Image" Value="" Type="Hyperlink">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Text" Value="&lt;p&gt;This is an already initialized Item and edited in the second Step&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Initialized Item - edited later" Type="String">
+        <Dimension DimensionID="19" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="4205" RelativePath="adam\Content\2aUKYsXls0KCeVH-XnHmRQ\Image\Demo-1.jpg" />
-    <File Id="5899" RelativePath="adam\Content\Z02Nnt9oI0uWji44g8Ss6w\Photo\demo-portrait.jpg" />
-    <File Id="6162" RelativePath="adam\Content\_QjZ3nml20C0I-mUlRUDUQ\Image\Demo-100.jpg" />
-    <File Id="6327" RelativePath="adam\Content\UEEu06rAWEeUbuj_PlQKBQ\VideoDefaultPreviewImage\placeholder-video.png" />
-    <File Id="6155" RelativePath="adam\Content\1pham15xmEmJz2bPro79cA\Image\80-806204_wallpaper-waves-ocean-stock-hd-photography-high-resolution.jpg" />
-    <File Id="6325" RelativePath="adam\Content\CjeO-zo-3EeFOuTS8nhlKw\Image\outrun-vaporwave-hd-wallpaper-thumb.jpg" />
-    <File Id="6115" RelativePath="adam\Content\gYs3kM81JkuGbwWib6fsMA\Image\Platzhalterbild_Inhalt-1.jpg" />
-    <File Id="6137" RelativePath="adam\Content\Iej4TyZnAkaSgNLTPzulog\Image\binary-code-background-digital-abstract-technology-cyber-122478205.jpg" />
-    <File Id="6255" RelativePath="adam\Content\KmN1rjKRDk-nnkhWAC9Rzg\Image\Test.svg" />
-    <File Id="6161" RelativePath="adam\Content\m58zmm7ztE-NHIFd28Dncg\Image\Demo-100.jpg" />
-    <File Id="6163" RelativePath="adam\Content\m58zmm7ztE-NHIFd28Dncg\Image\Demo-100-1.jpg" />
-    <File Id="6260" RelativePath="adam\Content\RTXRUaFUnkKBZKWLacksgw\Image\Demo-2.jpg" />
-    <File Id="6153" RelativePath="adam\Content\y9qulMxjJkKtZIrfWCtRSw\Image\thumb16.jpg" />
+    <File Id="4205" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/Image/Demo-1.jpg" />
+    <File Id="5899" RelativePath="adam/Content/Z02Nnt9oI0uWji44g8Ss6w/Photo/demo-portrait.jpg" />
+    <File Id="6162" RelativePath="adam/Content/_QjZ3nml20C0I-mUlRUDUQ/Image/Demo-100.jpg" />
+    <File Id="6327" RelativePath="adam/Content/UEEu06rAWEeUbuj_PlQKBQ/VideoDefaultPreviewImage/placeholder-video.png" />
+    <File Id="6155" RelativePath="adam/Content/1pham15xmEmJz2bPro79cA/Image/80-806204_wallpaper-waves-ocean-stock-hd-photography-high-resolution.jpg" />
+    <File Id="6325" RelativePath="adam/Content/CjeO-zo-3EeFOuTS8nhlKw/Image/outrun-vaporwave-hd-wallpaper-thumb.jpg" />
+    <File Id="6115" RelativePath="adam/Content/gYs3kM81JkuGbwWib6fsMA/Image/Platzhalterbild_Inhalt-1.jpg" />
+    <File Id="6137" RelativePath="adam/Content/Iej4TyZnAkaSgNLTPzulog/Image/binary-code-background-digital-abstract-technology-cyber-122478205.jpg" />
+    <File Id="6255" RelativePath="adam/Content/KmN1rjKRDk-nnkhWAC9Rzg/Image/Test.svg" />
+    <File Id="6161" RelativePath="adam/Content/m58zmm7ztE-NHIFd28Dncg/Image/Demo-100.jpg" />
+    <File Id="6163" RelativePath="adam/Content/m58zmm7ztE-NHIFd28Dncg/Image/Demo-100-1.jpg" />
+    <File Id="6260" RelativePath="adam/Content/RTXRUaFUnkKBZKWLacksgw/Image/Demo-2.jpg" />
+    <File Id="6153" RelativePath="adam/Content/y9qulMxjJkKtZIrfWCtRSw/Image/thumb16.jpg" />
   </PortalFiles>
   <PortalFolders>
     <Folder Id="2984" RelativePath="adam/Content/2aUKYsXls0KCeVH-XnHmRQ/Image/" />
